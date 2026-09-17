@@ -1,0 +1,81 @@
+/* ============================================================
+   KUNFUPAY · Design Tokens — MORFEO (base de diseño canónica)
+   ------------------------------------------------------------
+   Morfeo es el design system de Kunfupay, extraído fiel de la
+   librería real de producto @kunfupay-company/ui v0.22.6.
+   ES LA BASE DE TODO LO QUE SE GENERE. Referencia completa:
+   sistema-visual/morfeo-kit-completo.md
+   ------------------------------------------------------------
+   Morado de marca CANÓNICO: #734bfc (acción = gradiente 500→700).
+   Naranja sagrado #f97316: SOLO la única súper-CTA por pieza.
+   (Histórico: el acento del logo se documentó como #714afc; el
+   valor de producto y canónico es #734bfc — diferencia mínima.)
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --font-jakarta: 'Plus Jakarta Sans';
+  --morfeo-font: var(--font-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+
+  /* -------- Primario (morado de marca) -------- */
+  --primary-50:#f4f3ff; --primary-100:#eae8ff; --primary-200:#d9d4ff; --primary-300:#bcb2ff;
+  --primary-400:#9c87fe; --primary-500:#734bfc; --primary-600:#6b33f4; --primary-700:#5c21e0;
+  --primary-800:#4d1bbc; --primary-900:#41189a; --primary-950:#260d68;
+  --primary-soft:rgba(115,75,252,.08); --primary-softer:rgba(115,75,252,.04); --primary-ring:rgba(115,75,252,.36);
+
+  /* -------- Neutros (Zinc, fríos) -------- */
+  --neutral-0:#ffffff; --neutral-50:#fafafa; --neutral-100:#f4f4f5; --neutral-200:#e4e4e7;
+  --neutral-300:#d4d4d8; --neutral-400:#a1a1aa; --neutral-500:#71717a; --neutral-600:#52525b;
+  --neutral-700:#3f3f46; --neutral-800:#27272a; --neutral-900:#18181b; --neutral-950:#09090b;
+
+  /* -------- Semánticos -------- */
+  --success-500:#16a34a; --success-700:#166534;
+  --warning-500:#f59e0b; --warning-700:#b45309;
+  --danger-500:#f04438;  --danger-700:#b42318;
+  --info-500:#3b82f6;    --info-700:#1d4ed8;
+
+  /* -------- Naranja · SOLO súper-CTA (la acción suprema) -------- */
+  --orange-400:#fb923c;  --orange-500:#f97316;  --orange-600:#ea580c;
+
+  /* -------- Superficies y texto -------- */
+  --surface:#ffffff; --surface-muted:#fafafa; --surface-sunken:#f4f4f5;
+  --text:#18181b; --text-muted:#71717a; --text-subtle:#52525b;
+  --border:rgba(24,24,27,.10); --border-strong:rgba(24,24,27,.18); --border-subtle:rgba(24,24,27,.06);
+
+  /* -------- Radios -------- */
+  --radius-xs:4px; --radius-sm:6px; --radius-md:10px; --radius-lg:14px; --radius-xl:18px;
+  --radius-2xl:24px; --radius-card:12px; --radius-pill:999px;
+
+  /* -------- Espaciado -------- */
+  --space-xs:4px; --space-sm:8px; --space-md:12px; --space-lg:16px; --space-xl:20px;
+  --space-2xl:24px; --space-3xl:32px; --space-4xl:40px; --space-5xl:48px; --space-6xl:64px;
+
+  /* -------- Sombras teñidas de morado (el sello) -------- */
+  --shadow-xs:0 1px 2px rgba(13,16,24,.04);
+  --shadow-sm:0 2px 6px -2px rgba(13,16,24,.08);
+  --shadow-md:0 6px 16px -6px rgba(115,75,252,.18), 0 2px 6px -2px rgba(13,16,24,.06);
+  --shadow-lg:0 12px 28px -10px rgba(115,75,252,.22), 0 4px 10px -4px rgba(13,16,24,.08);
+  --shadow-xl:0 24px 48px -16px rgba(115,75,252,.28), 0 8px 16px -6px rgba(13,16,24,.1);
+  --shadow-ring:0 0 0 3px var(--primary-ring);
+  --shadow-primary:0 6px 16px -6px rgba(115,75,252,.5), inset 1px 0 0 rgba(255,255,255,.18);
+  --shadow-cta:0 10px 30px -8px rgba(249,115,22,.55), 0 3px 10px -4px rgba(249,115,22,.35), inset 0 1px 0 rgba(255,255,255,.4);
+
+  /* -------- Movimiento -------- */
+  --ease-out-soft:cubic-bezier(0.22,1,0.36,1); --dur-fast:140ms; --dur-base:180ms;
+
+  /* -------- Lienzos RRSS (no son tokens de Morfeo; ayudan a las piezas) -------- */
+  --canvas-square:1080px;     /* feed 1:1 */
+  --canvas-carousel-h:1350px; /* carrusel 4:5 (1080×1350) */
+  --canvas-story-h:1920px;    /* story/reel 9:16 (1080×1920) */
+}
+
+[data-theme="dark"], .dark {
+  --surface:#111114; --surface-muted:#1a1a1e; --surface-sunken:#09090b;
+  --text:rgba(255,255,255,.96); --text-muted:rgba(245,247,255,.78); --text-subtle:rgba(245,247,255,.55);
+  --border:rgba(255,255,255,.10); --border-strong:rgba(255,255,255,.18); --border-subtle:rgba(255,255,255,.06);
+  --primary-soft:rgba(115,75,252,.16); --primary-softer:rgba(115,75,252,.08);
+}
+
+body { font-family: var(--morfeo-font); color: var(--text); background: var(--surface-muted); margin:0; -webkit-font-smoothing:antialiased; }
+* { box-sizing: border-box; }
