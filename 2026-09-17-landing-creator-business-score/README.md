@@ -277,7 +277,10 @@ De ahí salen dos decisiones:
 5. **El reto**, que interpela a quien la ve.
 6. **El enlace, en pastilla blanca sobre morado.** En una story nada es
    pulsable, así que el dominio tiene que leerse de un vistazo y quedarse en la
-   cabeza. Antes era un gris pequeño al fondo y se perdía.
+   cabeza. Antes era un gris pequeño al fondo y se perdía. Hoy es un texto fijo,
+   `TARJETA.url = 'Classroom Platinum by Kunfupay'`: antes mostraba el dominio
+   real de la página (`localhost:8242` en desarrollo), que delataba en qué
+   entorno se generó la imagen.
 
 La tarjeta **no dice si califica o no**. Nadie comparte un suspenso, y el dato
 que mueve al de enfrente es el número, no la puerta de Platinum.
@@ -306,8 +309,47 @@ dos líneas se comía el pie y uno corto dejaba un agujero de 250 px.
 - **Se esperan las fuentes antes de dibujar**, pidiendo la familia sola. El
   canvas no espera a nadie: sin ese `await`, la imagen salía con la tipografía
   del sistema y sin avisar.
-- **El dominio del pie sale de la página**, sin parámetros ni `index.html`, así
-  que es correcto en cualquier despliegue. Se puede fijar en `TARJETA.url`.
+- **El texto del pie es fijo**, no el dominio de la página. `urlVisible()` sigue
+  sabiendo derivarlo (queda como red de seguridad si se borra `TARJETA.url`),
+  pero por defecto se usa un texto de marca que no cambia entre entornos.
+
+## En móvil, la medalla es la pantalla entera
+
+Antes, en móvil, la medalla vivía dentro de la tarjeta blanca de
+`.result__score` —bordes, sombra y padding propios— y la propia medalla tenía
+otra vez bordes y sombra: una burbuja dentro de otra burbuja para una sola
+pieza, con la imagen reducida a 330 px de ancho.
+
+Ahora, por debajo de 860 px, `.medalla` sale a todo el ancho del viewport y
+`.result__score` pierde su chrome de tarjeta (fondo, borde, sombra, radio). El
+ancho completo se consigue con el truco clásico de *full-bleed*:
+
+```css
+.medalla { width: 100vw; margin: 0 calc(50% - 50vw); }
+```
+
+Esa fórmula no depende de cuánto valga el padding de `.result` —hoy un
+`clamp()`—, así que sigue funcionando si ese valor cambia. En escritorio nada
+de esto se activa: ahí la medalla sigue siendo una columna de 380 px como
+antes, dentro de su tarjeta.
+
+### La cabecera desaparece en móvil, solo en el resultado
+
+La medalla ya lleva el logo de Classroom dentro de la propia imagen (ver
+`lockup()` en `tarjeta.js`). Repetirlo en la cabecera de la página era ruido,
+así que en móvil se oculta mientras se ve el resultado.
+
+Pero la cabecera era la única forma de volver al inicio desde ahí. Quitarla sin
+más habría dejado esa pantalla sin salida en móvil, así que se añadió
+`#btnVolverMovil`: un enlace de texto, oculto en escritorio, que hace
+exactamente lo mismo que el logo y solo aparece cuando la cabecera se oculta.
+
+**La cabecera solo se oculta cuando la medalla existe de verdad.** Si el canvas
+falla y se cae al anillo (`caerAlAnillo()`), la clase `vista-resultado` que
+activa la regla se retira: sin medalla, la cabecera es el único logo que queda
+en pantalla, así que se queda visible. `mostrarVista()` la limpia siempre al
+salir del resultado, y solo `prepararTarjeta()` la vuelve a poner, una vez la
+imagen se generó con éxito.
 
 ## Qué muestra la pantalla de resultado
 
@@ -375,7 +417,13 @@ caso, escalón, limitación y si califica.
 - La medalla se dibuja con Plus Jakarta Sans, comprobado midiendo el ancho del
   texto contra el de una familia inexistente, no a ojo.
 - Con `getContext` roto a propósito, el anillo ocupa el sitio de la medalla, el
-  puntaje se sigue viendo y los botones de compartir desaparecen.
+  puntaje se sigue viendo, los botones de compartir desaparecen, y en móvil la
+  cabecera se queda visible en vez de ocultarse.
+- En móvil: la medalla toca los dos bordes de la pantalla, `.result__score` no
+  pinta ni fondo ni sombra propios, y no hay scroll horizontal. Al volver al
+  inicio con `#btnVolverMovil` la cabecera reaparece; al entrar de nuevo al
+  resultado se oculta otra vez. En escritorio la cabecera nunca se oculta y la
+  medalla se queda en su columna de 380 px.
 - Las dos ramas de UTM, `calificado` y `descalificado`, con el score correcto.
 - El puntaje y el anillo se pintan aunque la pestaña esté en segundo plano.
 

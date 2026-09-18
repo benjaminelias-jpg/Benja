@@ -31,6 +31,11 @@
   function mostrarVista(nombre) {
     Object.values(vistas).forEach((v) => v.classList.remove('view--active'));
     vistas[nombre].classList.add('view--active');
+    // Al salir del resultado se limpia siempre. Al entrar, la clase la pone
+    // `prepararTarjeta()` en cuanto la medalla existe de verdad: así, en
+    // móvil, la cabecera no desaparece antes de que haya un logo que la
+    // reemplace (si el canvas falla, `caerAlAnillo()` la deja puesta).
+    if (nombre !== 'result') document.body.classList.remove('vista-resultado');
     window.scrollTo({ top: 0, behavior: 'instant' in window ? 'instant' : 'auto' });
   }
 
@@ -233,6 +238,13 @@
     mostrarVista('landing');
   });
 
+  // Mismo destino que el logo: en móvil, con la cabecera oculta en el
+  // resultado, es la única forma de volver al inicio.
+  $('#btnVolverMovil').addEventListener('click', () => {
+    paso = 0;
+    mostrarVista('landing');
+  });
+
   $('#btnStart').addEventListener('click', () => {
     paso = 0;
     respuestas.fill(null);
@@ -406,6 +418,9 @@
     medalla.hidden = true;
     medallaAcciones.hidden = true;
     ringFallback.hidden = false;
+    // Sin medalla, la cabecera vuelve: es la única marca que queda en
+    // pantalla. Si se ocultara igual, el resultado se quedaría sin logo.
+    document.body.classList.remove('vista-resultado');
   }
 
   async function prepararTarjeta(res) {
@@ -427,6 +442,8 @@
 
       tarjetaPuntaje = res.puntaje;
       tarjetaUrl = URL.createObjectURL(tarjetaBlob);
+      // La medalla ya se genera: ahora sí toca ocultar la cabecera en móvil.
+      document.body.classList.add('vista-resultado');
       sharePreview.src = tarjetaUrl;
       // La imagen lleva texto, así que el alt tiene que decir lo mismo que ella.
       sharePreview.alt = `Tu medalla: ${res.puntaje} sobre 100, ${window.CBSTarjeta.franjaDe(res.puntaje).medalla}.`;

@@ -172,8 +172,16 @@
                pantalla le toca al botón de conversión del final. -->
           <button class="btn btn--primary" type="button" id="btnShare" hidden>Compartir mi medalla</button>
           <button class="btn btn--ghost" type="button" id="btnDownload">Descargar mi medalla</button>
-          <span class="note" id="shareNote">1080 × 1920, lista para tu story.</span>
+          <!-- Vacío por defecto: app.js le pone texto solo si falla el menú de
+               compartir nativo. Antes llevaba la nota "1080 × 1920, lista
+               para tu story.", que se quitó a pedido. -->
+          <span class="note" id="shareNote"></span>
         </div>
+
+        <!-- Solo aparece en móvil (ver CSS): con la cabecera oculta ahí, esta
+             es la única forma de volver al inicio. En escritorio sobra,
+             porque el logo de la cabecera sigue siendo clicable. -->
+        <button class="volver-inicio" type="button" id="btnVolverMovil">← Volver al inicio</button>
 
         <div class="ring" id="ringFallback" hidden>
           <svg viewBox="0 0 220 220" aria-hidden="true">

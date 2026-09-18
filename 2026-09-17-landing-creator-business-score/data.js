@@ -314,9 +314,10 @@ const TARJETA = {
      Todo lo demás sigue en blanco sobre el morado de marca. Es lo que hace
      que las cuatro medallas se distingan de un vistazo cuando circulan
      juntas. Para volver al blanco de antes, basta con quitar los `color`. */
-  /* Dominio que se imprime al pie. Si se deja en null se usa el de la
-     página, sin parámetros, que es lo correcto en cualquier despliegue. */
-  url: null,
+  /* Texto de la pastilla del pie. Antes era el dominio de la página; ahora
+     es fijo, así que la tarjeta no delata en qué entorno se generó
+     (localhost, staging...). Cambialo aquí si hace falta otro texto. */
+  url: 'Classroom Platinum by Kunfupay',
   franjas: [
     {
       desde: 75, medalla: 'Oro', color: '#f7cf6b',
