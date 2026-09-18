@@ -318,6 +318,26 @@ main { flex: 1; display: flex; flex-direction: column; }
   max-width: 460px; text-align: center; text-wrap: pretty;
 }
 
+/* ---------- Bloque de compartir ---------- */
+.panel--share h3 { margin: 0 0 6px; }
+.share__intro {
+  margin: 0 0 20px; font-size: 14.5px; line-height: 1.55;
+  color: var(--text-muted); text-wrap: pretty;
+}
+.share { display: flex; gap: 24px; align-items: center; }
+/* La vista previa lleva su propio fondo morado dentro del PNG, así que solo
+   necesita el recorte y una sombra que la despegue del panel. */
+.share__preview {
+  width: 150px; height: auto; flex: none; display: block;
+  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+  background: var(--surface-sunken);
+}
+.share__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
+.share__actions .btn { width: 100%; }
+.share__actions .note {
+  font-size: 13px; line-height: 1.5; color: var(--text-muted); text-wrap: pretty;
+}
+
 /* ---------- Pie ---------- */
 .footer {
   display: flex; justify-content: space-between; gap: var(--space-lg); flex-wrap: wrap;
@@ -367,6 +387,12 @@ main { flex: 1; display: flex; flex-direction: column; }
   /* El submit es el primer hijo del DOM: con `column` queda arriba. Antes,
      con `column-reverse`, la acción principal caía debajo de "Atrás". */
   .quiz__actions { flex-direction: column; align-items: stretch; }
+  /* En móvil la vista previa manda: se pone arriba y a lo ancho, con los
+     botones debajo, que es donde va el pulgar. */
+  .share { flex-direction: column; align-items: stretch; gap: 18px; }
+  .share__preview { width: 172px; align-self: center; }
+  .share__actions { align-items: stretch; }
+  .share__actions .note { text-align: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {

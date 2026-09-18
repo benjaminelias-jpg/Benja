@@ -23,6 +23,7 @@ cd Entregables/2026-09-17-landing-creator-business-score && python3 -m http.serv
 | `styles.css` | Estilos. Todo el color, radio y tipografía sale de los tokens |
 | `data.js` | **Contenido editable**: preguntas, los 10 casos y la jerarquía |
 | `app.js` | Motor de puntuación, enrutado condicional y render |
+| `tarjeta.js` | Dibuja en canvas la imagen compartible de 1080 × 1920 |
 | `assets/tokens-morfeo.css` | Copia de los tokens de Morfeo |
 | `assets/classroom-lockup-by-kunfupay.svg` | Lockup oficial de Classroom (copia de `sistema-visual/logo/classroom/`) |
 
@@ -196,6 +197,57 @@ donde no hay nada que pulsar.
 La pausa de 180 ms desaparece con `prefers-reduced-motion`. Un segundo clic
 durante esa pausa se ignora, así que un doble clic no salta dos preguntas.
 
+## La tarjeta compartible
+
+Al terminar, la auditoría genera una imagen de **1080 × 1920** —el formato de
+story— con la puntuación, y ofrece compartirla o descargarla. Es la pieza que
+lleva gente nueva al embudo: quien la ve quiere saber cuánto saca.
+
+Vive en `tarjeta.js`, que dibuja sobre un canvas y expone
+`CBSTarjeta.dibujar(res) → Promise<canvas>`. El contenido editable —franjas,
+reto, CTA, dominio— está en `TARJETA`, dentro de `data.js`.
+
+### Qué lleva la imagen
+
+Una sola cifra manda. El puntaje va a 230 px con un anillo que lo refuerza, y
+nada más compite con él: ni segundo número, ni barras, ni la matriz de casos.
+Debajo, la franja, la limitación raíz y el reto; al pie, la llamada y el
+dominio.
+
+El **reto está escrito en primera persona** porque lo publica el usuario, no la
+marca: "Mi negocio digital ya funciona como empresa. ¿El tuyo aguanta la
+comparación?". Lo elige la franja de puntuación:
+
+| Puntaje | Franja | El reto habla de |
+|---|---|---|
+| 75–100 | Fase de escalar | comparar con un negocio que ya funciona |
+| 55–74 | Fase de ordenar | facturar sin sistema todavía |
+| 35–54 | Fase de validar | tener negocio, no tener máquina |
+| 0–34 | Fase de arrancar | saber ya qué te frena |
+
+La tarjeta **no dice si califica o no**. Nadie comparte un suspenso, y el dato
+que mueve al de enfrente es el número, no la puerta de Platinum.
+
+### Decisiones técnicas
+
+- **JPEG de calidad 0,92, no PNG.** El fondo es un degradado a pantalla
+  completa: en PNG pesaba 2,2 MB y en JPEG ronda los 165 KB. Las redes lo
+  recomprimen igual al subirlo.
+- **El blob se genera al pintar el resultado, no al pulsar.** Safari exige que
+  `navigator.share()` salga del gesto del usuario, y fabricar el archivo en
+  medio rompe esa cadena.
+- **`navigator.share` con `canShare({files})` cuando existe**, que abre el menú
+  nativo del móvil. Donde no existe —casi todo el escritorio—, el botón de
+  compartir no se pinta y descargar pasa a ser la acción principal.
+- **El lockup va en negativo**: la teja en blanco y el torii en morado. La teja
+  morada original desaparecería sobre el fondo. El wordmark "Kunfupay" se
+  compone en Plus Jakarta Sans, no con los trazos vectorizados del lockup
+  oficial, porque en canvas no hay forma de heredar el archivo.
+- **Se esperan las fuentes antes de dibujar.** El canvas no espera a nadie: sin
+  ese `await`, la imagen salía con la tipografía del sistema y sin avisar.
+- **El dominio del pie sale de la página**, sin parámetros ni `index.html`, así
+  que es correcto en cualquier despliegue. Se puede fijar en `TARJETA.url`.
+
 ## Qué muestra la pantalla de resultado
 
 1. Anillo con el puntaje, chip de calificación y la limitación raíz.
@@ -250,6 +302,12 @@ caso, escalón, limitación y si califica.
 - El logo devuelve a la portada sin salir de la página.
 - En móvil, la acción principal del paso del correo queda por encima de "Atrás".
 - Sin errores en consola.
+- La tarjeta, en las cuatro franjas y en el caso de e-commerce: se genera, se
+  ve en la vista previa y se descarga como JPEG válido de unos 165 KB.
+- Las diez capas de texto de la tarjeta miden su contraste real contra el
+  degradado del fondo: la más floja da 4,57:1, sobre un mínimo de 3:1.
+- La tarjeta se dibuja con Plus Jakarta Sans, comprobado midiendo el ancho del
+  texto contra el de una familia inexistente, no a ojo.
 - Las dos ramas de UTM, `calificado` y `descalificado`, con el score correcto.
 - El puntaje y el anillo se pintan aunque la pestaña esté en segundo plano.
 

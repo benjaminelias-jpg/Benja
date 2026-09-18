@@ -248,6 +248,7 @@
   function pintarResultado(res) {
     const { puntaje, variables, caso, califica, noAplica } = res;
     registrarDesenlace(res);
+    prepararTarjeta(res);
     // Con la pestaña en segundo plano el navegador congela las transiciones en
     // su valor inicial. En ese caso se salta la animación y se pinta directo,
     // para que nadie vea nunca un anillo vacío ni barras a cero.
@@ -371,6 +372,86 @@
     cta.append(btn, note);
 
   }
+
+  /* ============================================================
+     4b · TARJETA COMPARTIBLE
+     ============================================================ */
+  const resShare = $('#resShare'), sharePreview = $('#sharePreview');
+  const btnShare = $('#btnShare'), btnDownload = $('#btnDownload'), shareNote = $('#shareNote');
+  /* JPEG, no PNG: la tarjeta es un degradado a pantalla completa y en PNG
+     pesaba 2,2 MB. En JPEG de calidad alta baja a la décima parte, y las
+     redes lo recomprimen igual al subirlo. */
+  const NOMBRE_ARCHIVO = 'creator-business-score.jpg';
+  const TIPO_ARCHIVO = 'image/jpeg';
+  const CALIDAD = 0.92;
+
+  /* El blob se prepara en cuanto se pinta el resultado, no al pulsar.
+     Safari exige que navigator.share() salga del gesto del usuario, y
+     generar el PNG en medio rompe esa cadena. */
+  let tarjetaBlob = null;
+  let tarjetaUrl = null;
+
+  function puedeCompartirArchivos(blob) {
+    if (!navigator.canShare || !navigator.share || !window.File) return false;
+    try {
+      return navigator.canShare({ files: [new File([blob], NOMBRE_ARCHIVO, { type: TIPO_ARCHIVO })] });
+    } catch (err) { return false; }
+  }
+
+  async function prepararTarjeta(res) {
+    resShare.hidden = true;
+    btnShare.hidden = true;
+    if (tarjetaUrl) { URL.revokeObjectURL(tarjetaUrl); tarjetaUrl = null; }
+    tarjetaBlob = null;
+
+    if (typeof window.CBSTarjeta === 'undefined' || !window.HTMLCanvasElement) return;
+
+    try {
+      const canvas = await window.CBSTarjeta.dibujar(res);
+      tarjetaBlob = await new Promise((ok) => canvas.toBlob(ok, TIPO_ARCHIVO, CALIDAD));
+      if (!tarjetaBlob) return;
+
+      tarjetaUrl = URL.createObjectURL(tarjetaBlob);
+      sharePreview.src = tarjetaUrl;
+      btnShare.hidden = !puedeCompartirArchivos(tarjetaBlob);
+      // Donde no hay menú nativo, descargar deja de ser la opción secundaria.
+      btnDownload.className = 'btn ' + (btnShare.hidden ? 'btn--primary' : 'btn--ghost');
+      resShare.hidden = false;
+    } catch (err) {
+      // Sin tarjeta, el resultado se sigue viendo entero: el bloque no aparece.
+      resShare.hidden = true;
+    }
+  }
+
+  function descargarTarjeta() {
+    if (!tarjetaUrl) return;
+    const a = document.createElement('a');
+    a.href = tarjetaUrl;
+    a.download = NOMBRE_ARCHIVO;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+  }
+
+  btnDownload.addEventListener('click', descargarTarjeta);
+
+  btnShare.addEventListener('click', async () => {
+    if (!tarjetaBlob) return;
+    const archivo = new File([tarjetaBlob], NOMBRE_ARCHIVO, { type: TIPO_ARCHIVO });
+    try {
+      await navigator.share({
+        files: [archivo],
+        title: 'Mi Creator Business Score',
+        text: TARJETA.cta + ' · ' + window.CBSTarjeta.urlVisible()
+      });
+    } catch (err) {
+      // El usuario canceló el menú, o el navegador lo rechazó: en el segundo
+      // caso al menos se queda con la imagen.
+      if (err && err.name === 'AbortError') return;
+      shareNote.textContent = 'No se pudo abrir el menú de compartir. Descarga la imagen y súbela a mano.';
+      descargarTarjeta();
+    }
+  });
 
   /**
    * Deja el desenlace registrado en tres sitios, para que se pueda medir

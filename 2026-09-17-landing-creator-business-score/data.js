@@ -288,6 +288,30 @@ const FUERA_DE_PERFIL = {
   nota: 'Por eso no te pedimos que apliques a Classroom Platinum esta vez. Quédate con tu puntuación y con los tres pasos: aplican igual a tu negocio.'
 };
 
+/* ------------------------------------------------------------
+   4 · TARJETA COMPARTIBLE
+   La imagen de 1080 × 1920 que se genera al terminar. El puntaje elige
+   una franja, y la franja pone la etiqueta y el reto que la acompañan.
+   El reto va en primera persona: lo escribe quien comparte, no la marca.
+   Las franjas se leen de mayor a menor: gana la primera que encaja.
+   ------------------------------------------------------------ */
+const TARJETA = {
+  ancho: 1080,
+  alto: 1920,
+  fuente: 'Plus Jakarta Sans',
+  eyebrow: 'Creator Business Score',
+  cta: 'Mide tu negocio gratis en 2 minutos',
+  /* Dominio que se imprime al pie. Si se deja en null se usa el de la
+     página, sin parámetros, que es lo correcto en cualquier despliegue. */
+  url: null,
+  franjas: [
+    { desde: 75, etiqueta: 'Fase de escalar',  reto: 'Mi negocio digital ya funciona como empresa. ¿El tuyo aguanta la comparación?' },
+    { desde: 55, etiqueta: 'Fase de ordenar',  reto: 'Ya facturo, ahora toca ordenar la máquina. ¿Cuánto saca el tuyo?' },
+    { desde: 35, etiqueta: 'Fase de validar',  reto: 'Tengo negocio, todavía no tengo sistema. A ver qué puntuación sacas tú.' },
+    { desde: 0,  etiqueta: 'Fase de arrancar', reto: 'Estoy en la casilla de salida y ya sé qué me frena. ¿Y a ti qué te frena?' }
+  ]
+};
+
 const PASO_KUNFUPAY = {
   titulo: 'Con Kunfupay simplificas cada venta',
   desc: 'Nuestra plataforma, dedicada al infoproductor, registra cada venta con su método de pago, su comisión y su neto real, en un solo panel. Contamos con un sistema de optimización fiscal para maximizar las ganancias de tu producto digital. Consulta tus estadísticas sin hojas de cálculo complicadas.'
