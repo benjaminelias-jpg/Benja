@@ -405,6 +405,61 @@
     } catch (err) { return false; }
   }
 
+  /* ---------- La medalla en 3D: inclinación con puntero o con giroscopio ----------
+     Mueve las variables --rx/--ry/--px/--py que lee el CSS. Con puntero
+     (escritorio) sigue al cursor; en móvil, al giroscopio. Sin ninguno de los
+     dos, la clase `medalla--idle` la deja respirando sola. */
+  const REDUCIR_MOVIMIENTO = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const acotar = (v) => Math.max(-1, Math.min(1, v));
+  let sensorActivo = false;
+
+  function inclinar(x, y) {   // x, y en -1..1
+    const st = medalla.style;
+    st.setProperty('--ry', (x * 8).toFixed(2) + 'deg');
+    st.setProperty('--rx', (-y * 6).toFixed(2) + 'deg');
+    st.setProperty('--px', (-x * 9).toFixed(1) + 'px');
+    st.setProperty('--py', (-y * 7).toFixed(1) + 'px');
+  }
+
+  function reposar() {
+    ['--rx', '--ry', '--px', '--py'].forEach((v) => medalla.style.removeProperty(v));
+    if (!sensorActivo) medalla.classList.add('medalla--idle');
+  }
+
+  medalla.addEventListener('pointermove', (e) => {
+    if (REDUCIR_MOVIMIENTO.matches || sensorActivo) return;
+    const r = medalla.getBoundingClientRect();
+    medalla.classList.remove('medalla--idle');
+    inclinar(acotar(((e.clientX - r.left) / r.width) * 2 - 1), acotar(((e.clientY - r.top) / r.height) * 2 - 1));
+  });
+  medalla.addEventListener('pointerleave', reposar);
+  medalla.addEventListener('pointercancel', reposar);
+
+  function escucharOrientacion() {
+    window.addEventListener('deviceorientation', (e) => {
+      if (REDUCIR_MOVIMIENTO.matches || e.gamma == null || e.beta == null) return;
+      sensorActivo = true;
+      medalla.classList.remove('medalla--idle');
+      // gamma: giro izquierda/derecha; beta: inclinación adelante/atrás, con el
+      // móvil en la mano en torno a 45º. 25º de recorrido bastan para el efecto.
+      inclinar(acotar(e.gamma / 25), acotar((e.beta - 45) / 25));
+    }, { passive: true });
+  }
+
+  if ('DeviceOrientationEvent' in window) {
+    if (typeof DeviceOrientationEvent.requestPermission === 'function') {
+      // iOS solo concede el giroscopio desde un gesto del usuario: el primer
+      // toque en el resultado lo pide. Si lo niega, la medalla sigue respirando.
+      vistas.result.addEventListener('pointerdown', () => {
+        DeviceOrientationEvent.requestPermission()
+          .then((r) => { if (r === 'granted') escucharOrientacion(); })
+          .catch(() => {});
+      }, { once: true });
+    } else {
+      escucharOrientacion();
+    }
+  }
+
   /** Si la medalla no se puede generar, el anillo ocupa su sitio. El puntaje
       nunca puede depender de que el canvas funcione. */
   function caerAlAnillo() {
@@ -418,7 +473,7 @@
 
   async function prepararTarjeta(res) {
     medalla.hidden = false;
-    medalla.classList.remove('medalla--lista');
+    medalla.classList.remove('medalla--lista', 'medalla--idle');
     medallaAcciones.hidden = true;
     ringFallback.hidden = true;
     btnShare.hidden = true;
@@ -441,6 +496,7 @@
       // La imagen lleva texto, así que el alt tiene que decir lo mismo que ella.
       sharePreview.alt = `Tu medalla: ${res.puntaje} sobre 100, ${window.CBSTarjeta.franjaDe(res.puntaje).medalla}.`;
       medalla.classList.add('medalla--lista');
+      if (!sensorActivo && !REDUCIR_MOVIMIENTO.matches) medalla.classList.add('medalla--idle');
       medallaAcciones.hidden = false;
       btnShare.hidden = !puedeCompartirArchivos(tarjetaBlob);
       // Donde no hay menú nativo, descargar deja de ser la opción secundaria.

@@ -310,6 +310,22 @@ const TARJETA = {
   eyebrow: 'Creator Business Score',
   etiquetaDesbloqueo: 'Mi próximo desbloqueo',
   cta: 'Gánate tu medalla en 5 preguntas',
+  /* El render 3D de la medalla, en cromo neutro: un solo archivo que la
+     tarjeta tiñe con el color de cada metal. `diametro` es el ancho al que
+     se dibuja la moneda en la tarjeta de 1080 px; la posición de la moneda
+     dentro del archivo se mide sola leyendo su alfa, sin coordenadas a mano.
+     `tinte` es el modo de fusión del canvas: 'color' conserva el sombreado del
+     cromo y le pone el tono del metal. Si el archivo no carga, la tarjeta cae
+     al anillo plano de antes. */
+  medalla3d: {
+    src: 'assets/medalla-3d.webp',
+    respaldo: 'assets/medalla-3d.png',
+    diametro: 540,
+    tinte: 'color'
+  },
+  /* El quinto peldaño de la pista de niveles. No se puede ganar en el test:
+     es lo que vende Classroom Platinum, y se pinta cerrado con candado. */
+  nivelBloqueado: 'Platino',
   /* `color` tiñe SOLO la cinta del rango: el borde, el relleno y el texto.
      Todo lo demás sigue en blanco sobre el morado de marca. Es lo que hace
      que las cuatro medallas se distingan de un vistazo cuando circulan
@@ -342,7 +358,7 @@ const TARJETA = {
     {
       /* El estatus sale del coraje, no del logro: es la única forma de que
          la franja baja se comparta en lugar de esconderse. */
-      desde: 0, medalla: 'Acero', color: '#c6cee0',
+      desde: 0, medalla: 'Acero', color: '#b4bdd2',
       titular: 'Prefiero un número incómodo que otro año a ciegas',
       reto: '¿Te atreverías a publicar el tuyo?'
     }

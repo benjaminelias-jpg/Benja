@@ -24,6 +24,8 @@ cd Entregables/2026-09-17-landing-creator-business-score && python3 -m http.serv
 | `data.js` | **Contenido editable**: preguntas, los 10 casos y la jerarquía |
 | `app.js` | Motor de puntuación, enrutado condicional y render |
 | `tarjeta.js` | Dibuja en canvas la imagen compartible de 1080 × 1920 |
+| `assets/medalla-3d.webp` | Render 3D de la medalla en cromo neutro, 1200 px, 192 KB. La tarjeta lo tiñe por metal |
+| `assets/medalla-3d.png` | El mismo render en PNG de 8 bits, 1000 px, 153 KB. Solo lo ve un navegador sin WebP |
 | `assets/tokens-morfeo.css` | Copia de los tokens de Morfeo |
 | `assets/classroom-lockup-by-kunfupay.svg` | Lockup oficial de Classroom (copia de `sistema-visual/logo/classroom/`) |
 
@@ -261,10 +263,81 @@ De ahí salen dos decisiones:
   no sé por qué", habría hecho mentir a esa parte de la franja delante de su
   propia audiencia. Por eso dice "Hago mucho y todavía no sé qué funciona".
 
+### El render 3D
+
+El encargo fue "una imagen súper cool, como una medalla, animada en 3D tipo la
+nave espacial [de la referencia], un nivel, con cosas cool". La referencia era
+un vídeo de motion 3D: objetos cromados fotorealistas flotando sobre un fondo
+con rejilla sutil, sombra de contacto suave, tipografía grande.
+
+La moneda es un **render fotorealista generado con IA** (Seedream 5 Pro, vía
+Magnific), pedido así: vista frontal perfecta, cromo espejo, aro biselado con
+estrías, corona de laurel grabada en el borde interior y **la cara central
+completamente vacía**, sin texto ni emblema, para superponer el número. Fondo
+gris plano para que el recorte fuera limpio; después, `images_remove_background`.
+Se generaron dos variantes y se eligió la frontal: la otra, en ángulo, dejaba la
+cara elíptica y el número habría parecido pegado. Ese ángulo dinámico lo aporta
+la inclinación 3D en la página, no la imagen.
+
+**Un solo archivo, cuatro metales.** El render es cromo neutro y la tarjeta lo
+tiñe en canvas con el color de cada franja, en modo de fusión `color`: conserva
+la luminancia del cromo (brillos, sombras, relieve del laurel) y le pone el tono
+del metal. Se probó también `multiply` y apaga el metal: el oro se vuelve latón
+sucio y el bronce, marrón. Están las ocho pruebas en la sesión; `color` gana sin
+discusión. El acero se oscureció un punto respecto al plata (`#b4bdd2`) para que
+los dos grises se distingan de un vistazo.
+
+**El asset se autocalibra.** `medirMedalla()` lee el canal alfa del render una
+vez y encuentra la caja de la moneda. No hay coordenadas a mano: si se cambia el
+render por otro, la tarjeta lo centra igual. La caja mide 1196 × 1224 en el
+archivo original de 2048; la moneda se dibuja a 540 px de ancho en la tarjeta.
+
+**Peso.** El recorte original pesaba 4,9 MB. Se sirve en WebP de 1200 px (192
+KB) con un PNG de 8 bits como respaldo (153 KB). El JPEG final de la tarjeta
+pasa de ~170 a ~260 KB: es el detalle del metal, y sigue siendo ligero para una
+story. El HTML de un solo archivo embebe el WebP y sube a 1,93 MB.
+
+**Si el render no carga, la tarjeta cae al anillo plano de antes.** Verificado
+bloqueando las dos rutas del asset: la imagen se genera igual, con su número.
+
+### El número grabado
+
+Va en morado oscuro (`#2b1170`), no en blanco: el blanco desaparecería en los
+brillos del cromo. Se lee como un grabado por tres capas: sombra desplazada
+abajo-derecha, luz desplazada arriba-izquierda, y un **bisel claro**, un trazo
+fino blanco bajo la tinta.
+
+El bisel no es decoración. Al medir el contraste de la tinta contra la cara
+desnuda bajo los dígitos, el peor píxel daba 1,7:1: son los surcos grabados del
+laurel, que un número ancho como "100" llega a pisar. Un dígito que cruza una
+línea de 3 px no se vuelve ilegible, pero en vez de defenderlo con una métrica
+se le puso el bisel: el borde real de cada cifra es tinta contra blanco, **9,9:1
+en los cuatro metales**, pise lo que pise. La cara en sí queda en 9:1 de media
+y por encima de 5:1 en el percentil 5, que es la medida honesta para un fondo
+con textura. Además, un pulido suave (luz radial al 17 %) sube la cara justo
+bajo el número.
+
+### La pista de niveles
+
+Bajo la cinta, cinco nodos: **ACERO → BRONCE → PLATA → ORO → PLATINO**. El
+tramo recorrido y el nodo actual llevan el color del metal; los que faltan van
+en contorno; el Platino va cerrado con un candado. Es lo que dice "esto es un
+nivel, y hay uno más": el test entrega como máximo oro, y el platino es lo que
+vende Classroom Platinum. La pista hace visible ese peldaño sin prometerlo.
+
+### El fondo de estudio
+
+Rejilla fina de trazo discontinuo, como la de la referencia, que se desvanece
+hacia los bordes para no parecer papel cuadriculado. Un halo detrás de la
+moneda **del color de su metal**: el oro alumbra dorado, el acero, frío. Doce
+motas de luz en posiciones fijas (la misma puntuación da siempre la misma
+imagen). Y la sombra de contacto: una elipse difusa 58 px bajo la moneda, algo
+desplazada a la derecha, que es lo que la hace flotar en vez de estar pegada.
+
 ### Por qué se lee como una medalla
 
-1. **Una sola cifra manda.** El puntaje a 194 px dentro del anillo. Ni segundo
-   número, ni barras, ni la matriz de casos.
+1. **Una sola cifra manda.** El puntaje a 196 px grabado en la cara de la
+   moneda. Ni segundo número, ni barras, ni la matriz de casos.
 2. **La cinta del metal.** Una banderola con las puntas mordidas hacia dentro,
    teñida con su metal. Es la pieza que convierte esto en un premio y no en un
    chip de estado. Probé laurel a los lados y a este tamaño se leía como una
@@ -289,11 +362,38 @@ El bloque inferior —titular, desbloqueo y reto— **se mide y se centra** en l
 banda que queda entre la cinta y el pie. Con coordenadas fijas, un titular de
 dos líneas se comía el pie y uno corto dejaba un agujero de 250 px.
 
+### Animada en 3D, en la página
+
+La imagen compartida es estática (las stories son imágenes), pero en la vista
+de resultado la medalla **se mueve**:
+
+- **Se inclina en 3D dentro de su marco**, no el marco. La imagen va un 6 % más
+  grande que el marco y `overflow: hidden` la recorta: así en móvil, donde la
+  medalla va de borde a borde, nunca asoma el fondo por los lados al inclinarse.
+  Con puntero (escritorio) sigue al cursor hasta ±8°; en móvil, al giroscopio.
+  En iOS el giroscopio solo se concede desde un gesto: el primer toque en el
+  resultado lo pide, y si se niega, no pasa nada.
+- **Sin puntero ni sensor, respira sola** (`medalla--idle`): un vaivén de ±4°
+  cada 7 s, animando las mismas variables que mueve el JavaScript. Las
+  variables van registradas con `@property` para que el navegador las
+  interpole.
+- **Un destello cruza la moneda** cada 6,5 s, como el reflejo que recorre un
+  objeto cromado al girarlo.
+- **En escritorio, además, la tarjeta levita** 10 px arriba y abajo. En móvil
+  no, porque es la pantalla y un marco que se mueve dejaría ver el fondo.
+- Con `prefers-reduced-motion` no se mueve nada: ni inclinación, ni respiración,
+  ni destello, ni levitación.
+
+Verificado en el navegador: nace respirando, sigue al puntero con una
+`matrix3d`, vuelve a respirar al soltarlo, en móvil la imagen inclinada cubre
+el marco por los cuatro lados, y con movimiento reducido el `transform` es
+`none`. El giroscopio no se puede probar sin sensores: queda para el móvil real.
+
 ### Decisiones técnicas
 
 - **JPEG de calidad 0,92, no PNG.** El fondo es un degradado a pantalla
-  completa: en PNG pesaba 2,2 MB y en JPEG ronda los 165 KB. Las redes lo
-  recomprimen igual al subirlo.
+  completa: en PNG pesaba 2,2 MB y en JPEG ronda los 260 KB con el render 3D.
+  Las redes lo recomprimen igual al subirlo.
 - **El blob se genera al pintar el resultado, no al pulsar.** Safari exige que
   `navigator.share()` salga del gesto del usuario, y fabricar el archivo en
   medio rompe esa cadena.
@@ -421,7 +521,14 @@ caso, escalón, limitación y si califica.
 - En móvil, la acción principal del paso del correo queda por encima de "Atrás".
 - Sin errores en consola.
 - La medalla, en los cuatro metales y en el caso de e-commerce: se genera, se
-  ve a tamaño completo y se descarga como JPEG válido de unos 170 KB.
+  ve a tamaño completo y se descarga como JPEG válido de unos 260 KB.
+- Con las dos rutas del render 3D bloqueadas, la tarjeta cae al anillo plano y
+  el número se sigue viendo.
+- El número grabado, contra la cara desnuda bajo los dígitos (medida con un
+  puntaje que conserva su valor pero se imprime vacío): 9:1 de media, más de
+  5:1 en el percentil 5, y 9,9:1 en el borde tinta/bisel en los cuatro metales.
+- La animación 3D: puntero, respiración, destello, levitación en escritorio,
+  cobertura del marco en móvil y movimiento reducido.
 - Las once capas de texto de la medalla miden su contraste real contra el
   degradado del fondo: la más floja da 4,61:1, sobre un mínimo de 3:1. Los
   cuatro metales miden además el suyo contra el relleno de su propia cinta, y

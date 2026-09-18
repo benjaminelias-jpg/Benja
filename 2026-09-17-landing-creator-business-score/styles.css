@@ -340,6 +340,46 @@ main { flex: 1; display: flex; flex-direction: column; }
   transition: opacity var(--dur-base);
 }
 .medalla--lista .medalla__skeleton { opacity: 0; pointer-events: none; }
+
+/* ---------- La medalla, animada en 3D ----------
+   La imagen se inclina DENTRO de su marco, no el marco: así en móvil, donde
+   la medalla va de borde a borde, nunca asoma el fondo por los lados. La
+   imagen va un 6 % más grande que el marco para que al inclinarse y
+   desplazarse siempre lo cubra. Las variables las mueve app.js con el puntero
+   o con el giroscopio; sin ninguno de los dos, la medalla respira sola. */
+@property --rx { syntax: '<angle>';  inherits: true; initial-value: 0deg; }
+@property --ry { syntax: '<angle>';  inherits: true; initial-value: 0deg; }
+@property --px { syntax: '<length>'; inherits: true; initial-value: 0px; }
+@property --py { syntax: '<length>'; inherits: true; initial-value: 0px; }
+
+.medalla { perspective: 900px; isolation: isolate; }
+.medalla__img {
+  transform: scale(1.06) rotateX(var(--rx)) rotateY(var(--ry)) translate(var(--px), var(--py));
+  transform-origin: center; will-change: transform;
+  transition: transform 160ms var(--ease-out-soft), opacity var(--dur-base) var(--ease-out-soft);
+}
+.medalla--idle .medalla__img { animation: vaiven 7s ease-in-out infinite; }
+@keyframes vaiven {
+  0%   { --rx:  2deg; --ry: -4deg; --px:  4px; --py: -2px; }
+  50%  { --rx: -2deg; --ry:  4deg; --px: -4px; --py:  2px; }
+  100% { --rx:  2deg; --ry: -4deg; --px:  4px; --py: -2px; }
+}
+/* El destello: una franja de luz que cruza la medalla cada pocos segundos,
+   como el reflejo que recorre un objeto cromado al girarlo. */
+.medalla--lista::after {
+  content: ''; position: absolute; inset: -20%; pointer-events: none; z-index: 2;
+  background: linear-gradient(115deg, transparent 40%, rgba(255,255,255,.20) 50%, transparent 60%);
+  transform: translateX(-75%); mix-blend-mode: screen;
+  animation: destello 6.5s cubic-bezier(.4, 0, .2, 1) infinite;
+}
+@keyframes destello { 0%, 58% { transform: translateX(-75%); } 88%, 100% { transform: translateX(75%); } }
+/* En escritorio, donde la medalla es una tarjeta y no la pantalla, además levita. */
+@media (min-width: 861px) { .medalla--lista { animation: levitar 6s ease-in-out infinite; } }
+@keyframes levitar { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
+@media (prefers-reduced-motion: reduce) {
+  .medalla__img { transform: none; transition: none; }
+  .medalla--idle .medalla__img, .medalla--lista, .medalla--lista::after { animation: none !important; }
+}
 .medalla__skeleton::after {
   content: ''; position: absolute; inset: 0;
   background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.14) 50%, transparent 80%);
