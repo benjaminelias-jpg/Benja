@@ -11,12 +11,17 @@
 
   /* ---------- Reglas de negocio ajustables ---------- */
   const PESOS = { facturacion: .35, ritmo: .25, modelo: .15, conversion: .15, comunidad: .10 };
-  const TIER_MINIMO_PARA_CALIFICAR = 3;   // escalón $15k+
-  const PUNTAJE_MINIMO_PARA_CALIFICAR = 50;
+  /* Califica quien factura al menos 1.000 € al mes Y tiene al menos 5.000
+     seguidores. El puntaje no interviene: es un semáforo de madurez, no la
+     puerta. Los dos umbrales se comparan con el campo `desde` de la opción
+     elegida, que es el suelo de cada tramo. */
+  const FACTURACION_MINIMA_PARA_CALIFICAR = 1000;   // euros al mes
+  const COMUNIDAD_MINIMA_PARA_CALIFICAR = 5000;     // seguidores
   const EMAIL_VALIDO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   /* ---------- Estado ---------- */
   let paso = 0;
+  let avanzando = false;  // cierra la pregunta mientras corre el auto-avance
   const respuestas = new Array(PREGUNTAS.length).fill(null); // índices de opción
 
   /* ---------- Atajos DOM ---------- */
@@ -66,7 +71,7 @@
    * MISMO ORDEN que el manual: la primera regla que encaja gana.
    *
    * Regla dura: la facturación determina la madurez del sistema. A quien
-   * factura más de $50k nunca se le diagnostica falta de validación, ventas
+   * factura más de 50.000 € nunca se le diagnostica falta de validación, ventas
    * esporádicas ni falta de audiencia; su restricción siempre está en
    * Fulfillment, Operaciones o Finanzas.
    *
@@ -81,7 +86,7 @@
     const audienciaAlta = r.audiencia.audiencia === 'alta';
     const audienciaMenor5k = r.audiencia.menor5k === true;
 
-    /* ===== BLOQUE 1 · más de $50.000 ===== */
+    /* ===== BLOQUE 1 · más de 50.000 € ===== */
     if (tier === 4) {
       // Venta de tiempo (agencia o uno a uno) → techo operativo.
       if (modelo === 'agencia' || modelo === 'uno-a-uno') return { clave: '1.1', exacto: true };
@@ -95,7 +100,7 @@
       return { clave: '1.2', exacto: false };
     }
 
-    /* ===== BLOQUE 2 · $15.000 – $40.000 ===== */
+    /* ===== BLOQUE 2 · 15.000 € – 40.000 € ===== */
     if (tier === 3) {
       if (area === 'ventas' || ritmo === 'caos' || ritmo === 'inestable') return { clave: '2.1', exacto: true };
       if (audienciaAlta && area === 'marketing') return { clave: '2.2', exacto: true };
@@ -103,14 +108,14 @@
       return { clave: '2.1', exacto: false };
     }
 
-    /* ===== BLOQUE 3 · $5.000 – $15.000 ===== */
+    /* ===== BLOQUE 3 · 5.000 € – 15.000 € ===== */
     if (tier === 2) {
       if (area === 'branding' || audienciaMenor5k) return { clave: '3.1', exacto: true };
       if (area === 'marketing' || area === 'ventas') return { clave: '3.2', exacto: true };
       return { clave: '3.2', exacto: false };
     }
 
-    /* ===== BLOQUE 4 · menos de $5.000 ===== */
+    /* ===== BLOQUE 4 · menos de 5.000 € ===== */
     if (area === 'mindset' || ritmo === 'caos') return { clave: '4.1', exacto: true };
     return { clave: '4.2', exacto: true };
   }
@@ -121,11 +126,11 @@
     const { clave, exacto } = resolverCaso(r);
     // El modelo de negocio puede quedar fuera del perfil de Classroom Platinum
     // (hoy, e-commerce de producto físico). Puntúa y se diagnostica igual, pero
-    // no se le ofrece aplicar.
+    // no se le ofrece aplicar, facture lo que facture.
     const noAplica = r.modelo.noAplica === true;
     const califica = !noAplica
-      && r.facturacion.tier >= TIER_MINIMO_PARA_CALIFICAR
-      && total >= PUNTAJE_MINIMO_PARA_CALIFICAR;
+      && r.facturacion.desde >= FACTURACION_MINIMA_PARA_CALIFICAR
+      && r.audiencia.desde >= COMUNIDAD_MINIMA_PARA_CALIFICAR;
     return { respuestas: r, email: r.email || '', puntaje: total, variables, caso: CASOS[clave], claveCaso: clave, exacto, califica, noAplica };
   }
 
@@ -182,30 +187,50 @@
       });
     }
 
+    // Las preguntas de opción avanzan solas al elegir, así que no llevan botón
+    // de continuar. El paso del correo sí lo necesita: no hay nada que pulsar.
+    avanzando = false;
+    btnNext.hidden = p.tipo !== 'email';
     btnNext.disabled = p.tipo === 'email'
       ? !EMAIL_VALIDO.test(String(respuestas[paso] || '').trim())
-      : respuestas[paso] === null;
-    btnNext.textContent = paso === PREGUNTAS.length - 1 ? 'Envíame mi puntuación' : 'Continuar';
+      : true;
+    btnNext.textContent = 'Envíame mi puntuación';
     btnBack.textContent = paso === 0 ? 'Volver al inicio' : 'Atrás';
   }
 
+  /** Elegir una opción ya es responder: se marca y se pasa a la siguiente.
+      La pausa corta deja ver la marca antes de cambiar de pregunta. */
   function elegir(i) {
+    if (avanzando) return;              // doble clic: la primera pulsación manda
+    avanzando = true;
     respuestas[paso] = i;
     [...qOptions.children].forEach((el, idx) => el.setAttribute('aria-checked', String(idx === i)));
-    btnNext.disabled = false;
+    const espera = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 180;
+    setTimeout(avanzar, espera);
+  }
+
+  function avanzar() {
+    if (paso < PREGUNTAS.length - 1) { paso += 1; pintarPregunta(); }
+    else { mostrarVista('result'); pintarResultado(evaluar()); }
   }
 
   $('#qForm').addEventListener('submit', (e) => {
     e.preventDefault();
-    if (btnNext.disabled) return;
-    if (paso < PREGUNTAS.length - 1) { paso += 1; pintarPregunta(); }
-    else { mostrarVista('result'); pintarResultado(evaluar()); }
+    if (btnNext.disabled || btnNext.hidden) return;
+    avanzar();
   });
 
   btnBack.addEventListener('click', () => {
     if (paso === 0) { mostrarVista('landing'); return; }
     paso -= 1;
     pintarPregunta();
+  });
+
+  // El lockup vuelve a la portada dentro de la misma página. Antes era un
+  // enlace a './', que fuera de la raíz del dominio daba un 404.
+  $('#btnMarca').addEventListener('click', () => {
+    paso = 0;
+    mostrarVista('landing');
   });
 
   $('#btnStart').addEventListener('click', () => {
@@ -222,6 +247,7 @@
 
   function pintarResultado(res) {
     const { puntaje, variables, caso, califica, noAplica } = res;
+    registrarDesenlace(res);
     // Con la pestaña en segundo plano el navegador congela las transiciones en
     // su valor inicial. En ese caso se salta la animación y se pinta directo,
     // para que nadie vea nunca un anillo vacío ni barras a cero.
@@ -327,7 +353,7 @@
     // medición); sin URL queda como botón a la espera de destino.
     const btn = document.createElement(destino ? 'a' : 'button');
     if (destino) {
-      btn.href = urlConResultado(destino, califica, puntaje);
+      btn.href = urlConResultado(destino, califica, puntaje, noAplica);
       btn.target = '_blank';
       btn.rel = 'noopener noreferrer';
     } else {
@@ -347,16 +373,57 @@
   }
 
   /**
+   * Deja el desenlace registrado en tres sitios, para que se pueda medir
+   * aunque el botón final no tenga destino todavía:
+   *
+   *   1 · La URL de la propia página, con `utm_content` y `utm_term`. NO se
+   *       tocan `utm_source`, `utm_medium` ni `utm_campaign`: los trae la
+   *       campaña que trajo a la visita y deben sobrevivir intactos.
+   *   2 · Atributos `data-` en la vista de resultado, que cualquier
+   *       herramienta puede leer del DOM.
+   *   3 · Un evento `cbs:resultado` en `document`, para engancharle GTM, el
+   *       píxel de Meta o lo que haga falta sin tocar este archivo.
+   */
+  function registrarDesenlace(res) {
+    const valor = desenlace(res.califica, res.noAplica);
+
+    try {
+      const u = new URL(window.location.href);
+      u.searchParams.set('utm_content', valor);
+      u.searchParams.set('utm_term', 'score_' + res.puntaje);
+      window.history.replaceState(null, '', u.toString());
+    } catch (err) { /* sin History API, seguimos: es solo medición */ }
+
+    const vista = vistas.result;
+    vista.dataset.desenlace = valor;
+    vista.dataset.score = res.puntaje;
+    vista.dataset.caso = res.claveCaso;
+
+    document.dispatchEvent(new CustomEvent('cbs:resultado', {
+      detail: {
+        desenlace: valor, puntaje: res.puntaje, caso: res.claveCaso,
+        limitacion: res.caso.limitacion, califica: res.califica,
+        noAplica: res.noAplica, email: res.email
+      }
+    }));
+  }
+
+  /**
    * Añade el resultado de la auditoría a la URL de destino, respetando la
    * taxonomía UTM de Kunfupay (minúsculas y guion bajo):
-   *   utm_content = calificado | descalificado
+   *   utm_content = calificado | descalificado | no_aplica
    *   utm_term    = score_<puntaje>
    * Si el destino ya trae esos parámetros, se sobrescriben.
    */
-  function urlConResultado(base, califica, puntaje) {
+  function desenlace(califica, noAplica) {
+    if (noAplica) return 'no_aplica';
+    return califica ? 'calificado' : 'descalificado';
+  }
+
+  function urlConResultado(base, califica, puntaje, noAplica) {
     try {
       const u = new URL(base, window.location.href);
-      u.searchParams.set('utm_content', califica ? 'calificado' : 'descalificado');
+      u.searchParams.set('utm_content', desenlace(califica, noAplica));
       u.searchParams.set('utm_term', 'score_' + puntaje);
       return u.toString();
     } catch (err) {

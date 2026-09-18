@@ -35,6 +35,8 @@ const ESCALERA = [
 
    Datos que consume el motor en cada opción:
      tier   (facturación) 1..4 → escalón de madurez (A/B=1, C=2, D=3, E=4)
+     desde  (facturación y comunidad) → suelo del tramo, en euros o en
+            seguidores. Es lo que lee la regla de calificación.
      valor        0..100 → puntúa la variable de esa pregunta
      ritmo  (situación) caos | inestable | techo | desorden | control
      modelo lowticket | agencia | uno-a-uno | highticket | hibrido | ecommerce
@@ -50,11 +52,11 @@ const PREGUNTAS = [
     titulo: '¿De qué tamaño es tu comunidad o audiencia activa?',
     ayuda: 'Sirve para detectar la desalineación entre alcance y ventas.',
     opciones: [
-      { label: 'Menos de 1.000 seguidores / Sin comunidad', audiencia: 'baja', menor5k: true,  valor: 10 },
-      { label: '1.000 a 5.000 seguidores',                  audiencia: 'baja', menor5k: true,  valor: 30 },
-      { label: '5.000 a 20.000 seguidores',                 audiencia: 'baja', menor5k: false, valor: 50 },
-      { label: '20.000 a 100.000 seguidores',               audiencia: 'alta', menor5k: false, valor: 75 },
-      { label: 'Más de 100.000 seguidores',                 audiencia: 'alta', menor5k: false, valor: 92 }
+      { label: 'Menos de 1.000 seguidores / Sin comunidad', audiencia: 'baja', menor5k: true,  desde: 0,      valor: 10 },
+      { label: '1.000 a 5.000 seguidores',                  audiencia: 'baja', menor5k: true,  desde: 1000,   valor: 30 },
+      { label: '5.000 a 20.000 seguidores',                 audiencia: 'baja', menor5k: false, desde: 5000,   valor: 50 },
+      { label: '20.000 a 100.000 seguidores',               audiencia: 'alta', menor5k: false, desde: 20000,  valor: 75 },
+      { label: 'Más de 100.000 seguidores',                 audiencia: 'alta', menor5k: false, desde: 100000, valor: 92 }
     ]
   },
   {
@@ -92,11 +94,11 @@ const PREGUNTAS = [
     titulo: '¿Cuál es tu facturación mensual aproximada?',
     ayuda: 'Determina tu escalón real de madurez. Ingresos brutos de un mes normal.',
     opciones: [
-      { label: 'Menos de $1.000 USD',    tier: 1, valor: 8 },
-      { label: '$1.000 – $5.000 USD',    tier: 1, valor: 22 },
-      { label: '$5.000 – $15.000 USD',   tier: 2, valor: 45 },
-      { label: '$15.000 – $40.000 USD',  tier: 3, valor: 70 },
-      { label: 'Más de $50.000 USD',     tier: 4, valor: 92 }
+      { label: 'Menos de 1.000 €',       tier: 1, desde: 0,     valor: 8 },
+      { label: '1.000 € – 5.000 €',      tier: 1, desde: 1000,  valor: 22 },
+      { label: '5.000 € – 15.000 €',     tier: 2, desde: 5000,  valor: 45 },
+      { label: '15.000 € – 40.000 €',    tier: 3, desde: 15000, valor: 70 },
+      { label: 'Más de 50.000 €',        tier: 4, desde: 50000, valor: 92 }
     ]
   },
   {
@@ -129,9 +131,9 @@ const PREGUNTAS = [
    Cada caso: escalón de la escalera + diagnóstico + la X + 3 pasos.
    ------------------------------------------------------------ */
 const CASOS = {
-  /* ===== BLOQUE 1 · más de $50.000 USD ===== */
+  /* ===== BLOQUE 1 · más de 50.000 € ===== */
   '1.1': {
-    bloque: 'Bloque 1 · Más de $50.000 al mes',
+    bloque: 'Bloque 1 · Más de 50.000 € al mes',
     escalon: 6,
     limitacion: 'Operaciones y sistemas',
     titular: 'Has topado con el techo operativo de tu propio tiempo',
@@ -144,7 +146,7 @@ const CASOS = {
     ]
   },
   '1.2': {
-    bloque: 'Bloque 1 · Más de $50.000 al mes',
+    bloque: 'Bloque 1 · Más de 50.000 € al mes',
     escalon: 5,
     limitacion: 'Fulfillment y retención',
     titular: 'Tus clientes ganan su primer resultado y se van',
@@ -157,7 +159,7 @@ const CASOS = {
     ]
   },
   '1.3': {
-    bloque: 'Bloque 1 · Más de $50.000 al mes',
+    bloque: 'Bloque 1 · Más de 50.000 € al mes',
     escalon: 7,
     limitacion: 'Finanzas y salud de caja',
     titular: 'Vendes mucho, pero el tráfico se come tu margen',
@@ -170,9 +172,9 @@ const CASOS = {
     ]
   },
 
-  /* ===== BLOQUE 2 · $15.000 – $40.000 USD ===== */
+  /* ===== BLOQUE 2 · 15.000 € – 40.000 € ===== */
   '2.1': {
-    bloque: 'Bloque 2 · $15.000 – $40.000 al mes',
+    bloque: 'Bloque 2 · 15.000 € – 40.000 € al mes',
     escalon: 4,
     limitacion: 'Ventas y conversión',
     titular: 'Generas reuniones de valor, pero el cierre se te escapa',
@@ -185,7 +187,7 @@ const CASOS = {
     ]
   },
   '2.2': {
-    bloque: 'Bloque 2 · $15.000 – $40.000 al mes',
+    bloque: 'Bloque 2 · 15.000 € – 40.000 € al mes',
     escalon: 3,
     limitacion: 'Marketing y calificación',
     titular: 'Haces contenido, pero no llegan las ventas',
@@ -198,7 +200,7 @@ const CASOS = {
     ]
   },
   '2.3': {
-    bloque: 'Bloque 2 · $15.000 – $40.000 al mes',
+    bloque: 'Bloque 2 · 15.000 € – 40.000 € al mes',
     escalon: 5,
     limitacion: 'Fulfillment y estructura',
     titular: 'Tu agenda es el techo: vendes horas, no un sistema',
@@ -211,9 +213,9 @@ const CASOS = {
     ]
   },
 
-  /* ===== BLOQUE 3 · $5.000 – $15.000 USD ===== */
+  /* ===== BLOQUE 3 · 5.000 € – 15.000 € ===== */
   '3.1': {
-    bloque: 'Bloque 3 · $5.000 – $15.000 al mes',
+    bloque: 'Bloque 3 · 5.000 € – 15.000 € al mes',
     escalon: 2,
     limitacion: 'Branding y autoridad',
     titular: 'Cierras a pulso porque nadie llega educado a la llamada',
@@ -226,7 +228,7 @@ const CASOS = {
     ]
   },
   '3.2': {
-    bloque: 'Bloque 3 · $5.000 – $15.000 al mes',
+    bloque: 'Bloque 3 · 5.000 € – 15.000 € al mes',
     escalon: 3,
     limitacion: 'Product-market fit y conciencia',
     titular: 'Tu mercado todavía no percibe el retorno de contratarte',
@@ -239,9 +241,9 @@ const CASOS = {
     ]
   },
 
-  /* ===== BLOQUE 4 · menos de $5.000 USD ===== */
+  /* ===== BLOQUE 4 · menos de 5.000 € ===== */
   '4.1': {
-    bloque: 'Bloque 4 · Menos de $5.000 al mes',
+    bloque: 'Bloque 4 · Menos de 5.000 € al mes',
     escalon: 1,
     limitacion: 'Mindset y optimización personal',
     titular: 'El motor del negocio eres tú, y todavía no está a punto',
@@ -254,7 +256,7 @@ const CASOS = {
     ]
   },
   '4.2': {
-    bloque: 'Bloque 4 · Menos de $5.000 al mes',
+    bloque: 'Bloque 4 · Menos de 5.000 € al mes',
     escalon: 1,
     limitacion: 'Validación inicial y claridad',
     titular: 'Estás resolviendo problemas de un negocio que aún no tienes',

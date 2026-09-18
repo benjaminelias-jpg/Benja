@@ -40,7 +40,14 @@ la página, verificado. La firma "by" pide `Geist`, que no está en Morfeo, así
 ahí sí cae al tipo de sistema.
 
 Se usa tal cual, sin redibujarlo ni recolorearlo. Mide 62 px de alto en
-escritorio y 48 px en móvil.
+escritorio y 46 px en móvil, dentro de una barra de 78 px.
+
+**El lockup es un `<button>`, no un enlace.** Como `<a href="./">` daba un 404
+en cualquier despliegue que no cuelgue de la raíz del dominio, ahora devuelve a
+la portada dentro de la misma página, sin recargar.
+
+El favicon es el isotipo Tatami, embebido como `data:` URI en el `<head>`. No
+hay archivo suelto que servir ni ruta que se pueda romper.
 
 ## Cómo funciona el motor
 
@@ -69,21 +76,21 @@ conversión baja, que es justo el diagnóstico del caso 2.2.
 
 Se evalúa por bloques de facturación y, dentro de cada bloque, en el mismo orden
 del manual: la primera regla que encaja gana. La facturación manda, así que a
-quien factura más de $50k nunca se le diagnostica falta de validación ni ventas
+quien factura más de 50.000 € nunca se le diagnostica falta de validación ni ventas
 esporádicas.
 
 | Caso | Condición | Limitación | Escalón |
 |---|---|---|---|
-| 1.1 | Más de $50k + agencia o 1 a 1 | Operaciones | 6 |
-| 1.2 | Más de $50k + high-ticket o híbrido + dolor de entrega | Fulfillment | 5 |
-| 1.3 | Más de $50k + low ticket o e-commerce, o caja inestable | Finanzas | 7 |
-| 2.1 | $15k–$40k + cierre, o ritmo caótico o inestable | Ventas | 4 |
-| 2.2 | $15k–$40k + más de 20k seguidores + prospectos | Marketing | 3 |
-| 2.3 | $15k–$40k + coaching 1 a 1 + caos operativo | Fulfillment | 5 |
-| 3.1 | $5k–$15k + autoridad, o menos de 5k seguidores | Branding | 2 |
-| 3.2 | $5k–$15k + prospectos o cierre | Product-market fit | 3 |
-| 4.1 | Menos de $5k + hábitos, o ritmo caótico | Mindset | 1 |
-| 4.2 | Menos de $5k + cualquier otro dolor | Validación inicial | 1 |
+| 1.1 | Más de 50.000 € + agencia o 1 a 1 | Operaciones | 6 |
+| 1.2 | Más de 50.000 € + high-ticket o híbrido + dolor de entrega | Fulfillment | 5 |
+| 1.3 | Más de 50.000 € + low ticket o e-commerce, o caja inestable | Finanzas | 7 |
+| 2.1 | 15.000 €–40.000 € + cierre, o ritmo caótico o inestable | Ventas | 4 |
+| 2.2 | 15.000 €–40.000 € + más de 20.000 seguidores + prospectos | Marketing | 3 |
+| 2.3 | 15.000 €–40.000 € + coaching 1 a 1 + caos operativo | Fulfillment | 5 |
+| 3.1 | 5.000 €–15.000 € + autoridad, o menos de 5.000 seguidores | Branding | 2 |
+| 3.2 | 5.000 €–15.000 € + prospectos o cierre | Product-market fit | 3 |
+| 4.1 | Menos de 5.000 € + hábitos, o ritmo caótico | Mindset | 1 |
+| 4.2 | Menos de 5.000 € + cualquier otro dolor | Validación inicial | 1 |
 
 Las combinaciones que el manual no cubre caen al caso por defecto de su bloque:
 1.2 en el bloque 1, 2.1 en el bloque 2 y 3.2 en el bloque 3. El motor lo marca
@@ -91,7 +98,13 @@ como `exacto: false` para poder auditarlo, aunque en pantalla no se muestra.
 
 ### Paso 3 · Califica, no califica, o queda fuera de perfil
 
-`califica = el modelo aplica + escalón de facturación ≥ 3 ($15k+) + puntaje ≥ 50`
+`califica = el modelo aplica + factura ≥ 1.000 € al mes + comunidad ≥ 5.000 seguidores`
+
+**El puntaje no interviene en la puerta.** Es un semáforo de madurez que se
+muestra siempre, no el filtro. Los dos umbrales viven en las constantes del
+principio de `app.js` y se comparan con el campo `desde` de la opción elegida,
+que es el suelo de su tramo: 1.000 € es la segunda opción de facturación y
+5.000 seguidores la tercera de comunidad.
 
 - **Califica**: cierre con "Aplicar a Classroom Platinum".
 - **No califica**: los 3 pasos del caso más el paso 04 de Kunfupay y la
@@ -120,24 +133,45 @@ no al 1.2: vive del margen sobre el costo de tráfico, no de una oferta cebolla.
 ## El paso 6 · captación de correo
 
 La última pregunta no puntúa ni enruta: pide el correo donde recibir la
-puntuación. El botón de ese paso dice "Envíame mi puntuación". Se declara en `data.js` con `tipo: 'email'`, y el formulario pinta
-un campo en lugar de cinco opciones. El botón queda bloqueado hasta que el
-correo tiene forma válida, y el valor se conserva si el usuario vuelve atrás.
+puntuación. Se declara en `data.js` con `tipo: 'email'`, y el formulario pinta
+un campo en lugar de cinco opciones.
+
+Su botón dice "Envíame mi puntuación" y es el **único** que queda en el
+formulario, porque las preguntas de opción avanzan solas. Está bloqueado hasta
+que el correo tiene forma válida, y el valor se conserva si se vuelve atrás.
 
 **El correo no se envía a ninguna parte todavía.** Queda en memoria y viaja en
 el objeto de resultado (`res.email`). Para capturarlo de verdad hay que
 conectar un destino en el envío del formulario: tu ESP, el CRM o un endpoint
 propio. Mientras tanto, la promesa de "te la enviamos" no se cumple sola.
 
-## Medición · qué UTM lleva el botón final
+## Medición · el desenlace y el puntaje
 
-La URL de destino se construye al pintar el resultado y arrastra el desenlace de
-la auditoría, siguiendo la taxonomía de `growth-utms/sistema-utm.md`:
+Cada auditoría termina en uno de tres desenlaces, y los dos datos que importan
+—cuál es y con qué puntaje— quedan registrados en **cuatro sitios**, para que se
+puedan medir aunque el botón final todavía no tenga destino:
 
 | Parámetro | Valor |
 |---|---|
-| `utm_content` | `calificado` o `descalificado` |
+| `utm_content` | `calificado`, `descalificado` o `no_aplica` |
 | `utm_term` | `score_<puntaje>`, por ejemplo `score_73` |
+
+1. **En la URL del botón final**, cuando ese botón tiene destino.
+2. **En la URL de la propia página**, con `history.replaceState`, al pintar el
+   resultado. Solo se tocan `utm_content` y `utm_term`: `utm_source`,
+   `utm_medium` y `utm_campaign` son los de la campaña que trajo la visita y
+   sobreviven intactos.
+3. **En atributos `data-` de la vista de resultado**: `data-desenlace`,
+   `data-score` y `data-caso`.
+4. **En un evento `cbs:resultado`** sobre `document`, con `desenlace`,
+   `puntaje`, `caso`, `limitacion`, `califica`, `noAplica` y `email` en su
+   `detail`. Es el enganche para GTM o el píxel de Meta sin tocar `app.js`:
+
+```js
+document.addEventListener('cbs:resultado', (e) => {
+  gtag('event', 'auditoria_completada', e.detail);
+});
+```
 
 Ejemplo real del botón cuando alguien no califica con 25 puntos:
 
@@ -151,6 +185,16 @@ destino ya trae esos parámetros, se sobrescriben.
 **Ojo con `utm_source=CBS`:** la taxonomía exige minúsculas, porque GA4 trata
 `CBS` y `cbs` como fuentes distintas. La URL viene así del encargo y no la he
 cambiado, pero conviene pasarla a `cbs`.
+
+## Cómo se responde
+
+Al pulsar una opción se marca y, 180 ms después, pasa sola a la siguiente
+pregunta: no hay botón de continuar en las preguntas de opción. Solo queda
+"Atrás", que conserva lo ya elegido. El único paso con botón es el del correo,
+donde no hay nada que pulsar.
+
+La pausa de 180 ms desaparece con `prefers-reduced-motion`. Un segundo clic
+durante esa pausa se ignora, así que un doble clic no salta dos preguntas.
 
 ## Qué muestra la pantalla de resultado
 
@@ -169,7 +213,7 @@ Las preguntas y los diagnósticos son del manual, literales. Estas son mías.
    del principio de `app.js`.
 2. **Los casos por defecto de cada bloque**, para las combinaciones que el árbol
    condicional no cubre.
-3. **El tramo $40k–$50k** no existe en las opciones de facturación, que son
+3. **El tramo 40.000 €–50.000 €** no existe en las opciones de facturación, que son
    literales del manual. Quien facture ahí elegirá una de las dos contiguas.
 4. **La opción de e-commerce puntúa 55** en escalabilidad del modelo, entre el
    low ticket (45) y el high-ticket (75). El manual no la contempla.
@@ -192,11 +236,19 @@ caso, escalón, limitación y si califica.
 - Las 3.750 combinaciones posibles de respuesta, una por una: todas puntúan
   entre 0 y 100 y caen en un caso de la matriz. Los 10 casos son alcanzables.
 - Las 625 combinaciones con e-commerce: ninguna califica.
+- La regla de calificación, combinación a combinación, contra su definición:
+  califican exactamente las 1.500 que facturan 1.000 €+ y tienen 5.000+
+  seguidores sin ser e-commerce, el 40 % del total.
 - Los 10 casos de la matriz enrutan exactamente como el manual.
 - Paso de correo: valida el formato, bloquea el avance y conserva el valor al volver atrás.
 - Recorrido completo con clics reales, ida y vuelta entre preguntas.
 - Barras medidas en píxeles: animan de 0 al valor final, escalonadas.
-- Sin scroll horizontal en móvil de 375 px ni en escritorio.
+- Sin scroll horizontal en móvil de 375 px ni en escritorio, y el chip del hero
+  entero dentro de la pantalla: se parte en dos líneas en vez de cortarse.
+- Auto-avance por las cinco preguntas sin tocar "Continuar" ni una vez, con
+  "Atrás" conservando lo elegido.
+- El logo devuelve a la portada sin salir de la página.
+- En móvil, la acción principal del paso del correo queda por encima de "Atrás".
 - Sin errores en consola.
 - Las dos ramas de UTM, `calificado` y `descalificado`, con el score correcto.
 - El puntaje y el anillo se pintan aunque la pestaña esté en segundo plano.
@@ -205,8 +257,10 @@ caso, escalón, limitación y si califica.
 
 - No hay backend: ni el resultado ni el correo se guardan o se envían.
 - Falta la URL de "Aplicar a Classroom Platinum" (`URL_CLASSROOM` en `data.js`).
-  Hasta que exista, `utm_content=calificado` no llega a usarse en producción.
-- Falta medición de eventos, que iría con `growth-utms`.
+  Hasta que exista, ese botón no lleva a ninguna parte. El desenlace sí queda
+  registrado igualmente, por las otras tres vías de la sección de medición.
+- Las cifras pasaron de dólares a euros solo en las etiquetas y en los textos:
+  los tramos son los mismos números del manual, no una conversión de divisa.
 - El copy de los diagnósticos viene del manual, sin pasar por `ops-revisor`.
 - El caso 1.3 habla de "un negocio sano de infoproductos", que suena raro
   cuando lo lee un e-commerce. Es copy literal del manual y cambiarlo afectaría
