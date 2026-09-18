@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg%20xmlns=%22http://www.w3.org/2000/svg%22%20viewBox=%220%200%20512%20512%22><rect%20width=%22512%22%20height=%22512%22%20rx=%22116%22%20fill=%22%23734bfc%22/><g%20fill=%22%23ffffff%22><path%20d=%22M104%20150C104%20150%20162%20124%20256%20124C350%20124%20408%20150%20408%20150L408%20178C408%20178%20350%20160%20256%20160C162%20160%20104%20178%20104%20178Z%22/><rect%20x=%22138%22%20y=%22206%22%20width=%22236%22%20height=%2234%22%20rx=%226%22/><path%20d=%22M168%20178L200%20178L208%20392L160%20392Z%22/><path%20d=%22M312%20178L344%20178L352%20392L304%20392Z%22/></g></svg>">
 <meta name="theme-color" content="#734bfc">
 <link rel="stylesheet" href="assets/tokens-morfeo.css">
-<link rel="stylesheet" href="styles.css?v=16">
+<link rel="stylesheet" href="styles.css?v=17">
 </head>
 <body>
 
@@ -158,7 +158,24 @@
     <div class="result">
 
       <aside class="result__score">
-        <div class="ring">
+
+        <!-- La medalla ES la pantalla. El anillo de abajo solo sale si el
+             navegador no puede generar la imagen: el puntaje no puede
+             depender de que el canvas funcione. -->
+        <figure class="medalla" id="medalla">
+          <img class="medalla__img" id="sharePreview" alt="" width="1080" height="1920">
+          <span class="medalla__skeleton" id="medallaSkeleton" aria-hidden="true"></span>
+        </figure>
+
+        <div class="medalla__acciones" id="medallaAcciones" hidden>
+          <!-- Morado, no naranja: la súper-CTA es única por pieza y en esta
+               pantalla le toca al botón de conversión del final. -->
+          <button class="btn btn--primary" type="button" id="btnShare" hidden>Compartir mi medalla</button>
+          <button class="btn btn--ghost" type="button" id="btnDownload">Descargar mi medalla</button>
+          <span class="note" id="shareNote">1080 × 1920, lista para tu story.</span>
+        </div>
+
+        <div class="ring" id="ringFallback" hidden>
           <svg viewBox="0 0 220 220" aria-hidden="true">
             <circle class="ring__track" cx="110" cy="110" r="96"></circle>
             <circle class="ring__value" id="ringValue" cx="110" cy="110" r="96"></circle>
@@ -171,6 +188,7 @@
           </svg>
           <div class="ring__num"><strong id="scoreNum">0</strong><span>sobre 100</span></div>
         </div>
+
         <span class="chip" id="resChip"></span>
         <p class="result__phase" id="resPhase"></p>
       </aside>
@@ -196,20 +214,6 @@
           <div class="result__cta" id="resCta"></div>
         </section>
 
-        <section class="panel panel--share" id="resShare" hidden>
-          <p class="eyebrow">Compártelo</p>
-          <h3 id="resShareTitle">Rétalos a medir su negocio</h3>
-          <p class="share__intro">Tu puntuación en una imagen lista para stories. Quien la vea puede hacer la suya en dos minutos.</p>
-          <div class="share">
-            <img class="share__preview" id="sharePreview" alt="Vista previa de la imagen con tu puntuación" width="270" height="480">
-            <div class="share__actions">
-              <button class="btn btn--primary" type="button" id="btnShare" hidden>Compartir mi puntuación</button>
-              <button class="btn btn--ghost" type="button" id="btnDownload">Descargar la imagen</button>
-              <span class="note" id="shareNote">1080 × 1920, el formato de story.</span>
-            </div>
-          </div>
-        </section>
-
       </div>
     </div>
   </section>
@@ -221,8 +225,8 @@
   <span>Auditoría orientativa. No constituye una oferta de financiamiento.</span>
 </footer>
 
-<script src="data.js?v=16"></script>
-<script src="tarjeta.js?v=16"></script>
-<script src="app.js?v=16"></script>
+<script src="data.js?v=17"></script>
+<script src="tarjeta.js?v=17"></script>
+<script src="app.js?v=17"></script>
 </body>
 </html>

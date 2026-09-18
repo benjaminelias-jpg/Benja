@@ -3,6 +3,11 @@
    Todo el color, tipografía y radio sale de tokens-morfeo.css
    ============================================================ */
 
+/* Cualquier `display` de una clase gana al `[hidden]` del navegador, así que
+   un elemento oculto seguía viéndose. Ya pasó con los botones; se corta aquí
+   para toda la hoja en vez de ir parcheando selector a selector. */
+[hidden] { display: none !important; }
+
 body {
   background: var(--surface);
   color: var(--text);
@@ -131,9 +136,6 @@ main { flex: 1; display: flex; flex-direction: column; }
   padding: 0 28px; height: 48px; display: inline-flex; align-items: center; justify-content: center;
   text-decoration: none; text-align: center;
 }
-/* `display: inline-flex` de .btn gana al `[hidden]` del navegador, así que el
-   botón oculto seguía viéndose. Hay que decirlo explícitamente. */
-.btn[hidden] { display: none; }
 .btn:focus-visible { outline: none; box-shadow: var(--shadow-ring); }
 .btn:disabled { opacity: .45; cursor: not-allowed; }
 .btn:not(:disabled):hover { transform: translateY(-1px); }
@@ -231,12 +233,12 @@ main { flex: 1; display: flex; flex-direction: column; }
   background: var(--surface); border: 1px solid var(--border);
   border-radius: var(--radius-2xl); padding: 40px 32px 32px;
   display: flex; flex-direction: column; align-items: center; gap: 0;
-  box-shadow: var(--shadow-lg); position: sticky; top: 24px;
+  box-shadow: var(--shadow-lg);
 }
 /* El ritmo vertical se controla con márgenes, no con un gap único: el anillo,
    el estado y la limitación son tres bloques con pesos distintos. */
 .result__score .ring { margin-bottom: 24px; }
-.result__score .chip { align-self: center; margin-bottom: 14px; }
+.result__score .chip { align-self: center; margin: 24px 0 14px; }
 .ring { position: relative; width: 220px; height: 220px; }
 .ring svg { width: 100%; height: 100%; transform: rotate(-90deg); }
 .ring__track { fill: none; stroke: var(--primary-100); stroke-width: 14; }
@@ -318,24 +320,41 @@ main { flex: 1; display: flex; flex-direction: column; }
   max-width: 460px; text-align: center; text-wrap: pretty;
 }
 
-/* ---------- Bloque de compartir ---------- */
-.panel--share h3 { margin: 0 0 6px; }
-.share__intro {
-  margin: 0 0 20px; font-size: 14.5px; line-height: 1.55;
-  color: var(--text-muted); text-wrap: pretty;
+/* ---------- La medalla · el héroe del resultado ---------- */
+.medalla {
+  margin: 0; width: 100%; max-width: 380px;
+  /* La proporción se reserva antes de que exista la imagen: sin esto, la
+     página pega un salto de 600 px cuando termina de generarse. */
+  aspect-ratio: 1080 / 1920;
+  position: relative; border-radius: var(--radius-2xl); overflow: hidden;
+  box-shadow: var(--shadow-xl);
 }
-.share { display: flex; gap: 24px; align-items: center; }
-/* La vista previa lleva su propio fondo morado dentro del PNG, así que solo
-   necesita el recorte y una sombra que la despegue del panel. */
-.share__preview {
-  width: 150px; height: auto; flex: none; display: block;
-  border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
-  background: var(--surface-sunken);
+.medalla__img {
+  width: 100%; height: 100%; display: block; object-fit: cover;
+  opacity: 0; transition: opacity var(--dur-base) var(--ease-out-soft);
 }
-.share__actions { display: flex; flex-direction: column; align-items: flex-start; gap: 10px; }
-.share__actions .btn { width: 100%; }
-.share__actions .note {
-  font-size: 13px; line-height: 1.5; color: var(--text-muted); text-wrap: pretty;
+.medalla__img[src] { opacity: 1; }
+.medalla__skeleton {
+  position: absolute; inset: 0;
+  background: linear-gradient(135deg, var(--primary-700), var(--primary-950));
+  transition: opacity var(--dur-base);
+}
+.medalla--lista .medalla__skeleton { opacity: 0; pointer-events: none; }
+.medalla__skeleton::after {
+  content: ''; position: absolute; inset: 0;
+  background: linear-gradient(100deg, transparent 20%, rgba(255,255,255,.14) 50%, transparent 80%);
+  transform: translateX(-100%);
+  animation: brillo 1.4s var(--ease-out-soft) infinite;
+}
+@keyframes brillo { to { transform: translateX(100%); } }
+
+.medalla__acciones {
+  display: flex; flex-direction: column; align-items: stretch;
+  gap: 10px; width: 100%; max-width: 380px; margin-top: 20px;
+}
+.medalla__acciones .note {
+  font-size: 13px; line-height: 1.5; color: var(--text-muted);
+  text-align: center; text-wrap: pretty;
 }
 
 /* ---------- Pie ---------- */
@@ -389,10 +408,8 @@ main { flex: 1; display: flex; flex-direction: column; }
   .quiz__actions { flex-direction: column; align-items: stretch; }
   /* En móvil la vista previa manda: se pone arriba y a lo ancho, con los
      botones debajo, que es donde va el pulgar. */
-  .share { flex-direction: column; align-items: stretch; gap: 18px; }
-  .share__preview { width: 172px; align-self: center; }
-  .share__actions { align-items: stretch; }
-  .share__actions .note { text-align: center; }
+  /* En móvil la medalla ocupa el ancho útil: es la pantalla, no una miniatura. */
+  .medalla, .medalla__acciones { max-width: 330px; }
 }
 
 @media (prefers-reduced-motion: reduce) {

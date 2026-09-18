@@ -197,36 +197,94 @@ donde no hay nada que pulsar.
 La pausa de 180 ms desaparece con `prefers-reduced-motion`. Un segundo clic
 durante esa pausa se ignora, así que un doble clic no salta dos preguntas.
 
-## La tarjeta compartible
+## La medalla · la pantalla de resultado
 
 Al terminar, la auditoría genera una imagen de **1080 × 1920** —el formato de
-story— con la puntuación, y ofrece compartirla o descargarla. Es la pieza que
-lleva gente nueva al embudo: quien la ve quiere saber cuánto saca.
+story— y **esa imagen es la pantalla**. No es una miniatura debajo del
+resultado: ocupa la columna principal, con los botones de compartir y descargar
+justo bajo ella. El diagnóstico, las barras y los pasos vienen después.
 
 Vive en `tarjeta.js`, que dibuja sobre un canvas y expone
 `CBSTarjeta.dibujar(res) → Promise<canvas>`. El contenido editable —franjas,
-reto, CTA, dominio— está en `TARJETA`, dentro de `data.js`.
+medalla, titular, reto, llamada, dominio— está en `TARJETA`, dentro de
+`data.js`.
 
-### Qué lleva la imagen
+**Si el canvas falla, el anillo ocupa su sitio.** El puntaje no puede depender
+de que el navegador sepa dibujar: `#ringFallback` está oculto y solo aparece si
+la imagen no se pudo generar. Verificado rompiendo `getContext` a propósito.
 
-Una sola cifra manda. El puntaje va a 230 px con un anillo que lo refuerza, y
-nada más compite con él: ni segundo número, ni barras, ni la matriz de casos.
-Debajo, la franja, la limitación raíz y el reto; al pie, la llamada y el
-dominio.
+Mientras se genera, un esqueleto con la proporción `1080 / 1920` ya reservada
+evita que la página pegue un salto de 600 px cuando la imagen aterriza.
 
-El **reto está escrito en primera persona** porque lo publica el usuario, no la
-marca: "Mi negocio digital ya funciona como empresa. ¿El tuyo aguanta la
-comparación?". Lo elige la franja de puntuación:
+### La escalera de metales, y por qué se detiene en el oro
 
-| Puntaje | Franja | El reto habla de |
+| Puntaje | Metal | Titular (lo publica el usuario) | Reto |
+|---|---|---|---|
+| 75–100 | **Oro** | Mi negocio no depende de mi estado de ánimo | ¿Cuánto aguanta el tuyo sin ti? |
+| 55–74 | **Plata** | Mi desorden factura bien. Mi sistema no existe | ¿Tu número le gana al mío? |
+| 35–54 | **Bronce** | Hago mucho y todavía no sé qué funciona | ¿Vendes por sistema o por suerte? |
+| 0–34 | **Acero** | Prefiero un número incómodo que otro año a ciegas | ¿Te atreverías a publicar el tuyo? |
+
+**El test entrega como máximo ORO. El PLATINO es lo que vende Classroom
+Platinum.** Si el test regalara la cima, el programa se quedaría sin peldaño
+que ofrecer. Por eso la tarjeta y el programa comparten la misma escalera en
+vez de competir con dos.
+
+Cada metal tiñe **el arco del anillo y la cinta**, y nada más: la cifra y el
+resto del texto siguen en blanco. Es lo que hace que las cuatro se distingan de
+un vistazo cuando circulan juntas en un feed. Para volver al blanco de antes
+basta con quitar los `color` de `TARJETA.franjas`.
+
+La franja baja se llama **Acero**, no Hierro ni Principiante. El estatus de esa
+tarjeta sale del coraje de publicar un número incómodo, no de un logro: es la
+única forma de que la mitad inferior del embudo comparta en vez de esconderse,
+y sin esa mitad no hay bucle viral.
+
+### Lo que hay detrás de cada metal
+
+Los titulares afirman cosas en boca del usuario, así que ninguno puede decir
+algo que el motor no respalde. Recorriendo las 3.750 combinaciones:
+
+| Metal | Facturación mínima que cae ahí | Ritmos posibles |
 |---|---|---|
-| 75–100 | Fase de escalar | comparar con un negocio que ya funciona |
-| 55–74 | Fase de ordenar | facturar sin sistema todavía |
-| 35–54 | Fase de validar | tener negocio, no tener máquina |
-| 0–34 | Fase de arrancar | saber ya qué te frena |
+| Oro | 15.000 € – 40.000 € | nunca "atrapado" ni "inestable" |
+| Plata | 5.000 € – 15.000 € | todos |
+| Bronce | menos de 1.000 € | todos |
+| Acero | menos de 1.000 € | todos |
+
+De ahí salen dos decisiones:
+
+- **"Mi desorden factura bien" se sostiene** en Plata: por debajo de 5.000 € al
+  mes nadie llega a esa franja.
+- **En Bronce cabe quien factura menos de 1.000 €**, así que su titular no
+  puede afirmar ventas. El primer candidato, "Vendo todos los meses y todavía
+  no sé por qué", habría hecho mentir a esa parte de la franja delante de su
+  propia audiencia. Por eso dice "Hago mucho y todavía no sé qué funciona".
+
+### Por qué se lee como una medalla
+
+1. **Una sola cifra manda.** El puntaje a 194 px dentro del anillo. Ni segundo
+   número, ni barras, ni la matriz de casos.
+2. **La cinta del metal.** Una banderola con las puntas mordidas hacia dentro,
+   teñida con su metal. Es la pieza que convierte esto en un premio y no en un
+   chip de estado. Probé laurel a los lados y a este tamaño se leía como una
+   pluma: la banderola sola funciona mejor. Lleva ancho mínimo para que "ORO"
+   no salga diminuto al lado de "BRONCE".
+3. **El titular, en primera persona.** Lo publica el usuario, no la marca.
+4. **"Mi próximo desbloqueo" + la limitación raíz.** La debilidad enmarcada
+   como el siguiente nivel de un juego, que es lo que se puede enseñar sin
+   quedar mal.
+5. **El reto**, que interpela a quien la ve.
+6. **El enlace, en pastilla blanca sobre morado.** En una story nada es
+   pulsable, así que el dominio tiene que leerse de un vistazo y quedarse en la
+   cabeza. Antes era un gris pequeño al fondo y se perdía.
 
 La tarjeta **no dice si califica o no**. Nadie comparte un suspenso, y el dato
 que mueve al de enfrente es el número, no la puerta de Platinum.
+
+El bloque inferior —titular, desbloqueo y reto— **se mide y se centra** en la
+banda que queda entre la cinta y el pie. Con coordenadas fijas, un titular de
+dos líneas se comía el pie y uno corto dejaba un agujero de 250 px.
 
 ### Decisiones técnicas
 
@@ -239,12 +297,15 @@ que mueve al de enfrente es el número, no la puerta de Platinum.
 - **`navigator.share` con `canShare({files})` cuando existe**, que abre el menú
   nativo del móvil. Donde no existe —casi todo el escritorio—, el botón de
   compartir no se pinta y descargar pasa a ser la acción principal.
+- **Los botones de la medalla son morados, no naranjas.** La súper-CTA es única
+  por pieza y en esta pantalla le toca al botón de conversión del final.
 - **El lockup va en negativo**: la teja en blanco y el torii en morado. La teja
   morada original desaparecería sobre el fondo. El wordmark "Kunfupay" se
   compone en Plus Jakarta Sans, no con los trazos vectorizados del lockup
   oficial, porque en canvas no hay forma de heredar el archivo.
-- **Se esperan las fuentes antes de dibujar.** El canvas no espera a nadie: sin
-  ese `await`, la imagen salía con la tipografía del sistema y sin avisar.
+- **Se esperan las fuentes antes de dibujar**, pidiendo la familia sola. El
+  canvas no espera a nadie: sin ese `await`, la imagen salía con la tipografía
+  del sistema y sin avisar.
 - **El dominio del pie sale de la página**, sin parámetros ni `index.html`, así
   que es correcto en cualquier despliegue. Se puede fijar en `TARJETA.url`.
 
@@ -302,14 +363,39 @@ caso, escalón, limitación y si califica.
 - El logo devuelve a la portada sin salir de la página.
 - En móvil, la acción principal del paso del correo queda por encima de "Atrás".
 - Sin errores en consola.
-- La tarjeta, en las cuatro franjas y en el caso de e-commerce: se genera, se
-  ve en la vista previa y se descarga como JPEG válido de unos 165 KB.
-- Las diez capas de texto de la tarjeta miden su contraste real contra el
-  degradado del fondo: la más floja da 4,57:1, sobre un mínimo de 3:1.
-- La tarjeta se dibuja con Plus Jakarta Sans, comprobado midiendo el ancho del
+- La medalla, en los cuatro metales y en el caso de e-commerce: se genera, se
+  ve a tamaño completo y se descarga como JPEG válido de unos 170 KB.
+- Las once capas de texto de la medalla miden su contraste real contra el
+  degradado del fondo: la más floja da 4,61:1, sobre un mínimo de 3:1. Los
+  cuatro metales miden además el suyo contra el relleno de su propia cinta, y
+  el más justo, el bronce, da 4,17:1.
+- Lo que afirma cada titular, contrastado contra las 3.750 combinaciones: ver
+  la tabla de arriba. Así se descartó el titular de Bronce que hablaba de
+  vender todos los meses.
+- La medalla se dibuja con Plus Jakarta Sans, comprobado midiendo el ancho del
   texto contra el de una familia inexistente, no a ojo.
+- Con `getContext` roto a propósito, el anillo ocupa el sitio de la medalla, el
+  puntaje se sigue viendo y los botones de compartir desaparecen.
 - Las dos ramas de UTM, `calificado` y `descalificado`, con el score correcto.
 - El puntaje y el anillo se pintan aunque la pestaña esté en segundo plano.
+
+## Lo que conviene mirar antes de publicar
+
+La copy salió de un panel de cinco redactores y quince jueces, y dos de sus
+avisos ya están resueltos arriba con datos del motor. Quedan estos, que
+necesitan ojo humano:
+
+1. **Enseña las cuatro medallas juntas a cinco personas** y pregunta cuál es la
+   más baja. Acero contra Bronce no se ordena con la misma evidencia que oro,
+   plata y bronce entre sí; la cifra gigante ordena, pero conviene confirmarlo.
+2. **"¿Te atreverías a publicar el tuyo?"** es a la vez lo mejor y lo más
+   arriesgado del lote: entre iguales funciona, en otros nichos puede sonar a
+   pique adolescente. Pásalo por dos o tres creadores del perfil objetivo.
+3. **Sostén la escalera en todo el embudo.** Si en un correo o en una llamada
+   se dice que el test da "platino", se rompe el argumento comercial.
+4. **Mide la tasa de compartido por franja** las dos primeras semanas. Si Acero
+   no comparte, el problema no es la frase: es pedirle la story a quien acaba
+   de empezar.
 
 ## Pendiente
 

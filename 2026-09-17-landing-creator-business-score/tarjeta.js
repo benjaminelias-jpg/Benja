@@ -127,10 +127,14 @@
     ctx.restore();
   }
 
-  /** Anillo de un solo valor. La pista es el mismo blanco a menor opacidad,
-      no un gris ajeno, para que el estado se lea en toda la circunferencia. */
-  function anillo(ctx, cy, puntaje) {
-    const R = 252, GROSOR = 46;
+  /** Anillo de un solo valor: la cara de la medalla. La pista es el mismo
+      blanco a menor opacidad, no un gris ajeno, para que el estado se lea en
+      toda la circunferencia. */
+  function anillo(ctx, cy, puntaje, color) {
+    const R = 208, GROSOR = 40;
+    // El arco lleva el metal; la cifra se queda en blanco, que es la que
+    // tiene que leerse a tamaño miniatura en un feed.
+    const tinta = color || TINTA;
 
     ctx.save();
     ctx.lineWidth = GROSOR;
@@ -139,7 +143,7 @@
     ctx.arc(W / 2, cy, R, 0, Math.PI * 2);
     ctx.stroke();
 
-    ctx.strokeStyle = TINTA;
+    ctx.strokeStyle = tinta;
     ctx.lineCap = 'round';
     ctx.beginPath();
     ctx.arc(W / 2, cy, R, -Math.PI / 2, -Math.PI / 2 + Math.PI * 2 * (puntaje / 100));
@@ -151,36 +155,82 @@
     ctx.fillStyle = TINTA;
     // Cifra protagonista: una sola por pieza, con las cifras proporcionales
     // de la fuente, que a este tamaño se ven mucho mejor que las tabulares.
-    ctx.font = fuente(800, 230);
+    ctx.font = fuente(800, 194);
     ctx.textBaseline = 'middle';
-    ctx.fillText(String(puntaje), W / 2, cy - 18);
+    ctx.fillText(String(puntaje), W / 2, cy - 14);
 
-    ctx.font = fuente(600, 34);
+    ctx.font = fuente(600, 31);
     ctx.fillStyle = TINTA_SUAVE;
-    ctx.fillText('sobre 100', W / 2, cy + 132);
+    ctx.fillText('sobre 100', W / 2, cy + 112);
     ctx.restore();
   }
 
-  function pie(ctx, y, url) {
-    const ALTO = 172, MARGEN = 96;
+  /** La cinta del rango: una banderola con las puntas mordidas hacia dentro,
+      que es lo que hace que esto se lea como una medalla y no como un chip.
+
+      Sin adorno dentro: probé laurel a ambos lados y a este tamaño se leía
+      como una pluma. La banderola sola ya dice premio. */
+  function cinta(ctx, cy, texto, color) {
+    const ALTO = 98, MUESCA = 34, TRACKING = 9, ANCHO_MINIMO = 430;
+    const tinta = color || TINTA;
 
     ctx.save();
-    rectRedondo(ctx, MARGEN, y, W - MARGEN * 2, ALTO, 40);
-    ctx.fillStyle = 'rgba(255,255,255,.10)';
-    ctx.fill();
-    ctx.lineWidth = 2;
-    ctx.strokeStyle = 'rgba(255,255,255,.26)';
-    ctx.stroke();
+    ctx.font = fuente(800, 40);
+    const chars = [...texto];
+    const anchoTexto = chars.reduce((a, c) => a + ctx.measureText(c).width, 0) + TRACKING * (chars.length - 1);
+    // El ancho mínimo evita que "ORO" salga con una banderola diminuta y
+    // "BRONCE" con una enorme: las cuatro medallas tienen que pesar igual.
+    const ancho = Math.min(W - 140, Math.max(ANCHO_MINIMO, anchoTexto + 200));
+    const x = (W - ancho) / 2, y = cy - ALTO / 2;
 
+    ctx.beginPath();
+    ctx.moveTo(x, y);
+    ctx.lineTo(x + ancho, y);
+    ctx.lineTo(x + ancho - MUESCA, y + ALTO / 2);
+    ctx.lineTo(x + ancho, y + ALTO);
+    ctx.lineTo(x, y + ALTO);
+    ctx.lineTo(x + MUESCA, y + ALTO / 2);
+    ctx.closePath();
+    ctx.globalAlpha = 0.16;
+    ctx.fillStyle = tinta;
+    ctx.fill();
+    ctx.globalAlpha = 0.55;
+    ctx.lineWidth = 2.5;
+    ctx.strokeStyle = tinta;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    ctx.fillStyle = tinta;
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
-    ctx.fillStyle = TINTA;
-    ctx.font = fuente(700, 39);
-    ctx.fillText(TARJETA.cta, W / 2, y + 66);
+    textoEspaciado(ctx, texto, W / 2, cy + 2, TRACKING);
+    ctx.restore();
+  }
 
-    ctx.font = fuente(500, 32);
+  /** Pie: la llamada y, debajo, el dominio en una pastilla blanca. En una
+      story nada es pulsable, así que el enlace tiene que leerse de un vistazo
+      y quedarse en la cabeza: por eso invierte el color en vez de ser un
+      gris pequeño al fondo. */
+  function pie(ctx, yCta, url) {
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    ctx.font = fuente(600, 36);
     ctx.fillStyle = TINTA_SUAVE;
-    ctx.fillText(url, W / 2, y + 116);
+    ctx.fillText(TARJETA.cta, W / 2, yCta);
+
+    const ALTO = 104;
+    ctx.font = fuente(800, 42);
+    const ancho = Math.min(W - 120, ctx.measureText(url).width + 96);
+    const x = (W - ancho) / 2, y = yCta + 58;
+
+    rectRedondo(ctx, x, y, ancho, ALTO, ALTO / 2);
+    ctx.fillStyle = TINTA;
+    ctx.fill();
+
+    ctx.fillStyle = MORADO_700;
+    ctx.fillText(url, W / 2, y + ALTO / 2 + 2);
     ctx.restore();
   }
 
@@ -197,7 +247,9 @@
     try {
       const u = new URL(window.location.href);
       const ruta = u.pathname.replace(/index\.html?$/i, '');
-      return (u.host + ruta).replace(/\/$/, '') || u.host;
+      // Sin `www.`: en una story el dominio se lee de un vistazo o no se lee.
+      const host = u.host.replace(/^www\./i, '');
+      return (host + ruta).replace(/\/$/, '') || host;
     } catch (err) {
       return 'kunfupay.com';
     }
@@ -228,37 +280,73 @@
     const franja = franjaDe(res.puntaje);
 
     fondo(ctx);
-    lockup(ctx, 104);
+    lockup(ctx, 90);
 
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    ctx.font = fuente(700, 27);
-    ctx.fillStyle = TINTA_TENUE;
-    textoEspaciado(ctx, TARJETA.eyebrow.toUpperCase(), W / 2, 296, 6);
-
-    anillo(ctx, 720, res.puntaje);
-
-    ctx.font = fuente(800, 62);
-    ctx.fillStyle = TINTA;
-    ctx.fillText(franja.etiqueta, W / 2, 1090);
-
     ctx.font = fuente(700, 26);
     ctx.fillStyle = TINTA_TENUE;
-    textoEspaciado(ctx, 'MI LIMITACIÓN RAÍZ', W / 2, 1194, 5);
+    textoEspaciado(ctx, TARJETA.eyebrow.toUpperCase(), W / 2, 258, 6);
 
-    ctx.font = fuente(700, 44);
+    const Y_CINTA = 1000;
+    anillo(ctx, 610, res.puntaje, franja.color);
+    cinta(ctx, Y_CINTA, franja.medalla.toUpperCase(), franja.color);
+
+    /* El bloque de texto se mide antes de pintarlo y se centra en la banda que
+       queda entre la cinta y el pie. Con coordenadas fijas, un titular de dos
+       líneas o una limitación larga se comían el pie, y uno corto dejaba un
+       agujero de 250 px. */
+    const ALTO_TITULAR = 74, ALTO_DESBLOQUEO = 54, ALTO_RETO = 50;
+    const HUECO_EYEBROW = 78, HUECO_DESBLOQUEO = 58, HUECO_RETO = 74;
+
+    ctx.font = fuente(800, 58);
+    const lTitular = lineas(ctx, franja.titular, W - 150);
+    ctx.font = fuente(700, 42);
+    const lDesbloqueo = lineas(ctx, res.caso.limitacion, W - 200);
+    ctx.font = fuente(500, 38);
+    const lReto = lineas(ctx, franja.reto, W - 180);
+
+    const altoBloque = lTitular.length * ALTO_TITULAR + HUECO_EYEBROW + HUECO_DESBLOQUEO
+      + lDesbloqueo.length * ALTO_DESBLOQUEO + HUECO_RETO + lReto.length * ALTO_RETO;
+
+    const Y_CTA = H - 244;
+    const bandaArriba = Y_CINTA + 90, bandaAbajo = Y_CTA - 80;
+    let y = bandaArriba + Math.max(0, (bandaAbajo - bandaArriba - altoBloque) / 2);
+
+    // El titular es la frase que publica el usuario: lo segundo que se lee
+    // después del número, y lo que decide si el de enfrente se mide.
+    ctx.font = fuente(800, 58);
     ctx.fillStyle = TINTA;
-    const finLimitacion = bloque(ctx, res.caso.limitacion, 1256, W - 200, 58);
+    lTitular.forEach((l, i) => ctx.fillText(l, W / 2, y + i * ALTO_TITULAR));
+    y += lTitular.length * ALTO_TITULAR + HUECO_EYEBROW;
 
-    ctx.font = fuente(500, 42);
+    ctx.font = fuente(700, 25);
+    ctx.fillStyle = TINTA_TENUE;
+    textoEspaciado(ctx, TARJETA.etiquetaDesbloqueo.toUpperCase(), W / 2, y, 5);
+    y += HUECO_DESBLOQUEO;
+
+    ctx.font = fuente(700, 42);
+    ctx.fillStyle = TINTA;
+    lDesbloqueo.forEach((l, i) => ctx.fillText(l, W / 2, y + i * ALTO_DESBLOQUEO));
+    y += lDesbloqueo.length * ALTO_DESBLOQUEO + HUECO_RETO;
+
+    ctx.font = fuente(500, 38);
     ctx.fillStyle = TINTA_SUAVE;
-    bloque(ctx, franja.reto, finLimitacion + 92, W - 180, 58);
+    lReto.forEach((l, i) => ctx.fillText(l, W / 2, y + i * ALTO_RETO));
 
-    pie(ctx, H - 292, urlVisible());
+    pie(ctx, Y_CTA, urlVisible());
 
     return canvas;
   }
 
-  window.CBSTarjeta = { dibujar, franjaDe, urlVisible };
+  /** El texto que acompaña a la imagen en el menú nativo de compartir. */
+  function textoParaCompartir(puntaje) {
+    const url = urlVisible();
+    return typeof puntaje === 'number'
+      ? `${puntaje}/100 en mi Creator Business Score. ${TARJETA.cta}: ${url}`
+      : `${TARJETA.cta}: ${url}`;
+  }
+
+  window.CBSTarjeta = { dibujar, franjaDe, urlVisible, textoParaCompartir };
 })();

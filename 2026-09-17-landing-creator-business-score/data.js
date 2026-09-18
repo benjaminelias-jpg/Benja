@@ -289,10 +289,18 @@ const FUERA_DE_PERFIL = {
 };
 
 /* ------------------------------------------------------------
-   4 · TARJETA COMPARTIBLE
+   4 · LA MEDALLA COMPARTIBLE
    La imagen de 1080 × 1920 que se genera al terminar. El puntaje elige
-   una franja, y la franja pone la etiqueta y el reto que la acompañan.
-   El reto va en primera persona: lo escribe quien comparte, no la marca.
+   una franja, y la franja pone el metal, el titular y el reto.
+
+   LA ESCALERA ES DE METALES, y se detiene en el oro a propósito: el
+   PLATINO es lo que vende Classroom Platinum. Un test gratis no puede
+   entregar la cima, o el programa se queda sin peldaño que ofrecer.
+
+   El titular va en PRIMERA PERSONA: lo publica el usuario en su story,
+   no lo dice la marca. Y ninguno afirma nada que el motor no respalde
+   (ver "Lo que hay detrás de cada metal" en el README).
+
    Las franjas se leen de mayor a menor: gana la primera que encaja.
    ------------------------------------------------------------ */
 const TARJETA = {
@@ -300,15 +308,43 @@ const TARJETA = {
   alto: 1920,
   fuente: 'Plus Jakarta Sans',
   eyebrow: 'Creator Business Score',
-  cta: 'Mide tu negocio gratis en 2 minutos',
+  etiquetaDesbloqueo: 'Mi próximo desbloqueo',
+  cta: 'Gánate tu medalla en 5 preguntas',
+  /* `color` tiñe SOLO la cinta del rango: el borde, el relleno y el texto.
+     Todo lo demás sigue en blanco sobre el morado de marca. Es lo que hace
+     que las cuatro medallas se distingan de un vistazo cuando circulan
+     juntas. Para volver al blanco de antes, basta con quitar los `color`. */
   /* Dominio que se imprime al pie. Si se deja en null se usa el de la
      página, sin parámetros, que es lo correcto en cualquier despliegue. */
   url: null,
   franjas: [
-    { desde: 75, etiqueta: 'Fase de escalar',  reto: 'Mi negocio digital ya funciona como empresa. ¿El tuyo aguanta la comparación?' },
-    { desde: 55, etiqueta: 'Fase de ordenar',  reto: 'Ya facturo, ahora toca ordenar la máquina. ¿Cuánto saca el tuyo?' },
-    { desde: 35, etiqueta: 'Fase de validar',  reto: 'Tengo negocio, todavía no tengo sistema. A ver qué puntuación sacas tú.' },
-    { desde: 0,  etiqueta: 'Fase de arrancar', reto: 'Estoy en la casilla de salida y ya sé qué me frena. ¿Y a ti qué te frena?' }
+    {
+      desde: 75, medalla: 'Oro', color: '#f7cf6b',
+      titular: 'Mi negocio no depende de mi estado de ánimo',
+      reto: '¿Cuánto aguanta el tuyo sin ti?'
+    },
+    {
+      /* "Factura bien" se sostiene: por debajo de 5.000 € al mes nadie
+         alcanza esta franja. Comprobado sobre las 3.750 combinaciones. */
+      desde: 55, medalla: 'Plata', color: '#e2e8f4',
+      titular: 'Mi desorden factura bien. Mi sistema no existe',
+      reto: '¿Tu número le gana al mío?'
+    },
+    {
+      /* Aquí SÍ cabe quien factura menos de 1.000 €, así que el titular no
+         puede afirmar ventas. El anterior, "Vendo todos los meses", habría
+         hecho mentir a esa parte de la franja delante de su audiencia. */
+      desde: 35, medalla: 'Bronce', color: '#eaa87a',
+      titular: 'Hago mucho y todavía no sé qué funciona',
+      reto: '¿Vendes por sistema o por suerte?'
+    },
+    {
+      /* El estatus sale del coraje, no del logro: es la única forma de que
+         la franja baja se comparta en lugar de esconderse. */
+      desde: 0, medalla: 'Acero', color: '#c6cee0',
+      titular: 'Prefiero un número incómodo que otro año a ciegas',
+      reto: '¿Te atreverías a publicar el tuyo?'
+    }
   ]
 };
 

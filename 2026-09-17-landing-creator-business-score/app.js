@@ -376,7 +376,8 @@
   /* ============================================================
      4b · TARJETA COMPARTIBLE
      ============================================================ */
-  const resShare = $('#resShare'), sharePreview = $('#sharePreview');
+  const medalla = $('#medalla'), medallaAcciones = $('#medallaAcciones');
+  const sharePreview = $('#sharePreview'), ringFallback = $('#ringFallback');
   const btnShare = $('#btnShare'), btnDownload = $('#btnDownload'), shareNote = $('#shareNote');
   /* JPEG, no PNG: la tarjeta es un degradado a pantalla completa y en PNG
      pesaba 2,2 MB. En JPEG de calidad alta baja a la décima parte, y las
@@ -390,6 +391,7 @@
      generar el PNG en medio rompe esa cadena. */
   let tarjetaBlob = null;
   let tarjetaUrl = null;
+  let tarjetaPuntaje = null;
 
   function puedeCompartirArchivos(blob) {
     if (!navigator.canShare || !navigator.share || !window.File) return false;
@@ -398,28 +400,43 @@
     } catch (err) { return false; }
   }
 
+  /** Si la medalla no se puede generar, el anillo ocupa su sitio. El puntaje
+      nunca puede depender de que el canvas funcione. */
+  function caerAlAnillo() {
+    medalla.hidden = true;
+    medallaAcciones.hidden = true;
+    ringFallback.hidden = false;
+  }
+
   async function prepararTarjeta(res) {
-    resShare.hidden = true;
+    medalla.hidden = false;
+    medalla.classList.remove('medalla--lista');
+    medallaAcciones.hidden = true;
+    ringFallback.hidden = true;
     btnShare.hidden = true;
+    sharePreview.removeAttribute('src');
     if (tarjetaUrl) { URL.revokeObjectURL(tarjetaUrl); tarjetaUrl = null; }
     tarjetaBlob = null;
 
-    if (typeof window.CBSTarjeta === 'undefined' || !window.HTMLCanvasElement) return;
+    if (typeof window.CBSTarjeta === 'undefined' || !window.HTMLCanvasElement) { caerAlAnillo(); return; }
 
     try {
       const canvas = await window.CBSTarjeta.dibujar(res);
       tarjetaBlob = await new Promise((ok) => canvas.toBlob(ok, TIPO_ARCHIVO, CALIDAD));
-      if (!tarjetaBlob) return;
+      if (!tarjetaBlob) { caerAlAnillo(); return; }
 
+      tarjetaPuntaje = res.puntaje;
       tarjetaUrl = URL.createObjectURL(tarjetaBlob);
       sharePreview.src = tarjetaUrl;
+      // La imagen lleva texto, así que el alt tiene que decir lo mismo que ella.
+      sharePreview.alt = `Tu medalla: ${res.puntaje} sobre 100, ${window.CBSTarjeta.franjaDe(res.puntaje).medalla}.`;
+      medalla.classList.add('medalla--lista');
+      medallaAcciones.hidden = false;
       btnShare.hidden = !puedeCompartirArchivos(tarjetaBlob);
       // Donde no hay menú nativo, descargar deja de ser la opción secundaria.
       btnDownload.className = 'btn ' + (btnShare.hidden ? 'btn--primary' : 'btn--ghost');
-      resShare.hidden = false;
     } catch (err) {
-      // Sin tarjeta, el resultado se sigue viendo entero: el bloque no aparece.
-      resShare.hidden = true;
+      caerAlAnillo();
     }
   }
 
@@ -442,7 +459,7 @@
       await navigator.share({
         files: [archivo],
         title: 'Mi Creator Business Score',
-        text: TARJETA.cta + ' · ' + window.CBSTarjeta.urlVisible()
+        text: window.CBSTarjeta.textoParaCompartir(tarjetaPuntaje)
       });
     } catch (err) {
       // El usuario canceló el menú, o el navegador lo rechazó: en el segundo
