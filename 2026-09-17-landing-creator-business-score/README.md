@@ -333,16 +333,31 @@ Esa fórmula no depende de cuánto valga el padding de `.result` —hoy un
 de esto se activa: ahí la medalla sigue siendo una columna de 380 px como
 antes, dentro de su tarjeta.
 
+**Sangra por arriba, pero abajo cierra.** Arranca pegada al borde superior
+(`padding-top: 0` en `.result`), y termina con las dos esquinas de abajo
+redondeadas y una sombra morada que la despega del blanco:
+
+```css
+border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+box-shadow: 0 20px 38px -14px rgba(115, 75, 252, .48),
+            0 8px 16px -8px rgba(13, 16, 24, .16);
+```
+
+Sin eso, la imagen terminaba en una línea plana contra el blanco, que se leía
+como un fallo de render y no como un borde. El `padding-top: 0` va atado a
+`vista-resultado`: si el canvas falla y sale el anillo, la cabecera vuelve y el
+contenido recupera su respiro superior.
+
 ### La cabecera desaparece en móvil, solo en el resultado
 
 La medalla ya lleva el logo de Classroom dentro de la propia imagen (ver
 `lockup()` en `tarjeta.js`). Repetirlo en la cabecera de la página era ruido,
 así que en móvil se oculta mientras se ve el resultado.
 
-Pero la cabecera era la única forma de volver al inicio desde ahí. Quitarla sin
-más habría dejado esa pantalla sin salida en móvil, así que se añadió
-`#btnVolverMovil`: un enlace de texto, oculto en escritorio, que hace
-exactamente lo mismo que el logo y solo aparece cuando la cabecera se oculta.
+**En móvil, el resultado no tiene vuelta al inicio.** La cabecera era la única,
+y se retiró también el enlace de texto que la sustituía, por encargo: la
+pantalla se queda solo con la medalla. Si alguna vez hace falta recuperarla, el
+sitio natural es el pie de página, que ya está ahí y no compite con la imagen.
 
 **La cabecera solo se oculta cuando la medalla existe de verdad.** Si el canvas
 falla y se cae al anillo (`caerAlAnillo()`), la clase `vista-resultado` que
@@ -419,11 +434,11 @@ caso, escalón, limitación y si califica.
 - Con `getContext` roto a propósito, el anillo ocupa el sitio de la medalla, el
   puntaje se sigue viendo, los botones de compartir desaparecen, y en móvil la
   cabecera se queda visible en vez de ocultarse.
-- En móvil: la medalla toca los dos bordes de la pantalla, `.result__score` no
-  pinta ni fondo ni sombra propios, y no hay scroll horizontal. Al volver al
-  inicio con `#btnVolverMovil` la cabecera reaparece; al entrar de nuevo al
-  resultado se oculta otra vez. En escritorio la cabecera nunca se oculta y la
-  medalla se queda en su columna de 380 px.
+- En móvil: la medalla arranca en `y = 0`, toca los dos bordes laterales,
+  cierra abajo con 24 px de radio y sombra, y no hay scroll horizontal. En el
+  caso del anillo de respaldo, `.result` recupera sus 24 px de padding
+  superior. En escritorio la cabecera nunca se oculta, la medalla se queda en
+  su columna de 380 px y mantiene el radio en las cuatro esquinas.
 - Las dos ramas de UTM, `calificado` y `descalificado`, con el score correcto.
 - El puntaje y el anillo se pintan aunque la pestaña esté en segundo plano.
 

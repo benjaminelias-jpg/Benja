@@ -416,15 +416,30 @@ main { flex: 1; display: flex; flex-direction: column; }
      funciona igual si `.result` cambia el suyo. */
   .result__score {
     background: none; border: none; box-shadow: none;
-    border-radius: 0; padding: 0 0 28px;
+    border-radius: 0; padding: 0 0 24px;
   }
   .medalla {
     width: 100vw; max-width: 100vw;
     margin: 0 calc(50% - 50vw);
-    border-radius: 0; box-shadow: none;
+    /* Sangra por arriba y por los lados, pero ABAJO cierra: esquinas
+       redondeadas y sombra. Antes terminaba en una línea plana contra el
+       blanco, que se leía como un fallo de render, no como un borde. */
+    border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
+    box-shadow: 0 20px 38px -14px rgba(115, 75, 252, .48),
+                0 8px 16px -8px rgba(13, 16, 24, .16);
   }
-  /* Los botones y la nota sí necesitan el respiro que el marco ya no da. */
-  .medalla__acciones { max-width: 100%; padding: 0 20px; }
+  /* Los botones y la nota sí necesitan el respiro que el marco ya no da.
+     El margen superior deja sitio a la sombra de la medalla. */
+  .medalla__acciones { max-width: 100%; padding: 0 20px; margin-top: 30px; }
+  .result__score .chip { margin: 28px 0 12px; }
+}
+
+/* Con la medalla en pantalla, arranca pegada al borde de arriba: es la
+   pantalla, no una tarjeta flotando en una franja blanca. Va atado a
+   `vista-resultado` porque si el canvas falla y sale el anillo, la cabecera
+   vuelve y el contenido sí necesita su respiro superior. */
+@media (max-width: 860px) {
+  body.vista-resultado .result { padding-top: 0; }
 }
 
 /* En móvil, en el resultado, la cabecera se oculta: la medalla ya lleva el
@@ -435,16 +450,6 @@ main { flex: 1; display: flex; flex-direction: column; }
   body.vista-resultado .topbar { display: none; }
 }
 
-/* El enlace de vuelta: invisible salvo en el hueco que abre la regla de
-   arriba. En escritorio el logo de la cabecera ya hace este trabajo. */
-.volver-inicio {
-  display: none; margin: 4px 0 0; padding: 14px 10px;
-  background: none; border: 0; font: inherit; font-weight: 600;
-  font-size: 14px; color: var(--text-muted); cursor: pointer;
-}
-.volver-inicio:hover { color: var(--text); }
-@media (max-width: 860px) {
-  body.vista-resultado .volver-inicio { display: inline-flex; align-self: center; }
 }
 
 @media (prefers-reduced-motion: reduce) {

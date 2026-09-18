@@ -238,13 +238,6 @@
     mostrarVista('landing');
   });
 
-  // Mismo destino que el logo: en móvil, con la cabecera oculta en el
-  // resultado, es la única forma de volver al inicio.
-  $('#btnVolverMovil').addEventListener('click', () => {
-    paso = 0;
-    mostrarVista('landing');
-  });
-
   $('#btnStart').addEventListener('click', () => {
     paso = 0;
     respuestas.fill(null);
