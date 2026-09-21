@@ -502,10 +502,20 @@ main { flex: 1; display: flex; flex-direction: column; }
      imagen real. Como `.medalla` ya recorta con `overflow: hidden`, lo que
      queda fuera de la máscara descubre el blanco de la página, no un borde
      duro — y el destello (`::after`) se apaga con ella, así que tampoco cruza
-     la zona ya desvanecida. */
+     la zona ya desvanecida.
+
+     El 99 % no es al tanteo: en el recorte más apretado (el del móvil más
+     bajo) la última línea de texto —el reto— termina siempre en el mismo
+     píxel del lienzo, y deja un hueco vacío de solo 24 px hasta el borde del
+     recorte. Comprobado con casos reales distintos: siempre el mismo hueco,
+     porque el bloque de texto de la tarjeta se centra y se ajusta para caber
+     siempre en la misma franja. El difuminado arranca ya entrado ese hueco
+     (con margen de sobra sobre la letra) y no antes: así se ve el máximo de
+     imagen posible y nunca tapa una letra, ni "Ventas y conversión" ni
+     ninguna otra línea del reto. */
   .medalla {
-    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
-    mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 99%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 99%, transparent 100%);
   }
   /* Los botones y la nota sí necesitan el respiro que el marco ya no da.
      El margen superior deja sitio a la sombra de la medalla. */
