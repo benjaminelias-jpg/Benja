@@ -231,6 +231,7 @@ const CASOS = {
     bloque: 'Bloque 3 · 5.000 € – 15.000 € al mes',
     escalon: 3,
     limitacion: 'Product-market fit y conciencia',
+    desbloqueo: 'Product-market fit y visibilidad',
     titular: 'Tu mercado todavía no percibe el retorno de contratarte',
     diagnostico: 'Tu negocio genera tracción esporádica, pero tu limitación número uno es la alineación entre el product-market fit y el mensaje de marketing. Tu audiencia no percibe de inmediato el retorno que obtendrá al contratarte.',
     x: 'Bajo nivel de conciencia del prospecto sobre tu solución, y falta de claridad en el empaquetado de la oferta.',
@@ -246,6 +247,8 @@ const CASOS = {
     bloque: 'Bloque 4 · Menos de 5.000 € al mes',
     escalon: 1,
     limitacion: 'Mindset y optimización personal',
+    /* En la tarjeta compartible se nombra al negocio, no a la persona. */
+    desbloqueo: 'Hábitos y sistema de trabajo',
     titular: 'El motor del negocio eres tú, y todavía no está a punto',
     diagnostico: 'Tu negocio está en etapa de arranque o reinicio. Tu limitación número uno es el mindset y la optimización personal del fundador. Intentar invertir en publicidad pagada, agencias o herramientas complejas en este punto provocará abrumamiento y pérdida de capital.',
     x: 'Tu vida personal, hábitos, salud y descanso no están optimizados al 95 %. Escalar en este estado equivale a inyectar esteroides a un cuerpo obeso.',
@@ -310,6 +313,7 @@ const TARJETA = {
   eyebrow: 'Creator Business Score',
   etiquetaDesbloqueo: 'Mi próximo desbloqueo',
   cta: 'Gánate tu medalla en 5 preguntas',
+  marcaPie: 'Classroom Platinum by Kunfupay',
   /* El render 3D de la medalla, en cromo neutro: un solo archivo que la
      tarjeta tiñe con el color de cada metal. `diametro` es el ancho al que
      se dibuja la moneda en la tarjeta de 1080 px; la posición de la moneda
@@ -320,7 +324,7 @@ const TARJETA = {
   medalla3d: {
     src: 'assets/medalla-3d.webp',
     respaldo: 'assets/medalla-3d.png',
-    diametro: 540,
+    diametro: 500,
     tinte: 'color'
   },
   /* El quinto peldaño de la pista de niveles. No se puede ganar en el test:
@@ -333,7 +337,7 @@ const TARJETA = {
   /* Texto de la pastilla del pie. Antes era el dominio de la página; ahora
      es fijo, así que la tarjeta no delata en qué entorno se generó
      (localhost, staging...). Cambialo aquí si hace falta otro texto. */
-  url: 'Classroom Platinum by Kunfupay',
+  url: null,
   franjas: [
     {
       desde: 75, medalla: 'Oro', color: '#f7cf6b',
@@ -344,21 +348,24 @@ const TARJETA = {
       /* "Factura bien" se sostiene: por debajo de 5.000 € al mes nadie
          alcanza esta franja. Comprobado sobre las 3.750 combinaciones. */
       desde: 55, medalla: 'Plata', color: '#e2e8f4',
-      titular: 'Mi desorden factura bien. Mi sistema no existe',
+      titular: 'Mi desorden factura bien. Mi sistema, todavía no',
       reto: '¿Tu número le gana al mío?'
     },
     {
       /* Aquí SÍ cabe quien factura menos de 1.000 €, así que el titular no
          puede afirmar ventas. El anterior, "Vendo todos los meses", habría
          hecho mentir a esa parte de la franja delante de su audiencia. */
-      desde: 35, medalla: 'Bronce', color: '#eaa87a',
+      desde: 35, medalla: 'Bronce', color: '#dd9a62',
       titular: 'Hago mucho y todavía no sé qué funciona',
       reto: '¿Vendes por sistema o por suerte?'
     },
     {
       /* El estatus sale del coraje, no del logro: es la única forma de que
          la franja baja se comparta en lugar de esconderse. */
-      desde: 0, medalla: 'Acero', color: '#b4bdd2',
+      /* `sombra` oscurece SOLO la moneda (una pasada de multiply). Hace falta
+         porque el tinte `color` conserva la luminancia del cromo: un gris más
+         oscuro en `color` no oscurece nada, y plata y acero salían iguales. */
+      desde: 0, medalla: 'Acero', color: '#b4bdd2', sombra: 0.2,
       titular: 'Prefiero un número incómodo que otro año a ciegas',
       reto: '¿Te atreverías a publicar el tuyo?'
     }

@@ -94,7 +94,7 @@
   function rejilla(ctx) {
     const PASO = 96;
     ctx.save();
-    ctx.strokeStyle = 'rgba(255,255,255,.055)';
+    ctx.strokeStyle = 'rgba(255,255,255,.085)';
     ctx.lineWidth = 1.5;
     ctx.setLineDash([10, 14]);
     ctx.beginPath();
@@ -125,9 +125,7 @@
   /** Motas de luz alrededor de la medalla. Posiciones fijas, no aleatorias:
       la misma puntuación debe dar siempre la misma imagen. */
   const MOTAS = [
-    [180, 380, 3.5, .55], [900, 330, 2.5, .45], [130, 720, 2, .35], [960, 760, 3, .5],
-    [250, 900, 2.5, .4], [860, 880, 2, .35], [330, 300, 2, .3], [900, 296, 3.5, .5],
-    [110, 560, 2.5, .3], [975, 560, 2, .4], [420, 240, 1.8, .35], [690, 950, 2.2, .3]
+    [215, 395, 3.2, .34], [875, 350, 2.4, .30], [160, 690, 2.2, .26], [920, 720, 2.8, .32], [300, 850, 2.2, .24]
   ];
   function motas(ctx, color) {
     ctx.save();
@@ -139,6 +137,22 @@
       ctx.fillStyle = g;
       ctx.beginPath(); ctx.arc(x, y, r * 4, 0, Math.PI * 2); ctx.fill();
     });
+    ctx.restore();
+  }
+
+  /** La palabra del metal, gigante y casi transparente, detrás de la moneda:
+      es lo que en la referencia hace el "Ads" tras el cohete. Da profundidad
+      (la moneda la tapa) y nombra el nivel sin otro rótulo. */
+  function palabraFantasma(ctx, cy, texto, color) {
+    ctx.save();
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    let tam = 340;
+    ctx.font = fuente(800, tam);
+    const ancho = ctx.measureText(texto).width;
+    if (ancho > 1000) { tam = Math.floor(tam * 1000 / ancho); ctx.font = fuente(800, tam); }
+    ctx.fillStyle = hexA(color || '#ffffff', .11);
+    ctx.fillText(texto, W / 2 + 40, cy - 30);
     ctx.restore();
   }
 
@@ -241,72 +255,29 @@
     ctx.restore();
   }
 
-  /** La cinta del rango: una banderola con las puntas mordidas hacia dentro,
-      que es lo que hace que esto se lea como una medalla y no como un chip.
-
-      Sin adorno dentro: probé laurel a ambos lados y a este tamaño se leía
-      como una pluma. La banderola sola ya dice premio. */
-  function cinta(ctx, cy, texto, color) {
-    const ALTO = 98, MUESCA = 34, TRACKING = 9, ANCHO_MINIMO = 430;
-    const tinta = color || TINTA;
-
+  /** Pie: un chip fantasma de dos líneas, marca arriba y llamada debajo.
+      Antes era una pastilla blanca opaca que parecía un botón y competía con
+      la súper-CTA real de la página; y quedaba bajo la interfaz de Instagram. */
+  function pie(ctx, yAbajo) {
+    const ALTO = 112, marca = TARJETA.marcaPie || urlVisible(), cta = TARJETA.cta;
     ctx.save();
-    ctx.font = fuente(800, 40);
-    const chars = [...texto];
-    const anchoTexto = chars.reduce((a, c) => a + ctx.measureText(c).width, 0) + TRACKING * (chars.length - 1);
-    // El ancho mínimo evita que "ORO" salga con una banderola diminuta y
-    // "BRONCE" con una enorme: las cuatro medallas tienen que pesar igual.
-    const ancho = Math.min(W - 140, Math.max(ANCHO_MINIMO, anchoTexto + 200));
-    const x = (W - ancho) / 2, y = cy - ALTO / 2;
-
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.lineTo(x + ancho, y);
-    ctx.lineTo(x + ancho - MUESCA, y + ALTO / 2);
-    ctx.lineTo(x + ancho, y + ALTO);
-    ctx.lineTo(x, y + ALTO);
-    ctx.lineTo(x + MUESCA, y + ALTO / 2);
-    ctx.closePath();
-    ctx.globalAlpha = 0.16;
-    ctx.fillStyle = tinta;
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.font = fuente(800, 36);
+    const ancho = Math.min(W - 120, Math.max(ctx.measureText(marca).width, (ctx.font = fuente(500, 29), ctx.measureText(cta).width)) + 96);
+    const x = (W - ancho) / 2, y = yAbajo - ALTO;
+    rectRedondo(ctx, x, y, ancho, ALTO, 30);
+    ctx.fillStyle = 'rgba(255,255,255,.11)';
     ctx.fill();
-    ctx.globalAlpha = 0.55;
-    ctx.lineWidth = 2.5;
-    ctx.strokeStyle = tinta;
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = 'rgba(255,255,255,.32)';
     ctx.stroke();
-    ctx.globalAlpha = 1;
-
-    ctx.fillStyle = tinta;
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-    textoEspaciado(ctx, texto, W / 2, cy + 2, TRACKING);
-    ctx.restore();
-  }
-
-  /** Pie: la llamada y, debajo, el dominio en una pastilla blanca. En una
-      story nada es pulsable, así que el enlace tiene que leerse de un vistazo
-      y quedarse en la cabeza: por eso invierte el color en vez de ser un
-      gris pequeño al fondo. */
-  function pie(ctx, yCta, url) {
-    ctx.save();
-    ctx.textAlign = 'center';
-    ctx.textBaseline = 'middle';
-
-    ctx.font = fuente(600, 36);
-    ctx.fillStyle = TINTA_SUAVE;
-    ctx.fillText(TARJETA.cta, W / 2, yCta);
-
-    const ALTO = 104;
-    ctx.font = fuente(800, 42);
-    const ancho = Math.min(W - 120, ctx.measureText(url).width + 96);
-    const x = (W - ancho) / 2, y = yCta + 58;
-
-    rectRedondo(ctx, x, y, ancho, ALTO, ALTO / 2);
     ctx.fillStyle = TINTA;
-    ctx.fill();
-
-    ctx.fillStyle = MORADO_700;
-    ctx.fillText(url, W / 2, y + ALTO / 2 + 2);
+    ctx.font = fuente(800, 36);
+    ctx.fillText(marca, W / 2, y + 40);
+    ctx.fillStyle = TINTA_SUAVE;
+    ctx.font = fuente(500, 29);
+    ctx.fillText(cta, W / 2, y + 80);
     ctx.restore();
   }
 
@@ -357,8 +328,10 @@
 
   /** Dibuja el render, teñido con el color del metal, con la moneda centrada
       en (W/2, cy) y `D` píxeles de ancho. Devuelve el centro real de la cara. */
-  function medalla3D(ctx, cy, D, color) {
+  function medalla3D(ctx, cy, D, franja) {
     const img = medallaImg;
+    const color = franja && franja.color;
+    const sombra = (franja && franja.sombra) || 0;
     const caja = medirMedalla(img);
     const esc = D / caja.w;
     const cw = Math.ceil(img.naturalWidth * esc), ch = Math.ceil(img.naturalHeight * esc);
@@ -366,12 +339,26 @@
     const c = document.createElement('canvas'); c.width = cw; c.height = ch;
     const g = c.getContext('2d');
     g.drawImage(img, 0, 0, cw, ch);
+    let tocado = false;
     if (color && TARJETA.medalla3d.tinte) {
       // El modo 'color' conserva la luminancia del cromo (brillos, sombras,
       // relieve) y le pone el tono y la saturación del metal.
       g.globalCompositeOperation = TARJETA.medalla3d.tinte;
       g.fillStyle = color;
       g.fillRect(0, 0, cw, ch);
+      tocado = true;
+    }
+    if (sombra > 0) {
+      // Y como 'color' no toca la luminancia, el metal que debe verse más
+      // oscuro (el acero frente al plata) se oscurece aparte, con multiply.
+      g.globalCompositeOperation = 'multiply';
+      g.fillStyle = `rgba(0,0,0,${sombra})`;
+      g.fillRect(0, 0, cw, ch);
+      tocado = true;
+    }
+    if (tocado) {
+      // Los rellenos han pintado también el fondo transparente: se recorta
+      // otra vez a la silueta de la moneda.
       g.globalCompositeOperation = 'destination-in';
       g.drawImage(img, 0, 0, cw, ch);
       g.globalCompositeOperation = 'source-over';
@@ -419,8 +406,8 @@
     ctx.fillStyle = TINTA_GRABADO;
     ctx.fillText(num, cx, cy - 10);
 
-    ctx.font = fuente(700, 28);
-    ctx.lineWidth = 2.5;
+    ctx.font = fuente(700, 34);
+    ctx.lineWidth = 3;
     ctx.strokeStyle = 'rgba(255,255,255,.55)';
     ctx.strokeText('sobre 100', cx, cy + 114);
     ctx.fillStyle = hexA(TINTA_GRABADO, .85);
@@ -439,10 +426,15 @@
 
     ctx.save();
     ctx.lineCap = 'round';
-    // Carril completo, apagado
+    // Carril completo, apagado. El último tramo, hacia el Platino, va
+    // discontinuo: es otra puerta, no un peldaño pendiente del test.
     ctx.strokeStyle = 'rgba(255,255,255,.16)';
     ctx.lineWidth = 4;
-    ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x0 + (nodos.length - 1) * PASO, y); ctx.stroke();
+    ctx.beginPath(); ctx.moveTo(x0, y); ctx.lineTo(x0 + (nodos.length - 2) * PASO, y); ctx.stroke();
+    ctx.setLineDash([6, 9]);
+    ctx.strokeStyle = 'rgba(255,255,255,.34)';
+    ctx.beginPath(); ctx.moveTo(x0 + (nodos.length - 2) * PASO + 18, y); ctx.lineTo(x0 + (nodos.length - 1) * PASO - 18, y); ctx.stroke();
+    ctx.setLineDash([]);
     // Tramo recorrido, del color del metal
     if (idx > 0) {
       ctx.strokeStyle = hexA(franja.color || '#ffffff', .85);
@@ -455,10 +447,10 @@
       ctx.textBaseline = 'middle';
 
       if (nd.bloqueado) {
-        ctx.strokeStyle = 'rgba(255,255,255,.35)';
-        ctx.lineWidth = 3;
+        ctx.strokeStyle = 'rgba(255,255,255,.6)';
+        ctx.lineWidth = 2.5;
         ctx.beginPath(); ctx.arc(x, y, 15, 0, Math.PI * 2); ctx.stroke();
-        candado(ctx, x, y, 'rgba(255,255,255,.75)');
+        candado(ctx, x, y, 'rgba(255,255,255,.92)');
       } else if (i < idx) {
         ctx.fillStyle = hexA(franja.color || '#ffffff', .85);
         ctx.beginPath(); ctx.arc(x, y, 11, 0, Math.PI * 2); ctx.fill();
@@ -478,9 +470,9 @@
         ctx.beginPath(); ctx.arc(x, y, 11, 0, Math.PI * 2); ctx.stroke();
       }
 
-      ctx.font = fuente(i === idx ? 800 : 700, 21);
-      ctx.fillStyle = i === idx ? TINTA : (nd.bloqueado ? 'rgba(255,255,255,.5)' : TINTA_TENUE);
-      textoEspaciado(ctx, nd.nombre.toUpperCase(), x, y + 46, 2.5);
+      ctx.font = fuente(i === idx ? 800 : 700, i === idx ? 30 : 27);
+      ctx.fillStyle = i === idx ? TINTA : (nd.bloqueado ? 'rgba(255,255,255,.8)' : TINTA_TENUE);
+      textoEspaciado(ctx, nd.nombre.toUpperCase(), x, y + 50, 1.5);
     });
     ctx.restore();
   }
@@ -541,7 +533,7 @@
     const ctx = canvas.getContext('2d');
     const franja = franjaDe(res.puntaje);
     const D = TARJETA.medalla3d.diametro;
-    const CY_MEDALLA = 566;   // la moneda arranca en 296: no pisa el rótulo de arriba
+    const CY_MEDALLA = 560;   // la moneda va de 310 a 810: no pisa el rótulo de arriba
 
     fondo(ctx);
     rejilla(ctx);
@@ -554,38 +546,39 @@
     ctx.fillStyle = TINTA_TENUE;
     textoEspaciado(ctx, TARJETA.eyebrow.toUpperCase(), W / 2, 234, 6);
 
+    palabraFantasma(ctx, CY_MEDALLA, franja.medalla.toUpperCase(), franja.color);
     motas(ctx, franja.color);
 
     if (medallaImg) {
       sombraContacto(ctx, CY_MEDALLA, D);
-      const centro = medalla3D(ctx, CY_MEDALLA, D, franja.color);
+      const centro = medalla3D(ctx, CY_MEDALLA, D, franja);
       numeroGrabado(ctx, centro.cx, centro.cy, res.puntaje);
     } else {
-      // Sin render, el anillo plano de siempre: la tarjeta nunca sale sin número.
       anillo(ctx, CY_MEDALLA, res.puntaje, franja.color);
     }
 
-    const Y_CINTA = CY_MEDALLA + D / 2 + 130;             // 966
-    cinta(ctx, Y_CINTA, franja.medalla.toUpperCase(), franja.color);
-    const Y_PISTA = Y_CINTA + 100;                        // 1066
+    const Y_PISTA = CY_MEDALLA + D / 2 + 130;             // 940
     pistaNiveles(ctx, Y_PISTA, franja);
 
-    /* El bloque de texto se mide antes de pintarlo y se centra en la banda que
-       queda entre la pista de niveles y el pie. Si no cabe, primero se aprietan
-       los huecos y después baja el cuerpo del titular. */
-    const Y_CTA = H - 236;
-    const bandaArriba = Y_PISTA + 108, bandaAbajo = Y_CTA - 72;
+    /* Todo lo que importa vive dentro de la zona segura de Instagram: por
+       debajo de los 250 px de arriba y por encima de los ~280 de abajo. El pie
+       termina en 1640. El bloque de texto se mide y se centra en la banda que
+       queda entre los rótulos de la pista y el pie; si no cabe, primero se
+       aprietan los huecos y después baja el cuerpo del titular. */
+    const Y_PIE_ABAJO = 1668;
+    const bandaArriba = Y_PISTA + 130, bandaAbajo = Y_PIE_ABAJO - 112 - 56;
 
     let tamTitular = 58, altoTitular = 74;
-    let huecos = { eyebrow: 78, desbloqueo: 58, reto: 74 };
+    let huecos = { eyebrow: 70, desbloqueo: 52, reto: 66 };
     const ALTO_DESBLOQUEO = 54, ALTO_RETO = 50;
+    const textoDesbloqueo = res.caso.desbloqueo || res.caso.limitacion;
     let lTitular, lDesbloqueo, lReto, altoBloque;
 
     const medir = () => {
       ctx.font = fuente(800, tamTitular);
       lTitular = lineas(ctx, franja.titular, W - 150);
       ctx.font = fuente(700, 42);
-      lDesbloqueo = lineas(ctx, res.caso.limitacion, W - 200);
+      lDesbloqueo = lineas(ctx, textoDesbloqueo, W - 200);
       ctx.font = fuente(500, 38);
       lReto = lineas(ctx, franja.reto, W - 180);
       altoBloque = lTitular.length * altoTitular + huecos.eyebrow + huecos.desbloqueo
@@ -595,7 +588,7 @@
     const banda = bandaAbajo - bandaArriba;
     if (altoBloque > banda) {
       const f = Math.max(0.6, banda / altoBloque);
-      huecos = { eyebrow: Math.round(78 * f), desbloqueo: Math.round(58 * f), reto: Math.round(74 * f) };
+      huecos = { eyebrow: Math.round(70 * f), desbloqueo: Math.round(52 * f), reto: Math.round(66 * f) };
       medir();
     }
     if (altoBloque > banda) { tamTitular = 52; altoTitular = 66; medir(); }
@@ -621,7 +614,7 @@
     ctx.fillStyle = TINTA_SUAVE;
     lReto.forEach((l, i) => ctx.fillText(l, W / 2, y + i * ALTO_RETO));
 
-    pie(ctx, Y_CTA, urlVisible());
+    pie(ctx, Y_PIE_ABAJO);
 
     return canvas;
   }

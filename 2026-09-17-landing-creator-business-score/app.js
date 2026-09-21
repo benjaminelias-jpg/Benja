@@ -285,8 +285,8 @@
     } else if (califica) {
       const destacado = document.createElement('strong');
       destacado.className = 'destacado';
-      destacado.textContent = 'programa de escalado de Classroom Kunfupay';
-      fase.append('Tu negocio ya funciona como empresa, así que puedes aplicar al ', destacado, '.');
+      destacado.textContent = 'Classroom Platinum';
+      fase.append('Ya facturas y tienes comunidad: calificas para aplicar a ', destacado, ', el programa de escalado de Kunfupay.');
     } else {
       fase.textContent = 'Tu negocio genera ingresos, pero todavía no opera como empresa. Primero se ordena, después se escala.';
     }

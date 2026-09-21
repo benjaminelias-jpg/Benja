@@ -319,17 +319,60 @@ bajo el número.
 
 ### La pista de niveles
 
-Bajo la cinta, cinco nodos: **ACERO → BRONCE → PLATA → ORO → PLATINO**. El
+Bajo la moneda, cinco nodos: **ACERO → BRONCE → PLATA → ORO → PLATINO**. El
 tramo recorrido y el nodo actual llevan el color del metal; los que faltan van
-en contorno; el Platino va cerrado con un candado. Es lo que dice "esto es un
+en contorno; el Platino va cerrado con un candado, más claro que los nodos sin
+ganar, y el tramo que lleva a él es **discontinuo**: es otra puerta, no un
+peldaño pendiente del test. Los rótulos van a 27–30 px para leerse en un
+teléfono (a 21 px eran manchas grises). Es lo que dice "esto es un
 nivel, y hay uno más": el test entrega como máximo oro, y el platino es lo que
 vende Classroom Platinum. La pista hace visible ese peldaño sin prometerlo.
+
+### Lo que cambió el panel de crítica
+
+Cuatro jueces (wow frente a la referencia, legibilidad a tamaño de story,
+marca y honestidad) miraron los cinco renders, la página y la referencia, y
+tres escépticos por hallazgo intentaron refutar cada uno. 52 escépticos cayeron
+por un límite de uso; los hallazgos sin verificar se triaron con su evidencia
+numérica. Lo que se aplicó:
+
+- **Zona segura de Instagram** (verificado). El logo quedaba bajo la barra de
+  progreso y la pastilla y la llamada bajo la barra de respuesta: en la story
+  no sobrevivía ni una mención a la marca. Ahora todo lo que importa termina en
+  y = 1668. El chip del pie lleva la marca y la llamada en dos líneas.
+- **Plata y acero eran la misma moneda** (verificado con muestreo de píxel: 2 a
+  11 puntos de diferencia solo en el canal azul). Causa: el tinte `color`
+  conserva la luminancia, así que un gris más oscuro no oscurece nada. El acero
+  lleva ahora una pasada de `multiply` al 20 % (`sombra` en su franja), el
+  valor más alto que deja la cara por encima de 3,5:1 en el percentil 5.
+- **Composición plana** (verificado). Falta el solape que da profundidad en la
+  referencia: ahora la palabra del metal va gigante y al 11 % detrás de la
+  moneda, que la tapa, como el "Ads" tras el cohete.
+- **La cinta**: plana junto a un objeto fotorreal (verificado) y la tercera vez
+  que se decía el nivel en 250 px. Se quitó. La palabra fantasma y el rótulo
+  activo de la pista ya lo nombran, y el espacio se lo lleva la zona segura.
+- **Pastilla blanca que parecía un botón** y competía con la súper-CTA de la
+  página: ahora es un chip fantasma, relleno al 11 % y borde al 32 %.
+- **Bronce demasiado rosa**: el tinte baja hacia el cobre (`#dd9a62`).
+- **Copy**: "Mi sistema no existe" pasa a "Mi sistema, todavía no" (a tres
+  puntos del oro, un absoluto se desmiente solo); la tarjeta de acero nombra
+  "Hábitos y sistema de trabajo" en vez de "Mindset y optimización personal"
+  (al negocio, no a la persona; el manual no se toca: es un campo `desbloqueo`
+  propio de la tarjeta); "conciencia" pasa a "visibilidad"; y el párrafo de la
+  página deja de decir "ya funciona como empresa" a quien la tarjeta le dice
+  que su sistema todavía no está, y nombra el programa de una sola forma.
+- **Rejilla más visible** (verificado que no se veía) y **motas de doce a
+  cinco**, cerca de la moneda y nunca sobre la interfaz.
+
+Se refutaron cuatro: que el número parezca una pegatina, que la sombra no
+ancle, que las motas ensucien la sombra y que el bronce sea oro rosa en su
+conjunto.
 
 ### El fondo de estudio
 
 Rejilla fina de trazo discontinuo, como la de la referencia, que se desvanece
 hacia los bordes para no parecer papel cuadriculado. Un halo detrás de la
-moneda **del color de su metal**: el oro alumbra dorado, el acero, frío. Doce
+moneda **del color de su metal**: el oro alumbra dorado, el acero, frío. Cinco
 motas de luz en posiciones fijas (la misma puntuación da siempre la misma
 imagen). Y la sombra de contacto: una elipse difusa 58 px bajo la moneda, algo
 desplazada a la derecha, que es lo que la hace flotar en vez de estar pegada.
@@ -338,22 +381,17 @@ desplazada a la derecha, que es lo que la hace flotar en vez de estar pegada.
 
 1. **Una sola cifra manda.** El puntaje a 196 px grabado en la cara de la
    moneda. Ni segundo número, ni barras, ni la matriz de casos.
-2. **La cinta del metal.** Una banderola con las puntas mordidas hacia dentro,
-   teñida con su metal. Es la pieza que convierte esto en un premio y no en un
-   chip de estado. Probé laurel a los lados y a este tamaño se leía como una
-   pluma: la banderola sola funciona mejor. Lleva ancho mínimo para que "ORO"
-   no salga diminuto al lado de "BRONCE".
+2. **El metal, en la moneda y en la palabra fantasma.** La cinta con el nombre
+   del metal se quitó tras el panel de crítica: era plana junto a un objeto
+   fotorreal y redundante con la pista.
 3. **El titular, en primera persona.** Lo publica el usuario, no la marca.
 4. **"Mi próximo desbloqueo" + la limitación raíz.** La debilidad enmarcada
    como el siguiente nivel de un juego, que es lo que se puede enseñar sin
    quedar mal.
 5. **El reto**, que interpela a quien la ve.
-6. **El enlace, en pastilla blanca sobre morado.** En una story nada es
-   pulsable, así que el dominio tiene que leerse de un vistazo y quedarse en la
-   cabeza. Antes era un gris pequeño al fondo y se perdía. Hoy es un texto fijo,
-   `TARJETA.url = 'Classroom Platinum by Kunfupay'`: antes mostraba el dominio
-   real de la página (`localhost:8242` en desarrollo), que delataba en qué
-   entorno se generó la imagen.
+6. **El pie, un chip fantasma de dos líneas**: `TARJETA.marcaPie` arriba y la
+   llamada debajo. Ni dominio (delataba el entorno) ni pastilla blanca (parecía
+   un botón).
 
 La tarjeta **no dice si califica o no**. Nadie comparte un suspenso, y el dato
 que mueve al de enfrente es el número, no la puerta de Platinum.
