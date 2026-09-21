@@ -11,6 +11,18 @@ la matriz maestra.
 
 Sin build, sin dependencias, sin backend.
 
+**La página es solo clara, a propósito.** `tokens-morfeo.css` trae un juego de
+tokens para `[data-theme="dark"]`/`.dark`, pero nada en este proyecto pone
+nunca ese atributo o esa clase: es letra muerta, no un modo oscuro real. Sin
+`color-scheme: light` en `styles.css`, algunos navegadores (el oscuro forzado
+de Chrome en Android, por ejemplo) intentaban adivinar un tema oscuro por su
+cuenta e invertían el título del hero a blanco, sobre una foto que sigue
+siendo clara — cero contraste. `color-scheme: light` les dice que no hace
+falta adivinar nada, y el título del hero además fija su color a
+`--neutral-900` en vez de a `--text` (que sí cambiaría si algún día se activa
+el tema oscuro), para que ese titular en concreto sea negro siempre, claro u
+oscuro, pase lo que pase con el resto.
+
 ```bash
 cd Entregables/2026-09-17-landing-creator-business-score && python3 -m http.server 8242
 ```
@@ -403,29 +415,67 @@ dos líneas se comía el pie y uno corto dejaba un agujero de 250 px.
 ### Animada en 3D, en la página
 
 La imagen compartida es estática (las stories son imágenes), pero en la vista
-de resultado la medalla **se mueve**:
+de resultado la medalla **se mueve al interactuar**:
 
 - **Se inclina en 3D dentro de su marco**, no el marco. La imagen va un 6 % más
   grande que el marco y `overflow: hidden` la recorta: así en móvil, donde la
   medalla va de borde a borde, nunca asoma el fondo por los lados al inclinarse.
   Con puntero (escritorio) sigue al cursor hasta ±8°; en móvil, al giroscopio.
   En iOS el giroscopio solo se concede desde un gesto: el primer toque en el
-  resultado lo pide, y si se niega, no pasa nada.
-- **Sin puntero ni sensor, respira sola** (`medalla--idle`): un vaivén de ±4°
-  cada 7 s, animando las mismas variables que mueve el JavaScript. Las
-  variables van registradas con `@property` para que el navegador las
-  interpole.
+  resultado lo pide, y si se niega, no pasa nada. Las variables `--rx/--ry/
+  --px/--py` van registradas con `@property` para que el navegador las
+  interpole con una transición suave, no de golpe.
+- **Sin puntero ni sensor, se queda quieta.** Llevaba un vaivén automático
+  (`medalla--idle`) y, en escritorio, una levitación de la tarjeta entera; los
+  dos se quitaron por encargo — "el balanceo" resultaba molesto. Lo que queda
+  es puramente reactivo: no se mueve nada hasta que alguien la toca o la
+  inclina.
 - **Un destello cruza la moneda** cada 6,5 s, como el reflejo que recorre un
-  objeto cromado al girarlo.
-- **En escritorio, además, la tarjeta levita** 10 px arriba y abajo. En móvil
-  no, porque es la pantalla y un marco que se mueve dejaría ver el fondo.
-- Con `prefers-reduced-motion` no se mueve nada: ni inclinación, ni respiración,
-  ni destello, ni levitación.
+  objeto cromado al girarlo. Este sí se queda: no es balanceo, es brillo.
+- Con `prefers-reduced-motion` no se mueve nada: ni inclinación, ni destello.
 
-Verificado en el navegador: nace respirando, sigue al puntero con una
-`matrix3d`, vuelve a respirar al soltarlo, en móvil la imagen inclinada cubre
-el marco por los cuatro lados, y con movimiento reducido el `transform` es
-`none`. El giroscopio no se puede probar sin sensores: queda para el móvil real.
+Verificado en el navegador: quieta sin tocarla (el `transform` no cambia solo
+pasado 1,5 s), sigue al puntero con una `matrix3d`, y al soltarlo vuelve a
+quedarse quieta y se queda ahí — no reanuda ningún vaivén. En móvil la imagen
+inclinada sigue cubriendo el marco por los cuatro lados. El giroscopio no se
+puede probar sin sensores: queda para el móvil real.
+
+### El puntaje que se ve no es el puntaje real
+
+Por encargo explícito: el número del anillo, el que anima el contador, y el
+que queda grabado en la moneda de la tarjeta compartible son un **puntaje
+mostrado**, distinto del real. La petición, textual: que muchos negocios que
+facturan poco no se desilusionen con un número bajo, y que el que sí sale bien
+lo quiera presumir.
+
+`puntajeVisible()`, en `app.js`, le suma relleno al puntaje real — más cuanto
+más bajo es, cada vez menos conforme se acerca a 100, así ningún tramo alto
+queda pegado en un bloque idéntico de "100":
+
+```js
+puntajeVisible(interno) = round(interno + (100 - interno) * 0.67)
+```
+
+Con esa fracción, un 55 real muestra un 85 (el ejemplo exacto del encargo); un
+21 real, un 74; un 90 real, un 97. Verificado sobre las 3.750 combinaciones:
+monótono (a más real, nunca menos mostrado), y ningún resultado fuera de
+0–100.
+
+**A nivel interno no cambia absolutamente nada**, como se pidió:
+
+- La calificación para Classroom Platinum ya dependía solo de facturación y
+  comunidad, nunca del puntaje — sigue igual.
+- El caso de diagnóstico (`resolverCaso`) tampoco depende del puntaje.
+- `registrarDesenlace()` — la UTM, el `data-score` de la vista y el evento
+  `cbs:resultado` — recibe siempre el `res` **sin tocar**: lo que viaja a
+  medición es siempre el real, nunca el mostrado. Verificado en el navegador:
+  con un real de 63 mostrando un 88, la UTM lleva `score_63`, el
+  `data-score` es `63` y el evento trae `puntaje: 63`.
+
+Lo único que recibe el mostrado es la copia de `res` que se le pasa a
+`prepararTarjeta()`/`CBSTarjeta.dibujar()`: así el metal de la medalla (Oro,
+Plata…) y el número grabado en ella coinciden siempre con el número del
+anillo — nadie ve "88" en la pantalla y una medalla de un nivel distinto.
 
 ### Decisiones técnicas
 

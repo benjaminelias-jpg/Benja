@@ -8,6 +8,19 @@
    para toda la hoja en vez de ir parcheando selector a selector. */
 [hidden] { display: none !important; }
 
+html {
+  /* La página no tiene selector de tema: nunca se pone `[data-theme="dark"]`
+     ni `.dark`, así que el modo oscuro de `tokens-morfeo.css` es letra
+     muerta. El problema real era otro: sin esta declaración, el propio
+     navegador (el "oscuro forzado" de Chrome en Android, o el modo oscuro de
+     Safari) intenta oscurecer la página por su cuenta, invirtiendo el texto
+     a blanco pero sin tocar la foto del héroe, que sigue siendo clara. De
+     ahí el título blanco sin contraste sobre un fondo también claro.
+     Declarar que la página es solo clara le dice al navegador que no
+     necesita adivinar nada. */
+  color-scheme: light;
+}
+
 body {
   background: var(--surface);
   color: var(--text);
@@ -82,6 +95,10 @@ main { flex: 1; display: flex; flex-direction: column; }
 .hero h1 {
   margin: 0; font-size: clamp(30px, 4.4vw, 52px); line-height: 1.08;
   letter-spacing: -0.03em; font-weight: 800; text-wrap: pretty;
+  /* Fijo, no `var(--text)`: va sobre la foto del héroe, que siempre es
+     clara. Si `--text` cambiara de tono por cualquier motivo, el título no
+     tiene que enterarse: se queda negro en claro y en oscuro por igual. */
+  color: var(--neutral-900);
 }
 .hero__sub {
   margin: 0; font-size: clamp(15px, 1.4vw, 18px); line-height: 1.55;
@@ -345,8 +362,9 @@ main { flex: 1; display: flex; flex-direction: column; }
    La imagen se inclina DENTRO de su marco, no el marco: así en móvil, donde
    la medalla va de borde a borde, nunca asoma el fondo por los lados. La
    imagen va un 6 % más grande que el marco para que al inclinarse y
-   desplazarse siempre lo cubra. Las variables las mueve app.js con el puntero
-   o con el giroscopio; sin ninguno de los dos, la medalla respira sola. */
+   desplazarse siempre lo cubra. Las variables las mueve app.js, solo con el
+   puntero o el giroscopio: sin ninguno de los dos, la medalla se queda quieta,
+   sin balanceo propio. */
 @property --rx { syntax: '<angle>';  inherits: true; initial-value: 0deg; }
 @property --ry { syntax: '<angle>';  inherits: true; initial-value: 0deg; }
 @property --px { syntax: '<length>'; inherits: true; initial-value: 0px; }
@@ -358,12 +376,6 @@ main { flex: 1; display: flex; flex-direction: column; }
   transform-origin: center; will-change: transform;
   transition: transform 160ms var(--ease-out-soft), opacity var(--dur-base) var(--ease-out-soft);
 }
-.medalla--idle .medalla__img { animation: vaiven 7s ease-in-out infinite; }
-@keyframes vaiven {
-  0%   { --rx:  2deg; --ry: -4deg; --px:  4px; --py: -2px; }
-  50%  { --rx: -2deg; --ry:  4deg; --px: -4px; --py:  2px; }
-  100% { --rx:  2deg; --ry: -4deg; --px:  4px; --py: -2px; }
-}
 /* El destello: una franja de luz que cruza la medalla cada pocos segundos,
    como el reflejo que recorre un objeto cromado al girarlo. */
 .medalla--lista::after {
@@ -373,12 +385,9 @@ main { flex: 1; display: flex; flex-direction: column; }
   animation: destello 6.5s cubic-bezier(.4, 0, .2, 1) infinite;
 }
 @keyframes destello { 0%, 58% { transform: translateX(-75%); } 88%, 100% { transform: translateX(75%); } }
-/* En escritorio, donde la medalla es una tarjeta y no la pantalla, además levita. */
-@media (min-width: 861px) { .medalla--lista { animation: levitar 6s ease-in-out infinite; } }
-@keyframes levitar { 0%, 100% { translate: 0 0; } 50% { translate: 0 -10px; } }
 @media (prefers-reduced-motion: reduce) {
   .medalla__img { transform: none; transition: none; }
-  .medalla--idle .medalla__img, .medalla--lista, .medalla--lista::after { animation: none !important; }
+  .medalla--lista::after { animation: none !important; }
 }
 .medalla__skeleton::after {
   content: ''; position: absolute; inset: 0;

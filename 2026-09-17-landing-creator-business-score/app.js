@@ -19,6 +19,30 @@
   const COMUNIDAD_MINIMA_PARA_CALIFICAR = 5000;     // seguidores
   const EMAIL_VALIDO = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+  /* El puntaje MOSTRADO no es el puntaje real. Es puro relleno cosmético para
+     que nadie se desilusione con un número bajo: al negocio que factura poco
+     también le entra gente por esta puerta, y un 20 o un 30 ahuyenta más de
+     lo que informa.
+
+     Todo lo que decide algo sigue con el puntaje REAL, intacto: la
+     calificación (arriba: depende de facturación y comunidad, nunca de
+     esto), el caso de diagnóstico, la UTM (`registrarDesenlace`, más abajo,
+     recibe siempre `res` sin tocar) y el evento `cbs:resultado`. Lo único que
+     cambia es lo que se PINTA: el anillo, el número animado, y el número y la
+     medalla de la tarjeta compartible (que recibe una copia de `res` con este
+     valor en vez del real, para que el metal que se ve coincida con el
+     número que se ve).
+
+     La fórmula regala más relleno cuanto más bajo es el real —es la gente que
+     más lo necesita— y cada vez menos conforme se acerca a 100, así ningún
+     tramo alto queda pegado en un bloque idéntico de "100". Con
+     RELLENO_FRACCION = .67, un 55 real muestra un 85; un 21 real, un 74; un
+     90 real, un 97. */
+  const RELLENO_FRACCION = 0.67;
+  function puntajeVisible(interno) {
+    return Math.round(interno + (100 - interno) * RELLENO_FRACCION);
+  }
+
   /* ---------- Estado ---------- */
   let paso = 0;
   let avanzando = false;  // cierra la pregunta mientras corre el auto-avance
@@ -251,9 +275,14 @@
   const CIRC = 2 * Math.PI * 96; // r=96 en el SVG
 
   function pintarResultado(res) {
-    const { puntaje, variables, caso, califica, noAplica } = res;
+    const { variables, caso, califica, noAplica } = res;
+    // El real, intacto, para todo lo que decide o mide algo.
     registrarDesenlace(res);
-    prepararTarjeta(res);
+    // El mostrado, solo para lo que se pinta: el anillo, el número y la
+    // medalla. `puntaje` de aquí en adelante en esta función YA es el
+    // mostrado; si se necesita el real, está en `res.puntaje`.
+    const puntaje = puntajeVisible(res.puntaje);
+    prepararTarjeta({ ...res, puntaje });
     // Con la pestaña en segundo plano el navegador congela las transiciones en
     // su valor inicial. En ese caso se salta la animación y se pinta directo,
     // para que nadie vea nunca un anillo vacío ni barras a cero.
@@ -408,10 +437,9 @@
   /* ---------- La medalla en 3D: inclinación con puntero o con giroscopio ----------
      Mueve las variables --rx/--ry/--px/--py que lee el CSS. Con puntero
      (escritorio) sigue al cursor; en móvil, al giroscopio. Sin ninguno de los
-     dos, la clase `medalla--idle` la deja respirando sola. */
+     dos, la medalla se queda quieta: no tiene balanceo propio. */
   const REDUCIR_MOVIMIENTO = window.matchMedia('(prefers-reduced-motion: reduce)');
   const acotar = (v) => Math.max(-1, Math.min(1, v));
-  let sensorActivo = false;
 
   function inclinar(x, y) {   // x, y en -1..1
     const st = medalla.style;
@@ -423,13 +451,11 @@
 
   function reposar() {
     ['--rx', '--ry', '--px', '--py'].forEach((v) => medalla.style.removeProperty(v));
-    if (!sensorActivo) medalla.classList.add('medalla--idle');
   }
 
   medalla.addEventListener('pointermove', (e) => {
-    if (REDUCIR_MOVIMIENTO.matches || sensorActivo) return;
+    if (REDUCIR_MOVIMIENTO.matches) return;
     const r = medalla.getBoundingClientRect();
-    medalla.classList.remove('medalla--idle');
     inclinar(acotar(((e.clientX - r.left) / r.width) * 2 - 1), acotar(((e.clientY - r.top) / r.height) * 2 - 1));
   });
   medalla.addEventListener('pointerleave', reposar);
@@ -438,8 +464,6 @@
   function escucharOrientacion() {
     window.addEventListener('deviceorientation', (e) => {
       if (REDUCIR_MOVIMIENTO.matches || e.gamma == null || e.beta == null) return;
-      sensorActivo = true;
-      medalla.classList.remove('medalla--idle');
       // gamma: giro izquierda/derecha; beta: inclinación adelante/atrás, con el
       // móvil en la mano en torno a 45º. 25º de recorrido bastan para el efecto.
       inclinar(acotar(e.gamma / 25), acotar((e.beta - 45) / 25));
@@ -473,7 +497,7 @@
 
   async function prepararTarjeta(res) {
     medalla.hidden = false;
-    medalla.classList.remove('medalla--lista', 'medalla--idle');
+    medalla.classList.remove('medalla--lista');
     medallaAcciones.hidden = true;
     ringFallback.hidden = true;
     btnShare.hidden = true;
@@ -496,7 +520,6 @@
       // La imagen lleva texto, así que el alt tiene que decir lo mismo que ella.
       sharePreview.alt = `Tu medalla: ${res.puntaje} sobre 100, ${window.CBSTarjeta.franjaDe(res.puntaje).medalla}.`;
       medalla.classList.add('medalla--lista');
-      if (!sensorActivo && !REDUCIR_MOVIMIENTO.matches) medalla.classList.add('medalla--idle');
       medallaAcciones.hidden = false;
       btnShare.hidden = !puedeCompartirArchivos(tarjetaBlob);
       // Donde no hay menú nativo, descargar deja de ser la opción secundaria.
