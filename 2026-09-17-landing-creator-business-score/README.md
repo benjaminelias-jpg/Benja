@@ -536,6 +536,47 @@ como un fallo de render y no como un borde. El `padding-top: 0` va atado a
 `vista-resultado`: si el canvas falla y sale el anillo, la cabecera vuelve y el
 contenido recupera su respiro superior.
 
+### En móvil, el recorte es el mínimo que deja ver los botones
+
+Antes, `.medalla` fijaba su alto con `aspect-ratio: 1080/1920`: la imagen
+entera —proporcionalmente 1920 px de alto— ocupaba ella sola toda la pantalla
+en un teléfono bajo, y había que hacer scroll para llegar a "Descargar mi
+medalla". La regla, por encargo: recortar **lo mínimo posible**, solo lo que
+haga falta para que los botones entren sin scroll, y nunca más que eso.
+
+El alto ya no depende del ancho, depende de lo que sobra bajo los botones:
+
+```css
+height: calc(100vh - 150px);
+height: min(calc(100dvh - 150px), 177.78vw);
+```
+
+150 px es lo que miden los botones con su margen en el caso más ancho —
+compartir y descargar juntos, medido en el navegador: 30 px de margen + 116 px
+de los dos botones. `100dvh` (con `100vh` de respaldo) es el alto real de la
+pantalla del navegador, sin el salto que da `100vh` en Safari al aparecer o
+esconderse la barra de direcciones. Y el `min()` con `177.78vw` —el alto
+natural de la imagen a ese ancho— evita pasarse en un teléfono alto: ahí nunca
+se recorta nada, la imagen se ve entera.
+
+Medido en tres teléfonos: en el más bajo (iPhone SE, 667 px) se recorta al
+78 % y los botones caben justo; en uno normal (844 px) y en uno alto (926 px)
+la imagen se ve al 100 %, sin recortar nada. En los tres, el ancho sigue a
+pantalla completa, sin huecos laterales.
+
+El corte no es seco: `.medalla` lleva una máscara que difumina solo el último
+tramo del recorte —el 16 % final— hacia transparente, así se ve el blanco de
+la página detrás en vez de un borde duro. Cae justo donde el contenido deja de
+ser el titular y empieza "MI PRÓXIMO DESBLOQUEO", que es lo que se repite (con
+más detalle) en el panel de diagnóstico de más abajo — no se pierde
+información, solo la repetición.
+
+**El recorte y el difuminado son puramente visuales.** Van en `.medalla`, el
+contenedor; el `<img>` de dentro, y el blob que se descarga o se comparte,
+siguen siendo el archivo de 1080 × 1920 completo, sin tocar. Verificado
+leyendo las dimensiones reales del JPEG descargado desde la vista más
+recortada (el iPhone SE al 78 %): 1080×1920, igual que siempre.
+
 ### La cabecera desaparece en móvil, solo en el resultado
 
 La medalla ya lleva el logo de Classroom dentro de la propia imagen (ver

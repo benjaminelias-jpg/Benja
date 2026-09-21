@@ -476,6 +476,36 @@ main { flex: 1; display: flex; flex-direction: column; }
     border-radius: 0 0 var(--radius-2xl) var(--radius-2xl);
     box-shadow: 0 20px 38px -14px rgba(115, 75, 252, .48),
                 0 8px 16px -8px rgba(13, 16, 24, .16);
+    /* Antes: `aspect-ratio` fijaba el alto en función del ancho, así que la
+       imagen entera (1920 px de "alto" proporcional) ocupaba ella sola toda
+       la pantalla en un móvil bajo, y había que hacer scroll para llegar a
+       los botones. Ahora el alto sale de lo que sobra por debajo de ellos:
+       la pantalla completa (`100dvh`, con `100vh` de respaldo para el
+       navegador que no conozca `dvh`) menos 150 px, que es lo que miden los
+       botones con su margen en el caso más ancho (compartir + descargar).
+       El `min()` con el alto natural evita pasarse en un móvil muy alto:
+       nunca se estira más allá del tamaño real de la imagen. */
+    aspect-ratio: auto;
+    height: calc(100vh - 150px);
+    height: min(calc(100dvh - 150px), 177.78vw);
+  }
+  .medalla__img {
+    /* El recorte se queda con la parte de arriba (logo, moneda, pista,
+       titular) y sacrifica la de abajo, que es la que se repite luego en el
+       diagnóstico de debajo. */
+    object-position: top;
+  }
+  /* El difuminado es solo del tramo final del recorte, lo mínimo para que no
+     se note un corte en seco: el resto de la imagen se ve a opacidad
+     completa. Va en `.medalla`, no en `.medalla--lista`, para que el
+     esqueleto de carga se recorte igual y no cambie de aspecto al llegar la
+     imagen real. Como `.medalla` ya recorta con `overflow: hidden`, lo que
+     queda fuera de la máscara descubre el blanco de la página, no un borde
+     duro — y el destello (`::after`) se apaga con ella, así que tampoco cruza
+     la zona ya desvanecida. */
+  .medalla {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 84%, transparent 100%);
   }
   /* Los botones y la nota sí necesitan el respiro que el marco ya no da.
      El margen superior deja sitio a la sombra de la medalla. */
@@ -497,8 +527,6 @@ main { flex: 1; display: flex; flex-direction: column; }
    pantalla entera. `vista-resultado` la pone app.js en cada cambio de vista. */
 @media (max-width: 860px) {
   body.vista-resultado .topbar { display: none; }
-}
-
 }
 
 @media (prefers-reduced-motion: reduce) {
