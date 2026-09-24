@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Propuesta HSN Sailing Team</title>
+<style>
+  @page { size: A4; margin: 20mm 18mm 18mm 18mm; }
+  @page :first { margin: 0; }
+
+  :root {
+    --navy: #0e2a47;
+    --blue: #1d5c8f;
+    --accent: #c8862b;
+    --ink: #22303c;
+    --grey: #6b7a88;
+    --line: #dde4ea;
+    --soft: #f4f7fa;
+  }
+
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; }
+  body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: var(--ink);
+    font-size: 10.8pt;
+    line-height: 1.65;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  /* ---------- PORTADA ---------- */
+  .cover {
+    height: 297mm;
+    background: var(--navy);
+    color: #fff;
+    padding: 45mm 22mm 20mm 22mm;
+    page-break-after: always;
+    position: relative;
+  }
+  .cover .eyebrow {
+    font-size: 9.5pt; letter-spacing: 0.22em; text-transform: uppercase;
+    color: #8fb4d4; margin-bottom: 14mm;
+  }
+  .cover h1 {
+    font-size: 30pt; line-height: 1.22; font-weight: 600;
+    margin: 0 0 10mm 0; max-width: 145mm;
+  }
+  .cover .sub {
+    font-size: 12pt; line-height: 1.6; color: #c5d8e8; max-width: 125mm; font-weight: 300;
+  }
+  .cover .rule { width: 26mm; height: 3px; background: var(--accent); margin: 12mm 0; }
+  .cover .foot {
+    position: absolute; bottom: 20mm; left: 22mm; right: 22mm;
+    font-size: 9.5pt; color: #8fb4d4; border-top: 1px solid #27466a; padding-top: 5mm;
+  }
+
+  /* ---------- SECCIONES ---------- */
+  section { page-break-inside: avoid; margin-bottom: 14mm; }
+  .newpage { page-break-before: always; }
+
+  .num {
+    font-size: 9pt; letter-spacing: 0.18em; color: var(--accent);
+    text-transform: uppercase; font-weight: 700; margin-bottom: 3mm;
+  }
+  h2 {
+    font-size: 17pt; color: var(--navy); font-weight: 600;
+    margin: 0 0 6mm 0; line-height: 1.3;
+  }
+  h3 {
+    font-size: 11.5pt; color: var(--navy); font-weight: 600;
+    margin: 8mm 0 3mm 0;
+  }
+  p { margin: 0 0 4.5mm 0; max-width: 158mm; }
+  .lead { font-size: 12pt; color: var(--blue); line-height: 1.6; font-weight: 400; }
+  .muted { color: var(--grey); font-size: 9.8pt; }
+
+  ul { margin: 0 0 5mm 0; padding-left: 5mm; list-style: none; }
+  li { margin-bottom: 3.5mm; padding-left: 5mm; position: relative; }
+  li::before {
+    content: ""; position: absolute; left: 0; top: 2.6mm;
+    width: 2mm; height: 2mm; background: var(--accent); border-radius: 50%;
+  }
+
+  .quote {
+    border-left: 3px solid var(--accent);
+    background: var(--soft);
+    padding: 6mm 7mm;
+    margin: 6mm 0;
+    font-size: 12pt;
+    line-height: 1.55;
+    color: var(--navy);
+  }
+
+  .card {
+    border: 1px solid var(--line);
+    border-radius: 3mm;
+    padding: 6mm 7mm;
+    margin-bottom: 5mm;
+    page-break-inside: avoid;
+  }
+  .card.hi { border-color: var(--accent); background: #fdf9f3; }
+  .card h4 {
+    margin: 0 0 1mm 0; font-size: 11.5pt; color: var(--navy); font-weight: 600;
+  }
+  .card .tag {
+    display: inline-block; font-size: 8pt; letter-spacing: 0.1em; text-transform: uppercase;
+    background: var(--accent); color: #fff; padding: 1mm 2.5mm; border-radius: 1mm;
+    margin-bottom: 2mm; font-weight: 700;
+  }
+  .card p { margin-bottom: 2.5mm; font-size: 10.4pt; }
+  .card .ab { font-size: 10pt; color: var(--grey); }
+  .card .ab b { color: var(--ink); }
+
+  table { width: 100%; border-collapse: collapse; margin: 4mm 0 5mm 0; font-size: 10pt; }
+  th {
+    text-align: left; font-size: 8.5pt; letter-spacing: 0.1em; text-transform: uppercase;
+    color: var(--grey); font-weight: 600; padding: 0 4mm 2.5mm 0;
+    border-bottom: 1px solid var(--line);
+  }
+  td { padding: 3.5mm 4mm 3.5mm 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+  td:last-child, th:last-child { padding-right: 0; text-align: right; white-space: nowrap; }
+  td b { color: var(--navy); }
+
+  .phase { display: flex; gap: 6mm; margin-bottom: 6mm; page-break-inside: avoid; }
+  .phase .when {
+    flex: 0 0 32mm; font-size: 9pt; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--accent); font-weight: 700; padding-top: 1mm;
+  }
+  .phase .what { flex: 1; }
+  .phase .what b { color: var(--navy); font-size: 11pt; display: block; margin-bottom: 2mm; }
+  .phase .what p { margin: 0; font-size: 10.4pt; }
+
+  .split { display: flex; gap: 8mm; }
+  .split > div { flex: 1; }
+
+  .checkbox { padding-left: 0; }
+  .checkbox li::before {
+    content: ""; width: 3mm; height: 3mm; border: 1.2px solid var(--blue);
+    background: #fff; border-radius: 0.6mm; top: 2.2mm;
+  }
+
+  .end {
+    background: var(--navy); color: #fff; border-radius: 3mm;
+    padding: 9mm 10mm; margin-top: 8mm;
+  }
+  .end h3 { color: #fff; margin-top: 0; font-size: 13pt; }
+  .end p { color: #c5d8e8; margin-bottom: 0; }
+
+  .spacer { height: 8mm; }
+  .note { font-size: 9pt; color: var(--grey); font-style: italic; margin-top: 3mm; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="eyebrow">Propuesta de trabajo</div>
+  <h1>Convertir lo que sabéis de vela en un negocio</h1>
+  <div class="rule"></div>
+  <div class="sub">
+    Un plan claro para lanzar una formación y una comunidad
+    alrededor del HSN Sailing Team.
+  </div>
+  <div class="foot">
+    Preparado para el HSN Sailing Team &nbsp;·&nbsp; Septiembre de 2026
+  </div>
+</div>
+
+<section>
+  <div class="num">01</div>
+  <h2>Lo que ya tenéis</h2>
+
+  <p>Antes de proponer nada, conviene decir lo que ya está hecho. Y es lo más difícil de conseguir.</p>
+
+  <ul>
+    <li><b>Conocimiento real.</b> No teoría: una campaña que compite ahora mismo al máximo nivel.</li>
+    <li><b>Un palmarés que se puede comprobar.</b> Subcampeones de Europa de J70, campeones de las Barcelona Winter Series, campeones de España Open.</li>
+    <li><b>Una audiencia de nicho.</b> Poca gente, pero muy interesada. Eso vale mucho más que muchos seguidores fríos.</li>
+  </ul>
+
+  <p>Y hay algo que os coloca en un sitio único: <b>sois un equipo Corinthian que le gana a barcos con profesionales a bordo</b>. No sois inalcanzables. Sois el ejemplo de que un aficionado puede llegar. Eso nadie os lo puede copiar.</p>
+</section>
+
+<section>
+  <div class="num">02</div>
+  <h2>La idea que ordena todo lo demás</h2>
+
+  <p>Lo primero es cambiar cómo se ve el producto.</p>
+
+  <div class="quote">
+    Tú no vendes un curso. No vendes vídeos ni una comunidad.<br>
+    <b>Vendes llevar a una persona de un punto A a un punto B.</b><br>
+    El curso es solo el vehículo.
+  </div>
+
+  <p>Por eso la primera pregunta no es «¿qué enseño?», sino:</p>
+
+  <ul>
+    <li>¿En qué punto está esa persona hoy?</li>
+    <li>¿Dónde quiere estar?</li>
+    <li>¿Por qué te pagaría <i>a ti</i> para hacer ese camino?</li>
+  </ul>
+
+  <p>Cuando eso está claro, todo lo demás (precio, contenido, comunidad) sale solo.</p>
+</section>
+
+<section class="newpage">
+  <div class="num">03</div>
+  <h2>¿A quién le hablamos?</h2>
+
+  <p>Hay tres perfiles posibles. No todos valen lo mismo.</p>
+
+  <div class="card">
+    <h4>1. El que sueña con la vela</h4>
+    <p class="ab"><b>Hoy:</b> le fascina, ve vídeos, no ha navegado casi nunca. &nbsp; <b>Quiere:</b> subirse a un barco y no estorbar.</p>
+    <p class="muted">Son muchos y os siguen, pero pagan poco. Son vuestro público, no vuestro cliente todavía.</p>
+  </div>
+
+  <div class="card hi">
+    <span class="tag">Cliente principal</span>
+    <h4>2. El tripulante estancado</h4>
+    <p class="ab"><b>Hoy:</b> navega los fines de semana, siempre a mitad de tabla. Ve que el barco de delante va más rápido y no sabe por qué. &nbsp; <b>Quiere:</b> entenderlo y tener sitio fijo en una tripulación.</p>
+    <p>Ya se gasta dinero en vela cada año: inscripciones, viajes, ropa técnica. La capacidad de pago está demostrada. Y su frustración es real.</p>
+  </div>
+
+  <div class="card hi">
+    <span class="tag">El que financia todo</span>
+    <h4>3. El armador que no llega al podio</h4>
+    <p class="ab"><b>Hoy:</b> tiene barco y tripulación, se gasta miles de euros al año y acaba el duodécimo. &nbsp; <b>Quiere:</b> subir al podio sin contratar profesionales.</p>
+    <p>Son pocos, pero se sabe quiénes son: las listas de inscritos de cada regata son públicas. Pagan mucho más y hablan exactamente vuestro idioma.</p>
+  </div>
+
+  <p class="note">Empezamos por el 2 (volumen y comunidad) y el 3 (dinero). El 1 se cuida con contenido gratuito.</p>
+</section>
+
+<section class="newpage">
+  <div class="num">04</div>
+  <h2>Vuestra oferta</h2>
+
+  <p>Así es como se diría en una frase, para el cliente principal:</p>
+
+  <div class="quote">
+    «Deja de ser el tripulante de relleno.<br>
+    En 90 días vas a entender por qué el barco de delante va más rápido
+    y vas a tener sitio fijo en una tripulación de regata.»
+  </div>
+
+  <h3>El método: las 3 palancas</h3>
+
+  <p>Un barco no gana por magia. Gana por tres cosas, y cada una se puede aprender por separado:</p>
+
+  <ul>
+    <li><b>Puesta a punto.</b> El barco listo antes de salir. Lo que casi todo el mundo improvisa.</li>
+    <li><b>Ejecución.</b> Que tu maniobra salga igual de bien la vez 50 que la vez 1.</li>
+    <li><b>Decisión.</b> Dónde ponerte en el campo de regata y por qué. Lo que separa al 12.º del 3.º.</li>
+  </ul>
+
+  <div class="spacer"></div>
+
+  <h3>Un problema honesto, y cómo se resuelve</h3>
+
+  <p>La vela se aprende en el agua. Un curso online no puede sustituir eso, y prometerlo sería mentir.</p>
+
+  <p><b>Por eso el producto no enseña a navegar: enseña todo lo que decide la regata y no ocurre mientras navegas.</b> Que es la mayor parte del resultado.</p>
+
+  <ul>
+    <li><b>Análisis de tus propios vídeos.</b> El alumno sube 3 minutos de su regata y recibe un análisis. Esto es lo que de verdad se paga.</li>
+    <li><b>Ejercicios para su barco.</b> Cada módulo acaba con algo concreto que hace el fin de semana y cuenta en el grupo.</li>
+    <li><b>Bolsa de tripulantes.</b> Conectáis a quien no tiene barco con armadores que buscan tripulación.</li>
+    <li><b>Análisis en directo cada semana</b> sobre una regata real, con el vídeo en pantalla.</li>
+  </ul>
+
+  <p class="note">La bolsa de tripulantes puede acabar valiendo más que el propio curso: resuelve a la vez el mayor problema de los dos clientes.</p>
+</section>
+
+<section class="newpage">
+  <div class="num">05</div>
+  <h2>Cómo se gana dinero</h2>
+
+  <p>No hay un solo producto, sino una escalera. Cada peldaño tiene una función distinta.</p>
+
+  <table>
+    <tr>
+      <th>Nivel</th><th>Qué es</th><th>Precio orientativo</th>
+    </tr>
+    <tr>
+      <td><b>1</b></td>
+      <td><b>Comunidad gratuita</b><br><span class="muted">Recursos, bolsa de tripulantes, una sesión abierta al mes</span></td>
+      <td>Gratis</td>
+    </tr>
+    <tr>
+      <td><b>2</b></td>
+      <td><b>Programa de 90 días</b><br><span class="muted">Curso + grupo privado + análisis de tus vídeos + sesión semanal</span></td>
+      <td>297 – 397 €</td>
+    </tr>
+    <tr>
+      <td><b>3</b></td>
+      <td><b>Acompañamiento intensivo</b><br><span class="muted">Todo lo anterior + sesiones individuales + plan de temporada</span></td>
+      <td>900 – 1.500 €</td>
+    </tr>
+    <tr>
+      <td><b>4</b></td>
+      <td><b>Clínic presencial / coaching de tripulación</b><br><span class="muted">Un fin de semana con el equipo, análisis con vídeo</span></td>
+      <td>1.800 – 3.500 € por tripulación</td>
+    </tr>
+  </table>
+
+  <p>Los niveles 1 y 2 se comunican en público. Los niveles 3 y 4 se venden hablando, nunca en una página web.</p>
+
+  <p class="note">Son precios de partida para validar con clientes reales, no cifras cerradas.</p>
+</section>
+
+<section>
+  <div class="num">06</div>
+  <h2>La comunidad</h2>
+
+  <p>La comunidad no es un extra: es el centro de todo. Y no es un canal de anuncios.</p>
+
+  <p>Lo importante no es que haya mucha gente, sino que <b>pase algo cada semana</b>. Un ritmo fijo, siempre igual:</p>
+
+  <ul>
+    <li><b>Lunes:</b> una lección de la regata del fin de semana. Con el error incluido.</li>
+    <li><b>Miércoles:</b> una herramienta real que usáis vosotros de verdad.</li>
+    <li><b>Viernes:</b> media hora en directo analizando una regata y respondiendo preguntas.</li>
+  </ul>
+
+  <p>Y una norma de entrada: nadie participa sin presentarse diciendo en qué barco navega, en qué puesto y qué le frena hoy. Eso, además, os dice exactamente qué vender.</p>
+</section>
+
+<section class="newpage">
+  <div class="num">07</div>
+  <h2>Qué contenido publicar</h2>
+
+  <p>Cinco tipos, y cada uno hace un trabajo distinto.</p>
+
+  <div class="card">
+    <h4>Para que os conozca gente nueva</h4>
+    <p class="muted">Cosas humanas, sin tecnicismos. «Llevas 5 años navegando y sigues siendo el que sujeta cosas. No es culpa tuya: nadie te explicó el sistema.»</p>
+  </div>
+
+  <div class="card">
+    <h4>Para que levanten la mano los interesados de verdad</h4>
+    <p class="muted">Nombráis el problema y explicáis por qué pasa, pero no dais el manual completo. Quien quiera el resto, escribe.</p>
+  </div>
+
+  <div class="card">
+    <h4>Para demostrar que sabéis</h4>
+    <p class="muted">Aquí sí enseñáis el cómo: una tabla real, un vídeo de una salida analizado segundo a segundo.</p>
+  </div>
+
+  <div class="card">
+    <h4>Para dar confianza</h4>
+    <p class="muted">Resultados de alumnos, con datos reales y comprobables. Nunca inventados.</p>
+  </div>
+
+  <div class="card">
+    <h4>Para quitar excusas</h4>
+    <p class="muted">«No tengo barco», «no tengo tiempo», «no tengo nivel». Se responden en público, antes de que lleguen por mensaje.</p>
+  </div>
+
+  <p>Por encima de todo esto va vuestra historia real: la temporada, la preparación del Mundial, la decisión que salió mal. <b>Eso es lo que nadie puede copiar.</b></p>
+</section>
+
+<section class="newpage">
+  <div class="num">08</div>
+  <h2>El plan: 90 días</h2>
+
+  <div class="phase">
+    <div class="when">Semanas 1-2</div>
+    <div class="what">
+      <b>Escuchar antes de producir</b>
+      <p>15 conversaciones de 20 minutos con seguidores reales. La oferta definitiva la escriben ellos con sus palabras, no nosotros. Se abre la comunidad, vacía pero ordenada.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="when">Semanas 3-6</div>
+    <div class="what">
+      <b>Llenar la comunidad</b>
+      <p>Publicamos con un plan. Objetivo: las primeras 100 personas dentro y la sesión semanal en directo funcionando, aunque al principio haya seis.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="when">Semanas 7-9</div>
+    <div class="what">
+      <b>Vender antes de grabar</b>
+      <p>Se abre un primer grupo de 20 plazas a precio de fundador. Si no se venden 8 o 10, la oferta se corrige. Nadie graba un curso entero sin saber si alguien lo quiere.</p>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="when">Semanas 10-12</div>
+    <div class="what">
+      <b>Entregar muy bien</b>
+      <p>El primer grupo no es el negocio: es la prueba. De ahí salen los resultados y los testimonios que venden todo lo demás.</p>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="num">09</div>
+  <h2>Qué necesitamos de vosotros</h2>
+
+  <p>Poco, pero imprescindible.</p>
+
+  <ul class="checkbox">
+    <li><b>Decidir quién da la cara.</b> La gente conecta con personas, no con logos. El equipo respalda, pero hace falta una voz.</li>
+    <li><b>Los mensajes que ya os llegan.</b> Las preguntas que os hacen por privado son la mina de oro: ahí está escrita la oferta.</li>
+    <li><b>Vuestros vídeos y material de las regatas.</b> Lo que ya tenéis grabado vale más que cualquier plató.</li>
+    <li><b>Unas horas a la semana</b>, y hablarlo antes con HSN y con el club para que nadie se lleve una sorpresa.</li>
+  </ul>
+
+  <div class="end">
+    <h3>Los tres primeros pasos</h3>
+    <p>
+      1. Una reunión de 45 minutos para decidir quién da la cara.<br>
+      2. Recopilar los mensajes y los datos de la cuenta.<br>
+      3. Empezar las conversaciones con seguidores.
+    </p>
+  </div>
+
+  <p class="note">De ahí sale la oferta definitiva. A partir de ese punto montamos la comunidad, el curso, los precios, el contenido y las automatizaciones, y os acompañamos hasta los primeros clientes.</p>
+</section>
+
+</body>
+</html>
