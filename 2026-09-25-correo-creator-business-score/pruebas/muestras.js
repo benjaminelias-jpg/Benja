@@ -26,7 +26,7 @@ const MUESTRAS = [
     const res = api.evaluar(r);
     const n = api.nombresMedalla(res);
     const src = 'data:image/jpeg;base64,' + fs.readFileSync(path.join(MEDALLAS, n.cabecera)).toString('base64');
-    const correo = api.construirCorreo(res, { nombre: m.nombre, email: 'x@y.z' }, { src, descarga: '', adjuntos: [{}] });
+    const correo = api.construirCorreo(res, { nombre: m.nombre, email: 'x@y.z' }, { src, descarga: '', adjuntos: [{}], baja: 'hola@kunfupay.com' });
     fs.writeFileSync(path.join(SALIDA, m.archivo + '.html'), correo.html);
     fs.writeFileSync(path.join(SALIDA, m.archivo + '.txt'), 'Asunto: ' + correo.asunto + '\n\n' + correo.texto);
     hechos.push({ ...m, asunto: correo.asunto, res });

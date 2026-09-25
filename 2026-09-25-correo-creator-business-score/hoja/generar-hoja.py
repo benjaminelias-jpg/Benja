@@ -80,7 +80,8 @@ cf.column_dimensions['B'].width = 100
 filas = [
     ('Flujo', 'Meta (formulario instantáneo) → Make → webhook del Apps Script → fila en "Leads" → puntaje y diagnóstico → correo con la medalla.'),
     ('', 'Si otra herramienta escribe la fila directamente, el Apps Script la recoge solo cada 5 minutos.'),
-    ('', 'Columnas moradas: las rellena el formulario. Columnas oscuras: las escribe el script. No renombres los encabezados.'),
+    ('', 'Columnas moradas: las rellena el formulario. Columnas oscuras: las escribe el script (nunca toca las moradas). No renombres los encabezados.'),
+    ('', 'Comparte esta hoja con el equipo solo como Lector o Comentador: quien puede editarla puede cambiar el script.'),
     ('', ''),
     ('Estado', 'Qué significa'),
     ('(vacío)', 'Pendiente: se enviará en la próxima pasada.'),
@@ -88,7 +89,7 @@ filas = [
     ('enviado', 'Correo enviado. La hora está en "Enviado".'),
     ('error', 'Falló el envío (ver Detalle). Se reintenta solo hasta 3 veces.'),
     ('incompleto', 'Alguna respuesta no coincide con las opciones (ver Detalle). Corrígela y vacía Estado.'),
-    ('omitido', 'El correo no es válido. Corrígelo y vacía Estado.'),
+    ('omitido', 'El correo está vacío o no es válido. Corrígelo y vacía Estado.'),
     ('duplicado', 'Ese ID de lead ya recibió su correo en otra fila.'),
     ('revisar', 'Se cortó mientras se enviaba: puede que haya salido. Revísalo y vacía Estado para reenviar.'),
     ('', ''),
@@ -97,9 +98,9 @@ filas = [
 ]
 for a, b in filas:
     cf.append([a, b])
-for r in (1, 5, 15, 16):
+for r in (1, 6, 16, 17):
     cf.cell(row=r, column=1).font = Font(bold=True, color=MORADO)
-cf.cell(row=5, column=2).font = Font(bold=True)
+cf.cell(row=6, column=2).font = Font(bold=True)
 
 salida = os.path.join(AQUI, 'creator-business-score-leads.xlsx')
 wb.save(salida)

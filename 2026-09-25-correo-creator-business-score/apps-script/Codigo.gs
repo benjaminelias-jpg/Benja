@@ -24,6 +24,11 @@
    0 · CONFIGURACIÓN
    Lo único que hace falta tocar. Los secretos (token del webhook) no van
    aquí: los genera `configurar()` y viven en Propiedades del script.
+
+   ⚠ Después de CUALQUIER cambio en este archivo (también aquí en CONFIG):
+   Guardar → Implementar → Gestionar implementaciones → ✏ → Versión: nueva
+   versión → Implementar. Si no, el webhook sigue con el código anterior
+   (el reloj y el menú sí usan el nuevo, y los dos se comportarían distinto).
    ------------------------------------------------------------ */
 const CONFIG = {
   NOMBRE_PESTANA: 'Leads',
@@ -33,9 +38,11 @@ const CONFIG = {
   REMITENTE_NOMBRE: 'Classroom Platinum by Kunfupay',
   RESPONDER_A: '',              // p. ej. 'hola@kunfupay.com'. Vacío = la cuenta del script.
   COPIA_OCULTA: '',             // BCC interno opcional (cuenta como destinatario en la cuota).
+  CORREO_BAJA: '',              // dirección para pedir la baja (pie del correo). Vacío = RESPONDER_A o la cuenta del script.
 
   // Medallas pre-generadas (ver medallas/). Una de las dos:
-  CARPETA_MEDALLAS_ID: '',      // ID de la carpeta de Drive con los .jpg
+  CARPETA_MEDALLAS_ID: '',      // ID de la carpeta de Drive con los .jpg. Vacío = la que crea
+                                // el menú "Importar medallas" junto a esta hoja (recomendado).
   URL_BASE_MEDALLAS: '',        // o una URL pública que termine en '/', p. ej.
                                 // 'https://kunfupay.com/landings/classroom-platinum-score/medallas/'
   ADJUNTAR_MEDALLA: true,       // adjunta la tarjeta completa 1080 × 1920 para la story
@@ -493,15 +500,19 @@ function asegurarEncabezados(hoja) {
   return { hoja: hoja, mapa: mapa, ancho: encabezados.length };
 }
 
-/** Texto que llega de fuera y va a una celda: nunca se interpreta como fórmula. */
-function celdaSegura(v) {
+/** Texto que llega de fuera y va a una celda nueva: nunca se interpreta como
+    fórmula. El teléfono y el ID se limpian a sus caracteres válidos (sus
+    columnas son de texto); el resto lleva el apóstrofo de "esto es texto". */
+function celdaSegura(v, clave) {
   if (v === null || v === undefined) return '';
   if (v instanceof Date) return v;
   const s = String(v).trim().slice(0, 500);
+  if (clave === 'telefono') return s.replace(/[^\d+()\-\s]/g, '').replace(/^[-\s]+/, '').slice(0, 40);
+  if (clave === 'id') return s.replace(/[^\w\-]/g, '').slice(0, 60);
   return /^[=+\-@]/.test(s) ? "'" + s : s;
 }
 
-/** Lo contrario al leer: quita el apóstrofo que protege el texto, si quedó. */
+/** Al leer: quita el apóstrofo protector si una herramienta lo dejó literal. */
 function leerTexto(v) {
   return String(v == null ? '' : v).replace(/^'/, '').trim();
 }
@@ -511,22 +522,38 @@ function leerTexto(v) {
    Estados: (vacío) pendiente → enviando → enviado.
    Si falla: error (se reintenta hasta MAX_INTENTOS) · incompleto (faltan
    respuestas; se corrige la fila y se vacía Estado) · omitido (correo no
-   válido) · duplicado (mismo ID de lead ya enviado) · revisar (quedó en
-   "enviando": pudo salir o no; se revisa y se vacía Estado para reenviar).
+   válido o vacío) · duplicado (mismo ID de lead ya enviado) · revisar (quedó
+   en "enviando": pudo salir o no; se revisa y se vacía Estado para reenviar).
    Para reenviar cualquier fila: vaciar su celda de Estado.
+
+   El script SOLO escribe sus columnas de resultado, nunca las de entrada:
+   así no deshace la protección contra fórmulas ni pisa lo que alguien
+   corrija a mano mientras tanto.
    ------------------------------------------------------------ */
-function procesarPendientes() {
+const COLUMNAS_DEL_SCRIPT = ['puntaje', 'puntaje_real', 'medalla', 'caso', 'diagnostico', 'desenlace', 'estado', 'enviado', 'detalle', 'intentos'];
+
+/** opciones: { esperaCerrojo (ms), presupuesto (ms), maxFilas, primero (nº de fila a atender antes que las demás) } */
+function procesarPendientes(opciones) {
+  const o = opciones || {};
   const cerrojo = LockService.getScriptLock();
-  if (!cerrojo.tryLock(25000)) return { procesadas: 0, ocupado: true };
+  if (!cerrojo.tryLock(o.esperaCerrojo || 25000)) return { procesadas: 0, enviadas: 0, errores: 0, ocupado: true };
   try {
-    return procesarPendientesSinCerrojo();
+    return procesarPendientesSinCerrojo(o);
   } finally {
+    SpreadsheetApp.flush();
     cerrojo.releaseLock();
   }
 }
 
-function procesarPendientesSinCerrojo() {
+/** Destinatarios que gasta cada envío: el lead y los de la copia oculta. */
+function destinatariosPorEnvio() {
+  return 1 + (CONFIG.COPIA_OCULTA ? String(CONFIG.COPIA_OCULTA).split(',').filter(function (x) { return x.trim(); }).length : 0);
+}
+
+function procesarPendientesSinCerrojo(o) {
   const inicio = Date.now();
+  const presupuesto = o.presupuesto || 4.5 * 60 * 1000;
+  const maxFilas = o.maxFilas || CONFIG.MAX_POR_EJECUCION;
   const h = hojaDeLeads();
   const hoja = h.hoja, mapa = h.mapa;
   const ultima = hoja.getLastRow();
@@ -535,114 +562,141 @@ function procesarPendientesSinCerrojo() {
 
   const filas = hoja.getRange(2, 1, ultima - 1, h.ancho).getValues();
   const col = function (fila, k) { return mapa[k] === undefined ? '' : fila[mapa[k]]; };
-  const ponerCol = function (fila, k, v) { if (mapa[k] !== undefined) fila[mapa[k]] = v; };
 
   const idsEnviados = {};
   filas.forEach(function (f) {
-    const est = String(col(f, 'estado')).trim();
-    const id = String(col(f, 'id')).trim();
+    const est = leerTexto(col(f, 'estado'));
+    const id = leerTexto(col(f, 'id'));
     if (id && (est === 'enviado' || est === 'enviando' || est === 'revisar')) idsEnviados[id] = true;
   });
 
-  for (var i = 0; i < filas.length; i++) {
-    if (resumen.procesadas >= CONFIG.MAX_POR_EJECUCION) break;
-    if (Date.now() - inicio > 4.5 * 60 * 1000) break;
+  // La fila que acaba de llegar por el webhook va primero; luego, en orden.
+  const orden = filas.map(function (_, i) { return i; });
+  if (o.primero && o.primero >= 2 && o.primero - 2 < filas.length) {
+    orden.splice(o.primero - 2, 1);
+    orden.unshift(o.primero - 2);
+  }
+
+  for (var j = 0; j < orden.length; j++) {
+    if (resumen.procesadas >= maxFilas) break;
+    if (Date.now() - inicio > presupuesto) break;
+    const i = orden[j];
     const fila = filas[i];
     const nFila = i + 2;
-    const estado = String(col(fila, 'estado')).trim();
+    const estado = leerTexto(col(fila, 'estado'));
     const intentos = Number(col(fila, 'intentos')) || 0;
-    const tieneDatos = String(col(fila, 'email')).trim() !== '';
 
     if (estado === 'enviando') {
-      ponerCol(fila, 'estado', 'revisar');
-      ponerCol(fila, 'detalle', 'Se cortó mientras se enviaba: puede que el correo saliera. Revisa en Enviados y vacía Estado para reenviar.');
-      escribirFila(hoja, nFila, fila);
+      escribirResultado(hoja, nFila, mapa, fila, {
+        estado: 'revisar',
+        detalle: 'Se cortó mientras se enviaba: puede que el correo saliera. Revisa en Enviados y vacía Estado para reenviar.'
+      });
       continue;
     }
-    if (!tieneDatos) continue;
+    if (leerTexto(col(fila, 'email')) === '') continue;
     if (!(estado === '' || (estado === 'error' && intentos < CONFIG.MAX_INTENTOS))) continue;
-    if (estado === '' && MailApp.getRemainingDailyQuota() < 1) {
-      ponerCol(fila, 'detalle', 'Sin cuota diaria de correo: se enviará cuando se renueve.');
-      escribirFila(hoja, nFila, fila);
+    if (MailApp.getRemainingDailyQuota() < destinatariosPorEnvio()) {
+      escribirResultado(hoja, nFila, mapa, fila, { detalle: 'Sin cuota diaria de correo: se enviará cuando se renueve.' });
       break;
     }
 
     resumen.procesadas++;
-    const salida = procesarFila(hoja, nFila, fila, mapa, idsEnviados);
+    var salida;
+    try {
+      salida = procesarFila(hoja, nFila, fila, mapa, idsEnviados);
+    } catch (err) {
+      salida = 'error';
+      escribirResultado(hoja, nFila, mapa, fila, { detalle: 'Error inesperado: ' + String(err && err.message || err).slice(0, 200) });
+    }
     if (salida === 'enviado') resumen.enviadas++;
     if (salida === 'error') resumen.errores++;
   }
   return resumen;
 }
 
-function escribirFila(hoja, nFila, fila) {
-  hoja.getRange(nFila, 1, 1, fila.length).setValues([fila]);
+/**
+ * Escribe en la fila SOLO las columnas del script (`cambios`: { clave: valor })
+ * y actualiza la copia en memoria. Antes comprueba que la fila sigue siendo
+ * la misma (mismo ID y correo): si alguien ordenó o borró filas mientras
+ * tanto, no escribe nada y la fila se atiende en la siguiente pasada.
+ */
+function escribirResultado(hoja, nFila, mapa, fila, cambios) {
+  const identidad = ['id', 'email'].filter(function (k) { return mapa[k] !== undefined; });
+  for (var i = 0; i < identidad.length; i++) {
+    const k = identidad[i];
+    if (leerTexto(hoja.getRange(nFila, mapa[k] + 1).getValue()) !== leerTexto(fila[mapa[k]])) return false;
+  }
+  const cols = Object.keys(cambios)
+    .filter(function (k) { return COLUMNAS_DEL_SCRIPT.indexOf(k) !== -1 && mapa[k] !== undefined; })
+    .map(function (k) { fila[mapa[k]] = cambios[k]; return mapa[k]; })
+    .sort(function (a, b) { return a - b; });
+  // Columnas contiguas en un solo setValues.
+  var desde = 0;
+  while (desde < cols.length) {
+    var hasta = desde;
+    while (hasta + 1 < cols.length && cols[hasta + 1] === cols[hasta] + 1) hasta++;
+    const tramo = fila.slice(cols[desde], cols[hasta] + 1);
+    hoja.getRange(nFila, cols[desde] + 1, 1, tramo.length).setValues([tramo]);
+    desde = hasta + 1;
+  }
+  return true;
+}
+
+function esErrorDeCuota(err) {
+  return /too many times|quota|cuota|limit exceeded/i.test(String(err && err.message || err));
 }
 
 function procesarFila(hoja, nFila, fila, mapa, idsEnviados) {
   const col = function (k) { return mapa[k] === undefined ? '' : fila[mapa[k]]; };
-  const poner = function (k, v) { if (mapa[k] !== undefined) fila[mapa[k]] = v; };
+  const escribir = function (cambios) { return escribirResultado(hoja, nFila, mapa, fila, cambios); };
   const intentos = Number(col('intentos')) || 0;
 
   const email = leerTexto(col('email')).toLowerCase();
   if (!EMAIL_VALIDO.test(email)) {
-    poner('estado', 'omitido'); poner('detalle', 'Correo no válido: ' + String(col('email')).slice(0, 80));
-    escribirFila(hoja, nFila, fila);
+    escribir({ estado: 'omitido', detalle: 'Correo no válido: ' + leerTexto(col('email')).slice(0, 80) });
     return 'omitido';
   }
-  const idLead = String(col('id')).trim();
+  const idLead = leerTexto(col('id'));
   if (idLead && idsEnviados[idLead]) {
-    poner('estado', 'duplicado'); poner('detalle', 'Este ID de lead ya tiene un correo enviado en otra fila.');
-    escribirFila(hoja, nFila, fila);
+    escribir({ estado: 'duplicado', detalle: 'Este ID de lead ya tiene un correo enviado en otra fila.' });
     return 'duplicado';
   }
 
   const textos = {};
-  PREGUNTAS.forEach(function (p) { textos[p.id] = col(p.id); });
+  PREGUNTAS.forEach(function (p) { textos[p.id] = leerTexto(col(p.id)); });
   const leidas = leerRespuestas(textos);
   if (leidas.fallos.length) {
-    poner('estado', 'incompleto');
-    poner('detalle', 'No entiendo la respuesta de ' + leidas.fallos.join(' · ') + '. Corrígela (o añade un ALIAS) y vacía Estado.');
-    escribirFila(hoja, nFila, fila);
+    escribir({ estado: 'incompleto', detalle: 'No entiendo la respuesta de ' + leidas.fallos.join(' · ') + '. Corrígela (o añade un ALIAS) y vacía Estado.' });
     return 'incompleto';
   }
 
   const res = evaluar(leidas.r);
   const lead = { email: email, nombre: leerTexto(col('nombre')), telefono: leerTexto(col('telefono')), id: idLead, fecha: col('fecha'), origen: leerTexto(col('origen')) };
 
-  poner('puntaje', res.puntajeVisible);
-  poner('puntaje_real', res.puntaje);
-  poner('medalla', res.franja.medalla);
-  poner('caso', res.claveCaso);
-  poner('diagnostico', res.caso.limitacion);
-  poner('desenlace', res.desenlace);
-  poner('estado', 'enviando');
-  poner('intentos', intentos + 1);
-  poner('detalle', '');
-  escribirFila(hoja, nFila, fila);
+  const reclamada = escribir({
+    puntaje: res.puntajeVisible, puntaje_real: res.puntaje, medalla: res.franja.medalla, caso: res.claveCaso,
+    diagnostico: res.caso.limitacion, desenlace: res.desenlace, estado: 'enviando', intentos: intentos + 1, detalle: ''
+  });
+  if (!reclamada) return 'movida';
   SpreadsheetApp.flush();
 
   try {
     const avisos = enviarCorreo(res, lead);
-    poner('estado', 'enviado');
-    poner('enviado', new Date());
-    poner('detalle', avisos.join(' · '));
     if (idLead) idsEnviados[idLead] = true;
+    const aviso = enviarWebhookSalida(res, lead);
+    if (aviso) avisos.push(aviso);
+    escribir({ estado: 'enviado', enviado: new Date(), detalle: avisos.join(' · ') });
+    return 'enviado';
   } catch (err) {
+    if (esErrorDeCuota(err)) {
+      // No es culpa del lead: no gasta intento y sale en cuanto haya cuota.
+      escribir({ estado: '', intentos: intentos, detalle: 'Sin cuota diaria de correo: se enviará cuando se renueve.' });
+      return 'cuota';
+    }
     const agotado = intentos + 1 >= CONFIG.MAX_INTENTOS;
-    poner('estado', 'error');
-    poner('detalle', 'No se pudo enviar' + (agotado ? ' (sin más reintentos)' : '') + ': ' + String(err && err.message || err).slice(0, 300));
-    escribirFila(hoja, nFila, fila);
+    escribir({ estado: 'error', detalle: 'No se pudo enviar' + (agotado ? ' (sin más reintentos)' : '') + ': ' + String(err && err.message || err).slice(0, 300) });
     return 'error';
   }
-  escribirFila(hoja, nFila, fila);
-
-  const aviso = enviarWebhookSalida(res, lead);
-  if (aviso) {
-    poner('detalle', [col('detalle'), aviso].filter(String).join(' · '));
-    escribirFila(hoja, nFila, fila);
-  }
-  return 'enviado';
 }
 
 /* ------------------------------------------------------------
@@ -661,10 +715,14 @@ function esc(s) {
   return String(s == null ? '' : s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;').replace(/'/g, '&#39;');
 }
 
+/** El nombre va en el asunto y en el saludo: solo se usa si es un nombre de
+    verdad (letras), para que nadie meta un enlace o un aviso falso en un
+    correo oficial rellenando el formulario. */
 function primerNombre(nombre) {
-  const n = String(nombre || '').trim().split(/\s+/)[0] || '';
-  if (!n || /[@\d]/.test(n)) return '';
-  return (n.charAt(0).toUpperCase() + n.slice(1).toLowerCase()).slice(0, 40);
+  const n = String(nombre || '').normalize('NFC').trim()
+    .split(/[\s\u2800\u3164\u115F\u1160\u200B-\u200F\u202A-\u202E\u2060-\u206F]+/)[0] || '';
+  if (!/^\p{L}[\p{L}\p{M}'’\-]{0,23}$/u.test(n)) return '';
+  return n.charAt(0).toUpperCase() + n.slice(1).toLowerCase();
 }
 
 /** Pone o sustituye parámetros de consulta en una URL (Apps Script no tiene URL()). */
@@ -694,19 +752,31 @@ function nombresMedalla(res) {
 }
 
 /** Blob de una medalla desde la carpeta de Drive (con caché de IDs), o null. */
+/** La carpeta de medallas: la de CONFIG o la que creó "Importar medallas". */
+function carpetaMedallasId() {
+  return CONFIG.CARPETA_MEDALLAS_ID || propiedades().getProperty('CARPETA_MEDALLAS_ID') || '';
+}
+
 function medallaDeDrive(nombre) {
-  if (!CONFIG.CARPETA_MEDALLAS_ID) return null;
+  const carpeta = carpetaMedallasId();
+  if (!carpeta) return null;
   const cache = CacheService.getScriptCache();
-  const clave = 'medalla:' + nombre;
+  const clave = 'medalla:' + carpeta + ':' + nombre;
   var id = cache.get(clave);
   if (id === '-') return null;
-  if (!id) {
-    const it = DriveApp.getFolderById(CONFIG.CARPETA_MEDALLAS_ID).getFilesByName(nombre);
-    id = it.hasNext() ? it.next().getId() : '-';
-    cache.put(clave, id, 21600);
-    if (id === '-') return null;
+  if (id) {
+    const f = DriveApp.getFileById(id);
+    if (!f.isTrashed()) return f.getBlob();
   }
-  return DriveApp.getFileById(id).getBlob();
+  const it = DriveApp.getFolderById(carpeta).getFilesByName(nombre);
+  while (it.hasNext()) {
+    const f = it.next();
+    if (f.isTrashed()) continue;
+    cache.put(clave, f.getId(), 21600);
+    return f.getBlob();
+  }
+  cache.put(clave, '-', 300);   // el "no está" caduca pronto: puede estar subiéndose
+  return null;
 }
 
 /** Qué imágenes lleva el correo y de dónde salen. Nunca impide el envío. */
@@ -722,7 +792,7 @@ function imagenesDelCorreo(res) {
         if (r.getResponseCode() === 200) out.adjuntos.push(r.getBlob().setName('mi-medalla-creator-business-score.jpg'));
         else out.avisos.push('Adjunto no disponible (' + r.getResponseCode() + ')');
       }
-    } else if (CONFIG.CARPETA_MEDALLAS_ID) {
+    } else if (carpetaMedallasId()) {
       const cab = medallaDeDrive(n.cabecera);
       if (cab) { out.inline.medalla = cab.setName('medalla.jpg'); out.src = 'cid:medalla'; }
       else out.avisos.push('Falta ' + n.cabecera + ' en la carpeta de medallas');
@@ -732,7 +802,7 @@ function imagenesDelCorreo(res) {
         else out.avisos.push('Falta ' + n.completa);
       }
     } else {
-      out.avisos.push('Sin carpeta de medallas: se envió con la cabecera de texto');
+      out.avisos.push('Sin carpeta de medallas (menú → Importar medallas): se envió con la cabecera de texto');
     }
   } catch (err) {
     out.src = ''; out.inline = {}; out.adjuntos = [];
@@ -746,8 +816,15 @@ function asuntoDe(res, lead) {
   return (n ? n + ', tu' : 'Tu') + ' Creator Business Score: ' + res.puntajeVisible + '/100 · Medalla de ' + res.franja.medalla;
 }
 
+/** Dirección para darse de baja que aparece en el pie. */
+function correoDeBaja() {
+  if (CONFIG.CORREO_BAJA || CONFIG.RESPONDER_A) return CONFIG.CORREO_BAJA || CONFIG.RESPONDER_A;
+  try { return Session.getEffectiveUser().getEmail(); } catch (err) { return ''; }
+}
+
 function enviarCorreo(res, lead) {
   const img = imagenesDelCorreo(res);
+  img.baja = correoDeBaja();
   const correo = construirCorreo(res, lead, img);
   const opciones = {
     to: lead.email,
@@ -808,7 +885,7 @@ function construirCorreo(res, lead, img) {
   const eyebrow = function (t) { return p(esc(t).toUpperCase(), 'font-size:12px;line-height:16px;font-weight:700;letter-spacing:1px;color:' + C.apagado + ';'); };
   const boton = function (t, url, bg, sombra, estiloExtra) {
     return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>' +
-      '<td align="center" bgcolor="' + bg + '" style="border-radius:999px;background:' + bg + ';box-shadow:0 10px 24px -10px ' + sombra + ';' + (estiloExtra || '') + '">' +
+      '<td align="center" bgcolor="' + bg + '" style="border-radius:999px;background:' + bg + ';box-shadow:0 10px 24px -10px ' + sombra + ';mso-padding-alt:16px 34px;' + (estiloExtra || '') + '">' +
       '<a href="' + esc(url) + '" target="_blank" style="display:inline-block;padding:16px 34px;font-family:' + FUENTE + ';font-size:16px;line-height:20px;font-weight:700;color:#ffffff;text-decoration:none;border-radius:999px;">' + esc(t) + '</a>' +
       '</td></tr></table>';
   };
@@ -818,6 +895,9 @@ function construirCorreo(res, lead, img) {
       '<tr><td class="px-in" style="padding:26px 26px 24px;">' + interior + '</td></tr></table></td></tr>';
   };
 
+  const hojaSobreTarjeta = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="' + C.fondoTarjeta + '" style="background:' + C.fondoTarjeta + ';"><tr><td style="padding:0;font-size:0;line-height:0;">' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="#ffffff" style="background:#ffffff;border-radius:28px 28px 0 0;"><tr><td height="26" style="height:26px;font-size:0;line-height:0;">&nbsp;</td></tr></table>' +
+    '</td></tr></table>';
   const cabecera = img.src
     ? '<img src="' + esc(img.src) + '" width="600" alt="' + esc(alt) + '" class="hero" style="display:block;width:100%;max-width:600px;height:auto;border:0;outline:none;text-decoration:none;border-radius:24px 24px 0 0;background:' + C.fondoTarjeta + ';">'
     : cabeceraDeTexto(res);
@@ -827,7 +907,7 @@ function construirCorreo(res, lead, img) {
   hojaBlanca += p('Comparte tu resultado con otros creadores y rétalos a superarte.' + (hayAdjunto ? ' Tu medalla va adjunta a este correo, lista para tu story.' : ''), 'font-size:14px;line-height:21px;color:' + C.sutil + ';');
   if (img.descarga) {
     hojaBlanca += '<div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>' +
-      '<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" bgcolor="' + C.pista + '" style="border-radius:999px;border:1px solid ' + C.borde + ';">' +
+      '<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center"><tr><td align="center" bgcolor="' + C.pista + '" style="border-radius:999px;border:1px solid ' + C.borde + ';mso-padding-alt:11px 22px;">' +
       '<a href="' + esc(img.descarga) + '" target="_blank" style="display:inline-block;padding:11px 22px;font-family:' + FUENTE + ';font-size:14px;line-height:18px;font-weight:700;color:' + C.sutil + ';text-decoration:none;">Descargar mi medalla</a></td></tr></table>';
   }
   hojaBlanca += '<div style="height:22px;line-height:22px;font-size:0;">&nbsp;</div>' +
@@ -875,7 +955,8 @@ function construirCorreo(res, lead, img) {
 '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
 '<meta name="color-scheme" content="light"><meta name="supported-color-schemes" content="light">' +
 '<title>' + esc(asunto) + '</title>' +
-'<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">' +
+'<!--[if !mso]><!--><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet"><!--<![endif]-->' +
+'<!--[if mso]><style>table,td,p,a,h2,h3,strong{font-family:\'Segoe UI\',Arial,sans-serif!important;}</style><![endif]-->' +
 '<style>' +
   ':root{color-scheme:light;supported-color-schemes:light;}' +
   'body{margin:0;padding:0;-webkit-text-size-adjust:100%;}' +
@@ -893,9 +974,10 @@ function construirCorreo(res, lead, img) {
 '<div style="display:none;max-height:0;overflow:hidden;opacity:0;mso-hide:all;">' + esc(preheader) + '&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>' +
 '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="' + C.fondo + '" style="background:' + C.fondo + ';"><tr>' +
 '<td align="center" class="marco" style="padding:24px 12px;">' +
-'<table role="presentation" width="600" cellpadding="0" cellspacing="0" border="0" class="contenedor" bgcolor="#ffffff" style="width:600px;max-width:600px;background:#ffffff;border-radius:24px;">' +
-  '<tr><td style="padding:0;font-size:0;line-height:0;">' + cabecera + '</td></tr>' +
-  '<tr><td class="px" align="center" style="padding:6px 40px 30px;text-align:center;">' + hojaBlanca + '</td></tr>' +
+'<!--[if mso]><table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->' +
+'<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="contenedor" bgcolor="#ffffff" style="width:100%;max-width:600px;background:#ffffff;border-radius:24px;">' +
+  '<tr><td style="padding:0;font-size:0;line-height:0;">' + cabecera + hojaSobreTarjeta + '</td></tr>' +
+  '<tr><td class="px" align="center" style="padding:0 40px 30px;text-align:center;">' + hojaBlanca + '</td></tr>' +
   panel(eyebrow('Resultados') + '<div style="height:16px;line-height:16px;font-size:0;">&nbsp;</div>' + filasBarras) +
   panel(eyebrow('Diagnóstico personalizado') + '<div style="height:14px;line-height:14px;font-size:0;">&nbsp;</div>' +
     '<h2 style="margin:0;font-family:' + FUENTE + ';font-size:21px;line-height:28px;font-weight:700;color:' + C.texto + ';">' + esc(caso.titular) + '</h2>' +
@@ -912,9 +994,13 @@ function construirCorreo(res, lead, img) {
     p('Kunfupay · Creator Business Score', 'font-size:12.5px;line-height:19px;color:' + C.apagado + ';font-weight:600;') +
     p('Auditoría orientativa. No constituye una oferta de financiamiento.', 'font-size:12.5px;line-height:19px;color:' + C.apagado + ';') +
     '<div style="height:10px;line-height:10px;font-size:0;">&nbsp;</div>' +
-    p('Recibes este correo porque completaste el Creator Business Score de Kunfupay en Facebook o Instagram.', 'font-size:11.5px;line-height:17px;color:#a1a1aa;') +
+    p('Recibes este correo porque completaste el Creator Business Score de Kunfupay en Facebook o Instagram.' +
+      (img.baja ? ' Si no quieres recibir más correos de Kunfupay, escribe a <a href="mailto:' + esc(img.baja) + '?subject=Baja" style="color:#71717a;text-decoration:underline;">' + esc(img.baja) + '</a>.' : ''),
+      'font-size:11.5px;line-height:17px;color:#a1a1aa;') +
   '</td></tr>' +
-'</table></td></tr></table></body></html>';
+'</table>' +
+'<!--[if mso]></td></tr></table><![endif]-->' +
+'</td></tr></table></body></html>';
 
   /* ---------- versión de texto ---------- */
   const lineas = [];
@@ -946,6 +1032,7 @@ function construirCorreo(res, lead, img) {
   lineas.push('—');
   lineas.push('Kunfupay · Creator Business Score');
   lineas.push('Auditoría orientativa. No constituye una oferta de financiamiento.');
+  if (img.baja) lineas.push('Si no quieres recibir más correos de Kunfupay, escribe a ' + img.baja + '.');
 
   return { asunto: asunto, html: html, texto: lineas.join('\n') };
 }
@@ -983,26 +1070,37 @@ function doPost(e) {
     return ContentService.createTextOutput(JSON.stringify(obj)).setMimeType(ContentService.MimeType.JSON);
   };
   const token = propiedades().getProperty('WEBHOOK_TOKEN');
-  var datos = {};
+  var datos = {}, ilegible = false;
   const cuerpo = e && e.postData && e.postData.contents;
+  const parametros = (e && e.parameter) || {};
+  const otrosParametros = Object.keys(parametros).filter(function (k) { return k !== 'token'; });
   if (cuerpo) {
-    try { datos = JSON.parse(cuerpo); } catch (err) { datos = {}; }
+    try { datos = JSON.parse(cuerpo); } catch (err) { datos = {}; ilegible = otrosParametros.length === 0; }
   }
-  if (!datos || typeof datos !== 'object' || Array.isArray(datos)) datos = {};
+  if (!datos || typeof datos !== 'object' || Array.isArray(datos)) { datos = {}; ilegible = true; }
+  const traeCampos = ilegible || otrosParametros.length > 0 || Object.keys(datos).some(function (k) { return k !== 'token'; });
   const recibido = (e && e.parameter && e.parameter.token) || datos.token || '';
   if (!token || !igualesSeguro(String(recibido), token)) return responder({ ok: false, error: 'token no válido' });
 
   const salida = { ok: true };
+  var lead = null;
   try {
-    const lead = leadEntrante(datos, (e && e.parameter) || {});
+    lead = leadEntrante(datos, parametros);
+    if (!lead && traeCampos) {
+      console.error('Webhook: cuerpo recibido sin datos de lead reconocibles: ' + String(cuerpo).slice(0, 300));
+      return responder({ ok: false, error: 'El cuerpo no trae ningún campo reconocible (email, nombre, respuestas…). Revisa el mapeo en Make.' });
+    }
     if (lead) salida.fila = anexarLead(lead);
   } catch (err) {
+    console.error('Webhook: no se pudo guardar el lead: ' + (err && err.stack || err));
     return responder({ ok: false, error: 'No se pudo guardar el lead: ' + String(err && err.message || err).slice(0, 200) });
   }
+  // Respuesta rápida (Make corta a los 40 s): se atiende la fila recién
+  // llegada y poco más; el resto lo recoge el reloj.
   try {
-    const r = procesarPendientes();
+    const r = procesarPendientes({ esperaCerrojo: 3000, presupuesto: 20000, maxFilas: 3, primero: salida.fila > 0 ? salida.fila : 0 });
     salida.procesadas = r.procesadas; salida.enviadas = r.enviadas; salida.errores = r.errores;
-    if (r.ocupado) salida.nota = 'Otra ejecución estaba procesando; la fila queda en cola.';
+    if (r.ocupado) salida.nota = 'Guardado. Otra ejecución estaba enviando: saldrá en la próxima pasada del reloj.';
   } catch (err) {
     salida.nota = 'Guardado; el envío se reintentará: ' + String(err && err.message || err).slice(0, 200);
   }
@@ -1053,27 +1151,38 @@ function leadEntrante(datos, parametros) {
   return lead;
 }
 
-/** Añade el lead como fila nueva (si su ID no está ya) y devuelve el número de fila. */
+/**
+ * Añade el lead como fila nueva y devuelve su número de fila (0 si no se
+ * pudo saber). NUNCA lo descarta: si otra ejecución tiene el cerrojo, lo añade
+ * igual (appendRow es atómico) sin mirar si el ID ya estaba; si era un
+ * reintento, la fila quedará como "duplicado" y no se enviará dos veces.
+ */
 function anexarLead(lead) {
   const cerrojo = LockService.getScriptLock();
-  if (!cerrojo.tryLock(25000)) throw new Error('hoja ocupada');
+  const conCerrojo = cerrojo.tryLock(10000);
   try {
     const h = hojaDeLeads();
-    const id = String(lead.id || '').trim();
-    if (id && h.mapa.id !== undefined && h.hoja.getLastRow() >= 2) {
+    const id = celdaSegura(lead.id, 'id');
+    if (conCerrojo && id && h.mapa.id !== undefined && h.hoja.getLastRow() >= 2) {
       const ids = h.hoja.getRange(2, h.mapa.id + 1, h.hoja.getLastRow() - 1, 1).getValues();
-      for (var i = 0; i < ids.length; i++) if (String(ids[i][0]).replace(/^'/, '').trim() === id) return i + 2;
+      for (var i = 0; i < ids.length; i++) if (leerTexto(ids[i][0]) === id) return i + 2;
     }
     const fila = new Array(h.ancho).fill('');
     Object.keys(lead).forEach(function (k) {
-      if (h.mapa[k] !== undefined && COLUMNAS.some(function (c) { return c.k === k; })) fila[h.mapa[k]] = celdaSegura(lead[k]);
+      if (h.mapa[k] !== undefined && COLUMNAS.some(function (c) { return c.k === k; })) fila[h.mapa[k]] = celdaSegura(lead[k], k);
     });
     if (h.mapa.fecha !== undefined && !fila[h.mapa.fecha]) fila[h.mapa.fecha] = new Date();
     if (h.mapa.estado !== undefined) fila[h.mapa.estado] = '';
+    if (!leerTexto(lead.email) && h.mapa.estado !== undefined) {
+      fila[h.mapa.estado] = 'omitido';
+      if (h.mapa.detalle !== undefined) fila[h.mapa.detalle] = 'Llegó sin correo: revisa en Make el campo email del módulo HTTP.';
+    }
     h.hoja.appendRow(fila);
+    if (!conCerrojo) return 0;
+    SpreadsheetApp.flush();
     return h.hoja.getLastRow();
   } finally {
-    cerrojo.releaseLock();
+    if (conCerrojo) cerrojo.releaseLock();
   }
 }
 
@@ -1131,7 +1240,8 @@ function enviarWebhookSalida(res, lead) {
 function onOpen() {
   SpreadsheetApp.getUi().createMenu('Creator Business Score')
     .addItem('1 · Configurar (una sola vez)', 'configurar')
-    .addItem('Ver URL del webhook', 'mostrarWebhook')
+    .addItem('2 · Importar medallas a Drive', 'importarMedallas')
+    .addItem('Ver token del webhook', 'mostrarWebhook')
     .addSeparator()
     .addItem('Enviarme los 3 correos de prueba', 'enviarPruebas')
     .addItem('Procesar pendientes ahora', 'procesarPendientesDesdeMenu')
@@ -1152,31 +1262,27 @@ function configurar() {
   ScriptApp.newTrigger('procesarPendientes').timeBased().everyMinutes(CONFIG.MINUTOS_REVISION).create();
 
   const avisos = [];
-  if (CONFIG.CARPETA_MEDALLAS_ID) {
+  if (carpetaMedallasId()) {
     try {
-      const it = DriveApp.getFolderById(CONFIG.CARPETA_MEDALLAS_ID).getFiles();
-      var n = 0; while (it.hasNext() && n < 500) { it.next(); n++; }
-      avisos.push('Carpeta de medallas: ' + n + ' archivos' + (n < 430 ? ' (deberían ser 430: revisa la subida)' : ' ✔'));
+      const n = contarMedallas(DriveApp.getFolderById(carpetaMedallasId()));
+      avisos.push('Carpeta de medallas: ' + n + ' de ' + TOTAL_MEDALLAS + (n < TOTAL_MEDALLAS ? ' → menú "2 · Importar medallas a Drive"' : ' ✔'));
     } catch (err) { avisos.push('No puedo abrir la carpeta de medallas: revisa CARPETA_MEDALLAS_ID.'); }
   } else if (!CONFIG.URL_BASE_MEDALLAS) {
-    avisos.push('Sin medallas configuradas: los correos saldrán con la cabecera de texto.');
+    avisos.push('Falta importar las medallas: menú "2 · Importar medallas a Drive".');
   }
   avisos.push('Revisión automática cada ' + CONFIG.MINUTOS_REVISION + ' min activada.');
   avisos.push('Cuota de correo restante hoy: ' + MailApp.getRemainingDailyQuota());
-  aviso('Configuración lista', avisos.join('\n') + '\n\nAhora: Implementar → Nueva implementación → App web, y luego "Ver URL del webhook".');
-}
-
-function urlWebhook() {
-  const token = propiedades().getProperty('WEBHOOK_TOKEN');
-  const url = ScriptApp.getService().getUrl();
-  if (!token) return 'Primero ejecuta "Configurar".';
-  if (!url) return 'Aún no hay implementación: Implementar → Nueva implementación → App web.\nToken: ' + token;
-  return url + '?token=' + token;
+  aviso('Configuración lista', avisos.join('\n') + '\n\nDespués: Implementar → Nueva implementación → Aplicación web, y "Ver token del webhook".');
 }
 
 function mostrarWebhook() {
-  aviso('URL del webhook (pégala en Make/Zapier)', urlWebhook() +
-    '\n\nSi la URL termina en /dev, usa la de la implementación (/exec) que muestra Implementar → Gestionar implementaciones, con el mismo ?token=.');
+  const token = propiedades().getProperty('WEBHOOK_TOKEN');
+  if (!token) { aviso('Webhook', 'Primero ejecuta "1 · Configurar".'); return; }
+  aviso('Token del webhook', 'Token: ' + token +
+    '\n\nLa URL para Make es la "URL de la aplicación web" de Implementar → Gestionar implementaciones (termina en /exec), con esto al final:' +
+    '\n?token=' + token +
+    '\n\nComprobación: abre esa URL (sin el token) en una ventana de incógnito; debe mostrar {"ok":true,"servicio":"creator-business-score"}.' +
+    '\nPara cambiar el token si se filtra: Configuración del proyecto → Propiedades del script → borra WEBHOOK_TOKEN y vuelve a ejecutar Configurar.');
 }
 
 function procesarPendientesDesdeMenu() {
@@ -1223,11 +1329,75 @@ function aviso(titulo, texto) {
   catch (err) { Logger.log(titulo + '\n' + texto); }
 }
 
+/* ------------------------------------------------------------
+   10 · IMPORTAR LAS MEDALLAS A DRIVE (una vez)
+   Descarga las 430 imágenes del repositorio público y las guarda en una
+   carpeta "Medallas · Creator Business Score" junto a esta hoja (o en
+   CONFIG.CARPETA_MEDALLAS_ID). Salta las que ya están, así que se puede
+   repetir sin duplicar; si no le da tiempo, se reprograma sola y sigue.
+   ------------------------------------------------------------ */
+const ORIGEN_MEDALLAS = 'https://raw.githubusercontent.com/benjaminelias-jpg/Benja/486c6e83a728e3e7b9e79aaa35ba9526cf884ecf/2026-09-25-correo-creator-business-score/medallas/';
+const TOTAL_MEDALLAS = 430;
+
+function contarMedallas(carpeta) {
+  const it = carpeta.getFiles();
+  var n = 0;
+  while (it.hasNext()) { const f = it.next(); if (!f.isTrashed() && /^cbs-\d+-\d\.\d(-correo)?\.jpg$/.test(f.getName())) n++; }
+  return n;
+}
+
+function carpetaParaMedallas() {
+  const id = carpetaMedallasId();
+  if (id) return DriveApp.getFolderById(id);
+  const libro = SpreadsheetApp.openById(propiedades().getProperty('HOJA_ID') || SpreadsheetApp.getActiveSpreadsheet().getId());
+  const padres = DriveApp.getFileById(libro.getId()).getParents();
+  const donde = padres.hasNext() ? padres.next() : DriveApp.getRootFolder();
+  const carpeta = donde.createFolder('Medallas · Creator Business Score');
+  propiedades().setProperty('CARPETA_MEDALLAS_ID', carpeta.getId());
+  return carpeta;
+}
+
+function importarMedallas() {
+  // Si viene de su propia reprogramación, se borra ese disparador de un solo uso.
+  ScriptApp.getProjectTriggers().forEach(function (t) {
+    if (t.getHandlerFunction() === 'importarMedallas') ScriptApp.deleteTrigger(t);
+  });
+  const inicio = Date.now();
+  const carpeta = carpetaParaMedallas();
+  const lista = JSON.parse(UrlFetchApp.fetch(ORIGEN_MEDALLAS + 'lista.json').getContentText());
+  const hay = {};
+  const it = carpeta.getFiles();
+  while (it.hasNext()) { const f = it.next(); if (!f.isTrashed()) hay[f.getName()] = true; }
+  const faltan = lista.filter(function (n) { return !hay[n]; });
+
+  var hechas = 0, fallidas = 0;
+  for (var i = 0; i < faltan.length; i += 10) {
+    if (Date.now() - inicio > 4.5 * 60 * 1000) break;
+    const lote = faltan.slice(i, i + 10);
+    const resp = UrlFetchApp.fetchAll(lote.map(function (n) { return { url: ORIGEN_MEDALLAS + 'img/' + n, muteHttpExceptions: true }; }));
+    resp.forEach(function (r, j) {
+      if (r.getResponseCode() === 200) { carpeta.createFile(r.getBlob().setContentType('image/jpeg').setName(lote[j])); hechas++; }
+      else fallidas++;
+    });
+  }
+  const quedan = faltan.length - hechas;
+  if (quedan > fallidas) {
+    ScriptApp.newTrigger('importarMedallas').timeBased().after(60 * 1000).create();
+    aviso('Importando medallas…', 'Van ' + (lista.length - quedan) + ' de ' + lista.length + '. Sigue sola en un minuto: no hace falta hacer nada.');
+  } else if (quedan) {
+    aviso('Medallas', 'Faltan ' + quedan + ' que no se pudieron descargar. Vuelve a ejecutar "Importar medallas".');
+  } else {
+    aviso('Medallas listas', 'Las ' + lista.length + ' medallas están en la carpeta "' + carpeta.getName() + '".');
+  }
+  return { importadas: hechas, fallidas: fallidas, quedan: quedan, carpeta: carpeta.getId() };
+}
+
 /* Para las pruebas en local (Node). En Apps Script `module` no existe. */
 if (typeof module !== 'undefined') {
   module.exports = {
     CONFIG, PREGUNTAS, CASOS, FRANJAS, evaluar, puntajeVisible, franjaDe, normalizar, emparejarOpcion, leerRespuestas,
     mapearColumnas, construirCorreo, conParametros, urlConResultado, primerNombre, leadEntrante, cuerpoWebhookSalida,
-    nombresMedalla, celdaSegura, esc, doPost, doGet, procesarPendientes, anexarLead, configurar, enviarPruebas
+    nombresMedalla, celdaSegura, esc, doPost, doGet, procesarPendientes, anexarLead, configurar, enviarPruebas,
+    importarMedallas, mostrarWebhook, carpetaMedallasId, ORIGEN_MEDALLAS
   };
 }

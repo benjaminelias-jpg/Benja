@@ -1,16 +1,23 @@
-/* Simulación mínima de los servicios de Apps Script para probar Codigo.gs en
- * Node: una hoja en memoria, MailApp que guarda los correos, Drive con blobs
- * falsos, cerrojo, propiedades, caché y UrlFetchApp. */
+/* Simulación de los servicios de Apps Script para probar Codigo.gs en Node.
+ * La hoja imita la semántica real de Sheets que importa aquí:
+ *  · un texto escrito con apóstrofo inicial ("'=…") se guarda como texto y
+ *    getValues() lo devuelve SIN el apóstrofo;
+ *  · un texto que empieza por "=" escrito con setValue(s)/appendRow se
+ *    convierte en fórmula (se registra en estado.formulas);
+ *  · las columnas con formato '@' guardan el texto tal cual. */
 const fs = require('fs'), path = require('path'), vm = require('vm');
 
 function crearEntorno(opciones = {}) {
   const estado = {
-    correos: [], fetches: [], triggers: [], alertas: [],
+    correos: [], fetches: [], triggers: [], alertas: [], formulas: [], carpetasCreadas: [], errores: [],
     props: Object.assign({}, opciones.props || {}),
     cuota: opciones.cuota === undefined ? 100 : opciones.cuota,
     fallarCorreo: opciones.fallarCorreo || 0,
-    archivos: opciones.archivos || {},       // nombre → contenido
-    respuestaFetch: opciones.respuestaFetch || 200
+    errorCorreo: opciones.errorCorreo || 'Servicio de correo no disponible',
+    archivos: Object.assign({}, opciones.archivos || {}),    // nombre → contenido (carpeta de medallas)
+    papelera: new Set(opciones.papelera || []),
+    respuestaFetch: opciones.respuestaFetch || 200,
+    cerrojoOcupado: !!opciones.cerrojoOcupado
   };
 
   /* ---------- hoja en memoria ---------- */
@@ -19,6 +26,14 @@ function crearEntorno(opciones = {}) {
   function asegurar(r, c) {
     while (celdas.length < r) celdas.push([]);
     for (const fila of celdas) while (fila.length < c) fila.push('');
+  }
+  function guardar(r, c, x) {
+    asegurar(r, c);
+    if (typeof x === 'string' && formatos[c] !== '@') {
+      if (x.startsWith("'")) x = x.slice(1);                       // prefijo de texto: no se guarda
+      else if (x.startsWith('=')) estado.formulas.push({ r, c, x }); // se evaluaría como fórmula
+    }
+    celdas[r - 1][c - 1] = x;
   }
   function ultimaFila() {
     for (let r = celdas.length; r >= 1; r--) if (celdas[r - 1].some((v) => v !== '' && v !== null && v !== undefined)) return r;
@@ -32,13 +47,13 @@ function crearEntorno(opciones = {}) {
   function rango(r, c, nr = 1, nc = 1) {
     return {
       getValues() { asegurar(r + nr - 1, c + nc - 1); return Array.from({ length: nr }, (_, i) => celdas[r - 1 + i].slice(c - 1, c - 1 + nc)); },
+      getValue() { asegurar(r, c); return celdas[r - 1][c - 1]; },
       setValues(v) {
         if (v.length !== nr || v.some((x) => x.length !== nc)) throw new Error(`setValues: tamaño ${v.length}x${v[0] && v[0].length} ≠ ${nr}x${nc}`);
-        asegurar(r + nr - 1, c + nc - 1);
-        v.forEach((fila, i) => fila.forEach((x, j) => { celdas[r - 1 + i][c - 1 + j] = x; }));
+        v.forEach((fila, i) => fila.forEach((x, j) => guardar(r + i, c + j, x)));
         return this;
       },
-      setValue(x) { asegurar(r, c); celdas[r - 1][c - 1] = x; return this; },
+      setValue(x) { guardar(r, c, x); return this; },
       setFontWeight() { return this; },
       setNumberFormat(f) { formatos[c] = f; return this; },
       getRow() { return r; }, getLastRow() { return r + nr - 1; },
@@ -49,7 +64,7 @@ function crearEntorno(opciones = {}) {
     getName: () => 'Leads',
     getLastRow: ultimaFila, getLastColumn: ultimaCol, getMaxRows: () => 1000,
     getRange: rango,
-    appendRow(fila) { const r = ultimaFila() + 1; asegurar(r, fila.length); fila.forEach((x, j) => { celdas[r - 1][j] = x; }); },
+    appendRow(fila) { const r = ultimaFila() + 1; fila.forEach((x, j) => guardar(r, j + 1, x)); },
     setFrozenRows() {}
   };
   const libro = {
@@ -59,10 +74,21 @@ function crearEntorno(opciones = {}) {
     getActiveRange: () => opciones.seleccion ? rango(opciones.seleccion, 1) : null
   };
 
-  const blob = (nombre, datos) => ({ nombre, datos, setName(n) { return blob(n, datos); }, getName() { return nombre; } });
+  /* ---------- Drive ---------- */
+  const blob = (nombre, datos, tipo) => ({ nombre, datos, tipo, setName(n) { return blob(n, datos, tipo); }, setContentType(t) { return blob(nombre, datos, t); }, getName() { return nombre; } });
+  const archivo = (n) => ({ getId: () => 'id:' + n, getName: () => n, isTrashed: () => estado.papelera.has(n), getBlob: () => blob(n, estado.archivos[n]) });
+  const iterador = (xs) => { let i = 0; return { hasNext: () => i < xs.length, next: () => xs[i++] }; };
+  const carpetaMedallas = {
+    getId: () => 'carpeta-ok', getName: () => 'Medallas · Creator Business Score',
+    getFilesByName: (n) => iterador(n in estado.archivos ? [archivo(n)] : []),
+    getFiles: () => iterador(Object.keys(estado.archivos).map(archivo)),
+    createFile: (b) => { estado.archivos[b.getName()] = b.datos; estado.tiposCreados = (estado.tiposCreados || []).concat(b.tipo); return archivo(b.getName()); }
+  };
+  const carpetaDeLaHoja = { createFolder: (n) => { estado.carpetasCreadas.push(n); return carpetaMedallas; } };
 
   const sandbox = {
-    console, Date, Math, JSON, Object, Array, String, Number, Set, RegExp, Error, encodeURIComponent, decodeURIComponent,
+    console: { log() {}, error: (m) => estado.errores.push(m) }, Date, Math, JSON, Object, Array, String, Number, Set, RegExp, Error,
+    encodeURIComponent, decodeURIComponent,
     SpreadsheetApp: {
       getActiveSpreadsheet: () => libro, openById: () => libro, flush() {},
       getUi: () => ({ alert: (t, x) => estado.alertas.push({ t, x }), ButtonSet: { OK: 'OK' }, createMenu: () => ({ addItem() { return this; }, addSeparator() { return this; }, addToUi() {} }) })
@@ -70,37 +96,39 @@ function crearEntorno(opciones = {}) {
     MailApp: {
       getRemainingDailyQuota: () => estado.cuota,
       sendEmail(o) {
-        if (estado.fallarCorreo > 0) { estado.fallarCorreo--; throw new Error('Servicio de correo no disponible'); }
-        if (estado.cuota < 1) throw new Error('Cuota agotada');
-        estado.cuota--; estado.correos.push(o);
+        if (estado.fallarCorreo > 0) { estado.fallarCorreo--; throw new Error(estado.errorCorreo); }
+        const n = 1 + (o.bcc ? o.bcc.split(',').length : 0);
+        if (estado.cuota < n) throw new Error('Service invoked too many times for one day: email.');
+        estado.cuota -= n; estado.correos.push(o);
+        if (opciones.alEnviar) opciones.alEnviar(celdas);
       }
     },
     DriveApp: {
-      getFolderById: (id) => {
-        if (id !== 'carpeta-ok') throw new Error('No existe la carpeta ' + id);
-        return {
-          getFilesByName: (n) => { const hay = n in estado.archivos; let dado = false; return { hasNext: () => hay && !dado, next: () => { dado = true; return { getId: () => 'id:' + n }; } }; },
-          getFiles: () => { const ks = Object.keys(estado.archivos); let i = 0; return { hasNext: () => i < ks.length, next: () => ks[i++] }; }
-        };
-      },
-      getFileById: (id) => ({ getBlob: () => blob(id.slice(3), estado.archivos[id.slice(3)]) })
+      getFolderById: (id) => { if (id !== 'carpeta-ok') throw new Error('No existe la carpeta ' + id); return carpetaMedallas; },
+      getFileById: (id) => (id === 'hoja-de-prueba' ? { getParents: () => iterador([carpetaDeLaHoja]) } : archivo(id.slice(3))),
+      getRootFolder: () => carpetaDeLaHoja
     },
-    LockService: { getScriptLock: () => ({ tryLock: () => true, releaseLock() {} }) },
+    LockService: { getScriptLock: () => ({ tryLock: () => !estado.cerrojoOcupado, releaseLock() {} }) },
     PropertiesService: { getScriptProperties: () => ({ getProperty: (k) => (k in estado.props ? estado.props[k] : null), setProperty: (k, v) => { estado.props[k] = v; } }) },
     CacheService: { getScriptCache: () => { const m = {}; return { get: (k) => (k in m ? m[k] : null), put: (k, v) => { m[k] = v; } }; } },
     UrlFetchApp: {
       fetch(url, o) {
         estado.fetches.push({ url, o });
+        if (url.endsWith('lista.json')) return { getResponseCode: () => 200, getContentText: () => JSON.stringify(opciones.listaMedallas || []) };
         const code = estado.respuestaFetch;
         return { getResponseCode: () => code, getBlob: () => blob(url.split('/').pop(), 'remoto') };
-      }
+      },
+      fetchAll(peticiones) { return peticiones.map((p) => sandbox.UrlFetchApp.fetch(p.url, p)); }
     },
     ContentService: { createTextOutput: (t) => ({ texto: t, setMimeType() { return this; } }), MimeType: { JSON: 'json' } },
-    Utilities: { getUuid: () => '1234abcd-0000-0000-0000-00000000cafe' },
+    Utilities: { getUuid: () => '1234abcd-0000-4000-8000-00000000cafe' },
     ScriptApp: {
       getProjectTriggers: () => estado.triggers,
       deleteTrigger: (t) => { estado.triggers.splice(estado.triggers.indexOf(t), 1); },
-      newTrigger: (h) => ({ timeBased: () => ({ everyMinutes: (n) => ({ create: () => { estado.triggers.push({ getHandlerFunction: () => h, n }); } }) }) }),
+      newTrigger: (h) => ({ timeBased: () => ({
+        everyMinutes: (n) => ({ create: () => { estado.triggers.push({ getHandlerFunction: () => h, n }); } }),
+        after: (ms) => ({ create: () => { estado.triggers.push({ getHandlerFunction: () => h, ms }); } })
+      }) }),
       getService: () => ({ getUrl: () => 'https://script.google.com/macros/s/PRUEBA/exec' })
     },
     Session: { getEffectiveUser: () => ({ getEmail: () => 'yo@kunfupay.com' }) },
