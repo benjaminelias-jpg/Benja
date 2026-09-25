@@ -26,7 +26,8 @@ function esperado(api, extra = {}) {
   const t = { audiencia: l.comunidad, ritmo: l.situacion, modelo: l.producto, facturacion: l.facturacion, limitacion: l.problema };
   return api.evaluar(api.leerRespuestas(t).r);
 }
-const entorno = (o = {}) => crearEntorno(Object.assign({ props: { WEBHOOK_TOKEN: TOKEN }, archivos: archivosMedallas(), config: { CARPETA_MEDALLAS_ID: 'carpeta-ok' } }, o));
+/* Las pruebas del camino con medalla fuerzan MODO_CORREO 'medalla'; el predeterminado ('html') se prueba al final. */
+const entorno = (o = {}) => crearEntorno(Object.assign({ props: { WEBHOOK_TOKEN: TOKEN }, archivos: archivosMedallas() }, o, { config: Object.assign({ MODO_CORREO: 'medalla', CARPETA_MEDALLAS_ID: 'carpeta-ok' }, o.config || {}) }));
 const fila = (e, r) => {
   const enc = e.celdas[0].map(String);
   const f = e.celdas[r - 1];
@@ -389,5 +390,60 @@ prueba('"Ver token del webhook" muestra el token y explica de dónde sacar la UR
   const a = e.estado.alertas[0];
   assert.ok(a.x.includes('?token=' + TOKEN) && a.x.includes('Gestionar implementaciones') && a.x.includes('incógnito'));
 });
+
+console.log('\nCorreo 100 % HTML (MODO_CORREO predeterminado) y hoja tal cual la deja Meta');
+const ENC_META = ['id', 'created_time', 'ad_id', 'ad_name', 'adset_id', 'adset_name', 'campaign_id', 'campaign_name', 'form_id', 'form_name', 'is_organic', 'platform',
+  '¿de_qué_tamaño_es_tu_comunidad_o_audiencia_activa?', '¿qué_opción_describe_mejor_tu_situación_actual_y_la_de_tu_negocio_digital?', '¿qué_producto_o_servicio_vendes_principalmente?',
+  '¿cuál_es_tu_facturación_mensual_aproximada?', 'si_pudieras_resolver_un_solo_problema_hoy,_¿cuál_sería?', 'nombre_completo', 'correo_electrónico', 'phone_number', 'lead_status'];
+const filaMeta = (o = {}) => { const l = leadMake(o); return ['l:' + l.id_lead, '2026-09-25T03:22:30-05:00', '', '', '', '', '', '', 'f:2163216630956791', 'Creator Business Score - Classroom Platinum', 'true', 'ig', l.comunidad, l.situacion, l.producto, l.facturacion, l.problema, l.nombre, l.email, 'p:' + l.telefono, 'OK']; };
+const dummy = (c) => '<test lead: dummy data for ' + c + '>';
+prueba('modo html (predeterminado): sin imágenes ni adjuntos, con dial, pastillas, barras y botón; no necesita medallas', () => {
+  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN } });   // sin carpeta de medallas ni archivos
+  const r = post(e.api, leadMake());
+  assert.strictEqual(r.enviadas, 1);
+  const c = e.estado.correos[0];
+  assert.ok(!c.inlineImages && !c.attachments);
+  assert.ok(!/<img\b/i.test(c.htmlBody) && !/url\(/.test(c.htmlBody) && !/<svg/.test(c.htmlBody));
+  assert.ok(c.htmlBody.includes('>74<span') && c.htmlBody.includes('Medalla de Plata') && c.htmlBody.includes('Tu cuello de botella: Ventas y conversión'));
+  assert.ok(c.htmlBody.includes('width="68%" bgcolor="#6347ff"') && c.htmlBody.includes('Aplicar a Classroom Platinum'));
+  assert.ok(c.htmlBody.includes('utm_medium=email&amp;utm_term=calificado_si&amp;utm_content=score_69'));
+  assert.ok(c.htmlBody.includes('Eres candidato a Classroom Platinum'));
+  assert.ok(c.body.includes('74/100 · Medalla de Plata') && !c.body.includes('adjunta'));
+  assert.strictEqual(c.subject, 'Ana, tu Creator Business Score: 74/100 · Medalla de Plata');
+  assert.strictEqual(fila(e, 2).Estado, 'enviado'); assert.strictEqual(fila(e, 2).Detalle, '');
+  assert.ok(c.htmlBody.length < 40000);
+});
+prueba('modo html: no califica → botón naranja de Kunfupay y paso 04; e-commerce → sin botón, sin bloque Platinum', () => {
+  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN } });
+  post(e.api, leadMake({ id_lead: '1', facturacion: 'Menos de 1.000 €' }));
+  post(e.api, leadMake({ id_lead: '2', email: 'eva@ejemplo.com', producto: 'E-commerce / Producto físico' }));
+  const [a, b] = e.estado.correos;
+  assert.ok(a.htmlBody.includes('bgcolor="#f97316"') && a.htmlBody.includes('Empezar con Kunfupay') && a.htmlBody.includes('>04<') && a.htmlBody.includes('Fase de ordenar'));
+  assert.ok(!a.htmlBody.includes('Eres candidato'));
+  assert.ok(!b.htmlBody.includes('Aplicar a Classroom Platinum') && !b.htmlBody.includes('Empezar con Kunfupay') && !b.htmlBody.includes('>04<'));
+  assert.ok(!b.htmlBody.includes('Eres candidato') && b.htmlBody.includes('Fuera del perfil de Platinum'));
+});
+prueba('hoja con las columnas exactas que deja Meta (id, created_time, …, ¿preguntas?, nombre_completo, correo_electrónico, phone_number): se lee y se envía', () => {
+  const m = api_().mapearColumnas(ENC_META);
+  assert.deepStrictEqual(['id', 'fecha', 'origen', 'audiencia', 'ritmo', 'modelo', 'facturacion', 'limitacion', 'nombre', 'email', 'telefono'].map((k) => ENC_META[m[k]]),
+    ['id', 'created_time', 'platform', ENC_META[12], ENC_META[13], ENC_META[14], ENC_META[15], ENC_META[16], 'nombre_completo', 'correo_electrónico', 'phone_number']);
+  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN }, filas: [ENC_META, filaMeta()] });
+  e.api.procesarPendientes();
+  assert.strictEqual(e.estado.correos.length, 1); assert.strictEqual(e.estado.correos[0].to, 'ana@ejemplo.com');
+  const f = fila(e, 2);
+  assert.strictEqual(f.Estado, 'enviado'); assert.strictEqual(f.Puntaje, 74); assert.strictEqual(f.Medalla, 'Plata');
+  assert.strictEqual(e.celdas[1][0], 'l:1203948576612345');   // la columna id de Meta no se toca
+});
+prueba('lead de prueba de Meta ("<test lead: dummy data for …>", test@meta.com) → omitido, sin correo', () => {
+  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN }, filas: [ENC_META, filaMeta().map((v, i) => (i >= 12 && i <= 17) ? dummy(ENC_META[i]) : i === 18 ? 'test@meta.com' : i === 19 ? 'p:' + dummy('phone_number') : v)] });
+  e.api.procesarPendientes();
+  assert.strictEqual(e.estado.correos.length, 0);
+  assert.strictEqual(fila(e, 2).Estado, 'omitido'); assert.ok(fila(e, 2).Detalle.includes('Lead de prueba de Meta'));
+  // un lead real con el correo test@meta.com tampoco sale
+  const e2 = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN } });
+  post(e2.api, leadMake({ email: 'test@meta.com' }));
+  assert.strictEqual(e2.estado.correos.length, 0); assert.strictEqual(fila(e2, 2).Estado, 'omitido');
+});
+function api_() { return crearEntorno().api; }
 
 console.log(`\n${n} pruebas superadas`);

@@ -40,7 +40,13 @@ const CONFIG = {
   COPIA_OCULTA: '',             // BCC interno opcional (cuenta como destinatario en la cuota).
   CORREO_BAJA: '',              // dirección para pedir la baja (pie del correo). Vacío = RESPONDER_A o la cuenta del script.
 
-  // Medallas pre-generadas (ver medallas/). Una de las dos:
+  // Formato del correo:
+  //   'html'    → todo en HTML (dial con el puntaje, pastillas, barras, botón). Sin imágenes:
+  //               no necesita medallas en Drive y no depende de que el cliente cargue imágenes.
+  //   'medalla' → la cabecera es la imagen de la medalla (requiere Importar medallas).
+  MODO_CORREO: 'html',
+
+  // Medallas pre-generadas (ver medallas/), solo para MODO_CORREO 'medalla'. Una de las dos:
   CARPETA_MEDALLAS_ID: '',      // ID de la carpeta de Drive con los .jpg. Vacío = la que crea
                                 // el menú "Importar medallas" junto a esta hoja (recomendado).
   URL_BASE_MEDALLAS: '',        // o una URL pública que termine en '/', p. ej.
@@ -642,6 +648,14 @@ function escribirResultado(hoja, nFila, mapa, fila, cambios) {
   return true;
 }
 
+/** Lead generado por "Crear lead de prueba" de Meta: "<test lead: dummy data for …>" y test@meta.com. */
+function esLeadDePrueba(textos, nombre, email) {
+  const dummy = /test lead:\s*dummy data/i;
+  if (dummy.test(String(nombre || ''))) return true;
+  if (/^test@meta\.com$/i.test(String(email || '').trim())) return true;
+  return Object.keys(textos || {}).some(function (k) { return dummy.test(String(textos[k] || '')); });
+}
+
 function esErrorDeCuota(err) {
   return /too many times|quota|cuota|limit exceeded/i.test(String(err && err.message || err));
 }
@@ -664,6 +678,11 @@ function procesarFila(hoja, nFila, fila, mapa, idsEnviados) {
 
   const textos = {};
   PREGUNTAS.forEach(function (p) { textos[p.id] = leerTexto(col(p.id)); });
+  // Lead de prueba de la herramienta de Meta: llega con "<test lead: dummy data for …>" en cada campo.
+  if (esLeadDePrueba(textos, leerTexto(col('nombre')), email)) {
+    escribir({ estado: 'omitido', detalle: 'Lead de prueba de Meta (datos ficticios): no se envía.' });
+    return 'omitido';
+  }
   const leidas = leerRespuestas(textos);
   if (leidas.fallos.length) {
     escribir({ estado: 'incompleto', detalle: 'No entiendo la respuesta de ' + leidas.fallos.join(' · ') + '. Corrígela (o añade un ALIAS) y vacía Estado.' });
@@ -823,9 +842,10 @@ function correoDeBaja() {
 }
 
 function enviarCorreo(res, lead) {
-  const img = imagenesDelCorreo(res);
+  const soloHtml = CONFIG.MODO_CORREO !== 'medalla';
+  const img = soloHtml ? { src: '', descarga: '', inline: {}, adjuntos: [], avisos: [] } : imagenesDelCorreo(res);
   img.baja = correoDeBaja();
-  const correo = construirCorreo(res, lead, img);
+  const correo = soloHtml ? construirCorreoHtml(res, lead, img.baja) : construirCorreo(res, lead, img);
   const opciones = {
     to: lead.email,
     subject: correo.asunto,
@@ -1053,6 +1073,239 @@ function cabeceraDeTexto(res) {
     t('MI PRÓXIMO DESBLOQUEO', 'font-size:11px;line-height:16px;letter-spacing:2px;font-weight:700;opacity:.7;') +
     t(esc(caso.desbloqueo || caso.limitacion), 'font-size:16px;line-height:24px;font-weight:600;') +
     '</td></tr></table>';
+}
+
+/* ------------------------------------------------------------
+   6b · CORREO 100 % HTML (MODO_CORREO 'html', el predeterminado)
+   Estética de la serie transaccional de Classroom: hero lavanda con el
+   puntaje en un dial, pastillas de medalla y de cuello de botella, botón
+   con degradado violeta → azul, paneles blancos. Sin imágenes ni SVG:
+   cada relleno va en bgcolor= (lo respetan todos los clientes) y el
+   degradado solo en style= como mejora progresiva.
+   construirCorreoHtml(res, lead, baja) → { asunto, html, texto }  (pura)
+   ------------------------------------------------------------ */
+var PALETA_HTML = {
+  fondo: '#f0f4ff', borde: '#e3e0f5', texto: '#15122f', sutil: '#53587a', apagado: '#9b96b8',
+  acento: '#6347ff', acentoOscuro: '#5c21e0', hero: '#f2e7ff', lila: '#f5f1ff', lilaBorde: '#e6ddff',
+  pista: '#eef0fb', ambarFondo: '#fff2e0', ambar: '#9a5b00', ambarBorde: '#ffe0ad', naranja: '#f97316',
+  degradadoBoton: 'linear-gradient(135deg,#ba59ff 0%,#6347ff 48%,#006fea 100%)',
+  degradadoHero: 'linear-gradient(110deg,#ffffff 0%,#f2e7ff 34%,#dbf4ff 67%,#ffffff 100%)'
+};
+var FUENTE_HTML = "'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif";
+var MEDALLA_COLORES = {
+  Oro:    { bg: '#fff6d6', c: '#8a6100', bd: '#f1dc8e' },
+  Plata:  { bg: '#f1f1f7', c: '#4b4b63', bd: '#d5d5e3' },
+  Bronce: { bg: '#fbe9dc', c: '#8a4a17', bd: '#f0c9a6' },
+  Acero:  { bg: '#e9edf3', c: '#3f4a5c', bd: '#cbd3df' }
+};
+
+function construirCorreoHtml(res, lead, baja) {
+  const _esc = esc, _nombre = primerNombre, _url = urlConResultado, CFG = CONFIG, FDP = FUERA_DE_PERFIL, PK = PASO_KUNFUPAY;
+  const P = PALETA_HTML, F = FUENTE_HTML;
+
+  const v = res.puntajeVisible, f = res.franja, caso = res.caso;
+  const nombre = _nombre(lead && lead.nombre);
+  const desbloqueo = caso.desbloqueo || caso.limitacion;
+  const metal = MEDALLA_COLORES[f.medalla] || MEDALLA_COLORES.Plata;
+
+  const chip = res.noAplica
+    ? { t: FDP.chip, bg: '#f4f4f5', bd: '#d4d4d8', c: '#52525b' }
+    : res.califica
+      ? { t: 'Calificas para aplicar', bg: '#ecfdf3', bd: '#abefc6', c: '#166534' }
+      : { t: 'Fase de ordenar', bg: '#fef3f2', bd: '#fecdca', c: '#b42318' };
+  const faseHtml = res.noAplica
+    ? _esc(FDP.fase)
+    : res.califica
+      ? 'Ya facturas y tienes comunidad: calificas para aplicar a <strong style="color:' + P.texto + ';font-weight:700;">Classroom Platinum</strong>, el programa de escalado de Kunfupay.'
+      : 'Tu negocio genera ingresos, pero todavía no opera como empresa. Primero se ordena, después se escala.';
+  const faseTexto = faseHtml.replace(/<[^>]+>/g, '');
+  const cta = res.noAplica ? null : res.califica
+    ? { t: 'Aplicar a Classroom Platinum', url: _url(CFG.URL_APLICAR, res), bg: P.acento, grad: P.degradadoBoton }
+    : { t: 'Empezar con Kunfupay', url: _url(CFG.URL_KUNFUPAY, res), bg: P.naranja, grad: 'linear-gradient(135deg,#fb923c 0%,#f97316 55%,#ea580c 100%)' };
+  const notaCta = res.noAplica ? FDP.nota
+    : res.califica ? 'Si tu resultado es positivo, puedes aplicar a nuestro plan de inversión para potenciar tu negocio digital.' : '';
+
+  const barras = [
+    ['Ritmo del negocio', res.variables.ritmo],
+    ['Escalabilidad del modelo', res.variables.modelo],
+    ['Conversión de audiencia', res.variables.conversion],
+    ['Tamaño de comunidad', res.variables.comunidad]
+  ];
+  const pasos = caso.pasos.map(function (x, i) { return { n: '0' + (i + 1), t: x.titulo, d: x.desc }; });
+  const conKunfupay = !res.califica && !res.noAplica;
+  const tituloPasos = conKunfupay ? '3 pasos de acción inmediatos, y cómo te ayudamos' : '3 pasos de acción inmediatos';
+  const asunto = (nombre ? nombre + ', tu' : 'Tu') + ' Creator Business Score: ' + v + '/100 · Medalla de ' + f.medalla;
+  const preheader = f.titular + '. Tu diagnóstico y 3 pasos para tu negocio.';
+
+  /* ---------- piezas ---------- */
+  const p = function (txt, estilo) { return '<p style="margin:0;font-family:' + F + ';mso-line-height-rule:exactly;' + estilo + '">' + txt + '</p>'; };
+  const sep = function (h) { return '<div style="height:' + h + 'px;line-height:' + h + 'px;font-size:0;">&nbsp;</div>'; };
+  const eyebrow = function (t, color) { return p(_esc(t).toUpperCase(), 'font-size:11px;line-height:16px;font-weight:700;letter-spacing:1.5px;color:' + (color || P.apagado) + ';'); };
+  const pastilla = function (t, bg, c, bd, estilo) {
+    return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>' +
+      '<td bgcolor="' + bg + '" style="border-radius:999px;border:1px solid ' + bd + ';padding:7px 14px;font-family:' + F + ';font-size:12.5px;line-height:16px;font-weight:700;color:' + c + ';text-align:center;' + (estilo || '') + '">' + t + '</td></tr></table>';
+  };
+  const boton = function (t, url, bg, grad) {
+    return '<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>' +
+      '<td align="center" bgcolor="' + bg + '" style="border-radius:12px;background-color:' + bg + ';background-image:' + grad + ';mso-padding-alt:14px 32px;">' +
+      '<a href="' + _esc(url) + '" target="_blank" style="display:block;padding:14px 32px;font-family:' + F + ';font-size:14px;line-height:18px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;color:#ffffff;text-decoration:none;border-radius:12px;">' + _esc(t) + '</a>' +
+      '</td></tr></table>';
+  };
+  const panel = function (interior, bg, bd) {
+    return '<tr><td style="padding:0 24px 20px;">' +
+      '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="' + (bg || '#ffffff') + '" style="width:100%;border:1px solid ' + (bd || P.borde) + ';border-radius:16px;">' +
+      '<tr><td style="padding:20px;">' + interior + '</td></tr></table></td></tr>';
+  };
+
+  /* ---------- hero ---------- */
+  const dial =
+    '<table role="presentation" cellpadding="0" cellspacing="0" border="0" align="center" style="margin:0 auto;"><tr>' +
+    '<td width="150" height="150" align="center" valign="middle" bgcolor="' + P.acento + '" style="width:150px;height:150px;border-radius:75px;background-color:' + P.acento + ';">' +
+    '<table role="presentation" cellpadding="0" cellspacing="0" border="0" width="118" bgcolor="#ffffff" style="width:118px;border-radius:59px;background-color:#ffffff;"><tr>' +
+    '<td width="118" height="118" align="center" valign="middle" style="width:118px;height:118px;border-radius:59px;">' +
+    p(v + '<span style="font-size:16px;line-height:20px;font-weight:600;color:' + P.apagado + ';">/100</span>', 'font-size:40px;line-height:44px;font-weight:800;letter-spacing:-1px;color:' + P.texto + ';') +
+    '</td></tr></table></td></tr></table>';
+
+  const hero =
+    '<tr><td align="center" bgcolor="' + P.hero + '" style="padding:34px 24px 30px;text-align:center;background-color:' + P.hero + ';background-image:' + P.degradadoHero + ';border-radius:20px 20px 0 0;">' +
+    eyebrow('Tu Creator Business Score', P.acentoOscuro) +
+    sep(18) + dial + sep(16) +
+    pastilla('Medalla de ' + _esc(f.medalla), metal.bg, metal.c, metal.bd, 'letter-spacing:.5px;text-transform:uppercase;font-size:12px;') +
+    sep(8) +
+    pastilla('Tu cuello de botella: ' + _esc(desbloqueo), P.ambarFondo, P.ambar, P.ambarBorde) +
+    sep(18) +
+    p('“' + _esc(f.titular) + '”', 'font-size:18px;line-height:25px;font-weight:800;letter-spacing:-.2px;color:' + P.texto + ';') +
+    '</td></tr>';
+
+  /* ---------- saludo + fase + CTA ---------- */
+  var intro = '<tr><td style="padding:24px 24px 0;">' +
+    p('¡Ya está' + (nombre ? ', ' + _esc(nombre) : '') + '!', 'font-size:18px;line-height:25px;font-weight:700;color:' + P.texto + ';') +
+    sep(8) +
+    p('Tu Creator Business Score es <strong style="color:' + P.texto + ';font-weight:700;">' + v + '/100</strong>, medalla de <strong style="color:' + P.texto + ';font-weight:700;">' + _esc(f.medalla) + '</strong>. Lo que más te frena ahora mismo: <strong style="color:' + P.texto + ';font-weight:600;">' + _esc(desbloqueo.toLowerCase()) + '</strong>.',
+      'font-size:15px;line-height:24px;color:' + P.sutil + ';') +
+    '</td></tr>' +
+    '<tr><td align="center" style="padding:20px 24px 0;text-align:center;">' +
+    pastilla(_esc(chip.t), chip.bg, chip.c, chip.bd) + sep(12) +
+    p(faseHtml, 'font-size:14px;line-height:22px;color:' + P.sutil + ';text-align:center;');
+  if (cta) intro += sep(20) + boton(cta.t, cta.url, cta.bg, cta.grad);
+  if (notaCta) intro += sep(14) + p(_esc(notaCta), 'font-size:12.5px;line-height:19px;color:' + P.apagado + ';text-align:center;');
+  if (cta) intro += sep(10) + p('Si el botón no funciona, copia este enlace:<br><a href="' + _esc(cta.url) + '" target="_blank" style="color:' + P.acento + ';text-decoration:underline;word-break:break-all;">' + _esc(cta.url) + '</a>', 'font-size:12px;line-height:18px;color:' + P.apagado + ';text-align:center;');
+  intro += sep(24) + '</td></tr>';
+
+  /* ---------- resultados ---------- */
+  var filas = '';
+  barras.forEach(function (b, i) {
+    const val = Math.max(0, Math.min(100, Number(b[1]) || 0));
+    const color = val < 60 ? '#b9aaff' : P.acento;
+    filas += '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"' + (i ? ' style="margin-top:14px;"' : '') + '><tr>' +
+      '<td style="font-family:' + F + ';font-size:13.5px;line-height:18px;font-weight:600;color:' + P.texto + ';">' + _esc(b[0]) + '</td>' +
+      '<td align="right" width="44" style="font-family:' + F + ';font-size:13.5px;line-height:18px;font-weight:700;color:' + P.sutil + ';">' + val + '</td></tr>' +
+      '<tr><td colspan="2" style="padding-top:6px;"><table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="' + P.pista + '" style="border-radius:999px;"><tr>' +
+      (val > 0 ? '<td width="' + val + '%" bgcolor="' + color + '" style="height:6px;line-height:6px;font-size:0;border-radius:999px;">&nbsp;</td>' : '') +
+      (val < 100 ? '<td style="height:6px;line-height:6px;font-size:0;">&nbsp;</td>' : '') +
+      '</tr></table></td></tr></table>';
+  });
+  const resultados = panel(p('Así puntúa tu negocio', 'font-size:14px;line-height:20px;font-weight:700;color:' + P.texto + ';') + sep(14) + filas);
+
+  /* ---------- diagnóstico ---------- */
+  const diagnostico = panel(
+    eyebrow('Diagnóstico personalizado') + sep(10) +
+    '<h2 style="margin:0;font-family:' + F + ';font-size:17px;line-height:24px;font-weight:700;letter-spacing:-.2px;color:' + P.texto + ';">' + _esc(caso.titular) + '</h2>' +
+    sep(10) + p(_esc(caso.diagnostico), 'font-size:14px;line-height:22px;color:' + P.sutil + ';') + sep(14) +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="' + P.lila + '" style="border:1px solid ' + P.lilaBorde + ';border-radius:12px;"><tr><td style="padding:12px 14px;">' +
+    p('<strong style="color:' + P.acentoOscuro + ';">La “X” en tu negocio.</strong> ' + _esc(caso.x), 'font-size:13.5px;line-height:21px;color:' + P.sutil + ';') +
+    '</td></tr></table>');
+
+  /* ---------- pasos ---------- */
+  const paso = function (n, t, d, kunfupay) {
+    const circulo = kunfupay ? { bg: P.acento, c: '#ffffff' } : { bg: P.lila, c: P.acentoOscuro };
+    const fila = '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0"><tr>' +
+      '<td width="32" valign="top" style="padding-right:14px;"><table role="presentation" cellpadding="0" cellspacing="0" border="0"><tr><td align="center" valign="middle" width="32" height="32" bgcolor="' + circulo.bg + '" style="width:32px;height:32px;border-radius:16px;font-family:' + F + ';font-size:12px;font-weight:700;color:' + circulo.c + ';">' + n + '</td></tr></table></td>' +
+      '<td valign="top">' +
+      p(_esc(t), 'font-size:15px;line-height:20px;font-weight:700;color:' + P.texto + ';') + sep(4) +
+      p(_esc(d), 'font-size:13.5px;line-height:21px;color:' + P.sutil + ';') +
+      '</td></tr></table>';
+    if (!kunfupay) return fila;
+    return '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="' + P.lila + '" style="border:1px solid ' + P.lilaBorde + ';border-radius:12px;"><tr><td style="padding:14px;">' + fila + '</td></tr></table>';
+  };
+  var htmlPasos = '';
+  pasos.forEach(function (x, i) { htmlPasos += (i ? sep(16) : '') + paso(x.n, x.t, x.d, false); });
+  if (conKunfupay) htmlPasos += sep(16) + paso('04', PK.titulo, PK.desc, true);
+  const porDonde = panel(eyebrow('Por dónde empezar') + sep(10) +
+    '<h3 style="margin:0;font-family:' + F + ';font-size:17px;line-height:24px;font-weight:700;letter-spacing:-.2px;color:' + P.texto + ';">' + _esc(tituloPasos) + '</h3>' + sep(16) + htmlPasos);
+
+  /* ---------- candidato a Platinum (solo si califica) ---------- */
+  const platinum = !res.califica ? '' : panel(
+    p('🎓 Eres candidato a Classroom Platinum', 'font-size:14px;line-height:20px;font-weight:700;color:' + P.texto + ';') + sep(5) +
+    p('Con tu puntaje puedes aplicar a financiamiento para escalar tu negocio digital. Es una llamada corta para ver si encajas, sin compromiso.', 'font-size:13px;line-height:20px;color:' + P.sutil + ';') + sep(12) +
+    p('<a href="' + _esc(cta.url) + '" target="_blank" style="color:' + P.acento + ';font-weight:700;text-decoration:underline;">Aplicar al programa &rarr;</a>', 'font-size:13px;line-height:20px;'),
+    P.lila, P.lilaBorde);
+
+  const nota = '<tr><td style="padding:0 24px 26px;">' +
+    p('¿Cómo calculamos tu puntaje? Cruzamos tus 5 respuestas con las variables que miramos antes de financiar un negocio digital: alcance real, estabilidad de ingresos, modelo de entrega, facturación y el cuello de botella que tú mismo identificas.', 'font-size:11.5px;line-height:17px;color:' + P.apagado + ';') +
+    '</td></tr>';
+
+  /* ---------- pie ---------- */
+  const enlace = function (t, url) { return '<a href="' + url + '" target="_blank" style="color:#7d7796;text-decoration:underline;">' + t + '</a>'; };
+  const pie =
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" style="width:100%;max-width:600px;"><tr><td align="center" style="padding:22px 16px 24px;text-align:center;">' +
+    p('Classroom <span style="font-weight:500;color:' + P.sutil + ';">by</span> Kunfupay', 'font-size:20px;line-height:26px;font-weight:800;letter-spacing:-.5px;color:' + P.texto + ';') + sep(10) +
+    p('Mensaje transaccional enviado por Kunfupay Classroom. Auditoría orientativa: no constituye una oferta de financiamiento.', 'font-size:12px;line-height:18px;color:' + P.apagado + ';') + sep(6) +
+    p('Recibes este correo porque completaste el Creator Business Score de Kunfupay en Facebook o Instagram.' +
+      (baja ? ' Si no quieres recibir más correos, escribe a <a href="mailto:' + _esc(baja) + '?subject=Baja" style="color:#7d7796;text-decoration:underline;">' + _esc(baja) + '</a>.' : ''),
+      'font-size:11px;line-height:17px;color:' + P.apagado + ';') + sep(6) +
+    p(enlace('Términos y Condiciones', 'https://kunfupay.com/legal/terms') + '<span style="color:#d4d4d8;"> &middot; </span>' + enlace('Política de Privacidad', 'https://kunfupay.com/legal/privacy') + '<span style="color:#d4d4d8;"> &middot; </span>' + enlace('Política de Cookies', 'https://kunfupay.com/legal/cookies'), 'font-size:11px;line-height:17px;color:' + P.apagado + ';') +
+    '</td></tr></table>';
+
+  const html =
+    '<!doctype html><html lang="es" xmlns="http://www.w3.org/1999/xhtml"><head>' +
+    '<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">' +
+    '<meta name="x-apple-disable-message-reformatting"><meta name="color-scheme" content="light only"><meta name="supported-color-schemes" content="light">' +
+    '<title>' + _esc(asunto) + '</title>' +
+    '<!--[if !mso]><!--><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"><!--<![endif]-->' +
+    '<!--[if mso]><style>table,td,p,a,h2,h3,strong{font-family:\'Segoe UI\',Arial,sans-serif!important;}</style><![endif]-->' +
+    '<style>body{margin:0;padding:0;-webkit-text-size-adjust:100%;}@media only screen and (max-width:620px){.marco{padding:8px 0!important;}.contenedor{border-radius:0!important;}}</style>' +
+    '</head><body style="margin:0;padding:0;" bgcolor="' + P.fondo + '">' +
+    '<div style="display:none;max-height:0;overflow:hidden;opacity:0;color:transparent;font-size:1px;line-height:1px;mso-hide:all;">' + _esc(preheader) + '&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;&#847;&zwnj;&nbsp;</div>' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" bgcolor="' + P.fondo + '"><tr>' +
+    '<td align="center" class="marco" style="padding:16px 8px;">' +
+    '<!--[if mso]><table role="presentation" width="600" align="center" cellpadding="0" cellspacing="0" border="0"><tr><td><![endif]-->' +
+    '<table role="presentation" width="100%" cellpadding="0" cellspacing="0" border="0" class="contenedor" bgcolor="#ffffff" style="width:100%;max-width:600px;border:1px solid ' + P.borde + ';border-radius:20px;">' +
+    hero + intro + resultados + diagnostico + porDonde + platinum + nota +
+    '</table>' + pie +
+    '<!--[if mso]></td></tr></table><![endif]-->' +
+    '</td></tr></table></body></html>';
+
+  /* ---------- versión de texto ---------- */
+  const L = [];
+  L.push((nombre ? '¡Ya está, ' + nombre + '! ' : '¡Ya está! ') + 'Este es tu Creator Business Score.');
+  L.push('');
+  L.push(v + '/100 · Medalla de ' + f.medalla);
+  L.push('"' + f.titular + '"');
+  L.push('Tu cuello de botella: ' + desbloqueo);
+  L.push('');
+  L.push(chip.t.toUpperCase());
+  L.push(faseTexto);
+  if (cta) L.push(cta.t + ': ' + cta.url);
+  if (notaCta) L.push(notaCta);
+  L.push('');
+  L.push('ASÍ PUNTÚA TU NEGOCIO');
+  barras.forEach(function (b) { L.push('· ' + b[0] + ': ' + b[1]); });
+  L.push('');
+  L.push('DIAGNÓSTICO PERSONALIZADO');
+  L.push(caso.titular);
+  L.push(caso.diagnostico);
+  L.push('La “X” en tu negocio. ' + caso.x);
+  L.push('');
+  L.push('POR DÓNDE EMPEZAR · ' + tituloPasos);
+  pasos.forEach(function (x) { L.push(x.n + ' · ' + x.t + ': ' + x.d); });
+  if (conKunfupay) L.push('04 · ' + PK.titulo + ': ' + PK.desc);
+  L.push('');
+  L.push('—');
+  L.push('Classroom by Kunfupay · Auditoría orientativa. No constituye una oferta de financiamiento.');
+  if (baja) L.push('Si no quieres recibir más correos, escribe a ' + baja + '.');
+
+  return { asunto: asunto, html: html, texto: L.join('\n') };
 }
 
 /* ------------------------------------------------------------
@@ -1398,6 +1651,6 @@ if (typeof module !== 'undefined') {
     CONFIG, PREGUNTAS, CASOS, FRANJAS, evaluar, puntajeVisible, franjaDe, normalizar, emparejarOpcion, leerRespuestas,
     mapearColumnas, construirCorreo, conParametros, urlConResultado, primerNombre, leadEntrante, cuerpoWebhookSalida,
     nombresMedalla, celdaSegura, esc, doPost, doGet, procesarPendientes, anexarLead, configurar, enviarPruebas,
-    importarMedallas, mostrarWebhook, carpetaMedallasId, ORIGEN_MEDALLAS
+    importarMedallas, mostrarWebhook, carpetaMedallasId, ORIGEN_MEDALLAS, FUERA_DE_PERFIL, PASO_KUNFUPAY, COLUMNAS, normalizar, construirCorreoHtml, esLeadDePrueba
   };
 }

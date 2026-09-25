@@ -4,8 +4,11 @@ Sustituye a la landing (`landings/classroom-platinum-score/v1`). Las 5 preguntas
 se hacen en un **formulario instantáneo de Meta**; las respuestas caen en una
 **hoja de Google**, y un **Apps Script** vinculado a la hoja calcula el puntaje
 con el mismo motor de la landing y **envía por correo la página de gracias**:
-medalla, puntaje, calificación, barras, diagnóstico y pasos, con la medalla
-adjunta para la story.
+puntaje en un dial, medalla, cuello de botella, calificación, barras,
+diagnóstico y pasos. El correo es **100 % HTML** (estética de la serie
+transaccional de Classroom): no lleva imágenes, así que se ve igual aunque el
+cliente de correo las bloquee y no hace falta subir nada a Drive. (El modo
+con la medalla como imagen sigue disponible: `CONFIG.MODO_CORREO: 'medalla'`.)
 
 ```
 Formulario instantáneo (Meta)
@@ -14,7 +17,7 @@ Formulario instantáneo (Meta)
 Make  ──POST──▶  Webhook (app web del Apps Script)
                         │  1 · añade la fila a la hoja "Leads" (nunca la descarta)
                         │  2 · puntaje + caso + calificación (motor de la landing)
-                        │  3 · correo HTML con la medalla (Gmail de la cuenta del script)
+                        │  3 · correo HTML con el resultado (Gmail de la cuenta del script)
                         │  4 · escribe el resultado en la fila
                         └─ 5 · (opcional) manda todo a un webhook de salida (CRM, Notion…)
 Reloj cada 5 min ── recoge lo que quedó en cola y las filas que otra herramienta escriba directamente
@@ -27,9 +30,9 @@ Reloj cada 5 min ── recoge lo que quedó en cola y las filas que otra herram
 | `apps-script/Codigo.gs` | Todo el sistema: motor, hoja, webhook, correo, menú, importador de medallas. Es lo único que se pega en Apps Script. |
 | `apps-script/appsscript.json` | Manifiesto opcional (fija los permisos). No hace falta para que funcione. |
 | `hoja/creator-business-score-leads.xlsx` | Plantilla de la hoja: pestañas **Leads**, **Formulario Meta** (textos exactos) y **Cómo funciona**. |
-| `medallas/img/` | Las 430 imágenes (215 pares puntaje × diagnóstico: cabecera del correo + tarjeta completa). El script las importa solo a Drive. |
-| `muestras/` | Los tres correos de muestra (califica · fase de ordenar · fuera de perfil) en HTML, texto y capturas. |
-| `pruebas/` | Paridad con la landing (3.750 combinaciones), 45 pruebas de integración y generador de muestras. |
+| `medallas/img/` | Solo para `MODO_CORREO: 'medalla'`: las 430 imágenes (215 pares puntaje × diagnóstico). El script las importa solo a Drive. |
+| `muestras/` | Los tres correos de muestra (califica · fase de ordenar · fuera de perfil): `correo-html-*` es el correo actual (100 % HTML); `correo-*` el modo con medalla. HTML, texto y capturas. |
+| `pruebas/` | Paridad con la landing (3.750 combinaciones), 49 pruebas de integración (incluida la hoja tal cual la deja Meta) y generadores de muestras. |
 
 ## Instalación (una sola vez, ~20 minutos)
 
@@ -88,11 +91,11 @@ los encabezados de **Leads**: el script busca las columnas por su nombre.
    - **1 · Configurar (una sola vez)** → acepta los permisos (Google avisará
      de que la app no está verificada: *Configuración avanzada → Ir a…*; es tu
      propio script). Crea el token del webhook y el reloj de 5 minutos.
-   - **2 · Importar medallas a Drive** → crea la carpeta *Medallas · Creator
-     Business Score* junto a la hoja y descarga en ella las 430 imágenes desde
-     este repositorio (tarda unos minutos; si no le da tiempo, sigue sola al
-     minuto siguiente). No hay que subir nada a mano.
    - **Enviarme los 3 correos de prueba** → te llegan los tres desenlaces.
+   - **2 · Importar medallas a Drive** solo hace falta si cambias a
+     `MODO_CORREO: 'medalla'`: crea la carpeta *Medallas · Creator Business
+     Score* junto a la hoja y descarga las 430 imágenes desde este repositorio.
+     Con el modo `'html'` (predeterminado) sáltalo.
 
 > **Desde qué cuenta sale el correo:** desde la cuenta de Google que hace el
 > paso 3. Para que salga de `hola@kunfupay.com`, haz la instalación con esa
@@ -196,9 +199,17 @@ Luego **Vista previa del formulario**, rellénalo con **tu propio correo** y
 opciones reales, y envíalo. En segundos debe aparecer la fila con Estado
 **enviado** y llegarte el correo.
 
-> *Crear lead* (sin la vista previa) rellena las respuestas con texto de prueba
-> y el correo `test@fb.com`: esa fila saldrá como *incompleto*, es normal y se
-> puede borrar.
+> *Crear lead* (sin la vista previa) rellena las respuestas con
+> `<test lead: dummy data for …>` y el correo `test@meta.com`: el script
+> reconoce esa fila como lead de prueba y la deja en *omitido* sin enviar
+> nada. Es normal y se puede borrar.
+
+La hoja que conecta Meta trae sus propias columnas (`id`, `created_time`,
+`ad_id`, …, `platform`, las cinco preguntas con su texto completo,
+`nombre_completo`, `correo_electrónico`, `phone_number`, `lead_status`). El
+script las reconoce tal cual, no hay que renombrar nada: añade al final sus
+columnas de resultado (*Puntaje*, *Medalla*, *Estado*…) y nunca escribe
+sobre las de Meta.
 
 ## La hoja, fila por fila
 
@@ -209,7 +220,7 @@ opciones reales, y envíalo. En segundos debe aparecer la fila con Estado
 | `enviado` | Correo enviado (hora en *Enviado*) | — |
 | `error` | Falló el envío (ver *Detalle*) | Se reintenta solo hasta 3 veces |
 | `incompleto` | Una respuesta no coincide con ninguna opción | Corregirla (o un `ALIAS` + nueva versión) y vaciar *Estado* |
-| `omitido` | Correo vacío o no válido | Corregirlo y vaciar *Estado* |
+| `omitido` | Correo vacío o no válido, o lead de prueba de Meta | Corregirlo y vaciar *Estado* (el de prueba, borrarlo) |
 | `duplicado` | Ese ID de lead ya recibió su correo | — |
 | `revisar` | Se cortó a mitad de envío: pudo salir | Mirar en *Enviados* y, si no salió, vaciar *Estado* |
 
@@ -228,8 +239,11 @@ califica, y las UTMs de los botones (`utm_term=calificado_si|calificado_no`,
 `pruebas/paridad.js` compara las 3.750 combinaciones contra la landing publicada.
 
 **Cambia, por ser un correo:**
-- *Compartir* no existe en un correo: la tarjeta completa (1080 × 1920) va
-  **adjunta**, lista para la story.
+- La medalla no va como imagen: el puntaje se dibuja en HTML (dial, pastilla
+  del metal, barras), con la estética de los correos transaccionales de
+  Classroom. Así se ve completo aunque el cliente bloquee imágenes. En
+  `MODO_CORREO: 'medalla'` la cabecera es la imagen y la tarjeta 1080 × 1920
+  va adjunta para la story.
 - *Aplicar a Classroom Platinum* ya no abre el formulario puente: lleva
   directo al VSL (`CONFIG.URL_APLICAR`). Nombre y teléfono ya los trae Meta.
 - Se saluda por el nombre (solo si es un nombre de verdad) y el asunto lleva
@@ -244,9 +258,10 @@ califica, y las UTMs de los botones (`utm_term=calificado_si|calificado_no`,
 
 ## Mantenimiento
 
-- **Textos del correo o de los diagnósticos:** en `Codigo.gs` (secciones 1 y
-  6), y después **nueva versión** de la implementación. Si cambias un titular
-  de metal, un `desbloqueo` o la escala de puntaje, además hay que
+- **Textos del correo o de los diagnósticos:** en `Codigo.gs` (secciones 1,
+  6 y 6b), y después **nueva versión** de la implementación. Si usas el modo
+  `'medalla'` y cambias un titular de metal, un `desbloqueo` o la escala de
+  puntaje, además hay que
   **regenerar las medallas** (las imágenes llevan esos textos), subirlas al
   repo, actualizar `ORIGEN_MEDALLAS` con el commit nuevo, vaciar la carpeta de
   Drive y volver a **Importar medallas**.
@@ -254,7 +269,8 @@ califica, y las UTMs de los botones (`utm_term=calificado_si|calificado_no`,
   `python3 -m http.server 8244` y en otra terminal
   `node 2026-09-25-correo-creator-business-score/medallas/generar-medallas.js 2026-09-25-correo-creator-business-score/medallas/img`.
 - **Pruebas:** `node pruebas/paridad.js medallas/img` y
-  `node pruebas/integracion.js`; `node pruebas/muestras.js medallas/img`
-  regenera los correos de muestra.
+  `node pruebas/integracion.js`; `node pruebas/correo-html.js` regenera los
+  correos de muestra del modo HTML (y `node pruebas/muestras.js medallas/img`
+  los del modo con medalla).
 - **Plantilla de la hoja:** `python3 hoja/generar-hoja.py` (lee las preguntas
   del propio `Codigo.gs`).
