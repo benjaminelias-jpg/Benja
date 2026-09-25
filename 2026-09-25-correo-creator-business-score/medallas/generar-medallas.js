@@ -9,8 +9,8 @@
  * sacados del oráculo de la landing publicada— salen dos archivos:
  *   cbs-<puntaje>-<caso>.jpg         la tarjeta completa, 1080 × 1920 (adjunto)
  *   cbs-<puntaje>-<caso>-correo.jpg  la cabecera del correo: la tarjeta hasta
- *                                    el reto, con el borde de la hoja blanca
- *                                    ya dibujado abajo (opción D).
+ *                                    el reto (1080 × 1500). La hoja blanca de
+ *                                    la opción D la dibuja el HTML del correo.
  */
 const { chromium } = require('playwright');
 const fs = require('fs'), path = require('path');
@@ -47,28 +47,15 @@ const pares = [...new Set(oraculo.combinaciones.map((c) => c.visible + '|' + c.c
       const c = await CBSTarjeta.dibujar({ puntaje: v, caso: CASOS[caso] });
       const aJpeg = (canvas, q) => canvas.toDataURL('image/jpeg', q).split(',')[1];
 
-      // Cabecera del correo. El texto de la tarjeta termina siempre en la fila
-      // 1465 (medido en las 40 combinaciones caso × metal); la hoja blanca
-      // arranca en 1500, así el reto se ve entero y el pie queda tapado.
-      const CORTE = 1500, HOJA = 64, RADIO = 64;
+      // Cabecera del correo: la tarjeta hasta el reto. El texto termina
+      // siempre en la fila 1465 (medido en las 40 combinaciones caso × metal);
+      // se corta en 1500, así el reto se ve entero y el pie queda fuera. El
+      // borde redondeado de la hoja blanca NO va aquí: lo pone el HTML del
+      // correo, para que en modo oscuro no aparezca una franja blanca.
+      const CORTE = 1500;
       const h = document.createElement('canvas');
-      h.width = 1080; h.height = CORTE + HOJA;
-      const g = h.getContext('2d');
-      g.drawImage(c, 0, 0);
-      g.save();
-      g.shadowColor = 'rgba(36, 12, 102, .6)';
-      g.shadowBlur = 90; g.shadowOffsetY = -24;
-      g.fillStyle = '#ffffff';
-      g.beginPath();
-      g.moveTo(0, CORTE + RADIO);
-      g.arcTo(0, CORTE, RADIO, CORTE, RADIO);
-      g.lineTo(1080 - RADIO, CORTE);
-      g.arcTo(1080, CORTE, 1080, CORTE + RADIO, RADIO);
-      g.lineTo(1080, h.height + 200);
-      g.lineTo(0, h.height + 200);
-      g.closePath();
-      g.fill();
-      g.restore();
+      h.width = 1080; h.height = CORTE;
+      h.getContext('2d').drawImage(c, 0, 0);
       return { completa: aJpeg(c, 0.92), correo: aJpeg(h, 0.86) };
     }, { v, caso });
     fs.writeFileSync(path.join(SALIDA, `cbs-${v}-${caso}.jpg`), Buffer.from(out.completa, 'base64'));
