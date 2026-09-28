@@ -17,7 +17,11 @@ function crearEntorno(opciones = {}) {
     archivos: Object.assign({}, opciones.archivos || {}),    // nombre → contenido (carpeta de medallas)
     papelera: new Set(opciones.papelera || []),
     respuestaFetch: opciones.respuestaFetch || 200,
-    cerrojoOcupado: !!opciones.cerrojoOcupado
+    cerrojoOcupado: !!opciones.cerrojoOcupado,
+    brevo: [],                                  // cuerpos enviados a /smtp/email
+    brevoCodigo: opciones.brevoCodigo || 201,   // respuesta de Brevo al enviar
+    brevoCuerpo: opciones.brevoCuerpo || '',
+    claveBrevoTecleada: opciones.claveBrevoTecleada || ''
   };
 
   /* ---------- hoja en memoria ---------- */
@@ -70,6 +74,7 @@ function crearEntorno(opciones = {}) {
   const libro = {
     getId: () => 'hoja-de-prueba',
     getSheetByName: (n) => (n === 'Leads' ? hoja : null),
+    getSheets: () => [hoja],
     insertSheet: () => hoja,
     getActiveRange: () => opciones.seleccion ? rango(opciones.seleccion, 1) : null
   };
@@ -91,7 +96,11 @@ function crearEntorno(opciones = {}) {
     encodeURIComponent, decodeURIComponent,
     SpreadsheetApp: {
       getActiveSpreadsheet: () => libro, openById: () => libro, flush() {},
-      getUi: () => ({ alert: (t, x) => estado.alertas.push({ t, x }), ButtonSet: { OK: 'OK' }, createMenu: () => ({ addItem() { return this; }, addSeparator() { return this; }, addToUi() {} }) })
+      getUi: () => ({
+        alert: (t, x) => estado.alertas.push({ t, x }), ButtonSet: { OK: 'OK', OK_CANCEL: 'OK_CANCEL' }, Button: { OK: 'OK', CANCEL: 'CANCEL' },
+        prompt: () => ({ getSelectedButton: () => (estado.claveBrevoTecleada === null ? 'CANCEL' : 'OK'), getResponseText: () => estado.claveBrevoTecleada }),
+        createMenu: () => ({ addItem() { return this; }, addSeparator() { return this; }, addToUi() {} })
+      })
     },
     MailApp: {
       getRemainingDailyQuota: () => estado.cuota,
@@ -114,6 +123,19 @@ function crearEntorno(opciones = {}) {
     UrlFetchApp: {
       fetch(url, o) {
         estado.fetches.push({ url, o });
+        if (url.startsWith('https://api.brevo.com/v3/')) {
+          const clave = o && o.headers && o.headers['api-key'];
+          if (!clave || !/^xkeysib-/.test(clave)) return { getResponseCode: () => 401, getContentText: () => '{"message":"Key not found","code":"unauthorized"}' };
+          if (url.endsWith('/account')) return { getResponseCode: () => 200, getContentText: () => JSON.stringify({ email: 'hola@kunfupay.com', plan: [{ type: 'free', credits: 300 }] }) };
+          if (estado.brevoCodigo !== 201) return { getResponseCode: () => estado.brevoCodigo, getContentText: () => estado.brevoCuerpo };
+          const p = JSON.parse(o.payload);
+          estado.brevo.push(p);
+          // misma forma que MailApp para que las mismas comprobaciones sirvan en los dos proveedores
+          estado.correos.push({ to: p.to[0].email, subject: p.subject, htmlBody: p.htmlContent, body: p.textContent, name: p.sender.name,
+            replyTo: p.replyTo && p.replyTo.email, bcc: p.bcc && p.bcc.map((x) => x.email).join(','), attachments: p.attachment, viaBrevo: true });
+          if (opciones.alEnviar) opciones.alEnviar(celdas);
+          return { getResponseCode: () => 201, getContentText: () => '{"messageId":"<202609280001.1@smtp-relay.mailin.fr>"}' };
+        }
         if (url.endsWith('lista.json')) return { getResponseCode: () => 200, getContentText: () => JSON.stringify(opciones.listaMedallas || []) };
         const code = estado.respuestaFetch;
         return { getResponseCode: () => code, getBlob: () => blob(url.split('/').pop(), 'remoto') };
@@ -121,14 +143,17 @@ function crearEntorno(opciones = {}) {
       fetchAll(peticiones) { return peticiones.map((p) => sandbox.UrlFetchApp.fetch(p.url, p)); }
     },
     ContentService: { createTextOutput: (t) => ({ texto: t, setMimeType() { return this; } }), MimeType: { JSON: 'json' } },
-    Utilities: { getUuid: () => '1234abcd-0000-4000-8000-00000000cafe' },
+    Utilities: { getUuid: () => '1234abcd-0000-4000-8000-00000000cafe', base64Encode: (b) => Buffer.from(String(b)).toString('base64') },
     ScriptApp: {
-      getProjectTriggers: () => estado.triggers,
+      getProjectTriggers: () => estado.triggers.slice(),   // como en Apps Script: una copia
       deleteTrigger: (t) => { estado.triggers.splice(estado.triggers.indexOf(t), 1); },
-      newTrigger: (h) => ({ timeBased: () => ({
-        everyMinutes: (n) => ({ create: () => { estado.triggers.push({ getHandlerFunction: () => h, n }); } }),
-        after: (ms) => ({ create: () => { estado.triggers.push({ getHandlerFunction: () => h, ms }); } })
-      }) }),
+      newTrigger: (h) => ({
+        timeBased: () => ({
+          everyMinutes: (n) => ({ create: () => { estado.triggers.push({ getHandlerFunction: () => h, n }); } }),
+          after: (ms) => ({ create: () => { estado.triggers.push({ getHandlerFunction: () => h, ms }); } })
+        }),
+        forSpreadsheet: () => ({ onChange: () => ({ create: () => { estado.triggers.push({ getHandlerFunction: () => h, onChange: true }); } }) })
+      }),
       getService: () => ({ getUrl: () => 'https://script.google.com/macros/s/PRUEBA/exec' })
     },
     Session: { getEffectiveUser: () => ({ getEmail: () => 'yo@kunfupay.com' }) },

@@ -26,8 +26,10 @@ function esperado(api, extra = {}) {
   const t = { audiencia: l.comunidad, ritmo: l.situacion, modelo: l.producto, facturacion: l.facturacion, limitacion: l.problema };
   return api.evaluar(api.leerRespuestas(t).r);
 }
-/* Las pruebas del camino con medalla fuerzan MODO_CORREO 'medalla'; el predeterminado ('html') se prueba al final. */
-const entorno = (o = {}) => crearEntorno(Object.assign({ props: { WEBHOOK_TOKEN: TOKEN }, archivos: archivosMedallas() }, o, { config: Object.assign({ MODO_CORREO: 'medalla', CARPETA_MEDALLAS_ID: 'carpeta-ok' }, o.config || {}) }));
+/* Las pruebas del camino con medalla por Gmail fuerzan MODO_CORREO 'medalla' y PROVEEDOR_CORREO 'gmail';
+   los predeterminados ('html' + Brevo) se prueban al final. */
+const entorno = (o = {}) => crearEntorno(Object.assign({ props: { WEBHOOK_TOKEN: TOKEN }, archivos: archivosMedallas() }, o, { config: Object.assign({ MODO_CORREO: 'medalla', PROVEEDOR_CORREO: 'gmail', CARPETA_MEDALLAS_ID: 'carpeta-ok' }, o.config || {}) }));
+const BREVO = { WEBHOOK_TOKEN: TOKEN, BREVO_API_KEY: 'xkeysib-prueba' };
 const fila = (e, r) => {
   const enc = e.celdas[0].map(String);
   const f = e.celdas[r - 1];
@@ -258,11 +260,11 @@ prueba('webhook de salida: manda el resultado con el puntaje REAL; si falla, el 
   assert.strictEqual(cuerpo.comunidad, '20.000 a 100.000 seguidores'); assert.strictEqual(cuerpo.email, 'ana@ejemplo.com');
   assert.strictEqual(fila(e, 2).Estado, 'enviado'); assert.ok(fila(e, 2).Detalle.includes('respondió 500'));
 });
-prueba('configurar(): genera token, una sola alarma aunque se ejecute dos veces', () => {
+prueba('configurar(): genera token, un solo reloj y un solo disparador aunque se ejecute dos veces', () => {
   const e = crearEntorno();
   e.api.configurar(); e.api.configurar();
   assert.ok(e.estado.props.WEBHOOK_TOKEN.length >= 30); assert.strictEqual(e.estado.props.HOJA_ID, 'hoja-de-prueba');
-  assert.strictEqual(e.estado.triggers.length, 1); assert.strictEqual(e.estado.triggers[0].n, 5);
+  assert.strictEqual(e.estado.triggers.length, 2); assert.strictEqual(e.estado.triggers[0].n, 1);
   assert.deepStrictEqual(e.celdas[0].slice(0, 4), ['Fecha', 'ID lead', 'Nombre', 'Correo']);
 });
 prueba('enviarPruebas(): los tres desenlaces a mi correo, sin tocar la hoja', () => {
@@ -398,7 +400,7 @@ const ENC_META = ['id', 'created_time', 'ad_id', 'ad_name', 'adset_id', 'adset_n
 const filaMeta = (o = {}) => { const l = leadMake(o); return ['l:' + l.id_lead, '2026-09-25T03:22:30-05:00', '', '', '', '', '', '', 'f:2163216630956791', 'Creator Business Score - Classroom Platinum', 'true', 'ig', l.comunidad, l.situacion, l.producto, l.facturacion, l.problema, l.nombre, l.email, 'p:' + l.telefono, 'OK']; };
 const dummy = (c) => '<test lead: dummy data for ' + c + '>';
 prueba('modo html (predeterminado): sin imágenes ni adjuntos, con dial, pastillas, barras y botón; no necesita medallas', () => {
-  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN } });   // sin carpeta de medallas ni archivos
+  const e = crearEntorno({ props: BREVO });   // sin carpeta de medallas ni archivos
   const r = post(e.api, leadMake());
   assert.strictEqual(r.enviadas, 1);
   const c = e.estado.correos[0];
@@ -414,7 +416,7 @@ prueba('modo html (predeterminado): sin imágenes ni adjuntos, con dial, pastill
   assert.ok(c.htmlBody.length < 40000);
 });
 prueba('modo html: no califica → botón naranja de Kunfupay y paso 04; e-commerce → sin botón, sin bloque Platinum', () => {
-  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN } });
+  const e = crearEntorno({ props: BREVO });
   post(e.api, leadMake({ id_lead: '1', facturacion: 'Menos de 1.000 €' }));
   post(e.api, leadMake({ id_lead: '2', email: 'eva@ejemplo.com', producto: 'E-commerce / Producto físico' }));
   const [a, b] = e.estado.correos;
@@ -427,7 +429,7 @@ prueba('hoja con las columnas exactas que deja Meta (id, created_time, …, ¿pr
   const m = api_().mapearColumnas(ENC_META);
   assert.deepStrictEqual(['id', 'fecha', 'origen', 'audiencia', 'ritmo', 'modelo', 'facturacion', 'limitacion', 'nombre', 'email', 'telefono'].map((k) => ENC_META[m[k]]),
     ['id', 'created_time', 'platform', ENC_META[12], ENC_META[13], ENC_META[14], ENC_META[15], ENC_META[16], 'nombre_completo', 'correo_electrónico', 'phone_number']);
-  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN }, filas: [ENC_META, filaMeta()] });
+  const e = crearEntorno({ props: BREVO, filas: [ENC_META, filaMeta()] });
   e.api.procesarPendientes();
   assert.strictEqual(e.estado.correos.length, 1); assert.strictEqual(e.estado.correos[0].to, 'ana@ejemplo.com');
   const f = fila(e, 2);
@@ -445,5 +447,86 @@ prueba('lead de prueba de Meta ("<test lead: dummy data for …>", test@meta.com
   assert.strictEqual(e2.estado.correos.length, 0); assert.strictEqual(fila(e2, 2).Estado, 'omitido');
 });
 function api_() { return crearEntorno().api; }
+
+console.log('\nEnvío por Brevo y disparador al cambiar la hoja');
+prueba('Brevo: POST a /smtp/email con remitente, destinatario con nombre, asunto, HTML, texto, replyTo y etiquetas; sin cuota de Gmail', () => {
+  const e = crearEntorno({ props: BREVO, cuota: 0, filas: [ENC_META, filaMeta()] });
+  e.api.CONFIG.RESPONDER_A = 'hola@kunfupay.com';
+  e.api.procesarPendientes();
+  assert.strictEqual(e.estado.brevo.length, 1);
+  const p = e.estado.brevo[0], f = e.estado.fetches.find((x) => x.url.endsWith('/smtp/email'));
+  assert.strictEqual(f.o.headers['api-key'], 'xkeysib-prueba'); assert.strictEqual(f.o.method, 'post'); assert.strictEqual(f.o.muteHttpExceptions, true);
+  assert.deepStrictEqual(p.sender, { name: 'Classroom Platinum by Kunfupay', email: 'hola@kunfupay.com' });
+  assert.deepStrictEqual(p.to, [{ email: 'ana@ejemplo.com', name: 'Ana' }]);
+  assert.deepStrictEqual(p.replyTo, { email: 'hola@kunfupay.com' });
+  assert.deepStrictEqual(p.tags, ['creator-business-score', 'calificado']);
+  assert.strictEqual(p.subject, 'Ana, tu Creator Business Score: 74/100 · Medalla de Plata');
+  assert.ok(p.htmlContent.includes('>74<span') && p.textContent.includes('74/100 · Medalla de Plata') && !p.attachment);
+  assert.strictEqual(fila(e, 2).Estado, 'enviado'); assert.strictEqual(fila(e, 2).Detalle, '');
+});
+prueba('Brevo sin clave configurada → error con el aviso claro, y se reintenta cuando la haya', () => {
+  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN }, filas: [ENC_META, filaMeta()] });
+  e.api.procesarPendientes();
+  assert.strictEqual(e.estado.brevo.length, 0);
+  assert.strictEqual(fila(e, 2).Estado, 'error'); assert.ok(fila(e, 2).Detalle.includes('Falta la clave API de Brevo')); assert.strictEqual(fila(e, 2).Intentos, 1);
+  e.estado.props.BREVO_API_KEY = 'xkeysib-ya';
+  e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 2).Estado, 'enviado'); assert.strictEqual(e.estado.brevo.length, 1);
+});
+prueba('Brevo rechaza (clave mala 401 / remitente no verificado 400) → error con el texto de Brevo, hasta 3 intentos', () => {
+  const e = crearEntorno({ props: BREVO, filas: [ENC_META, filaMeta()], brevoCodigo: 400, brevoCuerpo: '{"code":"invalid_parameter","message":"sender email not valid"}' });
+  e.api.procesarPendientes(); e.api.procesarPendientes(); e.api.procesarPendientes(); e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 2).Estado, 'error'); assert.ok(fila(e, 2).Detalle.includes('Brevo 400') && fila(e, 2).Detalle.includes('sender email not valid'));
+  assert.strictEqual(fila(e, 2).Intentos, 3);
+});
+prueba('Brevo sin créditos (402) o con límite de ritmo (429): la fila espera sin gastar intentos', () => {
+  const e = crearEntorno({ props: BREVO, filas: [ENC_META, filaMeta()], brevoCodigo: 402, brevoCuerpo: '{"code":"not_enough_credits"}' });
+  e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 2).Estado, ''); assert.ok(!fila(e, 2).Intentos); assert.ok(fila(e, 2).Detalle.includes('Brevo sin créditos') && fila(e, 2).Detalle.includes('not_enough_credits'));
+  e.estado.brevoCodigo = 201;
+  e.api.procesarPendientes();
+  assert.strictEqual(fila(e, 2).Estado, 'enviado');
+});
+prueba('modo medalla por Brevo sin URL pública: sale el correo HTML y lo avisa (Brevo no admite cid)', () => {
+  const e = crearEntorno({ props: BREVO, archivos: archivosMedallas(), filas: [ENC_META, filaMeta()], config: { MODO_CORREO: 'medalla', CARPETA_MEDALLAS_ID: 'carpeta-ok' } });
+  e.api.procesarPendientes();
+  const p = e.estado.brevo[0];
+  assert.ok(!p.attachment && !/<img\b/.test(p.htmlContent) && p.htmlContent.includes('>74<span'));
+  assert.strictEqual(fila(e, 2).Estado, 'enviado'); assert.ok(fila(e, 2).Detalle.includes('Brevo no admite la medalla incrustada'));
+});
+prueba('configurar(): crea el disparador "al cambiar la hoja" y el reloj de 1 min, una sola vez; avisa si falta la clave de Brevo', () => {
+  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN } });
+  e.api.configurar(); e.api.configurar();
+  const t = e.estado.triggers.map((x) => x.getHandlerFunction() + (x.onChange ? ':onChange' : ':' + x.n));
+  assert.deepStrictEqual(t, ['procesarPendientes:1', 'alCambiarLaHoja:onChange']);
+  assert.ok(e.estado.alertas[1].x.includes('Falta la clave de Brevo'));
+  e.estado.props.BREVO_API_KEY = 'xkeysib-ok';
+  e.api.configurar();
+  assert.ok(e.estado.alertas[2].x.includes('Correo por Brevo desde hola@kunfupay.com'));
+});
+prueba('alCambiarLaHoja: Meta añade la fila → correo en el acto; cambios de formato no hacen nada', () => {
+  const e = crearEntorno({ props: BREVO, filas: [ENC_META, filaMeta()] });
+  e.api.alCambiarLaHoja({ changeType: 'FORMAT' });
+  assert.strictEqual(e.estado.brevo.length, 0);
+  e.api.alCambiarLaHoja({ changeType: 'INSERT_ROW' });
+  assert.strictEqual(e.estado.brevo.length, 1); assert.strictEqual(fila(e, 2).Estado, 'enviado');
+  e.api.alCambiarLaHoja({ changeType: 'OTHER' });
+  assert.strictEqual(e.estado.brevo.length, 1);   // ya enviada: no se repite
+});
+prueba('configurarBrevo(): guarda la clave que se pega, la comprueba contra /account; rechaza claves que no lo son', () => {
+  const e = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN }, claveBrevoTecleada: ' xkeysib-abc123 ' });
+  e.api.configurarBrevo();
+  assert.strictEqual(e.estado.props.BREVO_API_KEY, 'xkeysib-abc123');
+  assert.ok(e.estado.alertas[0].t === 'Brevo conectado' && e.estado.alertas[0].x.includes('free (300 créditos)'));
+  const e2 = crearEntorno({ props: { WEBHOOK_TOKEN: TOKEN }, claveBrevoTecleada: 'pegué otra cosa' });
+  e2.api.configurarBrevo();
+  assert.strictEqual(e2.estado.props.BREVO_API_KEY, undefined); assert.ok(e2.estado.alertas[0].x.includes('xkeysib-'));
+});
+prueba('sin NOMBRE_PESTANA se usa la primera pestaña (la que rellena Meta) y no se crea una "Leads" vacía', () => {
+  const e = crearEntorno({ props: BREVO, filas: [ENC_META, filaMeta()] });
+  assert.strictEqual(e.api.CONFIG.NOMBRE_PESTANA, '');
+  e.api.procesarPendientes();
+  assert.strictEqual(e.estado.brevo.length, 1);
+});
 
 console.log(`\n${n} pruebas superadas`);

@@ -31,7 +31,13 @@
    (el reloj y el menú sí usan el nuevo, y los dos se comportarían distinto).
    ------------------------------------------------------------ */
 const CONFIG = {
-  NOMBRE_PESTANA: 'Leads',
+  NOMBRE_PESTANA: '',           // pestaña con los leads. Vacío = la primera pestaña (la que rellena Meta).
+
+  // Quién envía el correo:
+  //   'brevo' → API transaccional de Brevo (clave en menú "Configurar Brevo"; remitente verificado en Brevo).
+  //   'gmail' → la cuenta de Google del script (100/día en gmail.com, 1.500 en Workspace).
+  PROVEEDOR_CORREO: 'brevo',
+  BREVO_REMITENTE: 'hola@kunfupay.com',   // debe estar verificado en Brevo (Remitentes) o ser de un dominio autenticado
 
   // Remitente. El correo sale de la cuenta de Google que autoriza el script:
   // para que salga de hola@kunfupay.com, instala el script con esa cuenta.
@@ -63,7 +69,7 @@ const CONFIG = {
   // (mismos campos que guardaba la landing en /api/classroom-platinum/score).
   WEBHOOK_SALIDA: '',
 
-  MINUTOS_REVISION: 5,          // reloj de respaldo: 1, 5, 10, 15 o 30
+  MINUTOS_REVISION: 1,          // reloj de respaldo (el disparador "al cambiar la hoja" atiende antes): 1, 5, 10, 15 o 30
   MAX_INTENTOS: 3,              // reintentos de un envío que falla
   MAX_POR_EJECUCION: 40,
 
@@ -478,8 +484,8 @@ function hojaDeLeads() {
   const id = propiedades().getProperty('HOJA_ID');
   const libro = id ? SpreadsheetApp.openById(id) : SpreadsheetApp.getActiveSpreadsheet();
   if (!libro) throw new Error('No encuentro la hoja: ejecuta configurar() desde la hoja.');
-  var hoja = libro.getSheetByName(CONFIG.NOMBRE_PESTANA);
-  if (!hoja) hoja = libro.insertSheet(CONFIG.NOMBRE_PESTANA);
+  var hoja = CONFIG.NOMBRE_PESTANA ? libro.getSheetByName(CONFIG.NOMBRE_PESTANA) : libro.getSheets()[0];
+  if (!hoja) hoja = libro.insertSheet(CONFIG.NOMBRE_PESTANA || 'Leads');
   return asegurarEncabezados(hoja);
 }
 
@@ -601,7 +607,7 @@ function procesarPendientesSinCerrojo(o) {
     }
     if (leerTexto(col(fila, 'email')) === '') continue;
     if (!(estado === '' || (estado === 'error' && intentos < CONFIG.MAX_INTENTOS))) continue;
-    if (MailApp.getRemainingDailyQuota() < destinatariosPorEnvio()) {
+    if (CONFIG.PROVEEDOR_CORREO !== 'brevo' && MailApp.getRemainingDailyQuota() < destinatariosPorEnvio()) {
       escribirResultado(hoja, nFila, mapa, fila, { detalle: 'Sin cuota diaria de correo: se enviará cuando se renueve.' });
       break;
     }
@@ -656,8 +662,9 @@ function esLeadDePrueba(textos, nombre, email) {
   return Object.keys(textos || {}).some(function (k) { return dummy.test(String(textos[k] || '')); });
 }
 
+/** Cuota agotada (Gmail) o créditos / ritmo de Brevo: se espera sin gastar intentos. */
 function esErrorDeCuota(err) {
-  return /too many times|quota|cuota|limit exceeded/i.test(String(err && err.message || err));
+  return /too many times|quota|cuota|limit exceeded|not_enough_credits|too_many_requests|Brevo 402|Brevo 429/i.test(String(err && err.message || err));
 }
 
 function procesarFila(hoja, nFila, fila, mapa, idsEnviados) {
@@ -709,7 +716,9 @@ function procesarFila(hoja, nFila, fila, mapa, idsEnviados) {
   } catch (err) {
     if (esErrorDeCuota(err)) {
       // No es culpa del lead: no gasta intento y sale en cuanto haya cuota.
-      escribir({ estado: '', intentos: intentos, detalle: 'Sin cuota diaria de correo: se enviará cuando se renueve.' });
+      escribir({ estado: '', intentos: intentos, detalle: CONFIG.PROVEEDOR_CORREO === 'brevo'
+        ? 'Brevo sin créditos o con límite de envío (' + String(err && err.message || err).slice(0, 80) + '): se reintenta solo, sin gastar intentos.'
+        : 'Sin cuota diaria de correo: se enviará cuando se renueve.' });
       return 'cuota';
     }
     const agotado = intentos + 1 >= CONFIG.MAX_INTENTOS;
@@ -835,6 +844,75 @@ function asuntoDe(res, lead) {
   return (n ? n + ', tu' : 'Tu') + ' Creator Business Score: ' + res.puntajeVisible + '/100 · Medalla de ' + res.franja.medalla;
 }
 
+/* ---------- Brevo (API transaccional) ---------- */
+const BREVO_API = 'https://api.brevo.com/v3';
+
+function claveBrevo() {
+  const k = propiedades().getProperty('BREVO_API_KEY');
+  if (!k) throw new Error('Falta la clave API de Brevo: menú Creator Business Score → Configurar Brevo.');
+  return k;
+}
+
+function peticionBrevo(metodo, ruta, cuerpo) {
+  const r = UrlFetchApp.fetch(BREVO_API + ruta, {
+    method: metodo, contentType: 'application/json', muteHttpExceptions: true,
+    headers: { 'api-key': claveBrevo(), accept: 'application/json' },
+    payload: cuerpo ? JSON.stringify(cuerpo) : undefined
+  });
+  const codigo = r.getResponseCode(), texto = r.getContentText() || '';
+  if (codigo < 200 || codigo >= 300) throw new Error('Brevo ' + codigo + ': ' + texto.slice(0, 200));
+  try { return JSON.parse(texto); } catch (err) { return {}; }
+}
+
+/** Envía el correo ya construido por la API de Brevo. Lanza error si Brevo no lo acepta. */
+function enviarPorBrevo(correo, lead, img, res) {
+  const remitente = CONFIG.BREVO_REMITENTE || CONFIG.RESPONDER_A;
+  if (!remitente) throw new Error('Falta CONFIG.BREVO_REMITENTE (un remitente verificado en Brevo).');
+  const nombre = primerNombre(lead.nombre);
+  const cuerpo = {
+    sender: { name: CONFIG.REMITENTE_NOMBRE, email: remitente },
+    to: [nombre ? { email: lead.email, name: nombre } : { email: lead.email }],
+    subject: correo.asunto,
+    htmlContent: correo.html,
+    textContent: correo.texto,
+    tags: ['creator-business-score', res ? res.desenlace : 'resultado']
+  };
+  if (CONFIG.RESPONDER_A) cuerpo.replyTo = { email: CONFIG.RESPONDER_A };
+  if (CONFIG.COPIA_OCULTA) cuerpo.bcc = String(CONFIG.COPIA_OCULTA).split(',').map(function (x) { return x.trim(); }).filter(Boolean).map(function (e) { return { email: e }; });
+  if (img && img.adjuntos && img.adjuntos.length) {
+    cuerpo.attachment = img.adjuntos.map(function (b) { return { name: b.getName(), content: Utilities.base64Encode(b.getBytes()) }; });
+  }
+  return peticionBrevo('post', '/smtp/email', cuerpo);
+}
+
+/** Menú: pide la clave API v3 de Brevo, la guarda en las propiedades del script y la comprueba. */
+function configurarBrevo() {
+  const ui = SpreadsheetApp.getUi();
+  const r = ui.prompt('Clave API de Brevo',
+    'Brevo → arriba a la derecha, tu nombre → SMTP y API → pestaña "Claves API" → Generar una nueva clave API. Pégala aquí (empieza por xkeysib-):',
+    ui.ButtonSet.OK_CANCEL);
+  if (r.getSelectedButton() !== ui.Button.OK) return;
+  const clave = String(r.getResponseText() || '').trim();
+  if (!/^xkeysib-/.test(clave)) { aviso('Brevo', 'Eso no parece una clave API v3 de Brevo (empiezan por xkeysib-).'); return; }
+  propiedades().setProperty('BREVO_API_KEY', clave);
+  try {
+    const cuenta = peticionBrevo('get', '/account');
+    const plan = (cuenta.plan || []).map(function (p) { return p.type + (p.credits !== undefined ? ' (' + p.credits + ' créditos)' : ''); }).join(', ');
+    aviso('Brevo conectado', 'Cuenta: ' + (cuenta.email || '?') + (plan ? '\nPlan: ' + plan : '') +
+      '\nRemitente configurado: ' + (CONFIG.BREVO_REMITENTE || CONFIG.RESPONDER_A || '(vacío)') +
+      '\n\nEse remitente tiene que estar verificado en Brevo (Remitentes y dominios). Ahora: "Enviarme los 3 correos de prueba".');
+  } catch (err) {
+    aviso('Brevo', 'La clave se guardó pero Brevo no la acepta: ' + String(err && err.message || err) + '\nGenera otra clave y vuelve a intentarlo.');
+  }
+}
+
+/** Disparador "al cambiar la hoja": Meta añade la fila → se envía en segundos. El reloj es el respaldo. */
+function alCambiarLaHoja(e) {
+  const tipo = e && e.changeType ? String(e.changeType) : '';
+  if (tipo && !/INSERT_ROW|EDIT|OTHER/.test(tipo)) return;   // borrar filas, mover columnas, formato…: nada que enviar
+  procesarPendientes({ esperaCerrojo: 2000, presupuesto: 50000 });
+}
+
 /** Dirección para darse de baja que aparece en el pie. */
 function correoDeBaja() {
   if (CONFIG.CORREO_BAJA || CONFIG.RESPONDER_A) return CONFIG.CORREO_BAJA || CONFIG.RESPONDER_A;
@@ -842,10 +920,15 @@ function correoDeBaja() {
 }
 
 function enviarCorreo(res, lead) {
-  const soloHtml = CONFIG.MODO_CORREO !== 'medalla';
+  const brevo = CONFIG.PROVEEDOR_CORREO === 'brevo';
+  var soloHtml = CONFIG.MODO_CORREO !== 'medalla';
+  var avisos = [];
+  // Brevo no admite imágenes incrustadas (cid): el modo medalla solo funciona ahí con URL_BASE_MEDALLAS.
+  if (brevo && !soloHtml && !CONFIG.URL_BASE_MEDALLAS) { soloHtml = true; avisos.push('Brevo no admite la medalla incrustada: se envió el correo HTML (pon URL_BASE_MEDALLAS o MODO_CORREO html).'); }
   const img = soloHtml ? { src: '', descarga: '', inline: {}, adjuntos: [], avisos: [] } : imagenesDelCorreo(res);
   img.baja = correoDeBaja();
   const correo = soloHtml ? construirCorreoHtml(res, lead, img.baja) : construirCorreo(res, lead, img);
+  if (brevo) { enviarPorBrevo(correo, lead, img, res); return avisos.concat(img.avisos); }
   const opciones = {
     to: lead.email,
     subject: correo.asunto,
@@ -1493,8 +1576,9 @@ function enviarWebhookSalida(res, lead) {
 function onOpen() {
   SpreadsheetApp.getUi().createMenu('Creator Business Score')
     .addItem('1 · Configurar (una sola vez)', 'configurar')
-    .addItem('2 · Importar medallas a Drive', 'importarMedallas')
-    .addItem('Ver token del webhook', 'mostrarWebhook')
+    .addItem('2 · Configurar Brevo (clave API)', 'configurarBrevo')
+    .addItem('Importar medallas a Drive (solo modo medalla)', 'importarMedallas')
+    .addItem('Ver token del webhook (solo con Make)', 'mostrarWebhook')
     .addSeparator()
     .addItem('Enviarme los 3 correos de prueba', 'enviarPruebas')
     .addItem('Procesar pendientes ahora', 'procesarPendientesDesdeMenu')
@@ -1510,22 +1594,34 @@ function configurar() {
   hojaDeLeads();
 
   ScriptApp.getProjectTriggers().forEach(function (t) {
-    if (t.getHandlerFunction() === 'procesarPendientes') ScriptApp.deleteTrigger(t);
+    const f = t.getHandlerFunction();
+    if (f === 'procesarPendientes' || f === 'alCambiarLaHoja') ScriptApp.deleteTrigger(t);
   });
   ScriptApp.newTrigger('procesarPendientes').timeBased().everyMinutes(CONFIG.MINUTOS_REVISION).create();
+  if (libro) ScriptApp.newTrigger('alCambiarLaHoja').forSpreadsheet(libro).onChange().create();
 
   const avisos = [];
-  if (carpetaMedallasId()) {
-    try {
-      const n = contarMedallas(DriveApp.getFolderById(carpetaMedallasId()));
-      avisos.push('Carpeta de medallas: ' + n + ' de ' + TOTAL_MEDALLAS + (n < TOTAL_MEDALLAS ? ' → menú "2 · Importar medallas a Drive"' : ' ✔'));
-    } catch (err) { avisos.push('No puedo abrir la carpeta de medallas: revisa CARPETA_MEDALLAS_ID.'); }
-  } else if (!CONFIG.URL_BASE_MEDALLAS) {
-    avisos.push('Falta importar las medallas: menú "2 · Importar medallas a Drive".');
+  const hoja = hojaDeLeads().hoja;
+  avisos.push('Pestaña de leads: "' + hoja.getName() + '" (' + Math.max(0, hoja.getLastRow() - 1) + ' filas).');
+  if (CONFIG.MODO_CORREO === 'medalla') {
+    if (carpetaMedallasId()) {
+      try {
+        const n = contarMedallas(DriveApp.getFolderById(carpetaMedallasId()));
+        avisos.push('Carpeta de medallas: ' + n + ' de ' + TOTAL_MEDALLAS + (n < TOTAL_MEDALLAS ? ' → menú "2 · Importar medallas a Drive"' : ' ✔'));
+      } catch (err) { avisos.push('No puedo abrir la carpeta de medallas: revisa CARPETA_MEDALLAS_ID.'); }
+    } else if (!CONFIG.URL_BASE_MEDALLAS) {
+      avisos.push('Falta importar las medallas: menú "2 · Importar medallas a Drive".');
+    }
   }
-  avisos.push('Revisión automática cada ' + CONFIG.MINUTOS_REVISION + ' min activada.');
-  avisos.push('Cuota de correo restante hoy: ' + MailApp.getRemainingDailyQuota());
-  aviso('Configuración lista', avisos.join('\n') + '\n\nDespués: Implementar → Nueva implementación → Aplicación web, y "Ver token del webhook".');
+  avisos.push('Envío al entrar cada lead (al cambiar la hoja) + revisión cada ' + CONFIG.MINUTOS_REVISION + ' min activados.');
+  if (CONFIG.PROVEEDOR_CORREO === 'brevo') {
+    avisos.push(props.getProperty('BREVO_API_KEY')
+      ? 'Correo por Brevo desde ' + (CONFIG.BREVO_REMITENTE || CONFIG.RESPONDER_A) + '.'
+      : '⚠ Falta la clave de Brevo: menú → "Configurar Brevo (clave API)". Hasta entonces las filas quedan en error y se reintentan.');
+  } else {
+    avisos.push('Correo por Gmail. Cuota restante hoy: ' + MailApp.getRemainingDailyQuota());
+  }
+  aviso('Configuración lista', avisos.join('\n') + '\n\nEl webhook (Implementar → Aplicación web + "Ver token del webhook") solo hace falta si además usas Make.');
 }
 
 function mostrarWebhook() {
@@ -1548,7 +1644,7 @@ function reenviarSeleccion() {
   const rango = libro.getActiveRange();
   const h = hojaDeLeads();
   if (!rango || rango.getSheet().getName() !== h.hoja.getName() || rango.getRow() < 2) {
-    aviso('Reenviar', 'Selecciona una celda de la fila del lead en la pestaña ' + CONFIG.NOMBRE_PESTANA + '.');
+    aviso('Reenviar', 'Selecciona una celda de la fila del lead en la pestaña "' + h.hoja.getName() + '".');
     return;
   }
   for (var r = rango.getRow(); r <= rango.getLastRow(); r++) {
@@ -1651,6 +1747,7 @@ if (typeof module !== 'undefined') {
     CONFIG, PREGUNTAS, CASOS, FRANJAS, evaluar, puntajeVisible, franjaDe, normalizar, emparejarOpcion, leerRespuestas,
     mapearColumnas, construirCorreo, conParametros, urlConResultado, primerNombre, leadEntrante, cuerpoWebhookSalida,
     nombresMedalla, celdaSegura, esc, doPost, doGet, procesarPendientes, anexarLead, configurar, enviarPruebas,
-    importarMedallas, mostrarWebhook, carpetaMedallasId, ORIGEN_MEDALLAS, FUERA_DE_PERFIL, PASO_KUNFUPAY, COLUMNAS, normalizar, construirCorreoHtml, esLeadDePrueba
+    importarMedallas, mostrarWebhook, carpetaMedallasId, ORIGEN_MEDALLAS, FUERA_DE_PERFIL, PASO_KUNFUPAY, COLUMNAS, normalizar, construirCorreoHtml, esLeadDePrueba,
+    configurarBrevo, alCambiarLaHoja, enviarPorBrevo
   };
 }
