@@ -1,6 +1,6 @@
 # Ángulo: Tributaless · campaña VSL (línea de Kunfupay)
 
-- **Fecha:** 30/09/2026 · **Versión 4:** tanda corregida con la regla 25 del cerebro: el dolor es perder dinero en impuestos, la duda del IVA no existe, la línea de Kunfupay es «Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.» y la LLC se ve imposible.
+- **Fecha:** 30/09/2026 · **Versión 4:** tanda corregida con la regla 25 del cerebro: el dolor es perder dinero en impuestos, la duda del IVA no existe, la línea de Kunfupay es «Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.» y la LLC se ve imposible. Más el ángulo 5, retirar de a poco (5A, 5B y 5C).
 - **Estado:** borrador para aprobar
 - **Hecho con:** skill `cerebro-kunfupay` + `creativos-estaticos-meta`
 - **Versión visual con los 10 anuncios, la VSL y la landing:** https://claude.ai/artifact/EkzE3ntK5qMHLHCvS9v94N (privado hasta que se comparta)
@@ -124,6 +124,8 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 
 ## 4. Plan de tanda
 
+**Añadido el 30/09: ángulo 5, retirar de a poco.** 50.000 € en Binance, en Hotmart o donde sea, y sacándolos de a poco por si Hacienda dice algo. Es de la misma familia que el ángulo 2, así que va en su propio conjunto. Se cuenta como el miedo que dejas atrás, nunca como método, y no promete nada sobre el dinero ya acumulado (regla 22.10 del cerebro).
+
 **Corregida el 30/09 con la regla 25 del cerebro.** Fuera los dos anuncios del IVA, porque esa duda no existe: todos cobran el 21 %. Entra el dolor principal, perder dinero en impuestos. La LLC ya no se ve épica, sino imposible. Y la línea de Kunfupay pasa a ser «te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas».
 
 **Estructura.** Cuatro ángulos, cada uno en foto real y en viñeta, para que la primera lectura diga qué ángulo gana y no qué formato: es la composición de arranque de la skill de estáticos. Dos piezas de retargeting cierran con la oferta y con las objeciones.
@@ -144,6 +146,9 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 | 3B | Perder en impuestos | Viñeta | Siente que los impuestos se comen sus lanzamientos | Prospector | Prospección |
 | 4A | Sin LLC | Foto real · carpeta | Está pensando en montar una LLC | Abridor | Prospección |
 | 4B | Sin LLC | Viñeta · lista imposible | Está pensando en montar una LLC | Prospector | Prospección |
+| 5A | Retirar de a poco | Foto real · móvil | Tiene saldo parado en Binance | Abridor | Prospección |
+| 5B | Retirar de a poco | Foto real · portátil | Cobra con Hotmart | Abridor | Prospección |
+| 5C | Retirar de a poco | Viñeta | Cualquier plataforma | Prospector | Prospección |
 | R1 | Diagnóstico de cobros | Foto real · oferta | Vio la VSL y no aplicó | Closer | Retargeting |
 | R2 | No, no y no | Foto real · pizarra | Vio la VSL y no aplicó | Closer | Retargeting |
 
@@ -210,6 +215,30 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 - **Texto B:** Lo que te piden en EE. UU. para vender un curso no cabe en una viñeta. Con Kunfupay, no hace falta nada de eso.
 - **Título:** Lo que te piden en EE. UU. · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
 - **Nombre:** `TRIB_ES_TOF_PRO_LLC_LISTA_1080x1350_ES_V01` · Trámites reales: el agente registrado y el EIN son obligatorios, el Form 5472 va con un 1120 pro forma cada año (IRS) y el informe anual depende del estado.
+
+### 5A · 50.000 € en Binance (Foto real · móvil · Abridor)
+
+- **Imagen:** Mano con un móvil de noche: app de cartera genérica, sin logos, con un saldo de «50.000,00 €» y «Retirar: 300 €». A mano: «50.000 € en Binance. Y sacándolos de a poco, por si Hacienda dice algo.» Etiqueta: «Kunfupay hace la factura y paga los impuestos de cada venta. Tu dinero, a tu nombre y con IBAN.»
+- **Texto A:** Hay quien tiene 50.000 € en Binance y los va sacando de a poco, por si Hacienda dice algo. / Si te suena, hay otra forma de cobrar tus próximas ventas. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y el dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Mira el vídeo: cinco minutos.
+- **Texto B:** 50.000 € parados y sacándolos de a poco. Con Kunfupay, cada venta sale con su factura y sus impuestos pagados, y el dinero a tu nombre.
+- **Título:** Sacándolo de a poco · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
+- **Nombre:** `TRIB_ES_TOF_ABR_DEAPOCO_BINANCE_1080x1350_ES_V01` · No dice nada del dinero que ya está allí: habla de las próximas ventas. Una plataforma por anuncio.
+
+### 5B · 50.000 € en Hotmart (Foto real · portátil · Abridor)
+
+- **Imagen:** Portátil con un panel genérico: «Saldo disponible: 50.000,00 €» y «Solicitar retiro: 500 €», con un pósit «De a poco…». Rótulo: «50.000 € en Hotmart, y retirando de a poco por si Hacienda dice algo.» Etiqueta: «Con tu IBAN de Kunfupay, tus retiros de Hotmart llegan a tu cuenta, a tu nombre.»
+- **Texto A:** Hay quien tiene 50.000 € en Hotmart y los retira de a poco, por si Hacienda dice algo. / Con tu cuenta de Kunfupay, tus retiros de Hotmart llegan a tu nombre y con IBAN. Y lo que cobras con Kunfupay va aparte: Kunfupay te representa, hace la factura y paga los impuestos de cada venta. Tú te olvidas. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Mira el vídeo: cinco minutos.
+- **Texto B:** Tus retiros de Hotmart, a tu cuenta de Kunfupay: a tu nombre y con IBAN.
+- **Título:** Retirando de a poco · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
+- **Nombre:** `TRIB_ES_TOF_ABR_DEAPOCO_HOTMART_1080x1350_ES_V01` · Hotmart como origen de retiros está confirmado por el equipo (T-07). Mejor aún si se graba un retiro real.
+
+### 5C · Moneda a moneda (Viñeta · Prospector)
+
+- **Imagen:** Viñeta: un creador sentado en una montaña de sacos de dinero pasa las monedas una a una por una puerta diminuta, «Retiros». Bocadillo: «¿Y si Hacienda dice algo?». Arriba: «50.000 € parados, y sacándolos de a poco.» Pie: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Texto A:** Donde sea que tengas tus ingresos, la escena se repite: 50.000 € parados y sacándolos de a poco, por si Hacienda dice algo. / Hay otra forma de cobrar. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y el dinero lo tienes a tu nombre, con IBAN. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Míralo en cinco minutos.
+- **Texto B:** 50.000 € parados, en una viñeta. Con Kunfupay, cada venta sale con su factura y sus impuestos pagados.
+- **Título:** Moneda a moneda · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
+- **Nombre:** `TRIB_ES_TOF_PRO_DEAPOCO_VINETA_1080x1350_ES_V01`
 
 ### R1 · 20 minutos para ver si encaja (Foto real · oferta · Closer)
 
@@ -351,7 +380,7 @@ Y la próxima vez que te suene el móvil, que la alegría dure más de tres segu
 
 **Bloques, en orden:** barra "Tributaless · de Kunfupay" → titular según `utm_content` → VSL (se reproduce al pulsar, con subtítulos; miniatura con la persona real y "Antes de montar una LLC") → botón "Ver si encajo · 6 preguntas" ("Si encajas, eliges hora. Si no, te lo decimos.") → lo que cambia para ti (Kunfupay le hace la factura a tu alumno, paga los impuestos de cada venta y gestiona las devoluciones; tú facturas a uno y tienes el dinero en tu cuenta de Kunfupay, con IBAN) → lo que no tienes que hacer (la pizarra de R2: ni una factura por alumno, ni cambiar de plataforma, ni montar una LLC) → para quién no es (productos físicos, quien busca pagar cero, quien está empezando, quien no vive en España) → qué pasa en los 20 minutos (miramos cómo cobras hoy, te decimos qué cambiaría con Kunfupay, te llevas tu caso por escrito) → FAQ → pie legal con el titular real.
 
-**Titular por `utm_content`:** LANZ: "Tu lanzamiento acabó. Mira cómo cobrar sin una factura por alumno." · HACIENDA: "Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas." · IMPUESTOS: "Mismo precio para tu alumno. Más neto para ti." · LLC: "Cobra tus cursos en todo el mundo sin montar una LLC." · DIAG: "20 minutos para ver si Kunfupay encaja en tu negocio." · OBJEC: "Sin una factura por alumno, sin cambiar de plataforma y sin LLC. Solo cambia cómo cobras." · sin parámetro: "Cobra tus cursos sin montar una LLC." Subtítulo general: "Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas."
+**Titular por `utm_content`:** LANZ: "Tu lanzamiento acabó. Mira cómo cobrar sin una factura por alumno." · HACIENDA: "Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas." · IMPUESTOS: "Mismo precio para tu alumno. Más neto para ti." · DEAPOCO: "Tu dinero, a tu nombre y con IBAN. Y cada venta, con su factura y sus impuestos pagados." · LLC: "Cobra tus cursos en todo el mundo sin montar una LLC." · DIAG: "20 minutos para ver si Kunfupay encaja en tu negocio." · OBJEC: "Sin una factura por alumno, sin cambiar de plataforma y sin LLC. Solo cambia cómo cobras." · sin parámetro: "Cobra tus cursos sin montar una LLC." Subtítulo general: "Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas."
 
 **Seis preguntas:** 1) ¿En qué país vives? (España · Otro país) 2) ¿Qué vendes? 3) ¿Con qué cobras hoy? (varias) 4) ¿Cuánto facturas al mes, de media? (<2.000 / 2.000-5.000 / 5.000-10.000 / 10.000-30.000 / >30.000) 5) ¿Cómo lo tienes montado? (Autónomo · Sociedad en España · LLC u otra sociedad fuera · Aún sin alta · No lo tengo claro) 6) Nombre, WhatsApp y email, con aviso de privacidad a nombre del responsable real.
 
@@ -383,6 +412,7 @@ Kommo: lead con respuestas y `utm_content`; WhatsApp automático en menos de 5 m
 
 - **Campaña** `TRIBUTALESS / ESP / VSL`, clientes potenciales en web, optimiza `Lead` (solo cualificados).
 - **Prospección:** España, 25-60, Advantage+ amplio, de 1A a 4B, solo feed. Excluye registrados en Kunfupay, leads previos y quien ya envió el formulario.
+- **Conjunto 3 · Retirar de a poco:** 5A, 5B y 5C, con el mismo público y exclusiones que la prospección. Va aparte porque es de la misma familia que el ángulo 2.
 - **Retargeting:** visitas a la landing (30 días) + `VSL_25` sin formulario + interacción con la página (60 días), R1 y R2, ~15 % del presupuesto.
 - **Beneficiario (UE):** el nombre legal real del titular.
 - **Presupuesto para leer un anuncio:** ~25 € (50 clics con CPM 13,5 € y 2,7 % de clic al enlace de la v1). Con 10-20 €/día, Meta dará gasto a 3-4 anuncios.
@@ -400,7 +430,8 @@ Generadas con Higgsfield, en el proyecto «Tributaless · anuncios v2»: GPT Ima
 |---|---|---:|
 | 1 | 10 imágenes y la corrección de una errata del fondo de 1A | 30,25 |
 | 2 | 3 imágenes nuevas (3A, 3B y 4B) y 5 ediciones: la línea nueva de Kunfupay en 1A, 1B, 2A y 2B, y la primera línea de la pizarra de R2 | 22,00 |
-| **Total** | | **52,25** |
+| 3 | 3 imágenes del ángulo 5 (5A, 5B y 5C) y 2 ediciones: quitar iconos de monedas parecidos a logos en 5A y las cifras de los sacos en 5C | 13,75 |
+| **Total** | | **66,00** |
 
 4A y R1 no cambian desde la ronda 1. Cumplen las reglas de IA de la skill de estáticos: sin caras reales ni sintéticas, sin interfaz inventada de Kunfupay, sin logos ajenos y sin cifras que invente el modelo. Las cifras que se ven (los 3000€ de la cita y los 20 min) están dictadas.
 
