@@ -96,7 +96,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - Algo que invite a ocultar ingresos. Ejemplo: "Hacienda no lo ve". Es falso: CRS, DAC8 desde el 01/01/2026 (dinero electrónico y criptoactivos) y modelo 720. Además, Meta no admite anuncios que faciliten actividades ilegales.
     - Algo falso sobre impuestos. Ejemplo: "no pagas impuestos en España si no sacas el dinero" o "el dinero nunca salió de EE. UU.". Un residente en España tributa por su renta mundial, según el art. 2 de la Ley 35/2006 del IRPF: «con independencia del lugar donde se hubiesen producido y cualquiera que sea la residencia del pagador» (E-36).
 
-    En esos casos: una línea con el porqué y la fuente, y la versión que vende igual. Ejemplos: "Tu dinero lo guarda una entidad financiera con licencia." / "A tu nombre y en regla." / "Eso sí: la renta la sigues haciendo tú."
+    En esos casos: una línea con el porqué y la fuente, y la versión que vende igual. Ejemplos: "Tu dinero lo guarda una entidad financiera con licencia." / "A tu nombre y en regla."
 18. **Hook con contexto.** (Corrección del 24/09/2026: «los hooks… no tienen contexto y desconectan automaticamente, los primeros segundos son para saber de que se va a tratar todo el video».)
     - En los primeros 3 segundos se sabe **de qué va todo el vídeo**: para quién es y qué va a ver o conseguir.
     - Fórmula: [quién o qué situación] + [qué vas a ver]. Ejemplo: "Vendes cursos online. Mira cómo cobrarlos sin gestionar el IVA de cada venta. Y cómo usar ese dinero sin pasarlo por tu banco."
@@ -111,7 +111,6 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
       3. Tú solo facturas a Kunfupay, y esa factura no lleva IVA español. Es la verdad de fondo; en el guion se dice la consecuencia: "te olvidas del IVA de cada venta" (regla 21).
       4. Puedes tener el dinero en tu cuenta de Kunfupay, a tu nombre. Nunca "se queda": suena a retenido.
       5. Lo gastas con la tarjeta o haces retiros con el IBAN de tu cuenta.
-      6. La renta la sigue haciendo el creador, esté donde esté el dinero.
 
       Ver `angulos/cuenta-nominativa-iban.md` §0.
     - La moneda ("tus dólares, en dólares") no es un beneficio para este público.
@@ -125,9 +124,9 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
       - Frases que nadie diría en voz alta a un amigo.
     - **Cómo se habla:**
       - Tú para el espectador. Para Kunfupay, depende de quién graba (28/09/2026): si graba el fundador o el equipo, "nosotros" ("la factura se la hacemos nosotros", "cosa nuestra"); si graba UGC, alguien que no es de Kunfupay, tercera persona ("la factura se la hacen ellos" / "se la hace Kunfupay", "cosa suya", "son tus representantes"). Verbos activos en los dos casos.
-      - Expresiones de la calle: "quitártelo de encima", "no te lo quita nadie", "hacer la renta", "tu trimestre", "cosa nuestra", "eso sí", "ojo", "o sea", "encima".
+      - Expresiones de la calle: "quitártelo de encima", "no te lo quita nadie", "tu trimestre", "cosa nuestra", "eso sí", "ojo", "o sea", "encima".
       - Preguntas en voz alta: "¿Y el dinero?". Para unir una causa con su efecto no va una pregunta como "¿Y tú qué haces?", va "por lo tanto" (regla 21).
-      - Antes que una metáfora, una situación real del creador: el trimestre, la renta, el banco.
+      - Antes que una metáfora, una situación real del creador: el trimestre, el banco.
       - "Tu cuenta de Kunfupay", nunca "tu cuenta" a secas: en un guion que dice "sin pasar por tu banco", se confunde con la del banco.
     - **Prueba:** léelo como un audio de WhatsApp a un amigo que vende cursos. Si suena a folleto, a banco o a asesoría, se reescribe.
     - **La verdad fiscal no cambia; cambia cómo se dice.** Las frases de la tabla de claims son el contenido, no el texto que se lee: se pasan a lenguaje hablado.
@@ -136,8 +135,6 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
         Bien: "Si le cobras a tu alumno con Kunfupay, la factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra." (Corregido otra vez el 25/09 con la regla 21. La primera versión, "A tu alumno le cobramos nosotros, desde Estados Unidos…", ya no vale.)
       - Mal: "El IVA de esas ventas desaparece de tu declaración trimestral."
         Bien: "Por lo tanto, tú te olvidas del IVA de cada venta." (Regla 21: la consecuencia, no el mecanismo.)
-      - Mal: "Que el dinero se quede ahí no cambia tu renta. Esa la sigues declarando tú."
-        Bien: "Eso sí: la renta la sigues haciendo tú. Esté donde esté el dinero."
     - **La metáfora de la Coca-Cola está retirada.** El usuario dijo: «porfavor olividadte de la metafora de la colacola».
 21. **El creador cobra; se cuenta la consecuencia, no el mecanismo.** (Corrección del 25/09/2026: «no le cobramos nosotros, sino que tu le cobras a tu alumno a traves de kunfupay, o con kunfupay, y eso de estados unidos no lo digas relamente no se comprende . cambia el ¿Y tú qué haces? por " por lo tanto"» · «ya es info tecnica de mas, mejor un y por lo tanto tu te olvidas» · «no digas lo de la comision» · «no digas se queda en la cuenta de kunfupay, porque parece q esta retenido».)
     - **Quien cobra es el creador, con Kunfupay:** "Tú le cobras a tu alumno con Kunfupay." Nunca "le cobramos nosotros" ni "tu alumno nos paga a nosotros".
@@ -147,12 +144,10 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - **La consecuencia no se repite si ya está dicha.** En el guion "Nueva venta" el usuario quitó "Por lo tanto, tú te olvidas de los impuestos de cada venta" porque "los impuestos de esa venta son cosa suya" ya lo decía. La línea de consecuencia es opcional, no obligatoria.
     - **Sin mecánica fiscal en el guion:** quién factura a quién, "sin IVA español", "desaparece de tu trimestre", "el 303". Se dice la consecuencia: "Por lo tanto, tú te olvidas del IVA de cada venta." La mecánica se queda en el control interno (§4).
     - **Las causas se unen con "por lo tanto"** (regla de South Park, §6 bis), no con preguntas como "¿Y tú qué haces?". Pero con medida (29/09): el usuario quitó los dos "por lo tanto" del guion "Nueva venta". Se usa solo cuando la consecuencia no es obvia; si la línea anterior ya la implica, se une con "Y" o se corta. El giro grande se marca con un "PERO" en mayúsculas.
-    - **Cada impuesto, definido en una frase** cuando salen los dos:
-      - La renta: "lo que pagas por lo que ganas".
-      - El IVA: "el que le cobras a tu alumno en cada venta y cada tres meses le das a Hacienda".
+    - **Si sale el IVA, se define en una frase:** "el que le cobras a tu alumno en cada venta y cada tres meses le das a Hacienda".
     - **La comisión no se nombra** si el guion no habla de dinero. Si hay un claim de ahorro o de cuánto te llega, entonces sí (W-07, art. 7 de la Ley 3/1991).
     - **El dinero no "se queda":** suena a retenido. Se dice: "Puedes tenerlo en tu cuenta de Kunfupay, a tu nombre. Gastarlo con tu tarjeta. Y ahora tu cuenta ya tiene IBAN, para que puedas hacer retiros."
-    - **"Te olvidas del IVA de cada venta", nunca "de Hacienda" ni "del trimestre":** el creador sigue presentando el 303 (sus facturas a Kunfupay van en la casilla 120) y, en estimación directa, el 130 de la renta (ver §4). En niveles bajos, "impuestos de cada venta" (ver arriba).
+    - **"Te olvidas del IVA de cada venta", nunca "de Hacienda" ni "del trimestre":** el creador sigue presentando el 303 (sus facturas a Kunfupay van en la casilla 120) y, en estimación directa, el modelo 130 (ver §4). Es control interno: no se dice en las piezas (regla 24). En niveles bajos, "impuestos de cada venta" (ver arriba).
 22. **Patrones de corrección del usuario sobre el guion "Nueva venta" (29/09/2026).** El usuario reescribió mi "guion perfecto" porque «ya era demasiado extenso, algunas palabras estaban de más o confusas» y pidió «detectar todos los patrones». Se aplican a todo guion nuevo:
     1. **Cada línea tiene que decir algo que la anterior no decía.** Fuera las líneas que explican lo que ya se entiende.
        - Mal: "No lo sabes. / Por lo tanto, apartas una parte, por si acaso. / … / Tres segundos de alegría, y una parte apartada." Bien: "No lo sabes. / … / Tres segundos de alegría, y adiós."
@@ -163,7 +158,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     5. **Una palabra alargada marca el ritmo:** "caaada trimestre". Se escribe así en el prompter, para que el que graba la estire.
     6. **El giro lleva "PERO" en mayúsculas** y va justo antes de lo que cambia: "PERO la factura se la hacen ellos."
     7. **Anclar lo nuevo en lo que ya usa:** "Cobras con Kunfupay, igual que cobrabas con Stripe. PERO…". Quita la pereza de entender algo nuevo (doc 00 §2, "por qué no compran"). Una plataforma por anuncio (regla 16): para quien vende directo, Stripe.
-    8. **Nombrar las alternativas que el avatar baraja y descartarlas en una línea:** "Sin irte a Andorra ni montar una LLC." Sin "pero con los mismos beneficios": Andorra promete un 10 % de renta que no damos (E-06, caso Willyrex), y "tu renta sigue siendo tuya" lo desmentiría en el mismo guion. Si hace falta concretar: "y con lo que de verdad buscas en ellas".
+    8. **Nombrar las alternativas que el avatar baraja y descartarlas en una línea:** "Sin irte a Andorra ni montar una LLC." Sin "pero con los mismos beneficios": Andorra promete un IRPF del 10 %, que no damos (E-06, caso Willyrex). Si hace falta concretar: "y con lo que de verdad buscas en ellas".
     9. **Bloque de credibilidad fijo, justo después de "son cosa suya":**
        ```
        Kunfupay es la única pasarela de España que funciona como Merchant of Record.
@@ -176,7 +171,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
        - "Estados Unidos" aquí sí (regla 21). Riesgo avisado una vez: señala que no se aplica el IVA del alumno europeo; es riesgo de Kunfupay, no del creador (§4). La alternativa que vende igual, si el usuario la prefiere: "y de los impuestos de esa venta se ocupan ellos".
        - El usuario pidió este empeño «a todos los guiones»: va en todos.
     10. **Un detalle de insider del avatar vale más que un adjetivo.** El usuario añadió "Ni necesitas tener 50.000 € en una cuenta de trading por miedo de sacarlo todo junto". Se conserva la situación real (dinero parado en una cuenta de trading) y se cambia el motivo, porque "por miedo de sacarlo todo junto" suena a esconder dinero (E-11, E-36, regla 17) y 50.000 € es justo el umbral del modelo 720. Versión que vende igual: "Sin tener 50.000 € parados en una cuenta de trading. / Por no saber cómo moverlos."
-    11. **Lo que el usuario no tocó es lo que funciona:** el hook con el momento ("te sabes este momento"), el objeto cotidiano (el móvil, «Nueva venta»), los tres segundos, la carta, el bloque del dinero con IBAN y retiros de Hotmart, la frase de honestidad y el loop final. Se repiten.
+    11. **Lo que el usuario no tocó es lo que funciona:** el hook con el momento ("te sabes este momento"), el objeto cotidiano (el móvil, «Nueva venta»), los tres segundos, la carta, el bloque del dinero con IBAN y retiros de Hotmart, y el loop final. Se repiten.
     12. **Longitud:** su versión tiene 32 líneas y unos 235 palabras, con más contenido que la mía (Andorra, LLC, Stripe, credibilidad, trading) y menos relleno. Techo orientativo: 35 líneas. Si un guion pasa de ahí, sobra explicación, no contenido.
 23. **Nivel de conciencia bajo: hablar su idioma y contar la historia antes de vender.** (Correcciones del 29/09/2026: «si vas a hablar a un punto de conciencia muy bajo… no menciones cosas como IVA 21 %… debes hablar en su idioma, por ejemplo vendes cursos desde España y vives con miedo de los impuestos, y ahí trata de seguir la historia antes de meter Kunfupay… a las personas no les gusta que les vendan» · «vendes cursos grabados no sé si es una frase que me guste» · «las personas le preguntan al ChatGPT y listo… no tienen miedo de dónde pagar el IVA, siempre tienen miedo de que su institución financiera les llegue, como Hacienda en España, ARCA en Argentina» · «lo de la hucha me gusta, entendiste bien el concepto de analizar el lenguaje».)
     - **El lead siempre ya vende.** Nunca "si empiezas a vender", "tu primer lanzamiento" ni "cursos grabados". El nivel de conciencia mide cuánto sabe del problema y de la solución, no si vende (regla 5 de la skill `analista-angulos-meta`).
@@ -186,6 +181,13 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - **Situaciones del que ya vende, con su lenguaje:** lo que entra "no es todo tuyo" (anuncios, editor, closer, impuestos), el trimestre después de un lanzamiento, el dinero parado en una cuenta de trading. Investigar sus frases antes de escribir (§2). No: "ya vendes mucho tus cursos" ni "la cuenta de casa".
     - **Los retiros, con nombre:** "Y ahora, con tu IBAN, ahí recibes hasta tus retiros de Hotmart. O de cualquier otra plataforma." Nunca "retiros" a secas (29/09: «ten cuidado con la palabra retiros»).
     - **Transición floja = guion flojo.** Si el paso de la historia a Kunfupay no sale del propio conflicto, se reescribe (el guion "la carta" v4 se rechazó por eso).
+
+24. **La renta no se menciona nunca.** (Corrección del 30/09/2026: «borra completamente el mensaje de la renta lo haces tú, cámbialo de la skill y quítalo de todos los anuncios, no menciones nunca más la renta la haces tú».)
+    - Ninguna pieza (guion, estático, VSL, landing o copy) dice que el creador sigue haciendo o pagando su renta: ni como frase de honestidad, ni como fila de una tabla, pósit o cierre.
+    - Tampoco se usa como argumento contra la LLC. Contra la LLC valen los papeles en dos países y el Form 5472, con 25.000 $ de multa si no se presenta (IRS).
+    - Tampoco con otras palabras: «Hacienda mira dónde vives tú, no dónde está la empresa» o «pagar cero viviendo en España» dicen lo mismo sin nombrarla. Contra el humo del "0 %" basta con «Si te prometen pagar cero, te están vendiendo un titular».
+    - La verdad fiscal se protege sin esa frase: no se promete lo que no es ("no pagas impuestos", "paga menos", "0 %"), y "los impuestos de esa venta son cosa suya" va siempre acotado a cada venta.
+    - Los datos del IRPF de §4 son control interno: sirven para no escribir claims falsos, no para decirlos.
 
 ---
 
@@ -223,7 +225,7 @@ Explicar fácil es **mostrar una cosa que ya conoce y ponerla al lado de la nuev
    - **El pan del súper:** *"Tú haces el pan. El súper lo pone en la estantería, cobra en caja, da el ticket y se ocupa de los impuestos. A ti te paga por el pan vendido. Kunfupay es el súper de tus cursos."* En las analogías se dice "se ocupa de los impuestos", nunca "paga el IVA" (T-10).
    - **La Coca-Cola: retirada por el usuario el 25/09** («olividadte de la metafora de la colacola»). No se usa.
    - Otras analogías: el cajero, el portero de discoteca (la verificación), el traductor (los métodos de pago locales). La tienda de apps queda como segunda opción.
-   - **Antes que una metáfora, una situación real del creador:** el IVA del trimestre, hacer la renta, el banco que pregunta, la tarjeta. La metáfora solo entra si aclara algo que no se entiende de otra forma (regla 20).
+   - **Antes que una metáfora, una situación real del creador:** el IVA del trimestre, el banco que pregunta, la tarjeta. La metáfora solo entra si aclara algo que no se entiende de otra forma (regla 20).
 2. **Objeto físico en cámara.**
    - 100 monedas o billetes repartidos en montones ("este montón es del IVA de México").
    - Un sobre genérico que hace de "la carta", sin imitar el membrete oficial de la AEAT.
@@ -276,7 +278,7 @@ Explicar fácil es **mostrar una cosa que ya conoce y ponerla al lado de la nuev
 | "Te olvidas del IVA de cada venta" | 🟢 | Verificado el 25/09. No se amplía a "te olvidas de Hacienda" ni "del trimestre": el 303 y el 130 siguen (regla 21) |
 | "No es para todos" | 🟢 | "Es para quien vende formación, membresías, mentorías o comunidades online. Revisamos cada caso antes de activar la cuenta." (web /mor-europa) |
 | "Te ahorras el 21%" | 🔴 | "Si vendes a LATAM y pagas un 21% por esas ventas, puede que pagues un IVA que no te toca." (🟡) |
-| "Ya pagamos los impuestos por ti" | 🔴 | Según el equipo, no se paga el IVA del país del comprador (T-10). Se dice: "La factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra. Eso sí: la renta la sigues haciendo tú." |
+| "Ya pagamos los impuestos por ti" | 🔴 | Según el equipo, no se paga el IVA del país del comprador (T-10). Se dice: "La factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra." |
 | "Hacienda no ve tu nombre" | 🔴 | "La factura de tu alumno la emite Kunfupay, no tú." (🟢 claim oficial: «emitimos la factura». Lo del extracto está pendiente de P10) |
 | "Sin LLC" | 🟢 | "Cobra en todo el mundo sin montar una LLC en EE. UU." |
 | "Paga menos impuestos" | 🔴 | "Paga lo justo, con papeles." / "Deja de pagar lo que no te toca." (🟡) |
@@ -290,10 +292,10 @@ Explicar fácil es **mostrar una cosa que ya conoce y ponerla al lado de la nuev
 | "El dinero se queda en tu cuenta" | 🟠 | Suena a dinero retenido. "Puedes tenerlo en tu cuenta de Kunfupay, a tu nombre… Y ahora tu cuenta ya tiene IBAN, para que puedas hacer retiros." (retiro a tu banco o en cripto, confirmado por el equipo) |
 | Cuenta con IBAN: "privada" | 🟢 | Solo en este sentido: "Quien te paga ve tu IBAN de Kunfupay, no tu banco personal" |
 | Cuenta con IBAN: "Hacienda no lo ve", "fuera del radar" | 🔴 | "A tu nombre y en regla." Es falso por CRS, DAC8 y el modelo 720, y Meta no admite anuncios que faciliten actividades ilegales (regla 17) |
-| "No pagas impuestos en España si no sacas el dinero" / "el dinero nunca sale de EE. UU." | 🔴 | "Eso sí: la renta la sigues haciendo tú. Esté donde esté el dinero." (Art. 2 de la Ley del IRPF: renta mundial. E-36) |
+| "No pagas impuestos en España si no sacas el dinero" / "el dinero nunca sale de EE. UU." | 🔴 | No se dice (art. 2 de la Ley del IRPF: renta mundial. E-36). Tampoco se compensa con una frase sobre la renta (regla 24). |
 | "Kunfupay es la única pasarela de España que funciona como Merchant of Record" | 🟠 | Claim del equipo [X], línea de credibilidad fija (regla 22). Avisado una vez el 29/09: Netfield Media S.L. también se anuncia como MoR desde España |
 | "Los impuestos de esa venta los pagan en Estados Unidos. Donde está la empresa." | 🟠 | Lo pide el usuario dentro del bloque de credibilidad (regla 22). Riesgo de Kunfupay avisado una vez. Alternativa: "y de los impuestos de esa venta se ocupan ellos" |
-| "Sin irte a Andorra ni montar una LLC" | 🟢 | Se usa tal cual. Sin "pero con los mismos beneficios" (Andorra = 10 % de renta, que no damos) |
+| "Sin irte a Andorra ni montar una LLC" | 🟢 | Se usa tal cual. Sin "pero con los mismos beneficios" (Andorra = IRPF del 10 %, que no damos) |
 | "Ni necesitas tener 50.000 € en una cuenta de trading por miedo de sacarlo todo junto" | 🟠 | Se conserva la situación y se cambia el motivo: "Sin tener 50.000 € parados en una cuenta de trading. Por no saber cómo moverlos." (regla 22.10) |
 | "Cobras con Kunfupay, igual que cobrabas con Stripe" | 🟢 | Ancla en lo que ya usa (regla 22.7). Una plataforma por anuncio |
 
@@ -305,7 +307,7 @@ Explicar fácil es **mostrar una cosa que ya conoce y ponerla al lado de la nuev
   - Alumno en LATAM: ningún IVA español.
   - Fuente: AEAT, servicios electrónicos. La creencia "solo pago el IVA donde tengo mi dinero" es frecuente, incluso dentro del equipo, y se puede usar como mito a romper.
 - **Lo que hace de verdad el creador que vive en España:** presenta su IVA trimestral en España (modelo 303) y casi nunca se da de alta en otros países.
-- **La renta (IRPF) de un residente en España es mundial.** Se tributa por lo que se gana, esté donde esté el dinero y aunque nunca llegue a España (art. 2 de la Ley 35/2006). No existe el "no tributas si no lo traes" (E-36).
+- **La renta (IRPF) de un residente en España es mundial.** Se tributa por lo que se gana, esté donde esté el dinero y aunque nunca llegue a España (art. 2 de la Ley 35/2006). No existe el "no tributas si no lo traes" (E-36). Es control interno para no escribir claims falsos: no se dice en las piezas (regla 24).
 - **Con Kunfupay:** el creador factura a Kunfu Global, Inc., una empresa de EE. UU. Esa factura no lleva IVA español, así que el IVA de sus ventas desaparece de su 303.
   - **Verificado el 25/09/2026:**
     - Art. 69.Uno.1º LIVA: un servicio a una empresa se localiza donde está esa empresa. Si está fuera de España y no tiene establecimiento aquí, no lleva IVA español. La AEAT lo llama «operación no sujeta al IVA español», con derecho a deducir.
@@ -389,7 +391,7 @@ Elige por objetivo y declara siempre cuál usaste. Si está instalada la skill `
 | F | Problema invisible | "Si vendes a X, probablemente…" → síntoma que reconoce → causa → solución → CTA | TOFU |
 | G | 3 razones en menos de 30 s | Filtro → 3 razones con prueba → CTA | Remarketing |
 | H | Respuesta a comentario | Comentario real en pantalla → reacción → respuesta demostrada → invitar a más preguntas | Orgánico y anuncios |
-| I | MoR explicado (plantilla del usuario) | Situación que se vive o beneficios X, Y, Z → situación real del creador o analogía cotidiana (el pan del súper; la Coca-Cola está retirada) → "así funciona el Merchant of Record" → Kunfupay: "somos tus representantes en cada venta" + qué hacemos (o por qué nació así: citas del fundador, doc 02 §5) → "no es para todos: formación, membresías, mentorías o comunidades online; revisamos cada caso" → "tu renta sigue siendo tuya" → CTA | Cualquier pieza sobre el MoR |
+| I | MoR explicado (plantilla del usuario) | Situación que se vive o beneficios X, Y, Z → situación real del creador o analogía cotidiana (el pan del súper; la Coca-Cola está retirada) → "así funciona el Merchant of Record" → Kunfupay: "somos tus representantes en cada venta" + qué hacemos (o por qué nació así: citas del fundador, doc 02 §5) → "no es para todos: formación, membresías, mentorías o comunidades online; revisamos cada caso" → CTA | Cualquier pieza sobre el MoR |
 
 **Analogías verificadas para el MoR (doc 02 §6), por orden de preferencia:**
 1. ~~La Coca-Cola en el súper o en el bar.~~ Retirada por el usuario el 25/09.
@@ -409,7 +411,7 @@ Elige por objetivo y declara siempre cuál usaste. Si está instalada la skill `
 - Hooks con contexto (regla 18).
 - Un beneficio completo por vídeo, y las características en un vídeo aparte (regla 19).
 - Analogías cotidianas: los cuatro trabajos, el coche y la guantera. La Coca-Cola se retiró el 25/09.
-- Frases de honestidad ("Eso sí: la renta la sigues haciendo tú") y un solo CTA.
+- Un solo CTA.
 
 **Segundo guion aprobado, con cambios** (versión Coca-Cola): está en `angulos/optimizacion-fiscal-mor.md`. Se revisó el 24/09 por T-10. **Retirado el 25/09**, porque el usuario pide olvidar la Coca-Cola.
 
@@ -428,8 +430,6 @@ Kunfupay es el súper de tus cursos.
 Nosotros vendemos. Cobramos. Facturamos a cada alumno. Y gestionamos las devoluciones.
 Tú haces el curso. Y cobras lo vendido.
 A eso se le llama Merchant of Record.
-Tu renta sigue siendo tuya.
-El resto del trabajo, no.
 Entra y mira si tu negocio encaja.
 ```
 
@@ -439,7 +439,7 @@ Entra y mira si tu negocio encaja.
 3. Usa una analogía antes de dar el nombre.
 4. Enumera de forma concreta lo que hace Kunfupay.
 5. Pone el nombre al final.
-6. Cierra con una frase de honestidad y un solo CTA.
+6. Cierra con un solo CTA.
 7. No usa ningún claim que dependa de un pendiente [P].
 
 Si se vuelve a grabar, valorar cambiar "Nosotros vendemos" por "Te representamos" (regla 15), y "Cobramos" por "Tú cobras con Kunfupay" (regla 21).
@@ -480,9 +480,6 @@ O de cualquier otra plataforma.
 Sin tener 50.000 € parados en una cuenta de trading.
 Por no saber cómo moverlos.
 
-Eso sí, tu renta sigue siendo tuya.
-Lo que pagas por lo que ganas, eso no cambia.
-
 Te suena el móvil.
 «Nueva venta.»
 Y esta vez, la alegría dura más de tres segundos.
@@ -498,7 +495,7 @@ Entra y mira si tu negocio encaja.
 5. "PERO" en mayúsculas justo antes de lo que cambia.
 6. Bloque de credibilidad después del claim: la única pasarela, representantes, Estados Unidos.
 7. El dinero con IBAN, retiros de Hotmart y un detalle de insider (la cuenta de trading).
-8. La frase de honestidad de la renta y el loop con el hook.
+8. El loop con el hook.
 9. Un solo CTA.
 
 **Duración orientativa:**
@@ -549,7 +546,6 @@ Fuente: el vídeo de Ana (YouTube L-hOOg2ozYc), que adapta las 6 lecciones de Ka
 
 **Técnica 4. Escribir primero el final.**
 - La última frase es la que se comparte. Frases que ya funcionan:
-  - "Tu renta sigue siendo tuya. El resto del trabajo, no."
   - "Invisible, no. Tranquilo, sí."
 - **Loop (orgánico):** la última frase enlaza con la primera cuando el vídeo vuelve a empezar. Ejemplo:
   - Primera: "Vendes un curso y, sin darte cuenta, tienes cuatro trabajos."
@@ -560,7 +556,7 @@ Fuente: el vídeo de Ana (YouTube L-hOOg2ozYc), que adapta las 6 lecciones de Ka
 **Técnica 5. La lente (las gafas de la historia).**
 - Todos cuentan lo mismo; lo que diferencia es el ángulo, como el prisma que abre la luz en colores. Kallaway lo llama "obsessed with meaning".
 - **Lentes de Kunfupay** (se elige una antes de escribir):
-  1. Lo cotidiano: situaciones reales del creador (el trimestre, hacer la renta, el banco) y, si hace falta, cosas del día a día como el coche o el cajero. Sin la Coca-Cola (retirada el 25/09).
+  1. Lo cotidiano: situaciones reales del creador (el trimestre, el banco) y, si hace falta, cosas del día a día como el coche o el cajero. Sin la Coca-Cola (retirada el 25/09).
   2. La verdad bien contada: lo que otros exageran, nosotros lo decimos claro.
   3. "Invisible no. Tranquilo sí." (concepto en validación).
   4. "Haz solo el trabajo que te da dinero" (los cuatro trabajos).
@@ -733,6 +729,7 @@ La investigación completa se guarda en `kunfupay/angulos/<slug>.md`. Los guione
 - [ ] Ningún claim 🔴. Los 🟡 van señalados con su condición.
 - [ ] Cada situación y cada cita tiene fuente. Nada inventado. Los huecos van como `[PENDIENTE]`.
 - [ ] Nada que desmienta la letra pequeña de Kunfupay ni que invite a ocultar ingresos (regla 17).
+- [ ] Ninguna mención a la renta del creador: ni como frase de honestidad, ni contra la LLC, ni con otras palabras (regla 24).
 
 **Realidad y números**
 - [ ] El problema del hook lo vive el creador de verdad, no es teoría legal (regla 8).
