@@ -1,7 +1,7 @@
 # Classroom Partners: los 15 mejores para contactar
 
 Fuente: hoja `Classroom_Partners_45` (pestaña "45 calificados", verificada en Instagram el 23 sep 2026).
-Fecha del análisis: 30 sep 2026.
+Fecha del análisis: 30 sep 2026. Revisión: Mateo Jiménez sustituido por Rubén Gallardo (contacto ya intentado sin éxito).
 
 ## Criterio de selección
 
@@ -31,13 +31,13 @@ Supuesto de trabajo: Classroom es la plataforma de comunidad y cursos de Kunfupa
 | 6 | Agency Bylder / MarkGrowth | Tomás Parraguez | Chile | **Pasarela** | Classroom | Ganador de Skool Games, MarkGrowth 9,5k miembros. Cofundador de atribu.app: perfil técnico que integra herramientas, ideal para hablar de integración y afiliación. |
 | 7 | Super Marca Club | Alan Piña | Colombia | **Pasarela** | — | Agencia de lanzamientos: +18.000 ventas, doble Hotmart Black. El que monta el lanzamiento decide el checkout. Colombia pide métodos de pago locales. Con 272k está cerca del límite: entrar por su equipo de operaciones. |
 | 8 | The Freedom Method | Carlo Sala | España | **Pasarela** | — | Ads para coaches y consultores high ticket; 500+ negocios desde 2019. En España el dolor de la factura y los impuestos de cada venta es el más fuerte: el ángulo fiscal le habla a él y a sus clientes. |
-| 9 | WeBusiness / Mediapower | Jaime Cabezas | España | **Pasarela** | Classroom | CEO de agencia y programa de escalado a €20k-100k/mes (Skool ~75 × $8.700/año). Conoce a Mateo Jiménez: puente hacia el bloque Classroom. |
+| 9 | WeBusiness / Mediapower | Jaime Cabezas | España | **Pasarela** | Classroom | CEO de agencia y programa de escalado a €20k-100k/mes (Skool ~75 × $8.700/año). Conoce a Mateo Jiménez (Skool Scaling), con quien ya se intentó sin éxito: puede ser la vía indirecta. |
 | 10 | Los Cobo | Carlos y Pablo Cobo | España / Dubái | **Pasarela** | — | Media buyers de lanzamientos grandes: +20M€ invertidos, clientes como Level Up y Hotmart. Sin Skool. A un media buyer le importa la conversión del checkout y que el alumno pague como paga en su país. Palanca Platinum directa. |
 | 11 | LaunchXpert | Agustín Figueroa | LATAM | **Pasarela** | — | Lanzamientos hechos para ti: él monta el checkout de cada cliente, así que si le convence, el uso es real desde el primer día. Tamaño contactable (10,8k). |
 | 12 | Círculo IA | Jonathan Rengifo | Colombia / Miami | **Pasarela** | Classroom | Enseña pasarelas de pago LATAM a coaches y creadores; comunidad de 5,8k; Hotmart Black; WhatsApp público. El más fácil de convertir en embajador de los dos productos. |
 | 13 | Fórmula 100K / EREX | Andrea Vega y Cheva | Perú | **Classroom** | — | Escalan comunidades Skool solo con contenido; 1.800 × $47/mes; Skool Games 2025. La pasarela no les aporta porque Skool ya cobra. Gancho: nuestra skill de guiones usa su método. |
 | 14 | Aceleradora de Membresías | Tati Uribe y Cristian Agudelo | Colombia | **Classroom** | — | Especialistas en membresías: 1,2k × $49/mes y 287 × $2.000/año. Es el perfil Classroom más puro del mapa. Último post el 26 de agosto: confirmar actividad antes de escribir. |
-| 15 | Skool Scaling | Mateo Jiménez | España | **Classroom** (condicionado) | — | 661 clientes y +3M€ MRR generados a clientes; 23 anuncios activos. El mayor volumen Classroom de España. Reseñas 2,0/5 en puntua.net: due diligence antes de cualquier co-marketing. |
+| 15 | Vive Como Creador / AprendamosMarketing | Rubén Gallardo | México | **Classroom** | Pasarela | Ayuda a creadores y expertos a monetizar con cursos y comunidades de pago; Skool de 808 miembros y top-3 en Skool Games. México abre el ángulo de pagos locales (OXXO), así que la pasarela entra en la segunda conversación. |
 
 Facu Guerra y Mateo Maffia cuentan como un solo negocio porque comparten marca, Skool y sistema.
 
@@ -47,21 +47,21 @@ Facu Guerra y Mateo Maffia cuentan como un solo negocio porque comparten marca, 
 
 **Ola 2, con un caso o número en la mano:** Nico Seoane, Start Lab, Alan Piña, Los Cobo, Matías Molina, Jaime Cabezas, Andrea y Cheva, Tati Uribe y Cristian Agudelo.
 
-**Ola 3:** Mateo Jiménez, solo después de la due diligence.
+**Ola 3:** Rubén Gallardo, junto con el bloque Classroom de la ola 2 si responde rápido.
 
 ## Reservas (si alguno de los 15 no responde)
 
 | Negocio | Persona | Entrada | Motivo de reserva |
 |---|---|---|---|
-| Vive Como Creador | Rubén Gallardo (México) | Classroom | Skool 808, top-3 Skool Games. México abre el ángulo OXXO. Primer sustituto del bloque Classroom. |
 | Growth Partner Club | Andreti Page | Pasarela | Canal a 500+ growth partners, pero forma partners junior; menos operación propia. |
 | Launch 10k en 24h | Jonathan Pérez (España) | Pasarela | +8M en lanzamientos y Skool ~4k. Posible vínculo con Rafel Mayol. |
 | Freedom Fire | Santi Padilla | Pasarela | 223k seguidores y anuncios activos, pero Skool pequeño (118 + 42). |
-| Denisf.marketing | Denis F. (Perú) | Classroom | ICP exacto y muy contactable; pequeño (5,6k). Quick win, no palanca de marca. |
+| Denisf.marketing | Denis F. (Perú) | Classroom | ICP exacto y muy contactable; pequeño (5,6k). Primer sustituto del bloque Classroom. |
 | Incubadora de Lanzamientos | Daniel Schepers | Pasarela | +1.000 lanzadores formados; sin Skool. |
 
 ## Fuera de la lista, y por qué
 
+- **Mateo Jiménez (Skool Scaling):** ya se intentó el contacto y no hubo respuesta. Sustituido por Rubén Gallardo.
 - **Rodrigo Alfaro (Skool en Español):** tres veces campeón de Skool Games y comunidad "oficial" de Skool en español. Classroom le crea un conflicto directo y la pasarela no le aporta. Volver a él cuando Classroom tenga casos públicos.
 - **Rafel Mayol:** sobrecalificado (289k, $40M declarados). Solo vía su equipo.
 - **Sergio Perdomo:** sin publicar desde el 30 de julio.
