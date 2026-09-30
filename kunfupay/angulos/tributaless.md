@@ -124,7 +124,7 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 
 ## 4. Plan de tanda
 
-**Añadido el 30/09: ángulo 5, retirar de a poco.** 50.000 € en Binance, en Hotmart o donde sea, y sacándolos de a poco por si Hacienda dice algo. Es de la misma familia que el ángulo 2, así que va en su propio conjunto. Se cuenta como el miedo que dejas atrás, nunca como método, y no promete nada sobre el dinero ya acumulado (regla 22.10 del cerebro).
+**Añadido el 30/09: ángulo 5, retirar de a poco.** 50.000 € de ventas en Binance, en Hotmart o donde sea, y sacándolos de a poco por si Hacienda dice algo. Cada pieza deja claro que es dinero de ventas (setup de trading, «tu comunidad», «de tus ventas») y el texto excluye a quien tiene sus ahorros. Va en su propio conjunto, porque es de la misma familia que el ángulo 2. Se cuenta como el miedo que dejas atrás, nunca como método, y no promete nada sobre el dinero ya acumulado (regla 22.10 del cerebro).
 
 **Corregida el 30/09 con la regla 25 del cerebro.** Fuera los dos anuncios del IVA, porque esa duda no existe: todos cobran el 21 %. Entra el dolor principal, perder dinero en impuestos. La LLC ya no se ve épica, sino imposible. Y la línea de Kunfupay pasa a ser «te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas».
 
@@ -216,29 +216,29 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 - **Título:** Lo que te piden en EE. UU. · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
 - **Nombre:** `TRIB_ES_TOF_PRO_LLC_LISTA_1080x1350_ES_V01` · Trámites reales: el agente registrado y el EIN son obligatorios, el Form 5472 va con un 1120 pro forma cada año (IRS) y el informe anual depende del estado.
 
-### 5A · 50.000 € en Binance (Foto real · móvil · Abridor)
+### 5A · Tu comunidad de trading te paga en Binance (Foto real · móvil · Abridor)
 
-- **Imagen:** Mano con un móvil de noche: app de cartera genérica, sin logos, con un saldo de «50.000,00 €» y «Retirar: 300 €». A mano: «50.000 € en Binance. Y sacándolos de a poco, por si Hacienda dice algo.» Etiqueta: «Kunfupay hace la factura y paga los impuestos de cada venta. Tu dinero, a tu nombre y con IBAN.»
-- **Texto A:** Hay quien tiene 50.000 € en Binance y los va sacando de a poco, por si Hacienda dice algo. / Si te suena, hay otra forma de cobrar tus próximas ventas. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y el dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Mira el vídeo: cinco minutos.
-- **Texto B:** 50.000 € parados y sacándolos de a poco. Con Kunfupay, cada venta sale con su factura y sus impuestos pagados, y el dinero a tu nombre.
+- **Imagen:** Setup de trading de noche: tres pantallas con gráficas de velas, micro y webcam de quien enseña a una comunidad. En primer plano, un móvil con una cartera genérica sin logos: «50.000,00 €» y «Retirar: 300 €». A mano: «Tu comunidad de trading te paga en Binance. Y sacas los 50.000 € de a poco, por si Hacienda dice algo.» Etiqueta: «Kunfupay hace la factura y paga los impuestos de cada venta. Tu dinero, a tu nombre y con IBAN.»
+- **Texto A:** Enseñas trading, tu comunidad te paga en Binance y ya tienes 50.000 € que vas sacando de a poco, por si Hacienda dice algo. / Hay otra forma de cobrar tus próximas ventas. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y el dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN. / Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti. Si vendes desde España y facturas más de 2.000 € al mes, mira el vídeo.
+- **Texto B:** Tu comunidad de trading te paga en Binance y lo sacas de a poco. Con Kunfupay, cada venta sale con su factura y sus impuestos pagados.
 - **Título:** Sacándolo de a poco · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_ABR_DEAPOCO_BINANCE_1080x1350_ES_V01` · No dice nada del dinero que ya está allí: habla de las próximas ventas. Una plataforma por anuncio.
+- **Nombre:** `TRIB_ES_TOF_ABR_DEAPOCO_BINANCE_1080x1350_ES_V02` · No dice nada del dinero que ya está allí: habla de las próximas ventas. Una plataforma por anuncio.
 
-### 5B · 50.000 € en Hotmart (Foto real · portátil · Abridor)
+### 5B · 50.000 € de tus ventas en Hotmart (Foto real · portátil · Abridor)
 
-- **Imagen:** Portátil con un panel genérico: «Saldo disponible: 50.000,00 €» y «Solicitar retiro: 500 €», con un pósit «De a poco…». Rótulo: «50.000 € en Hotmart, y retirando de a poco por si Hacienda dice algo.» Etiqueta: «Con tu IBAN de Kunfupay, tus retiros de Hotmart llegan a tu cuenta, a tu nombre.»
-- **Texto A:** Hay quien tiene 50.000 € en Hotmart y los retira de a poco, por si Hacienda dice algo. / Con tu cuenta de Kunfupay, tus retiros de Hotmart llegan a tu nombre y con IBAN. Y lo que cobras con Kunfupay va aparte: Kunfupay te representa, hace la factura y paga los impuestos de cada venta. Tú te olvidas. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Mira el vídeo: cinco minutos.
+- **Imagen:** Portátil con un panel genérico: «Ventas de tu curso · saldo disponible: 50.000,00 €» y «Solicitar retiro: 500 €», con un pósit «De a poco…». Rótulo: «50.000 € de tus ventas en Hotmart, y retirando de a poco por si Hacienda dice algo.» Etiqueta: «Con tu IBAN de Kunfupay, tus retiros de Hotmart llegan a tu cuenta, a tu nombre.»
+- **Texto A:** Vendes tu curso en Hotmart, ya tienes 50.000 € de ventas y los retiras de a poco, por si Hacienda dice algo. / Con tu cuenta de Kunfupay, tus retiros de Hotmart llegan a tu nombre y con IBAN. Y lo que cobras con Kunfupay va aparte: Kunfupay te representa, hace la factura y paga los impuestos de cada venta. Tú te olvidas. / Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti. Si vendes desde España y facturas más de 2.000 € al mes, mira el vídeo.
 - **Texto B:** Tus retiros de Hotmart, a tu cuenta de Kunfupay: a tu nombre y con IBAN.
 - **Título:** Retirando de a poco · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_ABR_DEAPOCO_HOTMART_1080x1350_ES_V01` · Hotmart como origen de retiros está confirmado por el equipo (T-07). Mejor aún si se graba un retiro real.
+- **Nombre:** `TRIB_ES_TOF_ABR_DEAPOCO_HOTMART_1080x1350_ES_V02` · Hotmart como origen de retiros está confirmado por el equipo (T-07). Mejor aún si se graba un retiro real.
 
 ### 5C · Moneda a moneda (Viñeta · Prospector)
 
-- **Imagen:** Viñeta: un creador sentado en una montaña de sacos de dinero pasa las monedas una a una por una puerta diminuta, «Retiros». Bocadillo: «¿Y si Hacienda dice algo?». Arriba: «50.000 € parados, y sacándolos de a poco.» Pie: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
-- **Texto A:** Donde sea que tengas tus ingresos, la escena se repite: 50.000 € parados y sacándolos de a poco, por si Hacienda dice algo. / Hay otra forma de cobrar. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y el dinero lo tienes a tu nombre, con IBAN. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Míralo en cinco minutos.
-- **Texto B:** 50.000 € parados, en una viñeta. Con Kunfupay, cada venta sale con su factura y sus impuestos pagados.
+- **Imagen:** Viñeta: un creador sentado en una montaña de sacos «Ventas» pasa las monedas una a una por una puerta diminuta, «Retiros». Bocadillo: «¿Y si Hacienda dice algo?». Arriba: «50.000 € de tus ventas parados, y sacándolos de a poco.» Pie: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Texto A:** Donde sea que cobres tus ventas, la escena se repite: 50.000 € de cursos, mentorías o de tu comunidad de trading, parados y sacándolos de a poco, por si Hacienda dice algo. / Hay otra forma de cobrar. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y el dinero lo tienes a tu nombre, con IBAN. / Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti. Si vendes desde España y facturas más de 2.000 € al mes, míralo en cinco minutos.
+- **Texto B:** 50.000 € de ventas parados, en una viñeta. Con Kunfupay, cada venta sale con su factura y sus impuestos pagados.
 - **Título:** Moneda a moneda · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_PRO_DEAPOCO_VINETA_1080x1350_ES_V01`
+- **Nombre:** `TRIB_ES_TOF_PRO_DEAPOCO_VINETA_1080x1350_ES_V02`
 
 ### R1 · 20 minutos para ver si encaja (Foto real · oferta · Closer)
 
@@ -431,7 +431,8 @@ Generadas con Higgsfield, en el proyecto «Tributaless · anuncios v2»: GPT Ima
 | 1 | 10 imágenes y la corrección de una errata del fondo de 1A | 30,25 |
 | 2 | 3 imágenes nuevas (3A, 3B y 4B) y 5 ediciones: la línea nueva de Kunfupay en 1A, 1B, 2A y 2B, y la primera línea de la pizarra de R2 | 22,00 |
 | 3 | 3 imágenes del ángulo 5 (5A, 5B y 5C) y 2 ediciones: quitar iconos de monedas parecidos a logos en 5A y las cifras de los sacos en 5C | 13,75 |
-| **Total** | | **66,00** |
+| 4 | 5A rehecho con setup de trading y 2 ediciones para que 5B y 5C digan «ventas», no ahorros | 8,25 |
+| **Total** | | **74,25** |
 
 4A y R1 no cambian desde la ronda 1. Cumplen las reglas de IA de la skill de estáticos: sin caras reales ni sintéticas, sin interfaz inventada de Kunfupay, sin logos ajenos y sin cifras que invente el modelo. Las cifras que se ven (los 3000€ de la cita y los 20 min) están dictadas.
 
