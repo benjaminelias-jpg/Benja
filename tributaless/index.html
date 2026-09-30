@@ -445,9 +445,10 @@
     // utm_source, utm_medium, utm_campaign, utm_content, utm_term y pagina.
     const FORM_ENDPOINT = "";
 
-    // Página a la que mandar al lead después de enviar (opcional):
-    // gracias, calendario… Si se deja vacío, se muestra el mensaje de éxito.
-    const THANKS_URL = "";
+    // Página a la que mandar al lead después de enviar. Por defecto, la
+    // página de gracias (gracias.html). Si se deja vacío, se muestra el
+    // mensaje de éxito dentro del propio formulario.
+    const THANKS_URL = "gracias.html";
 
     // Enlace a la política de privacidad.
     const PRIVACY_URL = "";
@@ -522,8 +523,13 @@
         } else {
           console.warn("Tributaless: falta FORM_ENDPOINT. Los datos no se han guardado.", Object.fromEntries(data));
         }
-        if (typeof window.fbq === "function") window.fbq("track", "Lead");
-        if (THANKS_URL) { location.href = THANKS_URL; return; }
+        const hasPixel = typeof window.fbq === "function";
+        if (hasPixel) window.fbq("track", "Lead");
+        if (THANKS_URL) {
+          // Con píxel, un respiro para que el evento Lead salga antes de cambiar de página
+          setTimeout(() => { location.href = THANKS_URL; }, hasPixel ? 300 : 0);
+          return;
+        }
         card.classList.add("done");
       } catch (err) {
         formError.classList.add("show");

@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ya casi terminas · Tributaless</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#030A06">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Cpath d='M24 3.5 7.5 9.6v12.1c0 10.4 7 19.9 16.5 22.8 9.5-2.9 16.5-12.4 16.5-22.8V9.6L24 3.5Z' fill='%2322C55E'/%3E%3Cpath d='m16.5 24.5 5.2 5.2 10.3-10.9' fill='none' stroke='white' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #030A06;
+      --card: #0A1710;
+      --card-line: #1A2C21;
+      --line: rgba(255, 255, 255, 0.08);
+      --text: #F1F7F2;
+      --muted: #A3B8AA;
+      --accent: #34E07A;
+      --btn: #22C55E;
+      --btn-hover: #2AD468;
+      --btn-active: #1DB054;
+      --accent-ink: #03140A;
+      --max: 1120px;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Plus Jakarta Sans", Inter, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+      font-size: 17px;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: inherit; }
+    svg { display: block; max-width: 100%; }
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 8px; }
+
+    .page { position: relative; overflow: hidden; min-height: 100vh; display: flex; flex-direction: column; isolation: isolate; }
+    .wrap { position: relative; width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 16px; }
+    @media (min-width: 720px) { .wrap { padding: 0 32px; } }
+
+    /* ---------- Fondo: igual que la landing ---------- */
+    .bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; }
+    .bg-pattern {
+      position: absolute; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150'%3E%3Cg transform='translate(51 49)'%3E%3Cpath d='M24 3.5 7.5 9.6v12.1c0 10.4 7 19.9 16.5 22.8 9.5-2.9 16.5-12.4 16.5-22.8V9.6L24 3.5Z' fill='white' fill-opacity='.05'/%3E%3Cpath d='m16.5 24.5 5.2 5.2 10.3-10.9' fill='none' stroke='%23030A06' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/g%3E%3C/svg%3E");
+      background-size: 150px 150px;
+      background-position: center top;
+      -webkit-mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.8) 50%, transparent 100%);
+              mask-image: linear-gradient(180deg, #000 0%, rgba(0,0,0,.8) 50%, transparent 100%);
+    }
+    .lamp {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 1400px; height: 760px;
+      background: conic-gradient(from 180deg at 50% 0%,
+        rgba(34, 197, 94, 0.18) 0deg,
+        rgba(34, 197, 94, 0.15) 18deg,
+        rgba(34, 197, 94, 0.06) 34deg,
+        transparent 46deg,
+        transparent 314deg,
+        rgba(34, 197, 94, 0.06) 326deg,
+        rgba(34, 197, 94, 0.15) 342deg,
+        rgba(34, 197, 94, 0.18) 360deg);
+      -webkit-mask-image: radial-gradient(90% 100% at 50% 0%, #000 30%, transparent 85%);
+              mask-image: radial-gradient(90% 100% at 50% 0%, #000 30%, transparent 85%);
+    }
+    .lamp-line {
+      position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: min(560px, 80vw); height: 2px; border-radius: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent) 20%, #B6F7CF 50%, var(--accent) 80%, transparent);
+      box-shadow: 0 0 24px 4px rgba(52, 224, 122, 0.55);
+    }
+    .glow-core {
+      position: absolute; border-radius: 50%;
+      width: 1100px; height: 760px; left: 50%; top: 260px; transform: translateX(-50%);
+      background: radial-gradient(closest-side, rgba(34, 197, 94, 0.22), rgba(34, 197, 94, 0.07) 60%, transparent 100%);
+    }
+    @media (max-width: 720px) {
+      .lamp { width: 760px; height: 620px; }
+      .glow-core { width: 760px; height: 700px; top: 240px; }
+    }
+
+    /* ---------- Contenido ---------- */
+    main { flex: 1; }
+    .thanks { text-align: center; padding-top: 52px; padding-bottom: 96px; }
+    @media (max-width: 640px) { .thanks { padding-top: 36px; padding-bottom: 72px; } }
+
+    .logo { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; }
+    .logo svg { width: 34px; height: 34px; }
+    .logo span { font-size: 21px; font-weight: 800; letter-spacing: 0.14em; }
+
+    /* Pasos: solicitud enviada ✓ → crea tu cuenta */
+    .steps {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      margin: 56px auto 0; list-style: none;
+      font-size: 14px; font-weight: 600;
+    }
+    .step { display: inline-flex; align-items: center; gap: 10px; }
+    .step .dot {
+      width: 28px; height: 28px; border-radius: 50%; flex: none;
+      display: grid; place-items: center;
+      font-size: 13px; font-weight: 800;
+    }
+    .step.done { color: var(--muted); }
+    .step.done .dot { background: var(--btn); color: var(--accent-ink); }
+    .step.done .dot svg { width: 14px; height: 14px; }
+    .step.current .dot { border: 2px solid var(--accent); color: var(--accent); box-shadow: 0 0 0 4px rgba(52, 224, 122, 0.14); }
+    .steps .link { width: 56px; height: 2px; border-radius: 2px; background: linear-gradient(90deg, var(--btn), rgba(52, 224, 122, 0.25)); }
+    @media (max-width: 480px) {
+      .steps { gap: 8px; font-size: 13px; }
+      .steps .link { width: 24px; }
+    }
+
+    h1 {
+      margin: 32px auto 0;
+      font-size: clamp(2.6rem, 8vw, 5rem);
+      font-weight: 800; line-height: 1.02; letter-spacing: -0.045em;
+    }
+    .lead {
+      max-width: 34ch; margin: 22px auto 0;
+      font-size: clamp(1.1rem, 2.4vw, 1.4rem);
+      color: #C4D4C9; line-height: 1.5; text-wrap: balance;
+    }
+    .lead b { color: var(--text); font-weight: 700; }
+
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      min-height: 58px; padding: 0 32px; border-radius: 12px;
+      background: var(--btn); color: var(--accent-ink);
+      font-size: 17px; font-weight: 700; letter-spacing: -0.01em; text-decoration: none;
+      transition: background-color .15s;
+    }
+    .btn:hover { background: var(--btn-hover); }
+    .btn:active { background: var(--btn-active); }
+    .btn svg { width: 18px; height: 18px; }
+    .thanks .btn { margin-top: 40px; width: min(100%, 420px); }
+    @media (max-width: 480px) { .btn { padding: 0 18px; font-size: 16px; white-space: nowrap; } }
+    .micro { margin-top: 14px; font-size: 14px; color: var(--muted); }
+
+    /* ---------- Pie ---------- */
+    footer { position: relative; border-top: 1px solid var(--line); padding: 28px 0 40px; font-size: 13px; color: var(--muted); text-align: center; }
+    footer nav { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+    footer a { text-decoration: none; }
+    footer a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="shield" viewBox="0 0 48 48">
+        <path d="M24 3.5 7.5 9.6v12.1c0 10.4 7 19.9 16.5 22.8 9.5-2.9 16.5-12.4 16.5-22.8V9.6L24 3.5Z" fill="#22C55E"/>
+        <path d="m16.5 24.5 5.2 5.2 10.3-10.9" fill="none" stroke="#fff" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="page">
+    <div class="bg" aria-hidden="true">
+      <div class="bg-pattern"></div>
+      <div class="lamp"></div>
+      <div class="lamp-line"></div>
+      <div class="glow-core"></div>
+    </div>
+
+    <main>
+      <section class="wrap thanks">
+        <a class="logo" href="./" aria-label="Tributaless">
+          <svg aria-hidden="true"><use href="#shield"/></svg>
+          <span>TRIBUTALESS</span>
+        </a>
+
+        <ol class="steps" aria-label="Progreso">
+          <li class="step done">
+            <span class="dot"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
+            Solicitud enviada
+          </li>
+          <li class="link" aria-hidden="true"></li>
+          <li class="step current" aria-current="step">
+            <span class="dot">2</span>
+            Crea tu cuenta
+          </li>
+        </ol>
+
+        <h1>Ya casi terminas</h1>
+        <p class="lead">Ahora, mientras un asesor se pone en contacto contigo, puedes crear ya tu cuenta en <b>Kunfupay</b>.</p>
+
+        <!-- Enlace de registro de Kunfupay: cámbialo aquí si usáis un enlace con código de referido -->
+        <a class="btn" href="https://business.kunfupay.com/auth/signup">
+          Crear mi cuenta en Kunfupay
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="micro">Te lleva al registro oficial de Kunfupay.</p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="wrap">
+        <span>© <span id="year">2026</span> Tributaless</span>
+        <nav aria-label="Legal">
+          <a href="#">Aviso legal</a>
+          <a href="#">Privacidad</a>
+          <a href="#">Cookies</a>
+        </nav>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
