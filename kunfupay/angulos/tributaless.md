@@ -1,6 +1,6 @@
 # Ángulo: Tributaless · campaña VSL (línea de Kunfupay)
 
-- **Fecha:** 30/09/2026 · **Versión 3:** tanda nueva de 10 estáticos hecha con Higgsfield, sin la firma «de Kunfupay» en la imagen.
+- **Fecha:** 30/09/2026 · **Versión 4:** tanda corregida con la regla 25 del cerebro: el dolor es perder dinero en impuestos, la duda del IVA no existe, la línea de Kunfupay es «Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.» y la LLC se ve imposible.
 - **Estado:** borrador para aprobar
 - **Hecho con:** skill `cerebro-kunfupay` + `creativos-estaticos-meta`
 - **Versión visual con los 10 anuncios, la VSL y la landing:** https://claude.ai/artifact/EkzE3ntK5qMHLHCvS9v94N (privado hasta que se comparta)
@@ -44,7 +44,7 @@ Si se quiere el efecto "partner" de verdad: un asesor fiscal externo y real, con
 - «Exacto, eso es lo que decía el mio. Lo hacen porque así aseguran el tiro. A hacienda si le pagas de más nunca se va a quejar pero si le pagas de menos...» — Forocoches, 22/06/2021 — https://forocoches.com/foro/showthread.php?t=8627946
 - «Me estoy llenando la cabeza de información sobre "tickets/facturas simplificadas" que no piden DNI siempre que no pasen de 400€» — Foro Plan General Contable, 24/06/2021
 
-**Ranking de fuerza del dolor (voz del cliente, 30/09/2026):** 1) miedo a Hacienda por cobrar con Stripe o PayPal (intensidad 5); 2) LLC (mucho volumen, sobre todo advertencias de terceros); 3) fondos retenidos (intensidad 5, pero Kunfupay también puede retener: no se usa); 4) irse de España; 5) gestores; 6) IVA (más confusión que miedo); 7) facturas (el menos expresado en público).
+**Ranking de fuerza del dolor (30/09/2026):** según el equipo, por sus llamadas de venta, el dolor principal es perder dinero en impuestos («sientes que en cada lanzamiento te lo quitan todo»), seguido del miedo a que Hacienda te llegue. La duda de qué IVA cobrar no existe: todos cobran el 21 % (regla 25 del cerebro). En los foros públicos: 1) miedo a Hacienda por cobrar con Stripe o PayPal (intensidad 5); 2) LLC (mucho volumen, sobre todo advertencias de terceros); 3) fondos retenidos (intensidad 5, pero Kunfupay también puede retener: no se usa); 4) irse de España; 5) gestores; 6) facturas (el menos expresado en público).
 
 **Miedo profundo:** que un día llegue la carta y descubrir que llevaba años haciéndolo mal sin saberlo. **Deseo íntimo:** que cada venta sea solo alegría, sin papeles detrás, y poder decir "lo tengo en regla".
 
@@ -54,10 +54,10 @@ Si se quiere el efecto "partner" de verdad: un asesor fiscal externo y real, con
 |---|---|
 | ¿Es legal? | Tu parte está escrita en la ley: facturas a una empresa de EE. UU. y esa factura no lleva IVA español (art. 69.Uno.1º LIVA). Kunfupay revisa cada caso antes de activar la cuenta. |
 | ¿Cuánto tarda el alta? | El alta pide verificar tu identidad y, en algunos casos, tu negocio. Kunfupay revisa cada caso. |
-| ¿Dejo a mi gestor? | No. Sigue con tu trimestre, con una factura en lugar de una por alumno. |
+| ¿Necesito gestor? | No para facturar: tú solo le facturas a Kunfupay, una factura en lugar de una por alumno. Si ya tienes gestor, le llevas esa factura. |
 | ¿Cambio de plataforma? | No. Sigues en Telegram, Discord, Skool o tu web: «Kunfupay solo cambia cómo cobras» (web). |
 | ¿Y si ya tengo LLC? | Se mira en la llamada. Si hay que revisar la LLC, se dice. |
-| ¿Cuánto cuesta? | Comisión por venta, sin cuota ni permanencia. [PENDIENTE: cifra oficial; la web da tres versiones] |
+| ¿Cuánto cuesta? | Comisión por venta, sin cuota ni permanencia. Aun con la comisión, con el mismo precio te queda más por venta que con una cuenta normal de Stripe (§9). [PENDIENTE: cifra oficial; la web da tres versiones] |
 | ¿Dónde está mi dinero? | En tu cuenta de Kunfupay, a tu nombre, con IBAN europeo, ofrecida por partners financieros con licencia. |
 | ¿Quién está detrás de Tributaless? | Kunfupay. Se dice sin que lo pregunten. |
 
@@ -94,13 +94,13 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 
 **Frase:** Tributaless le dice la verdad fiscal al infoproductor que ya factura: para quitarte el lío de cada venta no necesitas una LLC ni irte a Andorra. Necesitas cobrar con un Merchant of Record. Y Kunfupay funciona así.
 
-**Línea de marca:** Menos líos. Cero humo. El nombre "Tributaless" ya suena a "tributa menos", que la tabla de claims marca en rojo. Por eso ninguna pieza promete pagar menos: se promete quitarte el lío de cada venta, y el humo lo ponen los demás.
+**Línea de marca:** Menos líos. Cero humo. El dolor principal es perder dinero en impuestos, y la promesa va acotada a lo que Kunfupay hace de verdad: la factura y los impuestos de cada venta. Con el mismo precio, al creador le queda más, y se dice con la comisión a la vista. «Paga menos impuestos» a secas sigue en rojo, y el humo lo ponen los demás.
 
-**Qué es agresivo:** nombrar culpables (la LLC de tutorial, el "0 %", Stripe como caja), hablar técnico (5472, casilla 120, art. 69), filtrar en voz alta y desmontar el humo ("no te vamos a vender pagar cero"). **Qué es falso y no se dice:** Hacienda tachada, "olvídate de todo", "paga menos", "ahorra miles", "blíndate", testimonios o asesores inventados, palabras disfrazadas.
+**Qué es agresivo:** nombrar culpables (la LLC de tutorial, el "0 %", Stripe como caja), hablar técnico (5472, casilla 120, art. 69), filtrar en voz alta, desmontar el humo ("no te vamos a vender pagar cero") y hablar de dinero: mismo precio, más neto, con la comisión a la vista. **Qué es falso y no se dice:** Hacienda tachada, "olvídate de todo", "paga menos", "ahorra miles", "blíndate", testimonios o asesores inventados, palabras disfrazadas.
 
-**Pilares:** (1) La LLC no es el atajo: te suma papeles en dos países y el 5472 cada año · (2) Con Stripe, el vendedor eres tú · (3) Así funciona un Merchant of Record · (4) Lo que cambia para ti: facturas a uno, tu factura no lleva IVA español y el dinero está en tu cuenta, a tu nombre y con IBAN.
+**Pilares:** (1) La LLC no es el atajo: te suma papeles en dos países y el 5472 cada año · (2) Con Stripe, el vendedor eres tú · (3) Kunfupay te representa: hace la factura y paga los impuestos de cada venta, tú te olvidas y, con el mismo precio, te queda más · (4) Lo que cambia para ti: facturas a uno, tu factura no lleva IVA español y el dinero está en tu cuenta, a tu nombre y con IBAN.
 
-**Voz:** "nosotros" = equipo de Tributaless. Kunfupay en tercera persona: "la factura se la hace Kunfupay", "cosa suya". Enemigo: el humo y el lío. Nunca Hacienda ni los gestores (el gestor es aliado).
+**Voz:** "nosotros" = equipo de Tributaless. Kunfupay en tercera persona: "Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas." Enemigo: perder dinero en los impuestos de cada venta, facturar a cada alumno y el humo fiscal. Hacienda sale como miedo, nunca como villano.
 
 **Semáforo propio de la campaña:**
 
@@ -113,16 +113,22 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 | Tu factura a Kunfupay no lleva IVA español | verde | Solo en la VSL y en la FAQ de la landing: "Lo dice el artículo 69 de la Ley del IVA." Ningún anuncio de esta tanda lo usa. |
 | Única pasarela de España que funciona como MoR | claim del equipo | Bloque de credibilidad en la VSL y en el texto de 4A. Ya avisado una vez; no se reabre. |
 | Sin irte a Andorra | verde | "Si te vas por el lío de las facturas, no hace falta mudarse." |
-| Paga menos · 0 % · ahorra miles · recupera el 21 % | rojo | No se dice. Tampoco con Hacienda tachada. |
+| Kunfupay hace la factura y paga los impuestos de cada venta | lo pide el usuario | "Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas." Siempre «de cada venta». |
+| Mismo precio, más neto | con comisión | "Con el mismo precio, te queda más por venta, incluso con la comisión de Kunfupay." Cuentas en §9. Depende de T-10, riesgo ya avisado. |
+| No necesitas gestor | con motivo | "No necesitas gestor para una factura por alumno: tú solo le facturas a Kunfupay." Nunca «Kunfupay es tu gestor». |
+| La duda de qué IVA cobrar | fuera | No existe: todos cobran el 21 %. |
+| Paga menos impuestos a secas · 0 % · ahorra miles · recupera el 21 % | rojo | No se dice. Tampoco con Hacienda tachada. Lo que sí: «mismo precio, más neto», acotado a cada venta. |
 | Asesoría, despacho, asesores, partners | rojo | No se dice mientras no haya un asesor real detrás. |
 
 ---
 
 ## 4. Plan de tanda
 
-**Por qué esta tanda.** La anterior no funcionó, así que esta no reutiliza ningún ángulo ni ninguna imagen. Son cuatro ángulos nuevos, cada uno en dos formatos (foto real y viñeta), para que la primera lectura diga qué ángulo gana y no qué formato: es la composición de arranque de la skill de estáticos. Dos piezas de retargeting cierran con la oferta y con las objeciones.
+**Corregida el 30/09 con la regla 25 del cerebro.** Fuera los dos anuncios del IVA, porque esa duda no existe: todos cobran el 21 %. Entra el dolor principal, perder dinero en impuestos. La LLC ya no se ve épica, sino imposible. Y la línea de Kunfupay pasa a ser «te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas».
 
-**Evidencia de cada ángulo.** Dinero sin retirar e IVA son dolores FUERTES según la voz del cliente (§1). El lanzamiento es un hueco que ningún competidor toca. La LLC es el segundo dolor por volumen y uno de los ángulos pedidos.
+**Estructura.** Cuatro ángulos, cada uno en foto real y en viñeta, para que la primera lectura diga qué ángulo gana y no qué formato: es la composición de arranque de la skill de estáticos. Dos piezas de retargeting cierran con la oferta y con las objeciones.
+
+**Dinero.** 3A, 3B y R1 dicen que con el mismo precio te queda más. Las cuentas (§9) lo sostienen incluso con un 18 % de comisión; el claim obliga a nombrar la comisión, y la cifra oficial sigue pendiente.
 
 **Firma.** Las imágenes no llevan «de Kunfupay» en la esquina (decisión del 30/09/2026). La descripción de cada anuncio dice «Tributaless, de Kunfupay», igual que la biografía de la página, la landing y la VSL.
 
@@ -132,94 +138,94 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 |---|---|---|---|---|---|
 | 1A | El lanzamiento | Foto real | Vende con lanzamientos | Abridor | Prospección |
 | 1B | El lanzamiento | Viñeta | Vende con lanzamientos | Prospector | Prospección |
-| 2A | Dinero sin retirar | Foto real · cita de foro | Cobra con Stripe o PayPal | Abridor | Prospección |
-| 2B | Dinero sin retirar | Viñeta | Cobra con Stripe o PayPal | Prospector | Prospección |
-| 3A | ¿21 % a todos? | Foto real · hoja de cálculo | Vende a alumnos de varios países | Calificador | Prospección |
-| 3B | ¿21 % a todos? | Viñeta | Vende a alumnos de varios países | Prospector | Prospección |
+| 2A | Miedo a Hacienda | Foto real · cita de foro | Cobra con Stripe o PayPal | Abridor | Prospección |
+| 2B | Miedo a Hacienda | Viñeta | Cobra con Stripe o PayPal | Prospector | Prospección |
+| 3A | Perder en impuestos | Foto real · hucha | Siente que los impuestos se comen sus lanzamientos | Calificador | Prospección |
+| 3B | Perder en impuestos | Viñeta | Siente que los impuestos se comen sus lanzamientos | Prospector | Prospección |
 | 4A | Sin LLC | Foto real · carpeta | Está pensando en montar una LLC | Abridor | Prospección |
-| 4B | Sin LLC | Viñeta | Está pensando en montar una LLC | Prospector | Prospección |
+| 4B | Sin LLC | Viñeta · lista imposible | Está pensando en montar una LLC | Prospector | Prospección |
 | R1 | Diagnóstico de cobros | Foto real · oferta | Vio la VSL y no aplicó | Closer | Retargeting |
 | R2 | No, no y no | Foto real · pizarra | Vio la VSL y no aplicó | Closer | Retargeting |
 
 ### 1A · Tu lanzamiento acabó. Tus facturas, no. (Foto real · Abridor)
 
-- **Imagen:** Foto nocturna de un escritorio después del lanzamiento: torre de facturas, portátil con la gráfica de ventas, copa vacía y confeti. A mano: «Tu lanzamiento acabó. Tus facturas, no.» Etiqueta: «Con Kunfupay, la factura de cada alumno es cosa suya.»
-- **Texto A:** Si vendes cursos, conoces la semana del lanzamiento: el carrito abierto, las ventas entrando y el móvil que no para. / Y luego llega la otra semana. La de sacar una factura por cada alumno y cuadrar los impuestos de cada venta, con miedo de haberte equivocado en alguna. / Con Kunfupay, tú le cobras a tu alumno como siempre. PERO la factura se la hace Kunfupay, y los impuestos de esa venta son cosa suya. Tú facturas a uno. / Si facturas menos de 2.000 € al mes, todavía no es para ti. Si facturas más, mira el vídeo: son cinco minutos.
-- **Texto B:** Cada alumno de tu lanzamiento es una factura. Con Kunfupay, esa factura se la hace Kunfupay.
+- **Imagen:** Foto nocturna de un escritorio después del lanzamiento: torre de facturas, portátil con la gráfica de ventas, copa vacía y confeti. A mano: «Tu lanzamiento acabó. Tus facturas, no.» Etiqueta: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Texto A:** Si vendes cursos, conoces la semana del lanzamiento: el carrito abierto, las ventas entrando y el móvil que no para. / Y luego llega la otra semana. La de sacar una factura por cada alumno y ver cuánto se llevan los impuestos de cada venta. / Con Kunfupay cobras como siempre. PERO Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. / Si facturas menos de 2.000 € al mes, todavía no es para ti. Si facturas más, mira el vídeo: son cinco minutos.
+- **Texto B:** Cada alumno de tu lanzamiento, una factura. Con Kunfupay, la hace Kunfupay y paga los impuestos de esa venta. Tú te olvidas.
 - **Título:** Después del lanzamiento · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_ABR_LANZ_FOTO_1080x1350_ES_V01`
+- **Nombre:** `TRIB_ES_TOF_ABR_LANZ_FOTO_1080x1350_ES_V02`
 
 ### 1B · La ola de facturas (Viñeta · Prospector)
 
-- **Imagen:** Viñeta: una creadora celebra en el escenario bajo «¡LANZAMIENTO!» mientras una ola de facturas va a caerle encima. Etiquetas: «Tú, hoy» y «Una factura por alumno». Pie: «Con Kunfupay, la factura de cada alumno es cosa suya.»
-- **Texto A:** El día del lanzamiento todo el mundo lo celebra. Nadie te cuenta lo que viene detrás: una factura por cada alumno y los impuestos de cada venta, uno a uno. / Hay otra forma de cobrar. Con Kunfupay, la factura a tu alumno se la hace Kunfupay y los impuestos de esa venta son cosa suya. Así funciona un Merchant of Record. / Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Míralo en cinco minutos.
-- **Texto B:** Tu lanzamiento, en una viñeta. Con Kunfupay, la factura de cada alumno no es cosa tuya.
+- **Imagen:** Viñeta: una creadora celebra en el escenario bajo «¡LANZAMIENTO!» mientras una ola de facturas va a caerle encima. Etiquetas: «Tú, hoy» y «Una factura por alumno». Pie: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Texto A:** El día del lanzamiento todo el mundo lo celebra. Nadie te cuenta lo que viene detrás: una factura por cada alumno y los impuestos de cada venta, uno a uno. / Hay otra forma de cobrar. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Así funciona un Merchant of Record. / Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Míralo en cinco minutos.
+- **Texto B:** Tu lanzamiento, en una viñeta. Con Kunfupay, esa ola de facturas no te pilla: la factura la hace Kunfupay.
 - **Título:** Lo que viene después · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_PRO_LANZ_VINETA_1080x1350_ES_V01`
+- **Nombre:** `TRIB_ES_TOF_PRO_LANZ_VINETA_1080x1350_ES_V02`
 
 ### 2A · Pregunta real en un foro (Foto real · cita · Abridor)
 
-- **Imagen:** Mano con un móvil que muestra un post de foro genérico con la cita literal: «Estoy empezando un negocio en Stripe y a lo tonto ya tengo casi 3000€ acumulados sin retirar a cuenta. Me puede decir algo Hacienda?» Rótulo: «Pregunta real en un foro». Etiqueta: «Con Kunfupay, la factura y los impuestos de cada venta son cosa suya.»
-- **Texto A:** Esta pregunta es real. La escribió alguien que empezaba a vender con Stripe y ya tenía casi 3.000 € sin retirar, sin saber qué le diría Hacienda. / No es raro. Con una cuenta normal de Stripe o con PayPal, cada venta es tuya: su factura y sus impuestos también. Y la duda crece con cada venta. / Con Kunfupay, la factura a tu alumno se la hace Kunfupay y los impuestos de esa venta son cosa suya. Tú facturas a uno, y el dinero está en tu cuenta de Kunfupay, a tu nombre y con IBAN. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Mira el vídeo: cinco minutos.
-- **Texto B:** Pregunta real de un foro. La respuesta corta: cada venta necesita su factura. Con Kunfupay, se la hace Kunfupay.
+- **Imagen:** Mano con un móvil que muestra un post de foro genérico con la cita literal: «Estoy empezando un negocio en Stripe y a lo tonto ya tengo casi 3000€ acumulados sin retirar a cuenta. Me puede decir algo Hacienda?» Rótulo: «Pregunta real en un foro». Etiqueta: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Texto A:** Esta pregunta es real. La escribió alguien que empezaba a vender con Stripe y ya tenía casi 3.000 € sin retirar, con miedo a que Hacienda le dijera algo. / No es raro. Con una cuenta normal de Stripe o con PayPal, cada venta es tuya: su factura y sus impuestos también. / Con Kunfupay es distinto. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y el dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Mira el vídeo: cinco minutos.
+- **Texto B:** Pregunta real de un foro. Con Kunfupay, cada venta sale con su factura hecha y sus impuestos pagados por Kunfupay.
 - **Título:** Una pregunta real · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_ABR_RETIRAR_FORO_1080x1350_ES_V01` · Fuente de la cita: Rankia, 05/06/2024. Se reproduce literal, con su ortografía.
+- **Nombre:** `TRIB_ES_TOF_ABR_HACIENDA_FORO_1080x1350_ES_V01` · Fuente de la cita: Rankia, 05/06/2024. Se reproduce literal, con su ortografía.
 
 ### 2B · Lo que no te atreves a sacar (Viñeta · Prospector)
 
-- **Imagen:** Viñeta: un creador con una llave diminuta ante una cámara acorazada gigante. Bocadillo: «¿Y si Hacienda pregunta?». Etiqueta: «Lo que has vendido y no te atreves a sacar». Pie: «Con Kunfupay, la factura y los impuestos de cada venta son cosa suya.»
-- **Texto A:** Si vendes online, puede que te suene: el dinero entra y ahí se queda, porque no sabes qué te toca hacer con cada venta. / Con Kunfupay, la factura a tu alumno se la hace Kunfupay y los impuestos de esa venta son cosa suya. Tú facturas a uno. Y el dinero lo tienes en tu cuenta de Kunfupay, a tu nombre: lo gastas con tu tarjeta o lo retiras con tu IBAN. / Para infoproductores que viven en España y facturan más de 2.000 € al mes. Son cinco minutos de vídeo.
-- **Texto B:** Dinero parado por dudas. Con Kunfupay, la factura y los impuestos de cada venta son cosa suya.
+- **Imagen:** Viñeta: un creador con una llave diminuta ante una cámara acorazada gigante. Bocadillo: «¿Y si Hacienda pregunta?». Etiqueta: «Lo que has vendido y no te atreves a sacar». Pie: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Texto A:** Si vendes online, puede que te suene: el dinero entra y ahí se queda, con miedo a que un día te llegue Hacienda. / Con Kunfupay es distinto: te representa en tus ventas, hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y el dinero lo tienes en tu cuenta de Kunfupay, a tu nombre: lo gastas con tu tarjeta o lo retiras con tu IBAN. / Para infoproductores que viven en España y facturan más de 2.000 € al mes. Son cinco minutos de vídeo.
+- **Texto B:** Dinero parado por miedo a Hacienda. Con Kunfupay, la factura y los impuestos de cada venta corren de su cuenta.
 - **Título:** Dinero sin tocar · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_PRO_RETIRAR_VINETA_1080x1350_ES_V01`
+- **Nombre:** `TRIB_ES_TOF_PRO_HACIENDA_VINETA_1080x1350_ES_V01`
 
-### 3A · ¿21 % a todos, por si acaso? (Foto real · hoja · Calificador)
+### 3A · ¿Sientes que tu lanzamiento se va en impuestos? (Foto real · hucha · Calificador)
 
-- **Imagen:** Portátil con una hoja de cálculo Alumno / País / IVA: Lucía, España; Andrés, México; Hanna, Alemania; Tomás, Argentina; todos con 21 %, rodeados en rojo. A mano: «¿21 % a todos, por si acaso?». Etiqueta: «Con Kunfupay, los impuestos de cada venta son cosa suya.»
-- **Texto A:** «Hasta ahora hacía 21 % para todos, independientemente de dónde vinieran.» Lo escribió un infoproductor en un foro, y no es el único que lo hace. / Cuando vendes a alumnos de varios países, cada venta trae la misma duda: qué impuesto le toca. Cobrarle el 21 % a todo el mundo no la resuelve. / Con Kunfupay, la factura a tu alumno se la hace Kunfupay y los impuestos de esa venta son cosa suya. Tú facturas a uno. / Si vendes formación online desde España y facturas más de 2.000 € al mes, mira el vídeo.
-- **Texto B:** Alumnos en varios países y la misma duda en cada venta: qué impuesto toca. Con Kunfupay, eso es cosa suya.
-- **Título:** La duda de cada venta · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_CAL_IVA_HOJA_1080x1350_ES_V01` · Fuente de la cita: Forocoches, 17/06/2021. En el texto se normalizan tildes y puntuación; las palabras son las del autor.
+- **Imagen:** Hucha de cristal con la etiqueta «Lanzamiento», casi vacía, y al lado un montón de monedas con la nota «Impuestos» que una mano se lleva. Rótulo: «¿Sientes que tu lanzamiento se va en impuestos?». Etiqueta: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Texto A:** Lanzas, vendes y, cuando haces cuentas, sientes que los impuestos se comen tu lanzamiento. / Si estás cansado de perder dinero en los impuestos de cada venta, hay otra forma de cobrar. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. / Mismo precio para tu alumno y más neto para ti, incluso con la comisión por venta de Kunfupay. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Míralo en cinco minutos.
+- **Texto B:** Si estás cansado de perder en impuestos lo que ganas con tus cursos, mira esto. Kunfupay paga los impuestos de cada venta. Tú te olvidas.
+- **Título:** Mismo precio, más neto · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
+- **Nombre:** `TRIB_ES_TOF_CAL_IMPUESTOS_HUCHA_1080x1350_ES_V01` · El claim de más neto sale de las cuentas del cerebro y obliga a decir la comisión. Cuando haya cifra oficial, se pone aquí.
 
-### 3B · ¿Qué IVA le toca a cada alumno? (Viñeta · Prospector)
+### 3B · Todo el mundo mete la mano (Viñeta · Prospector)
 
-- **Imagen:** Viñeta: una creadora con su portátil ante un poste con flechas «21 %», «16 %», «19 %» y «¿?». Arriba: «¿Qué IVA le toca a cada alumno?». Pie: «Con Kunfupay, eso es cosa suya.»
-- **Texto A:** Vendes un curso a alguien de Madrid, otro a alguien de México y otro a alguien de Berlín. ¿Qué impuesto le cobras a cada uno? / Esa duda, repetida en cada venta, es la que te quitas si cobras con Kunfupay. Kunfupay funciona como Merchant of Record: la factura a tu alumno se la hace Kunfupay y los impuestos de esa venta son cosa suya. Tú facturas a uno. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Míralo en cinco minutos.
-- **Texto B:** Madrid, México, Berlín: tres alumnos y tres dudas. Con Kunfupay, la factura y los impuestos de cada venta son cosa suya.
-- **Título:** ¿Qué le toca a cada uno? · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_PRO_IVA_VINETA_1080x1350_ES_V01`
+- **Imagen:** Viñeta: un creador en el escenario con un saco «Tu lanzamiento» mientras muchas manos, «Impuestos de cada venta», le sacan monedas. Arriba: «¿Sientes que en cada lanzamiento te lo quitan todo?». Pie: «Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Texto A:** Así se siente un lanzamiento cuando llegan los impuestos de cada venta: todo el mundo mete la mano. / Con Kunfupay cambia. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y con el mismo precio, te queda más, incluso con su comisión por venta. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Míralo en cinco minutos.
+- **Texto B:** Tu lanzamiento, en una viñeta. Con Kunfupay, los impuestos de cada venta los paga Kunfupay. Tú te olvidas.
+- **Título:** Todo el mundo mete la mano · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
+- **Nombre:** `TRIB_ES_TOF_PRO_IMPUESTOS_VINETA_1080x1350_ES_V01`
 
 ### 4A · ¿Una empresa en EE. UU. para cobrar un curso? (Foto real · carpeta · Abridor)
 
 - **Imagen:** Carpeta «LLC · EE. UU.» a reventar de papeles, con el Form 5472 encima. Rótulo: «¿Una empresa en EE. UU. para cobrar un curso?». Etiqueta: «Con Kunfupay cobras en todo el mundo sin montar una LLC.»
-- **Texto A:** Si vendes cursos desde España, alguien ya te habrá dicho que montes una LLC en Estados Unidos. / Lo que no suelen contarte: la LLC te suma papeles allí todos los años, como el formulario 5472, con 25.000 $ de multa si no lo presentas (IRS). / Para cobrar en todo el mundo no hace falta. Con Kunfupay, la factura a tu alumno se la hace Kunfupay y los impuestos de esa venta son cosa suya. Kunfupay es la única pasarela de España que funciona como Merchant of Record. / Si facturas más de 2.000 € al mes, mira el vídeo antes de montar nada.
+- **Texto A:** Si vendes cursos desde España, alguien ya te habrá dicho que montes una LLC en Estados Unidos. / Lo que no suelen contarte: la LLC te suma papeles allí todos los años, como el formulario 5472, con 25.000 $ de multa si no lo presentas (IRS). / Para cobrar en todo el mundo no hace falta. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record. / Si facturas más de 2.000 € al mes, mira el vídeo antes de montar nada.
 - **Texto B:** Antes de montar una empresa en Estados Unidos para cobrar tus cursos, mira cómo funciona Kunfupay. Cinco minutos.
 - **Título:** Sin LLC y en todo el mundo · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
 - **Nombre:** `TRIB_ES_TOF_ABR_LLC_CARPETA_1080x1350_ES_V01` · La multa lleva su fuente en la landing: instrucciones del Form 5472 del IRS.
 
-### 4B · Un rascacielos para un curso (Viñeta · Prospector)
+### 4B · Lo que te piden en EE. UU. (Viñeta · lista imposible · Prospector)
 
-- **Imagen:** Viñeta: un rascacielos gigantesco, «Tu LLC en EE. UU.», y a sus pies una mesita donde una creadora vende una caja «Curso» («Tu curso»). Pie: «Con Kunfupay cobras tus cursos sin montar una LLC.»
-- **Texto A:** Te dirán que para vender cursos en todo el mundo necesitas una LLC en Estados Unidos. Lo que no te dirán es que luego tendrás papeles aquí y allí, cada año. / No hace falta. Con Kunfupay cobras en todo el mundo sin montar nada fuera: la factura a tu alumno se la hace Kunfupay y los impuestos de esa venta son cosa suya. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Mira el vídeo antes de montar nada.
-- **Texto B:** Para cobrar tus cursos en todo el mundo no necesitas una LLC. Con Kunfupay, cobras sin montarla.
-- **Título:** No necesitas una LLC · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_TOF_PRO_LLC_VINETA_1080x1350_ES_V01`
+- **Imagen:** Viñeta: una creadora con una cajita «Tu curso» ante una lista interminable que baja del techo y se amontona en el suelo: «Lo que te piden en EE. UU. para vender un curso: Elegir estado · Agente registrado · EIN · Cuenta en EE. UU. · Form 5472 + 1120 cada año · Informe anual del estado», y sigue ilegible. Pie: «Con Kunfupay cobras tus cursos sin montar una LLC.»
+- **Texto A:** Esto es lo que te piden en Estados Unidos para vender un curso con una LLC: elegir estado, agente registrado, EIN, una cuenta allí, el formulario 5472 con el 1120 cada año y el informe anual del estado. Y si no presentas el 5472, 25.000 $ de multa (IRS). / Para cobrar tus cursos en todo el mundo no necesitas nada de eso. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. / Para quien vende formación online desde España y factura más de 2.000 € al mes. Mira el vídeo antes de montar nada.
+- **Texto B:** Lo que te piden en EE. UU. para vender un curso no cabe en una viñeta. Con Kunfupay, no hace falta nada de eso.
+- **Título:** Lo que te piden en EE. UU. · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
+- **Nombre:** `TRIB_ES_TOF_PRO_LLC_LISTA_1080x1350_ES_V01` · Trámites reales: el agente registrado y el EIN son obligatorios, el Form 5472 va con un 1120 pro forma cada año (IRS) y el informe anual depende del estado.
 
 ### R1 · 20 minutos para ver si encaja (Foto real · oferta · Closer)
 
 - **Imagen:** Escritorio con el portátil mostrando la reserva «Diagnóstico de cobros · 20 min · Gratis» y una hoja impresa «Tu caso, por escrito». Rótulo: «20 minutos para ver si encaja.» Etiqueta: «Con el equipo de Kunfupay».
-- **Texto A:** Ya viste cómo funciona. Si te quedan dudas sobre tu caso, el siguiente paso son veinte minutos con el equipo de Kunfupay. / Miramos cómo cobras hoy, qué te toca facturar y qué cambiaría si cobras con Kunfupay. Te llevas tu caso por escrito. Y si no encaja, te lo decimos. / Solo para quien vive en España, vende formación online y factura más de [UMBRAL] al mes. Seis preguntas y eliges hora.
-- **Texto B:** ¿Encaja Kunfupay en tu negocio? Lo miramos contigo en veinte minutos, gratis. Solo si facturas más de [UMBRAL] al mes.
+- **Texto A:** Ya viste cómo funciona. Si te quedan dudas sobre tu caso, el siguiente paso son veinte minutos con el equipo de Kunfupay. / Miramos cómo cobras hoy, cuánto se llevan los impuestos de cada venta y cuánto te quedaría con Kunfupay, comisión incluida. Te llevas tu caso por escrito. Y si no encaja, te lo decimos. / Solo para quien vive en España, vende formación online y factura más de [UMBRAL] al mes. Seis preguntas y eliges hora.
+- **Texto B:** ¿Cuánto te quedaría por venta con Kunfupay? Lo miramos contigo en veinte minutos, gratis. Solo si facturas más de [UMBRAL] al mes.
 - **Título:** Tu diagnóstico de cobros · **Descripción:** 20 min · gratis · Tributaless, de Kunfupay · **Botón:** Solicitar
 - **Nombre:** `TRIB_ES_RET_CLO_DIAG_FOTO_1080x1350_ES_V01` · La imagen se puede subir ya. El texto espera el importe del umbral.
 
 ### R2 · No, no y no (Foto real · pizarra · Closer)
 
-- **Imagen:** Pizarra blanca: «¿Cambiar de gestor? NO» / «¿Cambiar de plataforma? NO» / «¿Montar una LLC? NO» y, en azul, «Kunfupay solo cambia cómo cobras.»
-- **Texto A:** Tres preguntas que conviene hacerse antes de cambiar de pasarela. / Tu gestor sigue con tu trimestre, solo que le llevas una factura en lugar de una por alumno. Sigues vendiendo donde ya vendes. Y no tienes que montar ninguna empresa fuera. / Lo que cambia es quién le hace la factura a tu alumno: Kunfupay. Y los impuestos de esa venta son cosa suya. / Mira si tu negocio encaja: son seis preguntas.
-- **Texto B:** No cambias de gestor, ni de plataforma, ni montas nada fuera. Lo único que cambia es quién le hace la factura a tu alumno.
+- **Imagen:** Pizarra blanca: «¿Una factura por alumno? NO» / «¿Cambiar de plataforma? NO» / «¿Montar una LLC? NO» y, en azul, «Kunfupay solo cambia cómo cobras.»
+- **Texto A:** Tres cosas que no tienes que hacer si cobras con Kunfupay. / No haces una factura por alumno: tú solo le facturas a Kunfupay, así que no necesitas gestor para eso. Sigues vendiendo donde ya vendes. Y no montas ninguna empresa fuera. / Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. / Mira si tu negocio encaja: son seis preguntas.
+- **Texto B:** Ni una factura por alumno, ni otra plataforma, ni una LLC. Kunfupay hace la factura y paga los impuestos de cada venta.
 - **Título:** No, no y no · **Descripción:** Tributaless, de Kunfupay · **Botón:** Más información
-- **Nombre:** `TRIB_ES_RET_CLO_OBJEC_PIZARRA_1080x1350_ES_V01`
+- **Nombre:** `TRIB_ES_RET_CLO_OBJEC_PIZARRA_1080x1350_ES_V02`
 
 ---
 
@@ -234,7 +240,7 @@ Presenta una persona real del equipo, con su nombre y su cara, que dice en los p
 | 3 · El momento | 0:45–1:25 | El dolor en su idioma | Móvil con «Nueva venta», contador de facturas, sobre genérico sin membrete |
 | 4 · Las salidas que te venden | 1:25–2:25 | Desmontar LLC, Andorra y el "0 %" | El número 5472 con la fuente del IRS en pantalla, "0 %" tachado |
 | 5 · Cómo funciona | 2:25–3:20 | Analogía, nombre y credibilidad | Animación simple de la tienda de apps y el mismo esquema con Kunfupay |
-| 6 · Qué cambia para ti | 3:20–4:05 | Facturas a uno, artículo 69, el dinero y el gestor | Panel real de Kunfupay con datos tapados y el artículo 69 del BOE |
+| 6 · Qué cambia para ti | 3:20–4:05 | Facturas a uno, artículo 69, más neto con el mismo precio y el dinero | Panel real de Kunfupay con datos tapados y el artículo 69 del BOE |
 | 7 · Para quién no es | 4:05–4:25 | Descualificar en voz alta | Lista en pantalla |
 | 8 · El siguiente paso | 4:25–4:50 | La oferta, sin presión | Los tres pasos del diagnóstico |
 | 9 · Cierre | 4:50–5:00 | Un solo CTA y el bucle con el principio | Botón de la landing y otra vez «Nueva venta» |
@@ -244,7 +250,7 @@ Presenta una persona real del equipo, con su nombre y su cara, que dice en los p
 Si vendes cursos desde España y facturas más de [UMBRAL] al mes, quédate cinco minutos.
 Vas a ver cómo cobrar tus ventas sin montar una LLC.
 Sin hacer una factura por cada alumno.
-Y sin que los impuestos de cada venta sean cosa tuya.
+Y sin pagar tú los impuestos de cada venta.
 Sin humo. Aquí nadie te va a vender pagar cero.
 
 [2 · Quién te lo cuenta]
@@ -265,9 +271,8 @@ Si cobras con una cuenta normal de Stripe o con PayPal, cada venta es tuya.
 La factura, tuya.
 Los impuestos de esa venta, tuyos.
 Las devoluciones, tuyas.
-Y caaada trimestre, con la misma duda.
-¿Lo habré hecho bien?
-Y con miedo de que un día llegue la carta.
+Y cuando haces cuentas, sientes que los impuestos se comen tu lanzamiento.
+Y caaada trimestre, con miedo de que un día llegue la carta.
 
 [4 · Las salidas que te venden]
 Por eso acabas viendo vídeos de LLC.
@@ -293,8 +298,9 @@ Y al que hizo la app le paga lo vendido.
 Así funciona el Merchant of Record.
 Y así funciona Kunfupay con tus cursos.
 Cobras con Kunfupay, igual que cobrabas con Stripe.
-PERO la factura a tu alumno se la hace Kunfupay.
-Y los impuestos de esa venta son cosa suya.
+PERO la factura a tu alumno la hace Kunfupay.
+Y los impuestos de cada venta, también.
+Tú te olvidas.
 Kunfupay es la única pasarela de España que funciona como Merchant of Record.
 Es decir: son tus representantes en cada venta.
 Y los impuestos de esa venta los pagan en Estados Unidos.
@@ -307,14 +313,15 @@ A Kunfupay.
 Da igual que vendas a trescientos alumnos.
 Y esa factura no lleva IVA español.
 Lo dice el artículo 69 de la Ley del IVA.
-Tu gestor lo reconoce en un minuto.
+Por eso, con el mismo precio, te queda más por venta.
+Incluso con su comisión.
 ¿Y el dinero?
 En tu cuenta de Kunfupay, a tu nombre.
 Lo gastas con tu tarjeta.
 Y con tu IBAN, ahí recibes hasta tus retiros de Hotmart.
 O de cualquier otra plataforma.
-Y tu gestor sigue con tu trimestre.
-Solo que ya no le llevas trescientas facturas.
+Y no necesitas gestor para trescientas facturas.
+Porque tú solo haces una.
 
 [7 · Para quién no es]
 Esto no es para todo el mundo.
@@ -342,9 +349,9 @@ Y la próxima vez que te suene el móvil, que la alegría dure más de tres segu
 
 ## 6. Landing, formulario y enrutado
 
-**Bloques, en orden:** barra "Tributaless · de Kunfupay" → titular según `utm_content` → VSL (se reproduce al pulsar, con subtítulos; miniatura con la persona real y "Antes de montar una LLC") → botón "Ver si encajo · 6 preguntas" ("Si encajas, eliges hora. Si no, te lo decimos.") → lo que cambia para ti (Kunfupay le hace la factura a tu alumno, se ocupa de los impuestos de cada venta y gestiona las devoluciones; tú facturas a uno y tienes el dinero en tu cuenta de Kunfupay, con IBAN) → lo que no tienes que cambiar (la pizarra de R2) → para quién no es (productos físicos, quien busca pagar cero, quien está empezando, quien no vive en España) → qué pasa en los 20 minutos (miramos cómo cobras hoy, te decimos qué cambiaría con Kunfupay, te llevas tu caso por escrito) → FAQ → pie legal con el titular real.
+**Bloques, en orden:** barra "Tributaless · de Kunfupay" → titular según `utm_content` → VSL (se reproduce al pulsar, con subtítulos; miniatura con la persona real y "Antes de montar una LLC") → botón "Ver si encajo · 6 preguntas" ("Si encajas, eliges hora. Si no, te lo decimos.") → lo que cambia para ti (Kunfupay le hace la factura a tu alumno, paga los impuestos de cada venta y gestiona las devoluciones; tú facturas a uno y tienes el dinero en tu cuenta de Kunfupay, con IBAN) → lo que no tienes que hacer (la pizarra de R2: ni una factura por alumno, ni cambiar de plataforma, ni montar una LLC) → para quién no es (productos físicos, quien busca pagar cero, quien está empezando, quien no vive en España) → qué pasa en los 20 minutos (miramos cómo cobras hoy, te decimos qué cambiaría con Kunfupay, te llevas tu caso por escrito) → FAQ → pie legal con el titular real.
 
-**Titular por `utm_content`:** LANZ: "Tu lanzamiento acabó. Mira cómo cobrar sin una factura por alumno." · RETIRAR: "Que la factura y los impuestos de cada venta sean cosa de Kunfupay." · IVA: "¿Qué IVA le toca a cada alumno? Con Kunfupay, es cosa suya." · LLC: "Cobra tus cursos en todo el mundo sin montar una LLC." · DIAG: "20 minutos para ver si Kunfupay encaja en tu negocio." · OBJEC: "Mismo gestor, misma plataforma y sin LLC. Solo cambia cómo cobras." · sin parámetro: "Cobra tus cursos sin montar una LLC." Subtítulo general: "Y sin que la factura y los impuestos de cada venta sean cosa tuya."
+**Titular por `utm_content`:** LANZ: "Tu lanzamiento acabó. Mira cómo cobrar sin una factura por alumno." · HACIENDA: "Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas." · IMPUESTOS: "Mismo precio para tu alumno. Más neto para ti." · LLC: "Cobra tus cursos en todo el mundo sin montar una LLC." · DIAG: "20 minutos para ver si Kunfupay encaja en tu negocio." · OBJEC: "Sin una factura por alumno, sin cambiar de plataforma y sin LLC. Solo cambia cómo cobras." · sin parámetro: "Cobra tus cursos sin montar una LLC." Subtítulo general: "Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas."
 
 **Seis preguntas:** 1) ¿En qué país vives? (España · Otro país) 2) ¿Qué vendes? 3) ¿Con qué cobras hoy? (varias) 4) ¿Cuánto facturas al mes, de media? (<2.000 / 2.000-5.000 / 5.000-10.000 / 10.000-30.000 / >30.000) 5) ¿Cómo lo tienes montado? (Autónomo · Sociedad en España · LLC u otra sociedad fuera · Aún sin alta · No lo tengo claro) 6) Nombre, WhatsApp y email, con aviso de privacidad a nombre del responsable real.
 
@@ -362,10 +369,10 @@ Kommo: lead con respuestas y `utm_content`; WhatsApp automático en menos de 5 m
 - **¿Quién está detrás de Tributaless?** Kunfupay. Tributaless es su línea para explicar cómo cobrar formación online desde España, sin letra pequeña. La llamada la hace el equipo de Kunfupay.
 - **¿Es legal?** Tu parte está escrita en la ley. Facturas a una empresa de Estados Unidos y esa factura no lleva IVA español (artículo 69.Uno.1º de la Ley del IVA). Y Kunfupay revisa cada caso antes de activar la cuenta.
 - **¿Cuánto tarda el alta?** El alta pide verificar tu identidad y, en algunos casos, tu negocio. Kunfupay revisa cada caso antes de activar la cuenta.
-- **¿Tengo que dejar a mi gestor?** No. Tu gestor sigue con tu trimestre. Solo que le llevas una factura en lugar de una por alumno.
+- **¿Necesito gestor?** No para facturar: tú solo le facturas a Kunfupay, una factura en lugar de una por alumno. Si ya tienes gestor, le llevas esa factura.
 - **¿Tengo que cambiar de plataforma?** No. Sigues vendiendo en tus canales: Telegram, Discord, Skool o tu propia web. Kunfupay solo cambia cómo cobras.
 - **¿Y si ya tengo una LLC?** Márcalo en el formulario. En la llamada miramos si la necesitas para cobrar. Si tu caso necesita revisar la LLC, te lo decimos.
-- **¿Cuánto cuesta?** Una comisión por venta, sin cuota mensual ni permanencia. Depende de tu volumen y de tu producto, y te la decimos con tus números en la llamada.
+- **¿Cuánto cuesta?** Una comisión por venta, sin cuota mensual ni permanencia. Depende de tu volumen y de tu producto, y te la decimos con tus números en la llamada. Aun con la comisión, con el mismo precio te queda más por venta que cobrando con una cuenta normal de Stripe.
 - **¿Dónde está mi dinero?** En tu cuenta de Kunfupay, a tu nombre y con IBAN europeo. La cuenta la dan partners financieros con licencia. Lo gastas con tu tarjeta o lo sacas a tu banco.
 
 **Pie legal (propuesto):** Tributaless es una marca de [TITULAR REAL · razón social, número de registro, NIF o EIN y domicilio]. Contacto: [email]. La información de esta página es general y no sustituye el asesoramiento fiscal de tu caso. Kunfupay no es una gestoría ni presta asesoramiento fiscal. Responsable del tratamiento de tus datos: [TITULAR REAL]. Aviso legal · Privacidad · Cookies.
@@ -379,7 +386,7 @@ Kommo: lead con respuestas y `utm_content`; WhatsApp automático en menos de 5 m
 - **Retargeting:** visitas a la landing (30 días) + `VSL_25` sin formulario + interacción con la página (60 días), R1 y R2, ~15 % del presupuesto.
 - **Beneficiario (UE):** el nombre legal real del titular.
 - **Presupuesto para leer un anuncio:** ~25 € (50 clics con CPM 13,5 € y 2,7 % de clic al enlace de la v1). Con 10-20 €/día, Meta dará gasto a 3-4 anuncios.
-- **Lectura de la prueba:** primero por ángulo, sumando la foto y la viñeta de cada uno (lanzamiento, dinero sin retirar, IVA, LLC). El ángulo que gane recibe la siguiente tanda de variantes; el formato se lee después.
+- **Lectura de la prueba:** primero por ángulo, sumando la foto y la viñeta de cada uno (lanzamiento, miedo a Hacienda, perder en impuestos, LLC). El ángulo que gane recibe la siguiente tanda de variantes; el formato se lee después.
 - **Lectura por rol:** abridores por CTR; prospectores por CPM y alcance; calificadores por coste por lead cualificado; closers por coste por lead cualificado; todos por "¿le da gasto a las 72 h?". Métrica que manda: coste por tienda aprobada. Marca: búsquedas de "Kunfupay".
 - **Ritmo:** 7 días sin tocar; revisión de gasto a las 72 h sin editar; tanda semanal de 4-5 estáticos (variantes del ángulo ganador primero). Si en 7 días hay menos de 5 leads cualificados, optimizar una semana al envío del formulario.
 
@@ -387,17 +394,17 @@ Kommo: lead con respuestas y `utm_content`; WhatsApp automático en menos de 5 m
 
 ## 8. Imágenes
 
-Generadas con Higgsfield, en el proyecto «Tributaless · anuncios v2»: GPT Image 2.5, calidad alta, 2K, 4:5, reescaladas a 1080 × 1350. Cada texto se dictó palabra por palabra en el prompt y se revisó imagen a imagen. La hoja del fondo de 1A salió con «FACTURA RA» y se corrigió con una edición.
+Generadas con Higgsfield, en el proyecto «Tributaless · anuncios v2»: GPT Image 2.5, calidad alta, 2K, 4:5, reescaladas a 1080 × 1350. Cada texto se dictó palabra por palabra y se revisó imagen a imagen.
 
-| Concepto | Créditos de Higgsfield |
-|---|---:|
-| 10 imágenes a 2,75 | 27,50 |
-| Corrección de 1A | 2,75 |
-| **Total** | **30,25** |
+| Ronda | Qué se hizo | Créditos de Higgsfield |
+|---|---|---:|
+| 1 | 10 imágenes y la corrección de una errata del fondo de 1A | 30,25 |
+| 2 | 3 imágenes nuevas (3A, 3B y 4B) y 5 ediciones: la línea nueva de Kunfupay en 1A, 1B, 2A y 2B, y la primera línea de la pizarra de R2 | 22,00 |
+| **Total** | | **52,25** |
 
-Cumplen las reglas de IA de la skill de estáticos: sin caras reales ni sintéticas, sin interfaz inventada de Kunfupay, sin logos ajenos y sin cifras que invente el modelo. Las cifras que se ven (los 3000€ de la cita, 21 %, 16 %, 19 %, 20 min) están dictadas y son verificables.
+4A y R1 no cambian desde la ronda 1. Cumplen las reglas de IA de la skill de estáticos: sin caras reales ni sintéticas, sin interfaz inventada de Kunfupay, sin logos ajenos y sin cifras que invente el modelo. Las cifras que se ven (los 3000€ de la cita y los 20 min) están dictadas.
 
-La tanda anterior (P1-P8, R1 y R2, con su fuente editable) queda en el historial de git, en el commit 6bcf575.
+La primera tanda (P1-P8, R1 y R2, con su fuente editable) queda en el historial de git, en el commit 6bcf575, y la ronda 1 de Higgsfield, en el e6f7320.
 
 ---
 
@@ -407,6 +414,7 @@ La tanda anterior (P1-P8, R1 y R2, con su fuente editable) queda en el historial
 - **Tu factura a Kunfupay.** Servicio a una empresa establecida fuera de la UE: no sujeta a IVA español por el art. 69.Uno.1º LIVA. En el 303 va en la casilla 120. Si la empresa estuviera en otro país de la UE, iría en la casilla 59 y en el modelo 349. Si fuera una sociedad española, el art. 69 no aplica (ver pendiente 4).
 - **Stripe.** Una cuenta estándar no es Merchant of Record: el vendedor es el creador. Desde el 29/04/2026, Stripe Managed Payments sí lo es en España, solo para productos digitales 100 % automatizados. Por eso 2A y la VSL dicen "cuenta normal" (LCD, arts. 5 y 10).
 - **PayPal.** No es Merchant of Record: el vendedor sigue siendo el creador (condiciones de uso de PayPal para España).
+- **Mismo precio, más neto (cuentas del cerebro, §4).** Curso de 100 € pagado por un alumno en España: con una cuenta normal de Stripe, al creador le llegan unos 80,60 €. Con Kunfupay, si no se cobra el IVA del alumno (T-10), unos 90 € con un 10 % de comisión y unos 82 € con un 18 %. Si Kunfupay cobrara ese IVA, como dice su web, serían unos 64,60 € y el claim se retira.
 - **Corrección propuesta para el cerebro (regla 17):** DAC8 se aplica en la UE desde el 01/01/2026, pero la transposición en España estaba pendiente cuando se revisó (30/09/2026). Propuesta: citar CRS y modelo 720, y DAC8 como "en camino" hasta que España la transponga.
 
 ---
@@ -425,7 +433,7 @@ La tanda anterior (P1-P8, R1 y R2, con su fuente editable) queda en el historial
 **No bloquean:**
 
 - Periodicidad de la factura a Kunfupay (hasta saberla: "facturas a uno", no "una al mes").
-- Comisión oficial (la web dice "precio a medida", "10 %" y "5-10 %").
+- Comisión oficial (la web dice "precio a medida", "10 %" y "5-10 %"). Ahora también la necesitan 3A, 3B, R1 y la VSL, que dicen «mismo precio, más neto»; hasta tenerla, dicen que hay comisión sin dar la cifra.
 - La web dice que Kunfupay cobra el IVA del comprador y presenta OSS/IOSS; la VSL dice "los pagan en Estados Unidos". Alinear la web.
 - Hotmart no aparece en la web como origen de cobros (confirmado por el equipo, T-07): grabar un retiro real.
 - WhatsApp automático desde Kommo y conexión Kommo → Meta.
@@ -436,4 +444,4 @@ La tanda anterior (P1-P8, R1 y R2, con su fuente editable) queda en el historial
 - Skill de la cuenta de claude.ai: la del repo ya lleva la regla 24; la de la cuenta se actualiza subiendo `.claude/skills/cerebro-kunfupay/SKILL.md`.
 - Opcional: asesor fiscal externo real como partner declarado.
 
-**Riesgos ya avisados que no se reabren:** "única pasarela de España que funciona como MoR" (claim del equipo; Netfield Media también se anuncia como MoR); "los impuestos de esa venta los pagan en Estados Unidos" (riesgo de Kunfupay).
+**Riesgos ya avisados que no se reabren:** "única pasarela de España que funciona como MoR" (claim del equipo; Netfield Media también se anuncia como MoR); "los impuestos de esa venta los pagan en Estados Unidos" (riesgo de Kunfupay); «mismo precio, más neto», que solo es verdad mientras Kunfupay no cobre el IVA del alumno (T-10).

@@ -77,11 +77,12 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
 
     Si la herramienta actual ya lo resuelve, para ese público no es un beneficio.
 14. **Fuerza de la evidencia.** (Corrección del 24/09/2026.) Abre los ganchos solo con dolores de fuerza FUERTE o MEDIO, según el ranking del doc 02 §3. Los DÉBILES van como beneficio de apoyo. Hoy:
-    - FUERTE: la duda de qué IVA cobrar, y el miedo a Hacienda por los cobros en Stripe o PayPal.
-    - MEDIO: hacer una factura por cada venta.
+    - FUERTE: perder dinero en impuestos ("sientes que en cada lanzamiento te lo quitan todo") y el miedo a que Hacienda te llegue, sobre todo por lo que se cobra con Stripe o PayPal. Fuente: el equipo, por sus llamadas de venta (30/09/2026), y los foros del doc 02.
+    - MEDIO: hacer una factura por cada venta ("una factura por alumno").
     - DÉBIL: la privacidad en la factura y los contracargos.
+    - Fuera: la duda de qué IVA cobrar. No existe: todos cobran el 21 % (regla 25).
 15. **Vocabulario de marca para el MoR.** (Correcciones del 24/09/2026.)
-    - **Kunfupay es "tu representante en cada venta".** Se dice "te representamos" o "somos tus representantes", y después lo que hacemos. Quien cobra es el creador, con Kunfupay (regla 21). Dicho de tú a tú: "Si le cobras a tu alumno con Kunfupay, la factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra." Nunca "le cobramos nosotros", "desde Estados Unidos" ni "aplicamos el IVA que toca" (T-10).
+    - **Kunfupay es "tu representante en cada venta".** Se dice "te representamos" o "somos tus representantes", y después lo que hacemos. Quien cobra es el creador, con Kunfupay (regla 21). Dicho de tú a tú (regla 25): "Te representamos en tus ventas: hacemos la factura y pagamos los impuestos de cada venta. Tú te olvidas." Nunca "le cobramos nosotros", "desde Estados Unidos" ni "aplicamos el IVA que toca" (T-10).
     - **Prohibido "vendemos por ti":** da a entender que somos una agencia que consigue ventas o que el curso es nuestro.
     - **El MoR se presenta como una forma de funcionar:** "Así funciona el Merchant of Record". Prohibido "eso es un Merchant of Record" y definirlo como "el vendedor oficial" o "la pasarela", porque provoca malentendidos. **Excepción (29/09/2026):** dentro del bloque de credibilidad de la regla 22 el usuario escribe "Kunfupay es la única pasarela de España que funciona como Merchant of Record". Ahí sí.
     - **Matiz técnico:** "representante" se usa en sentido coloquial. No decir "en tu nombre" ni "con tu NIF", porque el MoR actúa en nombre propio por cuenta del creador.
@@ -107,7 +108,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - Los beneficios secundarios (a tu nombre, datos bancarios, tarjeta, privacidad…) van **juntos** en un vídeo de características, en formato lista.
     - Antes de escribir, define el beneficio completo del tema en una frase. Para la cuenta de Kunfupay:
       1. Vendes.
-      2. Le cobras a tu alumno con Kunfupay. Kunfupay le hace la factura, y los impuestos de esa venta son cosa de Kunfupay (T-10).
+      2. Le cobras a tu alumno con Kunfupay. Kunfupay te representa: le hace la factura y paga los impuestos de esa venta (T-10, regla 25). Tú te olvidas.
       3. Tú solo facturas a Kunfupay, y esa factura no lleva IVA español. Es la verdad de fondo; en el guion se dice la consecuencia: "te olvidas del IVA de cada venta" (regla 21).
       4. Puedes tener el dinero en tu cuenta de Kunfupay, a tu nombre. Nunca "se queda": suena a retenido.
       5. Lo gastas con la tarjeta o haces retiros con el IBAN de tu cuenta.
@@ -123,8 +124,8 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
       - Listas de verbos seguidas, dichas como un folleto.
       - Frases que nadie diría en voz alta a un amigo.
     - **Cómo se habla:**
-      - Tú para el espectador. Para Kunfupay, depende de quién graba (28/09/2026): si graba el fundador o el equipo, "nosotros" ("la factura se la hacemos nosotros", "cosa nuestra"); si graba UGC, alguien que no es de Kunfupay, tercera persona ("la factura se la hacen ellos" / "se la hace Kunfupay", "cosa suya", "son tus representantes"). Verbos activos en los dos casos.
-      - Expresiones de la calle: "quitártelo de encima", "no te lo quita nadie", "tu trimestre", "cosa nuestra", "eso sí", "ojo", "o sea", "encima".
+      - Tú para el espectador. Para Kunfupay, depende de quién graba (28/09/2026): si graba el fundador o el equipo, "nosotros" ("te representamos", "hacemos la factura y pagamos los impuestos de cada venta"); si graba UGC, alguien que no es de Kunfupay, tercera persona ("te representa", "la factura la hace Kunfupay", "paga los impuestos de cada venta"). "Cosa suya" y "cosa nuestra" se retiraron el 30/09 (regla 25). Verbos activos en los dos casos.
+      - Expresiones de la calle: "quitártelo de encima", "no te lo quita nadie", "tu trimestre", "tú te olvidas", "eso sí", "ojo", "o sea", "encima".
       - Preguntas en voz alta: "¿Y el dinero?". Para unir una causa con su efecto no va una pregunta como "¿Y tú qué haces?", va "por lo tanto" (regla 21).
       - Antes que una metáfora, una situación real del creador: el trimestre, el banco.
       - "Tu cuenta de Kunfupay", nunca "tu cuenta" a secas: en un guion que dice "sin pasar por tu banco", se confunde con la del banco.
@@ -132,16 +133,16 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - **La verdad fiscal no cambia; cambia cómo se dice.** Las frases de la tabla de claims son el contenido, no el texto que se lee: se pasan a lenguaje hablado.
     - **Ejemplos (guion "Dos impuestos", 25/09):**
       - Mal: "La venta la hace nuestra empresa en Estados Unidos. Y sus impuestos se gestionan allí."
-        Bien: "Si le cobras a tu alumno con Kunfupay, la factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra." (Corregido otra vez el 25/09 con la regla 21. La primera versión, "A tu alumno le cobramos nosotros, desde Estados Unidos…", ya no vale.)
+        Bien: "Te representamos en tus ventas: hacemos la factura y pagamos los impuestos de cada venta. Tú te olvidas." (Actualizado el 30/09 con la regla 25; antes decía "cosa nuestra". Corregido también el 25/09 con la regla 21. La primera versión, "A tu alumno le cobramos nosotros, desde Estados Unidos…", ya no vale.)
       - Mal: "El IVA de esas ventas desaparece de tu declaración trimestral."
         Bien: "Por lo tanto, tú te olvidas del IVA de cada venta." (Regla 21: la consecuencia, no el mecanismo.)
     - **La metáfora de la Coca-Cola está retirada.** El usuario dijo: «porfavor olividadte de la metafora de la colacola».
 21. **El creador cobra; se cuenta la consecuencia, no el mecanismo.** (Corrección del 25/09/2026: «no le cobramos nosotros, sino que tu le cobras a tu alumno a traves de kunfupay, o con kunfupay, y eso de estados unidos no lo digas relamente no se comprende . cambia el ¿Y tú qué haces? por " por lo tanto"» · «ya es info tecnica de mas, mejor un y por lo tanto tu te olvidas» · «no digas lo de la comision» · «no digas se queda en la cuenta de kunfupay, porque parece q esta retenido».)
     - **Quien cobra es el creador, con Kunfupay:** "Tú le cobras a tu alumno con Kunfupay." Nunca "le cobramos nosotros" ni "tu alumno nos paga a nosotros".
-    - **Lo que hacemos, en dos frases:** "La factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra."
+    - **Lo que hacemos (regla 25):** "Te representamos en tus ventas: hacemos la factura y pagamos los impuestos de cada venta. Tú te olvidas."
     - **Sin "Estados Unidos"** ni "empresa americana" para explicar el mecanismo en el cuerpo del guion: no se entiende. Sale en dos sitios: en el ángulo LLC ("sin montar una LLC") y en el bloque de credibilidad de la regla 22, donde el usuario lo quiere así (29/09): "los impuestos de esa venta los pagan en Estados Unidos. Donde está la empresa."
-    - **"Impuestos", no "IVA", en niveles de conciencia bajos** (29/09/2026: «las personas no piensan en el IVA, piensan en impuestos»; «si vas a hablarle técnico ya sería un guion técnico para el gestor»). La línea es "los impuestos de esa venta son cosa suya" y, si hace falta la consecuencia, "tú te olvidas de los impuestos de cada venta". "IVA" y "21 %" solo en piezas para quien ya está arriba en conciencia o para el gestor.
-    - **La consecuencia no se repite si ya está dicha.** En el guion "Nueva venta" el usuario quitó "Por lo tanto, tú te olvidas de los impuestos de cada venta" porque "los impuestos de esa venta son cosa suya" ya lo decía. La línea de consecuencia es opcional, no obligatoria.
+    - **"Impuestos", no "IVA", en niveles de conciencia bajos** (29/09/2026: «las personas no piensan en el IVA, piensan en impuestos»; «si vas a hablarle técnico ya sería un guion técnico para el gestor»). La línea es la de la regla 25, con "impuestos de cada venta". "IVA" y "21 %" solo en piezas para quien ya está arriba en conciencia o para el gestor.
+    - **La consecuencia no se repite si ya está dicha.** En la línea de la regla 25, "Tú te olvidas" ya es la consecuencia: no se añade otra ("por lo tanto, te olvidas de…"). En el guion "Nueva venta" el usuario ya quitó una consecuencia repetida por lo mismo.
     - **Sin mecánica fiscal en el guion:** quién factura a quién, "sin IVA español", "desaparece de tu trimestre", "el 303". Se dice la consecuencia: "Por lo tanto, tú te olvidas del IVA de cada venta." La mecánica se queda en el control interno (§4).
     - **Las causas se unen con "por lo tanto"** (regla de South Park, §6 bis), no con preguntas como "¿Y tú qué haces?". Pero con medida (29/09): el usuario quitó los dos "por lo tanto" del guion "Nueva venta". Se usa solo cuando la consecuencia no es obvia; si la línea anterior ya la implica, se une con "Y" o se corta. El giro grande se marca con un "PERO" en mayúsculas.
     - **Si sale el IVA, se define en una frase:** "el que le cobras a tu alumno en cada venta y cada tres meses le das a Hacienda".
@@ -159,7 +160,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     6. **El giro lleva "PERO" en mayúsculas** y va justo antes de lo que cambia: "PERO la factura se la hacen ellos."
     7. **Anclar lo nuevo en lo que ya usa:** "Cobras con Kunfupay, igual que cobrabas con Stripe. PERO…". Quita la pereza de entender algo nuevo (doc 00 §2, "por qué no compran"). Una plataforma por anuncio (regla 16): para quien vende directo, Stripe.
     8. **Nombrar las alternativas que el avatar baraja y descartarlas en una línea:** "Sin irte a Andorra ni montar una LLC." Sin "pero con los mismos beneficios": Andorra promete un IRPF del 10 %, que no damos (E-06, caso Willyrex). Si hace falta concretar: "y con lo que de verdad buscas en ellas".
-    9. **Bloque de credibilidad fijo, justo después de "son cosa suya":**
+    9. **Bloque de credibilidad fijo, justo después de la línea de lo que hace Kunfupay (regla 25):**
        ```
        Kunfupay es la única pasarela de España que funciona como Merchant of Record.
        Es decir: son tus representantes en cada venta.
@@ -176,7 +177,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
 23. **Nivel de conciencia bajo: hablar su idioma y contar la historia antes de vender.** (Correcciones del 29/09/2026: «si vas a hablar a un punto de conciencia muy bajo… no menciones cosas como IVA 21 %… debes hablar en su idioma, por ejemplo vendes cursos desde España y vives con miedo de los impuestos, y ahí trata de seguir la historia antes de meter Kunfupay… a las personas no les gusta que les vendan» · «vendes cursos grabados no sé si es una frase que me guste» · «las personas le preguntan al ChatGPT y listo… no tienen miedo de dónde pagar el IVA, siempre tienen miedo de que su institución financiera les llegue, como Hacienda en España, ARCA en Argentina» · «lo de la hucha me gusta, entendiste bien el concepto de analizar el lenguaje».)
     - **El lead siempre ya vende.** Nunca "si empiezas a vender", "tu primer lanzamiento" ni "cursos grabados". El nivel de conciencia mide cuánto sabe del problema y de la solución, no si vende (regla 5 de la skill `analista-angulos-meta`).
     - **En niveles 1 y 2, ni "IVA" ni "21 %" ni "factura" como dolor:** "impuestos", "la carta", "la hucha", "apartar una parte", "el trimestre". Lo técnico es para el gestor.
-    - **El miedo real no es dónde pagar, es que le lleguen:** la carta de Hacienda (o ARCA, si la pieza es para Argentina). Las dudas de "qué IVA cobrar" ya no abren un guion: eso lo resuelven preguntando a una IA.
+    - **El miedo real no es dónde pagar, es que le lleguen:** la carta de Hacienda (o ARCA, si la pieza es para Argentina). Las dudas de "qué IVA cobrar" no existen: todos cobran el 21 % (regla 25).
     - **La historia primero, Kunfupay después.** El producto entra como consecuencia del conflicto ("Pero hay otra forma de cobrar tus cursos"), nunca en las primeras líneas.
     - **Situaciones del que ya vende, con su lenguaje:** lo que entra "no es todo tuyo" (anuncios, editor, closer, impuestos), el trimestre después de un lanzamiento, el dinero parado en una cuenta de trading. Investigar sus frases antes de escribir (§2). No: "ya vendes mucho tus cursos" ni "la cuenta de casa".
     - **Los retiros, con nombre:** "Y ahora, con tu IBAN, ahí recibes hasta tus retiros de Hotmart. O de cualquier otra plataforma." Nunca "retiros" a secas (29/09: «ten cuidado con la palabra retiros»).
@@ -186,8 +187,30 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - Ninguna pieza (guion, estático, VSL, landing o copy) dice que el creador sigue haciendo o pagando su renta: ni como frase de honestidad, ni como fila de una tabla, pósit o cierre.
     - Tampoco se usa como argumento contra la LLC. Contra la LLC valen los papeles en dos países y el Form 5472, con 25.000 $ de multa si no se presenta (IRS).
     - Tampoco con otras palabras: «Hacienda mira dónde vives tú, no dónde está la empresa» o «pagar cero viviendo en España» dicen lo mismo sin nombrarla. Contra el humo del "0 %" basta con «Si te prometen pagar cero, te están vendiendo un titular».
-    - La verdad fiscal se protege sin esa frase: no se promete lo que no es ("no pagas impuestos", "paga menos", "0 %"), y "los impuestos de esa venta son cosa suya" va siempre acotado a cada venta.
+    - La verdad fiscal se protege sin esa frase: no se promete lo que no es ("no pagas impuestos", "paga menos", "0 %"), y "paga los impuestos de cada venta" va siempre acotado a cada venta (regla 25).
     - Los datos del IRPF de §4 son control interno: sirven para no escribir claims falsos, no para decirlos.
+
+25. **El dolor es perder dinero en impuestos. Kunfupay te representa: hace la factura y paga los impuestos de cada venta. Tú te olvidas.** (Corrección del 30/09/2026: «el problema de q nos aben que iva cobrar no exxiste todos saben q tienen q cobrar el 21 % no otra cosa, el probema principal es ahorrarse impuestos, como cansado de perder en impuestos, sientes que te quitan todo el dinero de tus cursos en lanzamientos, decir q no necesitan gestor, que se puede aumentar el neto sin tocar el bruto, el miedo a que hacienda les llegue. y eso con kunfupay son cosa suya no, mejor kunfupay te representa en tus ventas, ellos pagan los impuestos y hacen la factura, tu te olvidas . el de la ola de facturas me gusto porque habla en el idioma de ellos . el del edificio porque eso se ve epico y me dan ganas de tener una llc, como q se vea como algo imposible, por ejemplo lo que quieren que hagas en estados unidos para vender tu curso».)
+    - **La duda de qué IVA cobrar no existe.** Todos cobran el 21 %. No abre ningún gancho, anuncio ni guion, en ningún nivel de conciencia. Por eso se retiraron el 30/09 los dos anuncios del IVA de Tributaless (la hoja de cálculo y el poste de flechas): salieron de la regla 14 antigua, que contradecía a la 23.
+    - **El dolor principal es perder dinero en impuestos.** Fuente: el equipo, por sus llamadas de venta (regla 2). Ganchos en su idioma, con "si" o en tercera persona para no afirmar nada del espectador (§4, atributos personales):
+      - "Si estás cansado de perder en impuestos lo que ganas con tus cursos…"
+      - "Sientes que en cada lanzamiento te lo quitan todo en impuestos."
+      - "Y el miedo a que un día te llegue Hacienda." (la carta, regla 23)
+      - El sentimiento se cuenta tal cual. La promesa va siempre acotada a cada venta (abajo), porque Kunfupay no cambia los demás impuestos del creador (control interno, regla 24).
+    - **La línea de Kunfupay sustituye a "cosa suya" y "cosa nuestra", que se retiran:**
+      - Tercera persona (Tributaless, UGC): "Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas."
+      - Si graba el equipo: "Te representamos en tus ventas: hacemos la factura y pagamos los impuestos de cada venta. Tú te olvidas."
+      - Corta, para una imagen: "Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas."
+      - En guion, sin repetir el bloque de credibilidad de la regla 22.9, que ya dice "representantes" y "los pagan en Estados Unidos": "PERO la factura la hacen ellos. / Y los impuestos de cada venta, también. / Tú te olvidas."
+      - "De cada venta" no se quita nunca: es lo que Kunfupay paga, en EE. UU. (T-10). "Paga tus impuestos" o "te pagamos los impuestos" sería falso (regla 17).
+      - "Tú te olvidas" va justo detrás, así que habla de la factura y de los impuestos de cada venta. Nunca "te olvidas de Hacienda" ni "de tus impuestos" (regla 21).
+    - **Mismo precio, más neto.** "Aumentar el neto sin tocar el bruto" se usa desde el 30/09 porque lo pide el usuario y las cuentas salen (§4): con el precio de siempre, a quien vende a alumnos en España le queda más por venta, incluso con un 18 % de comisión. Tres condiciones:
+      1. Se dice la comisión. Mientras no haya cifra oficial, al menos "incluso con la comisión por venta de Kunfupay" (art. 7 de la Ley 3/1991, W-07).
+      2. Va acotado a los impuestos de cada venta. "Paga menos impuestos" o "ahorra impuestos" a secas siguen en 🔴 (§4).
+      3. Depende de T-10: si Kunfupay cobrara el IVA del alumno, como dice la web, el neto no sube. Es riesgo de Kunfupay, avisado una vez; no se reabre.
+    - **El gestor.** "No necesitas gestor" solo con el motivo en la misma frase: "No necesitas gestor para una factura por alumno: tú solo le facturas a Kunfupay." Nunca "Kunfupay es tu gestor" ni "Kunfupay te lleva los impuestos": Kunfupay no presenta las declaraciones del creador, que sigue presentando su trimestre (control interno, regla 21).
+    - **Hablar en su idioma, como la viñeta de la ola de facturas.** Es la que más gustó el 30/09: "lanzamiento", "una factura por alumno" y la ola que llega justo después de celebrar. Situaciones que viven, dichas y dibujadas con sus palabras.
+    - **La LLC se enseña imposible, nunca épica.** El rascacielos del 30/09 se rechazó porque da ganas de tener una LLC. Se enseña lo que te piden en EE. UU. para vender un curso: elegir estado, agente registrado, EIN, cuenta en EE. UU., el Form 5472 con el 1120 cada año y el informe anual del estado. Una montaña de trámites para un curso, no un edificio que da envidia.
 
 ---
 
@@ -246,7 +269,7 @@ Explicar fácil es **mostrar una cosa que ya conoce y ponerla al lado de la nuev
 
 | Jerga | Cómo decirlo |
 |---|---|
-| Merchant of Record | "Te representamos en cada venta: tú le cobras a tu alumno con Kunfupay, nosotros le hacemos la factura y nos ocupamos de los impuestos de la venta." El nombre va al final: "Así funciona el Merchant of Record." Nunca "vendemos por ti" ni "eso es un MoR" (regla 15), ni "aplicamos el IVA que toca" (T-10) |
+| Merchant of Record | "Te representamos en tus ventas: tú le cobras a tu alumno con Kunfupay, nosotros hacemos la factura y pagamos los impuestos de cada venta. Tú te olvidas." (regla 25) El nombre va al final: "Así funciona el Merchant of Record." Nunca "vendemos por ti" ni "eso es un MoR" (regla 15), ni "aplicamos el IVA que toca" (T-10) |
 | IVA de destino / OSS | No se usa. Según el equipo, Kunfupay gestiona los impuestos de la venta en EE. UU. (T-10) |
 | Pasarela de pago | "La caja donde te pagan" |
 | Métodos de pago locales | "Tu alumno paga como paga en su país: OXXO en México, PIX en Brasil, Bizum en España" |
@@ -268,20 +291,24 @@ Explicar fácil es **mostrar una cosa que ya conoce y ponerla al lado de la nuev
 | Claim | Veredicto | Versión que se usa |
 |---|---|---|
 | "No pagas IVA" / "No pagas impuestos" | 🔴 | En el guion: "Por lo tanto, tú te olvidas del IVA de cada venta." (regla 21). La verdad de fondo (🟢, verificada el 25/09): el creador factura a una empresa de fuera de la UE, y esa factura no lleva IVA español (art. 69.Uno.1º LIVA). La regla de uso efectivo (art. 70.Dos) ya no se aplica entre empresas desde 2023 |
-| "Aplicamos el IVA que toca" / "cobramos el impuesto del país del comprador" (web) | 🔴 | El equipo dice que no es así (T-10, W-30). Se dice: "Si le cobras a tu alumno con Kunfupay, la factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra." |
+| "Aplicamos el IVA que toca" / "cobramos el impuesto del país del comprador" (web) | 🔴 | El equipo dice que no es así (T-10, W-30). Se dice la línea de la regla 25: "Te representamos en tus ventas: hacemos la factura y pagamos los impuestos de cada venta. Tú te olvidas." |
 | "Tu alumno no paga IVA" / "sin IVA" | 🔴 | No se dice. En la UE, cuando un curso grabado se vende a un particular, el vendedor de fuera de la UE tiene que cobrar el IVA del país del alumno (régimen exterior de la Unión). Es un riesgo de Kunfupay (T-10) |
-| "Recupera hasta el 21%" / "mismo precio, más margen" (web /mor-europa) | 🔴 | No se usa. Según el equipo no se cobra el IVA del comprador (T-10), así que la cuenta cuadra. Pero anunciarlo destaca un riesgo legal de Kunfupay, oculta la comisión (W-07) y falta el número de la consulta vinculante (P9) |
+| "Recupera hasta el 21%" (web /mor-europa) | 🔴 | "Recupera" suena a devolución, y el IVA no es el 21 % del precio que paga el alumno. Se dice "mismo precio, más neto" (fila siguiente) |
+| "Mismo precio, más neto" / "aumenta tu neto sin tocar el precio" | 🟠 | Lo pide el usuario (30/09, regla 25) y las cuentas salen (tabla de abajo). Siempre con la comisión dicha y acotado a los impuestos de cada venta. Riesgo T-10 avisado una vez; no se reabre |
 | "Factura sin ser autónomo" (web /mor-europa) | 🔴 | No se usa: cobrar de forma habitual por una actividad obliga a darse de alta |
 | "Tu alumno ve Kunfupay en su extracto" | 🟡 | La web no lo dice (P10). No se usa hasta confirmarlo |
 | "Te pagamos cada semana" | 🟡 | La web se contradice (semanal / según el método / al instante). Mejor "te pagamos lo vendido" |
 | "Tú solo nos facturas a nosotros" / "somos tu único cliente" | 🟢 | Claim oficial de la web: «Tú facturas a Kunfupay, y punto». Es verdad de fondo: en el guion va la consecuencia (regla 21), salvo que se pida explicar cómo facturas |
-| "Te olvidas del IVA de cada venta" | 🟢 | Verificado el 25/09. No se amplía a "te olvidas de Hacienda" ni "del trimestre": el 303 y el 130 siguen (regla 21) |
+| "Te olvidas del IVA de cada venta" / "Tú te olvidas" tras la línea de la regla 25 | 🟢 | Verificado el 25/09. No se amplía a "te olvidas de Hacienda" ni "del trimestre": el 303 y el 130 siguen (regla 21) |
 | "No es para todos" | 🟢 | "Es para quien vende formación, membresías, mentorías o comunidades online. Revisamos cada caso antes de activar la cuenta." (web /mor-europa) |
-| "Te ahorras el 21%" | 🔴 | "Si vendes a LATAM y pagas un 21% por esas ventas, puede que pagues un IVA que no te toca." (🟡) |
-| "Ya pagamos los impuestos por ti" | 🔴 | Según el equipo, no se paga el IVA del país del comprador (T-10). Se dice: "La factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra." |
+| "Te ahorras el 21%" | 🔴 | La cifra no sale: el IVA no es el 21 % del precio y hay comisión. Se dice: "Con el mismo precio, te queda más por venta, incluso con la comisión." (🟠, regla 25) |
+| "Ya pagamos los impuestos por ti" / "paga tus impuestos" | 🔴 | Sin acotar suena a todos los impuestos del creador, y es falso. Se dice la línea de la regla 25, con "de cada venta" |
+| "Kunfupay paga los impuestos de cada venta" | 🟠 | Lo pide el usuario (30/09, regla 25). Coherente con el bloque de credibilidad ("los pagan en Estados Unidos"). "De cada venta" no se quita nunca |
+| "No necesitas gestor" | 🟠 | Solo con el motivo en la misma frase: "No necesitas gestor para una factura por alumno: tú solo le facturas a Kunfupay." Nunca "Kunfupay es tu gestor" ni "te lleva los impuestos" (🔴) |
+| La duda de "qué IVA cobrar" como dolor | 🔴 | No existe: todos cobran el 21 % (regla 25) |
 | "Hacienda no ve tu nombre" | 🔴 | "La factura de tu alumno la emite Kunfupay, no tú." (🟢 claim oficial: «emitimos la factura». Lo del extracto está pendiente de P10) |
 | "Sin LLC" | 🟢 | "Cobra en todo el mundo sin montar una LLC en EE. UU." |
-| "Paga menos impuestos" | 🔴 | "Paga lo justo, con papeles." / "Deja de pagar lo que no te toca." (🟡) |
+| "Paga menos impuestos" / "ahorra impuestos" a secas | 🔴 | Sin acotar abarca impuestos que Kunfupay no cambia. Se dice: "Deja de perder dinero en los impuestos de cada venta: los paga Kunfupay." (🟠, con la comisión dicha) |
 | Esconder la comisión cuando se habla de dinero | 🔴 | Si hay claim de ahorro o de cuánto te llega, se dice la comisión y se compara con el coste total de la alternativa: LLC, gestor, Stripe, ventas perdidas, fondos bloqueados. Si el guion no habla de dinero, no se nombra (regla 21) |
 | "Andorra: paga el 10%" | 🟡 | Solo para quien reside allí de verdad. Nunca como "mudanza de papel" (ver PACTA 2026 y el caso Willyrex) |
 | Cuenta con IBAN: "retira desde [plataforma]" / "donde sea que tengas tus ingresos" | 🟢 | Confirmado por el equipo el 24/09 (T-07). Una plataforma por anuncio (regla 16). Ver `angulos/cuenta-nominativa-iban.md` |
@@ -305,7 +332,7 @@ Explicar fácil es **mostrar una cosa que ya conoce y ponerla al lado de la nuev
   - Alumno en España: 21%.
   - Alumno en la UE: 21% hasta 10.000 € al año en ventas a la UE; por encima, el IVA de su país mediante la ventanilla única (OSS).
   - Alumno en LATAM: ningún IVA español.
-  - Fuente: AEAT, servicios electrónicos. La creencia "solo pago el IVA donde tengo mi dinero" es frecuente, incluso dentro del equipo, y se puede usar como mito a romper.
+  - Fuente: AEAT, servicios electrónicos. La creencia "solo pago el IVA donde tengo mi dinero" es frecuente, incluso dentro del equipo. Es control interno: no abre ganchos, porque en la práctica todos cobran el 21 % (regla 25).
 - **Lo que hace de verdad el creador que vive en España:** presenta su IVA trimestral en España (modelo 303) y casi nunca se da de alta en otros países.
 - **La renta (IRPF) de un residente en España es mundial.** Se tributa por lo que se gana, esté donde esté el dinero y aunque nunca llegue a España (art. 2 de la Ley 35/2006). No existe el "no tributas si no lo traes" (E-36). Es control interno para no escribir claims falsos: no se dice en las piezas (regla 24).
 - **Con Kunfupay:** el creador factura a Kunfu Global, Inc., una empresa de EE. UU. Esa factura no lleva IVA español, así que el IVA de sus ventas desaparece de su 303.
@@ -324,10 +351,11 @@ Explicar fácil es **mostrar una cosa que ya conoce y ponerla al lado de la nuev
   | Escenario | Le llega al creador |
   |---|---|
   | Venta directa con Stripe | ≈ 80,60 € |
-  | Kunfupay, si paga el IVA (hasta 18% de comisión) | ≈ 64,60 € |
-  | Kunfupay, si no paga el IVA | ≈ 82 € |
+  | Kunfupay, si paga el IVA (18 % de comisión) | ≈ 64,60 € |
+  | Kunfupay, si no paga el IVA (18 % de comisión) | ≈ 82 € |
+  | Kunfupay, si no paga el IVA (10 % de comisión) | ≈ 90 € |
 
-  El argumento "con ahorrarte el 21% te basta" solo cuadra si nadie paga el IVA de esa venta. **Según el equipo, ese es el escenario real (T-10).** Aun así, no se usa ningún claim de ahorro económico: destacaría un riesgo legal de Kunfupay y obligaría a decir la comisión (W-07). Detalle en `angulos/optimizacion-fiscal-mor.md`.
+  El argumento "con ahorrarte el 21% te basta" solo cuadra si nadie paga el IVA de esa venta. **Según el equipo, ese es el escenario real (T-10).** Desde el 30/09 el usuario sí quiere el claim de ahorro (regla 25): con el mismo precio, al creador le queda más por venta incluso con un 18 % de comisión. Se usa con la comisión dicha, acotado a los impuestos de cada venta y con el riesgo T-10 avisado una vez. Detalle en `angulos/optimizacion-fiscal-mor.md`.
 
 **Reglas de Meta y de la ley:**
 
@@ -464,8 +492,9 @@ Y de que un día llegue la carta.
 Pero hay otra forma de cobrar tus cursos.
 Sin irte a Andorra ni montar una LLC.
 Cobras con Kunfupay, igual que cobrabas con Stripe.
-PERO la factura se la hacen ellos.
-Y los impuestos de esa venta son cosa suya.
+PERO la factura la hacen ellos.
+Y los impuestos de cada venta, también.
+Tú te olvidas.
 
 Kunfupay es la única pasarela de España que funciona como Merchant of Record.
 Es decir: son tus representantes en cada venta.
@@ -528,8 +557,9 @@ Fuente: el vídeo de Ana (YouTube L-hOOg2ozYc), que adapta las 6 lecciones de Ka
 - Ejemplo Kunfupay:
   - "Si vendes cursos online desde España, esto te interesa."
   - "Cada alumno te obliga a hacer una factura."
-  - "Pero antes tienes que saber qué IVA le toca."
-  - "Y lo peor: no depende de dónde vives tú. Depende de dónde vive él."
+  - "Cada lanzamiento te deja una buena cifra."
+  - "Pero luego llegan los impuestos de cada venta, y sientes que te lo quitan todo."
+  - "Por lo tanto, vives cada trimestre con miedo de que te llegue la carta."
 
 **Técnica 2. Ritmo y cadencia.**
 - Alterna frases muy cortas con otras largas y acelera en los puntos clave. Así el cerebro no puede predecir el final y presta atención.
@@ -566,7 +596,7 @@ Fuente: el vídeo de Ana (YouTube L-hOOg2ozYc), que adapta las 6 lecciones de Ka
 
 **CTA en orgánico** (del propio vídeo de Ana):
 - CTA a mitad solo en vídeos largos de YouTube. Nunca en anuncios cortos.
-- Lead magnet gratuito al final. Para Kunfupay, por ejemplo, una calculadora de "qué IVA te toca" (ver doc 01 §9).
+- Lead magnet gratuito al final. Para Kunfupay, por ejemplo, una calculadora de "cuánto te queda de cada venta", con y sin Kunfupay y con la comisión a la vista (regla 25).
 - CTA de comentario ("¿quieres la segunda parte?") para series.
 
 **No se copia:**
@@ -737,7 +767,10 @@ La investigación completa se guarda en `kunfupay/angulos/<slug>.md`. Los guione
 - [ ] Revisado contra `aprendizajes.md`: no repite ningún error registrado.
 - [ ] El tema pedido es el protagonista y no hay desvíos a otros ángulos (regla 12).
 - [ ] El beneficio lo es frente a la herramienta que usa hoy ese público (regla 13).
-- [ ] El gancho sale de un dolor de fuerza FUERTE o MEDIO (regla 14).
+- [ ] El gancho sale de un dolor de fuerza FUERTE o MEDIO (regla 14). Ninguno con la duda de qué IVA cobrar (regla 25).
+- [ ] Si hay claim de neto o de ahorro: comisión dicha y acotado a los impuestos de cada venta; nunca "paga menos impuestos" a secas (regla 25).
+- [ ] "No necesitas gestor" solo con su motivo en la misma frase (regla 25).
+- [ ] Si sale la LLC, se ve imposible, nunca épica ni deseable (regla 25).
 - [ ] No contiene ningún error del registro 03 ni ninguno de sus patrones de contaminación por IA (§6 del doc 03).
 
 **Claridad**
@@ -748,7 +781,8 @@ La investigación completa se guarda en `kunfupay/angulos/<slug>.md`. Los guione
 - [ ] Suena a audio de WhatsApp, no a informe: sin pasivas ("se gestionan"), sin "nuestra empresa" y sin "declaración trimestral" (regla 20).
 - [ ] Cobra el creador ("le cobras con Kunfupay"). Sin "Estados Unidos" fuera del bloque de credibilidad, sin mecánica de facturación, sin comisión (si no hay claim de dinero) y sin "se queda en tu cuenta" (regla 21).
 - [ ] Ninguna línea repite lo que la anterior ya implica; sin aforismos ni puentes de relleno; "por lo tanto" solo si la consecuencia no es obvia (regla 22).
-- [ ] Bloque de credibilidad presente después de "son cosa suya", y "representantes" sin "fiscales" (regla 22.9).
+- [ ] Bloque de credibilidad presente después de la línea de lo que hace Kunfupay, y "representantes" sin "fiscales" (regla 22.9).
+- [ ] La línea de Kunfupay es la de la regla 25 ("te representa… hace la factura y paga los impuestos de cada venta. Tú te olvidas."), nunca "cosa suya".
 - [ ] En niveles bajos: "impuestos", no "IVA" ni "21 %"; el lead ya vende; la historia va antes de Kunfupay y la transición sale del conflicto (regla 23).
 - [ ] Voz según quién graba: "nosotros" si es el equipo, "ellos / Kunfupay" si es UGC (regla 20).
 
