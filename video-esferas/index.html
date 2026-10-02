@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=1080, height=1920" />
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
     <style>
+      @font-face {
+        font-family: "Inter";
+        src: url("assets/fonts/Inter-Variable-latin.woff2") format("woff2");
+        font-weight: 100 900;
+        font-style: normal;
+      }
       * {
         margin: 0;
         padding: 0;
@@ -21,14 +27,277 @@
       body {
         font-family: "Inter", sans-serif;
       }
-      code,
-      pre,
-      .monospace {
-        font-family: "JetBrains Mono", monospace;
+
+      /* ---------- Sphere stack ----------
+         .sph   : static positioning box (276x276)                 [never animated]
+         .float : idle float (y only)                               [transform only]
+         .pop   : entrance / exit (scale, y)                        [transform only]
+           .glass    : real refracting lens (backdrop-filter url(#lensN))  [opacity]
+           .frost    : progressive frost, clear top -> frosted bottom      [opacity]
+           .milk     : milky white bottom (reference card)                 [opacity]
+           .shadow   : outer drop shadow (outside the circle only)         [opacity]
+           .fres     : fresnel ring (volume over white)                    [opacity]
+           .edge / .crescent / .rim / .glint : light layers                [opacity]
+           .num      : yellow numeral                       [opacity + scale + filter]
+         BACKDROP ROOT RULE: nothing that wraps a backdrop-filter layer
+         (.sph/.float/.pop/.sqw) ever gets opacity / filter / mask / clip-path /
+         blend mode. Those live on leaf layers only. */
+      .sph {
+        position: absolute;
+        top: 822px;
+        width: 276px;
+        height: 276px;
+      }
+      #s1 { left: 82px; }
+      #s2 { left: 402px; }
+      #s3 { left: 722px; }
+
+      .float,
+      .pop {
+        position: absolute;
+        inset: 0;
+        width: 276px;
+        height: 276px;
+      }
+
+      /* The glass box is larger than the visible sphere (40px pad on every side)
+         so the rim can refract real footage from just OUTSIDE the sphere, like
+         thick glass does. clip-path trims the visible result to the 276px circle. */
+      .glass {
+        position: absolute;
+        left: -40px;
+        top: -40px;
+        width: 356px;
+        height: 356px;
+        clip-path: circle(138px at 50% 50%);
+        background:
+          /* fresnel: faint white towards the rim */
+          radial-gradient(circle 138px at 50% 50%, rgba(255, 255, 255, 0.03) 0px, rgba(255, 255, 255, 0.03) 78px, rgba(255, 255, 255, 0.09) 118px, rgba(255, 255, 255, 0.18) 138px);
+        opacity: 0;
+      }
+      #s1 .glass {
+        -webkit-backdrop-filter: url(#lens1) blur(1.15px) saturate(1.15) brightness(0.97);
+        backdrop-filter: url(#lens1) blur(1.15px) saturate(1.15) brightness(0.97);
+      }
+      #s2 .glass {
+        -webkit-backdrop-filter: url(#lens2) blur(1.15px) saturate(1.15) brightness(0.97);
+        backdrop-filter: url(#lens2) blur(1.15px) saturate(1.15) brightness(0.97);
+      }
+      #s3 .glass {
+        -webkit-backdrop-filter: url(#lens3) blur(1.15px) saturate(1.15) brightness(0.97);
+        backdrop-filter: url(#lens3) blur(1.15px) saturate(1.15) brightness(0.97);
+      }
+
+      .ly {
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        opacity: 0;
+      }
+
+      /* progressive frost (reference card): refraction stays crisp in the upper
+         ~55%, the bottom goes softly frosted. Mask lives on this leaf only. */
+      .frost {
+        -webkit-backdrop-filter: blur(7px);
+        backdrop-filter: blur(7px);
+        -webkit-mask-image: linear-gradient(180deg, transparent 52%, rgba(0, 0, 0, 0.6) 76%, #000 95%);
+        mask-image: linear-gradient(180deg, transparent 52%, rgba(0, 0, 0, 0.6) 76%, #000 95%);
+      }
+      .milk {
+        background: linear-gradient(
+          180deg,
+          rgba(236, 242, 250, 0) 0%,
+          rgba(236, 242, 250, 0) 50%,
+          rgba(236, 242, 250, 0.1) 72%,
+          rgba(236, 242, 250, 0.16) 92%,
+          rgba(236, 242, 250, 0.18) 100%
+        );
+      }
+
+      /* refracted edge band: real glass darkens the light it bends near the rim
+         (stronger on the shadow side, lower right). A dark, cool, low-alpha inset
+         shade: it reads as a grey glass band over the white shirt/wall and is
+         nearly invisible over dark footage. Painted (box-shadow only), so it adds
+         no extra backdrop pass / heavy overlay. */
+      .band {
+        box-shadow:
+          inset 0 0 26px 5px rgba(34, 42, 60, 0.2),
+          inset -12px -16px 30px -8px rgba(34, 42, 60, 0.22);
+      }
+
+      .shadow {
+        box-shadow:
+          0 26px 48px -14px rgba(0, 0, 0, 0.28),
+          0 8px 16px -6px rgba(0, 0, 0, 0.22);
+      }
+
+      /* fresnel ring: lighter edge on dark, darker edge on white -> volume */
+      .fres {
+        background: linear-gradient(160deg, rgba(255, 255, 255, 0.62) 0%, rgba(214, 222, 236, 0.38) 40%, rgba(120, 130, 150, 0.4) 70%, rgba(36, 42, 58, 0.55) 100%);
+        -webkit-mask-image: radial-gradient(circle closest-side, transparent 60%, rgba(0, 0, 0, 0.22) 78%, rgba(0, 0, 0, 0.62) 92%, #000 100%);
+        mask-image: radial-gradient(circle closest-side, transparent 60%, rgba(0, 0, 0, 0.22) 78%, rgba(0, 0, 0, 0.62) 92%, #000 100%);
+      }
+
+      /* hairline + inner bevel light + 1px dark outer contour */
+      .edge {
+        box-shadow:
+          inset 0 0 0 1.25px rgba(255, 255, 255, 0.42),
+          inset 5px 7px 10px -6px rgba(255, 255, 255, 0.75),
+          inset -6px -8px 16px -8px rgba(255, 255, 255, 0.55),
+          inset 0 -18px 30px -18px rgba(255, 255, 255, 0.35),
+          0 0 0 1px rgba(10, 14, 24, 0.18);
+      }
+
+      /* specular rim: bright arc top-left, softer arc bottom-right */
+      .rim {
+        background: conic-gradient(
+          from 45deg,
+          rgba(255, 255, 255, 0.08) 0deg,
+          rgba(255, 255, 255, 0.7) 90deg,
+          rgba(255, 255, 255, 0.08) 160deg,
+          rgba(255, 255, 255, 0.08) 200deg,
+          rgba(255, 255, 255, 1) 262deg,
+          rgba(255, 255, 255, 1) 278deg,
+          rgba(255, 255, 255, 0.08) 360deg
+        );
+        -webkit-mask: radial-gradient(circle 138px at 50% 50%, transparent 127px, #000 134px, #000 137.3px, transparent 138.2px);
+        mask: radial-gradient(circle 138px at 50% 50%, transparent 127px, #000 134px, #000 137.3px, transparent 138.2px);
+      }
+      .crescent {
+        background: conic-gradient(
+          from 45deg,
+          rgba(255, 255, 255, 0) 0deg,
+          rgba(255, 255, 255, 0.16) 90deg,
+          rgba(255, 255, 255, 0) 150deg,
+          rgba(255, 255, 255, 0) 210deg,
+          rgba(255, 255, 255, 0.34) 270deg,
+          rgba(255, 255, 255, 0) 330deg
+        );
+        -webkit-mask: radial-gradient(circle 138px at 50% 50%, transparent 100px, #000 122px, #000 127px, transparent 133px);
+        mask: radial-gradient(circle 138px at 50% 50%, transparent 100px, #000 122px, #000 127px, transparent 133px);
+      }
+      .glint {
+        position: absolute;
+        left: 58px;
+        top: 44px;
+        width: 46px;
+        height: 15px;
+        border-radius: 50%;
+        transform: rotate(-44deg);
+        background: radial-gradient(ellipse at 50% 50%, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.75) 30%, rgba(255, 255, 255, 0) 70%);
+        opacity: 0;
+      }
+
+      .num {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Inter", sans-serif;
+        font-weight: 800;
+        font-size: 152px;
+        line-height: 1;
+        letter-spacing: -0.02em;
+        padding-bottom: 6px;
+        opacity: 0;
+      }
+      .num span {
+        display: block;
+        background: linear-gradient(180deg, #fff3a6 0%, #ffe14a 22%, #ffd60a 48%, #ffc300 76%, #f5a900 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        -webkit-text-fill-color: transparent;
+        -webkit-text-stroke: 1.25px rgba(206, 140, 0, 0.82);
+        filter: drop-shadow(0 1.5px 0 rgba(190, 128, 0, 0.9)) drop-shadow(0 7px 15px rgba(84, 44, 0, 0.44)) drop-shadow(0 0 18px rgba(0, 0, 0, 0.1));
+      }
+
+      /* ---------- Square blur over sphere 3 ----------
+         Both wrappers live INSIDE #s3 .pop (transform-only), so the square scales
+         with the sphere and can never overhang it. 190px / 22px radius: farthest
+         corner point is (95-22)*sqrt2+22 = 125px from centre, inside the 127px
+         rim band of the 138px sphere.
+           .qbw > .qbed : desaturates what is refracted behind the '?' (painted
+                          BEFORE .num), so the '?' is the only saturated yellow
+                          under the square (gold trophy behind sphere 3)
+           .sqw > .sq   : the frosted square itself (painted AFTER .num) */
+      .qbw,
+      .sqw {
+        position: absolute;
+        left: 43px;
+        top: 43px;
+        width: 190px;
+        height: 190px;
+      }
+      .qbed {
+        position: absolute;
+        inset: 0;
+        border-radius: 22px;
+        -webkit-backdrop-filter: saturate(0.15) brightness(0.95);
+        backdrop-filter: saturate(0.15) brightness(0.95);
+        opacity: 0;
+      }
+      .sq {
+        position: absolute;
+        inset: 0;
+        border-radius: 22px;
+        -webkit-backdrop-filter: blur(0px) saturate(1) brightness(1);
+        backdrop-filter: blur(0px) saturate(1) brightness(1);
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.13) 45%, rgba(255, 255, 255, 0.34) 100%);
+        box-shadow:
+          inset 0 0 0 1.5px rgba(255, 255, 255, 0.92),
+          inset 0 2px 0 rgba(255, 255, 255, 0.6),
+          inset 0 -12px 22px -14px rgba(255, 255, 255, 0.55),
+          0 0 0 1px rgba(0, 0, 0, 0.06),
+          0 20px 38px -14px rgba(0, 0, 0, 0.4);
+        opacity: 0;
       }
     </style>
   </head>
   <body>
+    <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+      <filter id="lens1" x="0" y="0" width="1" height="1" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+        <feImage class="mapR" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mR" />
+        <feImage class="mapG" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mG" />
+        <feImage class="mapB" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mB" />
+        <feDisplacementMap class="dm dm1" in="SourceGraphic" in2="mR" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dR" />
+        <feDisplacementMap class="dm dm1" in="SourceGraphic" in2="mG" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dG" />
+        <feDisplacementMap class="dm dm1" in="SourceGraphic" in2="mB" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dB" />
+        <feColorMatrix in="dR" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="cR" />
+        <feColorMatrix in="dG" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="cG" />
+        <feColorMatrix in="dB" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="cB" />
+        <feComposite in="cR" in2="cG" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="cRG" />
+        <feComposite in="cRG" in2="cB" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+      </filter>
+      <filter id="lens2" x="0" y="0" width="1" height="1" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+        <feImage class="mapR" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mR" />
+        <feImage class="mapG" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mG" />
+        <feImage class="mapB" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mB" />
+        <feDisplacementMap class="dm dm2" in="SourceGraphic" in2="mR" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dR" />
+        <feDisplacementMap class="dm dm2" in="SourceGraphic" in2="mG" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dG" />
+        <feDisplacementMap class="dm dm2" in="SourceGraphic" in2="mB" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dB" />
+        <feColorMatrix in="dR" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="cR" />
+        <feColorMatrix in="dG" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="cG" />
+        <feColorMatrix in="dB" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="cB" />
+        <feComposite in="cR" in2="cG" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="cRG" />
+        <feComposite in="cRG" in2="cB" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+      </filter>
+      <filter id="lens3" x="0" y="0" width="1" height="1" filterUnits="objectBoundingBox" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+        <feImage class="mapR" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mR" />
+        <feImage class="mapG" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mG" />
+        <feImage class="mapB" x="0" y="0" width="1" height="1" preserveAspectRatio="none" result="mB" />
+        <feDisplacementMap class="dm dm3" in="SourceGraphic" in2="mR" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dR" />
+        <feDisplacementMap class="dm dm3" in="SourceGraphic" in2="mG" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dG" />
+        <feDisplacementMap class="dm dm3" in="SourceGraphic" in2="mB" scale="0.2" xChannelSelector="R" yChannelSelector="G" result="dB" />
+        <feColorMatrix in="dR" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="cR" />
+        <feColorMatrix in="dG" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="cG" />
+        <feColorMatrix in="dB" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="cB" />
+        <feComposite in="cR" in2="cG" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" result="cRG" />
+        <feComposite in="cRG" in2="cB" operator="arithmetic" k1="0" k2="1" k3="1" k4="0" />
+      </filter>
+    </svg>
+
     <div
       id="root"
       data-composition-id="main"
@@ -46,21 +315,229 @@
         data-duration="7.33"
         data-track-index="0"
         style="position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover" data-has-audio="true"></video>
-      
 
-      <!--
-        Add your clips here. Example:
-        <div id="title" class="clip" data-start="0" data-duration="5" data-track-index="1"
-             style="font-size: 64px; color: #fff; padding: 40px">
-          Hello World
+      <!-- Sound design: glass entrances + one exit file with three staggered pops.
+           Levels sit ~7-12 LU under the voice; enter-2/3 carry narrow cuts on their
+           ring partials (speech-formant band) so they do not mask "motivos"/"tercero".
+           sfx-exit pops (file 0.24/0.32/0.40) land on the blink-outs at ~6.53/6.61/6.69. -->
+      <audio id="sfx-enter-1" src="assets/sfx/enter-1.wav" data-start="0.79" data-duration="0.85" data-track-index="10" data-volume="0.42"></audio>
+      <audio id="sfx-enter-2" src="assets/sfx/enter-2.wav" data-start="1.39" data-duration="0.85" data-track-index="11" data-volume="0.4" data-fx-chain='{"version":1,"nodes":[{"type":"peaking","id":"r1","params":{"frequency":1482,"gain":-6,"q":3}},{"type":"peaking","id":"r2","params":{"frequency":738,"gain":-4,"q":3}}]}'></audio>
+      <audio id="sfx-enter-3" src="assets/sfx/enter-3.wav" data-start="3.97" data-duration="0.9" data-track-index="12" data-volume="0.4" data-fx-chain='{"version":1,"nodes":[{"type":"peaking","id":"r1","params":{"frequency":990,"gain":-6,"q":3}},{"type":"peaking","id":"r2","params":{"frequency":1318,"gain":-5,"q":3}}]}'></audio>
+      <audio id="sfx-exit" src="assets/sfx/exit.wav" data-start="6.29" data-duration="0.58" data-track-index="13" data-volume="0.42"></audio>
+
+      <div class="sph" id="s1">
+        <div class="float">
+          <div class="pop">
+            <div class="glass"></div>
+            <div class="ly frost"></div>
+            <div class="ly milk"></div>
+            <div class="ly band"></div>
+            <div class="ly shadow"></div>
+            <div class="ly fres"></div>
+            <div class="ly edge"></div>
+            <div class="ly crescent"></div>
+            <div class="ly rim"></div>
+            <div class="glint"></div>
+            <div class="num"><span>1</span></div>
+          </div>
         </div>
-      -->
+      </div>
+
+      <div class="sph" id="s2">
+        <div class="float">
+          <div class="pop">
+            <div class="glass"></div>
+            <div class="ly frost"></div>
+            <div class="ly milk"></div>
+            <div class="ly band"></div>
+            <div class="ly shadow"></div>
+            <div class="ly fres"></div>
+            <div class="ly edge"></div>
+            <div class="ly crescent"></div>
+            <div class="ly rim"></div>
+            <div class="glint"></div>
+            <div class="num"><span>2</span></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sph" id="s3">
+        <div class="float">
+          <div class="pop">
+            <div class="glass"></div>
+            <div class="ly frost"></div>
+            <div class="ly milk"></div>
+            <div class="ly band"></div>
+            <div class="ly shadow"></div>
+            <div class="ly fres"></div>
+            <div class="ly edge"></div>
+            <div class="ly crescent"></div>
+            <div class="ly rim"></div>
+            <div class="glint"></div>
+            <div class="qbw"><div class="qbed"></div></div>
+            <div class="num"><span>?</span></div>
+            <div class="sqw"><div class="sq"></div></div>
+          </div>
+        </div>
+      </div>
     </div>
 
     <script>
-      const tl = gsap.timeline({ paused: true });
-      // Example: tl.from("#title", { opacity: 0, y: -50, duration: 1 }, 0);
-      window.__timelines["main"] = tl;
+      (function () {
+        /* ---------- Liquid-lens displacement maps (deterministic, built once) ----------
+           Geometry in CSS px of the .glass box: sphere D=276 (R=138) + 40px pad.
+           s(rho): where (in units of R, from the centre) each visible pixel samples the
+           footage. Centre: s = M*rho (magnified). Bevel: steep rise to (1+Q) at the rim,
+           i.e. footage from just outside the sphere is compressed into the rim. */
+        const D = 276, R = D / 2, PAD = 40, BOX = D + 2 * PAD;
+        const RES = 2; // map pixels per CSS px
+        const N = BOX * RES;
+        const M = 0.82, Q = 0.2, NEXP = 6, CA = 2.4;
+
+        function sampleRadius(rho) {
+          if (rho <= 1) return M * rho + (1 + Q - M) * Math.pow(rho, NEXP);
+          return 1 + Q + (rho - 1);
+        }
+        function smooth(a, b, x) {
+          const t = Math.min(1, Math.max(0, (x - a) / (b - a)));
+          return t * t * (3 - 2 * t);
+        }
+        // displacement (CSS px) for channel offset k (-1 blue, 0 green, +1 red)
+        const HALF = BOX / 2 - 0.75;
+        function disp(px, py, k) {
+          const r = Math.hypot(px, py);
+          const rho = r / R;
+          if (r < 1e-6) return [0, 0];
+          const ux = px / r, uy = py / r;
+          const sr = sampleRadius(rho) * R + k * CA * smooth(0.55, 1.0, rho);
+          let sx = ux * sr, sy = uy * sr;
+          sx = Math.max(-HALF, Math.min(HALF, sx));
+          sy = Math.max(-HALF, Math.min(HALF, sy));
+          return [sx - px, sy - py];
+        }
+        let maxD = 0;
+        for (let i = 0; i <= 400; i++) {
+          const rho = (i / 400) * 1.3;
+          const v = Math.abs(sampleRadius(rho) - rho) * R + CA;
+          if (v > maxD) maxD = v;
+        }
+        const SCALE_PX = Math.ceil(2 * (maxD + 1));
+        const SCALE = SCALE_PX / BOX;
+
+        function buildMap(k) {
+          const c = document.createElement("canvas");
+          c.width = N;
+          c.height = N;
+          const ctx = c.getContext("2d");
+          const img = ctx.createImageData(N, N);
+          const d = img.data;
+          for (let j = 0; j < N; j++) {
+            const py = (j + 0.5) / RES - BOX / 2;
+            for (let i = 0; i < N; i++) {
+              const px = (i + 0.5) / RES - BOX / 2;
+              const v = disp(px, py, k);
+              const o = (j * N + i) * 4;
+              d[o] = Math.max(0, Math.min(255, Math.round(127.5 + (v[0] / SCALE_PX) * 255)));
+              d[o + 1] = Math.max(0, Math.min(255, Math.round(127.5 + (v[1] / SCALE_PX) * 255)));
+              d[o + 2] = 128;
+              d[o + 3] = 255;
+            }
+          }
+          ctx.putImageData(img, 0, 0);
+          return c.toDataURL("image/png");
+        }
+        const urls = { mapR: buildMap(1), mapG: buildMap(0), mapB: buildMap(-1) };
+        Object.keys(urls).forEach(function (k) {
+          document.querySelectorAll("feImage." + k).forEach(function (el) {
+            el.setAttribute("href", urls[k]);
+          });
+        });
+        document.querySelectorAll("feDisplacementMap.dm").forEach(function (el) {
+          el.setAttribute("scale", SCALE.toFixed(5));
+        });
+
+        /* ---------- Timeline ---------- */
+        gsap.config({ force3D: false });
+        const tl = gsap.timeline({ paused: true });
+
+        const LAYERS = [".glass", ".frost", ".milk", ".band", ".shadow", ".fres", ".edge", ".crescent", ".rim", ".glint"];
+        const FRES_OPACITY = 0.45;
+
+        function enter(id, t, numDelay) {
+          const nd = numDelay === undefined ? 0.08 : numDelay;
+          const s = "#" + id + " ";
+          tl.fromTo(s + ".pop", { scale: 0.35, y: 44 }, { scale: 1, y: 0, duration: 0.62, ease: "back.out(1.45)" }, t);
+          tl.fromTo([s + ".glass", s + ".frost", s + ".milk", s + ".band"], { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, t);
+          tl.fromTo(s + ".shadow", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "power2.out" }, t + 0.08);
+          tl.fromTo(".dm" + id.slice(1), { attr: { scale: SCALE * 0.15 } }, { attr: { scale: SCALE }, duration: 0.8, ease: "back.out(1.9)" }, t);
+          tl.fromTo([s + ".edge", s + ".rim", s + ".crescent"], { opacity: 0 }, { opacity: 1, duration: 0.36, ease: "power2.out" }, t + 0.05);
+          tl.fromTo(s + ".fres", { opacity: 0 }, { opacity: FRES_OPACITY, duration: 0.36, ease: "power2.out" }, t + 0.05);
+          tl.fromTo(s + ".glint", { opacity: 0 }, { opacity: 1, duration: 0.3, ease: "power2.out" }, t + 0.16);
+          // numeral: opacity snaps in fast (no half-transparent olive over green),
+          // scale pops separately, short focus-pull (4px -> 0) finished within ~0.18s
+          tl.fromTo(s + ".num", { opacity: 0 }, { opacity: 1, duration: 0.08, ease: "power1.out" }, t + nd);
+          tl.fromTo(s + ".num", { scale: 0.4 }, { scale: 1, duration: 0.46, ease: "back.out(2)" }, t + nd);
+          tl.fromTo(s + ".num", { filter: "blur(4px)" }, { filter: "blur(0px)", duration: 0.18, ease: "power2.out" }, t + nd);
+        }
+
+        function float(id, t, plays) {
+          // even number of plays -> ends back at y = 0
+          tl.fromTo("#" + id + " .float", { y: 0 }, { y: -3.5, duration: 1.3, ease: "sine.inOut", yoyo: true, repeat: plays - 1 }, t);
+        }
+
+        const EXIT_DUR = 0.26;   // .pop scale 1 -> 0.4 (shrinks visibly while it fades)
+        const EXIT_EASE = "power2.in";
+        const EXIT_FADE = 0.21;  // every light/glass layer, starts with the scale -> no ghost-ring frames
+        function exit(id, t, numDur) {
+          const s = "#" + id + " ";
+          tl.fromTo(s + ".num", { opacity: 1, scale: 1, filter: "blur(0px)" }, { opacity: 0, scale: 0.8, filter: "blur(3px)", duration: numDur, ease: "power1.in", immediateRender: false }, t);
+          tl.fromTo(s + ".pop", { scale: 1, y: 0 }, { scale: 0.4, y: 6, duration: EXIT_DUR, ease: EXIT_EASE, immediateRender: false }, t);
+          tl.fromTo(".dm" + id.slice(1), { attr: { scale: SCALE } }, { attr: { scale: SCALE * 0.3 }, duration: EXIT_DUR, ease: "power2.in", immediateRender: false }, t);
+          tl.fromTo(
+            LAYERS.filter(function (l) { return l !== ".fres"; }).map(function (l) { return s + l; }),
+            { opacity: 1 },
+            { opacity: 0, duration: EXIT_FADE, ease: "sine.in", immediateRender: false },
+            t
+          );
+          tl.fromTo(s + ".fres", { opacity: FRES_OPACITY }, { opacity: 0, duration: EXIT_FADE, ease: "sine.in", immediateRender: false }, t);
+        }
+
+        enter("s1", 0.8);
+        enter("s2", 1.4);
+        // "?" is born under an already-frosted square (square starts 4.02, "?" 4.11),
+        // so there is never a crisp "?" frame
+        enter("s3", 3.98, 0.13);
+
+        float("s1", 1.42, 4); // 1.42 -> 6.62
+        float("s2", 2.02, 2); // 2.02 -> 4.62
+        float("s3", 4.6, 2);  // 4.60 -> 7.20 (tiny amplitude, exit scales from centre)
+
+        // square blur on sphere 3: lives inside .pop, so it grows WITH the sphere.
+        // Frost is already on (blur 7px+) before the "?" fades in at 4.11; small
+        // settle (rotation -4 -> 0, scale 1.06 -> 1) lands with the frost swell of
+        // sfx-enter-3 (~4.11).
+        tl.fromTo(["#s3 .sqw", "#s3 .qbw"], { scale: 1.06, rotation: -4 }, { scale: 1, rotation: 0, duration: 0.5, ease: "back.out(1.3)" }, 4.02);
+        tl.set("#s3 .sq", { opacity: 0, backdropFilter: "blur(7px) saturate(1) brightness(1)" }, 0);
+        tl.fromTo("#s3 .sq", { opacity: 0 }, { opacity: 1, duration: 0.12, ease: "power1.out", immediateRender: false }, 4.02);
+        tl.fromTo(
+          "#s3 .sq",
+          { backdropFilter: "blur(7px) saturate(1) brightness(1)" },
+          { backdropFilter: "blur(12px) saturate(1.12) brightness(1.06)", duration: 0.4, ease: "power2.out", immediateRender: false },
+          4.02
+        );
+        tl.fromTo("#s3 .qbed", { opacity: 0 }, { opacity: 1, duration: 0.2, ease: "power1.out" }, 4.02);
+
+        // exits ~0.4s earlier than before: the speaker leans in on "hasta que lo ven"
+        // and his eyes reach the sphere row at ~6.47; everything is gone by ~6.70
+        exit("s1", 6.32, 0.1);
+        exit("s2", 6.4, 0.1);
+        exit("s3", 6.48, 0.1); // "?" is gone by 6.58, before the square starts to fade
+        // square (+ its desaturation bed) shrink with .pop; blur stays at full
+        // strength while fading, and only after the "?" underneath is gone
+        tl.fromTo(["#s3 .sq", "#s3 .qbed"], { opacity: 1 }, { opacity: 0, duration: 0.11, ease: "sine.in", immediateRender: false }, 6.58);
+
+        window.__timelines["main"] = tl;
+      })();
     </script>
   </body>
 </html>

@@ -1,4 +1,6 @@
 snapshots/
-renders/
+renders/*
+!renders/esferas-final.mp4
 node_modules/
 .hyperframes/
+.transcode-cache/
