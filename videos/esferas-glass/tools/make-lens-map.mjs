@@ -1,11 +1,11 @@
 // Genera el mapa de desplazamiento (lente) que usa feDisplacementMap para refractar el fondo.
 // R = desplazamiento X, G = desplazamiento Y (128 = sin desplazamiento).
-// Uso: node tools/make-lens-map.mjs  →  assets/glass/lens-map.png + imprime SCALE
+// Uso: node tools/make-lens-map.mjs [diámetro] [caja]  →  assets/glass/lens-map.png + imprime SCALE
 import { writeFileSync, mkdirSync } from "node:fs";
 import { deflateSync } from "node:zlib";
 
-const D = 260; // diámetro visible de la esfera (px)
-const L = 354; // caja de refracción (más grande que la esfera para traer fondo de afuera)
+const D = Number(process.argv[2] ?? 174); // diámetro visible de la esfera (px)
+const L = Number(process.argv[3] ?? 236); // caja de refracción (más grande que la esfera para traer fondo de afuera)
 const R = D / 2;
 
 // Radio de muestreo s(r) en unidades del radio:

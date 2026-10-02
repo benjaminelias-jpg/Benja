@@ -3,3 +3,4 @@
 .waveform-cache/
 snapshots/
 node_modules/
+.transcode-cache/

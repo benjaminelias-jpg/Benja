@@ -16,9 +16,9 @@
           position: absolute;
           inset: 0;
           pointer-events: none;
-          --d: 260px; /* diámetro: ~24% del ancho */
-          --gap: 56px;
-          --lens: 354px; /* caja de refracción, más grande que la esfera */
+          --d: 174px; /* diámetro: ~24% del ancho (720) */
+          --gap: 38px;
+          --lens: 236px; /* caja de refracción, más grande que la esfera */
         }
         /* Fila de esferas: centrada en ancho, mitad exacta de la altura */
         #orbs-1,
@@ -44,7 +44,7 @@
           height: 22%;
           border-radius: 50%;
           background: radial-gradient(closest-side, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0));
-          filter: blur(9px);
+          filter: blur(6px);
         }
 
         /* Refracción real del video que está detrás */
@@ -75,10 +75,10 @@
             radial-gradient(ellipse 58% 30% at 54% 86%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 72%),
             linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0) 45%, rgba(255, 255, 255, 0.04) 100%);
           box-shadow:
-            inset 0 -14px 26px rgba(255, 255, 255, 0.1),
-            inset 0 12px 22px rgba(0, 0, 0, 0.14),
-            inset 0 0 0 1.5px rgba(0, 0, 0, 0.1),
-            0 26px 50px -18px rgba(0, 0, 0, 0.45);
+            inset 0 -9px 17px rgba(255, 255, 255, 0.1),
+            inset 0 8px 15px rgba(0, 0, 0, 0.14),
+            inset 0 0 0 1px rgba(0, 0, 0, 0.1),
+            0 17px 34px -12px rgba(0, 0, 0, 0.45);
         }
 
         /* Número en el amarillo de sistema de Apple */
@@ -90,18 +90,18 @@
           justify-content: center;
           font-family: "Orb Semibold", sans-serif;
           font-weight: 600;
-          font-size: 138px;
+          font-size: 92px;
           line-height: 1;
           letter-spacing: -0.02em;
           color: #ffd60a;
           text-shadow:
-            0 2px 3px rgba(120, 80, 0, 0.35),
-            0 6px 16px rgba(0, 0, 0, 0.25),
-            0 0 26px rgba(255, 214, 10, 0.35);
+            0 1px 2px rgba(120, 80, 0, 0.35),
+            0 4px 11px rgba(0, 0, 0, 0.25),
+            0 0 17px rgba(255, 214, 10, 0.35);
         }
         .orb-glyph {
           display: block;
-          margin-top: -8px;
+          margin-top: -5px;
         }
 
         /* Brillo especular superior y reflejo inferior */
@@ -132,8 +132,8 @@
           );
         }
         .orb-rim {
-          -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.5px), #000 calc(100% - 0.8px), transparent 100%);
-          mask: radial-gradient(closest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.5px), #000 calc(100% - 0.8px), transparent 100%);
+          -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 2.5px), #000 calc(100% - 1.8px), #000 calc(100% - 0.6px), transparent 100%);
+          mask: radial-gradient(closest-side, transparent calc(100% - 2.5px), #000 calc(100% - 1.8px), #000 calc(100% - 0.6px), transparent 100%);
         }
         .orb-rim-glow-wrap {
           position: absolute;
@@ -141,39 +141,24 @@
         }
         .orb-rim-glow {
           opacity: 0.45;
-          filter: blur(3px);
-          -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 16px), #000 calc(100% - 6px), transparent 100%);
-          mask: radial-gradient(closest-side, transparent calc(100% - 16px), #000 calc(100% - 6px), transparent 100%);
+          filter: blur(2px);
+          -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 11px), #000 calc(100% - 4px), transparent 100%);
+          mask: radial-gradient(closest-side, transparent calc(100% - 11px), #000 calc(100% - 4px), transparent 100%);
         }
 
-        /* Esfera 3: blur cuadrado que tapa el "?" */
-        .orb-veil {
-          position: absolute;
-          width: 66%;
-          height: 66%;
-          left: 17%;
-          top: 17%;
-          border-radius: 22px;
-          backdrop-filter: blur(18px) saturate(140%);
-          background: rgba(255, 255, 255, 0.1);
-          border: 1px solid rgba(255, 255, 255, 0.3);
-          box-shadow:
-            inset 0 1px 0 rgba(255, 255, 255, 0.35),
-            0 10px 26px rgba(0, 0, 0, 0.2);
-        }
       </style>
 
-      <div id="root" data-composition-id="orbs" data-width="1080" data-height="1920">
+      <div id="root" data-composition-id="orbs" data-width="720" data-height="1280">
         <!-- Lente: el mapa (tools/make-lens-map.mjs) desplaza el fondo como una esfera de vidrio.
              3 desplazamientos con escala apenas distinta por canal = aberración cromática leve.
              La escala es fija: el vidrio "aparece" con el fade de su capa, no animando el filtro. -->
         <svg width="0" height="0" style="position: absolute" aria-hidden="true">
           <defs>
-            <filter id="orbs-lens" x="0" y="0" width="354" height="354" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feImage href="assets/glass/lens-map.png" x="0" y="0" width="354" height="354" preserveAspectRatio="none" result="map" />
-              <feDisplacementMap in="SourceGraphic" in2="map" scale="71" xChannelSelector="R" yChannelSelector="G" result="dr" />
-              <feDisplacementMap in="SourceGraphic" in2="map" scale="73.5" xChannelSelector="R" yChannelSelector="G" result="dg" />
-              <feDisplacementMap in="SourceGraphic" in2="map" scale="76" xChannelSelector="R" yChannelSelector="G" result="db" />
+            <filter id="orbs-lens" x="0" y="0" width="236" height="236" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feImage href="assets/glass/lens-map.png" x="0" y="0" width="236" height="236" preserveAspectRatio="none" result="map" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="48" xChannelSelector="R" yChannelSelector="G" result="dr" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="49.7" xChannelSelector="R" yChannelSelector="G" result="dg" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="51.4" xChannelSelector="R" yChannelSelector="G" result="db" />
               <feColorMatrix in="dr" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
               <feColorMatrix in="dg" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g" />
               <feColorMatrix in="db" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b" />
@@ -211,7 +196,6 @@
           <div class="orb-dim orbs-f3"></div>
           <div class="orb-body orbs-f3"></div>
           <div id="orbs-digit-3" class="orb-digit"><span class="orb-glyph" data-layout-allow-occlusion>?</span></div>
-          <div id="orbs-veil" class="orb-veil"></div>
           <div class="orb-gloss orbs-f3"></div>
           <div class="orb-rim-glow-wrap orbs-f3"><div class="orb-rim-glow"></div></div>
           <div class="orb-rim orbs-f3"></div>
@@ -242,11 +226,9 @@
         enter("#orbs-2", ".orbs-f2", "#orbs-digit-2", 0.5);
         enter("#orbs-3", ".orbs-f3", "#orbs-digit-3", 1.0);
 
-        // Blur cuadrado de la esfera 3, justo después de su "?"
-        tl.fromTo("#orbs-veil", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, 1.3);
 
         // Salidas en orden inverso: 3 → 2 → 1
-        leave("#orbs-3", ".orbs-f3", ["#orbs-digit-3", "#orbs-veil"], OUT);
+        leave("#orbs-3", ".orbs-f3", "#orbs-digit-3", OUT);
         leave("#orbs-2", ".orbs-f2", "#orbs-digit-2", OUT + 0.2);
         leave("#orbs-1", ".orbs-f1", "#orbs-digit-1", OUT + 0.4);
 
