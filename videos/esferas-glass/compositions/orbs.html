@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+  </head>
+  <body>
+    <template>
+      <style>
+        @font-face {
+          font-family: "Orb Semibold";
+          src: url("assets/fonts/inter-semibold-latin.woff2") format("woff2");
+          font-weight: 600;
+          font-style: normal;
+        }
+        #root {
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          --d: 260px; /* diámetro: ~24% del ancho */
+          --gap: 56px;
+          --lens: 354px; /* caja de refracción, más grande que la esfera */
+        }
+        /* Fila de esferas: centrada en ancho, mitad exacta de la altura */
+        #orbs-1,
+        #orbs-2,
+        #orbs-3 {
+          position: absolute;
+          top: 50%;
+          width: var(--d);
+          height: var(--d);
+          margin-top: calc(var(--d) / -2);
+          margin-left: calc(var(--d) / -2);
+        }
+        #orbs-1 { left: calc(50% - var(--d) - var(--gap)); }
+        #orbs-2 { left: 50%; }
+        #orbs-3 { left: calc(50% + var(--d) + var(--gap)); }
+
+        /* Sombra proyectada */
+        .orb-shadow {
+          position: absolute;
+          left: 7%;
+          width: 86%;
+          top: 90%;
+          height: 22%;
+          border-radius: 50%;
+          background: radial-gradient(closest-side, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0));
+          filter: blur(9px);
+        }
+
+        /* Refracción real del video que está detrás */
+        .orb-lens {
+          position: absolute;
+          width: var(--lens);
+          height: var(--lens);
+          left: calc((var(--d) - var(--lens)) / 2);
+          top: calc((var(--d) - var(--lens)) / 2);
+          clip-path: circle(calc(var(--d) / 2) at 50% 50%);
+          backdrop-filter: url(#orbs-lens);
+        }
+
+        /* Atenuado central (como el "Clear" de iOS sobre fondos claros): ayuda a leer el amarillo */
+        .orb-dim {
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          background: radial-gradient(circle at 50% 50%, rgba(0, 0, 0, 0.22) 0%, rgba(0, 0, 0, 0.14) 42%, rgba(0, 0, 0, 0) 72%);
+        }
+
+        /* Cuerpo: tinte casi nulo, cáustica abajo, sombreado interno */
+        .orb-body {
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          background:
+            radial-gradient(ellipse 58% 30% at 54% 86%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 72%),
+            linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0) 45%, rgba(255, 255, 255, 0.04) 100%);
+          box-shadow:
+            inset 0 -14px 26px rgba(255, 255, 255, 0.1),
+            inset 0 12px 22px rgba(0, 0, 0, 0.14),
+            inset 0 0 0 1.5px rgba(0, 0, 0, 0.1),
+            0 26px 50px -18px rgba(0, 0, 0, 0.45);
+        }
+
+        /* Número en el amarillo de sistema de Apple */
+        .orb-digit {
+          position: absolute;
+          inset: 0;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-family: "Orb Semibold", sans-serif;
+          font-weight: 600;
+          font-size: 138px;
+          line-height: 1;
+          letter-spacing: -0.02em;
+          color: #ffd60a;
+          text-shadow:
+            0 2px 3px rgba(120, 80, 0, 0.35),
+            0 6px 16px rgba(0, 0, 0, 0.25),
+            0 0 26px rgba(255, 214, 10, 0.35);
+        }
+        .orb-glyph {
+          display: block;
+          margin-top: -8px;
+        }
+
+        /* Brillo especular superior y reflejo inferior */
+        .orb-gloss {
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          background:
+            radial-gradient(ellipse 46% 24% at 36% 17%, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0) 70%),
+            radial-gradient(ellipse 14% 7% at 74% 80%, rgba(255, 255, 255, 0.22), rgba(255, 255, 255, 0) 80%);
+        }
+
+        /* Aro de luz fino: más intenso arriba-izquierda y abajo-derecha */
+        .orb-rim,
+        .orb-rim-glow {
+          position: absolute;
+          inset: 0;
+          border-radius: 50%;
+          background: conic-gradient(
+            from 0deg,
+            rgba(255, 255, 255, 0.4) 0deg,
+            rgba(255, 255, 255, 0.16) 70deg,
+            rgba(255, 255, 255, 0.85) 135deg,
+            rgba(255, 255, 255, 0.16) 200deg,
+            rgba(255, 255, 255, 0.4) 255deg,
+            rgba(255, 255, 255, 1) 315deg,
+            rgba(255, 255, 255, 0.4) 360deg
+          );
+        }
+        .orb-rim {
+          -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.5px), #000 calc(100% - 0.8px), transparent 100%);
+          mask: radial-gradient(closest-side, transparent calc(100% - 3.5px), #000 calc(100% - 2.5px), #000 calc(100% - 0.8px), transparent 100%);
+        }
+        .orb-rim-glow-wrap {
+          position: absolute;
+          inset: 0;
+        }
+        .orb-rim-glow {
+          opacity: 0.45;
+          filter: blur(3px);
+          -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 16px), #000 calc(100% - 6px), transparent 100%);
+          mask: radial-gradient(closest-side, transparent calc(100% - 16px), #000 calc(100% - 6px), transparent 100%);
+        }
+
+        /* Esfera 3: blur cuadrado que tapa el "?" */
+        .orb-veil {
+          position: absolute;
+          width: 66%;
+          height: 66%;
+          left: 17%;
+          top: 17%;
+          border-radius: 22px;
+          backdrop-filter: blur(18px) saturate(140%);
+          background: rgba(255, 255, 255, 0.1);
+          border: 1px solid rgba(255, 255, 255, 0.3);
+          box-shadow:
+            inset 0 1px 0 rgba(255, 255, 255, 0.35),
+            0 10px 26px rgba(0, 0, 0, 0.2);
+        }
+      </style>
+
+      <div id="root" data-composition-id="orbs" data-width="1080" data-height="1920">
+        <!-- Lente: el mapa (tools/make-lens-map.mjs) desplaza el fondo como una esfera de vidrio.
+             3 desplazamientos con escala apenas distinta por canal = aberración cromática leve.
+             La escala es fija: el vidrio "aparece" con el fade de su capa, no animando el filtro. -->
+        <svg width="0" height="0" style="position: absolute" aria-hidden="true">
+          <defs>
+            <filter id="orbs-lens" x="0" y="0" width="354" height="354" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feImage href="assets/glass/lens-map.png" x="0" y="0" width="354" height="354" preserveAspectRatio="none" result="map" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="71" xChannelSelector="R" yChannelSelector="G" result="dr" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="73.5" xChannelSelector="R" yChannelSelector="G" result="dg" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="76" xChannelSelector="R" yChannelSelector="G" result="db" />
+              <feColorMatrix in="dr" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+              <feColorMatrix in="dg" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g" />
+              <feColorMatrix in="db" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b" />
+              <feBlend in="r" in2="g" mode="screen" result="rg" />
+              <feBlend in="rg" in2="b" mode="screen" />
+            </filter>
+          </defs>
+        </svg>
+
+        <!-- Sin opacity/filter/clip-path en los ancestros de .orb-lens: eso corta el backdrop
+             y el vidrio dejaría de ver el video. Cada capa hace su propio fade. -->
+        <div id="orbs-1">
+          <div class="orb-shadow orbs-f1"></div>
+          <div class="orb-lens orbs-f1"></div>
+          <div class="orb-dim orbs-f1"></div>
+          <div class="orb-body orbs-f1"></div>
+          <div id="orbs-digit-1" class="orb-digit"><span class="orb-glyph" data-layout-allow-occlusion>1</span></div>
+          <div class="orb-gloss orbs-f1"></div>
+          <div class="orb-rim-glow-wrap orbs-f1"><div class="orb-rim-glow"></div></div>
+          <div class="orb-rim orbs-f1"></div>
+        </div>
+        <div id="orbs-2">
+          <div class="orb-shadow orbs-f2"></div>
+          <div class="orb-lens orbs-f2"></div>
+          <div class="orb-dim orbs-f2"></div>
+          <div class="orb-body orbs-f2"></div>
+          <div id="orbs-digit-2" class="orb-digit"><span class="orb-glyph" data-layout-allow-occlusion>2</span></div>
+          <div class="orb-gloss orbs-f2"></div>
+          <div class="orb-rim-glow-wrap orbs-f2"><div class="orb-rim-glow"></div></div>
+          <div class="orb-rim orbs-f2"></div>
+        </div>
+        <div id="orbs-3">
+          <div class="orb-shadow orbs-f3"></div>
+          <div class="orb-lens orbs-f3"></div>
+          <div class="orb-dim orbs-f3"></div>
+          <div class="orb-body orbs-f3"></div>
+          <div id="orbs-digit-3" class="orb-digit"><span class="orb-glyph" data-layout-allow-occlusion>?</span></div>
+          <div id="orbs-veil" class="orb-veil"></div>
+          <div class="orb-gloss orbs-f3"></div>
+          <div class="orb-rim-glow-wrap orbs-f3"><div class="orb-rim-glow"></div></div>
+          <div class="orb-rim orbs-f3"></div>
+        </div>
+      </div>
+
+      <script>
+        // Tiempos locales (0 = data-start del host en index.html)
+        const OUT = 5.0; // empieza la salida (3 → 2 → 1)
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Entrada: escala 0.6 → 1 con rebote corto; el vidrio (y su refracción) se forma como una gota
+        function enter(orb, fades, digit, t) {
+          tl.fromTo(orb, { scale: 0.6 }, { scale: 1, duration: 0.6, ease: "back.out(1.5)" }, t);
+          tl.fromTo(fades, { opacity: 0 }, { opacity: 1, duration: 0.35, ease: "power1.out" }, t);
+          tl.fromTo(digit, { opacity: 0, scale: 0.7, y: 10 }, { opacity: 1, scale: 1, y: 0, duration: 0.45, ease: "back.out(2)" }, t + 0.1);
+        }
+        // Salida: escala a 0.85 y fade out en 0,3 s
+        function leave(orb, fades, digit, t) {
+          tl.to(orb, { scale: 0.85, duration: 0.3, ease: "power2.in" }, t);
+          tl.to(fades, { opacity: 0, duration: 0.3, ease: "power2.in" }, t);
+          tl.to(digit, { opacity: 0, duration: 0.3, ease: "power2.in" }, t);
+        }
+
+        // Entradas: 1 → 2 → 3, cada 0,5 s
+        enter("#orbs-1", ".orbs-f1", "#orbs-digit-1", 0);
+        enter("#orbs-2", ".orbs-f2", "#orbs-digit-2", 0.5);
+        enter("#orbs-3", ".orbs-f3", "#orbs-digit-3", 1.0);
+
+        // Blur cuadrado de la esfera 3, justo después de su "?"
+        tl.fromTo("#orbs-veil", { opacity: 0, scale: 0.85 }, { opacity: 1, scale: 1, duration: 0.35, ease: "back.out(1.6)" }, 1.3);
+
+        // Salidas en orden inverso: 3 → 2 → 1
+        leave("#orbs-3", ".orbs-f3", ["#orbs-digit-3", "#orbs-veil"], OUT);
+        leave("#orbs-2", ".orbs-f2", "#orbs-digit-2", OUT + 0.2);
+        leave("#orbs-1", ".orbs-f1", "#orbs-digit-1", OUT + 0.4);
+
+        window.__timelines["orbs"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

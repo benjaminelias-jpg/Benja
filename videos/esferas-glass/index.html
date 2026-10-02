@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es" data-resolution="portrait">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=1080, height=1920">
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: #000;
+      }
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+      #fondo {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <!--
+      Tiempos (segundos, tiempo global):
+        - las esferas entran en ORBS_IN (= data-start de #orbs): 1 → +0,5 s → 2 → +0,5 s → 3
+        - salen en ORBS_IN + 5,0 (3), +5,2 (2), +5,4 (1)
+      Para retimear: mover data-start de #orbs y los data-start de los SFX en la misma cantidad.
+    -->
+    <div id="root" data-composition-id="main" data-start="0" data-duration="8" data-width="1080" data-height="1920">
+      <!-- Video original de fondo, con su audio intacto -->
+      <video id="fondo" class="clip" src="assets/video/prueba-foto.mp4" playsinline data-has-audio="true" data-start="0" data-duration="8" data-track-index="0" data-volume="1"></video>
+
+      <!-- Esferas de vidrio (subcomposición) -->
+      <div id="orbs" data-composition-id="orbs" data-composition-src="compositions/orbs.html" data-start="1" data-duration="5.8" data-track-index="1" data-width="1080" data-height="1920"></div>
+
+      <!-- SFX de entrada: pop de vidrio que sube de tono -->
+      <audio id="sfx-in-1" src="assets/sfx/entrada-1.wav" data-start="1" data-duration="0.26" data-track-index="2" data-volume="0.4"></audio>
+      <audio id="sfx-in-2" src="assets/sfx/entrada-2.wav" data-start="1.5" data-duration="0.26" data-track-index="2" data-volume="0.4"></audio>
+      <audio id="sfx-in-3" src="assets/sfx/entrada-3.wav" data-start="2" data-duration="0.26" data-track-index="2" data-volume="0.4"></audio>
+
+      <!-- SFX de salida: swoosh suave -->
+      <audio id="sfx-out-3" src="assets/sfx/salida.wav" data-start="6" data-duration="0.34" data-track-index="3" data-volume="0.35"></audio>
+      <audio id="sfx-out-2" src="assets/sfx/salida.wav" data-start="6.2" data-duration="0.34" data-track-index="4" data-volume="0.35"></audio>
+      <audio id="sfx-out-1" src="assets/sfx/salida.wav" data-start="6.4" data-duration="0.34" data-track-index="5" data-volume="0.35"></audio>
+    </div>
+
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      window.__timelines["main"] = tl;
+    </script>
+  </body>
+</html>
