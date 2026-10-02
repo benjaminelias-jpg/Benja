@@ -16,16 +16,17 @@
           position: absolute;
           inset: 0;
           pointer-events: none;
-          --d: 174px; /* diámetro: ~24% del ancho (720) */
-          --gap: 38px;
-          --lens: 236px; /* caja de refracción, más grande que la esfera */
+          --d: 157px; /* diámetro: ~22% del ancho (720) */
+          --gap: 34px;
+          --offset-y: 40px; /* un poco por debajo de la mitad */
+          --lens: 214px; /* caja de refracción, más grande que la esfera */
         }
         /* Fila de esferas: centrada en ancho, mitad exacta de la altura */
         #orbs-1,
         #orbs-2,
         #orbs-3 {
           position: absolute;
-          top: 50%;
+          top: calc(50% + var(--offset-y));
           width: var(--d);
           height: var(--d);
           margin-top: calc(var(--d) / -2);
@@ -44,7 +45,7 @@
           height: 22%;
           border-radius: 50%;
           background: radial-gradient(closest-side, rgba(0, 0, 0, 0.38), rgba(0, 0, 0, 0));
-          filter: blur(6px);
+          filter: blur(5px);
         }
 
         /* Refracción real del video que está detrás */
@@ -75,10 +76,10 @@
             radial-gradient(ellipse 58% 30% at 54% 86%, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0) 72%),
             linear-gradient(180deg, rgba(0, 0, 0, 0.06) 0%, rgba(0, 0, 0, 0) 45%, rgba(255, 255, 255, 0.04) 100%);
           box-shadow:
-            inset 0 -9px 17px rgba(255, 255, 255, 0.1),
-            inset 0 8px 15px rgba(0, 0, 0, 0.14),
+            inset 0 -8px 15px rgba(255, 255, 255, 0.1),
+            inset 0 7px 13px rgba(0, 0, 0, 0.14),
             inset 0 0 0 1px rgba(0, 0, 0, 0.1),
-            0 17px 34px -12px rgba(0, 0, 0, 0.45);
+            0 15px 30px -11px rgba(0, 0, 0, 0.45);
         }
 
         /* Número en el amarillo de sistema de Apple */
@@ -90,14 +91,14 @@
           justify-content: center;
           font-family: "Orb Semibold", sans-serif;
           font-weight: 600;
-          font-size: 92px;
+          font-size: 83px;
           line-height: 1;
           letter-spacing: -0.02em;
           color: #ffd60a;
           text-shadow:
             0 1px 2px rgba(120, 80, 0, 0.35),
-            0 4px 11px rgba(0, 0, 0, 0.25),
-            0 0 17px rgba(255, 214, 10, 0.35);
+            0 4px 10px rgba(0, 0, 0, 0.25),
+            0 0 15px rgba(255, 214, 10, 0.35);
         }
         .orb-glyph {
           display: block;
@@ -142,8 +143,8 @@
         .orb-rim-glow {
           opacity: 0.45;
           filter: blur(2px);
-          -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 11px), #000 calc(100% - 4px), transparent 100%);
-          mask: radial-gradient(closest-side, transparent calc(100% - 11px), #000 calc(100% - 4px), transparent 100%);
+          -webkit-mask: radial-gradient(closest-side, transparent calc(100% - 10px), #000 calc(100% - 4px), transparent 100%);
+          mask: radial-gradient(closest-side, transparent calc(100% - 10px), #000 calc(100% - 4px), transparent 100%);
         }
 
       </style>
@@ -154,11 +155,11 @@
              La escala es fija: el vidrio "aparece" con el fade de su capa, no animando el filtro. -->
         <svg width="0" height="0" style="position: absolute" aria-hidden="true">
           <defs>
-            <filter id="orbs-lens" x="0" y="0" width="236" height="236" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-              <feImage href="assets/glass/lens-map.png" x="0" y="0" width="236" height="236" preserveAspectRatio="none" result="map" />
-              <feDisplacementMap in="SourceGraphic" in2="map" scale="48" xChannelSelector="R" yChannelSelector="G" result="dr" />
-              <feDisplacementMap in="SourceGraphic" in2="map" scale="49.7" xChannelSelector="R" yChannelSelector="G" result="dg" />
-              <feDisplacementMap in="SourceGraphic" in2="map" scale="51.4" xChannelSelector="R" yChannelSelector="G" result="db" />
+            <filter id="orbs-lens" x="0" y="0" width="214" height="214" filterUnits="userSpaceOnUse" primitiveUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+              <feImage href="assets/glass/lens-map.png" x="0" y="0" width="214" height="214" preserveAspectRatio="none" result="map" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="43" xChannelSelector="R" yChannelSelector="G" result="dr" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="44.5" xChannelSelector="R" yChannelSelector="G" result="dg" />
+              <feDisplacementMap in="SourceGraphic" in2="map" scale="46" xChannelSelector="R" yChannelSelector="G" result="db" />
               <feColorMatrix in="dr" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
               <feColorMatrix in="dg" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 0 0 0  0 0 0 1 0" result="g" />
               <feColorMatrix in="db" type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 1 0 0  0 0 0 1 0" result="b" />
