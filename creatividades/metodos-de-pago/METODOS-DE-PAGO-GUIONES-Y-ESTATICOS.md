@@ -20,18 +20,17 @@ Menos fricción en la llamada de ventas y menos ventas perdidas.
 |---|---|---|---|
 | 1 | Noticia Pago Global | Estático | Sigue de la campaña actual |
 | 2 | Flujo animado: cobrar de todo el mundo | Vídeo | Listo |
-| 3 | Guion 1 · La venta que se cae | Vídeo | Listo para grabar |
-| 4 | Guion 2 · Mismo curso, dos alumnos | Vídeo | Listo para grabar |
-| 5 | Guion 3 · Tres cosas que cambian | Vídeo | Listo para grabar |
+| 3 | Guion 1 · La llamada que se enfría | Vídeo | Listo para grabar |
+| 4 | Guion 2 · Mismo cliente, dos caminos (Hotmart y cripto) | Vídeo | Listo para grabar |
+| 5 | Guion 3 · Tres cosas que ya no necesitas | Vídeo | Listo para grabar |
 | 6 | B-01 · Cripto a euros | Estático | Listo |
 | 7 | B-05 · El mismo enlace (mapa) | Estático | Listo |
 | 8 | B-02 · Un solo enlace | Estático | Listo |
 
 **Antes de lanzar:**
 
-- **Cripto en Meta.** Meta revisa aparte los anuncios que hablan de criptomonedas, y algunos piden autorización previa. B-01, B-02 y B-05 nombran la cripto. Si Kunfupay no tiene esa autorización, Meta puede rechazarlos; en ese caso se quita la palabra «cripto» y el resto vale igual.
+- **Cripto en Meta.** Meta revisa aparte los anuncios que hablan de criptomonedas, y algunos piden autorización previa. Los tres estáticos y los tres guiones nombran la cripto. Si Kunfupay no tiene esa autorización, Meta puede rechazarlos; en ese caso se quita la palabra «cripto» y el resto vale igual.
 - **Confirmar con el equipo** que se cobra en cripto y en moneda local sin que el creador tenga un exchange aparte, y que el dinero llega en euros o en dólares.
-- **Los guiones 1, 2 y 3** siguen el beneficio anterior (la tarjeta que no pasa y el efectivo en México). Confirmar que se puede pagar en efectivo en México, o reescribirlos con el beneficio nuevo.
 
 ---
 
@@ -39,87 +38,91 @@ Menos fricción en la llamada de ventas y menos ventas perdidas.
 
 Formato teleprompter: una frase por línea. Graba el equipo, así que Kunfupay habla en «nosotros». Si los graba un creador UGC, se cambia a «ellos»: «la factura se la hacen ellos», «son tus representantes».
 
-### 1 · La venta que se cae · historia en selfie
+Los tres van con el mismo beneficio que los estáticos: un solo enlace con el que tu cliente paga como quiere. Cada uno lo cuenta desde un momento distinto:
+- la llamada de ventas que se enfría;
+- el cliente de Hotmart que tiene el dinero en cripto;
+- lo que ya no necesitas montar.
+
+### 1 · La llamada que se enfría · historia en selfie
 
 ```
-Si vendes cursos desde España y tienes alumnos en Latinoamérica, esto te ha pasado.
-Te escribe alguien de México.
-«Quiero entrar al curso.»
-Le mandas el enlace de pago.
-Y a los cinco minutos:
-«Mi tarjeta no pasa.»
+Si vendes cursos o mentorías con llamada de ventas, te sabes este momento.
+La llamada va genial.
+Y tu cliente te dice: «Vale, quiero entrar».
+Y luego: «¿Cómo te pago?».
 
-Le dices que pruebe con otra.
-Que te haga una transferencia.
-Que le pida la tarjeta a alguien.
-Y ya no vuelve a contestar.
+Y empiezas.
+«Si es con tarjeta, te paso este enlace.»
+«Si prefieres transferencia, esta cuenta.»
+«¿En cripto? Espera, que te mando otra cosa.»
+Y él: «Vale, luego lo miro».
+
+Y ese «luego» ya no llega.
 
 Pero hay otra forma de cobrar tus cursos.
 Cobras con Kunfupay, igual que con Stripe.
-PERO tu alumno paga como paga en su país.
-En México, hasta en efectivo, en la tienda de la esquina.
-Y la venta te llega igual.
+PERO con un solo enlace.
+Tu cliente te paga como quiere: en su moneda local, en cripto o por transferencia.
+Y a ti te llega todo a tu cuenta de Kunfupay, en euros o en dólares.
 
 Y ADEMÁS, la factura se la hacemos nosotros.
 Y los impuestos de esa venta son cosa nuestra.
 Somos la única pasarela de España que funciona como Merchant of Record.
 Es decir: somos tus representantes en cada venta.
 
-Te escribe alguien de México.
-«Mi tarjeta no pasa.»
-Y esta vez, la venta no se cae.
+«¿Cómo te pago?»
+«Con este enlace.»
+Y la venta se cierra en la llamada.
 
 Entra y mira si tu negocio encaja.
 ```
 
-### 2 · Mismo curso, dos alumnos · pantalla partida
-
-[Pantalla partida: Madrid a la izquierda, Ciudad de México a la derecha.]
+### 2 · Mismo cliente, dos caminos · pantalla partida
 
 ```
-Vendes cursos desde España.
-Mismo curso, dos alumnos.
-Uno en Madrid. Otro en Ciudad de México.
-Mira qué pasa cuando les cobras solo con tarjeta.
+Si vendes cursos en Hotmart, hay ventas que pierdes y ni te enteras.
+Tu cliente quiere comprarte.
+Pero tiene el dinero en cripto.
 
-El de Madrid paga, y listo.
-El de México quiere comprar.
-Pero su tarjeta no pasa.
-O directamente no tiene.
-Y esa venta se te cae.
+[Pantalla partida]
+Camino uno.
+Para pagarte con tarjeta, primero tiene que vender esa cripto.
+Pasarla a su banco.
+Esperar a que llegue.
+Y para entonces, ya se le han pasado las ganas.
 
-Ahora, con Kunfupay.
-A los dos les mandas el mismo enlace.
-El de Madrid paga con su tarjeta.
-El de México, como paga allí. Hasta en efectivo, en una tienda.
-Y tú cobras las dos ventas.
+Camino dos, con Kunfupay.
+Le mandas tu enlace.
+Te paga en cripto, tal cual.
+Y a ti te llega en euros, a tu cuenta de Kunfupay.
+Sin que tengas un exchange aparte.
 
-Y de los impuestos de cada venta nos encargamos nosotros.
+Y de los impuestos de esa venta nos encargamos nosotros.
 Podemos porque somos la única pasarela de España que funciona como Merchant of Record.
 Es decir: somos tus representantes en cada venta.
 
-Si tienes alumnos al otro lado del charco, entra y mira si tu negocio encaja.
+Si tus clientes tienen el dinero en cripto, entra y mira si tu negocio encaja.
 ```
 
-### 3 · Tres cosas que cambian · lista en estudio, con compañero
+### 3 · Tres cosas que ya no necesitas · lista en estudio, con compañero
 
 ```
-Si vendes cursos desde España y tienes alumnos en Latinoamérica, hay tres cosas que cambian cuando les cobras con Kunfupay.
+Si vendes cursos desde España a clientes de varios países, hay tres cosas que ya no necesitas.
 Y la tercera, mucha gente no se la cree hasta que la ve.
 
-Uno: tu alumno paga como paga en su país.
-Con tarjeta o sin ella. En México, hasta en efectivo, en una tienda.
-Por lo tanto, ya no pierdes la venta porque su tarjeta no pasa.
+Uno: un exchange para quien te paga en cripto.
+Con Kunfupay, tu cliente te paga en cripto con tu enlace.
+Y a ti te llega en euros o en dólares.
 
-Dos: un solo enlace para todos.
-Tu alumno de Madrid, el de México y el de Colombia pagan con el mismo.
-Y todo te llega a tu cuenta de Kunfupay, a tu nombre.
+Dos: un banco aparte para las transferencias.
+Con el mismo enlace te pagan por transferencia, o en su moneda local.
+Y todo llega a tu cuenta de Kunfupay, a tu nombre.
 
 Tres…
 [Entra un compañero]
-—¿Y los impuestos de todas esas ventas?
-—De eso nos encargamos nosotros. La factura se la hacemos a cada alumno. Y los impuestos de esa venta son cosa nuestra.
-—¿Y eso cómo es posible?
+—¿Y lo de los impuestos de cada venta?
+—Eso tampoco. La factura se la hacemos nosotros a cada cliente. Y los impuestos de esa venta son cosa nuestra.
+—¿Y eso cómo?
 —Somos la única pasarela de España que funciona como Merchant of Record. O sea: somos tus representantes en cada venta.
 
 Entra y mira si tu negocio encaja.
