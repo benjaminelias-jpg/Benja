@@ -223,19 +223,19 @@ Cada uno tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories y 
 - **Descripción:** Moneda local, cripto o transferencia
 - **Botón:** Registrarte
 
-### Bonus · B-09 · Prospector · El estuche de cuchillos (meme)
+### Bonus · B-09 · Prospector · El estuche de cuchillos (meme UGC)
 
 Pieza extra, fuera de los 8 del conjunto. Entra cuando haga falta un relevo o para probar el formato meme.
 
 - **Nombre del anuncio:** `B-09 | N1 | Meme | Mil formas de cobrar | IMG | PRO`
-- **Archivo:** `KFP_ES_TOF_PRO_B09-ESTUCHECUCHILLOS_MEME_…_ES_V01.png`
+- **Archivo:** `KFP_ES_TOF_PRO_B09-ESTUCHECUCHILLOS_MEME_…_ES_V02.png`
+- **Estilo:** meme nativo, como los que comparte la gente. Fondo blanco, texto negro, etiquetas de cinta escritas a mano con rotulador. Sin logo, sin morado y sin brillos: la marca solo aparece en la frase.
 - **Imagen:**
-  - **Arriba:** un estuche de cocinero abierto con seis cuchillos. Cada bolsillo lleva una etiqueta de cinta: «TARJETAS», «TRANSFERENCIAS», «EFECTIVO», «CRIPTO», «OTRO BANCO» y «OTRA PASARELA».
-  - **Abajo:** un solo cuchillo con el mango morado y la etiqueta «UN SOLO ENLACE».
+  - **Arriba:** un estuche de cocinero abierto con seis cuchillos. Cada bolsillo lleva su etiqueta: «tarjetas», «transferencias», «efectivo», «cripto», «otro banco» y «otra pasarela».
+  - **Abajo:** foto casera de un solo cuchillo sobre una tabla de cortar, con una cinta que dice «un solo enlace».
 - **Texto en la imagen:**
-  - «*Tú,* cobrando tus cursos a clientes de varios países:»
-  - «*Tú,* con Kunfupay:»
-  - «Te pagan como quieran: en su moneda local, en cripto o por transferencia. Y te llega en euros o en dólares.»
+  - «tú cobrando a clientes de varios países:»
+  - «tú desde que cobras con kunfupay:»
 
 **Texto principal**
 
@@ -255,7 +255,7 @@ Pieza extra, fuera de los 8 del conjunto. Entra cuando haga falta un relevo o pa
 - **Descripción:** Te pagan como quieran
 - **Botón:** Registrarte
 - **Producción:**
-  - **Imágenes:** dos de Higgsfield, el estuche con los cuchillos y el cuchillo con mango morado, 5,5 créditos.
+  - **Imágenes:** dos de Higgsfield, el estuche con los cuchillos y la foto casera del cuchillo en la tabla. Más la versión anterior con el cuchillo morado, que se descartó por demasiado de marca. En total, 8,25 créditos.
   - **Etiquetas:** compuestas encima, no generadas.
 - **Ojo:** los cuchillos son de cocina, en contexto de cocinero. Meta no debería leerlo como un arma. Aun así, si lo frena la revisión, el mismo concepto funciona con una caja de herramientas.
 
