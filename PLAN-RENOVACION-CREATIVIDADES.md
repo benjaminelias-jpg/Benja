@@ -80,7 +80,7 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
 | Conjunto | Sigue de lo que hay | Nuevo y listo | Falta crear | Total |
 |---|---|---|---|---|
 | **A · Optimización fiscal** | Profitstride (ganador) · Podcast Juanen (relanzado el día 10) · LLC Rubén (si pasa el día 9) | Vídeos 3, 5 y 8 (día 10) | **2 estáticos** | 8 |
-| **B · Métodos de pago** | Noticia Pago Global | — | **7: 3 vídeos y 4 estáticos** | 8 |
+| **B · Métodos de pago** | Noticia Pago Global | Vídeo animado del flujo para cobrar de todo el mundo | **6: 2 vídeos y 4 estáticos** | 8 |
 | **C · Dinero retenido** | — | — | **8: 4 vídeos y 4 estáticos** | 8 |
 | **D · Cuenta nominativa** | — | 4 estáticos y vídeos 9, 4, 6 y 2 | — | 8 |
 | **ESCALADO ES** (día 10) | Profitstride | — | **3 variantes de gancho de Profitstride**, con el mismo cuerpo | 4 |
@@ -89,7 +89,7 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
 
 ### Qué crear, en orden de prioridad
 
-1. **B · Métodos de pago, 7 piezas.** Es el ángulo que más dinero pierde hoy y no tiene ningún anuncio que funcione.
+1. **B · Métodos de pago, 6 piezas.** El vídeo animado del flujo ya cubre uno de los tres vídeos. Es el ángulo que más dinero pierde hoy y no tiene ningún anuncio que funcione.
    - Una pieza por país y método: tu alumno de México paga con OXXO, el de Brasil con PIX, y no pierdes la venta.
    - Un closer de oferta con el formato «Dos pasos y listo».
    - Una comparativa en el formato de D-02.
@@ -102,4 +102,4 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
    Tienen que hablar de impuestos, no del IBAN, para no pisarse con D-01 y D-02.
 4. **C · Dinero retenido, 8 piezas.** Es un ángulo nuevo. Se puede escalonar: 4 piezas para empezar y otras 4 en la segunda semana.
 
-**En total: 20 piezas.** Con un acierto del 5–8 % por pieza, salen entre 1 y 1,6 ganadores esperados.
+**En total: 19 piezas.** Con un acierto del 5–8 % por pieza, salen entre 1 y 1,5 ganadores esperados.
