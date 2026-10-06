@@ -69,3 +69,10 @@
 - **Regla:**
   - En fotos, Kunfupay se explica con una pizarra o un calendario a mano que enseñe el antes y el después, no con un sello.
   - Una pieza con solo un titular está incompleta: además del titular, un subtítulo que diga quién eres y qué cambia, y un objeto en la escena con lo que hace Kunfupay y el filtro (caso de 5A, el trading).
+
+## 06/10/2026 · Lista de lo que no se dice: OnlyFans, el banco y los logos
+
+- **Corrección del usuario:** «faltarían cosas que no podemos decir en Kunfupay, como tu dinero de OnlyFans sin que pase por tu banco, y que salgan logos».
+- **Qué se había colado:** en Ignia, la frase fija «a tu nombre, no a tu banco personal» en los textos largos y «No a tu banco personal» en la VSL (venía del briefing: «sin miedo a retirar porque no pasa por tu banco»). En Tributaless, la pizarra de Hotmart (5B) con «Tu banco» tachado. El propio cerebro ponía «sin pasarlo por tu banco» como ejemplo de hook.
+- **Qué hice:** quité las tres cosas y cambié el ejemplo del cerebro. OnlyFans y los logos de terceros no aparecían en ninguna pieza.
+- **Regla nueva:** regla 27 del cerebro, con la lista de lo que no se dice nunca y se revisa antes de entregar.

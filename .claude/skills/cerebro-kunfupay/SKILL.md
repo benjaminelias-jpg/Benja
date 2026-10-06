@@ -100,7 +100,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     En esos casos: una línea con el porqué y la fuente, y la versión que vende igual. Ejemplos: "Tu dinero lo guarda una entidad financiera con licencia." / "A tu nombre y en regla."
 18. **Hook con contexto.** (Corrección del 24/09/2026: «los hooks… no tienen contexto y desconectan automaticamente, los primeros segundos son para saber de que se va a tratar todo el video».)
     - En los primeros 3 segundos se sabe **de qué va todo el vídeo**: para quién es y qué va a ver o conseguir.
-    - Fórmula: [quién o qué situación] + [qué vas a ver]. Ejemplo: "Vendes cursos online. Mira cómo cobrarlos sin gestionar el IVA de cada venta. Y cómo usar ese dinero sin pasarlo por tu banco."
+    - Fórmula: [quién o qué situación] + [qué vas a ver]. Ejemplo: "Vendes cursos online. Mira cómo cobrarlos sin gestionar el IVA de cada venta. Y cómo tener ese dinero en tu cuenta de Kunfupay, a tu nombre." (El ejemplo original decía "sin pasarlo por tu banco": prohibido desde el 06/10/2026, ver regla 27.)
     - Prohibidos los hooks crípticos o de pura curiosidad que no dicen el tema. Ejemplos: "Tus dólares, en dólares…", "Mucha gente cobra en la cuenta de su madre…".
     - La curiosidad vale, pero dentro de un tema ya claro. Ejemplo aprobado: "Vendes un curso y, sin darte cuenta, tienes cuatro trabajos."
 19. **Vídeo de beneficio completo o vídeo de características.** (Corrección del 24/09/2026.)
@@ -223,6 +223,12 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - **El dolor de las facturas es no haberlas hecho**, no hacer 300: «¿Nunca hiciste una factura por cada alumno? Antes de que Hacienda venga a buscarte, cobra con Kunfupay: la hace por ti», siempre «desde tu próxima venta».
     - Nada en la imagen contradice el filtro o la verdad (precios ridículos para el perfil, «Impuestos 0,00»).
     - En los textos: el texto 1 ya nombra al comprador; el umbral desde el texto 2; el más largo cierra con la exclusión completa.
+
+27. **Lo que Kunfupay no dice ni enseña nunca.** (Corrección del 06/10/2026: «faltarían cosas que no podemos decir en Kunfupay, como tu dinero de OnlyFans sin que pase por tu banco, y que salgan logos».) Antes de entregar cualquier pieza, se revisa esta lista:
+    - **OnlyFans ni ninguna plataforma de contenido para adultos**, ni en texto ni en imagen (regla 16).
+    - **«Sin que pase por tu banco», «no a tu banco personal», «fuera de tu banco»** o un banco tachado en una imagen. Suena a esconder ingresos (CRS, DAC8) y Meta lo lee como evasión. Se dice lo positivo: «Entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.»
+    - **Logos de terceros** (Binance, Hotmart, Stripe, PayPal, Skool, bancos, AEAT…) en ninguna imagen. Como mucho, el nombre escrito, una sola plataforma por anuncio y sin imitar su interfaz.
+    - Y lo que ya estaba prohibido: «no pagas impuestos», «Hacienda no lo ve», la renta (regla 24), «100 % seguro» o «asegurado» (regla 17), testimonios o cifras inventadas, prometer algo sobre el dinero ya acumulado (regla 22.10).
 
 ---
 

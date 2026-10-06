@@ -12,7 +12,7 @@ Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 - **V04 (06/10/2026): diez conceptos nuevos.** La V2 pegaba una tarjeta «Es para ti si:» y la V3 metía el filtro en pósits sobre las escenas viejas; el usuario rechazó las dos: «debes rehacerlas con la nueva idea que te di». En la V04 cada pieza nace de la frase que filtra («¿Vendes un curso de fitness?», «No puedes seguir lanzando solo», «¿Vendes cursos a toda Latinoamérica?») y la imagen es esa idea. Ver aprendizajes 06/10/2026 y regla 26. 4B (relevo) y R1 (puerta) se rehicieron como cadena de montaje y hoja de pasos porque les faltaba contexto.
 
 - **Sin pruebas inventadas.** Nada de testimonios ni casos con cifras: es publicidad engañosa y Meta puede rechazar el anuncio o restringir la cuenta. Los huecos se marcan como [PENDIENTE: caso real].
-- **Sin «no pagas impuestos porque no pasa por tu banco».** Es falso en LATAM y Meta rechaza anuncios que sugieren esquivar impuestos. Versión usada: «El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.» + regla 25: «Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
+- **Sin «no pagas impuestos porque no pasa por tu banco».** Es falso en LATAM y Meta rechaza anuncios que sugieren esquivar impuestos. Versión usada: «El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.» + regla 25: «Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
 - Avatar declarado virtual en la VSL. «Ignia, de Kunfupay» en la descripción de cada anuncio.
 - CTA siempre la lista de espera. KPI: tasa de calificación para Kunfupay por anuncio.
 
@@ -22,7 +22,7 @@ Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 - `F`: Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes.
 - `FX`: Si estás empezando, todavía no es para ti.
 - `CTA`: Entra en la lista de espera.
-- `DIN`: El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+- `DIN`: El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
 - `PAIS`: tu alumno paga como paga en su país
 - `DFY`: Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
 - `AGUANTA`: Kunfupay está pensado para aguantar el pico del carrito abierto.
@@ -65,7 +65,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    Es para coaches y creadores de fitness que ya venden su programa y facturan desde 5.000 USD al mes, y que no quieren pasar otro mes montando páginas y anuncios.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El cobro va con Kunfupay: tu alumno paga como paga en su país. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ### 1B · Vendes cursos de lo tuyo. Ignia lanza el tuyo.
@@ -101,7 +101,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
 5. En Ignia no importa tanto de qué es tu curso como en qué punto está tu negocio. Nutrición, marketing, idiomas, negocios: si ya lo vendes y facturas desde 5.000 USD al mes, tu próximo lanzamiento lo puede montar un equipo.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    Tú grabas y estás con tu comunidad. El cobro va con Kunfupay: tu alumno paga como paga en su país. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ### 2A · No puedes seguir lanzando solo.
@@ -138,7 +138,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    Mira la lista de tu próximo lanzamiento: estrategia, página de venta, anuncios, emails y WhatsApp, soporte, cobros y grabar. Con Ignia, solo la última sigue diciendo «yo».
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El cobro va con Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ### 2B · Coach: un lanzamiento no es un show de hombre orquesta.
@@ -175,7 +175,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    Si ya vendes cursos, mentorías o coaching y facturas desde 5.000 USD al mes, ese show te está costando ventas y meses.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    Tú grabas. El cobro va con Kunfupay: tu alumno paga como paga en su país. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ### 3A · ¿Vendes cursos a toda Latinoamérica? Que cada alumno pague como paga en su país.
@@ -205,14 +205,14 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
 
 4. Si vendes cursos, mentorías o coaching a toda Latinoamérica, tu lanzamiento se juega en algo que no sale en el embudo: que cada alumno pueda pagar.
    Con Ignia lanzas cobrando con Kunfupay: tu alumno paga como paga en su país. Kunfupay está pensado para aguantar el pico del carrito abierto. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
 
 5. Abres el carrito y te compran de cinco países. Uno paga con tarjeta, otro por transferencia, otro en efectivo. Y todo tiene que llegar al mismo sitio sin que nadie se quede fuera.
    Es para infoproductores que ya venden a toda Latinoamérica y facturan desde 5.000 USD al mes.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El cobro va con Kunfupay: tu alumno paga como paga en su país. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ### 3B · Infoproductor: tu lanzamiento se juega en la puerta de pago.
@@ -249,7 +249,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    Es para infoproductores, coaches y mentores que ya venden en Latinoamérica y facturan desde 5.000 USD al mes.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    La puerta de pago es Kunfupay: tu alumno paga como paga en su país. Kunfupay está pensado para aguantar el pico del carrito abierto. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ### 4A · Tu próximo lanzamiento cabe en una hoja.
@@ -286,7 +286,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    La tuya tendría tu curso y tu fecha. Lo que no cambia es el mínimo: vender cursos, mentorías o coaching y facturar desde 5.000 USD al mes.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El cobro va con Kunfupay: tu alumno paga como paga en su país. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ### 4B · ¿Tu curso ya factura +5.000 USD/mes? Ignia monta su lanzamiento de principio a fin.
@@ -322,7 +322,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
 5. Ignia es la agencia de lanzamientos de Kunfupay. Trabaja con coaches, mentores e infoproductores de Latinoamérica que ya venden y facturan desde 5.000 USD al mes, y que no quieren montar otro lanzamiento solos.
    Tú traes tu curso y grabas. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El último paso es el cobro: tu carrito cobra con Kunfupay y tu alumno paga como paga en su país. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ### R1 · Ignia, la agencia de lanzamientos de Kunfupay, abre su lista de espera.
@@ -397,7 +397,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
 5. Viste la VSL. Ahora piensa en tu próximo mes de lanzamiento. Lanzando solo, cada día tiene algo tuyo: escribir, configurar, responder, revisar pagos. Con Ignia, tus días son los de grabar y estar con tu comunidad.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El carrito cobra con Kunfupay: tu alumno paga como paga en su país. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
 ## VSL (avatar, ~5 min)
@@ -471,7 +471,6 @@ Y paga los impuestos de cada venta.
 Tú te olvidas.
 ¿Y el dinero?
 Entra a tu cuenta de Kunfupay, a tu nombre.
-No a tu banco personal.
 Lo gastas con tarjeta.
 O lo retiras cuando quieras.
 
