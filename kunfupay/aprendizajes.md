@@ -40,3 +40,10 @@
 - **Tercera corrección (V04):** «no me gustan el de la carrera y el de la puerta, me parece que le falta contexto, está bien que es para leads con mayor nivel de conciencia, pero igual debe dar contexto». El relevo y la puerta suponían que ya sabías qué es Ignia. Se rehicieron: la cadena de montaje (entra tu curso, sale el carrito cobrando con Kunfupay) y la hoja de cuatro pasos de la lista de espera, con titular «Ignia, la agencia de lanzamientos de Kunfupay…».
   - Regla: toda pieza, también la de retargeting, dice por sí sola qué es Ignia, qué hace por ti, para quién es y que se cobra con Kunfupay. Una metáfora que pide saber qué es Ignia no vale.
 - **Lo que funcionó:** las escenas (pasarela, pósits, ocho brazos, puerta del banco, cohete, checklist, pizarra). Se conservan.
+
+## 06/10/2026 · Tributaless: las correcciones de Ignia se aplican igual
+
+- **Corrección del usuario:** «las mismas correcciones de ignia van para tributaless, que filtre más y las mismas coordenadas de anuncios que estaban mal en ignia también lo están en tributaless, así que quiero que les des más contexto».
+- **Qué estaba mal:** las 13 piezas del 01/10 no decían en la imagen para quién eran, llevaban una caja de texto pegada abajo y varias no se entendían sin conocer Kunfupay (cámara acorazada, pregunta del foro, «20 minutos para ver si encaja», pizarra).
+- **Qué hice:** 13 conceptos nuevos desde la frase que filtra («Vendes tu curso desde España: 300 alumnos, 300 facturas», «Si vendes cursos desde España, esta pregunta ya la hiciste», «¿Vendes cursos desde España y te dijeron "móntate una LLC"?»…), con el mínimo de 2.000 €/mes dentro de la escena, la línea de Kunfupay en todas y copys reescritos.
+- **Regla:** la regla 26 vale para todas las verticales de Kunfupay, no solo para Ignia. Una corrección hecha en una vertical se aplica a las demás sin esperar a que el usuario lo pida.

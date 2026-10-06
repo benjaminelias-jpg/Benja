@@ -8,6 +8,8 @@
 
 ---
 
+> **06/10/2026 · V04.** Los 13 anuncios se rehicieron desde cero con las correcciones de Ignia (regla 26): la frase que filtra es el concepto, cada pieza da contexto por sí sola y nada de cajas pegadas. Las piezas, copys y VSL vigentes están en `tributaless-copys.md` y en https://claude.ai/artifact/T1n3KXjmEese8dygwsEJ2A. El plan del §4 conserva la estrategia; sus imágenes y textos A/B quedan sustituidos.
+
 ## 0. Decisión que cambia el planteamiento
 
 Tributaless **no** se presenta como una asesoría independiente que recomienda a su partner Kunfupay. Se presenta como una **línea de Kunfupay** con voz propia (más directa y más técnica), que habla de Kunfupay en tercera persona y lo declara en la descripción de cada anuncio ("Tributaless, de Kunfupay"), en la biografía de la página, en la landing y en los primeros 30 segundos de la VSL. Desde el 30/09 la imagen no lleva la firma.
@@ -243,8 +245,8 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 ### R1 · 20 minutos para ver si encaja (Foto real · oferta · Closer)
 
 - **Imagen:** Escritorio con el portátil mostrando la reserva «Diagnóstico de cobros · 20 min · Gratis» y una hoja impresa «Tu caso, por escrito». Rótulo: «20 minutos para ver si encaja.» Etiqueta: «Con el equipo de Kunfupay».
-- **Texto A:** Ya viste cómo funciona. Si te quedan dudas sobre tu caso, el siguiente paso son veinte minutos con el equipo de Kunfupay. / Miramos cómo cobras hoy, cuánto se llevan los impuestos de cada venta y cuánto te quedaría con Kunfupay, comisión incluida. Te llevas tu caso por escrito. Y si no encaja, te lo decimos. / Solo para quien vive en España, vende formación online y factura más de [UMBRAL] al mes. Seis preguntas y eliges hora.
-- **Texto B:** ¿Cuánto te quedaría por venta con Kunfupay? Lo miramos contigo en veinte minutos, gratis. Solo si facturas más de [UMBRAL] al mes.
+- **Texto A:** Ya viste cómo funciona. Si te quedan dudas sobre tu caso, el siguiente paso son veinte minutos con el equipo de Kunfupay. / Miramos cómo cobras hoy, cuánto se llevan los impuestos de cada venta y cuánto te quedaría con Kunfupay, comisión incluida. Te llevas tu caso por escrito. Y si no encaja, te lo decimos. / Solo para quien vive en España, vende formación online y factura más de 2.000 € al mes. Seis preguntas y eliges hora.
+- **Texto B:** ¿Cuánto te quedaría por venta con Kunfupay? Lo miramos contigo en veinte minutos, gratis. Solo si facturas más de 2.000 € al mes.
 - **Título:** Tu diagnóstico de cobros · **Descripción:** 20 min · gratis · Tributaless, de Kunfupay · **Botón:** Solicitar
 - **Nombre:** `TRIB_ES_RET_CLO_DIAG_FOTO_1080x1350_ES_V01` · La imagen se puede subir ya. El texto espera el importe del umbral.
 
@@ -276,7 +278,7 @@ Presenta una persona real del equipo, con su nombre y su cara, que dice en los p
 
 ```
 [1 · Para quién es]
-Si vendes cursos desde España y facturas más de [UMBRAL] al mes, quédate cinco minutos.
+Si vendes cursos desde España y facturas más de 2.000 € al mes, quédate cinco minutos.
 Vas a ver cómo cobrar tus ventas sin montar una LLC.
 Sin hacer una factura por cada alumno.
 Y sin pagar tú los impuestos de cada venta.
@@ -356,6 +358,7 @@ Porque tú solo haces una.
 Esto no es para todo el mundo.
 No es para quien vende productos físicos.
 No es para quien busca pagar cero.
+No es para quien factura menos de 2.000 € al mes.
 Y no es para quien está empezando.
 Kunfupay revisa cada caso antes de activar la cuenta.
 
