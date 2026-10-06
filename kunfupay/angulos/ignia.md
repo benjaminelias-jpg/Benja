@@ -2,7 +2,8 @@
 
 Vertical fantasma de Kunfupay: agencia de lanzamientos llave en mano para infoproductores de Latinoamérica que facturan entre 5.000 y 50.000 USD al mes. Color rojo. La cara la pone un avatar, declarado virtual. Landing ya hecha (no incluida).
 
-Artifact: https://claude.ai/artifact/UwCampjXTduojS9w445kmv · 05/10/2026
+Artifact de campaña (estrategia, plan de Meta, pendientes): https://claude.ai/artifact/UwCampjXTduojS9w445kmv
+Artifact de entrega (10 anuncios con 5 títulos y 5 copys, y VSL): https://claude.ai/artifact/B79gLR6ZRoHWTojyVaftQV · 05/10/2026
 
 Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 
@@ -479,13 +480,14 @@ O lo retiras cuando quieras.
 Esto no es para todo el mundo.
 No es para quien está empezando.
 No es para quien factura menos de 5.000 dólares al mes.
+No es para quien busca un curso para aprender a lanzar.
 Y no es para quien busca dejar de pagar impuestos.
 
 ### 8 · El siguiente paso · 4:25–4:50
 
 Si eres tú, el siguiente paso es la lista de espera.
 Son seis preguntas.
-Qué vendes, cuánto facturas y con qué cobras hoy.
+Qué vendes, cuánto facturas, cuándo quieres lanzar y con qué cobras hoy.
 Y te escribimos cuando haya sitio para tu lanzamiento.
 
 ### 9 · Cierre · 4:50–5:00
