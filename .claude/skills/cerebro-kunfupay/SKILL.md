@@ -213,6 +213,13 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - **Hablar en su idioma, como la viñeta de la ola de facturas.** Es la que más gustó el 30/09: "lanzamiento", "una factura por alumno" y la ola que llega justo después de celebrar. Situaciones que viven, dichas y dibujadas con sus palabras.
     - **La LLC se enseña imposible, nunca épica.** El rascacielos del 30/09 se rechazó porque da ganas de tener una LLC. Se enseña lo que te piden en EE. UU. para vender un curso: elegir estado, agente registrado, EIN, cuenta en EE. UU., el Form 5472 con el 1120 cada año y el informe anual del estado. Una montaña de trámites para un curso, no un edificio que da envidia.
 
+26. **Estáticos que califican: el filtro vive dentro de la escena.** (Corrección del 06/10/2026, Ignia: «necesito que siempre los anuncios sean super completos… texto que filtre bien al buyer que queremos, siempre con criterio no poner texto por poner o hacer algo feo» · «no quiero que simplemente hagas el trabajo facil y literal de poner el texto encima en cuadro que en teoria filtre».) Vale para toda vertical que necesite leads calificados.
+    - El titular, o un rótulo pegado a él, nombra al comprador: «Si eres coach o infoproductor, no puedes seguir lanzando solo», «Si lanzas tu curso, mentoría o programa:».
+    - El umbral de facturación va en un objeto de la propia escena (pósit, cartel, pegatina, ficha con pinza, portapapeles, pizarra, formulario). Cada pieza elige el suyo.
+    - Prohibido: la misma caja o tarjeta de «Es para ti si:» pegada encima de todas las piezas, y el texto suelto sin jerarquía.
+    - Nada en la imagen contradice el filtro o la verdad (precios ridículos para el perfil, «Impuestos 0,00»).
+    - En los textos: el texto 1 ya nombra al comprador; el umbral desde el texto 2; el más largo cierra con la exclusión completa.
+
 ---
 
 ## 2. Protocolo cuando llega un ángulo o concepto nuevo

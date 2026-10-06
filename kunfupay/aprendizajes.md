@@ -23,12 +23,14 @@
 
 ## 06/10/2026 · Ignia: anuncios completos que filtran
 
-- **Qué hice:** 10 anuncios de Ignia con la escena creativa y una sola línea de texto en la imagen, más textos cortos (el texto 1) que no decían para quién era.
-- **Corrección del usuario:** «en ignia necesitamos que sean leads muy calificados, necesito que siempre los anuncios sean super completos, no pueden ser anuncios sencillos de una sola imagen o cosas asi, necesito texto que filtre bien al buyer que queremos, siempre con criterio no poner texto por poner o hacer algo feo tampoco, la imagen creativa que tiene me gusta».
-- **Por qué estaba mal:** en Ignia el KPI es la tasa de calificación, no el coste por registro. Un anuncio que no dice para quién es trae clics de quien está empezando.
+- **Qué hice (V1):** 10 anuncios de Ignia con la escena creativa y una sola línea de texto en la imagen, más textos cortos (el texto 1) que no decían para quién eran.
+- **Qué hice (V2, también mal):** pegué la misma tarjeta blanca «Es para ti si:» con tres ✔ y un botón encima de cada escena.
+- **Corrección del usuario:** «en ignia necesitamos que sean leads muy calificados, necesito que siempre los anuncios sean super completos, no pueden ser anuncios sencillos de una sola imagen o cosas asi, necesito texto que filtre bien al buyer que queremos, siempre con criterio no poner texto por poner o hacer algo feo tampoco, la imagen creativa que tiene me gusta» · «no quiero que simplemente hagas el trabajo facil y literal de poner el texto encima en cuadro que en teoria filtre, quiero que tengas criterio a la hora de armar las creatividades, que integre un buen texto que filtre, como si vendes cursos x, hacer un lanzamiento de tu curso x, si eres infoproductor o coach no puedes seguir lanzando solo».
+- **Por qué estaba mal:** en Ignia el KPI es la tasa de calificación, no el coste por registro. La V1 no decía para quién era. La V2 filtraba, pero como un formulario pegado: la misma caja en las diez piezas, que tapa la escena y se lee como anuncio.
 - **Regla nueva (Ignia y verticales de servicio caro):**
-  - La imagen mantiene la escena creativa y suma siempre la misma tarjeta de calificación: línea de Kunfupay, «Es para ti si:» con 3 condiciones (vende cursos, mentorías o coaching; factura desde 5.000 USD al mes; una tercera según el ángulo), botón «Entra en la lista de espera →» y «Si estás empezando, todavía no es para ti».
-  - Todos los textos filtran, también el más corto: para quién sí, CTA a la lista de espera y, desde el texto 2, para quién no.
-  - Los textos 4 y 5 llevan el filtro en lista con ✔ y la exclusión completa: empezando, quien busca aprender a lanzar y quien busca dejar de pagar impuestos.
-  - Con criterio: una sola tarjeta, siempre igual en toda la tanda, con jerarquía clara. Nada de texto suelto repartido por la imagen.
-- **Lo que funcionó:** las escenas (pasarela, pósits, ocho brazos, puerta del banco, cohete, pizarra). Se conservan.
+  - El comprador se nombra en el titular o en un rótulo pegado a él: «Si eres coach o infoproductor, no puedes seguir lanzando solo», «Si lanzas tu curso, mentoría o programa:», «Coach: tú grabas. Nosotros lanzamos tu programa.»
+  - El umbral (+5.000 USD/mes) va en un objeto que ya pertenece a la escena: pósit en el portátil, cartel en la plataforma de lanzamiento, pegatina, ficha con pinza («Requisito:»), portapapeles, pizarra o el propio formulario de la lista.
+  - Cada pieza decide su sitio para el filtro según su escena. Nunca una caja o tarjeta igual en toda la tanda.
+  - Todos los textos filtran, también el más corto: el texto 1 nombra al comprador; desde el texto 2, el umbral; el texto 5 cierra con la exclusión completa («si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos»).
+  - Nada en la imagen que contradiga el filtro o la verdad: un checkout de 49 USD no encaja con quien factura 5.000 al mes, y una línea «Impuestos 0,00» sugiere evadir.
+- **Lo que funcionó:** las escenas (pasarela, pósits, ocho brazos, puerta del banco, cohete, checklist, pizarra). Se conservan.
