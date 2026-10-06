@@ -76,3 +76,4 @@
 - **Qué se había colado:** en Ignia, la frase fija «a tu nombre, no a tu banco personal» en los textos largos y «No a tu banco personal» en la VSL (venía del briefing: «sin miedo a retirar porque no pasa por tu banco»). En Tributaless, la pizarra de Hotmart (5B) con «Tu banco» tachado. El propio cerebro ponía «sin pasarlo por tu banco» como ejemplo de hook.
 - **Qué hice:** quité las tres cosas y cambié el ejemplo del cerebro. OnlyFans y los logos de terceros no aparecían en ninguna pieza.
 - **Regla nueva:** regla 27 del cerebro, con la lista de lo que no se dice nunca y se revisa antes de entregar.
+- **Matiz del mismo día:** «si es para tributaless sí se puede usar, no sigas la regla porque es para kunfupay». La regla 27 es para las piezas con la marca Kunfupay. En Tributaless se restauró la pizarra de Hotmart con «Tu banco» tachado. Avisado una vez del riesgo: las piezas de Tributaless nombran a Kunfupay y declaran a Kunfupay como beneficiario en la UE.

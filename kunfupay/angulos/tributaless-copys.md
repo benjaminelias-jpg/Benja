@@ -263,9 +263,9 @@ Foto real · saldo parado · Abridor · Ángulo: Retirar de a poco · `TRIB_ES_T
 
 ## 5B · ¿50.000 € de tus cursos en Hotmart y los sacas de 500 en 500 por miedo?
 
-Foto real · pizarra · Abridor · Ángulo: Retirar de a poco · `TRIB_ES_TOF_ABR_DEAPOCO_HOTMART_1080x1350_ES_V06`
+Foto real · pizarra · Abridor · Ángulo: Retirar de a poco · `TRIB_ES_TOF_ABR_DEAPOCO_HOTMART_1080x1350_ES_V05`
 
-**Por qué:** Una pizarra con el esquema: muchas flechitas de 500 € «de a poco, por miedo» frente a una sola flecha roja a «Tu cuenta de Kunfupay · a tu nombre · con IBAN · todo junto, sin miedo». Sin tachar el banco (regla 27). Directo y sin interfaz inventada.
+**Por qué:** Una pizarra con el esquema: muchas flechitas de 500 € hacia «Tu banco», tachado, frente a una sola flecha roja a «Tu cuenta de Kunfupay · a tu nombre · con IBAN». El banco tachado está permitido en Tributaless (regla 27, excepción del 06/10). Directo y sin interfaz inventada.
 
 **Títulos:** ¿De 500 en 500 por miedo? · Tus ventas de Hotmart · Una sola flecha, a tu nombre · Ventas, no ahorros · Tu cuenta de Kunfupay
 

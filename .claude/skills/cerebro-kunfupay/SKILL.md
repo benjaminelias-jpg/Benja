@@ -224,7 +224,9 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - Nada en la imagen contradice el filtro o la verdad (precios ridículos para el perfil, «Impuestos 0,00»).
     - En los textos: el texto 1 ya nombra al comprador; el umbral desde el texto 2; el más largo cierra con la exclusión completa.
 
-27. **Lo que Kunfupay no dice ni enseña nunca.** (Corrección del 06/10/2026: «faltarían cosas que no podemos decir en Kunfupay, como tu dinero de OnlyFans sin que pase por tu banco, y que salgan logos».) Antes de entregar cualquier pieza, se revisa esta lista:
+27. **Lo que Kunfupay no dice ni enseña nunca.** (Corrección del 06/10/2026: «faltarían cosas que no podemos decir en Kunfupay, como tu dinero de OnlyFans sin que pase por tu banco, y que salgan logos».) Antes de entregar cualquier pieza **con la marca Kunfupay**, se revisa esta lista.
+    - **Excepción, las verticales fantasma (Tributaless):** el usuario lo decidió el 06/10/2026: «si es para tributaless sí se puede usar, no sigas la regla porque es para kunfupay». En Tributaless se permiten «sin que pase por tu banco» y el banco tachado; avisado una vez de que esas piezas nombran a Kunfupay y en la UE declaran a Kunfupay como beneficiario. Lo falso sigue sin decirse en ninguna marca (no pagas impuestos, Hacienda no lo ve, cifras inventadas). Para Ignia, preguntar si aplica la misma excepción.
+    La lista:
     - **OnlyFans ni ninguna plataforma de contenido para adultos**, ni en texto ni en imagen (regla 16).
     - **«Sin que pase por tu banco», «no a tu banco personal», «fuera de tu banco»** o un banco tachado en una imagen. Suena a esconder ingresos (CRS, DAC8) y Meta lo lee como evasión. Se dice lo positivo: «Entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.»
     - **Logos de terceros** (Binance, Hotmart, Stripe, PayPal, Skool, bancos, AEAT…) en ninguna imagen. Como mucho, el nombre escrito, una sola plataforma por anuncio y sin imitar su interfaz.
