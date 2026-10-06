@@ -1,40 +1,37 @@
 # Estáticos · Conjunto D · Cuenta nominativa con IBAN
 
 **Campaña:** TESTEO ES · **Conjunto:** D · Cuenta nominativa con IBAN · 20 €/día
-**Fecha:** 5 de octubre de 2026 · **Versión:** V02
+**Fecha:** 6 de octubre de 2026 · **Versión:** V03
 
 Completan el conjunto junto a los 4 vídeos. Ningún estático repite el mensaje de un vídeo.
 
 ---
 
-## Qué cambió en la V02
+## Qué cambió en la V03
 
-| Antes (V01) | Ahora (V02) | Por qué |
+**La regla:** primero el beneficio que se lleva el cliente, y después la función que lo hace posible. No «ahora tienes IBAN y puedes hacer X», sino «puedes hacer X gracias a tu IBAN». Nada de frases que suenan bien y no dicen nada.
+
+| Pieza | V02 | V03 |
 |---|---|---|
-| Botón naranja dibujado «Entra y mira si tu negocio encaja» | Pie de filtro (ver abajo) | Meta ya pone su propio botón debajo de la imagen. El dibujado no se puede pulsar y gastaba el espacio. Ahora ese espacio filtra. |
-| Etiquetas en píldora con sombra | Etiqueta plana en D-05 y antetítulo con raya en D-01 | También parecían botones. |
-| D-02: «Un IBAN a tu nombre, solo para cobrar» | «Das el IBAN de tu negocio, a tu nombre» | La cuenta no es solo para cobrar: también gastas con la tarjeta. |
-| D-05: «Tus retiros de Hotmart, o de donde sea que tengas tus ingresos» | «Si vendes cursos en Hotmart, ya puedes retirar a tu cuenta de Kunfupay» | «De donde sea» invitaba a cualquiera con cualquier ingreso. |
-| D-08: «Te la aprobamos» | «La revisamos. Si tu negocio encaja, ya tienes tu IBAN» | Prometía la aprobación a todo el mundo. |
-| Texto principal: solo D-08 filtraba | Los cuatro abren con el perfil y cierran con una exclusión | La primera línea es lo único que se lee sin pulsar «Ver más». |
-| Botón de Meta: Registrarte | Solicitar ahora (Apply Now) | «Solicitar» avisa de que hay revisión. «Registrarte» suena a alta libre. |
+| D-01 | «De tus ventas, con factura. A tu nombre y en regla.» | «Cada venta, con su factura. La hacemos nosotros.» + «Los impuestos de cada venta: cosa nuestra.» + «Tu dinero, en una cuenta con IBAN a tu nombre.» |
+| D-02 | Filas de característica («Das el IBAN de tu negocio») | Filas de beneficio: quién hace la factura, de quién son los impuestos, dónde caen tus ventas. Más «Podemos porque somos la única pasarela de España que funciona como Merchant of Record.» |
+| D-05 | «Ahora, con IBAN a tu nombre.» | «Tus retiros de Hotmart, sin pasar por tu banco.» + «Gracias a tu nuevo IBAN a tu nombre…» |
+| D-08 | «Tu IBAN, en dos pasos. Pides tu tienda. La revisamos.» | «Dos pasos y listo. Te registras en Kunfupay. Creas tu tienda.» + «A partir de ahí, nos encargamos nosotros: la factura de cada venta, los impuestos de esa venta y ya tienes tu IBAN a tu nombre.» |
+| Pie | Logo debajo del filtro y «Revisamos cada caso» | Logo en la esquina inferior derecha, al lado del filtro. Fuera «Revisamos cada caso». |
+| Botón de Meta | Solicitar ahora | **Registrarte**, que es lo que dice D-08: «Te registras en Kunfupay». |
 
-### El pie de filtro, igual en las cuatro piezas
+### El pie, igual en las cuatro piezas
 
-- **Línea 1:** «**Solo si ya vendes** formación online desde España.»
-- **Línea 2:** «Cursos, mentorías, membresías o comunidades.»
-- **Firma:** logo oficial y «Revisamos cada caso».
-
-Filtra por tres cosas a la vez: que ya venda, que sea formación online y que venda desde España.
-
-Va en el mismo sitio que ocupaba el botón. Es texto alineado a la izquierda con una barra lateral, sin forma de botón ni flecha.
+- **Izquierda:** «**Solo si ya vendes** formación online desde España.» y debajo «Cursos, mentorías, membresías o comunidades.»
+- **Esquina derecha:** logo oficial.
+- Sin botón dibujado: el botón lo pone Meta.
 
 ---
 
 ## 1. Estrategia asumida
 
 - **Evento:** registro completado. Prospección en frío, España, audiencia abierta, igual que A, B y C.
-- **Filtro:** las cuatro piezas filtran antes del clic. Buscamos menos registros y mejores: gente que ya vende formación online desde España. **El CPL de D va a subir a propósito.**
+- **Filtro:** las cuatro piezas filtran antes del clic con el pie. El CPL de D puede subir algo a propósito.
 - **Destino:** la misma landing que A, B y C. Tiene que explicar el IBAN, o el clic llega y no convierte.
 - **Gasto:** 20 €/día para todo el conjunto D, repartidos entre 8 anuncios.
 - **CRM:** Kommo no guarda las UTM, así que no se puede medir la calidad del lead por anuncio. Se lee por registro.
@@ -44,12 +41,12 @@ Va en el mismo sitio que ocupaba el botón. Es texto alineado a la izquierda con
 
 ## 2. Las cuatro piezas
 
-| # | Rol | Familia | Nivel · tipo · persona | Titular en la imagen | Cómo filtra, además del pie |
+| # | Rol | Familia | Persona | Titular en la imagen | Beneficio que se lleva |
 |---|---|---|---|---|---|
-| D-01 | Abridor | Boli, nota manuscrita | N1 · miedo · vende cursos y teme tener que justificar lo que ingresa | «¿Y si me preguntan de dónde sale este dinero?» | La respuesta: «De tus ventas, con factura.» |
-| D-02 | Closer | Comparativa a dos columnas | N2 · comparativa · cobra en su banco de siempre | «Para tus cursos, mejor que tu banco.» | «Para tus cursos» en el titular |
-| D-05 | Prospector | Noticia con etiqueta | N4 · novedad · vende en Hotmart | «Ahora, con IBAN a tu nombre.» | «Si vendes cursos en Hotmart» |
-| D-08 | Closer | Offer-First Banner | N5 · oferta · listo para actuar | «Tu IBAN, en dos pasos.» | «La revisamos. Si tu negocio encaja» |
+| D-01 | Abridor | Boli, nota manuscrita | Vende cursos y teme tener que justificar lo que ingresa | «¿Y si me preguntan de dónde sale este dinero?» | Cada venta con su factura, hecha por nosotros; los impuestos de cada venta, cosa nuestra |
+| D-02 | Closer | Comparativa a dos columnas | Cobra en su banco de siempre | «Para tus cursos, mejor que tu banco.» | No hace la factura de cada venta, se olvida de sus impuestos y tiene sus ventas aparte |
+| D-05 | Prospector | Noticia con etiqueta | Vende en Hotmart | «Tus retiros de Hotmart, sin pasar por tu banco.» | Retira de Hotmart a una cuenta a su nombre y lo gasta con su tarjeta |
+| D-08 | Closer | Offer-First Banner | Listo para actuar | «Dos pasos y listo.» | Se registra, crea su tienda y del resto nos encargamos nosotros |
 
 Cada pieza tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories y reels.
 
@@ -57,111 +54,118 @@ Cada pieza tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories 
 
 ## 3. Copy de cada anuncio
 
-Los cuatro usan el botón de Meta **Solicitar ahora**.
+El texto principal abre con el beneficio, no con la función. Los cuatro usan el botón de Meta **Registrarte**.
 
 ### D-01 · Abridor · Boli
 
 - **Nombre del anuncio:** `D-01 | N1 | Miedo | Justificar ingresos | IMG | ABR`
-- **Archivos:** `KFP_ES_TOF_ABR_D01-DEDONDESALE_BOLI_1080x1350_ES_V02.png` · `…_1080x1920_ES_V02.png`
-- **Texto en la imagen:** nota «¿Y si me preguntan de dónde sale este dinero?» · «CON KUNFUPAY» · «De tus ventas, con factura.» · «A tu nombre y en regla.» · pie de filtro
+- **Archivos:** `KFP_ES_TOF_ABR_D01-DEDONDESALE_BOLI_1080x1350_ES_V03.png` · `…_1080x1920_ES_V03.png`
+- **Texto en la imagen:** nota «¿Y si me preguntan de dónde sale este dinero?» · «CON KUNFUPAY» · «Cada venta, con su factura.» · «La hacemos nosotros.» · «Los impuestos de cada venta: cosa nuestra.» · «Tu dinero, en una cuenta con IBAN a tu nombre.» · pie
 
 **Texto principal**
 
 > Si ya vendes cursos desde España, conoces esa pregunta. Llega justo después de un buen mes.
 >
-> Con Kunfupay le cobras a tu alumno igual que con Stripe. PERO la factura se la hacemos nosotros y los impuestos de esa venta son cosa nuestra. De los impuestos de cada venta, TÚ TE OLVIDAS.
+> Con Kunfupay, cada venta lleva su factura. Le cobras a tu alumno igual que con Stripe. PERO la factura se la hacemos nosotros. Y los impuestos de esa venta son cosa nuestra. TÚ TE OLVIDAS.
 >
-> ¿Y el dinero? En tu cuenta de Kunfupay, a tu nombre, con su IBAN. Lo gastas con tu tarjeta, sin pasarlo por tu banco.
+> ¿Y el dinero? En tu cuenta de Kunfupay, a tu nombre. Lo gastas con tu tarjeta, sin pasarlo por tu banco. Y con tu IBAN, ahí recibes también los retiros de la plataforma donde vendes.
 >
-> Somos la única pasarela de España que funciona como Merchant of Record. Es decir: tus representantes en cada venta. Tu renta, eso sí, sigue siendo tuya.
+> Podemos porque somos la única pasarela de España que funciona como Merchant of Record. Es decir: tus representantes en cada venta. Tu renta, eso sí, sigue siendo tuya.
 >
-> No es para todos. Es para quien ya vende cursos, mentorías, membresías o comunidades online desde España. Si todavía no vendes, no es para ti. Revisamos cada caso antes de abrir la cuenta.
+> Si todavía no vendes, no es para ti.
 >
 > Entra y mira si tu negocio encaja.
 >
 > Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 
-- **Título:** Solo si ya vendes cursos desde España
-- **Descripción:** Revisamos cada caso
-- **Botón:** Solicitar ahora
+- **Título:** Los impuestos de cada venta, cosa nuestra
+- **Descripción:** Solo si ya vendes cursos desde España
+- **Botón:** Registrarte
 
 ### D-02 · Closer · Comparativa
 
 - **Nombre del anuncio:** `D-02 | N2 | Comparativa | Banco de siempre | IMG | CLO`
-- **Archivos:** `KFP_ES_TOF_CLO_D02-MEJORQUETUBANCO_COMPARATIVA_1080x1350_ES_V02.png` · `…_1080x1920_ES_V02.png`
-- **Texto en la imagen:** «Para tus cursos, mejor que tu banco.» · tabla · pie de filtro
+- **Archivos:** `KFP_ES_TOF_CLO_D02-MEJORQUETUBANCO_COMPARATIVA_1080x1350_ES_V03.png` · `…_1080x1920_ES_V03.png`
+- **Texto en la imagen:** «Para tus cursos, mejor que tu banco.» · tabla · «Podemos porque somos la única pasarela de España que funciona como Merchant of Record.» · pie
 
-| Tu banco de siempre | Tu cuenta Kunfupay |
+| Cobrando en tu banco | Cobrando con Kunfupay |
 |---|---|
-| Das tu IBAN personal | Das el IBAN de tu negocio, a tu nombre |
-| Cursos e hipoteca, en la misma cuenta | Solo lo de tu negocio |
-| Impuestos de cada venta: cosa tuya | Cosa nuestra, si cobras con Kunfupay |
+| La factura de cada venta: la haces tú | La hacemos nosotros |
+| Los impuestos de cada venta: cosa tuya | Cosa nuestra. Tú te olvidas |
+| Ventas y recibos, en la misma cuenta | Tus ventas, en tu IBAN a tu nombre |
 
 **Texto principal**
 
-> Si ya vendes cursos desde España: tu banco está bien para la hipoteca, pero para cobrar tus ventas se queda corto.
+> Si ya vendes cursos desde España, esto es lo que cambia cuando cobras con Kunfupay en vez de en tu banco.
 >
-> Con Kunfupay tienes una cuenta a tu nombre con su propio IBAN, solo para tu negocio. Ahí recibes los retiros de la plataforma donde vendes tus cursos, y lo gastas con tu tarjeta sin pasarlo por tu banco.
+> La factura de cada venta se la hacemos nosotros a tu alumno. Los impuestos de esa venta son cosa nuestra. TÚ TE OLVIDAS.
 >
-> Y si le cobras a tu alumno con Kunfupay, la factura se la hacemos nosotros y los impuestos de esa venta son cosa nuestra. Podemos porque somos la única pasarela de España que funciona como Merchant of Record: tus representantes en cada venta.
+> Y tus ventas caen en tu cuenta de Kunfupay, a tu nombre y con su propio IBAN. Aparte de tus recibos de casa. Las gastas con tu tarjeta, sin pasarlas por tu banco.
 >
-> No es para todos. Es para quien ya vende cursos, mentorías, membresías o comunidades online desde España. Si todavía no vendes, no es para ti. Revisamos cada caso antes de abrir la cuenta.
+> Podemos porque somos la única pasarela de España que funciona como Merchant of Record: tus representantes en cada venta. Tu renta, eso sí, sigue siendo tuya.
+>
+> Si todavía no vendes, no es para ti.
 >
 > Entra y mira si tu negocio encaja.
 >
 > Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 
-- **Título:** Una cuenta solo para tu negocio de cursos
+- **Título:** Olvídate de la factura de cada venta
 - **Descripción:** Solo si ya vendes desde España
-- **Botón:** Solicitar ahora
+- **Botón:** Registrarte
 
 ### D-05 · Prospector · Noticia
 
 - **Nombre del anuncio:** `D-05 | N4 | Novedad | Vende en Hotmart | IMG | PRO`
-- **Archivos:** `KFP_ES_TOF_PRO_D05-NUEVOIBAN_NOTICIA_1080x1350_ES_V02.png` · `…_1080x1920_ES_V02.png`
-- **Texto en la imagen:** «NUEVO EN KUNFUPAY» · «Ahora, con IBAN a tu nombre.» · «Si vendes cursos en Hotmart, ya puedes retirar a tu cuenta de Kunfupay.» · pie de filtro
+- **Archivos:** `KFP_ES_TOF_PRO_D05-NUEVOIBAN_NOTICIA_1080x1350_ES_V03.png` · `…_1080x1920_ES_V03.png`
+- **Texto en la imagen:** «NUEVO EN KUNFUPAY» · «Tus retiros de Hotmart, sin pasar por tu banco.» · «Gracias a tu nuevo IBAN a tu nombre. Retiras a tu cuenta de Kunfupay y lo gastas con tu tarjeta.» · pie
 
 **Texto principal**
 
-> Si ya vendes cursos en Hotmart desde España, esto cambia a dónde van tus retiros.
+> Si vendes cursos en Hotmart desde España, ya puedes retirar tus ventas sin pasar por tu banco.
 >
-> Tu cuenta de Kunfupay ya tiene IBAN, a tu nombre. Lo pones en Hotmart como cuenta de retiro y el dinero cae ahí. Lo gastas con tu tarjeta, sin pasarlo por tu banco. Y quien te paga ve tu IBAN de Kunfupay, no tu banco personal.
+> Gracias a tu nuevo IBAN de Kunfupay, a tu nombre. Lo pones en Hotmart como cuenta de retiro, el dinero llega a tu cuenta de Kunfupay y lo gastas con tu tarjeta. Y quien te paga ve tu IBAN de Kunfupay, no tu banco personal.
 >
-> Pides tu tienda, la revisamos y, si tu negocio encaja, ya lo tienes. Y si además le cobras a tu alumno con Kunfupay, la factura se la hacemos nosotros y los impuestos de esa venta son cosa nuestra. Somos la única pasarela de España que funciona como Merchant of Record: tus representantes en cada venta.
+> Y si además le cobras a tu alumno con Kunfupay, la factura se la hacemos nosotros y los impuestos de esa venta son cosa nuestra. Podemos porque somos la única pasarela de España que funciona como Merchant of Record.
 >
-> No es para todos. Es para quien ya vende formación online desde España. Si todavía no vendes, no es para ti.
+> Si todavía no vendes, no es para ti.
 >
 > Entra y mira si tu negocio encaja.
 >
 > Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 
-- **Título:** Para quien ya vende en Hotmart
-- **Descripción:** Ahora, con IBAN a tu nombre
-- **Botón:** Solicitar ahora
+- **Título:** Tus retiros de Hotmart, sin pasar por tu banco
+- **Descripción:** Gracias a tu nuevo IBAN
+- **Botón:** Registrarte
 
 ### D-08 · Closer · Offer-First Banner
 
 - **Nombre del anuncio:** `D-08 | N5 | Oferta | Listo | IMG | CLO`
-- **Archivos:** `KFP_ES_TOF_CLO_D08-DOSPASOS_OFFER_1080x1350_ES_V02.png` · `…_1080x1920_ES_V02.png`
-- **Texto en la imagen:** «Tu IBAN, en dos pasos.» · «1 Pides tu tienda.» · «2 La revisamos. Si tu negocio encaja, ya tienes tu IBAN.» · «La única pasarela de España que funciona como Merchant of Record.» · pie de filtro
+- **Archivos:** `KFP_ES_TOF_CLO_D08-DOSPASOS_OFFER_1080x1350_ES_V03.png` · `…_1080x1920_ES_V03.png`
+- **Texto en la imagen:** «Dos pasos y listo.» · «1 Te registras en Kunfupay.» · «2 Creas tu tienda.» · «A partir de ahí, nos encargamos nosotros:» · «La factura de cada venta.» · «Los impuestos de esa venta.» · «Y ya tienes tu IBAN a tu nombre.» · «Podemos porque somos la única pasarela de España que funciona como Merchant of Record.» · pie
 
 **Texto principal**
 
-> Solo para quien ya vende cursos, mentorías o comunidades online desde España y quiere su dinero a su nombre.
+> Si ya vendes cursos, mentorías o comunidades online desde España, empezar es esto:
 >
-> Dos pasos: pides tu tienda en Kunfupay y la revisamos. Si tu negocio encaja, la aprobamos y tu cuenta ya tiene IBAN. Ahí recibes los retiros de la plataforma donde vendes, y lo gastas con tu tarjeta sin pasarlo por tu banco.
+> 1. Te registras en Kunfupay.
+> 2. Creas tu tienda.
 >
-> Cada venta que cobres con Kunfupay lleva su factura, y la hacemos nosotros. Los impuestos de esa venta son cosa nuestra. Sin irte a Andorra ni montar una LLC. Podemos porque somos la única pasarela de España que funciona como Merchant of Record: tus representantes en cada venta.
+> Y listo. A partir de ahí, nos encargamos nosotros: la factura de cada venta y los impuestos de esa venta. TÚ TE OLVIDAS.
 >
-> Si todavía no vendes, no es para ti. Revisamos cada caso antes de activar la cuenta.
+> Y ya tienes tu cuenta a tu nombre: IBAN para recibir tus retiros y tarjeta para gastarlo, sin pasarlo por tu banco.
+>
+> Sin irte a Andorra ni montar una LLC. Podemos porque somos la única pasarela de España que funciona como Merchant of Record: tus representantes en cada venta.
+>
+> Si todavía no vendes, no es para ti.
 >
 > Entra y mira si tu negocio encaja.
 >
 > Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 
-- **Título:** Pide tu tienda. Revisamos cada caso
-- **Descripción:** Solo si ya vendes formación online
-- **Botón:** Solicitar ahora
+- **Título:** Regístrate, crea tu tienda y listo
+- **Descripción:** Del resto nos encargamos nosotros
+- **Botón:** Registrarte
 
 ---
 
@@ -169,7 +173,7 @@ Los cuatro usan el botón de Meta **Solicitar ahora**.
 
 1. **Imagen única con personalización por ubicación.** `1080x1350` en los feeds de Facebook e Instagram, Explorar y Marketplace. `1080x1920` en stories y reels.
 2. **Desactiva en Advantage+ creative:** superposiciones de texto, mejoras de texto, expansión de imagen, animación y música. Las mejoras de texto reescriben el copy y pueden romper los claims revisados.
-3. **Botón de Meta: Solicitar ahora** en los 8 anuncios del conjunto, vídeos incluidos. Si en tu Ads Manager tiene otro nombre, es el que en inglés se llama Apply Now.
+3. **Botón de Meta: Registrarte** en los 8 anuncios del conjunto, vídeos incluidos.
 4. **Columna derecha:** Meta recorta a cuadrado y puede cortar el titular. Excluye esa ubicación o revisa la vista previa antes de publicar.
 5. **Nombre del anuncio:** el de cada ficha. Con el rol al final, el reporte se puede ordenar por rol sin abrir nada.
 6. **Los 8 anuncios del conjunto se activan el mismo día** y no se tocan en 7 días.
@@ -206,6 +210,7 @@ Las versiones verticales dejan libres los 270 px de arriba y los 670 de abajo, q
 
 - **Sin testimonios, sin cifras y sin caras generadas.** Ninguna pieza necesita un caso real.
 - **Sin botones dibujados ni elementos que parezcan pulsables.** El botón lo pone Meta.
+- **Beneficio antes que función:** cada titular dice qué gana el cliente; el IBAN aparece como el motivo.
 - **Claims usados:**
   - «a tu nombre y en regla»;
   - «los impuestos de esa venta son cosa nuestra»;
@@ -231,5 +236,5 @@ Las versiones verticales dejan libres los 270 px de arriba y los 670 de abajo, q
   - Boli con cadena de mostrador de banco.
   - Llave de latón con etiqueta «IBAN», recortada.
   - Número «2» de cristal morado, recortado.
-- **V02:** recompuesta sobre las mismas imágenes base. No ha gastado créditos nuevos.
+- **V02 y V03:** recompuestas sobre las mismas imágenes base. No han gastado créditos nuevos.
 - **Texto y logo:** compuestos encima con la tipografía y los archivos oficiales, no generados. Así no hay faltas ni logos deformados. La única tipografía generada es la nota manuscrita, revisada letra a letra.
