@@ -20,3 +20,15 @@
   - Mal: un rascacielos con la etiqueta «Tu LLC en EE. UU.». Bien: la lista interminable de «Lo que te piden en EE. UU. para vender un curso».
 - **Lo que funcionó:** la viñeta de la ola de facturas, porque habla en su idioma: lanzamiento y una factura por alumno.
 - **Nota:** la otra corrección del mismo día está en la regla 24 del cerebro.
+
+## 06/10/2026 · Ignia: anuncios completos que filtran
+
+- **Qué hice:** 10 anuncios de Ignia con la escena creativa y una sola línea de texto en la imagen, más textos cortos (el texto 1) que no decían para quién era.
+- **Corrección del usuario:** «en ignia necesitamos que sean leads muy calificados, necesito que siempre los anuncios sean super completos, no pueden ser anuncios sencillos de una sola imagen o cosas asi, necesito texto que filtre bien al buyer que queremos, siempre con criterio no poner texto por poner o hacer algo feo tampoco, la imagen creativa que tiene me gusta».
+- **Por qué estaba mal:** en Ignia el KPI es la tasa de calificación, no el coste por registro. Un anuncio que no dice para quién es trae clics de quien está empezando.
+- **Regla nueva (Ignia y verticales de servicio caro):**
+  - La imagen mantiene la escena creativa y suma siempre la misma tarjeta de calificación: línea de Kunfupay, «Es para ti si:» con 3 condiciones (vende cursos, mentorías o coaching; factura desde 5.000 USD al mes; una tercera según el ángulo), botón «Entra en la lista de espera →» y «Si estás empezando, todavía no es para ti».
+  - Todos los textos filtran, también el más corto: para quién sí, CTA a la lista de espera y, desde el texto 2, para quién no.
+  - Los textos 4 y 5 llevan el filtro en lista con ✔ y la exclusión completa: empezando, quien busca aprender a lanzar y quien busca dejar de pagar impuestos.
+  - Con criterio: una sola tarjeta, siempre igual en toda la tanda, con jerarquía clara. Nada de texto suelto repartido por la imagen.
+- **Lo que funcionó:** las escenas (pasarela, pósits, ocho brazos, puerta del banco, cohete, pizarra). Se conservan.

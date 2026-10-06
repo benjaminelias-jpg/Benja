@@ -8,6 +8,8 @@ Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 
 ## Decisiones
 
+- **V2 (06/10/2026): anuncios completos.** Cada imagen lleva la escena + la tarjeta de calificación (línea de Kunfupay, «Es para ti si:» con 3 condiciones, botón de lista de espera y «Si estás empezando, todavía no es para ti»). Todos los textos filtran. Ver aprendizajes 06/10/2026.
+
 - **Sin pruebas inventadas.** Nada de testimonios ni casos con cifras: es publicidad engañosa y Meta puede rechazar el anuncio o restringir la cuenta. Los huecos se marcan como [PENDIENTE: caso real].
 - **Sin «no pagas impuestos porque no pasa por tu banco».** Es falso en LATAM y Meta rechaza anuncios que sugieren esquivar impuestos. Versión usada: «El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.» + regla 25: «Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.»
 - Avatar declarado virtual en la VSL. «Ignia, de Kunfupay» en la descripción de cada anuncio.
@@ -29,171 +31,261 @@ Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 ### 1A · Abriste el carrito. Y la pasarela dijo que no.
 
 - Rol: Abridor · Ángulo: La pasarela falla el día clave · Formato: Foto real · Abridor
-- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_ABR_PASARELA_FOTO_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_ABR_PASARELA_FOTO_1080x1350_V02.jpg`
 - Por qué: El dolor más concreto del lanzamiento en Latinoamérica: el carrito abre y los alumnos no pueden pagar. Lo cuentan sus propios mensajes.
 
 **Títulos**
 
 1. Y la pasarela dijo que no
-2. Carrito abierto, cobro caído
-3. Lanza sin miedo al cobro
-4. Que tu alumno pueda pagar
+2. Lanza cobrando con Kunfupay
+3. Desde 5.000 USD al mes
+4. Tu alumno paga en su país
 5. Tu lanzamiento, cobrando
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. Abres el carrito y tus alumnos escriben que no les deja pagar. Con Ignia lanzas cobrando con Kunfupay.
+1. «No me deja pagar.» Si has lanzado, conoces ese mensaje. Ignia hace tu lanzamiento llave en mano y cobras con Kunfupay: tu alumno paga como paga en su país. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
-2. Meses preparando el lanzamiento y, el día clave, la tarjeta de tu alumno sale rechazada. Con Ignia cobras con Kunfupay, y tu alumno paga como paga en su país.
+2. «No me deja pagar.» «Me rechaza la tarjeta.» Cada mensaje así es una venta perdida en tu mejor semana.
+   Ignia hace tu lanzamiento llave en mano y cobras con Kunfupay: tu alumno paga como paga en su país. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
 
-3. «No me deja pagar.» «¿Sigue abierto el carrito?» «Me rechaza la tarjeta.» Si has lanzado en Latinoamérica, conoces esos mensajes. Con Ignia, tu lanzamiento cobra con Kunfupay: tu alumno paga como paga en su país. Tú grabas. Ignia lanza. Kunfupay cobra.
+3. Meses preparando el lanzamiento y, el día que abres el carrito, los mensajes: «no me deja pagar», «me rechaza la tarjeta», «¿sigue abierto?».
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Y el cobro va con Kunfupay: tu alumno paga como paga en su país. Kunfupay está pensado para aguantar el pico del carrito abierto.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-4. Si has lanzado en Latinoamérica, conoces esos mensajes: «no me deja pagar», «me rechaza la tarjeta», «¿sigue abierto el carrito?».
-   Cada alumno que no puede pagar es una venta que se va, justo en la semana que más vendes.
-   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto. Y cobras con Kunfupay: tu alumno paga como paga en su país. Kunfupay está pensado para aguantar el pico del carrito abierto.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+4. Si has lanzado en Latinoamérica, conoces esos mensajes: «no me deja pagar», «me rechaza la tarjeta», «¿sigue abierto el carrito?». Cada uno es una venta que se va justo en la semana que más vendes.
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres que tu próximo carrito cobre sin sustos
+   Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-5. Meses de contenido, una semana de carrito abierto y, el primer día, los mensajes: «no me deja pagar», «me rechaza la tarjeta», «¿sigue abierto?». Cuando vendes a toda Latinoamérica, cada país trae su tarjeta, su banco y su forma de pagar.
-   Por eso en Ignia no solo hacemos el lanzamiento. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
-   Y el cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay está pensado para aguantar el pico del carrito abierto.
+5. Meses de contenido, una comunidad esperando y, el primer día de carrito, los mensajes: «no me deja pagar», «me rechaza la tarjeta», «¿sigue abierto?». Cuando vendes a toda Latinoamérica, cada país trae su tarjeta, su banco y su forma de pagar.
+   Por eso en Ignia el cobro es parte del lanzamiento. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Y cobras con Kunfupay: tu alumno paga como paga en su país. Kunfupay está pensado para aguantar el pico del carrito abierto. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres que tu próximo carrito cobre sin sustos
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ### 1B · Todo listo para lanzar. Menos el cobro.
 
 - Rol: Prospector · Ángulo: La pasarela falla el día clave · Formato: Viñeta · Prospector
-- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_PRO_PASARELA_VINETA_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_PRO_PASARELA_VINETA_1080x1350_V02.jpg`
 - Por qué: El mismo dolor en viñeta: el cohete listo y la manguera del cobro rota.
 
 **Títulos**
 
 1. Todo listo, menos el cobro
 2. Ignia lanza. Kunfupay cobra
-3. El botón que no hace nada
-4. Tu cohete necesita cobro
+3. Si facturas +5.000 USD/mes
+4. Que tu carrito sí cobre
 5. Lanzar es cobrar
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. El lanzamiento listo, el botón de abrir carrito… y el cobro que no arranca. Ignia lanza. Kunfupay cobra.
+1. El lanzamiento listo, el botón de abrir carrito… y el cobro que no arranca. Con Ignia, el lanzamiento y el cobro van juntos. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
-2. Puedes tener el mejor lanzamiento del año. Si el cobro falla, no despega. Con Ignia, lanzas cobrando con Kunfupay.
+2. Puedes tener el mejor lanzamiento del año: si el cobro falla, no despega.
+   Ignia hace tu lanzamiento llave en mano y cobras con Kunfupay: tu alumno paga como paga en su país.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
 
-3. Embudo listo, anuncios listos, la comunidad esperando. Y el día del carrito, la pasarela no arranca. Con Ignia, el cobro es parte del lanzamiento: cobras con Kunfupay y tu alumno paga como paga en su país.
+3. Embudo listo, anuncios listos, la comunidad esperando. Y el día del carrito, la pasarela no arranca.
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 4. Así se siente un lanzamiento con el cobro roto: todo listo para despegar y un botón que no hace nada.
    En Ignia el cobro no es un detalle del final. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
-   Y cobras con Kunfupay: tu alumno paga como paga en su país. Tú grabas. Ignia lanza. Kunfupay cobra.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+   Y cobras con Kunfupay: tu alumno paga como paga en su país. Kunfupay está pensado para aguantar el pico del carrito abierto.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres que tu próximo carrito cobre sin sustos
+   Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-5. Hay lanzamientos que fallan por la oferta. Y hay otros que lo tenían todo: buen contenido, buena comunidad, buena estrategia. Y se quedaron en tierra porque el cobro no aguantó.
+5. Hay lanzamientos que fallan por la oferta. Y hay otros que lo tenían todo, buen contenido, buena comunidad y buena estrategia, y se quedaron en tierra porque el cobro no aguantó.
    En Ignia lo montamos todo a la vez. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
-   El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay está pensado para aguantar el pico del carrito abierto.
+   El cobro va con Kunfupay: tu alumno paga como paga en su país. Kunfupay está pensado para aguantar el pico del carrito abierto. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres que tu próximo carrito cobre sin sustos
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ### 2A · Eres el experto. No tu propia agencia.
 
 - Rol: Abridor · Ángulo: Hacerlo todo solo · Formato: Foto real · pósits · Abridor
-- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_ABR_SOLO_FOTO_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_ABR_SOLO_FOTO_1080x1350_V02.jpg`
 - Por qué: El infoproductor que ya factura hace de copy, trafficker, editor y soporte. Ignia le devuelve su único trabajo: enseñar.
 
 **Títulos**
 
 1. No eres tu propia agencia
 2. Tú grabas. Ignia hace el resto
-3. Ocho trabajos, un solo tú
+3. Si ya facturas +5.000 USD
 4. Lanzamiento llave en mano
 5. Suelta los pósits
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. Copy, anuncios, embudo, emails, soporte y cobros. Con Ignia, de eso no te encargas tú.
+1. Copy, anuncios, embudo, emails, soporte y cobros. Con Ignia, de eso no te encargas tú: tú grabas. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
 2. Eres el experto en tu tema, no tu propia agencia. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Y cobras con Kunfupay.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
 
-3. Si ya facturas, sabes lo que es lanzar: escribir el copy, montar el embudo, lanzar anuncios, editar, atender soporte y pelearte con los cobros. Con Ignia, tú grabas. Tú grabas. Ignia lanza. Kunfupay cobra.
-
-4. Si ya facturas con tus cursos, sabes lo que pesa un lanzamiento: el copy, los anuncios, el embudo, los emails, la edición, el soporte y los cobros. Todo a la vez, y todo tú.
+3. Si ya facturas, sabes lo que pesa un lanzamiento: el copy, los anuncios, el embudo, los emails, la edición, el soporte y los cobros. Todo a la vez, y todo tú.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    Tú grabas. Y cobras con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-5. Mira tu escritorio antes de un lanzamiento: un pósit para el copy, otro para los anuncios, otro para el embudo, los emails, la edición, el soporte, la página de venta y los cobros. Eres el experto en tu tema, pero en cada lanzamiento te toca ser una agencia entera.
+4. Mira tu escritorio antes de un lanzamiento: un pósit para el copy, otro para los anuncios, otro para el embudo, los emails, la edición, el soporte y los cobros.
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Tú grabas y estás con tu comunidad. El cobro va con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres lanzar sin hacerlo todo tú
+   Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
+
+5. Eres el experto en tu tema, pero en cada lanzamiento te toca ser una agencia entera: estratega, copy, trafficker, editor, soporte y, el día del carrito, el que revisa por qué no entra un pago.
    Ignia hace ese trabajo por ti. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    Tú grabas tus clases y apareces en tu comunidad. El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres lanzar sin hacerlo todo tú
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ### 2B · Tu lanzamiento, hecho por ti solo.
 
 - Rol: Prospector · Ángulo: Hacerlo todo solo · Formato: Viñeta · Prospector
-- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_PRO_SOLO_VINETA_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_PRO_SOLO_VINETA_1080x1350_V02.jpg`
 - Por qué: El creador pulpo: ocho brazos, ocho trabajos. Se entiende sin leer.
 
 **Títulos**
 
 1. Ocho brazos para lanzar
 2. Con Ignia, tú solo grabas
-3. Hecho por ti solo
-4. Deja siete brazos libres
-5. Un lanzamiento, ocho trabajos
+3. Si facturas +5.000 USD/mes
+4. Un lanzamiento, ocho trabajos
+5. Lanzamiento hecho por Ignia
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. Para lanzar solo, te harían falta ocho brazos. Con Ignia, te basta con dos: los que usas para grabar.
+1. Para lanzar solo te harían falta ocho brazos. Con Ignia te bastan los dos que usas para grabar. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
 2. Anuncios, copy, embudo, emails, soporte, edición, cobros y grabar. Con Ignia, tú solo grabas. Tú grabas. Ignia lanza. Kunfupay cobra.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
 
-3. Así se ve un lanzamiento hecho por ti solo: ocho brazos y ocho trabajos. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto. Y cobras con Kunfupay.
+3. Así se ve un lanzamiento hecho por ti solo: ocho brazos y ocho trabajos.
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Y cobras con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 4. Así se ve un lanzamiento hecho por ti solo: un brazo para los anuncios, otro para el copy, otro para el embudo, los emails, el soporte, la edición y los cobros. Y uno, el que menos usas, para grabar.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El cobro va con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres lanzar sin hacerlo todo tú
+   Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-5. Hay infoproductores que facturan bien y aun así viven cada lanzamiento como un maratón: escriben, editan, configuran, responden mensajes a medianoche y revisan pagos que no entran. Ocho trabajos y un solo cuerpo.
+5. Hay infoproductores que facturan bien y aun así viven cada lanzamiento como un maratón: escriben, editan, configuran, contestan mensajes de madrugada y revisan pagos que no entran. Ocho trabajos y un solo cuerpo.
    Con Ignia te quedas con uno: grabar y estar con tu comunidad. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres lanzar sin hacerlo todo tú
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ### 3A · Lanzamiento vendido. Y miedo a retirarlo.
 
 - Rol: Calificador · Ángulo: Miedo a retirar · Formato: Foto real · móvil · Calificador
-- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_CAL_RETIRAR_FOTO_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_CAL_RETIRAR_FOTO_1080x1350_V02.jpg`
 - Por qué: Después de vender viene la duda de qué pasa al retirar. La salida que se promete es la verdadera: una cuenta a tu nombre, no tu banco personal.
 
 **Títulos**
 
 1. Y miedo a retirarlo
 2. Tu lanzamiento, a tu nombre
-3. 30.000 USD sin tocar
-4. Vendiste. ¿Y ahora qué?
+3. Vendes cursos. Cobra en regla
+4. Para lanzamientos +5.000 USD
 5. Tu dinero, en tu cuenta
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. Vendes el lanzamiento y te da miedo moverlo. Con Kunfupay, el dinero entra a tu cuenta de Kunfupay, a tu nombre.
+1. Vendes el lanzamiento y te da miedo moverlo. Con Ignia cobras con Kunfupay y el dinero entra a tu cuenta de Kunfupay, a tu nombre. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
-2. Lanzamiento vendido, 30.000 USD en el panel y una duda: ¿y si el banco pregunta? El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+2. Lanzamiento vendido y una duda: ¿y si el banco pregunta? El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si buscas dejar de pagar impuestos, no es para ti. Entra en la lista de espera.
 
-3. Después del carrito llega otra pregunta: qué pasa cuando retiras lo que vendiste. Con Ignia cobras con Kunfupay. El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras. Y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-
-4. Después de un buen lanzamiento llega otra pregunta: qué pasa cuando muevas todo ese dinero. ¿Y si el banco pregunta?
-   Con Ignia, tu lanzamiento cobra con Kunfupay. kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+3. Después del carrito llega otra pregunta: qué pasa cuando retiras lo que vendiste.
+   Con Ignia, tu lanzamiento cobra con Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-5. El panel dice 30.000 USD. Es tu mejor lanzamiento, y aun así lo miras con un nudo en el estómago: ¿lo retiro todo?, ¿de a poco?, ¿y si el banco pregunta?
+4. Después de un buen lanzamiento llega otra pregunta: qué pasa cuando muevas todo ese dinero.
+   Con Ignia, tu lanzamiento cobra con Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres cobrar a tu nombre y en regla
+   Si buscas dejar de pagar impuestos, esto no es para ti: tú sigues declarando lo que ganas.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
+
+5. El panel dice 30.000 USD. Es tu mejor lanzamiento y aun así lo miras con un nudo en el estómago: ¿lo retiro todo?, ¿de a poco?, ¿y si el banco pregunta?
    Ese miedo viene de cobrar sin papeles claros detrás. Con Ignia, tu lanzamiento cobra con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras. Quien te paga ve tu cuenta de Kunfupay, no tu banco personal.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras. Tú sigues declarando lo que ganas, pero cada venta queda en regla.
+   Y el lanzamiento lo hacemos nosotros: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres cobrar a tu nombre y en regla
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ### 3B · No todo tiene que pasar por tu banco personal.
 
 - Rol: Prospector · Ángulo: Miedo a retirar · Formato: Viñeta · Prospector
-- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_PRO_RETIRAR_VINETA_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_PRO_RETIRAR_VINETA_1080x1350_V02.jpg`
 - Por qué: La puerta estrecha del banco personal y la puerta ancha de la cuenta a tu nombre. Lo que se promete es la cuenta, no esquivar nada.
 
 **Títulos**
@@ -201,156 +293,240 @@ Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 1. La puerta estrecha
 2. Tu cuenta, a tu nombre
 3. Tu lanzamiento no cabe
-4. Una puerta más ancha
+4. Si facturas +5.000 USD/mes
 5. Cobra con Kunfupay
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. Tu lanzamiento no cabe por la puerta de tu banco personal. Con Kunfupay entra a tu cuenta, a tu nombre.
+1. Tu lanzamiento no cabe por la puerta de tu banco personal. Con Kunfupay entra a tu cuenta de Kunfupay, a tu nombre. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
-2. Un saco de ventas y una puerta diminuta. Con Kunfupay, el dinero de tu lanzamiento entra a tu cuenta de Kunfupay, a tu nombre. Tú grabas. Ignia lanza. Kunfupay cobra.
+2. Un saco de ventas y una puerta diminuta. Con Ignia cobras con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si buscas dejar de pagar impuestos, no es para ti. Entra en la lista de espera.
 
-3. Así se siente meter un lanzamiento por tu banco personal. Con Ignia cobras con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+3. Así se siente meter un lanzamiento por tu banco personal.
+   Con Ignia cobras con Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 4. Así se siente meter las ventas de un lanzamiento por la puerta de tu banco personal: no cabe.
-   Con Ignia, tu lanzamiento cobra con Kunfupay. kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Con Ignia, tu lanzamiento cobra con Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres cobrar a tu nombre y en regla
+   Si buscas dejar de pagar impuestos, esto no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 5. Cuando un lanzamiento sale bien, el problema cambia: ya no es vender, es qué hacer con lo vendido. Y meterlo todo por tu banco personal se parece mucho a esta viñeta.
-   Con Ignia, tu lanzamiento cobra con Kunfupay. kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Tu alumno paga como paga en su país.
+   Con Ignia, tu lanzamiento cobra con Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Tu alumno paga como paga en su país.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
+   Y el lanzamiento lo hacemos nosotros: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres cobrar a tu nombre y en regla
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ### 4A · Tú grabas. Ignia lanza. Kunfupay cobra.
 
 - Rol: Closer · Ángulo: Llave en mano · Formato: Foto real · llave · Closer
-- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_CLO_LLAVE_FOTO_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_CLO_LLAVE_FOTO_1080x1350_V02.jpg`
 - Por qué: La oferta entera en una imagen: una llave y la lista de todo lo que hace Ignia, con el cobro de Kunfupay dentro.
 
 **Títulos**
 
 1. Lanzamiento llave en mano
 2. Tú grabas, Ignia lanza
-3. Del embudo al cobro
-4. Todo hecho, menos grabar
-5. La llave de tu lanzamiento
+3. Solo desde 5.000 USD al mes
+4. Del embudo al cobro
+5. Delega tu lanzamiento
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. Estrategia, embudo, anuncios, copy, VSL, emails y cobro con Kunfupay. Tú grabas. Ignia lanza.
+1. Estrategia, embudo, anuncios, copy, VSL, emails y cobro con Kunfupay. Tú grabas. Ignia lanza. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
-2. Tú grabas. Ignia lanza. Kunfupay cobra. Así funciona un lanzamiento llave en mano con Ignia, de la estrategia al cobro.
+2. Tú grabas. Ignia lanza. Kunfupay cobra.
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
 
-3. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto. Tú grabas tus clases. Y cobras con Kunfupay: tu alumno paga como paga en su país.
-
-4. Un lanzamiento llave en mano es esto: te damos la llave y lo demás está hecho.
+3. Un lanzamiento llave en mano es esto: te damos la llave y lo demás está hecho.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El cobro va con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si buscas un curso para aprender a lanzar, no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-5. Esta es la lista de un lanzamiento con Ignia: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, cobro con Kunfupay y soporte durante el carrito abierto. Todo marcado antes de tu primer directo.
+4. Esta es la lista de un lanzamiento con Ignia: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, cobro con Kunfupay y soporte durante el carrito abierto. Tu parte es grabar.
+   El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres delegar el lanzamiento, no aprender a hacerlo
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
+
+5. No te enseñamos a lanzar: lo hacemos. Esta es la lista de un lanzamiento con Ignia, y todo va marcado antes de tu primer directo: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, cobro con Kunfupay y soporte durante el carrito abierto.
    Tu parte es grabar y estar con tu comunidad.
-   El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay está pensado para aguantar el pico del carrito abierto.
+   El cobro va con Kunfupay: tu alumno paga como paga en su país. Kunfupay está pensado para aguantar el pico del carrito abierto. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres delegar el lanzamiento, no aprender a hacerlo
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ### 4B · Tú grabas. Nosotros hacemos el resto.
 
 - Rol: Prospector · Ángulo: Llave en mano · Formato: Viñeta · Prospector
-- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_PRO_LLAVE_VINETA_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_TOF_PRO_LLAVE_VINETA_1080x1350_V02.jpg`
 - Por qué: Tú en primer plano grabando; detrás, el equipo de Ignia montando el cohete con el módulo de cobro de Kunfupay.
 
 **Títulos**
 
 1. Tú grabas. El resto, Ignia
 2. Un equipo detrás de ti
-3. Graba tranquilo
+3. Si facturas +5.000 USD/mes
 4. Tu cohete, montado por Ignia
-5. Lanzamiento llave en mano
+5. No aprendas a lanzar: delega
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. Tú grabas tu clase. Detrás, Ignia monta el lanzamiento y Kunfupay se encarga del cobro.
+1. Tú grabas tu clase. Detrás, Ignia monta el lanzamiento y el cobro va con Kunfupay. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
-2. Mientras tú grabas, Ignia monta el lanzamiento entero. Y el cobro va con Kunfupay. Tú grabas. Ignia lanza. Kunfupay cobra.
+2. Mientras tú grabas, Ignia monta el lanzamiento entero. Estrategia, embudo, anuncios, copy, VSL, emails, WhatsApp y soporte durante el carrito abierto.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
 
-3. Imagina grabar tu clase sabiendo que, detrás, alguien está montando el embudo, los anuncios y el cobro. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+3. Imagina grabar tu clase sabiendo que, detrás, alguien monta el embudo, los anuncios y el cobro.
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Y cobras con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si buscas aprender a hacerlo tú, no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-4. Imagina grabar tu clase con calma, sabiendo que detrás hay un equipo montando el lanzamiento entero.
+4. Imagina grabar con calma, sabiendo que detrás hay un equipo montando el lanzamiento entero.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    Y el cobro va con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres delegar el lanzamiento, no aprender a hacerlo
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 5. Esta viñeta es lo que cambia con Ignia. Tú, delante de la cámara, haciendo lo único que nadie puede hacer por ti: enseñar. Detrás, un equipo montando el cohete pieza a pieza.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    La última pieza es el cobro: Kunfupay. Tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres delegar el lanzamiento, no aprender a hacerlo
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ### R1 · La lista de espera está abierta.
 
 - Rol: Closer · Ángulo: Lista de espera · Formato: Foto real · oferta · Closer · retargeting
-- Imagen: `ignia-anuncios/IGNIA_LATAM_RET_CLO_LISTA_FOTO_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_RET_CLO_LISTA_FOTO_1080x1350_V02.jpg`
 - Por qué: Para quien vio la VSL y no se apuntó. La oferta y el filtro de facturación en una sola imagen.
 
 **Títulos**
 
 1. Lista de espera abierta
-2. Entra en la lista de Ignia
+2. Solo desde 5.000 USD al mes
 3. Tu próximo lanzamiento
-4. Solo desde 5.000 USD al mes
+4. Seis preguntas y listo
 5. Ignia abre la lista
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. La lista de espera de Ignia está abierta. Solo si ya facturas desde 5.000 USD al mes.
+1. La lista de espera de Ignia está abierta. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Son seis preguntas.
 
-2. Ya viste cómo funciona. Si quieres que Ignia haga tu próximo lanzamiento, entra en la lista de espera. Solo desde 5.000 USD al mes.
+2. Ya viste cómo funciona: tú grabas. Ignia lanza. Kunfupay cobra.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-3. Ya viste cómo funciona: tú grabas. Ignia lanza. Kunfupay cobra. Si quieres tu próximo lanzamiento llave en mano, entra en la lista de espera. Son seis preguntas.
+3. Ya viste cómo funciona un lanzamiento con Ignia: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   Y el cobro con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-4. Ya viste cómo funciona un lanzamiento con Ignia: hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
-   Si quieres el tuyo, entra en la lista de espera. Son seis preguntas y te escribimos cuando haya sitio para tu lanzamiento.
-   Solo para quien ya vende en Latinoamérica y factura desde 5.000 USD al mes.
+4. Ya viste la VSL. Si quieres que tu próximo lanzamiento sea llave en mano, el paso es la lista de espera. Tú grabas, Ignia lanza y el cobro va con Kunfupay.
+   Respondes seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy, y te escribimos cuando haya sitio para tu lanzamiento.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres tu próximo lanzamiento hecho
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
 
 5. Viste la VSL y sabes cómo funciona: tú grabas, Ignia lanza y Kunfupay cobra.
-   Si quieres que tu próximo lanzamiento sea llave en mano, el paso es la lista de espera. Respondes seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy, y te escribimos cuando haya sitio para tu lanzamiento.
-   El cobro irá con Kunfupay: kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   Solo para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes.
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Si quieres el tuyo, el paso es la lista de espera. Respondes seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy, y te escribimos cuando haya sitio para tu lanzamiento.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres tu próximo lanzamiento hecho
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
 
 ### R2 · No, no y no
 
 - Rol: Closer · Ángulo: Objeciones · Formato: Foto real · pizarra · Closer · retargeting
-- Imagen: `ignia-anuncios/IGNIA_LATAM_RET_CLO_OBJEC_PIZARRA_1080x1350_V01.jpg`
+- Imagen: `ignia-anuncios/IGNIA_LATAM_RET_CLO_OBJEC_PIZARRA_1080x1350_V02.jpg`
 - Por qué: Quita las tres cosas que frenan a quien ya vio la VSL: montar el embudo, escribir los anuncios y pelearse con la pasarela.
 
 **Títulos**
 
 1. No, no y no
 2. Tres cosas que no harás
-3. Solo grabas
+3. Solo si facturas +5.000 USD
 4. Ni embudo, ni anuncios
 5. Sin pelear con la pasarela
 
-**Textos principales (de corto a largo)**
+**Textos principales (de corto a largo, todos filtran)**
 
-1. Ni montas el embudo, ni escribes los anuncios, ni te peleas con la pasarela. Tú grabas.
+1. Ni montas el embudo, ni escribes los anuncios, ni te peleas con la pasarela. Tú grabas. Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
 
 2. Tres cosas que no haces con Ignia: montar el embudo, escribir los anuncios y pelearte con la pasarela. Tú grabas. Ignia lanza. Kunfupay cobra.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti. Entra en la lista de espera.
 
-3. ¿Montar el embudo tú? No. ¿Escribir los anuncios? No. ¿Pelearte con la pasarela? No. Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto. Y cobras con Kunfupay.
+3. ¿Montar el embudo tú? No. ¿Escribir los anuncios? No. ¿Pelearte con la pasarela? No.
+   Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto. Y cobras con Kunfupay.
+   Para quien vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 4. Tres cosas que no tienes que hacer en tu próximo lanzamiento.
-   No montas el embudo ni escribes los anuncios: hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
+   No montas el embudo ni escribes los anuncios: Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    No te peleas con la pasarela: cobras con Kunfupay, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres delegar el lanzamiento, no aprender a hacerlo
+   Si estás empezando, todavía no es para ti.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
-5. Antes de dejar un lanzamiento en manos de otros, todo el mundo se pregunta lo mismo. ¿Tendré que montar el embudo? No. ¿Tendré que escribir los anuncios y los emails? No. ¿Me tocará pelearme con la pasarela el día del carrito? No.
+5. Antes de dejar un lanzamiento en manos de otros, todo el mundo se pregunta lo mismo. ¿Tendré que montar el embudo? No. ¿Escribir los anuncios y los emails? No. ¿Pelearme con la pasarela el día del carrito? No.
    Ignia hace tu lanzamiento llave en mano: estrategia, embudo, anuncios, copy, VSL, emails y WhatsApp, y el soporte durante el carrito abierto.
    El cobro va con Kunfupay: tu alumno paga como paga en su país, y kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero entra a tu cuenta de Kunfupay, a tu nombre, no a tu banco personal. Lo gastas con tarjeta o lo retiras cuando quieras.
-   Es para quien ya vende cursos, mentorías o coaching en Latinoamérica y factura desde 5.000 USD al mes. Entra en la lista de espera.
+   Es para ti si:
+   ✔ Vendes cursos, mentorías o coaching
+   ✔ Facturas desde 5.000 USD al mes
+   ✔ Vendes a alumnos de Latinoamérica
+   ✔ Quieres delegar el lanzamiento, no aprender a hacerlo
+   No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos.
+   Entra en la lista de espera: son seis preguntas sobre lo que vendes, cuánto facturas y con qué cobras hoy.
 
 ## VSL (avatar, ~5 min)
 
@@ -467,4 +643,4 @@ Y la próxima vez que abras el carrito, que el único mensaje sea «ya pagué».
 - Nombre del avatar.
 - Revisión de políticas de Meta (servicios financieros / cripto) por país.
 
-Créditos Higgsfield: 10 imágenes × 2,75 = 27,5.
+Créditos Higgsfield: V1 27,5 + V2 30,25 (10 ediciones + 1 corrección) = 57,75.
