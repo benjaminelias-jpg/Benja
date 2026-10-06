@@ -228,11 +228,12 @@ Cada uno tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories y 
 Pieza extra, fuera de los 8 del conjunto. Entra cuando haga falta un relevo o para probar el formato meme.
 
 - **Nombre del anuncio:** `B-09 | N1 | Meme | Mil formas de cobrar | IMG | PRO`
-- **Archivo:** `KFP_ES_TOF_PRO_B09-ESTUCHECUCHILLOS_MEME_…_ES_V02.png`
+- **Archivo:** `KFP_ES_TOF_PRO_B09-ESTUCHECUCHILLOS_MEME_…_ES_V03.png`
 - **Estilo:** meme nativo, como los que comparte la gente. Fondo blanco, texto negro, etiquetas de cinta escritas a mano con rotulador. Sin logo, sin morado y sin brillos: la marca solo aparece en la frase.
 - **Imagen:**
   - **Arriba:** un estuche de cocinero abierto con seis cuchillos. Cada bolsillo lleva su etiqueta: «tarjetas», «transferencias», «efectivo», «cripto», «otro banco» y «otra pasarela».
-  - **Abajo:** foto casera de un solo cuchillo sobre una tabla de cortar, con una cinta que dice «un solo enlace».
+  - **Abajo:** un solo cuchillo de chef de acero damasco, clavado en un tajo de madera como la espada de la leyenda y con un haz de luz dorada encima. Lleva una cinta que dice «un solo enlace».
+  - **Contraste exagerado a propósito:** los cuchillos del estuche son normales y el de Kunfupay es épico. Así se ve a la primera cuál gana.
 - **Texto en la imagen:**
   - «tú cobrando a clientes de varios países:»
   - «tú desde que cobras con kunfupay:»
@@ -255,7 +256,12 @@ Pieza extra, fuera de los 8 del conjunto. Entra cuando haga falta un relevo o pa
 - **Descripción:** Te pagan como quieran
 - **Botón:** Registrarte
 - **Producción:**
-  - **Imágenes:** dos de Higgsfield, el estuche con los cuchillos y la foto casera del cuchillo en la tabla. Más la versión anterior con el cuchillo morado, que se descartó por demasiado de marca. En total, 8,25 créditos.
+  - **Imágenes de Higgsfield:**
+    - el estuche con los cuchillos;
+    - el cuchillo damasco épico;
+    - dos pruebas descartadas: el cuchillo morado, demasiado de marca, y el cuchillo en la tabla, demasiado normal.
+
+    En total, 11 créditos.
   - **Etiquetas:** compuestas encima, no generadas.
 - **Ojo:** los cuchillos son de cocina, en contexto de cocinero. Meta no debería leerlo como un arma. Aun así, si lo frena la revisión, el mismo concepto funciona con una caja de herramientas.
 
