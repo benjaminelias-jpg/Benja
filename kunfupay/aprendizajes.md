@@ -25,9 +25,13 @@
 
 - **Qué hice (V1):** 10 anuncios de Ignia con la escena creativa y una sola línea de texto en la imagen, más textos cortos (el texto 1) que no decían para quién eran.
 - **Qué hice (V2, también mal):** pegué la misma tarjeta blanca «Es para ti si:» con tres ✔ y un botón encima de cada escena.
+- **Qué hice (V3, también mal):** reutilicé las escenas de la V1 y les metí el texto que filtra en pósits y carteles. Seguía siendo poner texto encima de la creatividad vieja.
+- **Segunda corrección:** «te dije que no tomes el camino facil de simplemente poner un cuadro contexto encima de las creatividades, debes rehacerlas con la nueva idea que te di».
+- **Qué hice (V4, bien encaminado):** diez conceptos nuevos que nacen de la frase que filtra: claqueta «Lanzamiento de tu curso de fitness», cuatro cohetes por nicho, planificador con cada «yo» tachado, hombre orquesta, mapa de alumnos de LATAM, dos puertas de pago, orden de lanzamiento, relevo, puerta de la lista de espera y dos calendarios.
 - **Corrección del usuario:** «en ignia necesitamos que sean leads muy calificados, necesito que siempre los anuncios sean super completos, no pueden ser anuncios sencillos de una sola imagen o cosas asi, necesito texto que filtre bien al buyer que queremos, siempre con criterio no poner texto por poner o hacer algo feo tampoco, la imagen creativa que tiene me gusta» · «no quiero que simplemente hagas el trabajo facil y literal de poner el texto encima en cuadro que en teoria filtre, quiero que tengas criterio a la hora de armar las creatividades, que integre un buen texto que filtre, como si vendes cursos x, hacer un lanzamiento de tu curso x, si eres infoproductor o coach no puedes seguir lanzando solo».
 - **Por qué estaba mal:** en Ignia el KPI es la tasa de calificación, no el coste por registro. La V1 no decía para quién era. La V2 filtraba, pero como un formulario pegado: la misma caja en las diez piezas, que tapa la escena y se lee como anuncio.
 - **Regla nueva (Ignia y verticales de servicio caro):**
+  - Se rehace la pieza desde la frase que filtra: primero la frase, después el objeto o la escena que la cuenta. Nunca escena vieja + texto encima.
   - El comprador se nombra en el titular o en un rótulo pegado a él: «Si eres coach o infoproductor, no puedes seguir lanzando solo», «Si lanzas tu curso, mentoría o programa:», «Coach: tú grabas. Nosotros lanzamos tu programa.»
   - El umbral (+5.000 USD/mes) va en un objeto que ya pertenece a la escena: pósit en el portátil, cartel en la plataforma de lanzamiento, pegatina, ficha con pinza («Requisito:»), portapapeles, pizarra o el propio formulario de la lista.
   - Cada pieza decide su sitio para el filtro según su escena. Nunca una caja o tarjeta igual en toda la tanda.
