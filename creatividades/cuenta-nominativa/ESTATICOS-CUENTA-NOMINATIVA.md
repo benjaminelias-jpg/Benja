@@ -1,11 +1,17 @@
 # Estáticos · Conjunto D · Cuenta nominativa con IBAN
 
 **Campaña:** TESTEO ES · **Conjunto:** D · Cuenta nominativa con IBAN · 20 €/día
-**Fecha:** 6 de octubre de 2026 · **Versión:** V04
+**Fecha:** 6 de octubre de 2026 · **Versión:** V04 (D-01 en V05)
 
 Completan el conjunto junto a los 4 vídeos. Ningún estático repite el mensaje de un vídeo.
 
 ---
+
+## Qué cambió en la V05 (solo D-01)
+
+- **El filtro pasa al titular**, en tres renglones: «Si vendes productos digitales, / de los impuestos de cada venta / nos encargamos nosotros.»
+- **Fuera el pie de filtro** en esta pieza: con el titular ya filtra, y el bloque suelto solo añadía peso.
+- **Más aire** entre titular, subtítulo y la línea de Merchant of Record.
 
 ## Qué cambió en la V04
 
@@ -20,7 +26,7 @@ Completan el conjunto junto a los 4 vídeos. Ningún estático repite el mensaje
 
 ### El pie, igual en las cuatro piezas
 
-- **Filtro:** «**Solo si ya vendes** formación online desde España.» y debajo «Cursos, mentorías, membresías o comunidades.»
+- **Filtro:** «**Solo si ya vendes** formación online desde España.» y debajo «Cursos, mentorías, membresías o comunidades.» En D-01 no va: el filtro está en el titular («Si vendes productos digitales,»).
 - **Logo:** solo, en la esquina inferior derecha y lo más abajo posible. En feed, a 58 px del borde. En vertical, justo encima de los 670 px de abajo que tapa la interfaz de Reels; más abajo no se vería.
 - Sin botón dibujado: el botón lo pone Meta.
 
@@ -57,8 +63,8 @@ El texto principal abre con el beneficio, no con la función. Los cuatro usan el
 ### D-01 · Abridor · Boli
 
 - **Nombre del anuncio:** `D-01 | N1 | Miedo | Justificar ingresos | IMG | ABR`
-- **Archivos:** `KFP_ES_TOF_ABR_D01-DEDONDESALE_BOLI_1080x1350_ES_V04.png` · `…_1080x1920_ES_V04.png`
-- **Texto en la imagen:** nota «¿Y si me preguntan de dónde sale este dinero?» · «CON KUNFUPAY» · «De los impuestos de cada venta nos encargamos nosotros.» · «Y tu dinero llega a una cuenta a tu nombre, con IBAN, para retirarlo cuando quieras.» · «Podemos porque somos la única pasarela de España que funciona como Merchant of Record.» · pie
+- **Archivos:** `KFP_ES_TOF_ABR_D01-DEDONDESALE_BOLI_1080x1350_ES_V05.png` · `…_1080x1920_ES_V05.png`
+- **Texto en la imagen:** nota «¿Y si me preguntan de dónde sale este dinero?» · «CON KUNFUPAY» · «Si vendes productos digitales, de los impuestos de cada venta nos encargamos nosotros.» · «Y tu dinero llega a una cuenta a tu nombre, con IBAN, para retirarlo cuando quieras.» · «Podemos porque somos la única pasarela de España que funciona como Merchant of Record.» · logo en la esquina, sin pie de filtro
 
 **Texto principal**
 
