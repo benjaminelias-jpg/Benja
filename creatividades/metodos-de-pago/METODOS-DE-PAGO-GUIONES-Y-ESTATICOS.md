@@ -223,6 +223,42 @@ Cada uno tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories y 
 - **Descripción:** Moneda local, cripto o transferencia
 - **Botón:** Registrarte
 
+### Bonus · B-09 · Prospector · El estuche de cuchillos (meme)
+
+Pieza extra, fuera de los 8 del conjunto. Entra cuando haga falta un relevo o para probar el formato meme.
+
+- **Nombre del anuncio:** `B-09 | N1 | Meme | Mil formas de cobrar | IMG | PRO`
+- **Archivo:** `KFP_ES_TOF_PRO_B09-ESTUCHECUCHILLOS_MEME_…_ES_V01.png`
+- **Imagen:**
+  - **Arriba:** un estuche de cocinero abierto con seis cuchillos. Cada bolsillo lleva una etiqueta de cinta: «TARJETAS», «TRANSFERENCIAS», «EFECTIVO», «CRIPTO», «OTRO BANCO» y «OTRA PASARELA».
+  - **Abajo:** un solo cuchillo con el mango morado y la etiqueta «UN SOLO ENLACE».
+- **Texto en la imagen:**
+  - «*Tú,* cobrando tus cursos a clientes de varios países:»
+  - «*Tú,* con Kunfupay:»
+  - «Te pagan como quieran: en su moneda local, en cripto o por transferencia. Y te llega en euros o en dólares.»
+
+**Texto principal**
+
+> Si vendes cursos desde España a clientes de varios países, seguro que llevas encima un estuche entero: una pasarela para las tarjetas, un banco para las transferencias, algo para el efectivo y otra cosa para la cripto.
+>
+> Con Kunfupay, solo necesitas uno: tu enlace. Tu cliente te paga como quiera, y todo llega a tu cuenta de Kunfupay en euros o en dólares.
+>
+> Y de los impuestos de cada venta nos encargamos nosotros. Podemos porque somos la única pasarela de España que funciona como Merchant of Record.
+>
+> Si todavía no vendes, no es para ti.
+>
+> Entra y mira si tu negocio encaja.
+>
+> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+
+- **Título:** Deja el estuche. Usa un solo enlace
+- **Descripción:** Te pagan como quieran
+- **Botón:** Registrarte
+- **Producción:**
+  - **Imágenes:** dos de Higgsfield, el estuche con los cuchillos y el cuchillo con mango morado, 5,5 créditos.
+  - **Etiquetas:** compuestas encima, no generadas.
+- **Ojo:** los cuchillos son de cocina, en contexto de cocinero. Meta no debería leerlo como un arma. Aun así, si lo frena la revisión, el mismo concepto funciona con una caja de herramientas.
+
 ---
 
 ## Producción
