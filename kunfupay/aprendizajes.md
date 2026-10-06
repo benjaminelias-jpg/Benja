@@ -60,3 +60,12 @@
   - Nada que pueda confundir a Kunfupay con Hacienda (uniformes, ventanillas, delantales de cobrador).
   - Ángulo de facturas: «¿Nunca hiciste una factura por cada alumno? Antes de que Hacienda venga a buscarte, cobra con Kunfupay: la hace por ti.» Siempre «desde tu próxima venta»: Kunfupay no arregla lo anterior y no se promete.
   - Los recibos de las fotos no llevan cifras ni líneas de IVA: la IA las inventa y chocan con la regla 21 y con T-10.
+
+## 06/10/2026 · Qué funcionó y qué no en Tributaless V05
+
+- **Corrección del usuario:** «deja el anuncio del reloj de arena, el que sella facturas mientras el otro duerme, el del salvavidas, el de la torta, el de la pizarra, el del calendario de LLC; el del trading le falta copy, tiene un título y listo; lo demás cámbialos completamente que son nefastos».
+- **Funcionó:** las viñetas con el socorrista de Kunfupay haciendo algo (salvavidas, sellar de noche, pagar en la ventanilla, ofrecer el salvavidas junto al reloj de arena) y las fotos de pizarra o calendario dibujados a mano (Hotmart, LLC).
+- **No funcionó:** el sello rojo sobre recibos en foto (1A, 3A, R2), la pregunta en el chat de IA (2A), la escalera (4B) y la hoja de pasos (R1).
+- **Regla:**
+  - En fotos, Kunfupay se explica con una pizarra o un calendario a mano que enseñe el antes y el después, no con un sello.
+  - Una pieza con solo un titular está incompleta: además del titular, un subtítulo que diga quién eres y qué cambia, y un objeto en la escena con lo que hace Kunfupay y el filtro (caso de 5A, el trading).
