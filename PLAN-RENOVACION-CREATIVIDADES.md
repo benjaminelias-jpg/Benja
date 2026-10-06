@@ -79,7 +79,7 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
 
 | Conjunto | Sigue de lo que hay | Nuevo y listo | Falta crear | Total |
 |---|---|---|---|---|
-| **A · Optimización fiscal** | Profitstride (ganador) · Podcast Juanen (relanzado el día 10) · LLC Rubén (si pasa el día 9) | Vídeos 3, 5 y 8 (día 10) | **2 estáticos** | 8 |
+| **A · Optimización fiscal** | Profitstride (ganador) · Podcast Juanen (relanzado el día 10) · LLC Rubén (si pasa el día 9) | Vídeos 3, 5 y 8 y el estático A-01 «Stripe o Kunfupay» (día 10) | **1 estático** | 8 |
 | **B · Métodos de pago** | Noticia Pago Global | Vídeo animado del flujo para cobrar de todo el mundo | **6: 2 vídeos y 4 estáticos** | 8 |
 | **C · Dinero retenido** | — | — | **8: 4 vídeos y 4 estáticos** | 8 |
 | **D · Cuenta nominativa** | — | 4 estáticos y vídeos 9, 4, 6 y 2 | — | 8 |
@@ -90,16 +90,17 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
 ### Qué crear, en orden de prioridad
 
 1. **B · Métodos de pago, 6 piezas.** El vídeo animado del flujo ya cubre uno de los tres vídeos. Es el ángulo que más dinero pierde hoy y no tiene ningún anuncio que funcione.
-   - Una pieza por país y método: tu alumno de México paga con OXXO, el de Brasil con PIX, y no pierdes la venta.
-   - Un closer de oferta con el formato «Dos pasos y listo».
-   - Una comparativa en el formato de D-02.
+   - **Solo se lanza en España, así que no se nombran métodos de otros países** (OXXO, PIX): el creador español no sabe qué son. Se nombra la situación y el país: «tu alumno de México quiere comprarte y su tarjeta no pasa». Es lo mismo que hace el único anuncio de B que funciona, Noticia Pago Global: «Un cliente en México, otro en España, otro en Italia. Un solo link de Kunfupay los cobra a todos».
+   - **El filtro:** «Si vendes cursos a Latinoamérica desde España».
+   - **Bizum sí lo conoce el público español.** Si Kunfupay lo acepta, es el único método que vale la pena nombrar.
+   - **Piezas:** 2 vídeos sobre la venta que se cae («¿Y si mi alumno no tiene tarjeta?»), un closer «Dos pasos y listo», una comparativa como D-02 y una nota manuscrita.
    - La moneda no se usa como beneficio.
 2. **ESCALADO · 3 variantes de Profitstride.** Mismo vídeo y mismo cuerpo, con un gancho nuevo en los 3 primeros segundos. Así, cuando Profitstride se canse, el relevo ya habrá aprendido.
-3. **A · 2 estáticos** en el sistema visual de D, que es el que más os ha gustado.
-   - Una comparativa «Cobrando con Stripe / Cobrando con Kunfupay».
-   - Un closer «Sin irte a Andorra ni montar una LLC».
+3. **A · 1 estático** en el sistema visual de D.
+   - Hecha: la comparativa «Cobrando con Stripe / Cobrando con Kunfupay», en `creatividades/optimizacion-fiscal/`.
+   - Falta: un closer «Sin irte a Andorra ni montar una LLC».
 
    Tienen que hablar de impuestos, no del IBAN, para no pisarse con D-01 y D-02.
 4. **C · Dinero retenido, 8 piezas.** Es un ángulo nuevo. Se puede escalonar: 4 piezas para empezar y otras 4 en la segunda semana.
 
-**En total: 19 piezas.** Con un acierto del 5–8 % por pieza, salen entre 1 y 1,5 ganadores esperados.
+**En total: 18 piezas.** Con un acierto del 5–8 % por pieza, salen entre 1 y 1,5 ganadores esperados.
