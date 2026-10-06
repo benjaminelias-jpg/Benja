@@ -218,6 +218,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - El titular, o un rótulo pegado a él, nombra al comprador: «Si eres coach o infoproductor, no puedes seguir lanzando solo», «Si lanzas tu curso, mentoría o programa:».
     - El umbral de facturación va en un objeto de la propia escena (pósit, cartel, pegatina, ficha con pinza, portapapeles, pizarra, formulario). Cada pieza elige el suyo.
     - Prohibido: la misma caja o tarjeta de «Es para ti si:» pegada encima de todas las piezas, y el texto suelto sin jerarquía.
+    - **Contexto siempre, también en retargeting** (06/10/2026: «le falta contexto, está bien que es para leads con mayor nivel de conciencia, pero igual debe dar contexto»). Cada pieza dice por sí sola qué es la marca, qué hace por ti, para quién es y que se cobra con Kunfupay. Una metáfora que solo entiende quien ya conoce la marca (relevo, puerta cerrada) no vale. Es la regla 18 aplicada a estáticos.
     - Nada en la imagen contradice el filtro o la verdad (precios ridículos para el perfil, «Impuestos 0,00»).
     - En los textos: el texto 1 ya nombra al comprador; el umbral desde el texto 2; el más largo cierra con la exclusión completa.
 

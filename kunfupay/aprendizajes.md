@@ -37,4 +37,6 @@
   - Cada pieza decide su sitio para el filtro según su escena. Nunca una caja o tarjeta igual en toda la tanda.
   - Todos los textos filtran, también el más corto: el texto 1 nombra al comprador; desde el texto 2, el umbral; el texto 5 cierra con la exclusión completa («si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos»).
   - Nada en la imagen que contradiga el filtro o la verdad: un checkout de 49 USD no encaja con quien factura 5.000 al mes, y una línea «Impuestos 0,00» sugiere evadir.
+- **Tercera corrección (V04):** «no me gustan el de la carrera y el de la puerta, me parece que le falta contexto, está bien que es para leads con mayor nivel de conciencia, pero igual debe dar contexto». El relevo y la puerta suponían que ya sabías qué es Ignia. Se rehicieron: la cadena de montaje (entra tu curso, sale el carrito cobrando con Kunfupay) y la hoja de cuatro pasos de la lista de espera, con titular «Ignia, la agencia de lanzamientos de Kunfupay…».
+  - Regla: toda pieza, también la de retargeting, dice por sí sola qué es Ignia, qué hace por ti, para quién es y que se cobra con Kunfupay. Una metáfora que pide saber qué es Ignia no vale.
 - **Lo que funcionó:** las escenas (pasarela, pósits, ocho brazos, puerta del banco, cohete, checklist, pizarra). Se conservan.
