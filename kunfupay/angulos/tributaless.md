@@ -8,7 +8,7 @@
 
 ---
 
-> **06/10/2026 · V04.** Los 13 anuncios se rehicieron desde cero con las correcciones de Ignia (regla 26): la frase que filtra es el concepto, cada pieza da contexto por sí sola y nada de cajas pegadas. Las piezas, copys y VSL vigentes están en `tributaless-copys.md` y en https://claude.ai/artifact/T1n3KXjmEese8dygwsEJ2A. El plan del §4 conserva la estrategia; sus imágenes y textos A/B quedan sustituidos.
+> **06/10/2026 · V05.** Kunfupay se representa como el socorrista (viñetas) y el sello rojo sobre cada venta (fotos); el ángulo 1 pasa a «nunca hiciste una factura por cada alumno». **V04:** Los 13 anuncios se rehicieron desde cero con las correcciones de Ignia (regla 26): la frase que filtra es el concepto, cada pieza da contexto por sí sola y nada de cajas pegadas. Las piezas, copys y VSL vigentes están en `tributaless-copys.md` y en https://claude.ai/artifact/T1n3KXjmEese8dygwsEJ2A. El plan del §4 conserva la estrategia; sus imágenes y textos A/B quedan sustituidos.
 
 ## 0. Decisión que cambia el planteamiento
 

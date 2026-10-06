@@ -47,3 +47,16 @@
 - **Qué estaba mal:** las 13 piezas del 01/10 no decían en la imagen para quién eran, llevaban una caja de texto pegada abajo y varias no se entendían sin conocer Kunfupay (cámara acorazada, pregunta del foro, «20 minutos para ver si encaja», pizarra).
 - **Qué hice:** 13 conceptos nuevos desde la frase que filtra («Vendes tu curso desde España: 300 alumnos, 300 facturas», «Si vendes cursos desde España, esta pregunta ya la hiciste», «¿Vendes cursos desde España y te dijeron "móntate una LLC"?»…), con el mínimo de 2.000 €/mes dentro de la escena, la línea de Kunfupay en todas y copys reescritos.
 - **Regla:** la regla 26 vale para todas las verticales de Kunfupay, no solo para Ignia. Una corrección hecha en una vertical se aplica a las demás sin esperar a que el usuario lo pida.
+
+## 06/10/2026 · Cómo se representa a Kunfupay en las imágenes, y el ángulo de las facturas
+
+- **Corrección del usuario:** «no me gusta cómo representas a Kunfupay, creo que el único que realmente se entiende es el de la playa que le tira el salvavidas, pero los demás no se entienden, como la mesera parece que está asociado con Hacienda, lo de trading podrías ser más directo, no puedes tener 50000 euros en tu cuenta de trading por miedo, el del sueño, pero hacer 300 facturas no creo que sea un ángulo realmente porque no lo hacen, entonces sería como dar miedo de ¿no hiciste nunca una factura por cada cliente? Antes de que te vayan a buscar puedes cobrar con Kunfupay que la hace por ti».
+- **Por qué estaba mal:**
+  - Kunfupay aparecía como un pósit, una puerta, un cartel o un personaje con delantal. No se veía qué hacía, y el del delantal parecía de Hacienda.
+  - «300 alumnos, 300 facturas» supone que el creador hace las facturas. No las hace: el dolor real es el miedo por las que nunca hizo.
+  - El trading tiene que decirse sin rodeos: 50.000 € parados por miedo.
+- **Regla nueva (todas las verticales):**
+  - Kunfupay se ve **haciendo algo por ti**. En viñetas, un personaje fijo: el socorrista (gorra azul, gafas, camiseta amarilla con «Kunfupay», salvavidas naranja) que lanza el salvavidas, sella las ventas o paga en la ventanilla de «Impuestos de cada venta». En fotos, el sello rojo sobre cada venta: «KUNFUPAY · Factura hecha · Impuestos de esta venta pagados».
+  - Nada que pueda confundir a Kunfupay con Hacienda (uniformes, ventanillas, delantales de cobrador).
+  - Ángulo de facturas: «¿Nunca hiciste una factura por cada alumno? Antes de que Hacienda venga a buscarte, cobra con Kunfupay: la hace por ti.» Siempre «desde tu próxima venta»: Kunfupay no arregla lo anterior y no se promete.
+  - Los recibos de las fotos no llevan cifras ni líneas de IVA: la IA las inventa y chocan con la regla 21 y con T-10.

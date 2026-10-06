@@ -1,73 +1,72 @@
-# Tributaless · anuncios V04 (13), copys y VSL
+# Tributaless · anuncios V05 (13), copys y VSL
 
 - **Fecha:** 06/10/2026
-- **Qué es:** 13 conceptos nuevos. Cada pieza nace de una frase que solo le habla a quien vende formación online desde España y factura más de 2.000 € al mes, y explica por sí sola qué hace Kunfupay. 5 títulos y 5 textos por anuncio, del más corto al más largo. Reglas 24, 25 y 26 del cerebro.
-- **Imágenes:** `tributaless-anuncios/` (V04).
+- **Qué es:** 13 anuncios que filtran (formación online desde España, +2.000 €/mes) y en los que Kunfupay se ve haciendo algo: el socorrista de Kunfupay en las viñetas y el sello rojo «KUNFUPAY · Factura hecha · Impuestos de esta venta pagados» en las fotos. 5 títulos y 5 textos por anuncio, del más corto al más largo. Reglas 24, 25 y 26 del cerebro.
+- **Ángulo 1:** «¿Nunca hiciste una factura por cada alumno? Antes de que Hacienda venga a buscarte, cobra con Kunfupay: la hace por ti», siempre desde la próxima venta.
+- **Imágenes:** `tributaless-anuncios/` (V05; R1 sigue en V04).
 - **Artifact:** https://claude.ai/artifact/T1n3KXjmEese8dygwsEJ2A
-- **Sustituye** a los copys del 01/10 y a sus 13 imágenes (sin filtro en la imagen, caja de texto pegada y piezas sin contexto: cámara acorazada, foro, «20 minutos para ver si encaja», pizarra).
 
-## 1A · Vendes tu curso desde España: 300 alumnos, 300 facturas.
+## 1A · ¿Vendes cursos desde España y nunca hiciste una factura por cada alumno?
 
-Foto real · pila de facturas · Abridor · Ángulo: Lanzamiento · `TRIB_ES_TOF_ABR_LANZ_FACTURAS_1080x1350_ES_V04`
+Foto real · sello de Kunfupay · Abridor · Ángulo: Ventas sin factura · `TRIB_ES_TOF_ABR_SINFACTURA_SELLO_1080x1350_ES_V05`
 
-**Por qué:** La pila de facturas con la de arriba en el nº 300 y el contador al lado: quien vende por lanzamientos lo reconoce sin leer. El titular dice desde dónde vende y el pósit explica qué hace Kunfupay y pone el mínimo.
+**Por qué:** Habla de lo que de verdad hacen: vender sin hacer una factura por alumno. El móvil lleno de «Nueva venta» y, al lado, el recibo con el sello rojo de Kunfupay («Factura hecha · Impuestos de esta venta pagados») enseñan qué hace Kunfupay sin explicarlo. Desde la próxima venta, sin prometer nada sobre lo anterior.
 
-**Títulos:** 300 alumnos, 300 facturas · Factura a uno, no a 300 · Sin una factura por alumno · Vendes cursos desde España · Después del lanzamiento
+**Títulos:** ¿Nunca hiciste una factura? · Antes de que vengan a buscarte · Kunfupay la hace por ti · Cada venta, con su sello · Desde tu próxima venta
 
 **Textos principales:**
 
-1. ¿Vendes tu curso desde España? 300 alumnos son 300 facturas. Con Kunfupay facturas a uno: Kunfupay.
+1. ¿Vendes cursos desde España y nunca hiciste una factura por cada alumno? Antes de que Hacienda venga a buscarte, cobra con Kunfupay: la hace por ti.
 
-2. Si vendes formación online desde España, cada lanzamiento te deja una factura por alumno. Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
+2. Si vendes formación online desde España y tus ventas salen sin factura, cada «Nueva venta» suma. Desde tu próxima venta, Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
-3. Infoproductor en España: abres el carrito, entran 300 ventas y, con ellas, 300 facturas y los impuestos de cada una.
-   Con Kunfupay cobras como siempre, pero tú facturas a uno: Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+3. Te suena el móvil: «Nueva venta». Y otra. Y ninguna con su factura.
+   Si vendes cursos desde España, eso tiene arreglo desde tu próxima venta: cobra con Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
-4. Si vendes cursos desde España, conoces la semana del lanzamiento: el carrito abierto, las ventas entrando y el móvil que no para.
-   Y luego llega la otra semana: una factura por cada alumno y los impuestos de cada venta, uno a uno.
-   Con Kunfupay cobras como siempre. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
+4. Muchos infoproductores en España venden durante meses sin hacer una factura por cada alumno. No por mala fe: porque nadie se lo explicó y porque son cientos.
+   Antes de que Hacienda venga a buscarte, cambia cómo cobras. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Mira el vídeo: son cinco minutos.
 
-5. Hay dos semanas en cada lanzamiento. La primera es la buena: abres el carrito y cada notificación es una alegría.
-   La segunda no sale en ningún vídeo: 300 ventas son 300 facturas, y cada una con sus impuestos. Con una cuenta normal de Stripe o con PayPal, todo eso es tuyo.
-   Con Kunfupay cobras igual que ahora, pero tú solo le facturas a Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
+5. Vendes cursos desde España, las ventas entran por Stripe, PayPal o tu plataforma, y la factura de cada alumno… nunca la hiciste. Cada mes que pasa son más ventas sin papel detrás.
+   Con Kunfupay, desde tu próxima venta, eso deja de ser tu problema. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
+   Así sale cada venta con Kunfupay: con el sello de «factura hecha» y «impuestos de esta venta pagados».
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira el vídeo: son cinco minutos.
 
-## 1B · Infoproductor en España: cada lanzamiento trae una ola de facturas.
+## 1B · ¿Nunca hiciste una factura por cada alumno? Antes de que te pille la ola, cobra con Kunfupay.
 
-Viñeta · la ola · Prospector · Ángulo: Lanzamiento · `TRIB_ES_TOF_PRO_LANZ_OLA_VINETA_1080x1350_ES_V04`
+Viñeta · el socorrista · Prospector · Ángulo: Ventas sin factura · `TRIB_ES_TOF_PRO_SINFACTURA_OLA_VINETA_1080x1350_ES_V05`
 
-**Por qué:** La ola de facturas que gustó, rehecha con contexto: el creador celebra 300 ventas, detrás llega la ola, y el socorrista de Kunfupay le lanza el flotador «factura e impuestos de cada venta». El cartel de la playa pone el mínimo.
+**Por qué:** La viñeta que mejor se entendió: Kunfupay es el socorrista que te lanza el salvavidas «factura e impuestos de cada venta» antes de que llegue la ola de «Ventas sin factura» con el sobre de Hacienda. El cartel pone el mínimo.
 
-**Títulos:** La ola de facturas · Después de las 300 ventas · Infoproductor en España · Tu socorrista: Kunfupay · Para +2.000 € al mes
+**Títulos:** Antes de que te pille la ola · Tu socorrista: Kunfupay · ¿Ventas sin factura? · El salvavidas de tus ventas · Para +2.000 € al mes
 
 **Textos principales:**
 
-1. Infoproductor en España: cada lanzamiento trae una ola de facturas. Kunfupay hace la factura y paga los impuestos de cada venta.
+1. ¿Vendes cursos desde España y nunca hiciste una factura por cada alumno? Antes de que te pille la ola, cobra con Kunfupay.
 
-2. El día del lanzamiento celebras 300 ventas. Detrás viene la ola: 300 facturas y los impuestos de cada venta. Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Para quien ya factura más de 2.000 € al mes.
+2. Detrás de tus ventas sin factura viene una ola, y en la cresta va un sobre de Hacienda. Desde tu próxima venta, Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Para quien ya factura más de 2.000 € al mes.
 
-3. Si vendes formación online desde España, esta viñeta es tu lanzamiento: tú celebrando y, detrás, la ola de facturas.
-   Con Kunfupay cambia. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+3. Si vendes formación online desde España, esta viñeta es tu negocio: tú celebrando ventas y, detrás, la ola de las que salieron sin factura.
+   Kunfupay es el socorrista. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
-4. El día del lanzamiento todo el mundo lo celebra. Nadie te cuenta lo que viene detrás: una factura por cada alumno y los impuestos de cada venta, uno a uno.
-   Hay otra forma de cobrar. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Así funciona un Merchant of Record.
+4. Vender sin factura funciona hasta que llega la ola. Y cuanto más vendes, más grande es.
+   Con Kunfupay, desde tu próxima venta: Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Así funciona un Merchant of Record.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Si facturas menos de 2.000 € al mes, todavía no es para ti. Mira el vídeo: son cinco minutos.
 
-5. Trescientas ventas en una semana es la mejor noticia del año. Hasta que te das cuenta de que son trescientas facturas y trescientas veces los impuestos de cada venta, y todo con tu nombre.
+5. Trescientas ventas en un lanzamiento es la mejor noticia del año. Si ninguna lleva su factura, también es una ola que crece detrás de ti, con un sobre de Hacienda en la cresta.
    Es para infoproductores que viven en España, venden cursos, mentorías o comunidades y ya facturan más de 2.000 € al mes.
-   Con Kunfupay cobras igual que ahora. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
+   Kunfupay te lanza el salvavidas desde tu próxima venta. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira el vídeo: son cinco minutos.
 
 ## 2A · Si vendes cursos desde España, esta pregunta ya la hiciste.
 
-Foto real · la pregunta · Abridor · Ángulo: Miedo a Hacienda · `TRIB_ES_TOF_ABR_HACIENDA_PREGUNTA_1080x1350_ES_V04`
+Foto real · pregunta y sello · Abridor · Ángulo: Miedo a Hacienda · `TRIB_ES_TOF_ABR_HACIENDA_PREGUNTA_1080x1350_ES_V05`
 
-**Por qué:** La pregunta que el creador escribe de verdad en un chat de IA a medianoche: vende desde España, factura 3.000 € al mes con Stripe y tiene miedo a un susto de Hacienda. El propio texto de la pregunta es el filtro.
+**Por qué:** La pregunta que el creador escribe de verdad en un chat de IA a medianoche, y delante, la respuesta en forma de objeto: el recibo con el sello rojo de Kunfupay. El texto de la pregunta (España, 3.000 €/mes, Stripe) es el filtro.
 
 **Títulos:** Esta pregunta ya la hiciste · ¿Y si Hacienda me da un susto? · Vendes cursos con Stripe · La pregunta de medianoche · Tú te olvidas
 
@@ -78,7 +77,7 @@ Foto real · la pregunta · Abridor · Ángulo: Miedo a Hacienda · `TRIB_ES_TOF
 2. «Vendo cursos online desde España, ya facturo 3.000 € al mes con Stripe…» Si esa pregunta es tuya: Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
 3. Si vendes cursos desde España con Stripe o PayPal, cada venta es tuya: su factura y sus impuestos también. Por eso la pregunta aparece a medianoche.
-   Con Kunfupay es distinto. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Con Kunfupay es distinto: cada venta sale con el sello de «factura hecha» e «impuestos pagados». Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
 4. Esta pregunta la hace mucha gente que vende formación online desde España: qué hacer con la factura y los impuestos de cada venta para no llevarse un susto de Hacienda.
@@ -92,89 +91,91 @@ Foto real · la pregunta · Abridor · Ángulo: Miedo a Hacienda · `TRIB_ES_TOF
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira el vídeo: son cinco minutos.
 
-## 2B · Vendes cursos desde España y cada carta de Hacienda te quita el sueño.
+## 2B · ¿Vendes cursos desde España y duermes mal pensando en Hacienda?
 
-Viñeta · insomnio · Prospector · Ángulo: Miedo a Hacienda · `TRIB_ES_TOF_PRO_HACIENDA_INSOMNIO_VINETA_1080x1350_ES_V04`
+Viñeta · el socorrista de noche · Prospector · Ángulo: Miedo a Hacienda · `TRIB_ES_TOF_PRO_HACIENDA_NOCHE_VINETA_1080x1350_ES_V05`
 
-**Por qué:** El creador despierto en la cama, el móvil con «Nueva venta» y en la cabeza un sobre de Hacienda. El titular nombra a quien vende cursos desde España y la pared del cuarto lleva el mínimo de ventas.
+**Por qué:** El creador duerme tranquilo y, en la mesa, el socorrista de Kunfupay sella cada venta: «Factura hecha · impuestos pagados». Se ve quién hace qué, y nadie confunde a Kunfupay con Hacienda.
 
-**Títulos:** Ventas de día, dudas de noche · La carta que no llega · Duerme con tus ventas en regla · Vendes cursos desde España · Tú te olvidas
+**Títulos:** Mientras duermes · Duerme con tus ventas en regla · ¿Duermes mal por Hacienda? · El turno de noche, Kunfupay · Vendes cursos desde España
 
 **Textos principales:**
 
-1. Vendes cursos desde España y cada carta de Hacienda te quita el sueño. Con Kunfupay, cada venta lleva su factura y sus impuestos pagados.
+1. ¿Vendes cursos desde España y duermes mal pensando en Hacienda? Mientras duermes, Kunfupay hace la factura y paga los impuestos de cada venta.
 
-2. Nueva venta en el móvil y, en la cabeza, un sobre de Hacienda. Si vendes formación online desde España y ya facturas más de 2.000 € al mes: Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+2. Suena «Nueva venta» a medianoche y, en vez de alegrarte, piensas en Hacienda. Si vendes formación online desde España y ya facturas más de 2.000 € al mes: Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.
 
 3. Si vendes cursos desde España, puede que te suene: el dinero entra y, por la noche, aparece el miedo a que un día te llegue Hacienda.
-   Con Kunfupay, cada venta lleva su factura y sus impuestos pagados. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Con Kunfupay, cada venta lleva su factura y sus impuestos pagados mientras duermes. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
 4. Infoproductor en España: de día celebras cada venta y de noche piensas en Hacienda.
-   Ese miedo viene de cobrar sin que nadie haga la factura y pague los impuestos de cada venta.
-   Con Kunfupay sí. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Ese miedo viene de cobrar sin que nadie haga la factura y pague los impuestos de cada venta. Con Kunfupay, eso lo hace Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Si facturas menos de 2.000 € al mes, todavía no es para ti. Mira el vídeo: son cinco minutos.
 
 5. Hay una escena que se repite en quien vende cursos desde España: suena «Nueva venta», te alegras y, al apagar la luz, piensas en la carta de Hacienda que todavía no ha llegado.
-   Con Kunfupay, cada venta sale con su factura y sus impuestos pagados. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
+   Con Kunfupay, cada venta sale con su factura y sus impuestos pagados, también de noche. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira el vídeo: son cinco minutos.
 
-## 3A · ¿Facturas +2.000 €/mes con tus cursos y sientes que el lanzamiento se va en impuestos?
+## 3A · ¿Sientes que en cada venta de tu curso se te va dinero en impuestos?
 
-Foto real · dos tarros · Calificador · Ángulo: Impuestos · `TRIB_ES_TOF_CAL_IMPUESTOS_TARROS_1080x1350_ES_V04`
+Foto real · fila de sellos · Calificador · Ángulo: Impuestos · `TRIB_ES_TOF_CAL_IMPUESTOS_SELLOS_1080x1350_ES_V05`
 
-**Por qué:** El concepto de la hucha que gustó, rehecho: dos tarros sobre la hoja «Tu lanzamiento», uno casi vacío («Lo que te queda») y otro lleno («Impuestos de cada venta»). El titular pone el mínimo y la ficha dice qué hace Kunfupay y que va con su comisión.
+**Por qué:** Una fila de recibos de venta, todos con el sello rojo de Kunfupay («Impuestos de esta venta pagados»). El dolor está en el titular y la solución se ve en la mesa. La ficha dice «mismo precio, más neto» con la comisión incluida.
 
-**Títulos:** ¿Se te va en impuestos? · Lo que te queda · Mismo precio, más neto · Cansado de perder en impuestos · Desde 2.000 € al mes
+**Títulos:** ¿Se te va en impuestos? · Cada venta, con su sello · Mismo precio, más neto · Cansado de perder en impuestos · Desde 2.000 € al mes
 
 **Textos principales:**
 
-1. ¿Facturas más de 2.000 € al mes con tus cursos y sientes que el lanzamiento se va en impuestos? Kunfupay hace la factura y paga los de cada venta.
+1. ¿Vendes cursos desde España y sientes que en cada venta se te va dinero en impuestos? Kunfupay paga los impuestos de cada venta.
 
-2. Si vendes formación online desde España, conoces los dos tarros: el de lo que te queda y el de los impuestos de cada venta. Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y con el mismo precio para tu alumno, a ti te queda más por venta, incluso con la comisión de Kunfupay.
+2. Si vendes formación online desde España y estás cansado de perder dinero en impuestos, mira la fila: cada venta, con el sello de Kunfupay. Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Y con el mismo precio para tu alumno, a ti te queda más por venta, incluso con la comisión de Kunfupay.
 
-3. Lanzas, vendes y, cuando haces cuentas, el tarro de los impuestos está más lleno que el tuyo.
-   Si vendes cursos desde España y estás cansado de perder dinero en los impuestos de cada venta, hay otra forma de cobrar. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+3. Lanzas, vendes y, cuando haces cuentas, sientes que los impuestos se comen tu lanzamiento.
+   Si vendes cursos desde España, hay otra forma de cobrar. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Y con el mismo precio para tu alumno, a ti te queda más por venta, incluso con la comisión de Kunfupay.
    Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
-4. Infoproductor en España: si sientes que en cada lanzamiento los impuestos se llevan la mejor parte, esto es para ti.
+4. Infoproductor en España: si sientes que en cada venta los impuestos se llevan la mejor parte, esto es para ti.
    Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+   Así sale cada venta con Kunfupay: con el sello de «factura hecha» y «impuestos de esta venta pagados».
    Y con el mismo precio para tu alumno, a ti te queda más por venta, incluso con la comisión de Kunfupay.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Si facturas menos de 2.000 € al mes, todavía no es para ti. Mira el vídeo: son cinco minutos.
 
-5. Mira tus dos tarros después de un lanzamiento: el de lo que te queda y el de los impuestos de cada venta. Si el segundo te duele más que el primero te alegra, no eres el único.
+5. Mira tus ventas de un mes. Si cada una te recuerda lo que se lleva en impuestos, no eres el único.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes.
    Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
+   Así sale cada venta con Kunfupay: con el sello de «factura hecha» y «impuestos de esta venta pagados».
    Y con el mismo precio para tu alumno, a ti te queda más por venta, incluso con la comisión de Kunfupay.
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira el vídeo: son cinco minutos.
 
-## 3B · Infoproductor en España: ¿cuánto de tu lanzamiento es tuyo?
+## 3B · Infoproductor en España: tú disfrutas tu lanzamiento. Kunfupay paga los impuestos de cada venta.
 
-Viñeta · la tarta · Prospector · Ángulo: Impuestos · `TRIB_ES_TOF_PRO_IMPUESTOS_TARTA_VINETA_1080x1350_ES_V04`
+Viñeta · el socorrista paga · Prospector · Ángulo: Impuestos · `TRIB_ES_TOF_PRO_IMPUESTOS_PAGA_VINETA_1080x1350_ES_V05`
 
-**Por qué:** La tarta «Tu lanzamiento» con el trozo grande saliendo en el plato de «Impuestos de cada venta», y Kunfupay con el delantal y la libreta de facturas. La pregunta en positivo, el cartel con el mínimo y la línea de Kunfupay.
+**Por qué:** El creador disfruta la tarta «Tu lanzamiento» mientras el socorrista de Kunfupay va a la ventanilla de «Impuestos de cada venta» y dice «Este lo pago yo». Kunfupay ya no parece Hacienda: es quien paga por ti.
 
-**Títulos:** ¿Cuánto de la tarta es tuya? · El trozo grande · Tu tarta, tu lanzamiento · Infoproductor en España · Kunfupay se encarga
+**Títulos:** Tú disfrutas tu lanzamiento · «Este lo pago yo» · Kunfupay paga, tú disfrutas · Infoproductor en España · Tú te olvidas
 
 **Textos principales:**
 
-1. Infoproductor en España: ¿cuánto de tu lanzamiento es tuyo? Kunfupay hace la factura y paga los impuestos de cada venta.
+1. Infoproductor en España: tú disfrutas tu lanzamiento. Kunfupay hace la factura y paga los impuestos de cada venta.
 
-2. Haces la tarta, la vendes entera y el trozo grande se va en impuestos de cada venta. Si vendes cursos desde España y facturas más de 2.000 € al mes: Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+2. Tú con tu tarta y Kunfupay en la ventanilla de los impuestos de cada venta: «Este lo pago yo». Si vendes cursos desde España y facturas más de 2.000 € al mes: Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.
 
-3. Si vendes formación online desde España, esta viñeta es tu lanzamiento: la tarta es tuya, pero el trozo grande se va en el plato de los impuestos de cada venta.
-   Con Kunfupay cambia. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+3. Si vendes formación online desde España, esta viñeta es lo que cambia con Kunfupay: tú disfrutas tu lanzamiento y Kunfupay se ocupa de los impuestos de cada venta.
+   Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
-4. Así se siente un lanzamiento cuando llegan los impuestos de cada venta.
-   Con Kunfupay cambia. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+4. Así se siente un lanzamiento cuando otro se encarga de la ventanilla.
+   Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Y con el mismo precio para tu alumno, a ti te queda más por venta, incluso con la comisión de Kunfupay.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Si facturas menos de 2.000 € al mes, todavía no es para ti. Mira el vídeo: son cinco minutos.
 
-5. Cocinas durante meses: el contenido, la comunidad, el lanzamiento. Y cuando por fin repartes la tarta, el trozo más grande se lo llevan los impuestos de cada venta.
-   Si vendes cursos, mentorías o comunidades desde España y ya facturas más de 2.000 € al mes, hay otra forma de cobrar.
+5. Cocinas durante meses: el contenido, la comunidad, el lanzamiento. Lo justo es que la tarta la disfrutes tú.
+   Si vendes cursos, mentorías o comunidades desde España y ya facturas más de 2.000 € al mes, hay otra forma de cobrar: Kunfupay va a la ventanilla por ti.
    Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
    Y con el mismo precio para tu alumno, a ti te queda más por venta, incluso con la comisión de Kunfupay.
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
@@ -182,9 +183,9 @@ Viñeta · la tarta · Prospector · Ángulo: Impuestos · `TRIB_ES_TOF_PRO_IMPU
 
 ## 4A · ¿Vendes cursos desde España y te dijeron «móntate una LLC»?
 
-Foto real · planificador · Abridor · Ángulo: LLC · `TRIB_ES_TOF_ABR_LLC_PLANNER_1080x1350_ES_V04`
+Foto real · dos calendarios · Abridor · Ángulo: LLC · `TRIB_ES_TOF_ABR_LLC_CALENDARIOS_1080x1350_ES_V05`
 
-**Por qué:** Un planificador anual lleno de plazos de EE. UU. en rojo (Form 5472 + 1120, informe anual, agente registrado): la LLC se ve como una carga de todos los años, no como algo épico. El titular dice para quién es y el pósit, la alternativa.
+**Por qué:** Dos calendarios de 2027: «Con una LLC en EE. UU.», lleno de plazos en rojo, y «Con Kunfupay», limpio con un solo sello. La LLC se ve como una carga de todos los años y Kunfupay, como lo que te la quita.
 
 **Títulos:** ¿Te dijeron «móntate una LLC»? · Tu año, con una LLC · Sin LLC y en todo el mundo · Antes de montar nada · Vendes cursos desde España
 
@@ -211,9 +212,9 @@ Foto real · planificador · Abridor · Ángulo: LLC · `TRIB_ES_TOF_ABR_LLC_PLA
 
 ## 4B · Lo que te piden en EE. UU. para vender tu curso desde España.
 
-Viñeta · la escalera · Prospector · Ángulo: LLC · `TRIB_ES_TOF_PRO_LLC_ESCALERA_VINETA_1080x1350_ES_V04`
+Viñeta · la escalera y el socorrista · Prospector · Ángulo: LLC · `TRIB_ES_TOF_PRO_LLC_ESCALERA_VINETA_1080x1350_ES_V05`
 
-**Por qué:** La lista imposible convertida en una escalera que se pierde en las nubes, un peldaño por trámite de la LLC, y al lado una puerta naranja de Kunfupay a ras de suelo. La LLC se ve imposible, no épica, y el titular dice para quién.
+**Por qué:** La escalera infinita de trámites de la LLC y, al lado, el socorrista de Kunfupay señalando el camino llano «Cobrar tus cursos sin LLC»: «Yo hago la factura y pago los impuestos de cada venta». La LLC, imposible; Kunfupay, claro.
 
 **Títulos:** Lo que te piden en EE. UU. · La escalera de la LLC · O la puerta de al lado · Tu curso, sin LLC · Antes de montar nada
 
@@ -236,65 +237,65 @@ Viñeta · la escalera · Prospector · Ángulo: LLC · `TRIB_ES_TOF_PRO_LLC_ESC
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira el vídeo antes de montar nada.
 
-## 5A · Enseñas trading y tu comunidad te paga en Binance. ¿Y lo sacas de 300 en 300?
+## 5A · ¿Tienes 50.000 € de tu comunidad de trading parados en Binance por miedo a sacarlos?
 
-Foto real · libreta de retiros · Abridor · Ángulo: Retirar de a poco · `TRIB_ES_TOF_ABR_DEAPOCO_BINANCE_1080x1350_ES_V04`
+Foto real · saldo parado · Abridor · Ángulo: Retirar de a poco · `TRIB_ES_TOF_ABR_DEAPOCO_BINANCE_1080x1350_ES_V05`
 
-**Por qué:** El setup de quien enseña trading y, delante, la libreta «Retiros» con la misma línea repetida: 300 €, 300 €, 300 €. Solo se para quien cobra una comunidad. El pósit habla de las próximas ventas y deja fuera los ahorros.
+**Por qué:** Directo: el saldo de 50.000 € de ventas de la comunidad, el pósit «No lo saco por miedo» y la hoja «Próximas ventas» con el sello de Kunfupay. Ventas, no ahorros, y sin prometer nada sobre lo ya acumulado.
 
-**Títulos:** ¿Lo sacas de 300 en 300? · Tu comunidad paga en Binance · La libreta de retiros · Ventas, no ahorros · Tus próximas ventas
+**Títulos:** 50.000 € parados por miedo · ¿No lo sacas por miedo? · Tu comunidad paga en Binance · Tus próximas ventas, en regla · Ventas, no ahorros
 
 **Textos principales:**
 
-1. Enseñas trading desde España y tu comunidad te paga en Binance. ¿Y lo sacas de 300 en 300? Tus próximas ventas, mejor con Kunfupay.
+1. ¿Tienes 50.000 € de tu comunidad de trading parados en Binance por miedo a sacarlos? Tus próximas ventas, con Kunfupay.
 
-2. Si enseñas trading desde España, cobras tu comunidad en Binance y retiras de 300 en 300 por miedo, mira esto. Con Kunfupay, tus próximas ventas: factura e impuestos de cada venta, a tu nombre. Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti.
+2. Enseñas trading desde España y lo que te paga tu comunidad se queda en Binance porque te da miedo moverlo. Con Kunfupay, tus próximas ventas: Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti.
 
-3. Enseñas trading desde España, tu comunidad te paga en Binance y tienes una libreta llena de «300 €». Sacarlo de a poco por miedo cansa.
+3. 50.000 € de tu comunidad de trading, parados en Binance porque sacarlos te da miedo. Eso no es un plan, es un nudo.
    Hay otra forma de cobrar tus próximas ventas. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti.
 
-4. Enseñas trading desde España, tu comunidad te paga en Binance y vas sacando de 300 en 300, por si Hacienda dice algo.
-   Hay otra forma de cobrar tus próximas ventas. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+4. Enseñas trading desde España, tu comunidad te paga en Binance y el saldo crece mientras tú no lo tocas, por si Hacienda dice algo.
+   Ese miedo se deja atrás cobrando tus próximas ventas con Kunfupay. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti. Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
-5. Tu setup: tres pantallas, el micro de los directos y la comunidad pagando cada mes en Binance. Y delante, una libreta de retiros con la misma cifra repetida, porque sacarlo todo de golpe te da miedo.
+5. Tu setup: tres pantallas, el micro de los directos y la comunidad pagando cada mes en Binance. Y en el móvil, un saldo de 50.000 € que no te atreves a mover.
    Ese miedo se puede dejar atrás con tus próximas ventas. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti. Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira el vídeo: son cinco minutos.
 
-## 5B · Infoproductor en España: ¿vendes en Hotmart y retiras de 500 en 500 por si Hacienda dice algo?
+## 5B · ¿50.000 € de tus cursos en Hotmart y los sacas de 500 en 500 por miedo?
 
-Foto real · calendario de retiros · Abridor · Ángulo: Retirar de a poco · `TRIB_ES_TOF_ABR_DEAPOCO_HOTMART_1080x1350_ES_V04`
+Foto real · pizarra · Abridor · Ángulo: Retirar de a poco · `TRIB_ES_TOF_ABR_DEAPOCO_HOTMART_1080x1350_ES_V05`
 
-**Por qué:** Un calendario de pared con «retirar 500 € de Hotmart» cada pocos días: el comportamiento que solo tiene quien vende en Hotmart y le da miedo mover sus ventas. El cartel dice para quién y el pósit, qué cambia con Kunfupay, con «ventas, no ahorros».
+**Por qué:** Una pizarra con el esquema: muchas flechitas de 500 € hacia «Tu banco», tachado, frente a una sola flecha roja a «Tu cuenta de Kunfupay · a tu nombre · con IBAN». Directo y sin interfaz inventada.
 
-**Títulos:** ¿Retiras de 500 en 500? · Tu calendario de Hotmart · Tus retiros, a tu nombre · Ventas, no ahorros · Vendes en Hotmart
+**Títulos:** ¿De 500 en 500 por miedo? · Tus ventas de Hotmart · Una sola flecha, a tu nombre · Ventas, no ahorros · Tu cuenta de Kunfupay
 
 **Textos principales:**
 
-1. Infoproductor en España: ¿vendes en Hotmart y retiras de 500 en 500 por si Hacienda dice algo? Con Kunfupay llegan a tu nombre, con IBAN.
+1. ¿50.000 € de tus cursos en Hotmart y los sacas de 500 en 500 por miedo? Con Kunfupay llegan a tu nombre, con IBAN.
 
-2. Si tu calendario dice «retirar 500 € de Hotmart» cada pocos días: con tu cuenta de Kunfupay, tus retiros de Hotmart llegan a tu nombre y con IBAN. Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti.
+2. Si vendes en Hotmart desde España y retiras de 500 en 500 por si Hacienda dice algo: con tu cuenta de Kunfupay, tus retiros llegan a tu nombre y con IBAN. Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti.
 
-3. Vendes tu curso en Hotmart desde España y tu calendario está lleno de «retirar 500 €», por si Hacienda dice algo.
+3. Vendes tu curso en Hotmart desde España y llevas meses sacando de 500 en 500, por miedo.
    Con tu cuenta de Kunfupay, tus retiros de Hotmart llegan a tu nombre y con IBAN. Y lo que cobras con Kunfupay va con su factura y sus impuestos.
    Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti.
 
-4. Vendes tu curso en Hotmart, ya tienes ventas acumuladas y las retiras de 500 en 500, por si Hacienda dice algo.
+4. Vendes tu curso en Hotmart, tienes ventas acumuladas y las retiras de 500 en 500, por si Hacienda dice algo.
    Con tu cuenta de Kunfupay, tus retiros de Hotmart llegan a tu nombre y con IBAN. Y lo que cobras con Kunfupay va aparte: Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti. Si ya facturas más de 2.000 € al mes, mira el vídeo: son cinco minutos.
 
-5. Hay infoproductores en España con un calendario muy raro: cada pocos días, la misma nota. «Retirar 500 € de Hotmart.» No por necesidad, sino por miedo a mover de golpe lo que han vendido.
+5. Hay infoproductores en España que llevan meses sacando de 500 en 500 lo que venden en Hotmart. No por necesidad, sino por miedo a mover de golpe lo vendido.
    Con tu cuenta de Kunfupay, tus retiros de Hotmart llegan a tu nombre y con IBAN. Y tus próximas ventas, si las cobras con Kunfupay, salen con su factura y sus impuestos pagados. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
    Es para quien cobra ventas: cursos, mentorías o comunidades de trading. Si son tus ahorros, esto no es para ti. Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira el vídeo: son cinco minutos.
 
 ## 5C · Vendes cursos desde España y sacas tus ventas grano a grano.
 
-Viñeta · el reloj de arena · Prospector · Ángulo: Retirar de a poco · `TRIB_ES_TOF_PRO_DEAPOCO_RELOJ_VINETA_1080x1350_ES_V04`
+Viñeta · reloj de arena y socorrista · Prospector · Ángulo: Retirar de a poco · `TRIB_ES_TOF_PRO_DEAPOCO_RELOJ_VINETA_1080x1350_ES_V05`
 
-**Por qué:** Un reloj de arena con las ventas de tus cursos arriba y solo un hilo de monedas bajando a «Tu banco», y el creador mordiéndose las uñas. Al lado, el cartel de Kunfupay. La base del reloj dice «Ventas, no ahorros · +2.000 €/mes».
+**Por qué:** El reloj de arena de las ventas que salen grano a grano y, al lado, el socorrista de Kunfupay ofreciendo el salvavidas «Tus próximas ventas: factura e impuestos de cada venta», con la tarjeta «A tu nombre y con IBAN».
 
 **Títulos:** Grano a grano · El reloj de tus ventas · Ventas, no ahorros · Vendes cursos desde España · Tu dinero, a tu nombre
 
@@ -347,29 +348,29 @@ Foto real · hoja de pasos · Calificador · Ángulo: Diagnóstico · `TRIB_ES_R
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos.
 
-## R2 · Ya viste cómo funciona. Esto es lo que cambia en tu escritorio.
+## R2 · Ya viste cómo funciona: así sale cada venta de tu curso.
 
-Foto real · dos escritorios · Closer · Ángulo: Diagnóstico · `TRIB_ES_RET_CLO_ESCRITORIO_1080x1350_ES_V04`
+Foto real · recibos sellados · Closer · Ángulo: Diagnóstico · `TRIB_ES_RET_CLO_SELLOS_1080x1350_ES_V05`
 
-**Por qué:** Un escritorio partido en dos: a un lado, la torre de facturas de cobrar con Stripe o PayPal; al otro, una sola factura a Kunfupay. Para quien ya vio la VSL: enseña el después, y la tira de abajo dice qué hace Kunfupay y para quién es.
+**Por qué:** Para quien ya vio la VSL: el abanico de recibos, todos con el sello rojo de Kunfupay. Enseña el después de un vistazo y la tira de abajo dice para quién es y cuál es el paso (seis preguntas y eliges hora).
 
-**Títulos:** Lo que cambia en tu escritorio · Facturas a uno · De una torre a una hoja · Stripe o Kunfupay · Para +2.000 € al mes
+**Títulos:** Así sale cada venta · Cada venta, con su sello · Factura e impuestos, hechos · Ya viste cómo funciona · Seis preguntas y eliges hora
 
 **Textos principales:**
 
-1. Ya viste cómo funciona. Esto es lo que cambia en tu escritorio: de una factura por alumno a facturar a uno, Kunfupay. Si vendes cursos desde España.
+1. Ya viste cómo funciona: así sale cada venta de tu curso con Kunfupay. Factura hecha e impuestos de esa venta pagados.
 
-2. Cobrando con Stripe o PayPal, una factura por alumno. Cobrando con Kunfupay, facturas a uno. Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Para quien vende cursos desde España y factura más de 2.000 € al mes.
+2. Cada venta, con su sello: factura hecha e impuestos pagados. Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas. Para quien vende cursos desde España y factura más de 2.000 € al mes.
 
-3. Mira tu escritorio después de un lanzamiento. Con Stripe o PayPal: la torre de facturas. Con Kunfupay: una hoja, tu factura a Kunfupay.
+3. Viste el vídeo. Esto es lo que cambia: cada venta de tu curso sale con su factura y sus impuestos pagados, sin que tú hagas nada.
    Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   Es para quien vende formación online desde España y ya factura más de 2.000 € al mes.
+   Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Seis preguntas y eliges hora.
 
-4. Ya viste cómo funciona. Ahora míralo en tu mesa: a un lado, una factura por alumno y los impuestos de cada venta; al otro, una sola factura a Kunfupay.
+4. Ya viste cómo funciona. Ahora míralo en tu mesa: cada recibo de venta, con el sello de Kunfupay.
    No cambias de plataforma ni montas una LLC. Solo cambia cómo cobras. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
-   Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Si facturas menos de 2.000 € al mes, todavía no es para ti.
+   Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. Si facturas menos de 2.000 € al mes, todavía no es para ti. Seis preguntas y eliges hora.
 
-5. Viste el vídeo. Esto es lo que cambia en tu día a día si vendes formación online desde España: dejas de tener una torre de facturas, una por alumno, y pasas a facturar a uno, Kunfupay.
+5. Viste el vídeo. Esto es lo que cambia en tu día a día si vendes formación online desde España: cada venta sale con su factura hecha y sus impuestos pagados por Kunfupay, sin una factura por alumno a tu cargo.
    Sin cambiar de plataforma y sin montar una LLC. Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas. Kunfupay es la única pasarela de España que funciona como Merchant of Record.
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira si tu negocio encaja: son seis preguntas y eliges hora.
