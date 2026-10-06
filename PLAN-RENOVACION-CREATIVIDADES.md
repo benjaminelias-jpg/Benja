@@ -80,7 +80,7 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
 | Conjunto | Sigue de lo que hay | Nuevo y listo | Falta crear | Total |
 |---|---|---|---|---|
 | **A · Optimización fiscal** | Profitstride (ganador) · Podcast Juanen (relanzado el día 10) · LLC Rubén (si pasa el día 9) | Vídeos 3, 5 y 8 y el estático A-01 «Stripe o Kunfupay» (día 10) | **1 estático** | 8 |
-| **B · Métodos de pago** | Noticia Pago Global | Vídeo animado del flujo · 3 estáticos (B-01 cripto a euros, B-05 mapa, B-02 un solo enlace) · 3 guiones para grabar | — | 8 |
+| **B · Métodos de pago** | Noticia Pago Global | Vídeo animado del flujo · 3 estáticos (B-01 cripto a euros, B-05 mapa, B-02 un solo enlace) · 3 cuerpos y 10 ganchos para grabar | — | 8 |
 | **C · Dinero retenido** | — | — | **8: 4 vídeos y 4 estáticos** | 8 |
 | **D · Cuenta nominativa** | — | 4 estáticos y vídeos 9, 4, 6 y 2 | — | 8 |
 | **ESCALADO ES** (día 10) | Profitstride | — | **3 variantes de gancho de Profitstride**, con el mismo cuerpo | 4 |
@@ -89,7 +89,7 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
 
 ### Qué crear, en orden de prioridad
 
-1. **B · Métodos de pago: hecho.** Los 3 estáticos y los 3 guiones están en `creatividades/metodos-de-pago/`. Falta grabar los vídeos.
+1. **B · Métodos de pago: hecho.** Los 3 estáticos y los vídeos por módulos (3 cuerpos y 10 ganchos, solo beneficios de pago) están en `creatividades/metodos-de-pago/`. Falta grabarlos.
    - **Solo se lanza en España, así que no se nombran métodos de otros países** (OXXO, PIX): el creador español no sabe qué son. Se nombra la situación y el país: «tu alumno de México quiere comprarte y su tarjeta no pasa». Es lo mismo que hace el único anuncio de B que funciona, Noticia Pago Global: «Un cliente en México, otro en España, otro en Italia. Un solo link de Kunfupay los cobra a todos».
    - **El filtro:** «Si vendes cursos a Latinoamérica desde España».
    - **Bizum sí lo conoce el público español.** Si Kunfupay lo acepta, es el único método que vale la pena nombrar.
@@ -102,4 +102,4 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
    Tienen que hablar de impuestos, no del IBAN, para no pisarse con D-01 y D-02.
 4. **C · Dinero retenido, 8 piezas.** Es un ángulo nuevo. Se puede escalonar: 4 piezas para empezar y otras 4 en la segunda semana.
 
-**Quedan 12 piezas por crear** (1 de A, 8 de C y 3 variantes de Profitstride), más grabar los 3 vídeos de B.
+**Quedan 12 piezas por crear** (1 de A, 8 de C y 3 variantes de Profitstride), más grabar los cuerpos y los ganchos de B.

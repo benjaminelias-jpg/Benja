@@ -1,7 +1,7 @@
 # Métodos de pago · Conjunto B · Guiones y estáticos
 
 **Campaña:** TESTEO ES · **Conjunto:** B · Métodos de pago
-**Fecha:** 6 de octubre de 2026 · **Versión:** estáticos V02
+**Fecha:** 6 de octubre de 2026 · **Versión:** estáticos V03
 
 **Público:** creadores que viven en España, ya venden cursos y tienen clientes en Latinoamérica. El anuncio solo se lanza en España.
 
@@ -10,9 +10,11 @@
 - en cripto, sin que tengas un exchange aparte;
 - por transferencia, sin un banco solo para eso.
 
-Menos fricción en la llamada de ventas y menos ventas perdidas.
+Menos fricción en la llamada de ventas y menos ventas perdidas. Y no necesitas Stripe, PayPal ni otra pasarela.
 
-**Regla del conjunto:** se nombra el país y lo que pasa, no métodos de pago extranjeros. OXXO o PIX no le dicen nada a un español.
+**Reglas del conjunto:**
+- **Solo beneficios de pago.** Ni factura, ni impuestos, ni Merchant of Record, ni el IBAN ni la tarjeta de Kunfupay: eso es de A y de D.
+- **Se nombra el país y lo que pasa,** no métodos de pago extranjeros. OXXO o PIX no le dicen nada a un español.
 
 ## El conjunto completo
 
@@ -20,9 +22,9 @@ Menos fricción en la llamada de ventas y menos ventas perdidas.
 |---|---|---|---|
 | 1 | Noticia Pago Global | Estático | Sigue de la campaña actual |
 | 2 | Flujo animado: cobrar de todo el mundo | Vídeo | Listo |
-| 3 | Guion 1 · La llamada que se enfría | Vídeo | Listo para grabar |
-| 4 | Guion 2 · Mismo cliente, dos caminos (Hotmart y cripto) | Vídeo | Listo para grabar |
-| 5 | Guion 3 · Tres cosas que ya no necesitas | Vídeo | Listo para grabar |
+| 3 | Cuerpo 1 · Un solo enlace + sus ganchos | Vídeo | Listo para grabar |
+| 4 | Cuerpo 2 · Con lo que tiene + sus ganchos | Vídeo | Listo para grabar |
+| 5 | Cuerpo 3 · Todo en un enlace + sus ganchos | Vídeo | Listo para grabar |
 | 6 | B-01 · Cripto a euros | Estático | Listo |
 | 7 | B-05 · El mismo enlace (mapa) | Estático | Listo |
 | 8 | B-02 · Un solo enlace | Estático | Listo |
@@ -36,97 +38,15 @@ Menos fricción en la llamada de ventas y menos ventas perdidas.
 
 ## Guiones
 
-Formato teleprompter: una frase por línea. Graba el equipo, así que Kunfupay habla en «nosotros». Si los graba un creador UGC, se cambia a «ellos»: «la factura se la hacen ellos», «son tus representantes».
+Los vídeos se graban por módulos: 3 cuerpos una sola vez y 10 ganchos cortos. Todo está en [`GUIONES-CUERPOS-MODULARES.md`](GUIONES-CUERPOS-MODULARES.md).
 
-Los tres van con el mismo beneficio que los estáticos: un solo enlace con el que tu cliente paga como quiere. Cada uno lo cuenta desde un momento distinto:
-- la llamada de ventas que se enfría;
-- el cliente de Hotmart que tiene el dinero en cripto;
-- lo que ya no necesitas montar.
+| Cuerpo | Empieza por | Ganchos |
+|---|---|---|
+| 1 · Un solo enlace | «Esto no te pasa si cobras con Kunfupay» | 1A La conversación · 1B La llamada · 1C «Luego lo miro» |
+| 2 · Con lo que tiene | «Pero con Kunfupay, tu cliente te paga con lo que tiene» | 2A Pesos colombianos · 2B Pago rechazado · 2C Hotmart y cripto · 2D Transferencia en pesos |
+| 3 · Todo en un enlace | «Pero con Kunfupay, todo eso cabe en un solo enlace» | 3A Tres cosas a la vez · 3B El estuche · 3C Por si acaso |
 
-### 1 · La llamada que se enfría · historia en selfie
-
-```
-Si vendes cursos o mentorías con llamada de ventas, te sabes este momento.
-La llamada va genial.
-Y tu cliente te dice: «Vale, quiero entrar».
-Y luego: «¿Cómo te pago?».
-
-Y empiezas.
-«Si es con tarjeta, te paso este enlace.»
-«Si prefieres transferencia, esta cuenta.»
-«¿En cripto? Espera, que te mando otra cosa.»
-Y él: «Vale, luego lo miro».
-
-Y ese «luego» ya no llega.
-
-Pero hay otra forma de cobrar tus cursos.
-Cobras con Kunfupay, igual que con Stripe.
-PERO con un solo enlace.
-Tu cliente te paga como quiere: en su moneda local, en cripto o por transferencia.
-Y a ti te llega todo a tu cuenta de Kunfupay, en euros o en dólares.
-
-Y ADEMÁS, la factura se la hacemos nosotros.
-Y los impuestos de esa venta son cosa nuestra.
-Somos la única pasarela de España que funciona como Merchant of Record.
-Es decir: somos tus representantes en cada venta.
-
-«¿Cómo te pago?»
-«Con este enlace.»
-Y la venta se cierra en la llamada.
-
-Entra y mira si tu negocio encaja.
-```
-
-### 2 · Mismo cliente, dos caminos · pantalla partida
-
-```
-Si vendes cursos en Hotmart, hay ventas que pierdes y ni te enteras.
-Tu cliente quiere comprarte.
-Pero tiene el dinero en cripto.
-
-[Pantalla partida]
-Camino uno.
-Para pagarte con tarjeta, primero tiene que vender esa cripto.
-Pasarla a su banco.
-Esperar a que llegue.
-Y para entonces, ya se le han pasado las ganas.
-
-Camino dos, con Kunfupay.
-Le mandas tu enlace.
-Te paga en cripto, tal cual.
-Y a ti te llega en euros, a tu cuenta de Kunfupay.
-Sin que tengas un exchange aparte.
-
-Y de los impuestos de esa venta nos encargamos nosotros.
-Podemos porque somos la única pasarela de España que funciona como Merchant of Record.
-Es decir: somos tus representantes en cada venta.
-
-Si tus clientes tienen el dinero en cripto, entra y mira si tu negocio encaja.
-```
-
-### 3 · Tres cosas que ya no necesitas · lista en estudio, con compañero
-
-```
-Si vendes cursos desde España a clientes de varios países, hay tres cosas que ya no necesitas.
-Y la tercera, mucha gente no se la cree hasta que la ve.
-
-Uno: un exchange para quien te paga en cripto.
-Con Kunfupay, tu cliente te paga en cripto con tu enlace.
-Y a ti te llega en euros o en dólares.
-
-Dos: un banco aparte para las transferencias.
-Con el mismo enlace te pagan por transferencia, o en su moneda local.
-Y todo llega a tu cuenta de Kunfupay, a tu nombre.
-
-Tres…
-[Entra un compañero]
-—¿Y lo de los impuestos de cada venta?
-—Eso tampoco. La factura se la hacemos nosotros a cada cliente. Y los impuestos de esa venta son cosa nuestra.
-—¿Y eso cómo?
-—Somos la única pasarela de España que funciona como Merchant of Record. O sea: somos tus representantes en cada venta.
-
-Entra y mira si tu negocio encaja.
-```
+Sustituyen a los 3 guiones anteriores. Esos cerraban con la factura y el Merchant of Record, y en este conjunto no entra nada fiscal.
 
 ---
 
@@ -152,7 +72,7 @@ Cada uno tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories y 
 >
 > Con Kunfupay le cobras esa venta con tu enlace. Él te paga en cripto y a ti te llega en euros, a tu cuenta de Kunfupay. Sin abrir un exchange aparte.
 >
-> Y de los impuestos de esa venta nos encargamos nosotros. Podemos porque somos la única pasarela de España que funciona como Merchant of Record: tus representantes en cada venta.
+> Y con el mismo enlace, el siguiente te puede pagar con tarjeta, por transferencia o en su moneda.
 >
 > Si todavía no vendes, no es para ti.
 >
@@ -179,7 +99,7 @@ Cada uno tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories y 
 >
 > Cada uno te paga como quiere: en su moneda local, en cripto o por transferencia. Y todo llega a tu cuenta de Kunfupay en euros o en dólares.
 >
-> Y de los impuestos de cada venta nos encargamos nosotros. Podemos porque somos la única pasarela de España que funciona como Merchant of Record.
+> Sin Stripe, sin PayPal y sin otra pasarela.
 >
 > Es para quien ya vende cursos, mentorías o comunidades online desde España. Si todavía no vendes, no es para ti.
 >
@@ -194,14 +114,14 @@ Cada uno tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories y 
 ### B-02 · Closer · Un solo enlace
 
 - **Nombre del anuncio:** `B-02 | N2 | Mecanismo | Mil formas de cobrar | IMG | CLO`
-- **Archivo:** `KFP_ES_TOF_CLO_B02-UNSOLOENLACE_FLUJO_…_ES_V01.png`
+- **Archivo:** `KFP_ES_TOF_CLO_B02-UNSOLOENLACE_FLUJO_…_ES_V02.png`
 - **Formato:** flujo vertical, no dos columnas. Se lee de arriba abajo: primero el problema, después la solución.
 - **Texto en la imagen:**
   - Titular: «*Si vendes cursos a Latinoamérica,* esto puede aumentarte las ventas.»
   - Bloque «HOY»: «Para cobrar a cada cliente, necesitas:». Debajo, tres fichas grises: «Una pasarela para tarjetas», «Un banco para transferencias» y «Un exchange para cripto».
   - Flecha hacia abajo.
   - Bloque «CON KUNFUPAY»: «Un solo enlace. Tu cliente paga como quiere: en su moneda local, en cripto o por transferencia. Y todo llega a tu cuenta en euros o en dólares.»
-  - Debajo: «Podemos porque somos la única pasarela de España que funciona como Merchant of Record.»
+  - Debajo: «Le pasas el enlace, paga y la venta se cierra en el momento.» En la V01 decía lo del Merchant of Record; en la V02 sale.
 
 **Texto principal**
 
@@ -211,7 +131,7 @@ Cada uno tiene dos archivos: `1080x1350` para feed y `1080x1920` para stories y 
 >
 > Con Kunfupay tienes un solo enlace. Tu cliente paga como quiere: en su moneda local, en cripto o por transferencia. Y todo llega a tu cuenta de Kunfupay, en euros o en dólares.
 >
-> Y de los impuestos de cada venta nos encargamos nosotros. Podemos porque somos la única pasarela de España que funciona como Merchant of Record.
+> Le pasas el enlace, paga y la venta se cierra en el momento.
 >
 > Si todavía no vendes, no es para ti.
 >
@@ -244,7 +164,7 @@ Pieza extra, fuera de los 8 del conjunto. Entra cuando haga falta un relevo o pa
 >
 > Con Kunfupay, solo necesitas uno: tu enlace. Tu cliente te paga como quiera, y todo llega a tu cuenta de Kunfupay en euros o en dólares.
 >
-> Y de los impuestos de cada venta nos encargamos nosotros. Podemos porque somos la única pasarela de España que funciona como Merchant of Record.
+> Sin otra pasarela por si acaso.
 >
 > Si todavía no vendes, no es para ti.
 >
