@@ -80,7 +80,7 @@ Objetivo por conjunto: 8 anuncios. Sale de `PROCEDIMIENTO-8-ANUNCIOS-POR-CONJUNT
 | Conjunto | Sigue de lo que hay | Nuevo y listo | Falta crear | Total |
 |---|---|---|---|---|
 | **A · Optimización fiscal** | Profitstride (ganador) · Podcast Juanen (relanzado el día 10) · LLC Rubén (si pasa el día 9) | Vídeos 3, 5 y 8 y el estático A-01 «Stripe o Kunfupay» (día 10) | **1 estático** | 8 |
-| **B · Métodos de pago** | Noticia Pago Global | Vídeo animado del flujo · 3 estáticos (B-01, B-05, B-02) · 3 guiones para grabar | — | 8 |
+| **B · Métodos de pago** | Noticia Pago Global | Vídeo animado del flujo · 3 estáticos (B-01 cripto a euros, B-05 mapa, B-02 un solo enlace) · 3 guiones para grabar | — | 8 |
 | **C · Dinero retenido** | — | — | **8: 4 vídeos y 4 estáticos** | 8 |
 | **D · Cuenta nominativa** | — | 4 estáticos y vídeos 9, 4, 6 y 2 | — | 8 |
 | **ESCALADO ES** (día 10) | Profitstride | — | **3 variantes de gancho de Profitstride**, con el mismo cuerpo | 4 |
