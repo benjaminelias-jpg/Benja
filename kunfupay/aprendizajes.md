@@ -77,3 +77,9 @@
 - **Qué hice:** quité las tres cosas y cambié el ejemplo del cerebro. OnlyFans y los logos de terceros no aparecían en ninguna pieza.
 - **Regla nueva:** regla 27 del cerebro, con la lista de lo que no se dice nunca y se revisa antes de entregar.
 - **Matiz del mismo día:** «si es para tributaless sí se puede usar, no sigas la regla porque es para kunfupay». La regla 27 es para las piezas con la marca Kunfupay. En Tributaless se restauró la pizarra de Hotmart con «Tu banco» tachado. Avisado una vez del riesgo: las piezas de Tributaless nombran a Kunfupay y declaran a Kunfupay como beneficiario en la UE.
+
+## 07/10/2026 · VSL de Tributaless: beneficios, no lamentos
+
+- **Corrección del usuario:** «en vez de llorar cinco minutos, decimos quédate que te vas a llevar X beneficios, y hagamos la VSL de 3 minutos muy concisa… y de esa forma siempre hablo de Kunfupay y de Tributaless al mismo tiempo, también tira piedras a la competencia».
+- **Regla nueva para VSL:** 3 minutos. Gancho con la promesa («quédate tres minutos: te vas a llevar seis cosas»), beneficios numerados, Tributaless y Kunfupay nombrados juntos, un bloque contra «las asesorías que no saben qué es Hotmart», para quién no es y CTA. Nada de capítulos largos de dolor.
+- **Matices (regla 3):** el 21 % se dice como «tu factura a Kunfupay no lleva IVA español; con el mismo precio te queda más, incluida su comisión» (depende de T-10). La competencia se critica sin nombrar asesorías y sin llamar «obsoletas» a marcas (Ley 3/1991). «Cripto» en un anuncio necesita autorización de Meta.

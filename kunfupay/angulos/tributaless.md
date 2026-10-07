@@ -260,124 +260,78 @@ Los dos "Video Pol" (conjunto de WhatsApp) fueron rechazados por Meta. Motivo no
 
 ---
 
-## 5. VSL (5 minutos, teleprompter)
+## 5. VSL (3 minutos, teleprompter) · versión del 07/10/2026
 
-Presenta una persona real del equipo, con su nombre y su cara, que dice en los primeros 30 segundos que Tributaless es de Kunfupay. Grabar en 16:9 con encuadre centrado (recorte a 4:5 en móvil), subtítulos siempre. Kunfupay entra a mitad del vídeo, como consecuencia del conflicto.
-
-| Capítulo | Tiempo | Qué consigue | Qué se ve |
-|---|---|---|---|
-| 1 · Para quién es | 0:00–0:25 | Contexto en 3 segundos y filtro de facturación | A cámara. Rótulo: "Infoproductores que viven en España" |
-| 2 · Quién te lo cuenta | 0:25–0:45 | Declarar que Tributaless es de Kunfupay | Rótulo con nombre real y "Tributaless, de Kunfupay" |
-| 3 · El momento | 0:45–1:25 | El dolor en su idioma | Móvil con «Nueva venta», contador de facturas, sobre genérico sin membrete |
-| 4 · Las salidas que te venden | 1:25–2:25 | Desmontar LLC, Andorra y el "0 %" | El número 5472 con la fuente del IRS en pantalla, "0 %" tachado |
-| 5 · Cómo funciona | 2:25–3:20 | Analogía, nombre y credibilidad | Animación simple de la tienda de apps y el mismo esquema con Kunfupay |
-| 6 · Qué cambia para ti | 3:20–4:05 | Facturas a uno, artículo 69, más neto con el mismo precio y el dinero | Panel real de Kunfupay con datos tapados y el artículo 69 del BOE |
-| 7 · Para quién no es | 4:05–4:25 | Descualificar en voz alta | Lista en pantalla |
-| 8 · El siguiente paso | 4:25–4:50 | La oferta, sin presión | Los tres pasos del diagnóstico |
-| 9 · Cierre | 4:50–5:00 | Un solo CTA y el bucle con el principio | Botón de la landing y otra vez «Nueva venta» |
+Petición del usuario: «en vez de llorar cinco minutos, decimos quédate que te vas a llevar X beneficios… 3 minutos muy concisa… siempre hablo de Kunfupay y de Tributaless al mismo tiempo, también tira piedras a la competencia». Presenta una persona real del equipo. Ajustes de verdad: el 21 % va como «tu factura a Kunfupay no lleva IVA español (art. 69 LIVA) → con el mismo precio te queda más, incluida la comisión», pendiente de T-10; las asesorías van sin nombre y Stripe/PayPal sin «obsoletas» (Ley 3/1991, denigración); «cripto» necesita autorización de Meta si se corta para anuncio. Métodos de pago y monedas: confirmados por el equipo.
 
 ```
 [1 · Para quién es]
-Si vendes cursos desde España y facturas más de 2.000 € al mes, quédate cinco minutos.
-Vas a ver cómo cobrar tus ventas sin montar una LLC.
-Sin hacer una factura por cada alumno.
-Y sin pagar tú los impuestos de cada venta.
-Sin humo. Aquí nadie te va a vender pagar cero.
+Si vendes cursos desde España y facturas más de 2.000 € al mes, quédate tres minutos.
+Te vas a llevar seis cosas que tu asesoría no te ha contado.
 
 [2 · Quién te lo cuenta]
 Soy [NOMBRE REAL], de Tributaless.
-Tributaless es la línea de Kunfupay que habla claro de impuestos a quien vende formación online.
-Te lo digo ya, porque vas a oír mucho ese nombre.
-Kunfupay es la herramienta.
-Nosotros te contamos cómo funciona. Sin letra pequeña.
+Tributaless es la línea de Kunfupay que te ayuda a cobrar tus cursos con Kunfupay.
+Y a hacerlo bien, en regla y sacándole todo el partido.
 
-[3 · El momento]
-Te sabes este momento.
-Te suena el móvil.
-«Nueva venta.»
-Y durante tres segundos, todo es alegría.
-Hasta que piensas en la factura de esa venta.
-Y en la de la siguiente.
-Si cobras con una cuenta normal de Stripe o con PayPal, cada venta es tuya.
-La factura, tuya.
-Los impuestos de esa venta, tuyos.
-Las devoluciones, tuyas.
-Y cuando haces cuentas, sientes que los impuestos se comen tu lanzamiento.
-Y caaada trimestre, con miedo de que un día llegue la carta.
-
-[4 · Las salidas que te venden]
-Por eso acabas viendo vídeos de LLC.
-La idea suena bien.
-Una empresa en Estados Unidos y todo resuelto.
-PERO una LLC te suma un formulario en Estados Unidos que se presenta cada año.
-El 5472.
-Si no lo presentas, la multa empieza en 25.000 dólares.
-Más papeles.
-En dos países.
-Luego está Andorra.
-Si te quieres ir a vivir allí, adelante.
-PERO si te vas por el lío de las facturas, no hace falta mudarse.
-Y luego están los del cero por ciento.
-Si alguien te promete pagar cero, te está vendiendo un titular.
-
-[5 · Cómo funciona]
-Piensa en la tienda de apps de tu móvil.
-Cuando compras una app, no le pagas al que la hizo.
-Le pagas a la tienda.
-La tienda cobra, te da la factura y se ocupa de los impuestos.
-Y al que hizo la app le paga lo vendido.
-Así funciona el Merchant of Record.
-Y así funciona Kunfupay con tus cursos.
-Cobras con Kunfupay, igual que cobrabas con Stripe.
-PERO la factura a tu alumno la hace Kunfupay.
+[3 · Uno: te olvidas de la factura]
+Uno.
+Kunfupay te representa en tus ventas.
+La factura de cada alumno la hace Kunfupay.
 Y los impuestos de cada venta, también.
-Tú te olvidas.
+Siempre. No una vez: siempre.
+Tú te olvidas del miedo a la factura.
 Kunfupay es la única pasarela de España que funciona como Merchant of Record.
-Es decir: son tus representantes en cada venta.
-Y los impuestos de esa venta los pagan en Estados Unidos.
-Donde está la empresa.
 
-[6 · Qué cambia para ti]
-¿Y tú a quién facturas?
-A uno.
-A Kunfupay.
-Da igual que vendas a trescientos alumnos.
-Y esa factura no lleva IVA español.
+[4 · Dos: más neto con el mismo precio]
+Dos.
+Tú solo le facturas a Kunfupay.
+Y esa factura no lleva el 21 % de IVA español.
 Lo dice el artículo 69 de la Ley del IVA.
-Por eso, con el mismo precio, te queda más por venta.
-Incluso con su comisión.
-¿Y el dinero?
-En tu cuenta de Kunfupay, a tu nombre.
-Lo gastas con tu tarjeta.
-Y con tu IBAN, ahí recibes hasta tus retiros de Hotmart.
-O de cualquier otra plataforma.
-Y no necesitas gestor para trescientas facturas.
-Porque tú solo haces una.
+Con el mismo precio para tu alumno, te queda más por venta.
+Incluso con la comisión de Kunfupay, que es de [COMISIÓN].
+Solo con eso, ya vale la pena.
 
-[7 · Para quién no es]
-Esto no es para todo el mundo.
-No es para quien vende productos físicos.
-No es para quien busca pagar cero.
-No es para quien factura menos de 2.000 € al mes.
-Y no es para quien está empezando.
-Kunfupay revisa cada caso antes de activar la cuenta.
+[5 · Tres: cobras en todo el mundo con un solo link]
+Tres.
+Un solo link de pago.
+Tu alumno paga con tarjeta, con transferencia o con cripto.
+En euros, en dólares, en pesos colombianos, en pesos argentinos.
+Y en la moneda que te imagines.
+Y tú lo recibes en tu cuenta de Kunfupay, a tu nombre y con IBAN.
 
-[8 · El siguiente paso]
-Si eres tú, el siguiente paso es un diagnóstico de tus cobros.
-Veinte minutos, gratis, con nuestro equipo.
-Miramos cómo cobras hoy.
-Qué te toca facturar.
-Y qué cambiaría si cobras con Kunfupay.
-Te llevas tu caso por escrito.
-Y si no encaja, te lo decimos.
+[6 · Cuatro y cinco: asesoramiento y soporte]
+Cuatro.
+Con Tributaless tienes el asesoramiento fiscal que necesitas para usar Kunfupay completamente en regla.
+Cinco.
+Soporte exclusivo del equipo de Kunfupay.
+Personas que saben lo que es un lanzamiento.
 
-[9 · Cierre]
-Debajo de este vídeo tienes seis preguntas.
+[7 · Seis: si ya tienes una LLC]
+Seis.
+Si ya montaste una LLC, no la tires.
+Vemos contigo cómo encaja Kunfupay con lo que ya tienes.
+
+[8 · Por qué no te lo contaron antes]
+Ahora, ¿por qué no te lo había contado nadie?
+Porque muchas asesorías no saben ni qué es Hotmart.
+Te tratan como si tuvieras una tienda de zapatillas.
+No saben qué pasarela te conviene.
+Y te recomiendan lo de siempre: Stripe o PayPal.
+Donde el vendedor sigues siendo tú.
+Con su factura y sus impuestos, venta a venta.
+
+[9 · Para quién no es]
+Esto no es para quien está empezando.
+Ni para quien factura menos de 2.000 € al mes.
+Ni para quien busca pagar cero.
+
+[10 · El siguiente paso]
+Si eres tú, debajo de este vídeo tienes seis preguntas.
 Si encajas, eliges hora.
-Y la próxima vez que te suene el móvil, que la alegría dure más de tres segundos.
+En veinte minutos vemos tu caso con Tributaless y te enseñamos cómo cobrar con Kunfupay.
+Tú vendes. Kunfupay hace la factura. Y tú te olvidas.
 ```
-
----
 
 ## 6. Landing, formulario y enrutado
 
