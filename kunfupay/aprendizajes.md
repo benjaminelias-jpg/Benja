@@ -83,3 +83,16 @@
 - **Corrección del usuario:** «en vez de llorar cinco minutos, decimos quédate que te vas a llevar X beneficios, y hagamos la VSL de 3 minutos muy concisa… y de esa forma siempre hablo de Kunfupay y de Tributaless al mismo tiempo, también tira piedras a la competencia».
 - **Regla nueva para VSL:** 3 minutos. Gancho con la promesa («quédate tres minutos: te vas a llevar seis cosas»), beneficios numerados, Tributaless y Kunfupay nombrados juntos, un bloque contra «las asesorías que no saben qué es Hotmart», para quién no es y CTA. Nada de capítulos largos de dolor.
 - **Matices (regla 3):** el 21 % se dice como «tu factura a Kunfupay no lleva IVA español; con el mismo precio te queda más, incluida su comisión» (depende de T-10). La competencia se critica sin nombrar asesorías y sin llamar «obsoletas» a marcas (Ley 3/1991). «Cripto» en un anuncio necesita autorización de Meta.
+
+## 07/10/2026 · Cómo se escribe la VSL (estructura que pide el usuario)
+
+- **Corrección del usuario:** «necesito que escribas bien la VSL, busca cómo escribir una y luego la escribes, debes retener a las personas», con la estructura: filtro «solo productos digitales; si vendes productos físicos no es para ti» → «en este vídeo vas a aprender…» → «¿quién soy yo para contarte esto? Soy Santiago…» → «quédate hasta el final» → punto 1, punto 2, punto 3.
+- **Plantilla de VSL (Tributaless y verticales):**
+  1. Filtro en los primeros 10 s: para quién es y para quién no.
+  2. Promesa con agenda: «en este vídeo vas a aprender X, Y, Z».
+  3. Credibilidad: quién lo cuenta, con un dato verificable.
+  4. Bucle abierto: «quédate hasta el final, porque ahí te explico [lo más valioso]».
+  5. Puntos numerados; cada uno cierra con un puente que abre el siguiente.
+  6. Pago de la promesa del bucle al final.
+  7. Para quién no es y CTA concreto (qué hace y qué pasa después).
+- **Fuentes de la técnica:** retención en los primeros 10–15 s, bucle abierto en cada bloque (la atención cae hacia el minuto 3) y CTA directo.

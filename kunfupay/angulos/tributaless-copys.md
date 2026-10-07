@@ -373,84 +373,98 @@ Foto real · pizarra comparativa · Closer · Ángulo: Diagnóstico · `TRIB_ES_
    El dinero lo tienes en tu cuenta de Kunfupay, a tu nombre y con IBAN: lo gastas con tu tarjeta o lo retiras a tu banco.
    Es para quien vende formación online desde España y ya factura más de 2.000 € al mes. No es para ti si estás empezando, si facturas menos de 2.000 € al mes o si buscas dejar de pagar impuestos. Mira si tu negocio encaja: son seis preguntas y eliges hora.
 
-## VSL (3 minutos, 07/10/2026)
+## VSL (≈3:30, Santiago, 07/10/2026)
 
-Beneficios primero, sin lamentos; habla de Tributaless y de Kunfupay a la vez. [COMISIÓN] y «te queda más» dependen de T-10. Si se corta para anuncio, «cripto» necesita autorización de Meta. Sin nombrar asesorías ni llamar «obsoletas» a Stripe o PayPal.
+Filtro en 10 s, promesa con agenda, credibilidad, bucle abierto hasta el final, puente en cada punto y CTA. [COMISIÓN] depende de T-10; Santiago y sus siete años deben ser reales.
 
-### 1 · Para quién es · 0:00–0:15
+### 1 · Para quién es · 0:00–0:12
 
-Si vendes cursos desde España y facturas más de 2.000 € al mes, quédate tres minutos.
-Te vas a llevar seis cosas que tu asesoría no te ha contado.
+Antes que nada:
+este vídeo es solo para quien vende productos digitales.
+Infoproductores, coaches, mentores.
+Si vendes productos físicos, no es para ti.
 
-### 2 · Quién te lo cuenta · 0:15–0:30
+### 2 · Lo que vas a aprender · 0:12–0:30
 
-Soy [NOMBRE REAL], de Tributaless.
-Tributaless es la línea de Kunfupay que te ayuda a cobrar tus cursos con Kunfupay.
-Y a hacerlo bien, en regla y sacándole todo el partido.
+Si vendes cursos, en este vídeo vas a aprender cuatro cosas.
+Cómo ahorrarte impuestos en todas las ventas de tus cursos.
+Cómo dejar de hacer facturas.
+Cómo dejar de perder ventas.
+Y cómo vender en otros países, y en otros continentes.
 
-### 3 · Uno: te olvidas de la factura · 0:30–0:55
+### 3 · Quién te lo cuenta · 0:30–0:45
 
-Uno.
-Kunfupay te representa en tus ventas.
+Pero ¿quién soy yo para contarte todo esto?
+Soy Santiago.
+Llevo siete años dedicado a la optimización fiscal.
+Y voy a ser tu asesor en Tributaless.
+
+### 4 · El orden · 0:45–0:55
+
+Ahora sí, vamos a los puntos.
+Y quédate hasta el final.
+Porque al final te explico cómo ahorrarte impuestos en tus ventas.
+Y es lo que más dinero te va a dejar.
+
+### 5 · Punto 1: tu tienda y un solo link · 0:55–1:45
+
+Punto uno.
+Gracias a nuestra relación con Kunfupay, te ayudamos a tener tu propia tienda y a cobrar a través de ellos.
+Eso te permite dejar pasarelas limitadas como Stripe o PayPal.
+¿Por qué limitadas?
+Porque tu alumno de Colombia, de Argentina o de México muchas veces no puede pagarte como paga en su país.
+Y cada alumno que no puede pagar es una venta que pierdes.
+Con Kunfupay cobras con un único link.
+Ese link detecta en qué país está la persona a la que se lo mandas.
+Y se adapta solo para que pague en su moneda local.
+Sin tener euros ni dólares.
+Y si quiere, te paga en cripto, sin que tú tengas un exchange.
+Te pagan desde cualquier parte del mundo, sin fricción y sin que pierdas ventas.
+Ahí tienes dos de las cuatro cosas: dejar de perder ventas y vender en otros países.
+PERO falta la pregunta que todo el mundo me hace: «¿Y entonces tengo que montar una LLC?»
+
+### 6 · Punto 2: la LLC · 1:45–2:20
+
+Punto dos.
+No necesitas una LLC.
+Para cobrar en todo el mundo no hace falta montar una empresa en Estados Unidos.
+Ni sumarte papeles allí cada año.
+Y si ya la tienes, te asesoramos para ver cómo encaja con Kunfupay.
+Porque seamos sinceros:
+muchas veces tu asesor ni siquiera sabe qué vendes.
+No sabe qué es Hotmart.
+Te trata como si tuvieras una tienda de zapatillas.
+Nosotros solo trabajamos con gente que vende cursos.
+Y ahora sí, lo que te prometí.
+
+### 7 · Punto 3: impuestos y facturas · 2:20–3:15
+
+Punto tres. Los impuestos.
+Kunfupay funciona como Merchant of Record.
+Te lo explico con tu móvil.
+Cuando compras una app, no le pagas al que la hizo.
+Le pagas a la tienda de apps.
+La tienda cobra, hace la factura y se ocupa de los impuestos.
+Y al que hizo la app le paga lo vendido.
+Eso es lo que hace Kunfupay con tus cursos.
+Kunfupay te representa en cada venta.
 La factura de cada alumno la hace Kunfupay.
 Y los impuestos de cada venta, también.
-Siempre. No una vez: siempre.
-Tú te olvidas del miedo a la factura.
-Kunfupay es la única pasarela de España que funciona como Merchant of Record.
-
-### 4 · Dos: más neto con el mismo precio · 0:55–1:15
-
-Dos.
-Tú solo le facturas a Kunfupay.
+Tú dejas de hacer facturas.
+Tú solo le haces una a Kunfupay.
 Y esa factura no lleva el 21 % de IVA español.
 Lo dice el artículo 69 de la Ley del IVA.
 Con el mismo precio para tu alumno, te queda más por venta.
 Incluso con la comisión de Kunfupay, que es de [COMISIÓN].
 Solo con eso, ya vale la pena.
+Y Kunfupay es la única pasarela de España que funciona como Merchant of Record.
 
-### 5 · Tres: cobras en todo el mundo con un solo link · 1:15–1:35
-
-Tres.
-Un solo link de pago.
-Tu alumno paga con tarjeta, con transferencia o con cripto.
-En euros, en dólares, en pesos colombianos, en pesos argentinos.
-Y en la moneda que te imagines.
-Y tú lo recibes en tu cuenta de Kunfupay, a tu nombre y con IBAN.
-
-### 6 · Cuatro y cinco: asesoramiento y soporte · 1:35–1:55
-
-Cuatro.
-Con Tributaless tienes el asesoramiento fiscal que necesitas para usar Kunfupay completamente en regla.
-Cinco.
-Soporte exclusivo del equipo de Kunfupay.
-Personas que saben lo que es un lanzamiento.
-
-### 7 · Seis: si ya tienes una LLC · 1:55–2:10
-
-Seis.
-Si ya montaste una LLC, no la tires.
-Vemos contigo cómo encaja Kunfupay con lo que ya tienes.
-
-### 8 · Por qué no te lo contaron antes · 2:10–2:35
-
-Ahora, ¿por qué no te lo había contado nadie?
-Porque muchas asesorías no saben ni qué es Hotmart.
-Te tratan como si tuvieras una tienda de zapatillas.
-No saben qué pasarela te conviene.
-Y te recomiendan lo de siempre: Stripe o PayPal.
-Donde el vendedor sigues siendo tú.
-Con su factura y sus impuestos, venta a venta.
-
-### 9 · Para quién no es · 2:35–2:45
+### 8 · El siguiente paso · 3:15–3:35
 
 Esto no es para quien está empezando.
-Ni para quien factura menos de 2.000 € al mes.
-Ni para quien busca pagar cero.
-
-### 10 · El siguiente paso · 2:45–3:00
-
+Es para quien ya factura más de 2.000 € al mes con sus cursos.
 Si eres tú, debajo de este vídeo tienes seis preguntas.
-Si encajas, eliges hora.
-En veinte minutos vemos tu caso con Tributaless y te enseñamos cómo cobrar con Kunfupay.
-Tú vendes. Kunfupay hace la factura. Y tú te olvidas.
+Si encajas, eliges hora y vemos tu caso juntos, en veinte minutos.
+Te enseño cuánto te quedaría por venta y cómo empezar a cobrar con Kunfupay.
+Nos vemos dentro.
 
