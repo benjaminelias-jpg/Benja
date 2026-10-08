@@ -400,101 +400,89 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
-## VSL (avatar, ~5 min)
+## VSL (avatar, ~2:50, 08/10/2026)
 
-### 1 · Para quién es · 0:00–0:25
+Plantilla de Tributaless (petición del usuario: «al estilo tributaless, siempre hablando como complemento de beneficios que tendrán también usando Kunfupay»): filtro en los primeros segundos, promesa con las tres cosas que vas a ver, quién te lo cuenta (avatar declarado virtual + Ignia es la agencia de lanzamientos de Kunfupay), «quédate hasta el final», tres puntos con puente (llave en mano · un solo link con Kunfupay · Merchant of Record y tu dinero) y CTA a la lista de espera. Ignia y Kunfupay siempre juntos.
 
-Si vendes cursos, mentorías o coaching en Latinoamérica y facturas desde 5.000 dólares al mes, quédate cinco minutos.
-Vas a ver cómo hacer tu próximo lanzamiento sin montarlo tú solo.
-Sin pelearte con la pasarela el día del carrito.
-Y cobrando con Kunfupay.
+Pendientes: [NOMBRE DEL AVATAR]; [DATO REAL DEL EQUIPO DE IGNIA] tiene que ser verdad o se quita; el equipo confirma «pensado para aguantar el pico del carrito abierto» y los métodos de pago por país; «cripto» en un corte para anuncio necesita autorización de Meta. Sin «no a tu banco personal» (regla 27) mientras el usuario no diga si la excepción de Tributaless vale para Ignia.
 
-### 2 · Quién te lo cuenta · 0:25–0:45
+### 1 · Para quién es · 0:00–0:12
 
+Antes que nada:
+este video es solo para quien ya vende cursos, mentorías o coaching en Latinoamérica.
+Y factura más de 5.000 dólares al mes.
+Si estás empezando, todavía no es para ti.
+
+### 2 · Lo que vas a ver · 0:12–0:27
+
+En este video vas a ver tres cosas.
+Cómo hacer tu próximo lanzamiento sin montarlo tú solo.
+Cómo cobrarle a alumnos de cualquier país sin perder ventas.
+Y cómo olvidarte de la factura y los impuestos de cada venta.
+
+### 3 · Quién te lo cuenta · 0:27–0:42
+
+¿Y quién soy yo para contarte esto?
 Soy [NOMBRE DEL AVATAR], la presentadora virtual de Ignia.
 Sí, virtual. Lo que te voy a contar, no.
-Ignia es la agencia de lanzamientos de Kunfupay.
-Te lo digo ya, porque vas a oír mucho ese nombre.
-Ignia lanza. Kunfupay cobra.
+Ignia es la agencia de lanzamientos de Kunfupay, la plataforma con la que vas a cobrar.
+[DATO REAL DEL EQUIPO DE IGNIA: años lanzando o lanzamientos hechos].
 
-### 3 · El momento · 0:45–1:35
+### 4 · Quédate hasta el final · 0:42–0:50
 
-Te sabes este momento.
-Meses de contenido.
-Una comunidad esperando.
-Abres el carrito.
-Y empiezan los mensajes.
-«No me deja pagar.»
-«Me rechaza la tarjeta.»
-«¿Sigue abierto?»
-Y mientras contestas, también eres el que escribe el copy.
-El que lanza los anuncios.
-El que monta el embudo.
-El que edita.
-El que atiende el soporte a medianoche.
-Y cuando por fin vendes, llega otra duda.
-¿Qué pasa cuando retire todo esto?
+Vamos a los puntos.
+Y quédate hasta el final.
+Porque ahí te cuento qué pasa con el dinero de tu lanzamiento.
+Y es lo que más tranquilidad te va a dar.
 
-### 4 · Las salidas que te venden · 1:35–2:25
+### 5 · Punto 1: tu lanzamiento, llave en mano · 0:50–1:25
 
-Por eso acabas buscando ayuda.
-Está la agencia que te cobra cada mes, vendas o no.
-Está el socio que se queda una parte de cada venta.
-Y está quien te dice que dejes los lanzamientos y vendas en automático.
-Puede funcionar.
-PERO si tu fuerte es lanzar, no tienes por qué renunciar a ello.
-Lo que necesitas es que el lanzamiento no dependa de ti para todo.
-Y que el cobro no falle el día que más vendes.
-
-### 5 · Cómo funciona Ignia · 2:25–3:15
-
+Punto uno.
 Ignia hace tu lanzamiento llave en mano.
-La estrategia.
-El embudo.
-Los anuncios.
-El copy.
-La VSL.
-Los emails y el WhatsApp.
-Y el soporte durante el carrito abierto.
+La estrategia, el embudo, los anuncios, el copy y la VSL.
+Los emails, el WhatsApp y el soporte durante el carrito abierto.
 ¿Y tú?
-Tú grabas.
-Y estás con tu comunidad, que es lo que nadie puede hacer por ti.
+Tú grabas. Y estás con tu comunidad, que es lo que nadie puede hacer por ti.
+Ojo: esto no es un curso para que aprendas a lanzar.
+Ni una agencia que te hace los anuncios y te deja solo el día del carrito.
+Lo hacemos todo. Hasta el cobro.
+Porque de nada sirve el mejor lanzamiento si ese día tu alumno no puede pagarte.
 
-### 6 · Cómo cobras · 3:15–4:05
+### 6 · Punto 2: cobras en cualquier país con Kunfupay · 1:25–2:00
 
-El cobro va con Kunfupay.
-Tu alumno paga como paga en su país.
-Kunfupay está pensado para aguantar el pico del carrito abierto.
-Y te representa en tus ventas.
-Hace la factura.
-Y paga los impuestos de cada venta.
+Punto dos.
+Con Ignia, tu lanzamiento cobra con Kunfupay.
+Un solo link de pago.
+Detecta en qué país está tu alumno y se adapta para que pague en su moneda.
+Pesos colombianos, soles, pesos argentinos o dólares.
+Y si quiere, en cripto, sin que tú tengas un exchange.
+Así dejas de perder ventas porque tu alumno no tiene cómo pagarte.
+Y Kunfupay está pensado para aguantar el pico del carrito abierto.
+Ahora sí, lo que te prometí.
+
+### 7 · Punto 3: la factura, los impuestos y tu dinero · 2:00–2:30
+
+Punto tres.
+Kunfupay funciona como Merchant of Record.
+Piensa en la tienda de apps de tu celular.
+Cuando compras una app, le pagas a la tienda.
+Y la tienda hace la factura y se ocupa de los impuestos.
+Kunfupay hace lo mismo con tus cursos.
+Te representa en cada venta.
+La factura de cada alumno la hace Kunfupay.
+Y los impuestos de cada venta, también.
 Tú te olvidas.
-¿Y el dinero?
-Entra a tu cuenta de Kunfupay, a tu nombre.
-Lo gastas con tarjeta.
-O lo retiras cuando quieras.
+Y el dinero entra a tu cuenta de Kunfupay, a tu nombre.
+Lo gastas con tarjeta o lo retiras cuando quieras.
 
-### 7 · Para quién no es · 4:05–4:25
+### 8 · El siguiente paso · 2:30–2:50
 
 Esto no es para todo el mundo.
-No es para quien está empezando.
-No es para quien factura menos de 5.000 dólares al mes.
 No es para quien busca un curso para aprender a lanzar.
-Y no es para quien busca dejar de pagar impuestos.
-
-### 8 · El siguiente paso · 4:25–4:50
-
-Si eres tú, el siguiente paso es la lista de espera.
-Son seis preguntas.
-Qué vendes, cuánto facturas, cuándo quieres lanzar y con qué cobras hoy.
-Y te escribimos cuando haya sitio para tu lanzamiento.
-
-### 9 · Cierre · 4:50–5:00
-
-Tú grabas.
-Ignia lanza.
-Kunfupay cobra.
-Y la próxima vez que abras el carrito, que el único mensaje sea «ya pagué».
+Ni para quien busca dejar de pagar impuestos.
+Si ya vendes y facturas más de 5.000 dólares al mes, debajo de este video tienes la lista de espera.
+Son seis preguntas, y te escribimos cuando haya sitio para tu lanzamiento.
+Tú grabas. Ignia lanza. Kunfupay cobra.
 
 ## Plan de Meta
 

@@ -96,3 +96,10 @@
   6. Pago de la promesa del bucle al final.
   7. Para quién no es y CTA concreto (qué hace y qué pasa después).
 - **Fuentes de la técnica:** retención en los primeros 10–15 s, bucle abierto en cada bloque (la atención cae hacia el minuto 3) y CTA directo.
+
+## 08/10/2026 · VSL de Ignia con la plantilla de Tributaless
+
+- **Petición del usuario:** «ahora hagamos la VSL de Ignia, una de unos 2-3 minutos también, al estilo Tributaless, siempre hablando como en complemento de beneficios que tendrán también usando Kunfupay».
+- **Qué hice:** la plantilla de VSL del 07/10 aplicada a Ignia (~2:50): filtro, promesa con agenda, quién lo cuenta, bucle abierto, tres puntos con puente y lista de espera. Cada beneficio de Ignia va con su complemento de Kunfupay: Ignia hace el lanzamiento y Kunfupay cobra en cualquier país, hace la factura y paga los impuestos de cada venta.
+- **Con un avatar, la credibilidad no se inventa:** el avatar se declara virtual y la credibilidad la da que Ignia es la agencia de lanzamientos de Kunfupay, más un dato real del equipo si existe. Nada de «7 años de experiencia» para un avatar.
+- **Pique a la competencia sin nombrarla y sin depender de pendientes:** «no es un curso para que aprendas a lanzar, ni una agencia que te hace los anuncios y te deja solo el día del carrito». No se usa «el socio que se queda una parte de tu negocio» mientras no se sepa el modelo de cobro de Ignia.
