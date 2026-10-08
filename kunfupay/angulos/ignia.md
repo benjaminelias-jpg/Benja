@@ -400,88 +400,70 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
-## VSL (avatar, ~2:50, 08/10/2026)
+## VSL (avatar, menos de 3 min, 08/10/2026, versión 2)
 
-Plantilla de Tributaless (petición del usuario: «al estilo tributaless, siempre hablando como complemento de beneficios que tendrán también usando Kunfupay»): filtro en los primeros segundos, promesa con las tres cosas que vas a ver, quién te lo cuenta (avatar declarado virtual + Ignia es la agencia de lanzamientos de Kunfupay), «quédate hasta el final», tres puntos con puente (llave en mano · un solo link con Kunfupay · Merchant of Record y tu dinero) y CTA a la lista de espera. Ignia y Kunfupay siempre juntos.
+Corrección del usuario (08/10): «no debes comentar lo que hacemos… debes comentar todos los beneficios que se lleva, volverás a tener tiempo, no te inundará el estrés… si no vivificamos lo que decimos no generaremos una experiencia memorable en la mente del consumidor». Cada punto es un beneficio que se vive: uno, recuperas tu tiempo (eres el CEO, y trabajamos con gente que sabe el doble o el triple en su área); dos, te paga todo el mundo desde un solo link de Kunfupay; tres, lo que te sirve aunque no nos contrates: tu cuenta de Kunfupay como referido de Ignia. Por eso el cierre tiene dos caminos. 447 palabras: 2:48 a 160 palabras por minuto y 2:59 a 150.
 
-Pendientes: [NOMBRE DEL AVATAR]; [DATO REAL DEL EQUIPO DE IGNIA] tiene que ser verdad o se quita; el equipo confirma «pensado para aguantar el pico del carrito abierto» y los métodos de pago por país; «cripto» en un corte para anuncio necesita autorización de Meta. Sin «no a tu banco personal» (regla 27) mientras el usuario no diga si la excepción de Tributaless vale para Ignia.
+Cambios sobre el texto del usuario (regla 3): sin «una de las fintech más grandes de Europa», porque no hay dato que lo respalde (la credencial es «la única pasarela de España que funciona como Merchant of Record»); sin «tenemos una asociación… te la conseguimos», porque Ignia es de Kunfupay; Stripe «está bien para el día a día», nunca «se cae»; sin «ni pagar impuestos por eso», porque es falso (en Latinoamérica se tributa por lo que se gana, esté donde esté el dinero). «El dinero no tiene que pasar por tu banco» aplica a Ignia la excepción de Tributaless (regla 27), pendiente de que el usuario lo confirme.
+
+Pendientes: [NOMBRE DEL AVATAR]; [LINK DE REFERIDO DE KUNFUPAY] para el segundo botón de la landing; «cripto» en un corte para anuncio necesita autorización de Meta. Confirmado por el equipo el 08/10: Nequi, Yape, pesos y cripto desde el mismo link, y que aguanta el pico del carrito abierto.
 
 ### 1 · Para quién es · 0:00–0:12
 
-Antes que nada:
-este video es solo para quien ya vende cursos, mentorías o coaching en Latinoamérica.
-Y factura más de 5.000 dólares al mes.
+Antes que nada: este video es solo para quien vende cursos, mentorías o coaching en Latinoamérica y ya factura más de 5.000 dólares al mes.
 Si estás empezando, todavía no es para ti.
 
-### 2 · Lo que vas a ver · 0:12–0:27
+### 2 · Lo que te llevas · 0:12–0:25
 
-En este video vas a ver tres cosas.
-Cómo hacer tu próximo lanzamiento sin montarlo tú solo.
-Cómo cobrarle a alumnos de cualquier país sin perder ventas.
-Y cómo olvidarte de la factura y los impuestos de cada venta.
+En este video vas a ver cómo recuperar tu tiempo en cada lanzamiento.
+Cómo cobrarle a cualquier país sin perder ventas.
+Y algo que te sirve aunque nunca nos contrates.
+Quédate hasta el final.
 
-### 3 · Quién te lo cuenta · 0:27–0:42
+### 3 · Quién te lo cuenta · 0:25–0:33
 
-¿Y quién soy yo para contarte esto?
-Soy [NOMBRE DEL AVATAR], la presentadora virtual de Ignia.
+Soy [NOMBRE DEL AVATAR], la presentadora virtual de Ignia, la agencia de lanzamientos de Kunfupay.
 Sí, virtual. Lo que te voy a contar, no.
-Ignia es la agencia de lanzamientos de Kunfupay, la plataforma con la que vas a cobrar.
-[DATO REAL DEL EQUIPO DE IGNIA: años lanzando o lanzamientos hechos].
 
-### 4 · Quédate hasta el final · 0:42–0:50
+### 4 · Uno: vuelves a tener tiempo · 0:33–1:17
 
-Vamos a los puntos.
-Y quédate hasta el final.
-Porque ahí te cuento qué pasa con el dinero de tu lanzamiento.
-Y es lo que más tranquilidad te va a dar.
+Uno.
+Basta de comprar cursos para aprender a lanzar.
+Eres el CEO de tu negocio, y sabes que no puedes estar en todo.
+Nosotros tampoco. Por eso trabajamos con personas que saben el doble, o el triple, que nosotros en su área.
+Imagina tu próximo lanzamiento.
+Abres el carrito y no estás a las dos de la mañana contestando WhatsApps.
+Dejas de estar en todo: tu equipo lleva la estrategia, los anuncios, la VSL, los emails y el soporte.
+Tú grabas, estás con tu comunidad y cenas con tu familia.
+Vuelves a tener tiempo. Y el estrés ya no te inunda.
+PERO nada de eso sirve si, el día del carrito, tu alumno no puede pagarte.
 
-### 5 · Punto 1: tu lanzamiento, llave en mano · 0:50–1:25
+### 5 · Dos: te paga todo el mundo · 1:17–1:51
 
-Punto uno.
-Ignia hace tu lanzamiento llave en mano.
-La estrategia, el embudo, los anuncios, el copy y la VSL.
-Los emails, el WhatsApp y el soporte durante el carrito abierto.
-¿Y tú?
-Tú grabas. Y estás con tu comunidad, que es lo que nadie puede hacer por ti.
-Ojo: esto no es un curso para que aprendas a lanzar.
-Ni una agencia que te hace los anuncios y te deja solo el día del carrito.
-Lo hacemos todo. Hasta el cobro.
-Porque de nada sirve el mejor lanzamiento si ese día tu alumno no puede pagarte.
+Dos.
+Solo trabajamos con los mejores. Por eso, en tu lanzamiento, cobras con Kunfupay: la única pasarela de España que funciona como Merchant of Record.
+Tu Stripe del día a día está bien. Pero en un lanzamiento te tiene que pagar todo el mundo, sin trabas.
+Con un solo link, tu alumno de Colombia te paga con Nequi.
+El de Perú, con Yape. El de Argentina, en pesos.
+Y el que quiera, en cripto.
+Todo con una pasarela pensada para aguantar el pico del carrito abierto.
+Y ahora, lo que te prometí.
 
-### 6 · Punto 2: cobras en cualquier país con Kunfupay · 1:25–2:00
+### 6 · Tres: lo que te sirve aunque no nos contrates · 1:51–2:27
 
-Punto dos.
-Con Ignia, tu lanzamiento cobra con Kunfupay.
-Un solo link de pago.
-Detecta en qué país está tu alumno y se adapta para que pague en su moneda.
-Pesos colombianos, soles, pesos argentinos o dólares.
-Y si quiere, en cripto, sin que tú tengas un exchange.
-Así dejas de perder ventas porque tu alumno no tiene cómo pagarte.
-Y Kunfupay está pensado para aguantar el pico del carrito abierto.
-Ahora sí, lo que te prometí.
+Tres. Este te conviene aunque nunca nos contrates.
+Desde hoy puedes abrir tu cuenta de Kunfupay como referido nuestro.
+Y tienes beneficios fiscales que no son para todos: solo para quien vende su conocimiento, como tú.
+Ya no necesitas una LLC en Estados Unidos para cobrar en dólares en todo el mundo.
+Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta. Tú te olvidas.
+Y el dinero no tiene que pasar por tu banco: lo tienes en tu cuenta de Kunfupay, a tu nombre, y lo gastas cuando quieras.
 
-### 7 · Punto 3: la factura, los impuestos y tu dinero · 2:00–2:30
+### 7 · Los dos caminos · 2:27–2:48
 
-Punto tres.
-Kunfupay funciona como Merchant of Record.
-Piensa en la tienda de apps de tu celular.
-Cuando compras una app, le pagas a la tienda.
-Y la tienda hace la factura y se ocupa de los impuestos.
-Kunfupay hace lo mismo con tus cursos.
-Te representa en cada venta.
-La factura de cada alumno la hace Kunfupay.
-Y los impuestos de cada venta, también.
-Tú te olvidas.
-Y el dinero entra a tu cuenta de Kunfupay, a tu nombre.
-Lo gastas con tarjeta o lo retiras cuando quieras.
-
-### 8 · El siguiente paso · 2:30–2:50
-
-Esto no es para todo el mundo.
-No es para quien busca un curso para aprender a lanzar.
-Ni para quien busca dejar de pagar impuestos.
-Si ya vendes y facturas más de 5.000 dólares al mes, debajo de este video tienes la lista de espera.
-Son seis preguntas, y te escribimos cuando haya sitio para tu lanzamiento.
+Si lo que buscas es dejar de pagar impuestos, esto no es para ti.
+Si quieres lanzar sin hacerlo todo, debajo de este video tienes dos caminos.
+La lista de espera de Ignia, si quieres que hagamos tu próximo lanzamiento.
+Y tu cuenta de Kunfupay como referido nuestro.
 Tú grabas. Ignia lanza. Kunfupay cobra.
 
 ## Plan de Meta
@@ -496,7 +478,7 @@ Tú grabas. Ignia lanza. Kunfupay cobra.
 
 - [Bloquea] La landing dice que Ignia es de Kunfupay y muestra el titular legal.
 - [Bloquea] Equipo real que ejecute los lanzamientos.
-- [Bloquea] Confirmar «aguanta el pico del carrito abierto» y métodos de pago por país.
+- [Bloquea] La landing necesita el segundo botón que anuncia la VSL, «Abrir mi cuenta de Kunfupay», con el link de referido de Ignia.
 - Modelo de cobro de Ignia.
 - Cupo y fechas de la lista de espera.
 - Primer caso real con permiso.

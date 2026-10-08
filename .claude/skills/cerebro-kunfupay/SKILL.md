@@ -232,6 +232,12 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - **Logos de terceros** (Binance, Hotmart, Stripe, PayPal, Skool, bancos, AEAT…) en ninguna imagen. Como mucho, el nombre escrito, una sola plataforma por anuncio y sin imitar su interfaz.
     - Y lo que ya estaba prohibido: «no pagas impuestos», «Hacienda no lo ve», la renta (regla 24), «100 % seguro» o «asegurado» (regla 17), testimonios o cifras inventadas, prometer algo sobre el dinero ya acumulado (regla 22.10).
 
+28. **Beneficios que se viven, no lo que hacemos.** (Corrección del 08/10/2026, VSL de Ignia: «no debes comentar lo que hacemos… debes comentar todos los beneficios que se lleva, volverás a tener tiempo, no te inundará el estrés, dejarás de estar en todo porque tendrás un equipo que te apoya… si no vivificamos lo que decimos no generaremos una experiencia memorable en la mente del consumidor».) Vale para VSL, guiones y copys de cualquier marca.
+    - Cada punto es un beneficio contado como una escena que el comprador reconoce: «Abres el carrito y no estás a las dos de la mañana contestando WhatsApps», «cenas con tu familia». Lo que hacemos solo aparece como la razón de que el beneficio sea posible («tu equipo lleva la estrategia, los anuncios…»).
+    - Al comprador que ya factura se le habla como CEO: «Basta de cursos. Eres el CEO de tu negocio y sabes que no puedes estar en todo.»
+    - Un punto da valor aunque no compre (en Ignia, abrir su cuenta de Kunfupay como referido), y el cierre ofrece ese segundo camino.
+    - Mal: «Punto uno. Ignia hace tu lanzamiento llave en mano: la estrategia, el embudo, los anuncios…». Bien: «Imagina tu próximo lanzamiento… Tú grabas, estás con tu comunidad y cenas con tu familia. Vuelves a tener tiempo.»
+
 ---
 
 ## 2. Protocolo cuando llega un ángulo o concepto nuevo

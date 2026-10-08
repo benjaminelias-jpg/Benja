@@ -103,3 +103,20 @@
 - **Qué hice:** la plantilla de VSL del 07/10 aplicada a Ignia (~2:50): filtro, promesa con agenda, quién lo cuenta, bucle abierto, tres puntos con puente y lista de espera. Cada beneficio de Ignia va con su complemento de Kunfupay: Ignia hace el lanzamiento y Kunfupay cobra en cualquier país, hace la factura y paga los impuestos de cada venta.
 - **Con un avatar, la credibilidad no se inventa:** el avatar se declara virtual y la credibilidad la da que Ignia es la agencia de lanzamientos de Kunfupay, más un dato real del equipo si existe. Nada de «7 años de experiencia» para un avatar.
 - **Pique a la competencia sin nombrarla y sin depender de pendientes:** «no es un curso para que aprendas a lanzar, ni una agencia que te hace los anuncios y te deja solo el día del carrito». No se usa «el socio que se queda una parte de tu negocio» mientras no se sepa el modelo de cobro de Ignia.
+
+## 08/10/2026 · VSL de Ignia: beneficios que se viven, no lo que hacemos
+
+- **Qué hice:** la VSL de Ignia (~2:50) contaba lo que hace Ignia: «Punto uno. Ignia hace tu lanzamiento llave en mano. La estrategia, el embudo, los anuncios, el copy y la VSL…».
+- **Corrección del usuario:** «mejora la vsl dios no me gusta» · «no debes comentar lo que hacemos, como punto uno te llevas x y z, debes comentar todos los beneficios que se lleva, volverás a tener tiempo, no te inundará el estrés, dejarás de estar en todo porque tendrás un equipo que te apoya con x y z, si no vivificamos lo que decimos no generaremos una experiencia memorable en la mente del consumidor. Basta de cursos, eres un CEO…» · del punto 3: «la que te conviene escuchar para que tengas valor independientemente de si nos contratas o no».
+- **Por qué estaba mal:** una lista de servicios no se recuerda; se recuerda la escena que el comprador va a vivir. Y una VSL que no le da nada a quien todavía no compra pierde a esa persona.
+- **Regla nueva (regla 28 del cerebro):** cada punto es un beneficio contado como escena (a las dos de la mañana contestando WhatsApps, la cena con la familia). Lo que hacemos solo aparece como la razón de que el beneficio sea posible. Al comprador que ya factura se le habla como CEO. Un punto da valor aunque no compre, con su propio camino en el cierre.
+- **Ejemplo:** mal: «Punto uno. Ignia hace tu lanzamiento llave en mano: la estrategia, el embudo, los anuncios…» → bien: «Imagina tu próximo lanzamiento. Abres el carrito y no estás a las dos de la mañana contestando WhatsApps. Dejas de estar en todo: tu equipo lleva la estrategia, los anuncios, la VSL, los emails y el soporte. Tú grabas, estás con tu comunidad y cenas con tu familia.»
+- **Lo que no se tomó del texto del usuario (regla 3):** «una de las fintech más grandes de Europa» (no hay dato), «tenemos una asociación… te la conseguimos» (Ignia es de Kunfupay), «un Stripe que se cae» (marca con nombre y sin pruebas) y «no pagar impuestos por eso» (falso). «No tiene que pasar por tu banco» entra en Ignia por analogía con Tributaless, pendiente de que el usuario lo confirme.
+- **Duración:** menos de 3 minutos son unas 450 palabras (2:48 a 160 palabras por minuto, 2:59 a 150).
+
+## 08/10/2026 · La landing de Tributaless ya existe
+
+- **Qué hice:** a «entrégame el html de la landing de tributaless» respondí escribiendo una landing nueva a partir de la especificación de la estrategia.
+- **Corrección del usuario:** «no crees la landing nueva, ya tenemos una».
+- **Por qué estaba mal:** ya existía www.tributaless.com (Next.js), con la home y cuatro landings en /lp/. No la busqué antes de crear.
+- **Regla nueva:** antes de crear un activo (landing, web, formulario), se busca si ya existe: el dominio de la marca, el Drive, el repo y Vercel. Si existe, se entrega o se modifica ese.
