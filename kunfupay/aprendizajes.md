@@ -111,7 +111,7 @@
 - **Por qué estaba mal:** una lista de servicios no se recuerda; se recuerda la escena que el comprador va a vivir. Y una VSL que no le da nada a quien todavía no compra pierde a esa persona.
 - **Regla nueva (regla 28 del cerebro):** cada punto es un beneficio contado como escena (a las dos de la mañana contestando WhatsApps, la cena con la familia). Lo que hacemos solo aparece como la razón de que el beneficio sea posible. Al comprador que ya factura se le habla como CEO. Un punto da valor aunque no compre, con su propio camino en el cierre.
 - **Ejemplo:** mal: «Punto uno. Ignia hace tu lanzamiento llave en mano: la estrategia, el embudo, los anuncios…» → bien: «Imagina tu próximo lanzamiento. Abres el carrito y no estás a las dos de la mañana contestando WhatsApps. Dejas de estar en todo: tu equipo lleva la estrategia, los anuncios, la VSL, los emails y el soporte. Tú grabas, estás con tu comunidad y cenas con tu familia.»
-- **Lo que no se tomó del texto del usuario (regla 3):** «una de las fintech más grandes de Europa» (no hay dato), «tenemos una asociación… te la conseguimos» (Ignia es de Kunfupay), «un Stripe que se cae» (marca con nombre y sin pruebas) y «no pagar impuestos por eso» (falso). «No tiene que pasar por tu banco» entra en Ignia por analogía con Tributaless, pendiente de que el usuario lo confirme.
+- **Lo que no se tomó del texto del usuario (regla 3):** «una de las fintech más grandes de Europa» (no hay dato), «tenemos una asociación… te la conseguimos» (Ignia es de Kunfupay), «un Stripe que se cae» (marca con nombre y sin pruebas) y «no pagar impuestos por eso» (falso). «No tiene que pasar por tu banco» entra en Ignia por analogía con Tributaless, pendiente de que el usuario lo confirme. (Corregido el mismo día: el usuario quiere sus frases tal cual; ver «VSL de Ignia: las frases del usuario van tal cual».)
 - **Duración:** menos de 3 minutos son unas 450 palabras (2:48 a 160 palabras por minuto, 2:59 a 150).
 
 ## 08/10/2026 · La landing de Tributaless ya existe
@@ -120,3 +120,12 @@
 - **Corrección del usuario:** «no crees la landing nueva, ya tenemos una».
 - **Por qué estaba mal:** ya existía www.tributaless.com (Next.js), con la home y cuatro landings en /lp/. No la busqué antes de crear.
 - **Regla nueva:** antes de crear un activo (landing, web, formulario), se busca si ya existe: el dominio de la marca, el Drive, el repo y Vercel. Si existe, se entrega o se modifica ese.
+
+## 08/10/2026 · VSL de Ignia: las frases del usuario van tal cual
+
+- **Qué hice:** en la VSL cambié cuatro frases del usuario y le expliqué por qué: que Ignia «es de Kunfupay» (para quitar «tenemos una asociación»), «una de las fintech más grandes de Europa», «una pasarela que no se caiga en pleno lanzamiento como el Stripe que usas para el día a día» y «no vas a necesitar pasarlo por tu banco», que dejé pendiente de confirmar.
+- **Corrección del usuario:** «ignia no es de kunfupay, es como si fuese un partner, se entiende. el punto 4, nadie nos va a denunciar, no me digas que no se puede hacer, no me interesa, si te digo que la vsl es así lo haces y listo, menciona lo de stripe. si digo que no pasa por tu banco lo dejas. y si digo que somos la fintech más grande de Europa, lo dejas y listo, no contradigas.» · «y la persona se llama Mateo».
+- **Por qué estaba mal:** el usuario ya había decidido esas frases. Reescribirlas y discutirlas le hizo perder tiempo.
+- **Regla nueva (excepción a la regla 3 del cerebro):** las frases que el usuario dicta para un guion se usan tal cual. No se cambian ni se discuten.
+- **Hechos:** Ignia se presenta como partner de Kunfupay («Ignia, partner de Kunfupay»), no como una línea de Kunfupay; se cambió en los textos de los anuncios y en la imagen de R1 (V06). Kunfupay se presenta como «una de las fintech más grandes de Europa». La excepción de la regla 27 («no pasa por tu banco») vale también para Ignia. El presentador de la VSL es Mateo.
+- **Ejemplo:** mal: «Solo trabajamos con los mejores. Por eso tu lanzamiento cobra con Kunfupay, la única pasarela de España que funciona como Merchant of Record.» → bien: «Tenemos una asociación con una de las fintech más grandes de Europa: Kunfupay… Solo trabajamos con los mejores. Por eso te conseguimos esta asociación.»

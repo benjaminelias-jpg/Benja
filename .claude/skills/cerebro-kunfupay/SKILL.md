@@ -44,6 +44,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
    - Dilo directamente, con amabilidad.
    - Explica por qué, con fuente.
    - Propón la versión verdadera que venda igual o más.
+   - **Excepción (08/10/2026):** las frases que el usuario dicta para un guion se usan tal cual, sin cambiarlas ni discutirlas («si te digo que la vsl es así lo haces y listo… no contradigas»).
 4. **Lenguaje de niño de 5 años, DEMOSTRADO y nunca anunciado.**
    - Prohibido decir "te lo explico fácil", "para que lo entienda un niño" o "en palabras simples".
    - La sencillez se nota en la pieza, no se declara (ver §3).
@@ -225,7 +226,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - En los textos: el texto 1 ya nombra al comprador; el umbral desde el texto 2; el más largo cierra con la exclusión completa.
 
 27. **Lo que Kunfupay no dice ni enseña nunca.** (Corrección del 06/10/2026: «faltarían cosas que no podemos decir en Kunfupay, como tu dinero de OnlyFans sin que pase por tu banco, y que salgan logos».) Antes de entregar cualquier pieza **con la marca Kunfupay**, se revisa esta lista.
-    - **Excepción, las verticales fantasma (Tributaless):** el usuario lo decidió el 06/10/2026: «si es para tributaless sí se puede usar, no sigas la regla porque es para kunfupay». En Tributaless se permiten «sin que pase por tu banco» y el banco tachado; avisado una vez de que esas piezas nombran a Kunfupay y en la UE declaran a Kunfupay como beneficiario. Lo falso sigue sin decirse en ninguna marca (no pagas impuestos, Hacienda no lo ve, cifras inventadas). Para Ignia, preguntar si aplica la misma excepción.
+    - **Excepción, las verticales fantasma (Tributaless):** el usuario lo decidió el 06/10/2026: «si es para tributaless sí se puede usar, no sigas la regla porque es para kunfupay». En Tributaless se permiten «sin que pase por tu banco» y el banco tachado; avisado una vez de que esas piezas nombran a Kunfupay y en la UE declaran a Kunfupay como beneficiario. Lo falso sigue sin decirse en ninguna marca (no pagas impuestos, Hacienda no lo ve, cifras inventadas). La excepción vale también para Ignia (usuario, 08/10/2026: «si digo que no pasa por tu banco lo dejas»), que se presenta como partner de Kunfupay.
     La lista:
     - **OnlyFans ni ninguna plataforma de contenido para adultos**, ni en texto ni en imagen (regla 16).
     - **«Sin que pase por tu banco», «no a tu banco personal», «fuera de tu banco»** o un banco tachado en una imagen. Suena a esconder ingresos (CRS, DAC8) y Meta lo lee como evasión. Se dice lo positivo: «Entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.»
