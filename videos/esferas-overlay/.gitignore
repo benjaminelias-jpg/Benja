@@ -1,0 +1,7 @@
+compositions/
+assets/
+renders/
+.hyperframes/
+.thumbnails/
+.waveform-cache/
+snapshots/

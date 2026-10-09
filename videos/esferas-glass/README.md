@@ -1,11 +1,13 @@
 # Esferas de vidrio (HyperFrames)
 
-3 esferas de Liquid Glass estilo iOS ("Clear") sobre `assets/video/fragmento-apra.mp4` (720x1280, 30 fps, 7,3 s): **1**, **2** y **?** en amarillo `#FFD60A`. La refracción es real: el fondo del video se curva dentro de cada esfera, frame por frame. No lleva SFX; el audio original del video queda intacto.
+3 esferas de Liquid Glass estilo iOS ("Clear") sobre `assets/video/fragmento-apra.mp4` (720x1280, 30 fps, 7,3 s): **1**, **2** y **3** en amarillo `#FFD60A`. La refracción es real: el fondo del video se curva dentro de cada esfera, frame por frame. No lleva SFX; el audio original del video queda intacto.
 
 - `renders/fragmento-apra-esferas.mp4`: con el audio original del video.
 - `renders/fragmento-apra-esferas-mudo.mp4`: el mismo, sin audio.
 - `renders/esferas-overlay-alpha.webm`: solo las esferas, fondo transparente (1080x1920, 5,8 s, entran en t=0). Para superponer en otro video.
-- `renders/esferas-overlay-alpha.mov`: lo mismo en ProRes 4444 con alfa (no se sube al repo por peso; se regenera con `npx hyperframes render -c overlay.html --format mov -o renders/esferas-overlay-alpha.mov`).
+- `renders/esferas-overlay-alpha.mov`: lo mismo en QuickTime Animation con alfa (no se sube al repo por peso).
+
+Los dos overlays se generan con `bash tools/render-overlay.sh`: copia `compositions/orbs.html` y los assets al proyecto `../esferas-overlay` (HyperFrames no admite dos composiciones raíz en la misma carpeta) y renderiza ahí.
 
 Ojo: en el overlay transparente no hay refracción, porque no hay video detrás para curvar. El vidrio queda con aro, brillos, sombreado y sombra. Para la refracción real, el video tiene que entrar en la composición (`index.html`).
 
