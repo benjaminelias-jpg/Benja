@@ -4,6 +4,10 @@
 
 - `renders/fragmento-apra-esferas.mp4`: con el audio original del video.
 - `renders/fragmento-apra-esferas-mudo.mp4`: el mismo, sin audio.
+- `renders/esferas-overlay-alpha.webm`: solo las esferas, fondo transparente (1080x1920, 5,8 s, entran en t=0). Para superponer en otro video.
+- `renders/esferas-overlay-alpha.mov`: lo mismo en ProRes 4444 con alfa (no se sube al repo por peso; se regenera con `npx hyperframes render -c overlay.html --format mov -o renders/esferas-overlay-alpha.mov`).
+
+Ojo: en el overlay transparente no hay refracción, porque no hay video detrás para curvar. El vidrio queda con aro, brillos, sombreado y sombra. Para la refracción real, el video tiene que entrar en la composición (`index.html`).
 
 ## Usarlo con tu video
 
