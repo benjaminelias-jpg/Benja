@@ -143,27 +143,27 @@ Te enseño, paso a paso, lo que hacemos contigo en Classroom Platinum.
 Seis meses. Cuatro fases.
 
 [Mapa: se enciende la fase 1 · el equipo en plano · la pantalla real de Classroom]
-Fase uno: entendemos cómo trabajas.
-Qué vendes, a quién y cómo lo haces hoy.
-Con eso te ponemos el equipo de marketing.
-Y dejamos tu comunidad en Classroom lista para abrir.
+Fase uno: armamos tu comunidad en Classroom.
+Te ayudamos a afinar tu producto y tu oferta.
+Y el equipo está detrás de ti en todo momento.
 
-[Mapa: fase 2 · la pantalla real de los anuncios · la audiencia creciendo]
-Fase dos: anuncios para traerte audiencia nueva.
-Y la calentamos.
-Para que, cuando abras, ya tenga ganas de entrar.
+[Mapa: fase 2 · contador de miembros: 0 → 50 · la lista de espera creciendo]
+Fase dos: pre-lanzamiento.
+El objetivo: unas 50 personas dentro y mucha lista de espera.
+Con ellas, tu comunidad coge forma.
+Pulimos detalles y ya hay interacción de verdad.
 
-[Mapa: fase 3 · contador de miembros en Classroom: 0 → 50]
-Fase tres: lanzamos.
-El objetivo: las primeras 50 personas dentro de tu comunidad.
-Con esas 50 dentro, tu tiempo ya estaría amortizado.
+[Mapa: fase 3 · la lista de espera entrando de golpe]
+Fase tres, en paralelo: el lanzamiento grande.
+Con toda esa lista de espera,
+buscamos meter a la mayor cantidad de personas posible.
 
-[Mapa: fase 4 · un carrito con el cartel «ABIERTO» · los 12 meses pasando]
-Fase cuatro: en vez de cerrar el carrito… lo dejamos abierto.
-A eso se le llama evergreen.
-Y como tu oferta ya ha demostrado que vende,
-entramos con NUESTRO dinero en anuncios.
-Para que vendas todo el año. Y tu comunidad siga viva.
+[Mapa: fase 4 · el interruptor en ON · los 12 meses pasando]
+Fase cuatro: evergreen.
+Te damos todo nuestro blueprint para que tu comunidad quede encendida.
+Gente nueva entrando cada mes.
+Y los que ya están dentro, pagándote cada mes.
+ADEMÁS, después del lanzamiento, ponemos NUESTRO dinero en anuncios.
 
 [Tarjeta: requisitos]
 Eso sí: no entra cualquiera.
@@ -214,17 +214,23 @@ Y mira si tu negocio digital califica.
   - El equipo de marketing (estrategia, contenido, creatividades y anuncios): del cuerpo universal y de los ganchos.
 - **De dónde sale cada promesa del cuerpo 3:**
   - Los seis meses y las cuatro fases: de la landing.
-  - Las fases (entender cómo trabajas, audiencia, lanzamiento y evergreen) y «las primeras 50 personas»: del equipo, 13 de octubre de 2026.
-  - Las 50 personas se dicen como objetivo y lo de amortizar el tiempo, en condicional («ya estaría amortizado»). Meta no admite resultados prometidos.
-- **Quién paga los anuncios de la fase 2:**
-  - La landing dice que el dinero de Kunfupay entra después del lanzamiento.
-  - El universal dice que entra cuando la oferta demuestra que vende.
-  - Por eso el cuerpo 3 pone «NUESTRO dinero» en la fase 4 y no dice quién paga los de la fase 2. Si Kunfupay también los paga, se añade ahí.
+  - Las fases, del equipo (13 de octubre de 2026):
+    1. comunidad, producto y oferta;
+    2. pre-lanzamiento con unas 50 personas y lista de espera;
+    3. lanzamiento grande en paralelo;
+    4. blueprint de evergreen.
+  - Las 50 personas se dicen como objetivo. Meta no admite resultados prometidos.
+  - «Después del lanzamiento, ponemos nuestro dinero en anuncios»: de la landing.
+- **Cuándo entra el dinero de Kunfupay en anuncios:**
+  - El cuerpo 3 y la landing dicen «después del lanzamiento».
+  - El universal dice «cuando tu oferta demuestra que vende».
+  - Hay que fijar uno de los dos y usarlo igual en los tres cuerpos.
 - **Lo que dice el universal y no dice la landing:** «solo ganamos si tú vendes» y «arriesgamos nosotros». La landing dice que el programa va con la suscripción a Classroom. El cuerpo 2 no lo repite.
 - **Planos:**
   - Classroom: la pantalla real, con una comunidad real y con permiso del creador.
   - El plano del equipo: el equipo real de Kunfupay.
   - El mapa de cuatro fases es un gráfico nuestro. El contador de miembros y los anuncios salen de pantallas reales.
+  - Referencia visual: el tablero de Miro «Classroom Platinum · Proceso», con las cuatro fases y sus dibujos (comunidad, 50 y lista de espera, cohete, interruptor en ON).
 
 ---
 
