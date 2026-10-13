@@ -29,7 +29,7 @@
 |---|---|---|---|
 | 1 · Dinero | Vamos a poner dinero en ti | «Esto es para ti si ya vendes formación.» | Grabado (el universal) |
 | 2 · Acompañamiento | No solo dinero: un equipo que te acompaña | «Classroom Platinum no es solo dinero para tus anuncios.» | Nuevo, para grabar |
-| 3 · Metodología única | El sistema exacto con el que lo hacemos, para dar autoridad y confianza | — | Pendiente |
+| 3 · Metodología única | El sistema exacto con el que lo hacemos, para dar autoridad y confianza | «Te enseño, paso a paso, lo que hacemos contigo en Classroom Platinum.» | Nuevo, para grabar |
 
 **Para que no se canibalicen,** cada cuerpo se queda con su razón:
 - el 1 cuenta el dinero;
@@ -132,24 +132,71 @@ Y mira si tu negocio digital califica.
 
 **Duración:** unas 175 palabras, unos 65-70 segundos. Es casi lo mismo que el universal, así que en el test solo cambia el mensaje.
 
-### Cuerpo 3 · Metodología única
+### Cuerpo 3 · Metodología única (nuevo)
 
-Pendiente. Muestra el sistema exacto con el que lo hacemos, para dar autoridad y confianza.
+Es el más visual de los tres. Un mapa de cuatro fases se va encendiendo mientras se cuenta cada paso.
+
+```
+[Tú a cámara]
+Te enseño, paso a paso, lo que hacemos contigo en Classroom Platinum.
+[Mapa en pantalla: 6 meses, 4 fases]
+Seis meses. Cuatro fases.
+
+[Mapa: se enciende la fase 1 · el equipo en plano · la pantalla real de Classroom]
+Fase uno: entendemos cómo trabajas.
+Qué vendes, a quién y cómo lo haces hoy.
+Con eso te ponemos el equipo de marketing.
+Y dejamos tu comunidad en Classroom lista para abrir.
+
+[Mapa: fase 2 · la pantalla real de los anuncios · la audiencia creciendo]
+Fase dos: anuncios para traerte audiencia nueva.
+Y la calentamos.
+Para que, cuando abras, ya tenga ganas de entrar.
+
+[Mapa: fase 3 · contador de miembros en Classroom: 0 → 50]
+Fase tres: lanzamos.
+El objetivo: las primeras 50 personas dentro de tu comunidad.
+Con esas 50 dentro, tu tiempo ya estaría amortizado.
+
+[Mapa: fase 4 · un carrito con el cartel «ABIERTO» · los 12 meses pasando]
+Fase cuatro: en vez de cerrar el carrito… lo dejamos abierto.
+A eso se le llama evergreen.
+Y como tu oferta ya ha demostrado que vende,
+entramos con NUESTRO dinero en anuncios.
+Para que vendas todo el año. Y tu comunidad siga viva.
+
+[Tarjeta: requisitos]
+Eso sí: no entra cualquiera.
+Más de 10.000 seguidores.
+Ya vendes cursos, coaching o mentorías online.
+Y facturas más de 3.000 € al mes.
+
+[Tú a cámara]
+Somos Kunfupay.
+Ya cobramos y facturamos para creadores de cursos de todo el mundo.
+Y ahora invertimos en los mejores.
+Aplica. Son dos minutos.
+Y mira si tu negocio digital califica.
+```
+
+**Duración:** unas 185 palabras, unos 70 segundos. Es algo más largo que los otros dos porque el mapa necesita respirar entre fase y fase.
+
+**Referencia del equipo:** el anuncio 1601685971446231 de la Biblioteca de anuncios de Meta. No se pudo abrir desde aquí. Si se pasa su transcripción o unas capturas, se ajusta el plan visual.
 
 ---
 
 ## 4. Ganchos y montaje
 
-- **Los cuatro ganchos grabados encajan con los cuerpos 1 y 2,** porque nombran el estratega y el presupuesto en anuncios.
-- **Con ellos salen cuatro anuncios nuevos sin grabar nada más:** REEL / 1 a REEL / 4 con el cuerpo de acompañamiento.
+- **Los cuatro ganchos grabados encajan con los tres cuerpos,** porque nombran el estratega y el presupuesto en anuncios. REEL / 3 termina en «Te explico cómo funciona», así que el más natural para él es el cuerpo 3.
+- **Con ellos salen ocho anuncios nuevos sin grabar nada más:** REEL / 1 a REEL / 4 con el cuerpo de acompañamiento y con el de metodología.
   - Mismo gancho y distinto cuerpo: así se comparan los cuerpos de forma limpia.
-  - Esa comparación va en dos conjuntos, uno por cuerpo, con el mismo presupuesto y el mismo público. Si van en el mismo conjunto, Meta ve el mismo arranque y puede darle todo el gasto a uno.
+  - Esa comparación va en tres conjuntos, uno por cuerpo, con el mismo presupuesto y el mismo público. Si van en el mismo conjunto, Meta ve el mismo arranque y puede darle todo el gasto a uno.
 - **Cierre común:** desde «Eso sí: no entra cualquiera» hasta el final.
-  - Se graba una vez y vale también para el cuerpo 3.
+  - Se graba una vez y vale para los cuerpos 2 y 3.
   - Al universal se le pone en edición la tarjeta de requisitos encima del bloque «Esto no es para ti si tienes…». Así los cuerpos filtran con la misma cifra.
 - **El montaje es siempre igual:** gancho, corte en el puente y cuerpo.
-- **Nombre en Meta:** «REEL / 1 · ACOMPAÑAMIENTO».
-- **UTM:** `utm_campaign=classroom_platinum_REEL1_ACOMPANAMIENTO`. Así en Notion se ven el gancho y el cuerpo de cada lead.
+- **Nombre en Meta:** «REEL / 1 · ACOMPAÑAMIENTO» o «REEL / 3 · METODOLOGÍA».
+- **UTM:** `utm_campaign=classroom_platinum_REEL1_ACOMPANAMIENTO` o `classroom_platinum_REEL3_METODOLOGIA`. Así en Notion se ven el gancho y el cuerpo de cada lead.
 - **Cómo se leen los resultados:**
   1. Primero, los ganchos.
   2. Con los ganchos ganadores, los cuerpos.
@@ -165,10 +212,19 @@ Pendiente. Muestra el sistema exacto con el que lo hacemos, para dar autoridad y
   - «Te montamos tu comunidad»: confirmado por el equipo.
   - «Una persona asignada a ti»: de la landing, el Customer Success dedicado.
   - El equipo de marketing (estrategia, contenido, creatividades y anuncios): del cuerpo universal y de los ganchos.
+- **De dónde sale cada promesa del cuerpo 3:**
+  - Los seis meses y las cuatro fases: de la landing.
+  - Las fases (entender cómo trabajas, audiencia, lanzamiento y evergreen) y «las primeras 50 personas»: del equipo, 13 de octubre de 2026.
+  - Las 50 personas se dicen como objetivo y lo de amortizar el tiempo, en condicional («ya estaría amortizado»). Meta no admite resultados prometidos.
+- **Quién paga los anuncios de la fase 2:**
+  - La landing dice que el dinero de Kunfupay entra después del lanzamiento.
+  - El universal dice que entra cuando la oferta demuestra que vende.
+  - Por eso el cuerpo 3 pone «NUESTRO dinero» en la fase 4 y no dice quién paga los de la fase 2. Si Kunfupay también los paga, se añade ahí.
 - **Lo que dice el universal y no dice la landing:** «solo ganamos si tú vendes» y «arriesgamos nosotros». La landing dice que el programa va con la suscripción a Classroom. El cuerpo 2 no lo repite.
 - **Planos:**
   - Classroom: la pantalla real, con una comunidad real y con permiso del creador.
   - El plano del equipo: el equipo real de Kunfupay.
+  - El mapa de cuatro fases es un gráfico nuestro. El contador de miembros y los anuncios salen de pantallas reales.
 
 ---
 
