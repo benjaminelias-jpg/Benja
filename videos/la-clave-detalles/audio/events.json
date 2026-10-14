@@ -1,53 +1,35 @@
 {
-  "dur": 6.0,
+  "dur": 5.5,
   "events": [
     {
-      "t": 0.235,
-      "type": "air",
+      "t": 0.015,
+      "type": "whoosh",
       "args": {
-        "d": 0.9,
-        "f0": 380,
-        "f1": 2100,
-        "skew": 0.35
+        "d": 0.45,
+        "lo": 700,
+        "hi": 3800
       },
-      "gain": 0.13,
-      "name": "the key flies in"
+      "gain": 0.36,
+      "pan": -0.25,
+      "name": "the key swooshes in"
     },
     {
       "t": 0.45,
-      "type": "shimmer",
-      "args": {
-        "d": 1.6,
-        "f": 2637.0
-      },
-      "gain": 0.09,
-      "name": "the key comes into focus"
-    },
-    {
-      "t": 2.08,
-      "type": "slide",
-      "args": {
-        "d": 0.3
-      },
-      "gain": 0.08,
-      "name": "the key pushes into the lock"
-    },
-    {
-      "t": 2.29,
-      "type": "lock_click",
+      "type": "clink",
       "args": {},
-      "gain": 0.38,
-      "name": "the key turns: click"
+      "gain": 0.22,
+      "name": "the key comes to rest on the paper"
     },
     {
-      "t": 3.935,
-      "type": "ting",
+      "t": 2.05,
+      "type": "whoosh",
       "args": {
-        "f": 1760.0
+        "d": 0.6,
+        "lo": 350,
+        "hi": 2000
       },
-      "gain": 0.2,
-      "pan": -0.35,
-      "name": "light crosses the bow"
+      "gain": 0.32,
+      "name": "the sentence rushes in, the key steps back"
     }
   ]
 }

@@ -6,7 +6,7 @@ message: "La clave está en los detalles."
 destination: instagram-reels
 aspect: 1080x1920
 language: es
-length: 6s
+length: 5.5s
 angle: concept
 ---
 
@@ -21,9 +21,9 @@ Segundo test del estilo limpio de `menos-pero-mejor`, ahora con un elemento real
 
 ## Customizations
 
-- La llave entra con giro 3D y enfoque (de desenfocada a nítida), flota, empuja y gira como en una cerradura (clic), y las palabras salen desde detrás de ella.
-- Destello de luz que recorre el metal (solo sobre la llave) en el momento de "los detalles".
-- Sonido procedural sincronizado: aire, brillo, roce metálico, clic de cerradura, "ting"; acorde que resuelve con el clic.
+- v2 (feedback del usuario): sin levitación ni zumbidos tipo "sable de luz". La llave entra con un swoosh (desenfoque de movimiento direccional) y queda apoyada sobre el papel con sombra corta.
+- "La clave" sale desde detrás de la llave; luego "está en los detalles." entra con otro swoosh desde la cámara (desenfocado → nítido) y la llave + "La clave" pasan al fondo: se achican, suben, pierden brillo y saturación y se desenfocan levemente (cambio de foco), para dar prioridad al nuevo elemento.
+- Sonido solo de aire y contacto: swoosh de entrada, "clink" metálico al apoyarse, swoosh del cambio de plano. Sin acordes ni tonos sostenidos.
 
 ## Notes
 
