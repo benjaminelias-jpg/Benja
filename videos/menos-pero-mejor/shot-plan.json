@@ -1,0 +1,49 @@
+{
+  "category": "kinetic-type",
+  "duration_s": 5,
+  "fps": 60,
+  "canvas": { "w": 1080, "h": 1920, "aspect": "9:16" },
+  "style": "Swiss minimal, warm paper, one orange accent; restraint, generous negative space, one signature ease (expo.out), no decoration",
+  "palette": ["#F2EFE9", "#131313", "#F2541B"],
+  "font": "Inter Display SemiBold (local OTF, OFL)",
+  "beats": [0.2, 0.72, 1.25, 2.85, 3.85],
+  "export": "mp4",
+  "asset_needs": [],
+  "block": null,
+  "customize": {},
+  "content": {
+    "scenes": [
+      {
+        "id": "hook",
+        "start": 0,
+        "end": 1.25,
+        "text": "",
+        "emphasis_words": [],
+        "emotion": "curiosity",
+        "motion": "a single orange dot appears at optical center (expo.out), then stretches into a thin horizontal line as wide as the second line of type (power3.inOut)",
+        "beats": [0.2, 0.72]
+      },
+      {
+        "id": "reveal",
+        "start": 1.25,
+        "end": 2.85,
+        "text": "Menos, / pero mejor",
+        "emphasis_words": ["mejor"],
+        "emotion": "calm confidence",
+        "motion": "the line acts as a mask edge: 'Menos,' rises out of it, 'pero mejor' descends out of it (expo.out, 0.12s stagger); then breathe",
+        "beats": [1.25, 1.37]
+      },
+      {
+        "id": "resolve",
+        "start": 2.85,
+        "end": 5,
+        "text": "Menos, / pero mejor.",
+        "emphasis_words": ["."],
+        "emotion": "satisfaction",
+        "motion": "the line retracts into its right end and becomes a dot; the two lines close the gap; the dot drops into place as the period of the sentence and holds",
+        "beats": [2.85, 3.85]
+      }
+    ]
+  },
+  "brief": "One orange dot is the whole story: it appears, becomes a horizon that reveals 'Menos, pero mejor', then pulls itself back into a single point and lands as the period. Form and message agree: fewer elements, better executed. Hook within the first second (dot + stretch), final lockup held ~1.15s."
+}

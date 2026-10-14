@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>Menos, pero mejor</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Inter Display";
+        src: url("assets/fonts/InterDisplay-SemiBold.otf") format("opentype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: block;
+      }
+
+      :root {
+        --paper: #f2efe9;
+        --ink: #131313;
+        --accent: #f2541b;
+        --fs: 160px;
+        --dot: 34px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--paper);
+      }
+
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #scene {
+        position: absolute;
+        inset: 0;
+      }
+
+      /* Flat warm paper: no gradient, so nothing bands after compression. */
+      #bg {
+        position: absolute;
+        inset: 0;
+        background: var(--paper);
+      }
+
+      /* Optical center sits at y = 870 (inside the 9:16 safe zone). */
+      #camera {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 180px;
+        transform-origin: 540px 870px;
+      }
+
+      #lockup {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Inter Display", sans-serif;
+        font-weight: 600;
+        font-size: var(--fs);
+        line-height: 1.04;
+        letter-spacing: -0.04em;
+        color: var(--ink);
+        font-kerning: normal;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: geometricPrecision;
+      }
+
+      .row {
+        display: block;
+      }
+
+      /* Each line is revealed through its own mask. The extensions (--e1, --e2)
+         push the mask edge exactly onto the orange line; negative margins keep
+         the layout untouched. */
+      .mask {
+        display: block;
+        overflow: hidden;
+      }
+
+      #mask1 {
+        padding: 0.15em 0.3em var(--e1, 0px);
+        margin: -0.15em -0.3em calc(-1 * var(--e1, 0px));
+      }
+
+      #mask2 {
+        padding: var(--e2, 0px) 0.3em 0.3em;
+        margin: calc(-1 * var(--e2, 0px)) -0.3em -0.3em;
+      }
+
+      .txt {
+        display: block;
+        white-space: nowrap;
+      }
+
+      /* Keeps the period's space in the line; the orange mark draws it. */
+      .per {
+        visibility: hidden;
+      }
+
+      .probe {
+        display: inline-block;
+        width: 0;
+        height: 0;
+        vertical-align: baseline;
+      }
+
+      /* The single accent: dot → line → period. */
+      #mark {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: var(--dot);
+        height: var(--dot);
+        border-radius: 999px;
+        background: var(--accent);
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="5"
+      data-width="1080"
+      data-height="1920"
+      data-fps="60"
+    >
+      <div id="scene">
+        <div id="bg"></div>
+        <div id="camera">
+          <div id="lockup">
+            <div class="row" id="row1">
+              <div class="mask" id="mask1"><span class="txt" id="t1" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">Menos,</span></div>
+            </div>
+            <div class="row" id="row2">
+              <div class="mask" id="mask2">
+                <span class="txt" id="t2" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">pero mejor<i class="probe" id="probe"></i><span class="per">.</span></span>
+              </div>
+            </div>
+            <div id="mark"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Procedural sound (audio/build_audio.py + procedural-sfx), mastered to -14.5 LUFS / -1.5 dBTP. -->
+      <audio
+        id="sound"
+        src="assets/audio/sound.wav"
+        data-start="0"
+        data-duration="5"
+        data-track-index="1"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <!-- Single source of truth for timing: the SFX event list is generated from it. -->
+    <script type="application/json" id="timing">
+      {
+        "dotIn": 0.2,
+        "stretch": 0.55,
+        "rise1": 1.1,
+        "rise2": 1.24,
+        "retract": 2.55,
+        "close": 2.85,
+        "drop": 3.24,
+        "land": 3.82
+      }
+    </script>
+
+    <script>
+      (async () => {
+        const T = JSON.parse(document.getElementById("timing").textContent);
+        const $ = (id) => document.getElementById(id);
+
+        const rootStyle = getComputedStyle(document.documentElement);
+        const FS = parseFloat(rootStyle.getPropertyValue("--fs"));
+        const DOT = parseFloat(rootStyle.getPropertyValue("--dot"));
+        const FONT = `600 ${FS}px "Inter Display"`;
+
+        await document.fonts.load(FONT, "Menos, pero mejor.");
+        await document.fonts.ready;
+
+        const lockup = $("lockup");
+        const row1 = $("row1");
+        const row2 = $("row2");
+        const mask1 = $("mask1");
+        const mask2 = $("mask2");
+        const t1 = $("t1");
+        const t2 = $("t2");
+        const probe = $("probe");
+        const mark = $("mark");
+
+        // Layout position of an element inside the lockup (transform-free).
+        const posIn = (el) => {
+          let x = 0;
+          let y = 0;
+          let node = el;
+          while (node && node !== lockup) {
+            x += node.offsetLeft;
+            y += node.offsetTop;
+            node = node.offsetParent;
+          }
+          return { x, y };
+        };
+
+        // Ink metrics from the real font.
+        const ctx = document.createElement("canvas").getContext("2d");
+        ctx.font = FONT;
+        const dotInk = ctx.measureText(".");
+        const inkL = -dotInk.actualBoundingBoxLeft;
+        const inkR = dotInk.actualBoundingBoxRight;
+        const inkT = -dotInk.actualBoundingBoxAscent;
+        const inkB = dotInk.actualBoundingBoxDescent;
+        const PERIOD = inkR - inkL; // period diameter
+        const xHeight = ctx.measureText("x").actualBoundingBoxAscent;
+        const pInk = ctx.measureText("p");
+
+        // Geometry (lockup coordinates, final layout).
+        const B = row2.offsetTop; // boundary between the two lines
+        const p = posIn(probe); // origin + baseline of the period glyph
+        const baselineInRow = p.y - row2.offsetTop;
+        const baseline1 = row1.offsetTop + baselineInRow;
+        const baseline2 = p.y;
+        const Px = p.x + (inkL + inkR) / 2;
+        const Py = baseline2 + (inkT + inkB) / 2;
+
+        // The line spans the sentence's ink exactly: from the "p" to the period.
+        const L0 = posIn(t2).x - pInk.actualBoundingBoxLeft;
+        const L1 = p.x + inkR;
+        const LINE_W = L1 - L0;
+        const Lc = (L0 + L1) / 2;
+
+        // While the line is drawn, both lines of type sit an equal optical
+        // distance (GAP) from it: baseline above, x-height below.
+        const GAP = 0.52 * FS;
+        const g1 = GAP - (B - baseline1);
+        const g2 = GAP - (baseline2 - xHeight - B);
+        mask1.style.setProperty("--e1", `${g1}px`);
+        mask2.style.setProperty("--e2", `${g2}px`);
+
+        const LINE_H = 6;
+        const SAFE = 0.2 * FS;
+        const t1From = t1.offsetHeight + g1 + SAFE;
+        const t2From = -(t2.offsetHeight + g2 + SAFE);
+
+        // Static start state of the mark: centered on the boundary.
+        gsap.set(mark, { xPercent: -50, yPercent: -50, x: Lc, y: B, width: DOT, height: DOT });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Slow, barely-there push-in for the whole piece.
+        tl.fromTo("#camera", { scale: 1 }, { scale: 1.028, duration: 5, ease: "sine.inOut" }, 0);
+
+        // 1 — The dot.
+        tl.fromTo(mark, { scale: 0 }, { scale: 1, duration: 0.5, ease: "expo.out" }, T.dotIn);
+
+        // 2 — Dot becomes a line as wide as the sentence.
+        tl.fromTo(
+          mark,
+          { width: DOT },
+          { width: LINE_W, duration: 0.85, ease: "power2.inOut", immediateRender: false },
+          T.stretch,
+        );
+        tl.fromTo(
+          mark,
+          { height: DOT },
+          { height: LINE_H, duration: 0.5, ease: "power2.inOut", immediateRender: false },
+          T.stretch + 0.05,
+        );
+
+        // 3 — The line is a horizon: the words come out of it.
+        tl.fromTo(t1, { y: t1From }, { y: 0, duration: 0.8, ease: "expo.out" }, T.rise1);
+        tl.fromTo(t2, { y: t2From }, { y: 0, duration: 0.8, ease: "expo.out" }, T.rise2);
+
+        // 4 — The line pulls itself back into its right end…
+        tl.fromTo(
+          mark,
+          { width: LINE_W, x: Lc },
+          {
+            width: PERIOD,
+            x: L1 - PERIOD / 2,
+            duration: 0.85,
+            ease: "power1.inOut",
+            immediateRender: false,
+          },
+          T.retract,
+        );
+        tl.fromTo(
+          mark,
+          { height: LINE_H },
+          { height: PERIOD, duration: 0.3, ease: "power2.out", immediateRender: false },
+          T.retract + 0.5,
+        );
+
+        // …the two lines close the space it leaves…
+        tl.fromTo(row1, { y: -g1 }, { y: 0, duration: 0.7, ease: "power3.inOut" }, T.close);
+        tl.fromTo(row2, { y: g2 }, { y: 0, duration: 0.7, ease: "power3.inOut" }, T.close);
+
+        // …and the dot lands as the period.
+        tl.fromTo(
+          mark,
+          { y: B },
+          { y: Py, duration: T.land - T.drop, ease: "power3.inOut", immediateRender: false },
+          T.drop,
+        );
+
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+        if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
+      })();
+    </script>
+  </body>
+</html>

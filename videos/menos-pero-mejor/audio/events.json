@@ -1,0 +1,49 @@
+{
+  "dur": 5.0,
+  "events": [
+    {
+      "t": 0.2,
+      "type": "soft_tap",
+      "args": {
+        "f": 1567.98
+      },
+      "gain": 0.26,
+      "name": "the dot appears"
+    },
+    {
+      "t": 0.575,
+      "type": "air",
+      "args": {
+        "d": 0.8,
+        "f0": 450,
+        "f1": 2400,
+        "skew": 0.5
+      },
+      "gain": 0.15,
+      "name": "the dot stretches into a line"
+    },
+    {
+      "t": 2.562,
+      "type": "air",
+      "args": {
+        "d": 0.75,
+        "f0": 2200,
+        "f1": 520,
+        "skew": 0.55
+      },
+      "gain": 0.1,
+      "pan": 0.2,
+      "name": "the line pulls back into the dot"
+    },
+    {
+      "t": 3.733,
+      "type": "tock",
+      "args": {
+        "f": 523.25
+      },
+      "gain": 0.36,
+      "pan": 0.25,
+      "name": "the period lands"
+    }
+  ]
+}
