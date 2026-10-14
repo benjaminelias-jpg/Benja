@@ -105,7 +105,7 @@ Sigue `references/qa-y-lecciones.md`:
 
 - **Transiciones:** hoja de contactos cada 4 fotogramas alrededor de cada cambio, buscando solapes, textos sobre textos y objetos que tocan otros elementos.
 - **Encuadre y tipografía:** objetos que se salen de la zona segura y glifos mal renderizados.
-- **Sincronía:** la salida de `verificar_sync.py`, con todos los golpes en "OK".
+- **Sincronía:** la salida de `verificar_sync.py`, con un desfase global de ~0 ms y todos los eventos en "OK".
 - **Calidad final:** decodifica un fotograma protagonista del MP4 y comprueba que el texto del objeto se lee.
 
 Si algo falla, corrige `config.js` (o la composición), repite la vista previa y vuelve a renderizar.

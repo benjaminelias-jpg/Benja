@@ -75,6 +75,7 @@ def anchor(x, kind):
 
 tracks = {k: np.zeros((N, 2)) for k in ["risers", "hits", "hushes", "foley", "musica"]}
 report = []
+placed = []                    # dónde quedó el instante clave de cada sonido (para verificar_sync.py)
 pools = {k: cycle(v if isinstance(v, list) else [v]) for k, v in cfg.get("sonidos", {}).items()}
 
 
@@ -112,7 +113,9 @@ for cue in sorted(info["cues"], key=lambda c: c["f"]):
     x = x * db(level) / np.max(np.abs(x))
     at = t_cue + offset - anchor(x, kind)
     place(track, x, at)
-    report.append((cue["f"], kind if kind != "foley" else f"foley:{cue['name']}", level))
+    label = kind if kind != "foley" else f"foley:{cue['name']}"
+    report.append((cue["f"], label, level))
+    placed.append({"f": cue["f"], "tipo": label, "ancla_s": round(at + anchor(x, kind), 5)})
 
 # Un riser que empieza antes de t = 0 entraría a media subida: fundido de entrada con la imagen
 n_in = int(0.35 * SR)
@@ -141,6 +144,7 @@ for k, v in tracks.items():
     if np.any(v):
         wavfile.write(out / f"stem_{k}.wav", SR, (v * db(gain_db)).astype(np.float32))
 
+(out / "colocacion.json").write_text(json.dumps({"fps": FPS, "eventos": placed}, indent=1))
 print(f"Audio: {N / SR:.2f} s, master {gain_db:+.1f} dB → pico {20 * np.log10(np.max(np.abs(master))):.1f} dBFS")
 for f, kind, level in report:
     print(f"  f{f:4d}  {f / FPS:6.2f} s  {kind:22s} {level} dBFS")

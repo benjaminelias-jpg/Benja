@@ -32,7 +32,12 @@ Busca:
 
 El motion blur fuerte en un movimiento rápido está bien, porque se lee como barrido.
 
-**c) Sincronía.** Ejecuta `verificar_sync.py <mp4> <proyecto>/build_info.json`. Cada hit y cada foley debe salir "OK", con un desfase de entre −0,5 y +1,5 fotogramas.
+**c) Sincronía.** Ejecuta `verificar_sync.py <mp4> <proyecto>` (`build.sh` ya lo hace). El script hace dos comprobaciones:
+
+- **Desfase global:** correlaciona el audio del MP4 con la mezcla original. Detecta retrasos de la codificación y debe dar ~0 ms.
+- **Por evento:** lista dónde suena el punto clave de cada sonido frente a su fotograma.
+
+Todo debe salir "OK", con un desfase de entre −0,5 y +1,5 fotogramas: el sonido nunca se adelanta a la imagen.
 
 **d) Audio "a ciegas".** No puedes escuchar, así que genera una gráfica de las pistas (`build/audio/stem_*.wav`) con las señales marcadas y comprueba:
 

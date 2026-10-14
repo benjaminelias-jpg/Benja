@@ -18,6 +18,6 @@ python3 "$S/mezcla_audio.py" "$P" "$W/audio"
 FPS=$(python3 -c "import json;print(json.load(open('$P/build_info.json'))['fps'])")
 bash "$S/codificar.sh" "$W/final" "$W/audio/audio.wav" "$OUT" "$FPS" "$CRF"
 python3 "$S/hoja_contacto.py" "$W/final" "$W/hoja_contacto.png" --every 10 --cols 12 --width 160
-python3 "$S/verificar_sync.py" "$OUT" "$P/build_info.json" || echo "AVISO: revisa la sincronía de los golpes"
+python3 "$S/verificar_sync.py" "$OUT" "$P" "$W" || echo "AVISO: revisa la sincronía de los golpes"
 echo "Listo: $OUT"
 echo "Revisa: $W/hoja_contacto.png"

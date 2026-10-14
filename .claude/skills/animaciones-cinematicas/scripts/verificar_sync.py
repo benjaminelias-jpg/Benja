@@ -1,44 +1,49 @@
-"""Comprueba en el MP4 final que cada golpe suena en su fotograma.
+"""Comprueba que el audio del MP4 final está sincronizado con la imagen.
 
-Para cada señal de tipo hit/foley de build_info.json busca el pico de audio más cercano
-(±4 fotogramas) en el MP4 y mide el desfase. Más de 1,5 fotogramas = fallo de sincronía.
+1. Desfase global: correlaciona el audio del MP4 con la mezcla original (build/audio/audio.wav).
+   Detecta retrasos introducidos al codificar o multiplexar (debe ser ~0).
+2. Por evento: compara el fotograma de cada señal con el instante en que mezcla_audio.py colocó
+   el punto clave del sonido (ataque del hit, pico del foley, final del riser), más el desfase global.
+   Tolerancia: de −0,5 a +1,5 fotogramas (el sonido nunca debe adelantarse a la imagen).
 
-Uso: python3 verificar_sync.py <video.mp4> <proyecto>/build_info.json
+Uso: python3 verificar_sync.py <video.mp4> <proyecto> [carpeta_build]
 """
 import json
 import subprocess
 import sys
+from pathlib import Path
 
 import numpy as np
+from scipy import signal
+from scipy.io import wavfile
 
 SR = 48000
-video, info_path = sys.argv[1], sys.argv[2]
-info = json.load(open(info_path))
-fps = info["fps"]
+video, project = sys.argv[1], Path(sys.argv[2])
+build = Path(sys.argv[3]) if len(sys.argv) > 3 else project / "build"
+place = json.loads((build / "audio" / "colocacion.json").read_text())
+fps = place["fps"]
+
 raw = subprocess.run(["ffmpeg", "-v", "error", "-i", video, "-vn", "-ac", "1", "-ar", str(SR), "-f", "f32le", "-"],
                      capture_output=True, check=True).stdout
-x = np.abs(np.frombuffer(raw, dtype=np.float32))
+got = np.frombuffer(raw, dtype=np.float32)
+sr, ref = wavfile.read(build / "audio" / "audio.wav")
+ref = ref.mean(axis=1) if ref.ndim > 1 else ref
+n = min(len(got), len(ref))
+max_lag = int(0.2 * SR)
+corr = signal.correlate(got[:n], ref[:n], mode="full", method="fft")
+mid = n - 1
+lag = int(np.argmax(corr[mid - max_lag: mid + max_lag + 1])) - max_lag
+off_f = lag / SR * fps
+print(f"Desfase global MP4 frente a la mezcla: {lag / SR * 1000:+.1f} ms ({off_f:+.2f} fotogramas)")
 
-ok = True
-seen = set()
-print(f"{'señal':22s} {'objetivo':>9s} {'medido':>9s} {'desfase':>8s}")
-for c in sorted(info["cues"], key=lambda c: c["f"]):
-    if not (c["type"].startswith("hit") or c["type"] == "foley") or c["f"] in seen:
-        continue
-    seen.add(c["f"])
-    t = c["f"] / fps
-    a, b = int((t - 4 / fps) * SR), int((t + 4 / fps) * SR)
-    seg = x[max(0, a):b]
-    # El ataque: la subida de energía más brusca de la ventana (en 3 ms), no el máximo:
-    # justo antes de un hit suele sonar el final de un riser casi igual de fuerte
-    env = np.convolve(seg, np.ones(48) / 48, "same")
-    rise = env[144:] - env[:-144]
-    i = int(np.argmax(rise)) + 144
-    got = (max(0, a) + i) / SR * fps
-    d = got - c["f"]
+ok = abs(off_f) <= 1.0
+print(f"{'evento':22s} {'señal':>7s} {'suena':>9s} {'desfase':>8s}")
+for e in place["eventos"]:
+    t = e["ancla_s"] * fps + off_f
+    d = t - e["f"]
     flag = "OK" if -0.5 <= d <= 1.5 else "REVISAR"
     ok &= flag == "OK"
-    print(f"{c['type'] + (':' + c['name'] if c.get('name') else ''):22s} {'f' + str(c['f']):>9s} {'f%.2f' % got:>9s} {d:+8.2f}  {flag}")
+    print(f"{e['tipo']:22s} {'f' + str(e['f']):>7s} {'f%.2f' % t:>9s} {d:+8.2f}  {flag}")
 
 loud = subprocess.run(["ffmpeg", "-hide_banner", "-nostats", "-i", video, "-af", "ebur128=peak=true", "-f", "null", "-"],
                       capture_output=True, text=True).stderr
