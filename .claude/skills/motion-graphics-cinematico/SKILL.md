@@ -16,6 +16,8 @@ Todo lo demás se ordena alrededor de una idea: **cada gráfico existe para llev
 3. **Entrega** con la estructura de la sección 6.
 4. **Revisa** con el checklist de la sección 7 antes de responder.
 
+Si además de diseñar hay que **producir el video** (render real a MP4 con objetos generados con IA, efectos de sonido y música), usa la skill `animaciones-cinematicas`: aplica estas mismas reglas con plantillas y un pipeline de render.
+
 Recursos de apoyo (léelos cuando los necesites, no antes):
 
 - `references/plantillas.md`: fichas completas, fotograma a fotograma, de piezas tipo: tarjeta de sección, gráfico de datos, cifra de impacto, lower third, frase destacada, subtítulos y transición. Léela cuando el encargo coincida con alguna o necesites una base probada.

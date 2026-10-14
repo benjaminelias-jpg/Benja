@@ -1,0 +1,25 @@
+{
+  "niveles": {
+    "hit_grave": -12,
+    "hit_suave": -17,
+    "whoosh": -17,
+    "whoosh_suave": -21,
+    "riser_corto": -15,
+    "riser_largo": -15
+  },
+  "sonidos": {
+    "hit_grave": "@skill/assets/sfx/hit_grave.mp3",
+    "hit_suave": "@skill/assets/sfx/hit_suave.mp3",
+    "whoosh": ["@skill/assets/sfx/whoosh_1.mp3", "@skill/assets/sfx/whoosh_2.mp3"],
+    "whoosh_suave": ["@skill/assets/sfx/whoosh_2.mp3"],
+    "riser_corto": "@skill/assets/sfx/riser_corto.mp3",
+    "riser_largo": "@skill/assets/sfx/riser_largo.mp3"
+  },
+  "foley": {
+    "papel": { "archivo": "@skill/assets/sfx/papel.mp3", "recorte": [0.9, null], "nivel": -17 },
+    "tecla": { "archivo": "@skill/assets/sfx/teclas.mp3", "recorte": [1.40, 1.58], "nivel": -18 },
+    "llave": { "archivo": "@skill/assets/sfx/llave.mp3", "nivel": -16 }
+  },
+  "musica": { "archivo": "@skill/assets/sfx/musica_ambiente.mp3", "nivel": -22, "recortar_medios": true },
+  "master": -3
+}
