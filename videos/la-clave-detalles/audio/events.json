@@ -1,35 +1,59 @@
 {
-  "dur": 5.5,
+  "dur": 6.6,
   "events": [
     {
-      "t": 0.015,
-      "type": "whoosh",
-      "args": {
-        "d": 0.45,
-        "lo": 700,
-        "hi": 3800
-      },
-      "gain": 0.36,
-      "pan": -0.25,
-      "name": "the key swooshes in"
+      "t": 0.375,
+      "type": "file",
+      "file": "src/swish.wav",
+      "bus": "vo",
+      "gain": 0.6,
+      "pan": 0.15,
+      "name": "the key flies in"
     },
     {
-      "t": 0.45,
-      "type": "clink",
-      "args": {},
-      "gain": 0.22,
-      "name": "the key comes to rest on the paper"
+      "t": 0.655,
+      "type": "file",
+      "file": "src/clink.wav",
+      "bus": "vo",
+      "gain": 0.8,
+      "pan": 0.0,
+      "name": "the key hits the paper"
     },
     {
-      "t": 2.05,
-      "type": "whoosh",
-      "args": {
-        "d": 0.6,
-        "lo": 350,
-        "hi": 2000
-      },
-      "gain": 0.32,
-      "name": "the sentence rushes in, the key steps back"
+      "t": 0.692,
+      "type": "file",
+      "file": "src/slide.wav",
+      "bus": "vo",
+      "gain": 0.34,
+      "pan": 0.0,
+      "name": "the key slides to a stop"
+    },
+    {
+      "t": 2.576,
+      "type": "file",
+      "file": "src/swell.wav",
+      "bus": "vo",
+      "gain": 0.95,
+      "pan": 0.0,
+      "name": "the camera rises (on the downbeat)"
+    },
+    {
+      "t": 2.834,
+      "type": "file",
+      "file": "src/air.wav",
+      "bus": "vo",
+      "gain": 0.42,
+      "pan": 0.0,
+      "name": "the words arrive"
+    },
+    {
+      "t": 5.945,
+      "type": "file",
+      "file": "src/tink.wav",
+      "bus": "sfx",
+      "gain": 3.6,
+      "pan": -0.2,
+      "name": "light on the key, far away"
     }
   ]
 }

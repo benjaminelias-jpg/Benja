@@ -44,26 +44,41 @@
         overflow: hidden;
       }
 
-      #scene {
+      #scene,
+      #bg,
+      #camera,
+      #bump,
+      #world,
+      #fg {
         position: absolute;
         inset: 0;
       }
 
-      /* Flat warm paper: no gradient, so nothing bands after compression. */
       #bg {
-        position: absolute;
-        inset: 0;
         background: var(--paper);
       }
 
-      #camera {
-        position: absolute;
-        inset: 0;
+      /* The camera looks down at a sheet of paper (#world). The foreground words (#fg) live closer
+         to the lens, so they move a little faster than the paper: real parallax. */
+      #camera,
+      #bump,
+      #world {
         transform-origin: 540px 880px;
       }
 
-      /* Two depth layers. A: "La clave" + the key (centered at y = 880 while it is the subject).
-         B: "está en los detalles." (centered at y = 1060), the foreground once it arrives. */
+      #fg {
+        transform-origin: 540px 1080px;
+      }
+
+      /* Real cotton paper, processed to a 2-level tooth: you feel the surface when the camera moves. */
+      #paper {
+        position: absolute;
+        left: -756px;
+        top: -1344px;
+        width: 2592px;
+        height: 4608px;
+      }
+
       .layer {
         position: absolute;
         inset: 0;
@@ -73,11 +88,11 @@
       }
 
       #layerA {
-        padding-bottom: 160px;
+        padding-bottom: 160px; /* group A centered at y = 880 */
       }
 
       #layerB {
-        padding-top: 200px;
+        padding-top: 240px; /* group B centered at y = 1080 */
       }
 
       .group {
@@ -106,6 +121,11 @@
       .row {
         display: block;
         text-align: center;
+        white-space: nowrap;
+      }
+
+      .w {
+        display: inline-block;
       }
 
       .mask {
@@ -113,7 +133,7 @@
         overflow: hidden;
       }
 
-      /* "La clave" rises from behind the key: its mask reaches down to the shaft (--e1, from layout). */
+      /* "La clave" comes out from behind the key: the mask reaches down to the shaft (--e1, from layout). */
       #mask1 {
         padding: 0.15em 0.3em var(--e1, 0px);
         margin: -0.15em -0.3em calc(-1 * var(--e1, 0px));
@@ -136,8 +156,17 @@
         margin-top: 34px;
       }
 
-      /* Pre-blurred silhouette of the key (assets/img/golden-key-shadow.webp, 90 px padding):
-         tight and close, because the key rests on the paper. */
+      #shadowMove,
+      #shadowSpin,
+      #keyMove,
+      #keyAxis,
+      #keySpin,
+      #keyArt {
+        position: absolute;
+        inset: 0;
+      }
+
+      /* Pre-blurred silhouette of the key (90 px padding around the key image). */
       #shadow {
         position: absolute;
         left: -4.534%;
@@ -147,16 +176,13 @@
         opacity: 0;
       }
 
-      #keyRig,
-      #keyArt {
-        position: absolute;
-        inset: 0;
+      /* Motion blur along the throw (the axis is rotated to the flight direction; the key is counter-rotated). */
+      #keyAxis {
+        filter: url(#motionBlur);
       }
 
-      /* Directional motion blur for the swoosh (SVG filter, horizontal only). */
       #keyArt {
         isolation: isolate;
-        filter: url(#motionBlur);
       }
 
       #keyImg {
@@ -166,7 +192,7 @@
         height: 100%;
       }
 
-      /* A light flick across the metal as the key lands (masked by the key's own alpha). */
+      /* Light crossing the metal, only on the key (masked by its own alpha). */
       #glint {
         position: absolute;
         inset: 0;
@@ -206,13 +232,13 @@
       id="root"
       data-composition-id="main"
       data-start="0"
-      data-duration="5.5"
+      data-duration="6.6"
       data-width="1080"
       data-height="1920"
       data-fps="60"
     >
       <svg id="svgDefs" aria-hidden="true">
-        <filter id="motionBlur" x="-15%" y="-15%" width="130%" height="130%" color-interpolation-filters="sRGB">
+        <filter id="motionBlur" x="-15%" y="-40%" width="130%" height="180%" color-interpolation-filters="sRGB">
           <feGaussianBlur id="motionBlurStd" in="SourceGraphic" stdDeviation="0 0" />
         </filter>
       </svg>
@@ -220,56 +246,75 @@
       <div id="scene">
         <div id="bg"></div>
         <div id="camera">
-          <div class="layer" id="layerA">
-            <div class="group" id="groupA">
-              <div class="row" id="row1">
-                <div class="mask" id="mask1">
-                  <span class="txt" id="t1" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">La clave</span>
-                </div>
-              </div>
+          <div id="bump">
+            <div id="world">
+              <img id="paper" src="assets/img/paper.webp" alt="" data-layout-allow-overflow="true" />
+              <div class="layer" id="layerA">
+                <div class="group" id="groupA">
+                  <div class="row" id="row1">
+                    <div class="mask" id="mask1">
+                      <span class="txt" id="t1" data-layout-allow-overflow="true" data-layout-allow-occlusion="true"
+                        ><span class="w" id="w1">La</span> <span class="w" id="w2">clave</span></span
+                      >
+                    </div>
+                  </div>
 
-              <div id="keySlot" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">
-                <img id="shadow" src="assets/img/golden-key-shadow.webp" alt="" />
-                <div id="keyRig">
-                  <div id="keyArt">
-                    <img id="keyImg" src="assets/img/golden-key.webp" alt="Llave dorada" />
-                    <div id="glint"><div id="glintBand"></div></div>
+                  <div id="keySlot" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">
+                    <div id="shadowMove">
+                      <div id="shadowSpin"><img id="shadow" src="assets/img/golden-key-shadow.webp" alt="" /></div>
+                    </div>
+                    <div id="keyMove">
+                      <div id="keyAxis">
+                        <div id="keySpin">
+                          <div id="keyArt">
+                            <img id="keyImg" src="assets/img/golden-key.webp" alt="Llave dorada" />
+                            <div id="glint"><div id="glintBand"></div></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
 
+        <div id="fg">
           <div class="layer" id="layerB">
             <div class="group" id="groupB">
-              <div class="row"><span class="txt" id="t2">está en los</span></div>
-              <div class="row"><span class="txt" id="t3">detalles<span class="gold">.</span></span></div>
+              <div class="row">
+                <span class="w" id="b1">está</span> <span class="w" id="b2">en</span> <span class="w" id="b3">los</span>
+              </div>
+              <div class="row"><span class="w" id="b4">detalles<span class="gold">.</span></span></div>
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Procedural sound (audio/build_audio.py + procedural-sfx). -->
+      <!-- Music (Lyria 3) + edited foley (ElevenLabs SFX via Magnific): audio/build_audio.py. -->
       <audio
         id="sound"
         src="assets/audio/sound.wav"
         data-start="0"
-        data-duration="5.5"
+        data-duration="6.6"
         data-track-index="1"
         data-volume="1"
       ></audio>
     </div>
 
-    <!-- Single source of truth for timing: the sound is generated from it. -->
+    <!-- Single source of truth for timing. Hits sit on the music's bass downbeats (0.665 / 3.115 / 5.665 s). -->
     <script type="application/json" id="timing">
       {
-        "keyIn": 0.15,
-        "land": 0.5,
-        "glint": 0.6,
-        "rise1": 0.72,
-        "shift": 2.05,
-        "settleB": 2.75,
-        "end": 5.5
+        "throw": 0.2,
+        "impact": 0.665,
+        "stop": 1.05,
+        "glint": 1.0,
+        "rise1": 1.284,
+        "move": 2.7,
+        "words": 3.06,
+        "glint2": 5.665,
+        "end": 6.6
       }
     </script>
 
@@ -282,50 +327,98 @@
         await document.fonts.load(`600 ${FS}px "Inter Display"`, "La clave está en los detalles.");
         await document.fonts.ready;
         await Promise.all(
-          [$("keyImg"), $("shadow")].map((img) => (img.complete ? null : img.decode().catch(() => null))),
+          [$("keyImg"), $("shadow"), $("paper")].map((img) => (img.complete ? null : img.decode().catch(() => null))),
         );
 
+        // "La clave" emerges from the shaft's center line (50.86% of the key image height).
         const row1 = $("row1");
         const slot = $("keySlot");
-        const t1 = $("t1");
-
-        // The shaft's center line, measured from the key's alpha (50.86% of the image height).
         const SHAFT = slot.offsetTop + slot.offsetHeight * 0.5086;
         const e1 = SHAFT - (row1.offsetTop + row1.offsetHeight);
         $("mask1").style.setProperty("--e1", `${e1}px`);
-        const t1From = t1.offsetHeight + e1 + 0.25 * FS;
+        const wFrom = $("t1").offsetHeight + e1 + 0.25 * FS;
 
-        gsap.set("#shadow", { x: 6, y: 12, transformOrigin: "50% 50%" });
+        // The throw: from the top-right corner, down-left, landing on the paper.
+        const START = { x: 640, y: -900, h: 0.34, spin: -58 };
+        const IMPACT = { x: 34, y: -18, spin: -10 };
+        const AXIS = (Math.atan2(IMPACT.y - START.y, IMPACT.x - START.x) * 180) / Math.PI; // flight direction
+        const FLIGHT = T.impact - T.throw;
+        const SLIDE = T.stop - T.impact;
+
+        gsap.set("#keyAxis", { rotation: AXIS });
+        gsap.set(["#keyMove", "#shadowMove", "#keyAxis", "#keySpin", "#shadowSpin"], { transformOrigin: "50% 50%" });
+        gsap.set("#shadow", { transformOrigin: "50% 50%" });
         gsap.set("#glintBand", { xPercent: -120, skewX: -18 });
-        gsap.set("#groupA", { transformOrigin: "50% 50%" });
-        gsap.set("#groupB", { transformOrigin: "50% 50%" });
 
         const tl = gsap.timeline({ paused: true });
 
-        // Slow push-in for the whole piece: the camera keeps moving forward.
-        tl.fromTo("#camera", { scale: 1 }, { scale: 1.03, duration: T.end, ease: "sine.inOut" }, 0);
+        // Ambient: the camera drifts in; the foreground words drift a little faster (closer to the lens).
+        tl.fromTo("#camera", { scale: 1 }, { scale: 1.02, duration: T.end, ease: "sine.inOut" }, 0);
+        tl.fromTo("#fg", { scale: 1 }, { scale: 1.035, duration: T.end, ease: "sine.inOut" }, 0);
 
-        // 1 — Swoosh: the key slides in from the left with motion blur and comes to rest on the paper.
+        // 1 — Flight. Height above the paper reads as scale; the shadow drifts away and softens with height.
+        tl.fromTo(["#keyMove", "#shadowMove"], { autoAlpha: 0 }, { autoAlpha: 1, duration: 0.1, ease: "power1.out" }, T.throw);
         tl.fromTo(
-          "#keyRig",
-          { autoAlpha: 0, x: -780, y: 26, rotation: -20, scale: 1.04 },
-          { autoAlpha: 1, x: 0, y: 0, rotation: 0, scale: 1, duration: 0.6, ease: "expo.out" },
-          T.keyIn,
+          "#keyMove",
+          { x: START.x, y: START.y, scale: 1 + START.h },
+          { x: IMPACT.x, y: IMPACT.y, scale: 1, duration: FLIGHT, ease: "power1.in" },
+          T.throw,
+        );
+        tl.fromTo(
+          "#keySpin",
+          { rotation: START.spin - AXIS },
+          { rotation: IMPACT.spin - AXIS, duration: FLIGHT, ease: "power1.out" },
+          T.throw,
         );
         tl.fromTo(
           "#motionBlurStd",
-          { attr: { stdDeviation: "46 0" } },
-          { attr: { stdDeviation: "0 0" }, duration: 0.42, ease: "power2.out" },
-          T.keyIn,
+          { attr: { stdDeviation: "12 0" } },
+          { attr: { stdDeviation: "0 0" }, duration: FLIGHT, ease: "power4.in" },
+          T.throw,
         );
+        tl.set("#keyAxis", { filter: "none" }, T.impact + 0.02);
+        tl.fromTo(
+          "#shadowMove",
+          { x: START.x, y: START.y },
+          { x: IMPACT.x, y: IMPACT.y, duration: FLIGHT, ease: "power1.in" },
+          T.throw,
+        );
+        tl.fromTo("#shadowSpin", { rotation: START.spin }, { rotation: IMPACT.spin, duration: FLIGHT, ease: "power1.out" }, T.throw);
         tl.fromTo(
           "#shadow",
-          { opacity: 0, scale: 1.06 },
-          { opacity: 0.32, scale: 1, duration: 0.35, ease: "power2.out" },
-          T.land - 0.15,
+          { x: 5 + 160 * START.h, y: 10 + 300 * START.h, scale: 1.04, opacity: 0.12, filter: "blur(16px)" },
+          { x: 5, y: 10, scale: 1, opacity: 0.34, filter: "blur(0px)", duration: FLIGHT, ease: "power2.in" },
+          T.throw,
         );
 
-        // A quick flick of light across the metal as it lands.
+        // 2 — Impact on the downbeat, then a short slide as friction stops it. The frame feels the weight.
+        tl.fromTo(
+          ["#keyMove", "#shadowMove"],
+          { x: IMPACT.x, y: IMPACT.y },
+          { x: 0, y: 0, duration: SLIDE, ease: "power3.out", immediateRender: false },
+          T.impact,
+        );
+        tl.fromTo(
+          "#keySpin",
+          { rotation: IMPACT.spin - AXIS },
+          { rotation: -AXIS, duration: SLIDE, ease: "power3.out", immediateRender: false },
+          T.impact,
+        );
+        tl.fromTo(
+          "#shadowSpin",
+          { rotation: IMPACT.spin },
+          { rotation: 0, duration: SLIDE, ease: "power3.out", immediateRender: false },
+          T.impact,
+        );
+        tl.fromTo("#bump", { scale: 1 }, { scale: 1.007, duration: 0.06, ease: "power2.out" }, T.impact);
+        tl.fromTo(
+          "#bump",
+          { scale: 1.007 },
+          { scale: 1, duration: 0.4, ease: "power2.inOut", immediateRender: false },
+          T.impact + 0.06,
+        );
+
+        // Light catches the metal as it comes to rest.
         tl.fromTo(
           "#glintBand",
           { xPercent: -120 },
@@ -333,28 +426,32 @@
           T.glint,
         );
 
-        // 2 — "La clave" rises from behind the key.
-        tl.fromTo(t1, { y: t1From }, { y: 0, duration: 0.85, ease: "expo.out" }, T.rise1);
+        // 3 — "La clave", word by word, from behind the key (one beat after the impact, then an eighth).
+        tl.fromTo(["#w1", "#w2"], { y: wFrom }, { y: 0, duration: 0.85, ease: "expo.out", stagger: 0.155 }, T.rise1);
 
-        // 3 — Handoff: the rest of the sentence swooshes in from the camera, and "La clave" + the key
-        //     step back (smaller, higher, duller, slightly out of focus) to give it priority.
+        // 4 — Handoff on the next downbeat: the camera rises away from the paper and racks focus
+        //     to the words closer to the lens; the key and "La clave" fall back and lose their shine.
+        tl.fromTo("#world", { scale: 1, y: 0 }, { scale: 0.62, y: -230, duration: 1.0, ease: "power3.inOut" }, T.move);
+        tl.fromTo("#world", { filter: "blur(0px)" }, { filter: "blur(1.8px)", duration: 1.0, ease: "power2.inOut" }, T.move);
         tl.fromTo(
           "#groupA",
-          { scale: 1, y: 0 },
-          { scale: 0.62, y: -230, duration: 0.85, ease: "power2.inOut" },
-          T.shift,
+          { opacity: 1, filter: "brightness(1) saturate(1)" },
+          { opacity: 0.7, filter: "brightness(0.98) saturate(0.72)", duration: 1.0, ease: "power2.inOut" },
+          T.move,
         );
         tl.fromTo(
-          "#groupA",
-          { opacity: 1, filter: "brightness(1) saturate(1) blur(0px)" },
-          { opacity: 0.58, filter: "brightness(0.95) saturate(0.7) blur(1.4px)", duration: 0.85, ease: "power2.inOut" },
-          T.shift,
+          ["#b1", "#b2", "#b3", "#b4"],
+          { autoAlpha: 0, y: 46, scale: 1.1, filter: "blur(14px)" },
+          { autoAlpha: 1, y: 0, scale: 1, filter: "blur(0px)", duration: 0.9, ease: "expo.out", stagger: 0.11 },
+          T.words,
         );
+
+        // 5 — Third downbeat: the light passes over the key once more, far away now.
         tl.fromTo(
-          "#groupB",
-          { autoAlpha: 0, scale: 1.28, y: 150, filter: "blur(18px)" },
-          { autoAlpha: 1, scale: 1, y: 0, filter: "blur(0px)", duration: T.settleB - T.shift + 0.1, ease: "expo.out" },
-          T.shift + 0.14,
+          "#glintBand",
+          { xPercent: -120 },
+          { xPercent: 900, duration: 0.8, ease: "power2.inOut", immediateRender: false },
+          T.glint2,
         );
 
         window.__timelines["main"] = tl;
