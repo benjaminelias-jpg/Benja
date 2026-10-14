@@ -15,7 +15,7 @@ python3 audio.py "$W/audio"
 ffmpeg -y -hide_banner -loglevel warning \
   -framerate 30 -i "$W/final/f%04d.png" -i "$W/audio/audio.wav" \
   -vf "scale=out_color_matrix=bt709:out_range=tv,format=yuv420p" \
-  -c:v libx264 -preset slow -crf 23 -tune grain -profile:v high \
+  -c:v libx264 -preset slow -crf 26 -tune grain -profile:v high \
   -colorspace bt709 -color_primaries bt709 -color_trc bt709 -color_range tv \
   -c:a aac -b:a 256k -ar 48000 -movflags +faststart -shortest \
   asi-cobras-con-kunfupay.mp4
