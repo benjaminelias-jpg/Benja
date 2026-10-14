@@ -155,34 +155,34 @@
   const REC = (j, i) => ({ y: 880 + (j - i) * 260, s: 1, z: -520, b: 9, o: 0.28 });  // se aleja
 
   const CARD_KEYS = [
-    [[0, ENTER(0)], [116, ENTER(0)], [132, LIST(0), outQuart], [160, LIST(0)], [178, CENTER, outQuart],
+    [[0, ENTER(0)], [112, ENTER(0)], [128, LIST(0), outQuart], [160, LIST(0)], [178, CENTER, outQuart],
      [190, CENTER], [210, HEADER, inOutCubic], [288, HEADER], [308, REC(0, 1), inOutCubic],
-     [430, REC(0, 1)], [450, REC(0, 2), inOutCubic], [562, REC(0, 2)], [584, LIST(0), outCubic]],
-    [[0, ENTER(1)], [120, ENTER(1)], [136, LIST(1), outQuart], [160, LIST(1)], [180, REC(1, 0), outCubic],
+     [430, REC(0, 1)], [450, REC(0, 2), inOutCubic], [574, REC(0, 2)], [594, LIST(0), outCubic]],
+    [[0, ENTER(1)], [116, ENTER(1)], [132, LIST(1), outQuart], [160, LIST(1)], [180, REC(1, 0), outCubic],
      [292, REC(1, 0)], [310, CENTER, outQuart], [322, CENTER], [342, HEADER, inOutCubic],
-     [430, HEADER], [450, REC(1, 2), inOutCubic], [562, REC(1, 2)], [584, LIST(1), outCubic]],
-    [[0, ENTER(2)], [124, ENTER(2)], [140, LIST(2), outQuart], [160, LIST(2)], [180, REC(2, 0), outCubic],
+     [430, HEADER], [450, REC(1, 2), inOutCubic], [574, REC(1, 2)], [594, LIST(1), outCubic]],
+    [[0, ENTER(2)], [120, ENTER(2)], [136, LIST(2), outQuart], [160, LIST(2)], [180, REC(2, 0), outCubic],
      [288, REC(2, 0)], [308, REC(2, 1), inOutCubic], [434, REC(2, 1)], [452, CENTER, outQuart],
-     [464, CENTER], [484, HEADER, inOutCubic], [562, HEADER], [582, LIST(2), inOutCubic]],
+     [464, CENTER], [484, HEADER, inOutCubic], [562, HEADER], [578, LIST(2), inOutCubic]],
   ];
 
   // Objeto fuera de la tarjeta: 0 = en su hueco, 1 = protagonista en el centro
   const OUT_KEYS = [
     [[0, 0], [190, 0], [210, 1, outQuart], [288, 1], [304, 0, inOutCubic]],
     [[0, 0], [322, 0], [342, 1, outQuart], [430, 1], [446, 0, inOutCubic]],
-    [[0, 0], [464, 0], [484, 1, outQuart], [562, 1], [580, 0, inOutCubic]],
+    [[0, 0], [464, 0], [484, 1, outQuart], [562, 1], [574, 0, inOutCubic]],
   ];
   const LAND = [210, 342, 484];
-  const HERO = { x: 540, y: 800 };
+  const HERO = { x: 540, y: 810 };
   const SLOT_X = 300;                   // centro del hueco del objeto respecto al centro de la tarjeta
   const OBJ = [
-    { src: "assets/img/factura.png",     w: 430, h: 580, rot: -5,  thumb: 150 / 580, title: "LA FACTURA" },
-    { src: "assets/img/calculadora.png", w: 430, h: 560, rot: 4,   thumb: 150 / 560, title: "CADA VENTA" },
+    { src: "assets/img/factura.png",     w: 416, h: 560, rot: -5,  thumb: 150 / 560, title: "LA FACTURA" },
+    { src: "assets/img/calculadora.png", w: 419, h: 545, rot: 4,   thumb: 150 / 545, title: "CADA VENTA" },
     { src: "assets/img/llave.png",       w: 760, h: 306, rot: -12, thumb: 175 / 760, title: "TU CUENTA" },
   ];
   const CAPS = [{ in: 216, out: 288 }, { in: 348, out: 430 }, { in: 490, out: 562 }];
-  const HITS = [[30, 0.06], [210, 0.035], [342, 0.035], [484, 0.035], [584, 0.06]];
-  const RECAP_PULSE = [588, 592, 596];
+  const HITS = [[30, 0.06], [210, 0.035], [342, 0.035], [484, 0.035], [592, 0.06]];
+  const RECAP_PULSE = [596, 600, 604];
 
   // ---------- construcción del DOM ----------
   const $ = id => document.getElementById(id);
@@ -242,7 +242,7 @@
 
     // Cámara: push-in de toda la pieza + acercamiento mientras hay una tarjeta en foco
     const push = inOutSine(clamp01(f / DURATION_F));
-    const focus = kf(t, [[0, 0], [160, 0], [180, 1, inOutSine], [562, 1], [586, 0, inOutSine]]);
+    const focus = kf(t, [[0, 0], [160, 0], [180, 1, inOutSine], [574, 1], [594, 0, inOutSine]]);
     const h = handheld(t);
     $("world").style.transform =
       `translate(${h.x * 0.5}px, ${h.y * 0.5}px) rotate(${h.r}deg) scale(${(1 + 0.035 * push) * (1 + 0.025 * focus)})`;
@@ -267,7 +267,7 @@
     reveal($("kicker"), t, 15);
     reveal($("tl1"), t, 21);
     reveal($("tl2"), t, 24);
-    const ie = inCubic(prog(t, 112, 12));
+    const ie = inCubic(prog(t, 100, 12));
     $("intro").style.transform = `translateZ(${-420 * ie}px)`;
     $("intro").style.opacity = 1 - ie;
     $("intro").style.filter = ie > 0.001 ? `blur(${8 * ie}px)` : "none";

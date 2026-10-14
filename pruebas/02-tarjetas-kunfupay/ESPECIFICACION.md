@@ -36,8 +36,8 @@ Coste total en Magnific: unos 3.000 créditos.
 - **0,0 s · f0**: sale del negro. Empieza el riser.
 - **0,5 s · f15**: "VENDES CURSOS ONLINE" y, escalonado, "ASÍ COBRAS / CON **KUNFUPAY**".
 - **1,0 s · f30**: **hit**. El título ya está quieto y el halo da un pulso.
-- **3,7 s · f112**: el título se aleja en profundidad (Z −420, desenfoque y fundido).
-- **3,9 s · f116**: entran las tres tarjetas desde abajo y desde el fondo, escalonadas cada 4 f. Cada una lleva su número, su línea cian, su título y la miniatura de su objeto.
+- **3,3 s · f100**: el título se aleja en profundidad (Z −420, desenfoque y fundido). Desaparece del todo en f112, antes de que entre ninguna tarjeta.
+- **3,7 s · f112**: entran las tres tarjetas desde abajo y desde el fondo, escalonadas cada 4 f. Cada una lleva su número, su línea cian, su título y la miniatura de su objeto.
 - **5,3 s · f160**: **la tarjeta 01 avanza al centro** (escala 1,15) y **las otras se alejan** (Z −520, desenfoque de 9 px, opacidad al 28 %). La cámara se acerca un 2,5 %.
 - **6,3 s · f190**: la tarjeta sube a cabecera y **la factura sale de su miniatura** en arco, girando en Y hacia la cámara.
 - **7,0 s · f210**: la factura aterriza con hit suave y sonido de papel. Un brillo especular la recorre.
@@ -46,7 +46,7 @@ Coste total en Magnific: unos 3.000 créditos.
 - **11,4 s · f342**: la calculadora aterriza con un clic. Aparece "Te olvidas de su **IVA.**"
 - **14,3 s · f430**: cambio a 03.
 - **16,1 s · f484**: la llave aterriza con un tintineo metálico. Aparece "A **tu nombre.**"
-- **18,7 s · f562**: **recap**. Las tres tarjetas vuelven a la agenda. El riser final culmina en un hit (f584) y las líneas cian se iluminan en secuencia (f588, f592, f596).
+- **18,7 s · f562**: **recap**. Primero baja la tarjeta 03 con la llave ya guardada (f562–f578). Después avanzan la 01 y la 02 desde el fondo (f574–f594), para que no se crucen en foco. El riser final culmina en un hit (f592) y las líneas cian se iluminan en secuencia (f596, f600, f604).
 - **21,0 s · f630**: fundido a negro.
 
 ## 2. Capas (de fondo a frente)
@@ -63,7 +63,7 @@ Coste total en Magnific: unos 3.000 créditos.
 
 **Elementos que compiten por atención**: agenda, 3 tarjetas; foco, la tarjeta de cabecera, el objeto y la frase (3). Las tarjetas desenfocadas del fondo actúan como atmósfera.
 
-**Zonas seguras**: cabecera en y = 320–480, objeto en y = 510–1090 y frase en y = 1135–1205. Todo cabe dentro de la franja libre de y = 269–1248 px.
+**Zonas seguras**: cabecera en y = 320–480, objeto en y = 530–1090 y frase en y = 1135–1205. Todo cabe dentro de la franja libre de y = 269–1248 px.
 
 ## 3. Especificaciones de animación (tarjeta 01; las demás repiten el patrón)
 
@@ -73,7 +73,7 @@ Coste total en Magnific: unos 3.000 créditos.
 | Tarjetas 02 y 03 | Z, desenfoque, opacidad | 0 → −520 px, 0 → 9 px, 100 → 28 % | f160–f180 | ease-out cubic |
 | Cámara | Escala extra de foco | 100 → 102,5 % | f160–f180 | ease-in-out sine |
 | Tarjeta 01 | Y, escala | 880 → 400 px, 1,15 → 0,8 | f190–f210 | ease-in-out cubic |
-| Factura | Desde la miniatura hasta el centro (540, 800) | escala 0,26 → 1; arco de 70 px; giro Y de hasta 30° → 0 | f190–f210 | ease-out quart |
+| Factura | Desde la miniatura hasta el centro (540, 810) | escala 0,27 → 1; arco de 70 px; giro Y de hasta 30° → 0 | f190–f210 | ease-out quart |
 | Fondo (tarjetas lejanas) | Opacidad y desenfoque extra con el objeto fuera | × 0,45 y +5 px | con el objeto | sigue al objeto |
 | Factura | Brillo especular | barrido de izquierda a derecha | f212–f236 | ease-in-out sine |
 | Factura | Flotación en reposo | ±6 px, ±0,8°, escala +3,5 % | desde f210 | senoidal |
@@ -93,15 +93,15 @@ Coste total en Magnific: unos 3.000 créditos.
 |---|---|---|---|
 | 0–1,0 s | Riser de la intro | −15 dBFS | Se corta en f30 |
 | f30 | Hit grave | −12 dBFS | Título asentado |
-| f116, f293, f435, f563 | Whoosh de aire | −17/−18 dBFS | Máxima velocidad de las tarjetas |
+| f112, f293, f435, f570 | Whoosh de aire | −17/−18 dBFS | Máxima velocidad de las tarjetas |
 | f160 | Whoosh | −16 dBFS | La 01 avanza |
 | f192, f324, f466 | Whoosh suave | −21 dBFS | Salida de cada objeto |
 | f194–f215 | Papel que se desliza y se asienta | −17 dBFS | Pico en el aterrizaje (f210) |
 | f210, f342, f484 | Hit suave | −17/−18 dBFS | Aterrizaje de cada objeto |
 | f342 | Clic de tecla | −18 dBFS | Aterrizaje de la calculadora |
 | f484 | Tintineo de llave | −16 dBFS | Aterrizaje de la llave |
-| 17,5–19,5 s | Riser final | −15 dBFS | Se corta en f584 |
-| f584 | Hit grave | −12 dBFS | Las tres tarjetas vuelven a la agenda |
+| 17,7–19,7 s | Riser final | −15 dBFS | Se corta en f592 |
+| f592 | Hit grave | −12 dBFS | Las tres tarjetas vuelven a la agenda |
 | 0–21,7 s | Música ambiente | −22 dBFS | Medios recortados y compresión 3:1 |
 
 **Master**: −3 dBFS de pico.
@@ -134,4 +134,4 @@ var p = a + (b - a) * e;
 - [x] Push-in, cámara en mano con paralaje y motion blur adaptativo.
 - [x] Cada hit, aterrizaje y whoosh está alineado a su fotograma; niveles dentro de rango.
 - [x] Sin CTAs ni bocadillos.
-- [x] Tiempos de lectura respetados: la intro dura 3,0 s; las frases, 2,4 s, 2,7 s y 2,4 s.
+- [x] Tiempos de lectura: las frases duran 2,4 s, 2,7 s y 2,4 s (mínimos: 2,3 s, 2,7 s y 2,0 s). La intro está 3,2 s en pantalla (de f15 a f112), justo por debajo de los 3,3 s que pide la regla para 7 palabras.

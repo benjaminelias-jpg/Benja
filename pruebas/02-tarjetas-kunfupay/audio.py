@@ -83,10 +83,10 @@ add("hits", hit_a, -12, f(30) + 0.003, peak_time(hit_a), "hit título f30")
 
 # Hushes: el pico cae en el fotograma de máxima velocidad de cada movimiento
 wb, wc = load("whoosh_b"), load("whoosh_c")
-for frame, w, lvl, label in [(116, wb, -17, "entrada de tarjetas"), (160, wc, -16, "tarjeta 01 al centro"),
+for frame, w, lvl, label in [(112, wb, -17, "entrada de tarjetas"), (160, wc, -16, "tarjeta 01 al centro"),
                              (192, wc, -21, "sale la factura"), (293, wb, -17, "cambio a 02"),
                              (324, wc, -21, "sale la calculadora"), (435, wb, -17, "cambio a 03"),
-                             (466, wc, -21, "sale la llave"), (563, wb, -18, "recap")]:
+                             (466, wc, -21, "sale la llave"), (570, wb, -18, "recap")]:
     add("hushes", w, lvl, f(frame), peak_time(w), f"hush {label} f{frame}")
 
 # 01 · Factura: el papel se desliza durante el vuelo y se asienta al aterrizar (f210)
@@ -109,8 +109,8 @@ add("hits", hit_b, -18, f(484) + 0.003, peak_time(hit_b), "hit suave f484")
 # Recap: riser final que culmina cuando las tres tarjetas vuelven a la agenda (f584)
 riser_f = load("riser_final")
 end_f = np.max(np.nonzero(np.abs(riser_f).max(axis=1) > 0.02)[0]) / SR
-add("risers", fades(clip(riser_f, 0, end_f), fout=0.004), -15, f(584), end_f, "riser final → f584")
-add("hits", hit_a, -12, f(584) + 0.003, peak_time(hit_a), "hit final f584")
+add("risers", fades(clip(riser_f, 0, end_f), fout=0.004), -15, f(592), end_f, "riser final → f592")
+add("hits", hit_a, -12, f(592) + 0.003, peak_time(hit_a), "hit final f592")
 
 # Música: medios recortados (1–4 kHz) para dejar sitio a una voz, compresión suave
 music = clip(load("music"), 0, N / SR)
