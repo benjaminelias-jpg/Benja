@@ -1,0 +1,367 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <title>La clave está en los detalles</title>
+    <script src="assets/vendor/gsap.min.js"></script>
+    <style>
+      @font-face {
+        font-family: "Inter Display";
+        src: url("assets/fonts/InterDisplay-SemiBold.otf") format("opentype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: block;
+      }
+
+      :root {
+        --paper: #f2efe9;
+        --ink: #131313;
+        --gold: #b87e23;
+        --fs: 128px;
+        --key-w: 860px;
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 1080px;
+        height: 1920px;
+        overflow: hidden;
+        background: var(--paper);
+      }
+
+      #root {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      #scene {
+        position: absolute;
+        inset: 0;
+      }
+
+      /* Flat warm paper: no gradient, so nothing bands after compression. */
+      #bg {
+        position: absolute;
+        inset: 0;
+        background: var(--paper);
+      }
+
+      /* The lockup's optical center sits at y = 883 (center of the 9:16 safe zone). */
+      #camera {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-bottom: 154px;
+        transform-origin: 540px 883px;
+      }
+
+      #lockup {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-family: "Inter Display", sans-serif;
+        font-weight: 600;
+        font-size: var(--fs);
+        line-height: 1.04;
+        letter-spacing: -0.035em;
+        color: var(--ink);
+        font-kerning: normal;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: geometricPrecision;
+      }
+
+      .row {
+        display: block;
+        text-align: center;
+      }
+
+      /* Both masks reach exactly to the key's shaft (--e1 / --e2, set from layout),
+         so the words appear from behind the key. Negative margins keep the layout. */
+      .mask {
+        display: block;
+        overflow: hidden;
+      }
+
+      #mask1 {
+        padding: 0.15em 0.3em var(--e1, 0px);
+        margin: -0.15em -0.3em calc(-1 * var(--e1, 0px));
+      }
+
+      #mask2 {
+        padding: var(--e2, 0px) 0.3em 0.05em;
+        margin: calc(-1 * var(--e2, 0px)) -0.3em -0.05em;
+      }
+
+      /* "detalles." unfolds from under "está en los", so the sentence reads in order. */
+      #mask3 {
+        padding: 0 0.3em 0.3em;
+        margin: 0 -0.3em -0.3em;
+      }
+
+      .txt {
+        display: block;
+        white-space: nowrap;
+      }
+
+      .gold {
+        color: var(--gold);
+      }
+
+      /* The key: a real object between the subject and the rest of the sentence. */
+      #keySlot {
+        position: relative;
+        z-index: 2; /* the key is in front of the words */
+        width: var(--key-w);
+        aspect-ratio: 1985 / 581;
+        margin: 34px 0 18px;
+      }
+
+      /* Pre-blurred silhouette of the key (assets/img/golden-key-shadow.webp, 90 px padding). */
+      #shadow {
+        position: absolute;
+        left: -4.534%;
+        top: -15.491%;
+        width: 109.068%;
+        height: 130.981%;
+        opacity: 0;
+      }
+
+      #keyRig,
+      #keyFloat,
+      #keyTurn,
+      #keyArt {
+        position: absolute;
+        inset: 0;
+      }
+
+      #keyArt {
+        isolation: isolate;
+      }
+
+      #keyImg {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+      }
+
+      /* A light sweep that only exists on the metal (masked by the key's own alpha). */
+      #glint {
+        position: absolute;
+        inset: 0;
+        overflow: hidden;
+        -webkit-mask-image: url("assets/img/golden-key.webp");
+        mask-image: url("assets/img/golden-key.webp");
+        -webkit-mask-size: 100% 100%;
+        mask-size: 100% 100%;
+        mix-blend-mode: color-dodge;
+      }
+
+      #glintBand {
+        position: absolute;
+        top: -30%;
+        left: 0;
+        width: 13%;
+        height: 160%;
+        background: linear-gradient(
+          90deg,
+          rgba(255, 214, 140, 0) 0%,
+          rgba(255, 214, 140, 0.12) 30%,
+          rgba(255, 226, 170, 0.62) 50%,
+          rgba(255, 214, 140, 0.12) 70%,
+          rgba(255, 214, 140, 0) 100%
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div
+      id="root"
+      data-composition-id="main"
+      data-start="0"
+      data-duration="6"
+      data-width="1080"
+      data-height="1920"
+      data-fps="60"
+    >
+      <div id="scene">
+        <div id="bg"></div>
+        <div id="camera">
+          <div id="lockup">
+            <div class="row" id="row1">
+              <div class="mask" id="mask1">
+                <span class="txt" id="t1" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">La clave</span>
+              </div>
+            </div>
+
+            <div id="keySlot" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">
+              <img id="shadow" src="assets/img/golden-key-shadow.webp" alt="" />
+              <div id="keyRig">
+                <div id="keyFloat">
+                  <div id="keyTurn">
+                    <div id="keyArt">
+                      <img id="keyImg" src="assets/img/golden-key.webp" alt="Llave dorada" />
+                      <div id="glint"><div id="glintBand"></div></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row" id="row2">
+              <div class="mask" id="mask2">
+                <span class="txt" id="t2" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">está en los</span>
+              </div>
+            </div>
+            <div class="row" id="row3">
+              <div class="mask" id="mask3">
+                <span class="txt" id="t3" data-layout-allow-overflow="true" data-layout-allow-occlusion="true">detalles<span class="gold" data-layout-allow-occlusion="true">.</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Procedural sound (audio/build_audio.py + procedural-sfx). -->
+      <audio
+        id="sound"
+        src="assets/audio/sound.wav"
+        data-start="0"
+        data-duration="6"
+        data-track-index="1"
+        data-volume="1"
+      ></audio>
+    </div>
+
+    <!-- Single source of truth for timing: the sound is generated from it. -->
+    <script type="application/json" id="timing">
+      {
+        "keyIn": 0.2,
+        "rise1": 1.15,
+        "float": 1.5,
+        "unlock": 2.08,
+        "snap": 2.29,
+        "rise2": 2.45,
+        "rise3": 2.62,
+        "glint": 3.55,
+        "end": 6
+      }
+    </script>
+
+    <script>
+      (async () => {
+        const T = JSON.parse(document.getElementById("timing").textContent);
+        const $ = (id) => document.getElementById(id);
+
+        const FS = parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--fs"));
+        await document.fonts.load(`600 ${FS}px "Inter Display"`, "La clave está en los detalles.");
+        await document.fonts.ready;
+        await Promise.all(
+          [$("keyImg"), $("shadow")].map((img) => (img.complete ? null : img.decode().catch(() => null))),
+        );
+
+        const row1 = $("row1");
+        const row2 = $("row2");
+        const slot = $("keySlot");
+        const t1 = $("t1");
+        const t2 = $("t2");
+        const t3 = $("t3");
+
+        // The shaft's center line, measured from the key's alpha (50.86% of the image height).
+        const SHAFT = slot.offsetTop + slot.offsetHeight * 0.5086;
+        const e1 = SHAFT - (row1.offsetTop + row1.offsetHeight);
+        const e2 = row2.offsetTop - SHAFT;
+        $("mask1").style.setProperty("--e1", `${e1}px`);
+        $("mask2").style.setProperty("--e2", `${e2}px`);
+
+        const SAFE = 0.25 * FS;
+        const t1From = t1.offsetHeight + e1 + SAFE;
+        const t2From = -(t2.offsetHeight + e2 + SAFE);
+        const t3From = -(t3.offsetHeight + 0.1 * FS);
+
+        gsap.set("#keyRig", { transformPerspective: 1600, transformOrigin: "50% 50%" });
+        gsap.set("#keyTurn", { transformOrigin: "22% 50.86%" }); // turns around the bow, like a hand would
+        gsap.set("#shadow", { x: 14, y: 34, transformOrigin: "50% 50%" });
+        gsap.set("#glintBand", { xPercent: -120, skewX: -18 });
+
+        const tl = gsap.timeline({ paused: true });
+
+        // Slow, barely-there push-in for the whole piece.
+        tl.fromTo("#camera", { scale: 1 }, { scale: 1.025, duration: T.end, ease: "sine.inOut" }, 0);
+
+        // 1 — The key arrives: turns toward camera while focus is pulled.
+        tl.fromTo(
+          "#keyRig",
+          { autoAlpha: 0, y: 90, rotation: -9, scale: 1.06 },
+          { autoAlpha: 1, y: 0, rotation: 0, scale: 1, duration: 1.3, ease: "expo.out" },
+          T.keyIn,
+        );
+        tl.fromTo("#keyRig", { rotationY: 52 }, { rotationY: 0, duration: 1.55, ease: "power3.out" }, T.keyIn);
+        tl.fromTo("#keyArt", { filter: "blur(16px)" }, { filter: "blur(0px)", duration: 1.0, ease: "power2.out" }, T.keyIn);
+        tl.fromTo("#shadow", { opacity: 0, scale: 0.86 }, { opacity: 0.2, scale: 1, duration: 1.2, ease: "power2.out" }, T.keyIn + 0.2);
+
+        // 2 — "La clave" rises from behind the key.
+        tl.fromTo(t1, { y: t1From }, { y: 0, duration: 0.85, ease: "expo.out" }, T.rise1);
+
+        // Gentle float for the rest of the piece; the shadow answers it.
+        const half = 1.3;
+        const floats = Math.max(0, Math.floor((T.end - T.float) / half) - 1);
+        tl.fromTo(
+          "#keyFloat",
+          { y: 0, rotation: 0 },
+          { y: -9, rotation: -0.6, duration: half, ease: "sine.inOut", yoyo: true, repeat: floats },
+          T.float,
+        );
+        tl.fromTo(
+          "#shadow",
+          { scale: 1 },
+          { scale: 0.96, duration: half, ease: "sine.inOut", yoyo: true, repeat: floats, immediateRender: false },
+          T.float,
+        );
+
+        // 3 — The key turns: a short twist and a snap back (the click).
+        tl.fromTo(
+          "#keyTurn",
+          { x: 0, rotation: 0, scale: 1 },
+          { x: 14, rotation: -5, scale: 1.012, duration: T.snap - T.unlock, ease: "power2.in" },
+          T.unlock,
+        );
+        tl.fromTo(
+          "#keyTurn",
+          { x: 14, rotation: -5, scale: 1.012 },
+          { x: 0, rotation: 0, scale: 1, duration: 0.6, ease: "expo.out", immediateRender: false },
+          T.snap,
+        );
+
+        // 4 — The rest of the sentence is unlocked: it comes out from behind the key (once it is level again),
+        //     and "detalles." unfolds from under it.
+        tl.fromTo(t2, { y: t2From }, { y: 0, duration: 0.95, ease: "expo.out" }, T.rise2);
+        tl.fromTo(t3, { y: t3From }, { y: 0, duration: 0.85, ease: "expo.out" }, T.rise3);
+
+        // 5 — In the details: light travels across the metal, bow to bit.
+        tl.fromTo(
+          "#glintBand",
+          { xPercent: -120 },
+          { xPercent: 900, duration: 1.1, ease: "power2.inOut", immediateRender: false },
+          T.glint,
+        );
+
+        window.__timelines["main"] = tl;
+        tl.seek(0);
+        if (window.__hfForceTimelineRebind) window.__hfForceTimelineRebind();
+      })();
+    </script>
+  </body>
+</html>

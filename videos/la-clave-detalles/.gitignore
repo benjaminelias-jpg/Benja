@@ -1,0 +1,5 @@
+.hyperframes/
+audio/mix.wav
+audio/mix-faded.wav
+audio/pad.wav
+__pycache__/
