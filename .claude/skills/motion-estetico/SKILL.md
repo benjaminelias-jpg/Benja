@@ -52,6 +52,33 @@ Estas reglas mandan sobre cualquier otra skill de video (hyperframes, remotion, 
 **Sonido** (si se pide)
 - Usa `/sound-effects` y `/background-music`. SFX sutiles y alineados al movimiento, música por debajo de la voz. Sin sonido en cada cosa.
 
+## Estilo minimalista: parámetros concretos
+Una sola "personalidad de movimiento" por video, con UNA curva de easing para ~80% de las animaciones.
+
+| Elemento | Valor recomendado |
+|---|---|
+| Curva de entrada (la firma) | `cubic-bezier(0.16, 1, 0.3, 1)` (ease-out largo, frena suave) |
+| Curva de salida | ease-in, y en ~75% de la duración de la entrada |
+| Overshoot / rebote | 0% (nada elástico) |
+| Deformación (squash/stretch) | 0–5% como máximo |
+| Fundidos | 300–400 ms |
+| Deslizamientos | 400–500 ms, recorrido corto (10–40 px o ~3% del cuadro) |
+| Escala | 350–450 ms, de 96–98% a 100% (no de 0%) |
+| Reveal de texto o máscara | 500–700 ms |
+| Anticipación | 100–150 ms, solo si ayuda |
+| Stagger entre elementos | 50–120 ms |
+
+Reglas extra:
+- Nunca movimiento lineal (parece robótico) ni exagerado.
+- Desaceleración larga y suave, sin rebote: como seda cayendo.
+- Trayectorias en arco suave en vez de líneas rectas cuando algo viaja.
+- Una frase legible por "beat": cada texto debe poder leerse completo antes de cambiar.
+- Limita cuántos elementos se animan a la vez (idealmente 1–3).
+- Para reels el ritmo puede ir ~20% más rápido que los valores de arriba, pero sin perder suavidad.
+- Evita parpadeos rápidos o sacudidas fuertes (incomodan al espectador).
+
+Referencias de estas pautas: guía de motion de la marca de los Oscars (sin movimiento lineal ni exagerado), la skill elegance-sophistication (instalada) y guías de tipografía en movimiento (limitar elementos animados y paleta).
+
 ## Flujo de trabajo
 1. **Pregunta lo mínimo** si falta algo: mensaje exacto, formato (9:16 por defecto para reels), duración, colores/logo. Si el usuario dice "hazlo", elige valores sensatos y dilo al final.
 2. **Define la paleta y la fuente** antes de animar, en una línea.
