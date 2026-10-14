@@ -239,6 +239,11 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - Un punto da valor aunque no compre (en Ignia, abrir su cuenta de Kunfupay como referido), y el cierre ofrece ese segundo camino.
     - Mal: «Punto uno. Ignia hace tu lanzamiento llave en mano: la estrategia, el embudo, los anuncios…». Bien: «Imagina tu próximo lanzamiento… Tú grabas, estás con tu comunidad y cenas con tu familia. Vuelves a tener tiempo.»
 
+29. **Cada guion corto cuenta su propia situación; no se arma con frases de la VSL.** (Corrección del 14/10/2026, reels de Tributaless: «que tengan real sentido, no extraigas todo de la vsl, no hagas simplemente citas, que sean guiones».)
+    - Orden: escena concreta del que ya vende → problema que le crea → giro con «PERO», con Kunfupay como solución de ese problema → lo que cambia para él.
+    - Las frases de la VSL o de otras piezas no se reciclan. La idea de la regla 25 (la factura y los impuestos de cada venta) se dice con las palabras de la escena, y la credencial de la regla 22.9 solo va donde aporta, no en todos los reels.
+    - Mal: «PERO hay otra forma. Kunfupay es la única pasarela de España que funciona como Merchant of Record.» Bien: «Haces un directo, vendes 40 plazas… y te tocan 40 facturas. PERO si las cobras con Kunfupay, cada factura la hace Kunfupay.»
+
 ---
 
 ## 2. Protocolo cuando llega un ángulo o concepto nuevo
