@@ -452,3 +452,119 @@ La primera tanda (P1-P8, R1 y R2, con su fuente editable) queda en el historial 
 - Opcional: asesor fiscal externo real como partner declarado.
 
 **Riesgos ya avisados que no se reabren:** "única pasarela de España que funciona como MoR" (claim del equipo; Netfield Media también se anuncia como MoR); "los impuestos de esa venta los pagan en Estados Unidos" (riesgo de Kunfupay); «mismo precio, más neto», que solo es verdad mientras Kunfupay no cobre el IVA del alumno (T-10).
+
+## Reels de 30 segundos (14/10/2026)
+
+Petición del usuario: «8 guiones de unos 30 segundos para reels de Tributaless… todas deben mencionar a Kunfupay, y en el hook deben tener el filtro de si eres creador de contenido y facturas más de 3.000 euros al mes o si tienes un negocio digital… que hablen siempre de los beneficios que pueden tener con Kunfupay». Un beneficio por reel; todos llevan la línea de la regla 25 y, donde cabe, la credencial de la regla 22.9. Entre 75 y 76 palabras: unos 28 s a 160 palabras por minuto. Presenta Santiago, asesor de Tributaless, que habla de Kunfupay en tercera persona.
+
+### Reel 1 · Creador de contenido · facturas
+
+Estructura: F · Problema invisible · 75 palabras
+
+Si eres creador de contenido y facturas más de 3.000 euros al mes, mira cómo dejar de hacer una factura por cada venta.
+
+Cada alumno, una factura.
+Y caaada trimestre, con miedo de haberte equivocado.
+
+PERO hay otra forma.
+Kunfupay es la única pasarela de España que funciona como Merchant of Record.
+Te representa en tus ventas: hace la factura y paga los impuestos de cada venta.
+Tú te olvidas.
+
+Mira el vídeo del enlace.
+
+### Reel 2 · Negocio digital · el 21 %
+
+Estructura: F · Problema invisible · 76 palabras
+
+Si tienes un negocio digital y facturas más de 3.000 euros al mes, mira qué pasa con tu 21 % de IVA.
+
+Cobras con Kunfupay y solo le facturas a Kunfupay.
+Esa factura no lleva IVA español. Lo dice el artículo 69 de la Ley del IVA.
+Porque Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta.
+
+Incluso con su comisión, vale la pena.
+Mira el vídeo del enlace.
+
+### Reel 3 · Cursos online · un solo link
+
+Estructura: C · Mismo curso, dos caminos · 75 palabras
+
+Si vendes cursos online y facturas más de 3.000 euros al mes, mira cómo cobrar en cualquier país sin perder ventas.
+
+Tu alumno de Colombia o de México muchas veces no puede pagarte como paga en su país.
+
+PERO con Kunfupay le mandas un solo link, y paga en su moneda. O en cripto.
+Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta.
+
+Mira el vídeo del enlace.
+
+### Reel 4 · Coach o mentor · sin LLC
+
+Estructura: A · Rompe-mito · 76 palabras
+
+Si eres coach o mentor y facturas más de 3.000 euros al mes, mira cómo cobrar en todo el mundo sin montar una LLC.
+
+Una empresa en Estados Unidos, y 25.000 dólares de multa si no presentas el formulario 5472.
+
+PERO no te hace falta.
+Cobras con Kunfupay, en la moneda de tu alumno.
+Y Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta.
+
+Mira el vídeo del enlace.
+
+### Reel 5 · Infoproductor · Hacienda
+
+Estructura: E · Hormozi para anuncios · 75 palabras
+
+Si eres infoproductor y facturas más de 3.000 euros al mes: ¿nunca hiciste una factura por cada alumno?
+
+Antes de que Hacienda venga a buscarte:
+desde tu próxima venta, cobras con Kunfupay.
+Kunfupay es la única pasarela de España que funciona como Merchant of Record.
+Te representa en tus ventas: hace la factura y paga los impuestos de cada venta.
+Cada alumno, con su factura. Sin que tú hagas ninguna.
+
+Mira el vídeo del enlace.
+
+### Reel 6 · Formación online · tu dinero
+
+Estructura: F · Problema invisible · 76 palabras
+
+Si vendes formación online y facturas más de 3.000 euros al mes, mira dónde puede estar tu dinero.
+
+Cobras con Kunfupay, y el dinero entra en tu cuenta de Kunfupay, a tu nombre.
+No tiene que pasar por tu banco. Lo gastas con tu tarjeta.
+Y con su IBAN recibes hasta tus retiros de Hotmart.
+
+Kunfupay te representa en tus ventas: hace la factura y paga los impuestos de cada venta.
+
+Mira el vídeo del enlace.
+
+### Reel 7 · Vendes cursos · tu asesor
+
+Estructura: H · Dolor real en pantalla · 75 palabras
+
+Si vendes cursos, facturas más de 3.000 euros al mes y tu asesor no sabe qué es Hotmart, mira esto.
+
+Te trata como si tuvieras una tienda de zapatillas.
+
+En Tributaless solo trabajamos con gente que vende cursos.
+Te ayudamos a cobrar con Kunfupay, la única pasarela de España que funciona como Merchant of Record.
+Te representa en tus ventas: hace la factura y paga los impuestos de cada venta.
+
+Mira el vídeo del enlace.
+
+### Reel 8 · Academia online · la tienda de apps
+
+Estructura: I · Merchant of Record explicado · 76 palabras
+
+Si tienes una academia online y facturas más de 3.000 euros al mes, mira cómo cobra la tienda de apps.
+
+Cuando compras una app, le pagas a la tienda, no al que la hizo.
+La tienda factura y se ocupa de los impuestos.
+
+Así funciona el Merchant of Record.
+Kunfupay hace lo mismo con tus cursos: te representa en tus ventas, hace la factura y paga los impuestos de cada venta.
+
+Mira el vídeo del enlace.
