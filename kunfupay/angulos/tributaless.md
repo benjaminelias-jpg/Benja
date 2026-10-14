@@ -453,40 +453,41 @@ La primera tanda (P1-P8, R1 y R2, con su fuente editable) queda en el historial 
 
 **Riesgos ya avisados que no se reabren:** "única pasarela de España que funciona como MoR" (claim del equipo; Netfield Media también se anuncia como MoR); "los impuestos de esa venta los pagan en Estados Unidos" (riesgo de Kunfupay); «mismo precio, más neto», que solo es verdad mientras Kunfupay no cobre el IVA del alumno (T-10).
 
-## Reels de 30 segundos (14/10/2026, versión 2)
+## Reels de 30 segundos (14/10/2026, versión 3)
 
-Petición del usuario: «8 guiones de unos 30 segundos para reels de Tributaless… todas deben mencionar a Kunfupay, y en el hook deben tener el filtro de si eres creador de contenido y facturas más de 3.000 euros al mes o si tienes un negocio digital… que hablen siempre de los beneficios que pueden tener con Kunfupay». Versión 2 tras la corrección «mejóralos, que tengan real sentido, no extraigas todo de la vsl, no hagas simplemente citas, que sean guiones. el hook y el cta está bien»: mismos hooks y CTA; cada cuerpo cuenta su propia situación (escena, problema, giro con Kunfupay como solución de ese problema y lo que cambia). Unos 28-29 s a 160 palabras por minuto. Presenta Santiago, asesor de Tributaless, que habla de Kunfupay en tercera persona.
+Petición del usuario: «8 guiones de unos 30 segundos para reels de Tributaless… todas deben mencionar a Kunfupay, y en el hook deben tener el filtro de si eres creador de contenido y facturas más de 3.000 euros al mes o si tienes un negocio digital…». Versión 3 con sus correcciones: Tributaless se nombra en todos como quien te ayuda a cobrar con Kunfupay, con un beneficio distinto en cada uno (como el 7); más agresivos con Hacienda y con «ahórrate impuestos»; el 21 % sobre 100 euros; el 5 y el 8 nuevos (el ejemplo de la tienda de apps, fuera). El 4 y el 7 se mantienen. Unos 27-29 s a 160 palabras por minuto. Presenta Santiago, asesor de Tributaless.
 
 ### Reel 1 · Creador de contenido · facturas
 
-Estructura: F · Problema invisible · 76 palabras
+Estructura: F · Problema invisible · 73 palabras
 
 Si eres creador de contenido y facturas más de 3.000 euros al mes, mira cómo dejar de hacer una factura por cada venta.
 
 Haces un directo, vendes 40 plazas de tu curso…
-y te tocan 40 facturas.
+y Hacienda espera 40 facturas.
 
-PERO si las cobras con Kunfupay, cada factura la hace Kunfupay.
-Porque te representa en tus ventas, y paga los impuestos de cada venta.
+PERO en Tributaless te ayudamos a cobrar con Kunfupay.
+Cada factura la hace Kunfupay, y paga los impuestos de cada venta.
 Tú solo le facturas a Kunfupay. Y vuelves a crear.
 
 Mira el vídeo del enlace.
 
 ### Reel 2 · Negocio digital · el 21 %
 
-Estructura: B · Cálculo en vivo · 77 palabras
+Estructura: B · Cálculo en vivo · 78 palabras
 
 Si tienes un negocio digital y facturas más de 3.000 euros al mes, mira qué pasa con tu 21 % de IVA.
 
-Hoy, de cada 121 euros, 21 son para Hacienda.
+De cada 100 euros que vendes, Hacienda se lleva 21.
 
-PERO si cobras con Kunfupay, Kunfupay te representa en cada venta: hace la factura y paga los impuestos de cada venta.
-Tú le facturas a Kunfupay, sin IVA español.
-Mismo precio para tu alumno, y más para ti, incluso con comisión.
+PERO en Tributaless te ayudamos a cobrar con Kunfupay.
+Kunfupay hace la factura y paga los impuestos de cada venta.
+Tu factura a Kunfupay no lleva IVA español.
+Te ahorras ese 21 %. Aun pagando su comisión, te sale a cuenta.
 
 Mira el vídeo del enlace.
 
-### Reel 3 · Cursos online · un solo link
+### Reel 3 · Cursos online · cualquier país
 
 Estructura: C · Mismo curso, dos caminos · 73 palabras
 
@@ -494,8 +495,9 @@ Si vendes cursos online y facturas más de 3.000 euros al mes, mira cómo cobrar
 
 Te escribe un alumno de México: «quiero entrar, pero no me deja pagar».
 
-PERO si cobras con Kunfupay, le mandas un link y paga en pesos, por transferencia o en cripto.
-Tú cobras esa venta. Y Kunfupay hace la factura y paga los impuestos de cada venta.
+PERO en Tributaless te ayudamos a cobrar con Kunfupay.
+Le mandas un link, y paga en pesos, por transferencia o en cripto.
+Y Kunfupay hace la factura y paga los impuestos de cada venta.
 
 Mira el vídeo del enlace.
 
@@ -508,37 +510,37 @@ Si eres coach o mentor y facturas más de 3.000 euros al mes, mira cómo cobrar 
 Te dijeron: «móntate una LLC y cobras sin líos».
 Luego, papeles en dos países y 25.000 dólares de multa si olvidas el formulario 5472.
 
-PERO para cobrar fuera te basta con Kunfupay, sin abrir ninguna empresa.
-Y Kunfupay hace la factura y paga los impuestos de cada venta.
+PERO no te hace falta.
+En Tributaless te ayudamos a cobrar con Kunfupay, que hace la factura y paga los impuestos de cada venta.
 
 Mira el vídeo del enlace.
 
 ### Reel 5 · Infoproductor · Hacienda
 
-Estructura: F · Problema invisible · 76 palabras
+Estructura: F · Problema invisible · 72 palabras
 
 Si eres infoproductor y facturas más de 3.000 euros al mes: ¿nunca hiciste una factura por cada alumno?
 
-Cada alumno sin factura es un hueco en tus cuentas.
-Y cuantas más ventas, más grande.
+Hacienda ve lo que cobras con tarjeta.
+Y cada venta sin factura es una multa esperando.
 
-PERO antes de que Hacienda venga a buscarte, desde tu próxima venta puedes cobrar con Kunfupay.
-Cada alumno recibe su factura, que hace Kunfupay. Y Kunfupay paga los impuestos de cada venta.
-Tú vendes, y te olvidas.
+PERO desde tu próxima venta, en Tributaless te ayudamos a cobrar con Kunfupay.
+Kunfupay le hace la factura a cada alumno y paga los impuestos de cada venta.
+Y tú vendes en regla.
 
 Mira el vídeo del enlace.
 
 ### Reel 6 · Formación online · tu dinero
 
-Estructura: F · Problema invisible · 77 palabras
+Estructura: F · Problema invisible · 78 palabras
 
 Si vendes formación online y facturas más de 3.000 euros al mes, mira dónde puede estar tu dinero.
 
-Hoy lo dejas parado en Hotmart y lo sacas de a poco, por si acaso.
+Hoy lo dejas parado en Hotmart y lo sacas de a poco, por si Hacienda pregunta.
 
-PERO abres tu cuenta de Kunfupay, a tu nombre y con IBAN: ahí te llegan tus retiros.
-Lo gastas con tu tarjeta, sin pasar por tu banco.
-Y Kunfupay hace la factura y paga los impuestos de cada venta.
+PERO en Tributaless te ayudamos a abrir tu cuenta de Kunfupay, a tu nombre y con IBAN.
+Tus retiros llegan ahí, sin pasar por tu banco. Y lo gastas con tarjeta.
+Además, Kunfupay paga los impuestos de cada venta.
 
 Mira el vídeo del enlace.
 
@@ -556,16 +558,32 @@ Y tienes un asesor que sabe lo que vendes.
 
 Mira el vídeo del enlace.
 
-### Reel 8 · Academia online · la tienda de apps
+### Reel 8 · Academia online · sin irte a Andorra
 
-Estructura: I · Merchant of Record explicado · 76 palabras
+Estructura: A · Rompe-mito · 77 palabras
 
-Si tienes una academia online y facturas más de 3.000 euros al mes, mira cómo cobra la tienda de apps.
+Si tienes una academia online y facturas más de 3.000 euros al mes, mira cómo ahorrarte impuestos sin irte a Andorra.
 
-Compras una app: la factura te la hace la tienda, no quien la programó.
-Y la tienda se ocupa de los impuestos.
+Te dicen que para pagarle menos a Hacienda tienes que hacer las maletas.
+Andorra, Dubái… lejos de los tuyos.
 
-Kunfupay hace eso con tu academia: tu alumno paga, Kunfupay hace la factura y paga los impuestos de cada venta.
-Y tú cobras tu venta sin tocar un papel.
+PERO no hace falta.
+En Tributaless te ayudamos a cobrar con Kunfupay, que paga los impuestos de cada venta.
+Tu factura a Kunfupay no lleva IVA español: te ahorras impuestos desde casa.
 
 Mira el vídeo del enlace.
+
+## UTM de la campaña tributaless_vsl (14/10/2026)
+
+Landing: https://www.tributaless.com/landing/vsl (responde 200 con los parámetros). Fuente y medio: `facebook` y `paid_social`, para que GA4 lo cuente como social de pago.
+
+- AD 1: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_1`
+- AD 2: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_2`
+- AD 3: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_3`
+- AD 4: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_4`
+- AD 5: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_5`
+- AD 6: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_6`
+- AD 7: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_7`
+- AD 8: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_8`
+- AD 9: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_9`
+- AD 10: `https://www.tributaless.com/landing/vsl?utm_source=facebook&utm_medium=paid_social&utm_campaign=tributaless_vsl&utm_content=ad_10`

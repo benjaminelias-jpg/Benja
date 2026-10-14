@@ -243,6 +243,7 @@ Si el documento tiene más de 60 días, avisa de que conviene refrescar la inves
     - Orden: escena concreta del que ya vende → problema que le crea → giro con «PERO», con Kunfupay como solución de ese problema → lo que cambia para él.
     - Las frases de la VSL o de otras piezas no se reciclan. La idea de la regla 25 (la factura y los impuestos de cada venta) se dice con las palabras de la escena, y la credencial de la regla 22.9 solo va donde aporta, no en todos los reels.
     - Mal: «PERO hay otra forma. Kunfupay es la única pasarela de España que funciona como Merchant of Record.» Bien: «Haces un directo, vendes 40 plazas… y te tocan 40 facturas. PERO si las cobras con Kunfupay, cada factura la hace Kunfupay.»
+    - **Tributaless (14/10/2026):** cada pieza dice que Tributaless te ayuda a cobrar con Kunfupay, con un beneficio distinto en cada una («como en el guion 7 que está genial, así con todos pero con diferentes beneficios»). Tono agresivo con Hacienda y «ahórrate impuestos», atado a cada venta («menciona hacienda todo lo que quieras»). El 21 % se cuenta sobre 100: «De cada 100 euros que vendes, Hacienda se lleva 21».
 
 ---
 
@@ -456,7 +457,7 @@ Elige por objetivo y declara siempre cuál usaste. Si está instalada la skill `
 **Analogías verificadas para el MoR (doc 02 §6), por orden de preferencia:**
 1. ~~La Coca-Cola en el súper o en el bar.~~ Retirada por el usuario el 25/09.
 2. **El súper y el pan.**
-3. **La tienda de apps del móvil.** En España, Apple Distribution International «es el comerciante registrado»: cobra, factura y paga el IVA. No hace falta nombrar a Apple. En el guion se dice "se ocupa de los impuestos", no "paga el IVA" (T-10).
+3. **La tienda de apps del móvil.** Rechazada para reels el 14/10/2026 («el 8 de la app es un ejemplo malísimo»). En España, Apple Distribution International «es el comerciante registrado»: cobra, factura y paga el IVA. No hace falta nombrar a Apple. En el guion se dice "se ocupa de los impuestos", no "paga el IVA" (T-10).
 4. **El revendedor.**
 
 **Patrones que el usuario rechazó:**
