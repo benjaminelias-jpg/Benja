@@ -10,6 +10,7 @@ SR = 48000
 rng = np.random.default_rng(11)
 voice, sr = sf.read(sys.argv[1]); assert sr == SR
 voice = voice.mean(1) if voice.ndim > 1 else voice
+voice = voice[1245:]   # compensa la latencia de afftdn + limitador (25,9 ms)
 music, sr = sf.read(sys.argv[2]); assert sr == SR
 meta = json.load(open(sys.argv[3])); tl = json.load(open(sys.argv[4]))
 N = int(round(tl["duration"] * SR))

@@ -4,7 +4,7 @@ import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 const here = path.dirname(fileURLToPath(import.meta.url));
 const [frame, out, dbg] = process.argv.slice(2);
-const b = await chromium.launch({ args: ["--force-color-profile=srgb"] });
+const b = await chromium.launch({ args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--force-color-profile=srgb"] });
 const p = await b.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
 await p.goto(pathToFileURL(path.join(here, "..", "mg", "cover.html")).href + "?frame=" +
   encodeURIComponent(pathToFileURL(path.resolve(frame)).href) + (dbg ? "&debug=1" : ""));

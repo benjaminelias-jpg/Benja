@@ -26,7 +26,7 @@ Para retocar un gráfico, edita su bloque en `scene.js`; cada escena lleva un co
 Requisitos: ffmpeg, Python 3 (faster-whisper, torch/torchaudio, numpy, scipy, soundfile, pyloudnorm), Node 22 con Playwright/Chromium, y `npm install` en este directorio (GSAP e Inter ya van copiados en `mg/assets`).
 
 ```bash
-SRC="hook 2 ( anuncio 1).mp4"; W=work
+SRC="hook 2 ( anuncio 1).mp4"; W=work; mkdir -p $W
 ffmpeg -i "$SRC" -vn -ac 1 -ar 16000 $W/audio16k.wav
 ffmpeg -i "$SRC" -vn -ac 2 -ar 48000 -c:a pcm_s24le $W/audio48k.wav
 python3 scripts/transcribe.py $W/audio16k.wav $W/transcript.json        # Whisper large-v3, palabra a palabra
@@ -51,6 +51,6 @@ Los cortes están en `scripts/build_timeline.py` (`SEGMENTS`, en frames de la fu
 
 - Inter (SIL Open Font License): `mg/assets/fonts/LICENSE-Inter-OFL.txt`.
 - GSAP 3.13 (licencia estándar de GSAP, uso gratuito).
-- Íconos de Lucide (ISC), en `mg/icons.js`.
+- Íconos de Lucide (ISC), en `mg/icons.js`; licencia en `mg/LICENSE-lucide.txt`.
 - Logos de Kunfupay, del kit de marca oficial (kunfupay.com/brand).
 - Música y SFX: originales, generados por síntesis en `scripts/music.py` y `scripts/mix.py`.

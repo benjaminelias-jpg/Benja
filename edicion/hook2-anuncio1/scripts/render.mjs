@@ -20,7 +20,7 @@ const framesUrl = pathToFileURL(path.resolve(args.frames)).href;
 const page_url = pathToFileURL(path.join(here, "..", "mg", "index.html")).href +
   `?frames=${encodeURIComponent(framesUrl)}${args.debug ? "&debug=1" : ""}`;
 
-const browser = await chromium.launch({ args: ["--force-color-profile=srgb", "--disable-gpu-vsync", "--hide-scrollbars"] });
+const browser = await chromium.launch({ args: ["--use-angle=swiftshader", "--enable-unsafe-swiftshader", "--force-color-profile=srgb", "--disable-gpu-vsync", "--hide-scrollbars"] });
 const page = await browser.newPage({ viewport: { width: 1080, height: 1920 }, deviceScaleFactor: 1 });
 page.on("console", (m) => { if (m.type() === "error") console.error("[page]", m.text()); });
 page.on("pageerror", (e) => console.error("[pageerror]", e.message));
@@ -42,6 +42,7 @@ if (args.dump) {
 } else {
   const from = +(args.from || 0), to = Math.min(+(args.to || total), total);
   const ff = spawn("ffmpeg", ["-v", "error", "-y", "-f", "image2pipe", "-framerate", "30", "-c:v", "mjpeg", "-i", "-",
+    "-vf", "scale=in_color_matrix=bt601:in_range=pc:out_color_matrix=bt709:out_range=tv",
     "-c:v", "libx264", "-preset", "slow", "-crf", "14", "-pix_fmt", "yuv420p",
     "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", "-color_range", "tv",
     "-x264-params", "keyint=60:min-keyint=60", "-movflags", "+faststart", args.out], { stdio: ["pipe", "inherit", "inherit"] });

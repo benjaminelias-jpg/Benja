@@ -109,7 +109,7 @@
   gsap.set(cam, { z: 1, p: 0, blur: 0, bg: 0 });
   function zoom(t, z, dur = 0.55, ease = "out") {     // punch-in/out suave
     const from = camCur.z; camCur.z = z;
-    if (dur === 0) tl.set(cam, { z }, t);
+    if (dur === 0) tl.set(cam, { z }, t - 0.004);
     else tl.fromTo(cam, { z: from }, { z, duration: dur, ease, immediateRender: false }, t);
   }
   function pipIn(t, id, dur = 0.62) {
@@ -185,7 +185,7 @@
     for (let b = 1; b <= n; b++) for (let a = Math.max(0, b - 4); a < b; a++) {
       const len = b - a, ch = chars(a, b);
       if (ch > 24 && len > 1) continue;
-      let c = best[a] + Math.abs(len - 3) * 0.6 + (len === 1 ? (n === 1 ? 0 : ph[a].w.length >= 9 ? 1.5 : 4) : 0);
+      let c = best[a] + Math.abs(len - 3) * 0.6 + (len === 1 ? (n === 1 ? 0 : 9) : 0);
       if (b < n && FUNC.has(clean(ph[b - 1].w))) c += 3;
       if (c < best[b]) { best[b] = c; from[b] = a; }
     }
@@ -203,6 +203,11 @@
       if (brk) { ph = []; phrases.push(ph); }
       ph.push(w);
     });
+    for (let k = 0; k < phrases.length - 1; k++) {
+      const a = phrases[k], b = phrases[k + 1];
+      if (a.length === 1 && b[0].s - a[0].e < 0.6 && !/[.?]$/.test(a[0].w)) { b.unshift(a[0]); phrases.splice(k, 1); k--; }
+      else if (b.length === 1 && b[0].s - a[a.length - 1].e < 0.6 && !/[.?]$/.test(a[a.length - 1].w)) { a.push(b[0]); phrases.splice(k + 1, 1); k--; }
+    }
     const groups = [];
     phrases.forEach((p) => chunkPhrase(p).forEach((words) => groups.push({ words })));
     groups.forEach((gr) => { gr.s = gr.words[0].s - 0.06; });
@@ -248,7 +253,7 @@
   // ---------- 1 · Gancho (0–3,7 s): titular en vidrio + punch-in
   {
     const c = card({ x: 80, y: 712, w: 920, pad: "40px 52px 44px", html: `
-      <span class="line h2" style="color:var(--muted);margin-bottom:10px"><span class="in" id="hk1">Tú pones los cursos.</span></span>
+      <span class="line h2" style="margin-bottom:10px"><span class="in" id="hk1">Tú pones los cursos.</span></span>
       <span class="line h1"><span class="in" id="hk2">Nosotros,</span></span>
       <span class="line h1"><span class="in" id="hk3">el <span class="uline" id="hkW">presupuesto<i></i></span>.</span></span>` });
     gsap.set(cam, { z: 1.04 }); camCur.z = 1.04;
@@ -266,6 +271,7 @@
       { yPercent: 0, opacity: 1, filter: "blur(0px)", duration: 0.42, ease: "out", immediateRender: true }, 0);
     tl.set($("#hk1"), { filter: "none" }, 0.42);
     reveal($("#hk2"), S(4) - 0.06);
+    tl.fromTo($("#hk1"), { color: "rgb(245,245,247)" }, { color: "rgba(245,245,247,0.7)", duration: 0.3, ease: "out", immediateRender: false }, S(4) - 0.06);
     reveal($("#hk3"), S(6) - 0.12);
     accent($("#hkW"), S(7));
     underline($("#hkW i"), S(7) + 0.08, 0.55);
@@ -320,7 +326,7 @@
     drawIcon($("#r3b svg"), S(61) + 0.12, 0.45);
     sfx(S(61) + 0.12, "glass", -6);
     exit(c, 19.62);
-    zoom(S(64), 1.04, 0.6);                              // "como el tuyo"
+    zoom(S(64), 1.04, 0.5);                              // "como el tuyo"
   }
   // ---------- 5 · Momento limpio (solo la persona): "mientras tú haces lo que se te da bien…"
   {
@@ -440,10 +446,10 @@
   }
   // ---------- 12 · "Solo ganamos si tú ganas."
   {
-    const c = card({ x: 140, y: 750, w: 800, pad: "40px 52px 44px", align: "center", html: `
-      <span class="line h1"><span class="in" id="gn1">Solo ganamos</span></span>
-      <span class="line h1"><span class="in" id="gn2">si <span id="gnW">tú ganas</span>.</span></span>` });
-    enter(c, S(176) - 0.16, { gain: -2 });
+    const c = card({ x: 160, y: 900, w: 760, pad: "34px 48px 38px", align: "center", html: `
+      <span class="line h1" style="font-size:78px"><span class="in" id="gn1">Solo ganamos</span></span>
+      <span class="line h1" style="font-size:78px"><span class="in" id="gn2">si <span id="gnW">tú ganas</span>.</span></span>` });
+    enter(c, 54.41, { gain: -2 });
     reveal($("#gn1"), S(176) - 0.08);
     reveal($("#gn2"), S(178) - 0.1);
     accent($("#gnW"), S(179));
@@ -453,7 +459,6 @@
     tl.fromTo(sp, { opacity: 0 }, { opacity: 1, duration: 0.2, immediateRender: false }, S(179));
     tl.to(sp, { opacity: 0, duration: 0.3 }, S(179) + 0.7);
     sfx(S(179), "glass", -5);
-    zoom(S(176) - 0.08, 1.05, 0.6);
     exit(c, 55.6);
   }
   // ---------- 13 · Momento limpio: "Y muy importante…"
