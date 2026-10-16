@@ -1,67 +1,52 @@
 {
  "sfx": [
   {
-   "t": 0,
-   "type": "swell",
-   "gain": 1
-  },
-  {
-   "t": 2.982,
-   "type": "click",
-   "gain": 0.7
-  },
-  {
-   "t": 3.4,
+   "t": 10.83,
    "type": "air",
    "gain": 0.8
   },
   {
-   "t": 3.582,
+   "t": 16.26,
    "type": "air",
-   "gain": 0.6
+   "gain": 0.8
   },
   {
-   "t": 6.164,
+   "t": 21.2,
    "type": "air",
-   "gain": 0.6
+   "gain": 0.8
   },
   {
-   "t": 9.225,
+   "t": 25.76,
    "type": "air",
-   "gain": 0.6
+   "gain": 0.8
+  },
+  {
+   "t": 30.84,
+   "type": "air",
+   "gain": 0.55
+  },
+  {
+   "t": 0,
+   "type": "swell",
+   "gain": 0.8
+  },
+  {
+   "t": 1.901,
+   "type": "air",
+   "gain": 0.55
+  },
+  {
+   "t": 2.982,
+   "type": "click",
+   "gain": 0.55
   },
   {
    "t": 16.51,
    "type": "click",
-   "gain": 0.6
-  },
-  {
-   "t": 19.211000000000002,
-   "type": "air",
-   "gain": 0.6
-  },
-  {
-   "t": 21.512,
-   "type": "air",
-   "gain": 0.6
-  },
-  {
-   "t": 21.592,
-   "type": "click",
    "gain": 0.55
   },
   {
-   "t": 22.433,
-   "type": "click",
-   "gain": 0.55
-  },
-  {
-   "t": 23.133,
-   "type": "click",
-   "gain": 0.55
-  },
-  {
-   "t": 23.714,
+   "t": 19.411,
    "type": "click",
    "gain": 0.55
   },
@@ -121,29 +106,49 @@
    "gain": 0.5
   },
   {
-   "t": 10.5,
-   "type": "whoosh",
-   "gain": 1
-  },
-  {
-   "t": 11.1,
+   "t": 11.12,
    "type": "air",
-   "gain": 1
+   "gain": 0.7
   },
   {
    "t": 11.747,
    "type": "click",
-   "gain": 0.75
+   "gain": 0.7
   },
   {
    "t": 13.828,
    "type": "click",
-   "gain": 0.75
+   "gain": 0.7
   },
   {
    "t": 15.449,
    "type": "click",
-   "gain": 0.75
+   "gain": 0.7
+  },
+  {
+   "t": 21.4,
+   "type": "air",
+   "gain": 0.7
+  },
+  {
+   "t": 21.552,
+   "type": "click",
+   "gain": 0.6
+  },
+  {
+   "t": 22.393,
+   "type": "click",
+   "gain": 0.6
+  },
+  {
+   "t": 23.093,
+   "type": "click",
+   "gain": 0.6
+  },
+  {
+   "t": 23.774,
+   "type": "click",
+   "gain": 0.6
   },
   {
    "t": 26.98,
@@ -223,184 +228,12 @@
   {
    "t": 34.52,
    "type": "air",
-   "gain": 1
+   "gain": 0.7
   },
   {
    "t": 34.97,
    "type": "click",
    "gain": 0.7
-  }
- ],
- "srt": [
-  {
-   "s": 3.662,
-   "e": 4.122,
-   "text": "Para ayudarlos"
-  },
-  {
-   "s": 4.122,
-   "e": 4.5,
-   "text": "A escalar"
-  },
-  {
-   "s": 6.244,
-   "e": 6.944,
-   "text": "Nuestro playbook"
-  },
-  {
-   "s": 6.944,
-   "e": 7.724,
-   "text": "Ya ha sido validado"
-  },
-  {
-   "s": 7.724,
-   "e": 8.165,
-   "text": "Por más de"
-  },
-  {
-   "s": 9.305,
-   "e": 10.086,
-   "text": "Y todos los miembros"
-  },
-  {
-   "s": 10.086,
-   "e": 10.66,
-   "text": "Tienen acceso"
-  },
-  {
-   "s": 10.706,
-   "e": 11.146,
-   "text": "A nuestro equipo"
-  },
-  {
-   "s": 11.146,
-   "e": 11.747,
-   "text": "De lanzamientos"
-  },
-  {
-   "s": 11.747,
-   "e": 12.627,
-   "text": "Especializado"
-  },
-  {
-   "s": 12.627,
-   "e": 13.708,
-   "text": "A toda la tecnología"
-  },
-  {
-   "s": 13.708,
-   "e": 14.468,
-   "text": "De Kunfupay"
-  },
-  {
-   "s": 14.468,
-   "e": 15.229,
-   "text": "Y a financiación"
-  },
-  {
-   "s": 15.229,
-   "e": 15.829,
-   "text": "De sus campañas"
-  },
-  {
-   "s": 15.829,
-   "e": 16.2,
-   "text": "De marketing"
-  },
-  {
-   "s": 16.249,
-   "e": 17.37,
-   "text": "Y muy importante"
-  },
-  {
-   "s": 17.37,
-   "e": 17.83,
-   "text": "El programa"
-  },
-  {
-   "s": 17.83,
-   "e": 18.691,
-   "text": "Classroom Platinum"
-  },
-  {
-   "s": 18.691,
-   "e": 19.291,
-   "text": "Es solamente"
-  },
-  {
-   "s": 19.291,
-   "e": 20.292,
-   "text": "Para infoproductores"
-  },
-  {
-   "s": 20.292,
-   "e": 21.592,
-   "text": "Que venden acceso a"
-  },
-  {
-   "s": 21.592,
-   "e": 22.433,
-   "text": "Comunidades"
-  },
-  {
-   "s": 22.433,
-   "e": 23.133,
-   "text": "Cursos"
-  },
-  {
-   "s": 23.133,
-   "e": 23.714,
-   "text": "Coaching"
-  },
-  {
-   "s": 23.714,
-   "e": 25.375,
-   "text": "Servicios y productos digitales"
-  },
-  {
-   "s": 25.375,
-   "e": 26.035,
-   "text": "Similares"
-  },
-  {
-   "s": 26.035,
-   "e": 26.735,
-   "text": "Que ya tienen"
-  },
-  {
-   "s": 26.735,
-   "e": 28.036,
-   "text": "Un producto funcionando"
-  },
-  {
-   "s": 28.036,
-   "e": 28.677,
-   "text": "Y vendiendo"
-  },
-  {
-   "s": 28.677,
-   "e": 29.317,
-   "text": "Por lo menos"
-  },
-  {
-   "s": 30.197,
-   "e": 31.098,
-   "text": "Así que ya sabes"
-  },
-  {
-   "s": 31.098,
-   "e": 31.658,
-   "text": "Si te interesa"
-  },
-  {
-   "s": 31.658,
-   "e": 32.579,
-   "text": "Classroom Platinum"
-  },
-  {
-   "s": 32.579,
-   "e": 33.719,
-   "text": "Y cumples las condiciones"
   }
  ],
  "duration": 36.2

@@ -17,7 +17,7 @@ Edición completa del video `Classroom Planitnum Hook 1 - Equipo.mp4` (carpeta D
 | `Prueba_de_estilo_glass.png` | Referencia, la receta sobre blanco y 3 frames clave del video |
 | `EDL_Classroom_Platinum_Hook1_Equipo.md` / `.csv` | Plan de edición: tiempo, voz, imagen, texto, transición y sonido |
 | `Classroom_Platinum_Hook1_Equipo.srt` | Subtítulos: 45 bloques de 2–4 palabras, alineados por forced alignment |
-| `Portada_Classroom_Platinum_Hook1_Equipo.png` | Portada: tarjeta glass con el titular del gancho |
+| `Portada_Classroom_Platinum_Hook1_Equipo.png` | Portada: tarjeta glass con el titular del gancho sobre la pizarra (`project/cover.html`) |
 | `proyecto/` | Código de los motion graphics y scripts del pipeline |
 
 ## Cómo está hecho
@@ -25,7 +25,11 @@ Edición completa del video `Classroom Planitnum Hook 1 - Equipo.mp4` (carpeta D
 1. **Transcripción**: Whisper large-v3 y luego alineación forzada (MMS de torchaudio) del texto correcto. Whisper fallaba hasta 0,4 s en algunas palabras.
 2. **Corte** (`scripts/cut.py`): se recortan 20 pausas detectadas a −38 dB, dejando 80–160 ms de aire. En los cambios de plano hay corte en L (1–2 frames). Los jump cuts se enmascaran alternando la escala (punch-in de 4–11 %).
 3. **Color** (`scripts/make_lut.py` → `color/skin.cube`): una LUT selectiva por tono lleva la piel magenta (295–335°) hacia un rosado natural y deja intacta la luz violeta de la pared (255–285°). Encima, contraste medio y negros profundos sin aplastar.
-4. **Motion graphics** (`project/index.html` + `comp.js`, GSAP): todos los elementos glass están en la misma escena que el metraje, y `backdrop-filter` desenfoca el video real. Una sola receta para todo el video; solo se ajusta el `brightness` (.72–.92) según el fondo. El video achicado (PiP) va en un marco simple redondeado con borde fino, sin vidrio ni volumen.
+4. **Motion graphics** (`project/index.html` + `comp.js`, GSAP): todos los elementos glass están en la misma escena que el metraje, y `backdrop-filter` desenfoca el video real. Una sola receta para todo el video; solo se ajusta el `brightness` (.72–.92) según el fondo.
+   - **Gancho**: video normal desde el primer frame. El único elemento es un trazo de marcador violeta sobre la tiza «¿FACTURAS?», que sigue a la pizarra frame a frame por template matching (`track.js`).
+   - **Máscara**: el video achicado va en un marco simple redondeado con borde fino, sin vidrio ni volumen. Fuera de la máscara se ve el mismo video desenfocado. Entra achicándose y sale con zoom hacia la imagen.
+   - **Subtítulos**: siempre simples, con texto blanco y sombra suave. El vidrio queda solo en elementos aparte que destacan (tarjetas y paneles). Los paneles crecen fila a fila.
+   - **B-roll** (dashboard y cierre): focus pull al mismo video desenfocado.
 5. **Render** (`project/render.mjs`): Chromium headless, determinista, frame a frame, con 4 procesos (unos 2,5 min).
 6. **Audio** (`scripts/audio_mix.py`):
    - Voz: HPF, limpieza suave, EQ, de-esser y compresión.
@@ -53,10 +57,10 @@ Los tiempos de cada gráfico están en `comp.js` y referencian palabras por índ
 
 - [x] Cada glass se ve como la referencia (ver la prueba de estilo): translúcido, con el video desenfocado detrás, borde blanco, lavanda interno, esquina violeta y sombra violeta.
 - [x] Ningún glass tiene fondo sólido. El único relleno es el oscurecimiento por `brightness`, que la receta exige para la legibilidad.
-- [x] El texto se lee en todos los frames. Sobre fondo claro (pantalón blanco) los subtítulos van dentro de una pill de vidrio con brightness .72.
-- [x] Sin sonido, el gancho funciona en los primeros 2 s: el titular «¿Facturas +3 mil € al mes?» está visible desde 0,5 s.
+- [x] El texto se lee en todos los frames: subtítulos simples con sombra suave y tarjetas con brightness ajustado al fondo.
+- [x] Sin sonido, el gancho funciona en los primeros 2 s: la pizarra «¿FACTURAS? +3 MIL» está en pantalla desde el primer frame, con subtítulos y el resaltador sobre «¿FACTURAS?».
 - [x] No hay tramos de más de 4 s sin cambio visual: hay un cambio cada 1–2,5 s.
 - [x] Nada tapa la cara (posiciones verificadas con detección de rostro) y todo el texto queda dentro de la zona segura de Meta.
-- [x] SFX y transiciones: solo aire, clic de vidrio, ticks, zoom-through, barrido de vidrio y blur dissolve.
+- [x] SFX y transiciones: solo aire, clic de vidrio y ticks; transiciones de corte seco, máscara con zoom y focus pull.
 - [x] Las palabras resaltadas coinciden con la voz (alineación forzada, al frame).
 - [x] Máster en −14,1 LUFS y −1,1 dBTP, con la música 17 dB bajo la voz.

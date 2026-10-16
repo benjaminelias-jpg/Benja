@@ -6,21 +6,19 @@
 <style>
 @font-face{font-family:"Inter";src:url("node_modules/@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;}
 @font-face{font-family:"Inter";src:url("node_modules/@fontsource-variable/inter/files/inter-latin-ext-opsz-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;unicode-range:U+0100-024F,U+20AC;}
-:root{
-  --violet:#6B4BFF; --lavender:#C3B4FF; --glow:#A88CFF; --white:#FFFFFF; --ink:#16132B; --black:#0B0B0F;
-  --ease: cubic-bezier(0.16,1,0.3,1);
-}
+:root{ --violet:#6B4BFF; --lavender:#C3B4FF; --glow:#A88CFF; --white:#FFFFFF; --ink:#16132B; --black:#0B0B0F; }
 *{box-sizing:border-box;margin:0;padding:0}
 html,body{width:1080px;height:1920px;overflow:hidden;background:var(--black);}
 body{font-family:"Inter",sans-serif;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;color:#fff;}
 #stage{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;background:var(--black);}
 
-/* ---------- capas de video ---------- */
-#bgv{position:absolute;left:-180px;top:-320px;width:1440px;height:2560px;filter:blur(38px) brightness(.62) saturate(.75);opacity:0;}
-#orbs{position:absolute;inset:0;opacity:0;background:radial-gradient(120% 80% at 50% 0%, #1d1838 0%, #120f22 55%, #0B0B0F 100%);}
-.orb{position:absolute;border-radius:50%;}
+/* ---------- video ---------- */
+/* fondo: el mismo video, desenfocado (lo que queda fuera de la máscara) */
+#bgv{position:absolute;left:-180px;top:-320px;width:1440px;height:2560px;filter:blur(40px) brightness(.5) saturate(.85);opacity:0;}
 #camwrap{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;}
-#cam{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;}
+#cam,#camOverlay{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;}
+/* resaltador sobre la tiza de la pizarra (sigue a la pizarra frame a frame) */
+#hl{position:absolute;left:0;top:0;height:50px;border-radius:10px;background:var(--violet);mix-blend-mode:lighten;opacity:0;transform-origin:0 50%;}
 /* marco simple del video achicado: redondeado, borde fino, sin volumen */
 #pipFrame{position:absolute;inset:0;border-radius:inherit;border:1.5px solid rgba(255,255,255,.26);pointer-events:none;opacity:0;}
 
@@ -44,9 +42,6 @@ body{font-family:"Inter",sans-serif;font-optical-sizing:auto;-webkit-font-smooth
     0 16px 40px -18px rgba(30,16,80,.32);
   opacity:0;
 }
-/* chip / pill de vidrio: misma receta, radio 999 y blur 20 */
-.glass.chip{--gb:20; --r:999px;}
-/* destello de luz que recorre el borde una vez */
 .glass .edge{position:absolute;inset:-1.5px;border-radius:inherit;padding:2.5px;pointer-events:none;opacity:0;
   --sa:0deg;
   background:conic-gradient(from var(--sa), transparent 0deg, transparent 300deg, rgba(255,255,255,.0) 312deg, rgba(255,255,255,.95) 336deg, rgba(235,228,255,.0) 352deg, transparent 360deg);
@@ -58,47 +53,34 @@ body{font-family:"Inter",sans-serif;font-optical-sizing:auto;-webkit-font-smooth
 .apoyo{color:rgba(255,255,255,.92);font-weight:600;font-size:28px;letter-spacing:-.005em;line-height:1.25;text-shadow:0 1px 12px rgba(20,8,60,.35);}
 .acento{color:var(--lavender);}
 .pill{display:inline-flex;align-items:center;gap:10px;background:var(--violet);color:#fff;border-radius:999px;font-weight:600;font-size:25px;line-height:1;padding:13px 22px 14px;letter-spacing:-.005em;}
-.bar{position:absolute;height:7px;border-radius:4px;background:var(--violet);transform-origin:0 50%;}
 .num{font-weight:700;letter-spacing:-.04em;line-height:1;color:#fff;font-variant-numeric:tabular-nums;text-shadow:0 2px 24px rgba(20,8,60,.35);}
 
-/* ---------- subtítulos ---------- */
+/* ---------- subtítulos: texto simple con sombra suave ---------- */
 #subs{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none;}
-.sg{position:absolute;left:540px;top:1172px;white-space:nowrap;opacity:0;
+.sg{position:absolute;left:540px;top:1212px;white-space:nowrap;opacity:0;
   font-weight:600;font-size:56px;letter-spacing:-.02em;line-height:1;display:flex;gap:15px;align-items:center;}
-.sg .w{color:#fff;text-shadow:0 2px 16px rgba(14,6,44,.62),0 1px 3px rgba(14,6,44,.45);}
-.sg .w.on{color:var(--lavender);}
-.sg .w.pw{position:relative;z-index:0;}
-.sg .w.pw .pbg{position:absolute;left:-14px;right:-14px;top:-9px;bottom:-11px;background:var(--violet);border-radius:999px;z-index:-1;opacity:0;}
-.sg.inpill{padding:22px 34px 24px;}
-.sg.inpill .w{text-shadow:0 1px 10px rgba(14,6,44,.35);}
-.badge{display:inline-flex;align-items:center;justify-content:center;width:52px;height:52px;border-radius:50%;background:var(--violet);color:#fff;font-weight:600;font-size:28px;letter-spacing:0;}
+.sg .w{color:#fff;text-shadow:0 0 24px rgba(10,4,34,.78),0 0 8px rgba(10,4,34,.55),0 2px 3px rgba(10,4,34,.5);}
+.sg .w.pw{position:relative;z-index:0;text-shadow:none;}
+.sg .w.pw .pbg{position:absolute;left:-15px;right:-15px;top:-10px;bottom:-12px;background:var(--violet);border-radius:999px;z-index:-1;opacity:0;}
 
 /* ---------- elementos ---------- */
 .card{padding:46px 52px 52px;}
-.row{display:flex;align-items:center;gap:24px;height:92px;border-top:1px solid rgba(255,255,255,.15);}
+.row{display:flex;align-items:center;gap:22px;height:76px;border-top:1px solid rgba(255,255,255,.15);}
 .row:first-of-type{border-top:none;}
-.row .ic{width:56px;height:56px;flex:none;}
-.row .tx{font-weight:600;font-size:34px;letter-spacing:-.015em;flex:1;color:#fff;}
-.check{width:46px;height:46px;border-radius:50%;background:var(--violet);display:flex;align-items:center;justify-content:center;flex:none;}
+.row .ic{width:48px;height:48px;flex:none;}
+.row .tx{font-weight:600;font-size:32px;letter-spacing:-.015em;flex:1;color:#fff;}
+.check{width:42px;height:42px;border-radius:50%;background:var(--violet);display:flex;align-items:center;justify-content:center;flex:none;}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--violet);color:#fff;font-weight:600;font-size:24px;flex:none;}
 svg.line{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
-#sweep{--r:120px;}
 </style>
 </head>
 <body>
 <div id="stage">
   <img id="bgv" alt="">
-  <div id="orbs">
-    <div class="orb" id="o1"></div><div class="orb" id="o2"></div><div class="orb" id="o3"></div><div class="orb" id="o4"></div>
-  </div>
-  <div id="pipBezel" class="glass"><div class="edge"></div></div>
-  <div id="camwrap"><img id="cam" alt=""><div id="pipFrame"></div></div>
-
-  <!-- HOOK -->
-  <div id="hookCard" class="glass card" style="left:150px;top:282px;width:780px;--r:78px;padding:42px 52px 46px;">
-    <div class="edge"></div>
-    <span class="pill" id="hookPill">Buscamos creadores</span>
-    <div class="titulo" id="hookTitle" style="font-size:70px;margin-top:26px;">¿Facturas <span class="acento" id="hookAcc">+3 mil €</span><br>al mes?</div>
-    <div class="bar" id="hookBar" style="width:0;"></div>
+  <div id="camwrap">
+    <img id="cam" alt="">
+    <div id="camOverlay"><div id="hl"></div></div>
+    <div id="pipFrame"></div>
   </div>
 
   <!-- NOMBRE DEL PROGRAMA -->
@@ -109,34 +91,39 @@ svg.line{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejo
   </div>
 
   <!-- +100 -->
-  <div id="countCard" class="glass card" style="left:220px;top:668px;width:640px;--r:64px;padding:40px 48px 44px;">
+  <div id="countCard" class="glass card" style="left:220px;top:720px;width:640px;--r:64px;padding:40px 48px 44px;">
     <div class="edge"></div>
     <span class="pill" id="countPill">Playbook validado</span>
-    <div style="display:flex;align-items:flex-end;gap:18px;margin-top:20px;">
-      <div class="num" id="countNum" style="font-size:150px;">+0</div>
-    </div>
+    <div class="num" id="countNum" style="font-size:150px;margin-top:20px;">+0</div>
     <div class="apoyo" id="countSub" style="margin-top:14px;font-size:30px;">creadores de contenido</div>
   </div>
 
-  <!-- barrido de vidrio -->
-  <div id="sweep" class="glass" style="left:0;top:-160px;width:1500px;height:2240px;"><div class="edge"></div></div>
-
-  <!-- PANEL: acceso -->
-  <div id="listPanel" class="glass card" style="left:170px;top:726px;width:740px;--r:74px;padding:32px 46px 18px;">
+  <!-- PANEL 1: acceso (bajo la máscara) -->
+  <div id="listPanel" class="glass card" style="left:170px;top:800px;width:740px;--r:74px;padding:30px 44px 16px;">
     <div class="edge"></div>
-    <div class="apoyo acento" id="listHead" style="font-size:26px;margin-bottom:6px;">Todos los miembros tienen acceso a</div>
+    <div class="apoyo acento" id="listHead" style="font-size:26px;margin-bottom:4px;">Todos los miembros tienen acceso a</div>
     <div class="row" id="r1">
       <svg class="ic line" viewBox="0 0 56 56"><circle cx="21" cy="20" r="7"/><path d="M8 42c1.5-7 6.5-11 13-11s11.5 4 13 11"/><circle cx="38" cy="22" r="5.5"/><path d="M36 31.5c5.5 0 9.6 3.4 11 9.5"/></svg>
-      <div class="tx">Equipo de lanzamientos</div><div class="check" id="c1"><svg width="24" height="24" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="tx">Equipo de lanzamientos</div><div class="check" id="c1"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </div>
     <div class="row" id="r2">
       <svg class="ic line" viewBox="0 0 56 56"><rect x="15" y="15" width="26" height="26" rx="6"/><rect x="22" y="22" width="12" height="12" rx="2.5"/><path d="M22 9v6M34 9v6M22 41v6M34 41v6M9 22h6M9 34h6M41 22h6M41 34h6"/></svg>
-      <div class="tx">Tecnología Kunfupay</div><div class="check" id="c2"><svg width="24" height="24" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="tx">Tecnología Kunfupay</div><div class="check" id="c2"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </div>
     <div class="row" id="r3">
       <svg class="ic line" viewBox="0 0 56 56"><path d="M10 44h36"/><path d="M15 37l9-10 7 6 11-14"/><path d="M35 19h7v7"/></svg>
-      <div class="tx">Financiación de campañas</div><div class="check" id="c3"><svg width="24" height="24" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="tx">Financiación de campañas</div><div class="check" id="c3"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
     </div>
+  </div>
+
+  <!-- PANEL 2: para quién es (bajo la máscara) -->
+  <div id="listPanel2" class="glass card" style="left:170px;top:752px;width:740px;--r:74px;padding:30px 44px 14px;">
+    <div class="edge"></div>
+    <div class="apoyo acento" id="list2Head" style="font-size:26px;margin-bottom:4px;">Solo para infoproductores que venden</div>
+    <div class="row" id="q1"><span class="badge">1</span><div class="tx">Comunidades</div></div>
+    <div class="row" id="q2"><span class="badge">2</span><div class="tx">Cursos</div></div>
+    <div class="row" id="q3"><span class="badge">3</span><div class="tx">Coaching</div></div>
+    <div class="row" id="q4"><span class="badge">4</span><div class="tx">Servicios y productos digitales</div></div>
   </div>
 
   <!-- DASHBOARD -->
@@ -182,6 +169,7 @@ svg.line{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejo
 <script src="node_modules/gsap/dist/gsap.min.js"></script>
 <script src="node_modules/gsap/dist/CustomEase.min.js"></script>
 <script src="words.js"></script>
+<script src="track.js"></script>
 <script src="comp.js"></script>
 </body>
 </html>
