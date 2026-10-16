@@ -1,0 +1,14 @@
+{
+  "name": "hook2-anuncio1-motion",
+  "private": true,
+  "description": "Motion graphics GLASS (HTML/CSS + GSAP) y pipeline de render para el anuncio Hook 2 de Kunfupay Classroom Platinum",
+  "scripts": {
+    "stills": "node scripts/render.mjs --stills 100,320,980,1360,1650,2100 --outdir stills",
+    "render": "node scripts/render.mjs --out video.mp4"
+  },
+  "dependencies": {
+    "@fontsource-variable/inter": "5.2.8",
+    "gsap": "3.13.0",
+    "lucide-static": "0.469.0"
+  }
+}

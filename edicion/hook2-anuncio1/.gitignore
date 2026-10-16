@@ -1,0 +1,6 @@
+node_modules/
+work/
+stills/
+*.mp4
+*.wav
+*.m4a

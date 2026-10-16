@@ -1,0 +1,1 @@
+volume=-6dB,highpass=f=80:poles=2,afftdn=nr=10:nf=-55:tn=1,equalizer=f=240:t=q:w=1.1:g=-2.0,equalizer=f=3400:t=q:w=1.0:g=1.0,equalizer=f=6800:t=q:w=1.4:g=-2.0,acompressor=threshold=-24dB:ratio=3:attack=6:release=110:knee=4:makeup=4dB,deesser=i=1:m=0.8:f=0.5:s=o

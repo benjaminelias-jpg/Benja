@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Hook 2 · Portada</title>
+<link rel="stylesheet" href="styles.css">
+<style>
+  .glass { visibility: visible; }
+  #camInner { transform: translate(-31.98px, -27.12px) scale(1.06); }   /* punch-in del 6 % centrado en la cara */
+</style>
+</head>
+<body>
+<div id="stage">
+  <div id="cam"><div id="camInner"><img id="camImg" alt=""></div></div>
+  <div id="layer">
+    <div class="glass" style="left:80px;top:716px;padding:0 26px 0 14px;height:72px;border-radius:999px;display:flex;align-items:center;gap:14px">
+      <img src="assets/logos/kunfupay-isotipo.svg" style="width:46px;height:46px;border-radius:12px" alt="">
+      <span style="font-size:32px;font-weight:600;letter-spacing:-0.01em">Classroom Platinum</span>
+    </div>
+    <div class="glass" style="left:80px;top:812px;width:920px;padding:40px 52px 44px">
+      <span class="line h2" style="color:var(--muted);margin-bottom:10px"><span class="in">Tú pones los cursos.</span></span>
+      <span class="line h1"><span class="in">Nosotros,</span></span>
+      <span class="line h1"><span class="in">el <span class="uline acc">presupuesto<i style="transform:scaleX(1)"></i></span>.</span></span>
+    </div>
+  </div>
+  <div id="safe"><div class="top"></div><div class="bot"></div></div>
+</div>
+<script>
+  const p = new URLSearchParams(location.search);
+  document.getElementById("camImg").src = p.get("frame");
+  if (p.get("debug")) document.body.classList.add("debug");
+  window.__READY = Promise.all([document.fonts.ready, document.getElementById("camImg").decode()]);
+</script>
+</body>
+</html>

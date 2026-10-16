@@ -1,0 +1,129 @@
+/* Sistema visual GLASS — hook 2 (anuncio 1) · Kunfupay Classroom Platinum
+   Lienzo 1080×1920 (9:16). Zona segura Meta: libre el 14 % superior (0–269 px) y el 35 % inferior (1248–1920 px). */
+
+@font-face {
+  font-family: "InterV";
+  src: url("assets/fonts/inter-latin-opsz-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: "InterV";
+  src: url("assets/fonts/inter-latin-ext-opsz-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  unicode-range: U+0100-02AF, U+0304, U+0308, U+0329, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
+:root {
+  --bg: #09090B;
+  --text: #F5F5F7;
+  --muted: rgba(245, 245, 247, .70);
+  --soft: rgba(245, 245, 247, .52);
+  --accent: #734BFC;        /* violeta de marca: rellenos sólidos */
+  --accent-text: #A895FF;   /* violeta claro: texto acentuado sobre oscuro */
+  --radius: 28px;           /* radio único de todas las tarjetas de vidrio */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; width: 1080px; height: 1920px; overflow: hidden;
+  background: var(--bg); color: var(--text);
+  font-family: "InterV", -apple-system, "SF Pro Display", system-ui, sans-serif;
+  font-optical-sizing: auto; -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;
+}
+#stage { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: hidden; background: var(--bg); }
+
+/* ---------- Capas de vídeo (el metraje real vive en la misma escena que el vidrio) ---------- */
+#bg { position: absolute; inset: 0; overflow: hidden; opacity: 0; }
+#bg img { position: absolute; left: -90px; top: -160px; width: 1260px; height: 2240px;
+  filter: blur(46px) brightness(.48) saturate(1.25); }
+.orb { position: absolute; border-radius: 50%; filter: blur(40px); }
+#cam { position: absolute; inset: 0; overflow: hidden; }
+#camInner { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; }
+#camInner img { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; }
+#pipShadow { position: absolute; border-radius: var(--radius); box-shadow: 0 30px 60px rgba(0,0,0,.20); opacity: 0; }
+#pipRim { position: absolute; border-radius: var(--radius); opacity: 0; pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.20), inset 0 1px 0 rgba(255,255,255,.34); }
+
+#layer { position: absolute; inset: 0; }
+
+/* ---------- Vidrio ---------- */
+.glass {
+  position: absolute; border-radius: var(--radius); overflow: hidden; visibility: hidden;
+  background: linear-gradient(180deg, rgba(255,255,255,.135) 0%, rgba(255,255,255,.085) 100%);
+  -webkit-backdrop-filter: blur(32px) saturate(1.2);
+  backdrop-filter: blur(32px) saturate(1.2);
+  box-shadow: 0 26px 54px rgba(0,0,0,.16),
+              inset 0 1px 0 rgba(255,255,255,.20),
+              inset 0 -18px 32px -24px rgba(255,255,255,.06);
+  color: var(--text);
+}
+.glass.tint { background: linear-gradient(180deg, rgba(132,94,238,.17) 0%, rgba(115,75,252,.11) 100%); }
+/* borde de 1 px más brillante arriba a la izquierda (luz cenital) */
+.glass::before {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px; pointer-events: none;
+  background: linear-gradient(140deg, rgba(255,255,255,.58) 0%, rgba(255,255,255,.22) 26%,
+              rgba(255,255,255,.09) 58%, rgba(255,255,255,.18) 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor; mask-composite: exclude;
+}
+/* refracción leve en los bordes: halo interior que dobla la luz */
+.glass::after {
+  content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.04), inset 10px 12px 22px -16px rgba(255,255,255,.22),
+              inset -10px -12px 22px -18px rgba(150,130,255,.16);
+}
+/* brillo especular que barre la superficie una sola vez al entrar */
+.glass .spec {
+  position: absolute; top: -30%; bottom: -30%; left: 0; width: 46%; pointer-events: none; opacity: 0;
+  background: linear-gradient(100deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.10) 38%,
+              rgba(255,255,255,.22) 50%, rgba(255,255,255,.10) 62%, rgba(255,255,255,0) 100%);
+  transform: translateX(-160%) skewX(-14deg);
+}
+
+/* ---------- Tipografía ---------- */
+.h1 { font-size: 86px; font-weight: 600; letter-spacing: -0.021em; line-height: 1.04; }
+.h2 { font-size: 64px; font-weight: 600; letter-spacing: -0.018em; line-height: 1.06; }
+.h3 { font-size: 50px; font-weight: 600; letter-spacing: -0.014em; line-height: 1.1; }
+.lbl { font-size: 40px; font-weight: 500; letter-spacing: -0.006em; line-height: 1.15; }
+.sm { font-size: 31px; font-weight: 500; letter-spacing: 0; line-height: 1.2; color: var(--muted); }
+.acc { color: var(--accent-text); }
+.line { display: block; overflow: hidden; padding: 0.04em 0 0.1em; margin: -0.04em 0 -0.1em; }
+.line > .in { display: inline-block; will-change: transform; }
+.num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+/* subrayado que se dibuja */
+.uline { position: relative; display: inline-block; }
+.uline i { position: absolute; left: 0; right: 0; bottom: -0.02em; height: 6px; border-radius: 3px;
+  background: var(--accent); transform-origin: 0 50%; transform: scaleX(0); }
+
+/* ---------- Elementos sólidos ---------- */
+.dot { width: 58px; height: 58px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  background: var(--accent); color: #fff; flex: none; }
+.dot svg { width: 30px; height: 30px; }
+.step { width: 50px; height: 50px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center;
+  font-size: 26px; font-weight: 600; flex: none; color: rgba(255,255,255,.62);
+  box-shadow: inset 0 0 0 1.5px rgba(255,255,255,.34); }
+.step .fill { position: absolute; inset: 0; border-radius: 50%; background: var(--accent); transform: scale(0); }
+.step span { position: relative; }
+.pill { display: inline-flex; align-items: center; gap: 12px; height: 64px; padding: 0 26px; border-radius: 999px;
+  font-size: 32px; font-weight: 500; letter-spacing: -0.004em; white-space: nowrap; }
+.pill.solid { background: var(--accent); color: #fff; }
+.pill.ghost { background: rgba(255,255,255,.10); box-shadow: inset 0 0 0 1px rgba(255,255,255,.16); color: var(--text); }
+.pill svg { width: 30px; height: 30px; }
+
+svg.ic { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+
+/* ---------- Subtítulos ---------- */
+#subs { position: absolute; left: 60px; right: 60px; top: 1138px; height: 80px; text-align: center; white-space: nowrap;
+  font-size: 58px; font-weight: 600; letter-spacing: -0.012em; line-height: 80px; }
+#subs .g { display: inline-block; text-shadow: 0 2px 22px rgba(0,0,0,.42); }
+#subs .w { color: rgba(245,245,247,.70); }
+#subs .w.on { color: var(--accent-text); }
+
+/* ---------- Guías de zona segura (solo en modo debug) ---------- */
+#safe { position: absolute; inset: 0; pointer-events: none; display: none; }
+#safe .top { position: absolute; left: 0; right: 0; top: 0; height: 269px; background: rgba(255,0,0,.18); }
+#safe .bot { position: absolute; left: 0; right: 0; top: 1248px; bottom: 0; background: rgba(255,0,0,.18); }
+body.debug #safe { display: block; }
