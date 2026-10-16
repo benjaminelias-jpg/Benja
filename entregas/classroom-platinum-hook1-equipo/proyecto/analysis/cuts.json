@@ -1,0 +1,153 @@
+{
+ "fps": 30,
+ "segments": [
+  {
+   "src_in": 0,
+   "src_out": 85,
+   "v_in": 0,
+   "v_out": 85,
+   "out_in": 0
+  },
+  {
+   "src_in": 87,
+   "src_out": 111,
+   "v_in": 87,
+   "v_out": 111,
+   "out_in": 85
+  },
+  {
+   "src_in": 117,
+   "src_out": 168,
+   "v_in": 117,
+   "v_out": 168,
+   "out_in": 109
+  },
+  {
+   "src_in": 173,
+   "src_out": 198,
+   "v_in": 173,
+   "v_out": 200,
+   "out_in": 160
+  },
+  {
+   "src_in": 200,
+   "src_out": 292,
+   "v_in": 202,
+   "v_out": 292,
+   "out_in": 185
+  },
+  {
+   "src_in": 300,
+   "src_out": 347,
+   "v_in": 300,
+   "v_out": 347,
+   "out_in": 277
+  },
+  {
+   "src_in": 349,
+   "src_out": 379,
+   "v_in": 349,
+   "v_out": 379,
+   "out_in": 324
+  },
+  {
+   "src_in": 382,
+   "src_out": 401,
+   "v_in": 382,
+   "v_out": 401,
+   "out_in": 354
+  },
+  {
+   "src_in": 404,
+   "src_out": 516,
+   "v_in": 404,
+   "v_out": 517,
+   "out_in": 373
+  },
+  {
+   "src_in": 518,
+   "src_out": 669,
+   "v_in": 519,
+   "v_out": 669,
+   "out_in": 485
+  },
+  {
+   "src_in": 670,
+   "src_out": 680,
+   "v_in": 670,
+   "v_out": 680,
+   "out_in": 636
+  },
+  {
+   "src_in": 685,
+   "src_out": 710,
+   "v_in": 685,
+   "v_out": 710,
+   "out_in": 646
+  },
+  {
+   "src_in": 719,
+   "src_out": 739,
+   "v_in": 719,
+   "v_out": 739,
+   "out_in": 671
+  },
+  {
+   "src_in": 744,
+   "src_out": 762,
+   "v_in": 744,
+   "v_out": 762,
+   "out_in": 691
+  },
+  {
+   "src_in": 764,
+   "src_out": 855,
+   "v_in": 764,
+   "v_out": 855,
+   "out_in": 709
+  },
+  {
+   "src_in": 857,
+   "src_out": 875,
+   "v_in": 857,
+   "v_out": 875,
+   "out_in": 800
+  },
+  {
+   "src_in": 879,
+   "src_out": 899,
+   "v_in": 879,
+   "v_out": 899,
+   "out_in": 818
+  },
+  {
+   "src_in": 905,
+   "src_out": 970,
+   "v_in": 905,
+   "v_out": 972,
+   "out_in": 838
+  },
+  {
+   "src_in": 987,
+   "src_out": 1058,
+   "v_in": 989,
+   "v_out": 1058,
+   "out_in": 903
+  },
+  {
+   "src_in": 1066,
+   "src_out": 1100,
+   "v_in": 1066,
+   "v_out": 1100,
+   "out_in": 974
+  },
+  {
+   "src_in": 1103,
+   "src_out": 1133,
+   "v_in": 1103,
+   "v_out": 1133,
+   "out_in": 1008
+  }
+ ],
+ "frames": 1038
+}

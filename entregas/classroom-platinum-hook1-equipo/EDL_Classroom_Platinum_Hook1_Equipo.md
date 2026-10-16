@@ -1,0 +1,29 @@
+# EDL · Classroom Platinum · Hook 1 Equipo
+
+Formato: 1080×1920, 30 fps, 36,2 s. Música: Lyria 3 Pro (generada), 103 BPM. Máster −14 LUFS / −1 dBTP.
+
+| Tiempo (s) | Lo que se dice | Lo que se ve | Texto en pantalla | Transición | Sonido |
+|---|---|---|---|---|---|
+| 00.00–03.40 | Estamos buscando a creadores de contenido que facturen más de 3 mil euros | Gancho compuesto: video achicado (plano A, cara + pizarra) en marco simple redondeado con borde fino, sobre el mismo video desenfocado + orbes violeta | Tarjeta glass: pill «Buscamos creadores» + «¿Facturas +3 mil € al mes?»; «+3 mil €» pasa a lavanda y se subraya en violeta al decir «3 mil» (2.98 s) | Entrada del glass (se forma) + destello de borde | Swell corto + aire suave; clic de vidrio en el subrayado |
+| 03.40–03.90 | …euros / para… | Zoom-through en el beat: el video achicado crece hasta pantalla completa (radio → 0, el borde se desvanece) | — | Zoom-through (cubic-bezier .16,1,.3,1) | Aire suave |
+| 03.66–04.50 | para ayudarlos a escalar | Plano A completo con push lento 100→104 % | Subtítulo en pill de vidrio (fondo de pizarra) | Corte | — |
+| 04.50–06.23 | con nuestro programa Classroom Platinum | Plano A, punch-in 108 % en el jump cut (5.33 s) | Tarjeta glass: pill «Nuestro programa» + «Classroom Platinum» (cada palabra entra con su voz: 5.38 / 5.74 s) | Punch-in | Aire suave |
+| 06.23–08.16 | Nuestro playbook ya ha sido validado por más de | Plano B (sentado) con punch-in 112 % | Subtítulos en pill de vidrio (fondo claro: pantalón blanco → brightness .72) | Corte en L (2 frames) | — |
+| 07.66–09.30 | 100 creadores de contenido | Plano B | Tarjeta glass: pill «Playbook validado» + cifra +0 → +100 (count-up) + «creadores de contenido» | Entrada glass | Aire + ticks del contador |
+| 09.23–10.66 | y todos los miembros tienen acceso | Plano B abierto 100 % (momento limpio, solo persona) | Subtítulos en pill de vidrio | Corte (jump cut enmascarado con cambio de escala) | — |
+| 10.53–11.13 | a nuestro equipo… | Barrido de vidrio a pantalla completa (der → izq); el cambio a B-roll ocurre debajo, en el beat 10.83 s | Subtítulo simple | Barrido de vidrio | Whoosh de aire paneado der → izq |
+| 11.00–16.20 | equipo de lanzamientos especializado, a toda la tecnología de Kunfupay y a financiación de sus campañas de marketing | B-roll: orbes violeta/lavanda en movimiento lento + video achicado del plano B en marco simple redondeado | Panel UI glass «Todos los miembros tienen acceso a»: 3 filas con icono de línea + check violeta que se dibuja con la voz (11.75 / 13.83 / 15.45 s) | Entrada glass escalonada | Clic de vidrio en cada check |
+| 16.20–17.37 | Y muy importante | Plano C (primer plano) + punch-in 100→107 % en «muy» | Subtítulo; «importante» dentro de pill violeta sólida | Corte duro desde B-roll | Clic suave |
+| 17.37–19.29 | el programa Classroom Platinum es solamente | Plano C (momento limpio) | Subtítulos simples, palabra activa en lavanda | — | — |
+| 19.29–20.29 | para infoproductores | Plano C | Frase clave en pill de vidrio | Entrada glass | Aire suave |
+| 20.29–21.59 | que venden acceso a | Plano C | Subtítulo simple | — | — |
+| 21.59–25.38 | comunidades, cursos, coaching o servicios y productos digitales | Plano C con punch-ins alternos 100/107 % en cada jump cut (ritmo de lista) | Pill de vidrio que cambia de ancho con número violeta: 1 Comunidades · 2 Cursos · 3 Coaching · 4 Servicios y productos digitales | Cortes al ritmo de la lista | Clic de vidrio por ítem |
+| 25.38–26.83 | similares que ya tienen | Plano C | Subtítulos simples | — | — |
+| 26.83–30.84 | un producto funcionando y vendiendo por lo menos 3 mil euros al mes | Blur dissolve (en el beat) a B-roll de orbes | Panel UI glass «Tu producto»: pill «Funcionando», gráfica de línea que se dibuja, cifra 0 → 3.000 € (count-up), «al mes» entra con la voz | Blur dissolve | Aire + clic + ticks |
+| 30.17–33.72 | Así que ya sabes, si te interesa Classroom Platinum y cumples las condiciones | El B-roll sigue bajo «Así que ya sabes»; corte al plano D (de pie, 104 %) en el beat 30.84 s; punch-in 111 % en el jump cut (32.47 s) | Subtítulos simples | Corte duro | — |
+| 33.24–34.36 | aplica aquí abajo | Plano D | Tarjeta CTA glass: pill «Classroom Platinum» + «Aplica aquí abajo» (palabra a palabra) + «Si ya facturas +3 mil € al mes» | Entrada glass | Aire suave |
+| 34.36–36.20 | — (música resuelve) | Blur dissolve a orbes; cierre | Tarjeta glass: wordmark «kunfupay» + «Classroom Platinum» + pill violeta «Aplica aquí abajo» | Blur dissolve | Acorde final de la música + clic |
+
+## Cortes de audio (silencios recortados)
+
+Se recortaron 20 pausas (umbral −38 dB) dejando 80–160 ms de aire; 37,9 s → 34,6 s de voz. En los 3 cambios de plano se aplica corte en L (el plano saliente dura 1–2 frames más). Los jump cuts dentro de un plano se enmascaran alternando la escala (punch-in 4–11 %).
