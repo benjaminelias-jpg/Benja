@@ -84,6 +84,10 @@ music *= db(g)[None, :]
 
 mix = voice[None, :] * 1.0 + music + sfx
 sf.write(sys.argv[5], mix.T, SR, subtype="FLOAT")
+# stems (para control de calidad: inteligibilidad voz / cama)
+stem = sys.argv[5].rsplit(".", 1)[0]
+sf.write(stem + "_voz.wav", voice, SR, subtype="FLOAT")
+sf.write(stem + "_cama.wav", (music + sfx).T, SR, subtype="FLOAT")
 mu = music[:, speech > 0.5].T
 print(f"voz {LV:.1f} LUFS · música sin voz {LV - 10:.1f} · música bajo voz ≈ {meter.integrated_loudness(mu) if len(mu) > SR else float('nan'):.1f} LUFS · "
       f"SFX {len(meta['sfx'])} → {sys.argv[5]}")
