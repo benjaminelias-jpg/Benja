@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Classroom Platinum · Anuncio 1</title>
+<style>
+@font-face{font-family:"Inter";src:url("node_modules/@fontsource-variable/inter/files/inter-latin-opsz-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;}
+@font-face{font-family:"Inter";src:url("node_modules/@fontsource-variable/inter/files/inter-latin-ext-opsz-normal.woff2") format("woff2");font-weight:100 900;font-style:normal;unicode-range:U+0100-024F,U+20AC;}
+:root{ --violet:#6B4BFF; --lavender:#C3B4FF; --glow:#A88CFF; --white:#FFFFFF; --ink:#16132B; --black:#0B0B0F; }
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1080px;height:1920px;overflow:hidden;background:var(--black);}
+body{font-family:"Inter",sans-serif;font-optical-sizing:auto;-webkit-font-smoothing:antialiased;color:#fff;}
+#stage{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;background:var(--black);}
+
+/* ---------- video ---------- */
+#bgv{position:absolute;left:-180px;top:-320px;width:1440px;height:2560px;filter:blur(40px) brightness(.55) saturate(.9);opacity:0;}
+#camwrap{position:absolute;left:0;top:0;width:1080px;height:1920px;overflow:hidden;}
+#cam{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:0 0;}
+#pipFrame{position:absolute;inset:0;border-radius:inherit;border:1.5px solid rgba(255,255,255,.26);pointer-events:none;opacity:0;}
+
+/* ---------- GLASS: receta única ---------- */
+.glass{
+  --gb:30; --gs:1.15; --gbr:.80; --r:64px;
+  position:absolute; border-radius:var(--r);
+  border:1.5px solid rgba(255,255,255,.85);
+  background:
+    radial-gradient(48% 42% at 98% 104%, rgba(168,140,255,.74) 0%, rgba(168,140,255,.26) 45%, transparent 100%),
+    radial-gradient(80% 30% at 30% 106%, rgba(210,198,255,.22) 0%, transparent 100%),
+    linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.03) 45%, rgba(255,255,255,.05));
+  -webkit-backdrop-filter: blur(calc(var(--gb) * 1px)) saturate(var(--gs)) brightness(var(--gbr));
+  backdrop-filter: blur(calc(var(--gb) * 1px)) saturate(var(--gs)) brightness(var(--gbr));
+  box-shadow:
+    inset 0 2px 1px rgba(255,255,255,.55),
+    inset 0 24px 32px -18px rgba(255,255,255,.55),
+    inset 0 0 56px 4px rgba(226,218,255,.55),
+    inset 0 -30px 48px -16px rgba(190,172,255,.45),
+    0 50px 100px -28px rgba(30,16,80,.65),
+    0 16px 40px -18px rgba(30,16,80,.32);
+  opacity:0;
+}
+.glass .edge{position:absolute;inset:-1.5px;border-radius:inherit;padding:2.5px;pointer-events:none;opacity:0;
+  --sa:0deg;
+  background:conic-gradient(from var(--sa), transparent 0deg, transparent 300deg, rgba(255,255,255,.0) 312deg, rgba(255,255,255,.95) 336deg, rgba(235,228,255,.0) 352deg, transparent 360deg);
+  -webkit-mask:linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0); -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box exclude, linear-gradient(#000 0 0);}
+
+/* ---------- tipografía ---------- */
+.titulo{color:#fff;font-weight:700;letter-spacing:-.025em;line-height:1.04;text-shadow:0 2px 18px rgba(20,8,60,.35);}
+.apoyo{color:rgba(255,255,255,.92);font-weight:600;font-size:28px;letter-spacing:-.005em;line-height:1.25;text-shadow:0 1px 12px rgba(20,8,60,.35);}
+.label{color:var(--lavender);font-weight:600;font-size:26px;letter-spacing:-.005em;line-height:1.2;}
+.acento{color:var(--lavender);}
+.pill{display:inline-flex;align-items:center;gap:10px;background:var(--violet);color:#fff;border-radius:999px;font-weight:600;font-size:25px;line-height:1;padding:13px 22px 14px;letter-spacing:-.005em;}
+.num{font-weight:700;letter-spacing:-.04em;line-height:1;color:#fff;font-variant-numeric:tabular-nums;text-shadow:0 2px 24px rgba(20,8,60,.35);}
+.chipo{display:inline-flex;align-items:center;border:1.5px solid rgba(255,255,255,.38);border-radius:999px;padding:11px 20px 12px;font-weight:600;font-size:27px;color:#fff;letter-spacing:-.01em;}
+
+/* ---------- subtítulos: texto simple con sombra suave ---------- */
+#subs{position:absolute;left:0;top:0;width:1080px;height:1920px;pointer-events:none;}
+.sg{position:absolute;left:540px;top:1212px;white-space:nowrap;opacity:0;
+  font-weight:600;font-size:56px;letter-spacing:-.02em;line-height:1;display:flex;gap:15px;align-items:center;}
+.sg .w{color:#fff;text-shadow:0 0 24px rgba(10,4,34,.78),0 0 8px rgba(10,4,34,.55),0 2px 3px rgba(10,4,34,.5);}
+.sg .w.pw{position:relative;z-index:0;text-shadow:none;}
+.sg .w.pw .pbg{position:absolute;left:-15px;right:-15px;top:-10px;bottom:-12px;background:var(--violet);border-radius:999px;z-index:-1;opacity:0;}
+
+/* ---------- elementos ---------- */
+.card{padding:42px 50px 46px;}
+.row{display:flex;align-items:center;gap:22px;height:76px;border-top:1px solid rgba(255,255,255,.15);}
+.row.first{border-top:none;}
+.row .ic{width:48px;height:48px;flex:none;}
+.row .tx{font-weight:600;font-size:32px;letter-spacing:-.015em;flex:1;color:#fff;}
+.check{width:42px;height:42px;border-radius:50%;background:var(--violet);display:flex;align-items:center;justify-content:center;flex:none;}
+.badge{display:inline-flex;align-items:center;justify-content:center;width:46px;height:46px;border-radius:50%;background:var(--violet);color:#fff;font-weight:600;font-size:24px;flex:none;}
+svg.line{fill:none;stroke:#fff;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;}
+.hd{display:flex;align-items:center;gap:16px;}
+.v{display:none;}
+</style>
+</head>
+<body>
+<div id="stage">
+  <img id="bgv" alt="">
+  <div id="camwrap"><img id="cam" alt=""><div id="pipFrame"></div></div>
+
+  <!-- GANCHO 1: notificación de pago -->
+  <div id="notif" class="glass v" style="left:270px;top:668px;width:540px;--r:50px;padding:24px 30px 26px;">
+    <div class="edge"></div>
+    <div style="display:flex;gap:18px;align-items:center;">
+      <div style="width:66px;height:66px;border-radius:18px;background:#6B4BFF;display:flex;align-items:center;justify-content:center;flex:none;font-weight:700;font-size:40px;letter-spacing:-.04em;">k</div>
+      <div style="flex:1;">
+        <div style="font-size:20px;font-weight:600;color:rgba(255,255,255,.62);">Kunfupay · ahora</div>
+        <div style="font-size:26px;font-weight:600;margin-top:3px;">Pago recibido</div>
+        <div class="num" id="notifNum" style="font-size:42px;margin-top:5px;">+0 €</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GANCHO 2: tú pones / nosotros ponemos -->
+  <div id="deal" class="glass card v" style="left:160px;top:684px;width:760px;--r:76px;padding:30px 46px 22px;">
+    <div class="edge"></div>
+    <div class="row first" id="d1" style="height:auto;padding:12px 0 18px;">
+      <svg class="ic line" viewBox="0 0 56 56"><rect x="9" y="12" width="38" height="30" rx="6"/><path d="M24 21.5v11l9-5.5z"/><path d="M18 47h20"/></svg>
+      <div><div class="label">Tú pones</div><div class="titulo" style="font-size:52px;margin-top:4px;">los cursos</div></div>
+    </div>
+    <div class="row" id="d2" style="height:auto;padding:18px 0 12px;">
+      <svg class="ic line" viewBox="0 0 56 56"><path d="M10 44h36"/><path d="M15 37l9-10 7 6 11-14"/><path d="M35 19h7v7"/></svg>
+      <div><div class="label">Nosotros ponemos</div><div class="titulo acento" style="font-size:52px;margin-top:4px;">el presupuesto</div></div>
+    </div>
+  </div>
+
+  <!-- M1: nombre del programa (bajo la máscara) -->
+  <div id="nameCard" class="glass card" style="left:110px;top:884px;width:860px;--r:86px;padding:36px 52px 40px;">
+    <div class="edge"></div>
+    <div class="titulo" style="font-size:72px;white-space:nowrap;"><span id="nmA">Classroom</span> <span id="nmB" class="acento">Platinum</span></div>
+    <div class="apoyo" id="nmSub" style="margin-top:12px;font-size:29px;">Nuestro programa de partnerships de Kunfupay</div>
+    <div id="nmPill" style="margin-top:20px;"><span class="pill">Invertimos en tu negocio digital</span></div>
+  </div>
+
+  <!-- B2: te apoyamos con -->
+  <div id="supportPanel" class="glass card" style="left:170px;top:704px;width:740px;--r:74px;padding:30px 44px 16px;">
+    <div class="edge"></div>
+    <div class="label" id="supHead" style="margin-bottom:4px;">Te apoyamos con</div>
+    <div class="row first" id="s1"><svg class="ic line" viewBox="0 0 56 56"><circle cx="21" cy="20" r="7"/><path d="M8 42c1.5-7 6.5-11 13-11s11.5 4 13 11"/><circle cx="38" cy="22" r="5.5"/><path d="M36 31.5c5.5 0 9.6 3.4 11 9.5"/></svg><div class="tx">Equipo</div><div class="check" id="sc1"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    <div class="row" id="s2"><svg class="ic line" viewBox="0 0 56 56"><rect x="8" y="16" width="40" height="26" rx="5"/><circle cx="28" cy="29" r="5.5"/><path d="M14 22h4M38 36h4"/></svg><div class="tx">Presupuesto para anuncios</div><div class="check" id="sc2"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    <div class="row" id="s3"><svg class="ic line" viewBox="0 0 56 56"><rect x="10" y="10" width="15" height="15" rx="4"/><rect x="31" y="10" width="15" height="15" rx="4"/><rect x="10" y="31" width="15" height="15" rx="4"/><path d="M33 38.5l4 4 8-8"/></svg><div class="tx">Un sistema ya probado</div><div class="check" id="sc3"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  </div>
+
+  <!-- B4: ¿es para ti? (promete los 3 pasos) -->
+  <div id="loopCard" class="glass card" style="left:150px;top:690px;width:780px;--r:78px;padding:38px 50px 42px;">
+    <div class="edge"></div>
+    <span class="pill" id="loopPill">En 3 pasos</span>
+    <div class="titulo" id="loopTitle" style="font-size:72px;margin-top:20px;">¿Es para ti?</div>
+    <div id="loopSteps" style="display:flex;gap:26px;margin-top:26px;">
+      <div class="hd" id="ls1"><span class="badge">1</span><span class="apoyo">Tu negocio</span></div>
+      <div class="hd" id="ls2"><span class="badge">2</span><span class="apoyo">Reunión</span></div>
+      <div class="hd" id="ls3"><span class="badge">3</span><span class="apoyo">Programa</span></div>
+    </div>
+  </div>
+
+  <!-- B5a: paso 1 -->
+  <div id="step1" class="glass card" style="left:150px;top:690px;width:780px;--r:78px;padding:36px 48px 40px;">
+    <div class="edge"></div>
+    <div class="hd"><span class="badge">1</span><span class="label">Paso 1</span></div>
+    <div class="titulo" id="st1Title" style="font-size:58px;margin-top:18px;">Nos cuentas tu negocio</div>
+    <div style="display:flex;gap:14px;margin-top:24px;">
+      <span class="chipo" id="ch1">Qué vendes</span><span class="chipo" id="ch2">A cuánto</span><span class="chipo" id="ch3">A quién</span>
+    </div>
+    <div class="hd" id="st1Note" style="margin-top:22px;gap:12px;"><div class="check" style="width:36px;height:36px;"><svg width="20" height="20" viewBox="0 0 24 24"><path d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div><span class="apoyo acento">Solo negocios digitales</span></div>
+  </div>
+
+  <!-- B5b: paso 2 (bajo la máscara) -->
+  <div id="step2" class="glass card" style="left:170px;top:800px;width:740px;--r:74px;padding:28px 44px 14px;">
+    <div class="edge"></div>
+    <div class="hd" id="st2Head"><span class="badge">2</span><span class="titulo" style="font-size:40px;">Reunión con un consultor</span></div>
+    <div class="row first" id="m1" style="margin-top:6px;"><svg class="ic line" viewBox="0 0 56 56"><rect x="9" y="12" width="38" height="34" rx="6"/><path d="M9 22h38M19 8v8M37 8v8"/></svg><div class="tx">¿Tu negocio encaja?</div><div class="check" id="mc1"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    <div class="row" id="m2"><svg class="ic line" viewBox="0 0 56 56"><circle cx="28" cy="28" r="17"/><circle cx="28" cy="28" r="9"/><circle cx="28" cy="28" r="2"/></svg><div class="tx">Estrategia a medida</div><div class="check" id="mc2"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  </div>
+
+  <!-- B5c: paso 3 -->
+  <div id="step3" class="glass card" style="left:150px;top:650px;width:780px;--r:78px;padding:32px 46px 14px;">
+    <div class="edge"></div>
+    <div class="hd" id="st3Head"><span class="badge">3</span><span class="titulo" style="font-size:44px;">Comenzamos el programa</span></div>
+    <div class="row first" id="p1" style="margin-top:8px;"><svg class="ic line" viewBox="0 0 56 56"><circle cx="21" cy="20" r="7"/><path d="M8 42c1.5-7 6.5-11 13-11s11.5 4 13 11"/><circle cx="38" cy="22" r="5.5"/><path d="M36 31.5c5.5 0 9.6 3.4 11 9.5"/></svg><div class="tx">Tu comunidad en Classroom</div><div class="check" id="pc1"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    <div class="row" id="p2"><svg class="ic line" viewBox="0 0 56 56"><circle cx="28" cy="20" r="8"/><path d="M13 46c1.8-8.5 7.6-13 15-13s13.2 4.5 15 13"/></svg><div class="tx">Account manager</div><div class="check" id="pc2"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    <div class="row" id="p3"><svg class="ic line" viewBox="0 0 56 56"><path d="M28 8l17 7v12c0 10-7 17-17 21-10-4-17-11-17-21V15z"/><path d="M20 28l6 6 11-12"/></svg><div class="tx">Oferta validada</div><div class="check" id="pc3"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+    <div class="row" id="p4"><svg class="ic line" viewBox="0 0 56 56"><path d="M10 44h36"/><path d="M15 37l9-10 7 6 11-14"/><path d="M35 19h7v7"/></svg><div class="tx">Escalado</div><div class="check" id="pc4"><svg width="22" height="22" viewBox="0 0 24 24"><path class="ck" d="M5 12.5l4.5 4.5L19 7.5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg></div></div>
+  </div>
+
+  <!-- B5d: los anuncios los pagamos nosotros -->
+  <div id="payCard" class="glass card" style="left:150px;top:700px;width:780px;--r:78px;padding:38px 50px 44px;">
+    <div class="edge"></div>
+    <span class="pill" id="payPill">Escalado</span>
+    <div class="titulo" style="font-size:70px;margin-top:20px;"><span id="pyA">Nosotros pagamos</span><br><span id="pyB" class="acento">todos los anuncios</span></div>
+    <div class="apoyo" id="paySub" style="margin-top:16px;">Sin arriesgar tu dinero</div>
+  </div>
+
+  <!-- M3: para quién es (bajo la máscara) -->
+  <div id="whoPanel" class="glass card" style="left:170px;top:800px;width:740px;--r:74px;padding:30px 44px 14px;">
+    <div class="edge"></div>
+    <div style="position:relative;height:34px;margin-bottom:4px;">
+      <div class="label" id="whoHeadA" style="position:absolute;left:0;top:0;">No es para todo el mundo</div>
+      <div class="label" id="whoHeadB" style="position:absolute;left:0;top:0;opacity:0;">Solo para infoproductores que venden</div>
+    </div>
+    <div class="row first" id="w1"><span class="badge">1</span><div class="tx">Acceso a una comunidad</div></div>
+    <div class="row" id="w2"><span class="badge">2</span><div class="tx">Suscripciones</div></div>
+    <div class="row" id="w3"><span class="badge">3</span><div class="tx">Educación online</div></div>
+  </div>
+
+  <!-- B8: requisito -->
+  <div id="reqCard" class="glass card" style="left:220px;top:700px;width:640px;--r:64px;padding:38px 48px 42px;">
+    <div class="edge"></div>
+    <span class="pill" id="reqPill">Requisito</span>
+    <div class="num" id="reqNum" style="font-size:132px;margin-top:20px;">+0 €</div>
+    <div class="apoyo" id="reqSub" style="margin-top:12px;font-size:30px;">de facturación al mes</div>
+  </div>
+
+  <!-- B9: CTA -->
+  <div id="ctaCard" class="glass card" style="left:180px;top:724px;width:720px;--r:72px;padding:40px 50px 46px;">
+    <div class="edge"></div>
+    <span class="pill" id="ctaPill">Classroom Platinum</span>
+    <div class="titulo" style="font-size:78px;margin-top:22px;white-space:nowrap;"><span id="ctA">Clic</span> <span id="ctB" class="acento">aquí abajo</span></div>
+  </div>
+
+  <!-- cierre -->
+  <div id="endCard" class="glass card" style="left:170px;top:640px;width:740px;--r:74px;padding:52px 54px 58px;text-align:center;">
+    <div class="edge"></div>
+    <div id="endMark" style="font-weight:700;font-size:40px;letter-spacing:-.035em;color:#fff;">kunfupay</div>
+    <div class="titulo" id="endTitle" style="font-size:76px;margin-top:26px;">Classroom<br><span class="acento">Platinum</span></div>
+    <div style="margin-top:36px;"><span class="pill" id="endPill" style="font-size:30px;padding:20px 34px 21px;">Clic aquí abajo</span></div>
+  </div>
+
+  <div id="subs"></div>
+</div>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="node_modules/gsap/dist/CustomEase.min.js"></script>
+<script src="words_hook1.js"></script>
+<script src="words_hook2.js"></script>
+<script src="comp.js"></script>
+</body>
+</html>
