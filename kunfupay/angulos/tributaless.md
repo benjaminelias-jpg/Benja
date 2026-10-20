@@ -465,10 +465,11 @@ Los 8 reels, con su guion, su UTM, 5 títulos y 5 textos principales cada uno, e
 
 Pedido por el usuario y pasado a Hernán. Todos los campos son obligatorios, las preguntas van primero y los datos de contacto al final.
 
-1. **¿Cómo tienes montada tu parte fiscal?** (una opción): Autónomo · Sociedad en España (S.L.) · LLC u otra sociedad fuera de España · Ya cobro con un Merchant of Record (como Kunfupay) · Todavía nada · No lo tengo claro
-2. **¿Cuánto facturas al mes?** Los mismos rangos que en las landings de Kunfupay, en euros (usuario: «los mismos que en las landings de kunfu»).
-3. Nombre · 4. Correo · 5. Teléfono (WhatsApp), con +34 por defecto
+1. **¿Qué vendes?** (puedes marcar las dos): Productos físicos · Productos digitales
+2. **¿Cómo tienes montada tu parte fiscal?** (una opción, en este orden, con «Plataformas como Kunfupay» primero): Plataformas como Kunfupay · Autónomo · Sociedad en España (S.L.) · LLC u otra sociedad fuera de España · Todavía nada · No lo tengo claro
+3. **¿Cuánto facturas al mes?** Los mismos rangos que en las landings de Kunfupay, en euros (usuario: «los mismos que en las landings de kunfu»).
+4. Nombre · 5. Correo · 6. Teléfono (WhatsApp), con +34 por defecto
 
-**Después de enviar:** el lead calificado va a una landing de calificado y el resto, a otra de no calificado. Calificado: factura 2.000 € al mes o más (lo que dicen los estáticos; los reels dicen 3.000 €).
+**Después de enviar:** el lead calificado va a una landing de calificado y el resto, a otra de no calificado. Calificado: vende productos digitales y factura 2.000 € al mes o más (lo que dicen los estáticos; los reels dicen 3.000 €).
 
 Más la casilla de privacidad obligatoria y los UTM de la URL en campos ocultos. Sustituye a las seis preguntas del §6 de la estrategia.

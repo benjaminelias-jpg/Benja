@@ -487,10 +487,11 @@ Créditos Higgsfield: V1 27,5 · V2 descartada 30,25 · V3 descartada 33 · V04 
 
 Pedido por el usuario y pasado a Hernán. Todos los campos son obligatorios, las preguntas van primero y los datos de contacto al final.
 
-1. **¿Dónde vendes hoy?** (puedes marcar varias): Hotmart · Skool · Classroom de Kunfupay · Otra (¿cuál?)
-2. **¿Cuánto facturas al mes?** Los mismos rangos que en las landings de Kunfupay, en dólares (usuario: «los mismos que en las landings de kunfu»).
-3. Nombre · 4. Correo · 5. Teléfono (WhatsApp), con prefijo de país
+1. **¿Qué vendes?** (puedes marcar las dos): Productos físicos · Productos digitales
+2. **¿Dónde vendes hoy?** (puedes marcar varias): Hotmart · Skool · Classroom de Kunfupay · Otra (¿cuál?)
+3. **¿Cuánto facturas al mes?** Los mismos rangos que en las landings de Kunfupay, en dólares (usuario: «los mismos que en las landings de kunfu»).
+4. Nombre · 5. Correo · 6. Teléfono (WhatsApp), con prefijo de país
 
-**Después de enviar:** el lead calificado va a una landing de calificado y el resto, a otra de no calificado. Calificado: factura 5.000 USD al mes o más.
+**Después de enviar:** el lead calificado va a una landing de calificado y el resto, a otra de no calificado. Calificado: vende productos digitales y factura 5.000 USD al mes o más.
 
 Más la casilla de privacidad obligatoria y los UTM de la URL en campos ocultos. El corte que filtra es 5.000 USD al mes.
