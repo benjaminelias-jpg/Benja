@@ -67,89 +67,100 @@ Y nuestro partner Kunfupay, el cobro: cada alumno paga como paga en su país.
 
 Mira el video del enlace.
 
-## Skool, Hotmart y Classroom de Kunfupay a la misma altura (20/10/2026, versión 4, pendiente de validar)
+## Skool, Hotmart y Classroom de Kunfupay a la misma altura (20/10/2026, versión 5, pendiente de validar)
 
-Objetivo: que Classroom de Kunfupay se lea al mismo nivel que Skool y Hotmart; en pantalla, los tres nombres al mismo tamaño y con la misma tipografía, sin logos ajenos. El filtro de 5.000 USD/mes va solo en el 1 y el 3; el 2 y el 4 se prueban solo con «si ya vendes en…». Los hooks y los dolores van con las palabras literales del usuario («el tráfico frío cada vez te sale más y más caro», «el ROAS baja», «cada vez te cuesta más convertir tu tráfico orgánico»), y el cuerpo cuenta el vehículo de Ignia por lo que pasa: lanzamientos, evergreen y MRR.
+Objetivo: que Classroom de Kunfupay se lea al mismo nivel que Skool y Hotmart; en pantalla, los tres nombres al mismo tamaño y con la misma tipografía, sin logos ajenos. El filtro de 5.000 USD/mes va solo en el 1 y el 3. Los dolores van con las palabras literales del usuario («cada vez te sale más caro el tráfico frío», «el ROAS baja», «cada vez te cuesta más convertir tu tráfico orgánico»). El método de Ignia no se nombra («unificamos lanzamientos, evergreen y MRR»): se demuestra con lo que pasa. El lanzamiento vende el acceso a la comunidad con pago mensual, los anuncios siguen encendidos cuando cierra el carrito, y al mes siguiente los del lanzamiento vuelven a pagar, más los nuevos.
 
 En el 3, [X], [Y] y la historia del cliente salen de un caso real; para que cuadre con el filtro, [X] de 5.000 o más.
 
 ### 1 · Esto es para ti
 
-Con filtro de 5.000 USD/mes · 109 palabras · unos 41 segundos
+Con filtro de 5.000 USD/mes · 93 palabras · unos 35 segundos
 
 *[En pantalla: Skool · Hotmart · Classroom de Kunfupay, los tres nombres al mismo tamaño y con la misma tipografía]*  
 Si usas Skool, Hotmart o Classroom de Kunfupay y facturas más de 5.000 dólares al mes, esto es para ti.
 
-*[En pantalla: Gráfico de facturación: un pico en cada lanzamiento y casi cero entre medio]*  
-Hoy facturas así: lanzas, entra un pico… y al mes siguiente, casi a cero.
+*[En pantalla: Gráfico de facturación: un pico la semana del lanzamiento y casi cero el mes siguiente]*  
+Hoy es así: lanzas, facturas mucho en una semana… y al mes siguiente, vuelta a empezar.
 
-*[En pantalla: Lanzamiento + Evergreen + MRR, cada uno aparece cuando se nombra]*  
-PERO en Ignia unificamos lanzamientos, evergreen y MRR.  
-El lanzamiento: abrimos el carrito y facturas de golpe.  
-El evergreen: el embudo sigue abierto después del carrito, con anuncios.  
-Y el MRR: no te pagan una vez, te pagan cada mes.
+*[En pantalla: Página de pago: «Acceso a la comunidad · pago mensual»]*  
+PERO en Ignia tu lanzamiento no vende un pago único: vende el acceso a tu comunidad, y te lo pagan cada mes.
 
-*[En pantalla: El gráfico pasa a escalones que suben mes a mes]*  
-Así, la facturación del lanzamiento la replicas todos los meses.  
-Y con nuestro sistema de adquisición, tendrás nuevos clientes todos los meses, más los que ya te compraron al principio.
+*[En pantalla: «Carrito cerrado» · «Anuncios: activos» · van entrando avisos de «Nuevo miembro»]*  
+Cierra el carrito… y dejamos los anuncios encendidos: cada semana entra gente nueva.
+
+*[En pantalla: Panel de la comunidad en Classroom de Kunfupay, mes 2: «Renovaciones» + «Nuevos»; el gráfico sube en escalón]*  
+Al mes siguiente, los del lanzamiento te vuelven a pagar. Más los nuevos.  
+Y así, cada mes.
 
 Mira el video del enlace.
 
-### 2 · El tráfico frío, cada vez más caro
+### 2 · Cada vez te sale más caro el tráfico frío
 
-Sin filtro · 111 palabras · unos 42 segundos
+Sin filtro · 102 palabras · unos 38 segundos
 
 *[En pantalla: Skool · Hotmart · Classroom de Kunfupay]*  
-Si ya vendes en Skool, Hotmart o Classroom de Kunfupay y haces lanzamientos, el tráfico frío cada vez te sale más y más caro, y el ROAS baja.
+Si vendes en Skool, Hotmart o Classroom de Kunfupay con lanzamientos, cada vez te sale más caro el tráfico frío. Y el ROAS baja.
 
 *[En pantalla: Tres lanzamientos seguidos: en cada uno sube el coste por cliente y baja el ROAS; entre medio, nada]*  
-Y en cada lanzamiento empiezas de cero: pagas por desconocidos, abres el carrito una semana… y se apaga todo.
+Y en cada lanzamiento empiezas de cero: pagas por gente que no te conoce, abres el carrito una semana… y se apaga todo.
 
 Mira cómo lo hacemos en Ignia.
 
-*[En pantalla: Lanzamiento + Evergreen + MRR]*  
-Unificamos lanzamientos, evergreen y MRR.  
-Tu lanzamiento abre una comunidad de pago mensual: el cliente que te costó traer te paga todos los meses, no una vez.  
-Y cuando cierra el carrito, nuestro sistema de adquisición te sigue trayendo clientes nuevos con anuncios.
+*[En pantalla: «Carrito cerrado» · «Anuncios: activos» · avisos de «Nuevo miembro» todo el mes]*  
+Cuando cierra tu carrito, los anuncios no se apagan: siguen trayendo gente todo el mes.
 
-Así, cada lanzamiento suma, en vez de empezar de cero.  
+*[En pantalla: Ficha de un cliente: «Te costó traerlo: una vez» · «Te paga: mes 1, mes 2, mes 3…»]*  
+Y cada cliente que te costó traer no te paga una vez: te paga todos los meses, en tu comunidad.
+
+*[En pantalla: Siguiente lanzamiento: la lista ya llena de gente que te conoce, y la comunidad pagando]*  
+Así, el siguiente lanzamiento ya no empieza de cero.  
 Mira el video del enlace.
 
 ### 3 · De [X] a [Y] de ingresos mensuales
 
-Con filtro de 5.000 USD/mes · 112 palabras · unos 42 segundos
+Con filtro de 5.000 USD/mes · 110 palabras · unos 41 segundos
 
 *[En pantalla: Skool · Hotmart · Classroom de Kunfupay]*  
 Si vendes en Skool, Hotmart o Classroom de Kunfupay y facturas más de 5.000 dólares al mes, mira cómo pasamos a un cliente de [X] a [Y] de ingresos mensuales.
 
-*[En pantalla: Panel de su comunidad en Classroom de Kunfupay: [X] al mes, dos picos al año y meses planos]*  
+*[En pantalla: Panel de su comunidad en Classroom de Kunfupay: [X] al mes; dos picos al año y meses planos]*  
 Lanzaba dos veces al año. Facturaba fuerte esas dos semanas… y el resto del año, casi nada.
 
-*[En pantalla: Lanzamiento + Evergreen + MRR]*  
-PERO en Ignia unificamos lanzamientos, evergreen y MRR.  
-Su lanzamiento abrió una comunidad de pago mensual, en vez de un pago único.  
-Cuando cerró el carrito, nuestro sistema de adquisición siguió con anuncios, trayéndole clientes nuevos cada mes.  
-Y cada mes, los nuevos se sumaban a los que ya le habían comprado.
+*[En pantalla: Su página de pago: «Acceso a la comunidad · pago mensual»]*  
+PERO su siguiente lanzamiento lo montamos nosotros, en Ignia.  
+Y no vendió un pago único: vendió el acceso a su comunidad, con pago mensual.
 
-*[En pantalla: El mismo panel de Classroom de Kunfupay: [Y] al mes]*  
-Así pasó de [X] a [Y] al mes.  
+*[En pantalla: «Carrito cerrado» · «Anuncios: activos» · «Nuevo miembro» cada semana]*  
+Cerró el carrito… y dejamos los anuncios encendidos. Cada semana entraba gente nueva.
+
+*[En pantalla: Mes a mes: «Renovaciones» + «Nuevos»; el panel de Classroom de Kunfupay sube hasta [Y] al mes]*  
+Y cada mes, los del lanzamiento le volvían a pagar. Más los nuevos.  
+Así pasó de [X] a [Y] al mes.
+
 Mira el video del enlace.
 
 ### 4 · Cada vez te cuesta más convertir tu tráfico orgánico
 
-Sin filtro · 108 palabras · unos 40 segundos
+Sin filtro · 102 palabras · unos 38 segundos
 
 *[En pantalla: Skool · Hotmart · Classroom de Kunfupay]*  
 Si ya vendes en Skool, Hotmart o Classroom de Kunfupay, y cada vez te cuesta más convertir tu tráfico orgánico, mira esto.
 
 *[En pantalla: Métricas de un post: miles de likes y guardados; ventas: 2]*  
-Tu audiencia te ve, te comenta, te guarda los posts… y compra cada vez menos.  
+Tu audiencia te ve, te comenta, te guarda los posts.  
 No es tu contenido: es que nunca le das un momento para decidir.
 
-*[En pantalla: Lanzamiento + Evergreen + MRR]*  
-PERO en Ignia unificamos lanzamientos, evergreen y MRR.  
-El lanzamiento le da ese momento: una semana de carrito abierto.  
-Después, nuestro sistema de adquisición te trae clientes nuevos con anuncios, más allá de tu orgánico.  
-Y con el MRR te pagan cada mes: los nuevos, más los que ya te compraron al principio.
+*[En pantalla: Cuenta atrás: «El carrito cierra en 7 días»]*  
+PERO en Ignia se lo damos: abrimos tu carrito una semana.
+
+*[En pantalla: «Nuevo miembro · pago mensual»]*  
+Y los que entran te pagan cada mes, en tu comunidad.
+
+*[En pantalla: «Carrito cerrado» · «Anuncios: activos» · entran miembros que no venían de tus redes]*  
+Cierra el carrito… y los anuncios te siguen trayendo gente nueva, más allá de tu orgánico.
+
+*[En pantalla: El panel sube mes a mes: «Nuevos» + «Renovaciones»]*  
+Así, cada mes tienes clientes nuevos, más los que ya te compraron al principio.
 
 Mira el video del enlace.
