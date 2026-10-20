@@ -183,3 +183,10 @@
 - **Lección de proceso:** en la V06, tres archivos (2A, 3A y 4B) enseñaban otra pieza que la de su nombre, y así se publicaron en el artifact. Antes de entregar, se revisa una hoja de contacto con el ID de cada pieza encima.
 - **Ejemplo:** mal: «Desde tu próxima venta, Kunfupay hace la factura y paga los impuestos de cada venta. Tú te olvidas.» → bien: «Desde tu próxima venta, Tributaless hace la factura y paga los impuestos de cada venta gracias a Kunfupay. Tú te olvidas.»
 - **Pendiente de confirmar:** la VSL de Tributaless (punto 3: «La factura de cada alumno la hace Kunfupay») y los 8 reels («Cada factura la hace Kunfupay») siguen con la frase antigua.
+
+## 20/10/2026 · Si el usuario manda un artifact, se trabaja sobre ese artifact
+
+- **Qué hice:** el usuario mandó el artifact de estrategia de Tributaless y pidió «las creatividades estáticas» con el logo de Kunfupay. Hice la V07 de las piezas de otro artifact (el de anuncios y textos, más reciente), porque di por hecho que quería la última versión.
+- **Corrección del usuario:** «https://claude.ai/artifact/EkzE3ntK5qMHLHCvS9v94N SON ESTOS LOS ANUNCIOS».
+- **Regla:** cuando el usuario manda un enlace, la petición es sobre lo que hay en ese enlace. Si existe otra versión más nueva en otro sitio, se avisa en una línea, pero se entrega lo del enlace.
+- **Hecho después:** los 13 anuncios del artifact de estrategia, con el logo de Kunfupay (símbolo en las etiquetas de las fotos, rehechas con el texto exacto; logo dentro del pie de las viñetas; imán en R2) y «Tributaless hace la factura y paga los impuestos de cada venta gracias a Kunfupay». Textos A y B del artifact cambiados igual.
