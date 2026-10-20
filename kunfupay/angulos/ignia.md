@@ -4,6 +4,7 @@ Vertical fantasma de Kunfupay: agencia de lanzamientos llave en mano para infopr
 
 Artifact de campaña (estrategia, plan de Meta, pendientes): https://claude.ai/artifact/UwCampjXTduojS9w445kmv
 Artifact de entrega (10 anuncios con 5 títulos y 5 copys, y VSL): https://claude.ai/artifact/B79gLR6ZRoHWTojyVaftQV · 05/10/2026
+Reels: los cuatro elegidos para producción (5 a 8) y los cuatro guiones «Skool, Hotmart y Classroom de Kunfupay a la misma altura», en `angulos/ignia-reels.md`.
 
 Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 
