@@ -482,3 +482,13 @@ Tú grabas. Ignia lanza. Kunfupay cobra.
 - Revisión de políticas de Meta (servicios financieros / cripto) por país.
 
 Créditos Higgsfield: V1 27,5 · V2 descartada 30,25 · V3 descartada 33 · V04 33 (10 imágenes nuevas y 2 correcciones) · 4B y R1 rehechos con contexto 5,5. Total 129,25.
+
+## Formulario de la landing (20/10/2026)
+
+Pedido por el usuario y pasado a Hernán. Todos los campos son obligatorios, las preguntas van primero y los datos de contacto al final.
+
+1. **¿Dónde vendes hoy?** (puedes marcar varias): Hotmart · Skool · Classroom de Kunfupay · Otra (¿cuál?)
+2. **¿Cuánto facturas al mes, de media?** Menos de 2.000 USD · 2.000–5.000 USD · 5.000–10.000 USD · 10.000–30.000 USD · Más de 30.000 USD
+3. Nombre · 4. Correo · 5. Teléfono (WhatsApp), con prefijo de país
+
+Más la casilla de privacidad obligatoria y los UTM de la URL en campos ocultos. El corte que filtra es 5.000 USD al mes.

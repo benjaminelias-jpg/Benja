@@ -460,3 +460,13 @@ La primera tanda (P1-P8, R1 y R2, con su fuente editable) queda en el historial 
 ## Reels de 30 segundos (14/10/2026)
 
 Los 8 reels, con su guion, su UTM, 5 títulos y 5 textos principales cada uno, están en `angulos/tributaless-reels.md` y en el artifact https://claude.ai/artifact/MfBZfbj8KSXmuazaXB3dse. Versión 3, con las correcciones del usuario registradas en `aprendizajes.md` (14/10/2026).
+
+## Formulario de la landing (20/10/2026)
+
+Pedido por el usuario y pasado a Hernán. Todos los campos son obligatorios, las preguntas van primero y los datos de contacto al final.
+
+1. **¿Cómo tienes montada tu parte fiscal?** (una opción): Autónomo · Sociedad en España (S.L.) · LLC u otra sociedad fuera de España · Ya cobro con un Merchant of Record (como Kunfupay) · Todavía nada · No lo tengo claro
+2. **¿Cuánto facturas al mes, de media?** Menos de 2.000 € · 2.000–5.000 € · 5.000–10.000 € · 10.000–30.000 € · Más de 30.000 €
+3. Nombre · 4. Correo · 5. Teléfono (WhatsApp), con +34 por defecto
+
+Más la casilla de privacidad obligatoria y los UTM de la URL en campos ocultos. Sustituye a las seis preguntas del §6 de la estrategia.
