@@ -4,9 +4,11 @@
 - **Estado:** borrador para aprobar
 - **Hecho con:** skill `cerebro-kunfupay` + `creativos-estaticos-meta`
 - **Versión visual con los 10 anuncios, la VSL y la landing:** https://claude.ai/artifact/EkzE3ntK5qMHLHCvS9v94N (privado hasta que se comparta)
-- **Arte final:** `tributaless-anuncios/` (10 JPG de 1080 × 1350, hechos con Higgsfield).
+- **Arte final:** `tributaless-anuncios/` (13 JPG de 1080 × 1350, V07, hechos con Higgsfield). Logos de Kunfupay en `kunfupay/marca/`.
 
 ---
+
+> **20/10/2026 · V07.** El logo de Kunfupay en cada pieza (camiseta o torre del socorrista, imán en las pizarras, impreso en el calendario, pegatina en la ficha de 5A) y, donde decía «Kunfupay hace la factura», ahora dice «Tributaless hace la factura y paga los impuestos de cada venta gracias a Kunfupay» (usuario: «que no diga kunfupay hace la factura, sino que diga Tributaless gracias a kunfupay, así en todos lo que lo diga»). Cambiado en las 13 imágenes y en sus textos. En la V06, los archivos de 2A, 3A y 4B enseñaban otra pieza (la mochila, la foto del sello y la escalera); la V07 lo corrige. Piezas y textos vigentes: `tributaless-copys.md` y https://claude.ai/artifact/T1n3KXjmEese8dygwsEJ2A.
 
 > **06/10/2026 · V06.** El usuario se quedó con 1B, 2B, 3B, 4A, 5B y 5C; 5A ganó texto; el resto se rehízo (pizarra, buzón, mochila, aeropuerto, videollamada, pizarra comparativa). El sello en fotos se descartó. **V05:** Kunfupay se representa como el socorrista (viñetas) y el sello rojo sobre cada venta (fotos); el ángulo 1 pasa a «nunca hiciste una factura por cada alumno». **V04:** Los 13 anuncios se rehicieron desde cero con las correcciones de Ignia (regla 26): la frase que filtra es el concepto, cada pieza da contexto por sí sola y nada de cajas pegadas. Las piezas, copys y VSL vigentes están en `tributaless-copys.md` y en https://claude.ai/artifact/T1n3KXjmEese8dygwsEJ2A. El plan del §4 conserva la estrategia; sus imágenes y textos A/B quedan sustituidos.
 
