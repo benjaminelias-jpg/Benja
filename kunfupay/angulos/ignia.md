@@ -405,24 +405,29 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
 
 ## VSL (Mateo, 3 min, 21/10/2026, versión 4)
 
-Sustituye a la versión 3, que sigue en el historial de git. Kunfupay entra de forma indirecta: nunca como partner ni como asociación, solo como «Classroom de Kunfupay», primero en la lista de las mejores plataformas, con Hotmart y Skool, y después siempre junto a Skool (usuario, 21/10: «poner a kunfupay de manera indirecta y no tan directamente… ponerlo a la altura de los más grandes… y nunca nombrar a kunfupay como un partner»). Cuenta lo mismo que los anuncios en uso: abre con el Reset del mercado, lleva sus hooks y frases tal cual, cuenta las cuatro fases del método con lo que pasa en cada una y cierra con la guía gratuita, el formulario y el asesor. 464 palabras habladas: 2:54 a 160 palabras por minuto y 3:05 a 150.
+Sustituye a la versión 3, que sigue en el historial de git. Kunfupay entra de forma indirecta: nunca como partner ni como asociación, solo como «Classroom de Kunfupay», primero en la lista de las mejores plataformas, con Hotmart y Skool, y después siempre junto a Skool (usuario, 21/10: «poner a kunfupay de manera indirecta y no tan directamente… ponerlo a la altura de los más grandes… y nunca nombrar a kunfupay como un partner»). Cuenta lo mismo que los anuncios en uso: abre con el Reset del mercado, lleva sus hooks y frases tal cual, cuenta las cuatro fases del método con lo que pasa en cada una y cierra con la guía gratuita, el formulario y el asesor. 494 palabras habladas: 3:05 a 160 palabras por minuto y 3:18 a 150. Abre con el filtro (usuario, 21/10: «recuerda el filtro antes que nada… si vendes productos físicos no es para ti»). Documento editable: https://claude.ai/artifact/Y6mxcv1y2KKb5sv6AcAF84
 
-- Sobre lo dictado: en el hook 2 va «haces» (venía «hacen»). Los 5.000 USD no van en la voz: filtra el formulario.
+- Sobre lo dictado: en el hook 2 va «haces» (venía «hacen»).
 - En pantalla: desde la fase uno, las cuatro fases fijas arriba, con la activa encendida. Classroom de Kunfupay y Skool salen siempre juntos y al mismo tamaño.
 - Pendiente: el caso real que respalda el 30 % (Meta puede pedirlo), y la guía en PDF con su envío automático al rellenar el formulario.
 
-### 1 · El Reset · 0:00–0:25
+### 1 · Para quién es · 0:00–0:14
+
+Antes que nada: este video es solo para quien ya factura más de 5.000 dólares al mes vendiendo cursos, infoproductos o mentorías en Classroom de Kunfupay, Hotmart o Skool.
+Si vendes productos físicos, no es para ti.
+
+### 2 · El Reset · 0:14–0:37
 
 Se viene el Reset del mercado: en 2027, todos los cursos van a morir.
-Y no importa que uses las mejores: Classroom de Kunfupay, Hotmart, Skool o la plataforma que sea.
+Y no importa que vendas en las mejores plataformas.
 Por eso nuestros clientes están aplicando nuestra metodología híbrida, con la que lograron aumentar un 30 % sus beneficios.
 Quédate al final del video y te voy a dar la guía exacta de cómo hacerlo.
 
-### 2 · Quién te lo cuenta · 0:25–0:29
+### 3 · Quién te lo cuenta · 0:37–0:40
 
 Soy Mateo, el presentador virtual de Ignia, agencia de lanzamientos.
 
-### 3 · Por qué los cursos van a morir · 0:29–0:57
+### 4 · Por qué los cursos van a morir · 0:40–1:08
 
 Si en 2026 sobrevives solo con nuevos clientes para seguir facturando, tu negocio está a punto de morir.
 Hoy es así: lanzas, facturas mucho en una semana… y al mes siguiente, vuelta a empezar.
@@ -430,7 +435,7 @@ Porque un curso se paga una vez.
 Y encima, el tráfico frío cada vez te sale más caro, el ROAS baja y el orgánico es cada vez más difícil de convertir.
 Por eso los cursos van a morir.
 
-### 4 · La otra forma · 0:57–1:30
+### 5 · La otra forma · 1:08–1:41
 
 ¿Cómo sería tu negocio si, en vez de buscar nuevos clientes, haces que estos mismos te paguen todos los meses?
 Esto es lo que hacemos en Ignia: un sistema híbrido de cuatro fases que convierte tu curso en una comunidad de pago, pensada para generar ingresos recurrentes.
@@ -438,24 +443,24 @@ Y aquí está la magia: que el que te pagó una vez, te volverá a pagar todos l
 Lo que antes era tu pico, ahora es tu nueva base.
 Te voy a mostrar paso a paso cómo podemos aplicarlo.
 
-### 5 · Fase uno · Tu comunidad · 1:30–1:45
+### 6 · Fase uno · Tu comunidad · 1:41–1:56
 
 Fase uno: creamos tu comunidad en Classroom de Kunfupay o en Skool, y vamos a optimizar tu oferta.
 Aquí ya entra el equipo, porque lo vamos a hacer distinto a como lo hiciste siempre: esto es una comunidad, no un curso.
 
-### 6 · Fase dos · Prelanzamiento · 1:45–2:00
+### 7 · Fase dos · Prelanzamiento · 1:56–2:11
 
 Fase dos: ya empezamos a monetizar.
 En la primera semana ya vas a amortizar todo tu tiempo invertido.
 Porque lanzamos la primera etapa, el prelanzamiento: entran unas 50 personas para validar que todo esté correcto.
 Y tendrás lista de espera.
 
-### 7 · Fase tres · Lanzamiento · 2:00–2:09
+### 8 · Fase tres · Lanzamiento · 2:11–2:21
 
 Fase tres: lanzamos.
 Abrimos el carrito, primero a tu lista de espera, y dejamos que entre la mayor cantidad de personas a tu comunidad paga.
 
-### 8 · Fase cuatro · Evergreen · 2:09–2:37
+### 9 · Fase cuatro · Evergreen · 2:21–2:48
 
 Fase cuatro: con todo el mundo ya dentro, te damos soporte y nuestro blueprint de evergreen.
 Dejamos tu comunidad abierta, en Classroom de Kunfupay o en Skool, para que todos los meses sigas teniendo un flujo de nuevas personas.
@@ -464,7 +469,7 @@ Más los nuevos.
 Con nuestra metodología, cada pico de facturación pasa a ser tu nueva base.
 Así nuestros clientes aumentaron un 30 % sus beneficios.
 
-### 9 · La guía · 2:37–2:54
+### 10 · La guía · 2:48–3:05
 
 Para obtener la guía gratuita con toda la metodología, rellena el formulario de aquí abajo con los datos de tu negocio y te la mandamos inmediatamente.
 Y un asesor nuestro se pondrá en contacto contigo para saber si realmente puedes aplicar a esta nueva metodología.
