@@ -1,6 +1,6 @@
 # Ignia · campaña de arranque (LATAM)
 
-Vertical fantasma de Kunfupay: agencia de lanzamientos llave en mano para infoproductores de Latinoamérica que facturan entre 5.000 y 50.000 USD al mes. Color rojo. La cara la pone Mateo, un avatar declarado virtual. Ignia se presenta como partner de Kunfupay (usuario, 08/10/2026: «ignia no es de kunfupay, es como si fuese un partner»). Landing ya hecha (no incluida).
+Vertical fantasma de Kunfupay: agencia de lanzamientos llave en mano para infoproductores de Latinoamérica que facturan entre 5.000 y 50.000 USD al mes. Color rojo. La cara la pone Mateo, un avatar declarado virtual. Ignia se presenta como partner de Kunfupay (usuario, 08/10/2026: «ignia no es de kunfupay, es como si fuese un partner»). Desde la VSL v4 (21/10/2026), Kunfupay va de forma indirecta y nunca como partner: solo «Classroom de Kunfupay», a la altura de Hotmart y Skool. Landing ya hecha (no incluida).
 
 Artifact de campaña (estrategia, plan de Meta, pendientes): https://claude.ai/artifact/UwCampjXTduojS9w445kmv
 Artifact de entrega (10 anuncios con 5 títulos y 5 copys, y VSL): https://claude.ai/artifact/B79gLR6ZRoHWTojyVaftQV · 05/10/2026
@@ -9,6 +9,8 @@ Reels: los cuatro elegidos para producción (5 a 8) y los cuatro guiones «Skool
 Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 
 ## Decisiones
+
+- **VSL v4 (21/10/2026): Kunfupay indirecto.** La VSL deja la asociación y el referido de Kunfupay y pasa a contar lo mismo que los anuncios en uso: el Reset del mercado, el sistema híbrido de cuatro fases y «lo que antes era tu pico, ahora es tu nueva base». Kunfupay solo aparece como «Classroom de Kunfupay», al lado de Hotmart y Skool, nunca como partner. El CTA de la VSL es la guía gratuita con el formulario de debajo del video; después, un asesor contacta para ver si puede aplicar.
 
 - **V04 (06/10/2026): diez conceptos nuevos.** La V2 pegaba una tarjeta «Es para ti si:» y la V3 metía el filtro en pósits sobre las escenas viejas; el usuario rechazó las dos: «debes rehacerlas con la nueva idea que te di». En la V04 cada pieza nace de la frase que filtra («¿Vendes un curso de fitness?», «No puedes seguir lanzando solo», «¿Vendes cursos a toda Latinoamérica?») y la imagen es esa idea. Ver aprendizajes 06/10/2026 y regla 26. 4B (relevo) y R1 (puerta) se rehicieron como cadena de montaje y hoja de pasos porque les faltaba contexto.
 
@@ -401,67 +403,71 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
-## VSL (Mateo, menos de 3 min, 08/10/2026, versión 3)
+## VSL (Mateo, 3 min, 21/10/2026, versión 4)
 
-Con las frases del usuario tal cual (corrección del 08/10: «si te digo que la vsl es así lo haces y listo… no contradigas»). Cada punto es un beneficio que se vive: uno, recuperas tu tiempo (eres un CEO y contratamos a gente que sabe el doble o el triple en su área); dos, la asociación con Kunfupay, una de las fintech más grandes de Europa, con una pasarela que no se cae en pleno lanzamiento como te puede pasar con Stripe; tres, lo que te sirve aunque no nos contrates: ir a Kunfupay como referido de Ignia. Cierre con dos caminos. 447 palabras: 2:48 a 160 palabras por minuto y 2:59 a 150.
+Sustituye a la versión 3, que sigue en el historial de git. Kunfupay entra de forma indirecta: nunca como partner ni como asociación, solo como «Classroom de Kunfupay», primero en la lista de las mejores plataformas, con Hotmart y Skool, y después siempre junto a Skool (usuario, 21/10: «poner a kunfupay de manera indirecta y no tan directamente… ponerlo a la altura de los más grandes… y nunca nombrar a kunfupay como un partner»). Cuenta lo mismo que los anuncios en uso: abre con el Reset del mercado, lleva sus hooks y frases tal cual, cuenta las cuatro fases del método con lo que pasa en cada una y cierra con la guía gratuita, el formulario y el asesor. 464 palabras habladas: 2:54 a 160 palabras por minuto y 3:05 a 150.
 
-Pendientes: [LINK DE REFERIDO DE KUNFUPAY] para el segundo botón de la landing; «cripto» en un corte para anuncio necesita autorización de Meta. Confirmado por el equipo el 08/10: Nequi, Yape, pesos y cripto desde el mismo link, y que aguanta el pico del carrito abierto.
+- Sobre lo dictado: en el hook 2 va «haces» (venía «hacen»). Los 5.000 USD no van en la voz: filtra el formulario.
+- En pantalla: desde la fase uno, las cuatro fases fijas arriba, con la activa encendida. Classroom de Kunfupay y Skool salen siempre juntos y al mismo tamaño.
+- Pendiente: el caso real que respalda el 30 % (Meta puede pedirlo), y la guía en PDF con su envío automático al rellenar el formulario.
 
-### 1 · Para quién es · 0:00–0:12
+### 1 · El Reset · 0:00–0:25
 
-Antes que nada: este video es solo para quien vende cursos, mentorías o coaching en Latinoamérica y ya factura más de 5.000 dólares al mes.
-Si estás empezando, todavía no es para ti.
+Se viene el Reset del mercado: en 2027, todos los cursos van a morir.
+Y no importa que uses las mejores: Classroom de Kunfupay, Hotmart, Skool o la plataforma que sea.
+Por eso nuestros clientes están aplicando nuestra metodología híbrida, con la que lograron aumentar un 30 % sus beneficios.
+Quédate al final del video y te voy a dar la guía exacta de cómo hacerlo.
 
-### 2 · Lo que te llevas · 0:12–0:25
-
-En este video vas a ver cómo recuperar tu tiempo en cada lanzamiento.
-Cómo cobrarle a cualquier país sin perder ventas.
-Y algo que te sirve aunque nunca nos contrates.
-Quédate hasta el final.
-
-### 3 · Quién te lo cuenta · 0:25–0:32
+### 2 · Quién te lo cuenta · 0:25–0:29
 
 Soy Mateo, el presentador virtual de Ignia, agencia de lanzamientos.
-Sí, virtual. Lo que te voy a contar, no.
 
-### 4 · Uno: vuelves a tener tiempo · 0:32–1:14
+### 3 · Por qué los cursos van a morir · 0:29–0:57
 
-Uno.
-Basta de cursos. Eres un CEO, y sabes que no puedes estar haciendo todo.
-Nosotros igual. Por eso contratamos a personas que saben el doble, o quizá el triple, que nosotros en su área.
-Imagina tu próximo lanzamiento.
-Abres el carrito y no estás a las dos de la mañana contestando WhatsApps.
-Dejas de estar en todo, porque tienes un equipo que te apoya con la estrategia, los anuncios, la VSL y el soporte.
-Tú grabas, estás con tu comunidad y cenas con tu familia.
-Vuelves a tener tiempo. Y el estrés ya no te inunda.
-PERO nada de eso sirve si, el día del carrito, tu alumno no puede pagarte.
+Si en 2026 sobrevives solo con nuevos clientes para seguir facturando, tu negocio está a punto de morir.
+Hoy es así: lanzas, facturas mucho en una semana… y al mes siguiente, vuelta a empezar.
+Porque un curso se paga una vez.
+Y encima, el tráfico frío cada vez te sale más caro, el ROAS baja y el orgánico es cada vez más difícil de convertir.
+Por eso los cursos van a morir.
 
-### 5 · Dos: la asociación con Kunfupay · 1:14–1:51
+### 4 · La otra forma · 0:57–1:30
 
-Dos.
-Tenemos una asociación con una de las fintech más grandes de Europa: Kunfupay.
-Te ayudamos a cobrar con Kunfupay, porque en el lanzamiento necesitamos vender sin trabas a todos los países: Latinoamérica, Europa o donde sea.
-Con una pasarela que no se te caiga en pleno lanzamiento, como te puede pasar con el Stripe que usas para el día a día.
-Que puedan pagarte con cripto, Nequi, Yape, pesos, lo que quieran, sin fricciones y desde el mismo link.
-Solo trabajamos con los mejores. Por eso te conseguimos esta asociación.
-Y ahora, lo que te prometí.
+¿Cómo sería tu negocio si, en vez de buscar nuevos clientes, haces que estos mismos te paguen todos los meses?
+Esto es lo que hacemos en Ignia: un sistema híbrido de cuatro fases que convierte tu curso en una comunidad de pago, pensada para generar ingresos recurrentes.
+Y aquí está la magia: que el que te pagó una vez, te volverá a pagar todos los meses.
+Lo que antes era tu pico, ahora es tu nueva base.
+Te voy a mostrar paso a paso cómo podemos aplicarlo.
 
-### 6 · Tres: lo que te sirve aunque no nos contrates · 1:51–2:35
+### 5 · Fase uno · Tu comunidad · 1:30–1:45
 
-Tres. Y este te conviene escucharlo, porque te llevas valor nos contrates o no.
-Ya puedes ir a Kunfupay como referido nuestro.
-Y con Kunfupay vas a tener beneficios fiscales que no son para todos: son para quienes venden su conocimiento como tú, con infoproductos, coaching o mentorías.
-Vas a dejar de necesitar una LLC para tener Stripe o para cobrar cómodo. Y con todos sus beneficios.
-Porque cobrando con Kunfupay, ellos se hacen representantes de todas tus ventas. Por lo que ellos van a pagar los impuestos de todas tus ventas.
-No vas a necesitar pasarlo por tu banco, ni pagar tú los impuestos de esas ventas.
-Y vas a poder gastar lo que quieras, cuando quieras.
+Fase uno: creamos tu comunidad en Classroom de Kunfupay o en Skool, y vamos a optimizar tu oferta.
+Aquí ya entra el equipo, porque lo vamos a hacer distinto a como lo hiciste siempre: esto es una comunidad, no un curso.
 
-### 7 · Los dos caminos · 2:35–2:48
+### 6 · Fase dos · Prelanzamiento · 1:45–2:00
 
-Debajo de este video tienes dos caminos.
-La lista de espera de Ignia, si quieres que hagamos tu próximo lanzamiento.
-Y tu cuenta de Kunfupay como referido nuestro.
-Tú grabas. Ignia lanza. Kunfupay cobra.
+Fase dos: ya empezamos a monetizar.
+En la primera semana ya vas a amortizar todo tu tiempo invertido.
+Porque lanzamos la primera etapa, el prelanzamiento: entran unas 50 personas para validar que todo esté correcto.
+Y tendrás lista de espera.
+
+### 7 · Fase tres · Lanzamiento · 2:00–2:09
+
+Fase tres: lanzamos.
+Abrimos el carrito, primero a tu lista de espera, y dejamos que entre la mayor cantidad de personas a tu comunidad paga.
+
+### 8 · Fase cuatro · Evergreen · 2:09–2:37
+
+Fase cuatro: con todo el mundo ya dentro, te damos soporte y nuestro blueprint de evergreen.
+Dejamos tu comunidad abierta, en Classroom de Kunfupay o en Skool, para que todos los meses sigas teniendo un flujo de nuevas personas.
+Los del lanzamiento te siguen pagando cada mes.
+Más los nuevos.
+Con nuestra metodología, cada pico de facturación pasa a ser tu nueva base.
+Así nuestros clientes aumentaron un 30 % sus beneficios.
+
+### 9 · La guía · 2:37–2:54
+
+Para obtener la guía gratuita con toda la metodología, rellena el formulario de aquí abajo con los datos de tu negocio y te la mandamos inmediatamente.
+Y un asesor nuestro se pondrá en contacto contigo para saber si realmente puedes aplicar a esta nueva metodología.
 
 ## Plan de Meta
 
@@ -473,12 +479,12 @@ Tú grabas. Ignia lanza. Kunfupay cobra.
 
 ## Pendientes
 
-- [Bloquea] La landing presenta a Ignia como partner de Kunfupay y muestra el titular legal.
+- [Bloquea] La landing, coherente con la VSL v4: el formulario debajo del video y el titular legal, sin «partner de Kunfupay» ni el botón de referido de la versión 3.
 - [Bloquea] Equipo real que ejecute los lanzamientos.
-- [Bloquea] La landing necesita el segundo botón que anuncia la VSL, «Abrir mi cuenta de Kunfupay», con el link de referido de Ignia.
+- [Bloquea] La guía gratuita con la metodología, y su envío automático al rellenar el formulario: la VSL dice «te la mandamos inmediatamente».
 - Modelo de cobro de Ignia.
 - Cupo y fechas de la lista de espera.
-- Primer caso real con permiso.
+- Primer caso real con permiso: respalda el 30 % de la VSL y de los anuncios.
 - Revisión de políticas de Meta (servicios financieros / cripto) por país.
 
 Créditos Higgsfield: V1 27,5 · V2 descartada 30,25 · V3 descartada 33 · V04 33 (10 imágenes nuevas y 2 correcciones) · 4B y R1 rehechos con contexto 5,5. Total 129,25.
