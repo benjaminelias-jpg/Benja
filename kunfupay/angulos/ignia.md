@@ -10,6 +10,8 @@ Posicionamiento: **Tú grabas. Ignia lanza. Kunfupay cobra.**
 
 ## Decisiones
 
+- **La cara de Ignia es Álvaro (21/10/2026).** Graba él, no un avatar: nunca «presentador virtual» (usuario: «eso lo dice Alvaro la cara de ignia no una ia, no digas más el presentador virtual»). Lo que dice de Mateo más abajo es de versiones anteriores.
+
 - **VSL v4 (21/10/2026): Kunfupay indirecto.** La VSL deja la asociación y el referido de Kunfupay y pasa a contar lo mismo que los anuncios en uso: el Reset del mercado, el sistema híbrido de cuatro fases y «lo que antes era tu pico, ahora es tu nueva base». Kunfupay solo aparece como «Classroom de Kunfupay», al lado de Hotmart y Skool, nunca como partner. El CTA de la VSL es la guía gratuita con el formulario de debajo del video; después, un asesor contacta para ver si puede aplicar.
 
 - **V04 (06/10/2026): diez conceptos nuevos.** La V2 pegaba una tarjeta «Es para ti si:» y la V3 metía el filtro en pósits sobre las escenas viejas; el usuario rechazó las dos: «debes rehacerlas con la nueva idea que te di». En la V04 cada pieza nace de la frase que filtra («¿Vendes un curso de fitness?», «No puedes seguir lanzando solo», «¿Vendes cursos a toda Latinoamérica?») y la imagen es esa idea. Ver aprendizajes 06/10/2026 y regla 26. 4B (relevo) y R1 (puerta) se rehicieron como cadena de montaje y hoja de pasos porque les faltaba contexto.
@@ -403,7 +405,7 @@ Criterio V04: cada pieza se rehace desde la frase que filtra; la imagen es esa i
    El dinero entra a tu cuenta de Kunfupay, a tu nombre. Lo gastas con tarjeta o lo retiras cuando quieras.
    No es para ti si estás empezando, si buscas un curso para aprender a lanzar o si buscas dejar de pagar impuestos. Entra en la lista de espera.
 
-## VSL (Mateo, 3 min, 21/10/2026, versión 4)
+## VSL (Álvaro, 3 min, 21/10/2026, versión 4)
 
 Sustituye a la versión 3, que sigue en el historial de git. Kunfupay entra de forma indirecta: nunca como partner ni como asociación, solo como «Classroom de Kunfupay», primero en la lista de las mejores plataformas, con Hotmart y Skool, y después siempre junto a Skool (usuario, 21/10: «poner a kunfupay de manera indirecta y no tan directamente… ponerlo a la altura de los más grandes… y nunca nombrar a kunfupay como un partner»). Cuenta lo mismo que los anuncios en uso: abre con el Reset del mercado, lleva sus hooks y frases tal cual, cuenta las cuatro fases del método con lo que pasa en cada una y cierra con la guía gratuita, el formulario y el asesor. 494 palabras habladas: 3:05 a 160 palabras por minuto y 3:18 a 150. Abre con el filtro (usuario, 21/10: «recuerda el filtro antes que nada… si vendes productos físicos no es para ti»). Documento editable: https://claude.ai/artifact/Y6mxcv1y2KKb5sv6AcAF84
 
@@ -425,7 +427,7 @@ Quédate al final del video y te voy a dar la guía exacta de cómo hacerlo.
 
 ### 3 · Quién te lo cuenta · 0:37–0:40
 
-Soy Mateo, el presentador virtual de Ignia, agencia de lanzamientos.
+Soy Álvaro, de Ignia, agencia de lanzamientos.
 
 ### 4 · Por qué los cursos van a morir · 0:40–1:08
 

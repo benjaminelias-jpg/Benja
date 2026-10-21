@@ -197,3 +197,8 @@
 - **Qué cambia:** la VSL v3 presentaba a Kunfupay como una «asociación» con «una de las fintech más grandes de Europa» y mandaba a abrir cuenta como referido. En la v4, Kunfupay no se presenta: aparece solo como «Classroom de Kunfupay», primero en la lista de las mejores plataformas (con Hotmart y Skool) y después siempre junto a Skool.
 - **Regla nueva (regla 29 del cerebro):** en Ignia, Kunfupay va de forma indirecta: nunca «partner», «asociación» ni «Kunfupay» suelto; solo «Classroom de Kunfupay», con Skool al lado. La VSL lleva tal cual los hooks y frases de los anuncios en uso, para que quien llega del anuncio reconozca lo que vio. Las fases del método que dicta el usuario se nombran («Fase uno…») y cada una se cuenta con lo que pasa; una etiqueta suya, como «blueprint de evergreen», solo va si la frase siguiente dice qué pasa.
 - **Ejemplo:** mal: «Tenemos una asociación con una de las fintech más grandes de Europa: Kunfupay.» → bien: «Y no importa que uses las mejores: Classroom de Kunfupay, Hotmart, Skool o la plataforma que sea.» · «Fase uno: creamos tu comunidad en Classroom de Kunfupay o en Skool, y vamos a optimizar tu oferta.»
+
+## 21/10/2026 · Ignia: la cara es Álvaro, no un avatar
+
+- **Corrección del usuario:** «eso lo dice Alvaro la cara de ignia no una ia, no digas más el presentador virtual».
+- **Regla:** en Ignia graba Álvaro. Se presenta como «Soy Álvaro, de Ignia, agencia de lanzamientos.» Nunca «presentador virtual», «avatar» ni Mateo.
