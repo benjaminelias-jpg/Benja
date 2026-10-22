@@ -423,31 +423,38 @@ html.js .kin.is-in .w{opacity:1;transform:none}
   font-size:clamp(16px,1.5vw,19px);line-height:1.5;letter-spacing:-.018em;color:var(--ink-soft);max-width:62ch}
 .quoteline b{color:var(--ink-strong);font-weight:500}
 
-/* --- 2 · precio en formato factura --- */
-.bill{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);
-  margin-top:clamp(44px,5vw,70px);align-items:start}
-.bill__list{border-top:1px solid var(--line)}
-.bill__row{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-2)}
-.bill__row span:first-child{font-size:15px;color:var(--ink-soft)}
-.bill__dots{flex:1;border-bottom:1px dotted #cfccdb;transform:translateY(-4px)}
-.bill__row span:last-child{font-size:14.5px;color:var(--faint);font-variant-numeric:tabular-nums}
-.bill__row--own span:first-child{color:var(--ink-strong);font-weight:500}
-.bill__row em{margin-left:9px;font-style:normal;font-size:11px;letter-spacing:.1em;
-  text-transform:uppercase;color:#b2aec0}
-.bill__row--own em{color:var(--acc)}
-.bill__row--own span:last-child{color:var(--ink-soft)}
-.bill__total{display:flex;align-items:baseline;gap:12px;padding:20px 0 0;margin-top:4px;
-  border-top:1px solid var(--ink-strong)}
-.bill__total > span:first-child{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
-.bill__total b{margin-left:auto;font-family:'Inter Display','Inter',sans-serif;font-size:clamp(26px,3vw,36px);
-  font-weight:500;letter-spacing:-.04em;color:#9c99a8;text-decoration:line-through;
-  text-decoration-thickness:2px;font-variant-numeric:tabular-nums}
-.bill__ours{padding-top:6px}
-.bill__big{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(76px,11vw,148px);font-weight:500;
-  line-height:.84;letter-spacing:-.06em;color:var(--ink-strong);font-variant-numeric:tabular-nums}
-.bill__big sup{font-size:.26em;font-weight:500;letter-spacing:-.01em;top:-.55em;position:relative;color:var(--acc)}
-.bill__k{margin-top:18px;font-size:17px;line-height:1.5;color:var(--ink-soft);max-width:34ch}
-.bill__k b{color:var(--ink-strong);font-weight:500}
+/* --- 2 · precio: tarjeta de herramientas sustituidas --- */
+.tools{margin-top:clamp(40px,5vw,66px);background:#fff;border:1px solid var(--line);border-radius:16px;
+  padding:8px 26px 0;overflow:hidden}
+.tools__row{display:grid;grid-template-columns:44px 1fr auto;align-items:center;gap:18px;
+  padding:17px 0;border-bottom:1px solid var(--line-2)}
+.tools__ico{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#f5f3fb;
+  border:1px solid var(--line-2)}
+.tools__ico img{width:22px;height:22px;display:block}
+.tools__ico--sensei{font-size:17px;color:var(--acc);font-weight:600}
+.tools__ico--line{color:var(--acc)}
+.tools__ico--line svg{width:21px;height:21px}
+.tools__n{font-size:16px;font-weight:500;letter-spacing:-.016em;color:var(--ink-strong)}
+.tools__r{margin-top:3px;font-size:13.5px;line-height:1.45;color:var(--muted)}
+.tools__p{font-size:14.5px;color:var(--faint);font-variant-numeric:tabular-nums;white-space:nowrap}
+.tools__row--mark .tools__n{color:var(--acc)}
+.tools__row--esp{background:var(--acc-soft);margin-inline:-26px;padding-inline:26px;border-bottom:0}
+.tools__row--esp .tools__n{color:var(--acc)}
+.tools__row--esp .tools__p{color:var(--acc);font-weight:500}
+.tools__sum{display:flex;align-items:baseline;justify-content:space-between;gap:16px;
+  padding:18px 0;border-top:2px dashed var(--line)}
+.tools__sum > span{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--faint)}
+.tools__sum b{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(22px,2.4vw,30px);font-weight:500;
+  letter-spacing:-.035em;color:#9c99a8;text-decoration:line-through;text-decoration-thickness:2px;
+  font-variant-numeric:tabular-nums;white-space:nowrap}
+.tools__end{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+  margin:0 -26px;padding:26px;background:var(--acc);color:#fff}
+.tools__end-k{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.72)}
+.tools__end-t{margin-top:8px;font-size:16px;line-height:1.5;max-width:46ch}
+.tools__end-v{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(46px,6vw,76px);font-weight:500;
+  letter-spacing:-.05em;line-height:.9;font-variant-numeric:tabular-nums}
+.tools__end-v span{font-size:.28em;font-weight:500;letter-spacing:-.01em;color:rgba(255,255,255,.8)}
+
 .facts{display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(36px,4vw,54px);border-top:1px solid var(--line)}
 .facts div{flex:1 1 220px;padding:20px 24px 20px 0;border-right:1px solid var(--line);
   border-bottom:1px solid var(--line)}
@@ -566,7 +573,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 
 @media (max-width:980px){
   .player{grid-template-columns:1fr}
-  .bill{grid-template-columns:1fr;gap:40px}
   .mods{grid-template-columns:repeat(2,1fr)}
   .mods > article:nth-child(3n){border-right:1px solid var(--line)}
   .mods > article:nth-child(2n){border-right:0}
@@ -576,6 +582,14 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 }
 @media (max-width:900px){
   .wrap{width:min(100%,100% - 40px)}
+  .tools{padding:4px 18px 0}
+  .tools__row{grid-template-columns:38px 1fr;gap:14px;padding:15px 0}
+  .tools__ico{width:38px;height:38px;border-radius:10px}
+  .tools__p{grid-column:2;font-size:14px}
+  .tools__row--esp{margin-inline:-18px;padding-inline:18px}
+  .tools__end{margin:0 -18px;padding:22px 18px}
+  .tools__sum b{font-size:22px}
+  .tools__end-v{font-size:52px}
   .block{padding:64px 0}
   .mods{grid-template-columns:1fr}
   .mods > article{border-right:0 !important;padding:24px 0 26px}
@@ -812,23 +826,58 @@ html.js .kin.is-in .w{opacity:1;transform:none}
         vendes, según rubro, ticket y volumen.</p>
     </div>
 
-    <div class="bill">
-      <div class="bill__list rv">
-        <div class="bill__row"><span>Shopify o Stripe <em>tu tienda</em></span><i class="bill__dots"></i><span>39 $/mes</span></div>
-        <div class="bill__row"><span>Linktree Pro <em>tu bio</em></span><i class="bill__dots"></i><span>15 $/mes</span></div>
-        <div class="bill__row"><span>Carrd o Leadpages <em>tus páginas</em></span><i class="bill__dots"></i><span>25 $/mes</span></div>
-        <div class="bill__row bill__row--own"><span>Kajabi, Skool o Hotmart <em>tu aula</em></span><i class="bill__dots"></i><span>99 $/mes</span></div>
-        <div class="bill__row"><span>Revolut <em>tu tarjeta</em></span><i class="bill__dots"></i><span>10 $/mes</span></div>
-        <div class="bill__row"><span>ChatGPT Plus <em>tu IA</em></span><i class="bill__dots"></i><span>20 $/mes</span></div>
-        <div class="bill__row"><span>Alta de autónomo <em>para facturar</em></span><i class="bill__dots"></i><span>300 $/mes</span></div>
-        <div class="bill__total"><span>Lo que pagas hoy por separado</span>
-          <b><span class="count" data-to="508">0</span> $/mes</b></div>
+    <div class="tools rv">
+      <div class="tools__row">
+        <span class="tools__ico"><img src="assets/iconos/tienda.svg" alt="" width="22" height="22"></span>
+        <div><p class="tools__n">Tienda</p><p class="tools__r">Sustituye a: Stripe, Shopify, WooCommerce o PayPal Checkout</p></div>
+        <span class="tools__p">desde 39 $/mes</span>
+      </div>
+      <div class="tools__row">
+        <span class="tools__ico"><img src="assets/iconos/biolink.svg" alt="" width="22" height="22" loading="lazy"></span>
+        <div><p class="tools__n">BioLink</p><p class="tools__r">Sustituye a: Linktree Pro</p></div>
+        <span class="tools__p">15 $/mes</span>
+      </div>
+      <div class="tools__row">
+        <span class="tools__ico"><img src="assets/iconos/paginas.svg" alt="" width="22" height="22" loading="lazy"></span>
+        <div><p class="tools__n">Páginas</p><p class="tools__r">Sustituye a: Lovable, Carrd o Leadpages</p></div>
+        <span class="tools__p">desde 25 $/mes</span>
+      </div>
+      <div class="tools__row tools__row--mark">
+        <span class="tools__ico"><img src="assets/iconos/classroom.svg" alt="" width="22" height="22" loading="lazy"></span>
+        <div><p class="tools__n">Classroom</p><p class="tools__r">Sustituye a: Kajabi, Skool o Hotmart</p></div>
+        <span class="tools__p">desde 99 $/mes</span>
+      </div>
+      <div class="tools__row">
+        <span class="tools__ico"><img src="assets/iconos/kunfucard.svg" alt="" width="22" height="22" loading="lazy"></span>
+        <div><p class="tools__n">KunfuCard</p><p class="tools__r">Sustituye a: Revolut, PayPal o tu tarjeta bancaria</p></div>
+        <span class="tools__p">desde 10 $/mes</span>
+      </div>
+      <div class="tools__row">
+        <span class="tools__ico tools__ico--sensei" aria-hidden="true">先</span>
+        <div><p class="tools__n">Sensei</p><p class="tools__r">Sustituye a: ChatGPT Plus, Gemini, Claude o Perplexity Pro</p></div>
+        <span class="tools__p">20 $/mes</span>
+      </div>
+      <div class="tools__row tools__row--esp">
+        <span class="tools__ico tools__ico--line">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"
+               stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/>
+            <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+        <div><p class="tools__n">Cuota de autónomo</p>
+          <p class="tools__r">Sustituye a: darte de alta como autónomo para poder facturar</p></div>
+        <span class="tools__p">desde 300 $/mes</span>
       </div>
 
-      <div class="bill__ours rv" style="--d:120ms">
-        <p class="bill__big">0<sup>$</sup></p>
-        <p class="bill__k">al mes de cuota. Las siete piezas vienen en la misma cuenta que tu
-          Classroom, y la comisión <b>solo entra cuando entra una venta</b>.</p>
+      <div class="tools__sum">
+        <span>Lo que pagarías por separado</span>
+        <b><span class="count" data-to="508">0</span> $/mes</b>
+      </div>
+
+      <div class="tools__end">
+        <div>
+          <p class="tools__end-k">Con Classroom by Kunfupay</p>
+          <p class="tools__end-t">Las siete, incluidas en tu cuenta. Solo pagas comisión cuando vendes.</p>
+        </div>
+        <p class="tools__end-v">0 <span>$/mes</span></p>
       </div>
     </div>
 
