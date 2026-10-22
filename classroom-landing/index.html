@@ -187,6 +187,72 @@ body{
 .quiz__ok h3{font-size:18px;font-weight:600;letter-spacing:-.02em;margin-bottom:8px}
 .quiz__ok p{font-size:14.5px;line-height:1.6;color:var(--muted)}
 
+/* ---------- modal tipo typeform, con apertura circular desde el botón ---------- */
+.qm{position:fixed;inset:0;z-index:60;visibility:hidden}
+.qm.is-open{visibility:visible}
+.qm__sheet{
+  position:absolute;inset:0;background:#fff;
+  clip-path:circle(0px at var(--x,50%) var(--y,50%));
+  transition:clip-path .62s cubic-bezier(.33,0,.1,1);
+}
+.qm.is-expanded .qm__sheet{clip-path:circle(var(--r,160vmax) at var(--x,50%) var(--y,50%))}
+.qm__bar{position:absolute;top:0;left:0;right:0;z-index:3;height:4px;background:#f0f0f5}
+.qm__bar i{display:block;height:100%;width:33.33%;
+  background:linear-gradient(90deg,var(--purple-1),var(--purple-2));transition:width .3s ease}
+.qm__top{
+  position:absolute;top:0;left:0;right:0;z-index:3;
+  display:flex;align-items:center;justify-content:space-between;padding:24px 26px;
+  pointer-events:none;
+}
+.qm__top > *{pointer-events:auto}
+.qm__top img{height:34px;width:auto}
+.qm__x{
+  width:42px;height:42px;border-radius:50%;border:1px solid #e7e7ee;background:#fff;
+  display:grid;place-items:center;cursor:pointer;color:var(--muted);font-size:17px;line-height:1;
+  transition:background .16s ease,color .16s ease;
+}
+.qm__x:hover{background:#f4f4f8;color:var(--ink)}
+.qm__content{
+  position:absolute;inset:0;z-index:2;overflow-y:auto;
+  display:grid;place-items:center;padding:104px 24px 48px;
+}
+.qm__bar,.qm__top,.qm__content{opacity:0;transition:opacity .28s ease .24s}
+.qm.is-expanded .qm__bar,.qm.is-expanded .qm__top,.qm.is-expanded .qm__content{opacity:1}
+
+/* el quiz dentro del modal: una pregunta, grande, al centro */
+.quiz--full{
+  width:min(620px,100%);margin:0;padding:0;background:none;box-shadow:none;border-radius:0;
+  transform:translateY(-8px);
+}
+.quiz--full .quiz__steps{display:none}
+.quiz--full .quiz__q{font-size:clamp(25px,3.6vw,38px);line-height:1.14;margin-bottom:10px}
+.quiz--full .quiz__hint{margin:0 0 24px;font-size:15.5px}
+.quiz--full .opt{margin-top:12px}
+.quiz--full .opt span{height:66px;padding:0 24px;border-radius:18px;font-size:17px;background:#fff;border-color:#e4e4ec}
+.quiz--full .opt span:hover{background:#faf9ff;border-color:#cdbcff}
+.quiz--full .opt span::before{width:24px;height:24px;margin-right:18px}
+.quiz--full .opt span::after{
+  content:attr(data-key);margin-left:auto;padding:3px 8px;border:1px solid #e6e6ee;border-radius:7px;
+  font-size:11.5px;font-weight:600;color:var(--faint);background:#fafafc;
+}
+.quiz--full .quiz__panel--dense .opt{margin-top:10px}
+.quiz--full .quiz__panel--dense .opt span{height:58px}
+.quiz--full .field{margin-top:16px}
+.quiz--full .field > label{font-size:13.5px}
+.quiz--full .field input,.quiz--full .field select{height:58px;font-size:16px;background:#fff;border-color:#e4e4ec}
+.quiz--full .tel select{width:132px}
+.quiz--full .quiz__submit{height:60px;margin-top:24px;font-size:16px}
+.quiz--full .quiz__note{font-size:13px}
+.quiz--full .quiz__back{margin-top:22px;font-size:14px}
+.quiz--full .quiz__ok .tick{width:58px;height:58px;font-size:27px}
+.quiz--full .quiz__ok h3{font-size:24px}
+.quiz--full .quiz__ok p{font-size:16px}
+
+@media (prefers-reduced-motion:reduce){
+  .qm__sheet{transition:none}
+  .qm.is-open .qm__sheet{clip-path:circle(160vmax at 50% 50%)}
+}
+
 /* ---------- cta alternativo (quítale el hidden si prefieres botón) ---------- */
 .cta{
   display:inline-flex;
@@ -310,8 +376,8 @@ body{
       <div class="quiz__q" id="quiz-q1">¿Ya tienes un curso o comunidad?</div>
       <div role="radiogroup" aria-labelledby="quiz-q1">
         <label class="opt">
-          <input type="radio" name="tiene_comunidad" value="no">
-          <span>No, aún no</span>
+          <input type="radio" name="tiene_comunidad" value="primera">
+          <span>¡Quiero crear la primera!</span>
         </label>
         <label class="opt">
           <input type="radio" name="tiene_comunidad" value="skool">
@@ -320,6 +386,10 @@ body{
         <label class="opt">
           <input type="radio" name="tiene_comunidad" value="hotmart">
           <span>Sí, en Hotmart</span>
+        </label>
+        <label class="opt">
+          <input type="radio" name="tiene_comunidad" value="otra">
+          <span>Sí, en otra plataforma</span>
         </label>
       </div>
     </div>
@@ -452,67 +522,185 @@ body{
   <div><span class="line"></span><span class="pager">01 / 03</span></div>
 </div>
 
+<!-- Modal del quiz. El formulario se clona del hero al cargar, así solo hay
+     una fuente de verdad para las preguntas. Lo abre cualquier .js-abrir-quiz -->
+<div class="qm" id="quiz-modal" role="dialog" aria-modal="true" aria-label="Crea tu Classroom">
+  <div class="qm__sheet"></div>
+  <div class="qm__bar" aria-hidden="true"><i></i></div>
+  <div class="qm__top">
+    <img src="assets/logo-classroom.png" alt="Classroom by kunfupay">
+    <button type="button" class="qm__x" id="quiz-modal-x" aria-label="Cerrar">✕</button>
+  </div>
+  <div class="qm__content" id="quiz-modal-content"></div>
+</div>
+
 <script>
 (function () {
-  var form   = document.getElementById('quiz');
-  var back   = document.getElementById('quiz-back');
-  var segs   = form.querySelectorAll('.quiz__steps i');
-  var panels = form.querySelectorAll('.quiz__panel');
-  var paso   = 1;
+  var LETRAS = 'ABCDEF';
 
-  function mostrar(n) {
-    paso = n;
-    form.dataset.step = n;
-    for (var i = 0; i < panels.length; i++) {
-      panels[i].classList.toggle('is-active', panels[i].dataset.panel === String(n));
+  /* ---------- motor del quiz (sirve para el del hero y el del modal) ---------- */
+  function initQuiz(form, hooks) {
+    hooks = hooks || {};
+    var segs   = form.querySelectorAll('.quiz__steps i');
+    var panels = form.querySelectorAll('.quiz__panel');
+    var back   = form.querySelector('.quiz__back');
+    var paso   = 1;
+
+    function mostrar(n) {
+      paso = n;
+      form.dataset.step = n;
+      panels.forEach(function (p) { p.classList.toggle('is-active', p.dataset.panel === String(n)); });
+      segs.forEach(function (s, i) { s.classList.toggle('is-done', n === 'ok' ? true : i < n); });
+      back.hidden = !(n === 2 || n === 3);
+      if (n === 3) {
+        var primero = form.querySelector('[data-panel="3"] input');
+        if (primero) primero.focus({ preventScroll: true });
+      }
+      if (hooks.onPaso) hooks.onPaso(n);
+      // window.dataLayer && window.dataLayer.push({event:'quiz_paso', paso:n});
     }
-    for (var j = 0; j < segs.length; j++) {
-      segs[j].classList.toggle('is-done', n === 'ok' ? true : j < n);
-    }
-    back.hidden = !(n === 2 || n === 3);
-    if (n === 3) {                                  // en el último paso, al primer campo
-      var primero = form.querySelector('[data-panel="3"] input');
-      if (primero) primero.focus({ preventScroll: true });
-    }
-    // window.dataLayer && window.dataLayer.push({event:'quiz_paso', paso:n});
+
+    // los pasos 1 y 2 avanzan solos; el retardo deja ver la opción marcada
+    form.addEventListener('change', function (e) {
+      if (e.target.name === 'tiene_comunidad') setTimeout(function () { mostrar(2); }, 180);
+      if (e.target.name === 'facturacion')     setTimeout(function () { mostrar(3); }, 180);
+    });
+
+    back.addEventListener('click', function () { mostrar(paso - 1); });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var campos = [form.nombre, form.email, form.telefono];
+      for (var i = 0; i < campos.length; i++) {
+        var c = campos[i];
+        c.setCustomValidity('');
+        if (!c.value.trim()) c.setCustomValidity('Completa este campo para seguir.');
+        else if (c.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(c.value))
+          c.setCustomValidity('Revisa el correo, parece incompleto.');
+        else if (c.type === 'tel' && c.value.replace(/\D/g, '').length < 6)
+          c.setCustomValidity('Revisa el número de WhatsApp.');
+        if (!c.checkValidity()) { c.reportValidity(); return; }
+      }
+
+      var datos = {
+        tiene_comunidad: (form.querySelector('[name="tiene_comunidad"]:checked') || {}).value,
+        facturacion:     (form.querySelector('[name="facturacion"]:checked') || {}).value,
+        nombre:   form.nombre.value.trim(),
+        email:    form.email.value.trim(),
+        whatsapp: form.prefijo.value + ' ' + form.telefono.value.trim(),
+        origen:   form.dataset.origen || 'hero'
+      };
+
+      // ENDPOINT — sustituye esto por el POST real a tu backend / CRM:
+      // fetch('/api/leads', {method:'POST', headers:{'Content-Type':'application/json'},
+      //                      body: JSON.stringify(datos)});
+      console.log('lead', datos);
+
+      mostrar('ok');
+    });
+
+    return { mostrar: mostrar };
   }
 
-  // los pasos 1 y 2 avanzan solos; el pequeño retardo deja ver la opción marcada
-  form.addEventListener('change', function (e) {
-    if (e.target.name === 'tiene_comunidad') setTimeout(function () { mostrar(2); }, 180);
-    if (e.target.name === 'facturacion')     setTimeout(function () { mostrar(3); }, 180);
+  var heroForm = document.getElementById('quiz');
+  initQuiz(heroForm);
+
+  /* ---------- modal: el mismo quiz, a pantalla completa ---------- */
+  var modal     = document.getElementById('quiz-modal');
+  var contenido = document.getElementById('quiz-modal-content');
+  var barra     = modal.querySelector('.qm__bar i');
+
+  // clonamos el formulario del hero para no mantener dos copias del cuestionario
+  var clon = heroForm.cloneNode(true);
+  clon.id = 'quiz-modal-form';
+  clon.dataset.origen = 'modal';
+  clon.classList.add('quiz--full');
+  clon.querySelectorAll('[id]').forEach(function (el) {
+    var viejo = el.id;
+    el.id = 'qm-' + viejo;
+    clon.querySelectorAll('[for="' + viejo + '"]').forEach(function (l) { l.setAttribute('for', el.id); });
+    clon.querySelectorAll('[aria-labelledby="' + viejo + '"]').forEach(function (g) { g.setAttribute('aria-labelledby', el.id); });
   });
+  clon.querySelectorAll('.quiz__panel').forEach(function (p) {          // atajos A, B, C…
+    p.querySelectorAll('.opt span').forEach(function (s, i) { s.setAttribute('data-key', LETRAS[i]); });
+  });
+  contenido.appendChild(clon);
 
-  back.addEventListener('click', function () { mostrar(paso - 1); });
+  var modalQuiz = initQuiz(clon, {
+    onPaso: function (n) { barra.style.width = (n === 'ok' ? 100 : (n / 3) * 100) + '%'; }
+  });
+  modalQuiz.mostrar(1);
 
-  form.addEventListener('submit', function (e) {
+  var disparador = null;
+
+  function abrir(origen) {
+    disparador = origen || null;
+    var x = window.innerWidth / 2, y = window.innerHeight / 2;
+    if (origen) {
+      var r = origen.getBoundingClientRect();
+      x = r.left + r.width / 2;
+      y = r.top + r.height / 2;
+    }
+    // radio = esquina más lejana, para que el círculo acabe cubriendo la pantalla
+    var radio = Math.max(
+      Math.hypot(x, y), Math.hypot(window.innerWidth - x, y),
+      Math.hypot(x, window.innerHeight - y), Math.hypot(window.innerWidth - x, window.innerHeight - y)
+    );
+    modal.style.setProperty('--x', x + 'px');
+    modal.style.setProperty('--y', y + 'px');
+    modal.style.setProperty('--r', Math.ceil(radio) + 'px');
+    modal.classList.add('is-open');
+    document.body.style.overflow = 'hidden';
+    requestAnimationFrame(function () {
+      requestAnimationFrame(function () { modal.classList.add('is-expanded'); });
+    });
+    setTimeout(function () {
+      var f = clon.querySelector('.quiz__panel.is-active input');
+      if (f) f.focus({ preventScroll: true });
+    }, 430);
+  }
+
+  function cerrar() {
+    modal.classList.remove('is-expanded');
+    document.body.style.overflow = '';
+    setTimeout(function () { modal.classList.remove('is-open'); }, 640);
+    if (disparador) disparador.focus({ preventScroll: true });
+  }
+
+  // cualquier botón con .js-abrir-quiz abre el modal desde su propia posición
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest && e.target.closest('.js-abrir-quiz');
+    if (!b) return;
     e.preventDefault();
-    var campos = [form.nombre, form.email, form.telefono];
-    for (var i = 0; i < campos.length; i++) {
-      var c = campos[i];
-      c.setCustomValidity('');
-      if (!c.value.trim()) c.setCustomValidity('Completa este campo para seguir.');
-      else if (c.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(c.value))
-        c.setCustomValidity('Revisa el correo, parece incompleto.');
-      else if (c.type === 'tel' && c.value.replace(/\D/g, '').length < 6)
-        c.setCustomValidity('Revisa el número de WhatsApp.');
-      if (!c.checkValidity()) { c.reportValidity(); return; }
+    abrir(b);
+  });
+  document.getElementById('quiz-modal-x').addEventListener('click', cerrar);
+
+  document.addEventListener('keydown', function (e) {
+    if (!modal.classList.contains('is-open')) return;
+
+    if (e.key === 'Escape') { cerrar(); return; }
+
+    // el foco no se escapa a la página de detrás
+    if (e.key === 'Tab') {
+      var focos = modal.querySelectorAll('button:not([hidden]), input:not([type=radio]), select, .quiz__panel.is-active .opt input');
+      var lista = Array.prototype.filter.call(focos, function (el) { return el.offsetParent !== null; });
+      if (!lista.length) return;
+      var primero = lista[0], ultimo = lista[lista.length - 1];
+      if (e.shiftKey && document.activeElement === primero) { e.preventDefault(); ultimo.focus(); }
+      else if (!e.shiftKey && document.activeElement === ultimo) { e.preventDefault(); primero.focus(); }
+      return;
     }
 
-    var datos = {
-      tiene_comunidad: (form.querySelector('[name="tiene_comunidad"]:checked') || {}).value,
-      facturacion:     (form.querySelector('[name="facturacion"]:checked') || {}).value,
-      nombre:   form.nombre.value.trim(),
-      email:    form.email.value.trim(),
-      whatsapp: form.prefijo.value + ' ' + form.telefono.value.trim()
-    };
-
-    // ENDPOINT — sustituye esto por el POST real a tu backend / CRM:
-    // fetch('/api/leads', {method:'POST', headers:{'Content-Type':'application/json'},
-    //                      body: JSON.stringify(datos)});
-    console.log('lead', datos);
-
-    mostrar('ok');
+    // atajos A, B, C… como en typeform
+    var k = e.key.toUpperCase();
+    if (k.length !== 1 || LETRAS.indexOf(k) < 0) return;
+    if (/^(INPUT|SELECT|TEXTAREA)$/.test(document.activeElement.tagName) &&
+        document.activeElement.type !== 'radio') return;
+    var activa = clon.querySelector('.quiz__panel.is-active');
+    if (!activa) return;
+    var op = activa.querySelectorAll('.opt input')[LETRAS.indexOf(k)];
+    if (op) { op.checked = true; op.dispatchEvent(new Event('change', { bubbles: true })); }
   });
 })();
 </script>
