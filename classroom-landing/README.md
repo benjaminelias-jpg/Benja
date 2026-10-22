@@ -14,36 +14,37 @@ classroom-landing/
     ├── icon.png               favicon
     ├── prensa/*.svg           Forbes, TechCrunch, Entrepreneur, WIRED, El País, Business Insider
     ├── demo/cx1..cx7.webp     las 7 pantallas del recorrido del alumno
+    ├── fondo/aurora-*.webp    fondos de aurora generados (clara y oscura)
     ├── modulos/icono-*.webp   los 6 iconos de módulo de la presentación
     ├── testimonios/*.webp     fotos de los 6 clientes verificados
     ├── pago/*.svg             métodos de pago (Bizum, Pix, Nequi, PSE, Mercado Pago…)
     └── iconos/*.svg           iconos de las apps del ecosistema
 ```
 
-## Las 13 secciones
+## Las 5 secciones
 
-Hero (quiz) → 1 Qué es Classroom · 2 Lo que dejas de pagar · 3 El precio · 4 Así lo vive tu alumno
-· 5 Quién ya cobra así · 6 Comparativa · 7 Migración · 8 Métodos de pago · 9 Tu dinero
-· 10 ¿Encaja contigo? · 11 Platinum · 12 FAQ · 13 Cierre.
+Hero (quiz) → 1 Qué es Classroom · 2 El precio · 3 Así lo vive tu alumno · 4 Lo que cambia frente a
+lo que usas hoy (comparativa + testimonios + métodos de pago) · 5 FAQ y cierre.
 
-Todas las secciones terminan en un botón `.js-abrir-quiz`: abren el **mismo** cuestionario de 3 pasos
-en el modal, desde su propia posición. No hay un segundo formulario en ninguna parte.
+Todas terminan en un botón `.js-abrir-quiz`: abren el **mismo** cuestionario de 3 pasos en el modal,
+desde su propia posición. No hay un segundo formulario en ninguna parte.
+
+## Movimiento
+
+- **Revelado al scroll** con `IntersectionObserver` y retardo escalonado (`--d` por tarjeta).
+- **Titulares cinéticos**: el JS parte cada `h2.kin` en palabras y entran una detrás de otra.
+- **Contador** 0 → 508 en el bloque de precio, con easing, al entrar en pantalla.
+- **Recorrido del alumno**: las 7 capturas se pasan solas cada 4,2 s con barra de progreso en el paso
+  activo; se pausa al pasar el ratón y solo corre mientras la sección está en pantalla.
+- **Tira de métodos de pago** en bucle continuo, pausada al hover.
+- **Auroras**: dos fondos generados (`assets/fondo/`) que derivan lentamente; la sección de cierre es
+  oscura con la aurora violeta por debajo.
+- Todo respeta `prefers-reduced-motion`, y sin JS no se oculta nada (las animaciones van bajo `html.js`).
 
 **Regla de contenido:** la página solo afirma lo que está publicado en la presentación comercial de
 Classroom o en la landing fiscal en producción. Ningún porcentaje de comisión (propio o ajeno), ningún
-plazo, ninguna garantía y ninguna cifra de tracción inventada. En la tabla comparativa, las casillas de
-la competencia que no tienen fuente quedan con un guion y la leyenda lo explica. Lo que falta por cerrar
-está en `PENDIENTE-CONFIRMAR.md`.
-
-## Dónde tocar cada cosa
-
-| Qué | Dónde |
-|---|---|
-| Titular, subtítulo, letra chica, rating | `<main class="hero">` en `index.html` |
-| Pregunta y opciones del quiz | `<form class="quiz">` |
-| Botón morado en lugar del quiz | descomenta el `<a class="cta">` y borra el `<form>` |
-| Colores, tipografía, velocidad de la cinta | bloque `:root` (`--purple-1`, `--purple-2`, `--marquee-speed`) |
-| Logos de prensa | `assets/prensa/` + la lista de `<img>` en `<section class="press">` |
+plazo, ninguna garantía y ninguna cifra de tracción inventada. Lo que falta por cerrar está en
+`PENDIENTE-CONFIRMAR.md`.
 
 ## Detalles de implementación
 
