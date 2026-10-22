@@ -1,0 +1,342 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Classroom by kunfupay — Construye tu sueño sobre ingresos recurrentes</title>
+<meta name="description" content="Tu comunidad en Classroom cobra cada mes a alumnos de todo el mundo. Sin cuota mensual: solo pagas una comisión cuando vendes.">
+<link rel="icon" href="assets/icon.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+:root{
+  --bg:#f8f8f8;
+  --ink:#2e2e30;
+  --ink-strong:#1e1e20;
+  --muted:#6f6f73;
+  --faint:#9b9ba0;
+  --purple-1:#774FF8;
+  --purple-2:#5F26E3;
+  --card:#fff;
+  --field:#f6f6f8;
+  --field-line:#ececf1;
+  --star:#f5a623;
+  --marquee-speed:34s;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  min-height:100svh;
+  display:flex;
+  flex-direction:column;
+  position:relative;
+  overflow-x:hidden;
+  background:var(--bg);
+  color:var(--ink);
+  font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------- marca de agua SROOM ---------- */
+.bg-mark{
+  position:absolute;
+  top:-2%;
+  right:-4%;
+  width:min(1043px,64vw);
+  max-width:none;
+  pointer-events:none;
+  user-select:none;
+  z-index:0;
+}
+
+/* ---------- header ---------- */
+.site-header{
+  position:relative;
+  z-index:2;
+  padding:17px 62px;
+}
+.site-header img{height:48px;width:auto;display:block}
+
+/* ---------- hero ---------- */
+.hero{
+  position:relative;
+  z-index:1;
+  flex:1;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding:24px 24px 48px;
+}
+.hero h1{
+  font-size:clamp(27px,3.4vw,56px);
+  font-weight:500;
+  line-height:1.14;
+  letter-spacing:-.028em;
+  /* 13em deja "Construye tu sueño sobre" en la primera línea y parte ahí */
+  max-width:13em;
+}
+.hero p.sub{
+  margin-top:20px;
+  max-width:62ch;
+  font-size:clamp(15px,1.1vw,17px);
+  line-height:1.62;
+  letter-spacing:-.004em;
+  color:var(--muted);
+  text-wrap:balance;
+}
+
+/* ---------- tarjeta / quiz ---------- */
+.quiz{
+  margin-top:30px;
+  width:min(540px,100%);
+  padding:26px 28px 28px;
+  background:var(--card);
+  border-radius:28px;
+  text-align:left;
+  box-shadow:0 18px 50px rgba(32,24,80,.10), 0 2px 8px rgba(32,24,80,.05);
+}
+.quiz__steps{display:flex;gap:10px;margin-bottom:22px}
+.quiz__steps i{flex:1;height:7px;border-radius:999px;background:#e9e9ee}
+.quiz__steps i.is-done{background:linear-gradient(90deg,var(--purple-1),var(--purple-2))}
+.quiz__q{
+  font-size:clamp(18px,1.4vw,22px);
+  font-weight:600;
+  letter-spacing:-.022em;
+  color:var(--ink-strong);
+  margin-bottom:16px;
+}
+.opt{display:block;margin-top:10px}
+.opt input{position:absolute;opacity:0;width:0;height:0}
+.opt span{
+  display:flex;
+  align-items:center;
+  height:56px;
+  padding:0 20px;
+  border:1px solid var(--field-line);
+  border-radius:16px;
+  background:var(--field);
+  font-size:clamp(15px,1.05vw,16px);
+  font-weight:500;
+  letter-spacing:-.012em;
+  color:#26262a;
+  cursor:pointer;
+  transition:border-color .16s ease, background .16s ease, box-shadow .16s ease;
+}
+.opt span::before{
+  content:"";
+  flex:none;
+  width:22px;height:22px;
+  margin-right:15px;
+  border:2px solid #d3d3db;
+  border-radius:50%;
+  background:#fff;
+  transition:border-color .16s ease, box-shadow .16s ease;
+}
+.opt span:hover{background:#f1f1f5;border-color:#dedee6}
+.opt input:focus-visible + span{outline:2px solid var(--purple-1);outline-offset:2px}
+.opt input:checked + span{
+  border-color:var(--purple-1);
+  background:#f6f3ff;
+  box-shadow:0 0 0 3px rgba(119,79,248,.12);
+}
+.opt input:checked + span::before{
+  border-color:var(--purple-1);
+  box-shadow:inset 0 0 0 5px var(--purple-1);
+}
+
+/* ---------- cta alternativo (quítale el hidden si prefieres botón) ---------- */
+.cta{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  margin-top:40px;
+  padding:18px 38px;
+  border:0;
+  border-radius:999px;
+  background:linear-gradient(135deg,var(--purple-1) 0%,var(--purple-2) 100%);
+  color:#fff;
+  font:500 15px/1 'Inter',sans-serif;
+  letter-spacing:-.005em;
+  text-decoration:none;
+  cursor:pointer;
+  box-shadow:0 10px 26px rgba(106,62,240,.26);
+  transition:transform .16s ease, box-shadow .16s ease;
+}
+.cta:hover{transform:translateY(-1px);box-shadow:0 14px 30px rgba(106,62,240,.32)}
+
+/* ---------- letra chica + rating ---------- */
+.fine{margin-top:14px;font-size:clamp(12px,.9vw,13px);color:var(--faint);letter-spacing:-.002em}
+.rating{margin-top:14px;font-size:13px;color:var(--faint)}
+.stars{margin-top:5px;font-size:15px;color:var(--star);letter-spacing:4px}
+
+/* ---------- banda de prensa ---------- */
+.press{
+  position:relative;
+  z-index:1;
+  padding-bottom:110px;
+  overflow:hidden;
+  -webkit-mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);
+  mask-image:linear-gradient(to right,transparent,#000 8%,#000 92%,transparent);
+}
+.press__track{
+  display:flex;
+  align-items:center;
+  width:max-content;
+  gap:56px;
+  animation:press-scroll var(--marquee-speed) linear infinite;
+}
+.press:hover .press__track{animation-play-state:paused}
+.press__track img{
+  flex:none;
+  height:22px;
+  width:auto;
+  display:block;
+  /* un gris plano para que todos los logos pesen igual sobre fondo claro */
+  filter:brightness(0) invert(.62);
+}
+@keyframes press-scroll{
+  from{transform:translateX(0)}
+  to{transform:translateX(-25%)}   /* 4 copias iguales => bucle sin salto */
+}
+
+/* ---------- pie del hero ---------- */
+.hero-foot{
+  position:absolute;
+  left:0;right:0;bottom:64px;
+  z-index:1;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 67px 0 70px;
+  pointer-events:none;
+}
+.hero-foot div{display:flex;align-items:center;gap:20px;font-size:14px;color:var(--muted)}
+.hero-foot .bar{width:1px;height:30px;background:#c9c9cc}
+.hero-foot .line{width:64px;height:1px;background:#bdbdc0}
+.hero-foot .pager{color:#8e8e93}
+
+/* ---------- móvil ---------- */
+@media (max-width:900px){
+  .site-header{padding:20px 22px}
+  .site-header img{height:36px}
+  .bg-mark{width:146%;right:-42%;top:-3%;opacity:.78}
+  .hero{padding:56px 24px 20px}
+  .hero h1{max-width:100%}
+  .hero p.sub{margin-top:16px;line-height:1.58}
+  .quiz{margin-top:22px;width:min(342px,100%);padding:20px 18px 22px;border-radius:22px}
+  .quiz__steps{gap:8px;margin-bottom:18px}
+  .quiz__steps i{height:6px}
+  .quiz__q{margin-bottom:14px}
+  .opt span{height:50px;padding:0 16px;border-radius:14px}
+  .opt span::before{width:21px;height:21px;margin-right:14px}
+  .press{padding-bottom:40px}
+  .press__track{gap:38px}
+  .press__track img{height:15px}
+  .hero-foot{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .press__track{animation:none}
+  .cta{transition:none}
+}
+</style>
+</head>
+<body>
+
+<img class="bg-mark" src="assets/sroom-lavanda.png" alt="" aria-hidden="true">
+
+<header class="site-header">
+  <a href="/"><img src="assets/logo-classroom.png" alt="Classroom by kunfupay"></a>
+</header>
+
+<main class="hero">
+  <h1>Construye tu sueño sobre ingresos recurrentes.</h1>
+
+  <p class="sub">Tu comunidad en Classroom cobra cada mes a alumnos de todo el mundo,
+    y cada miembro nuevo se suma a los que ya pagan.</p>
+
+  <!-- Quiz: paso 1 de 3. Al elegir una opción se dispara `change` en el
+       formulario; ahí engancha tu lógica de pasos / envío. -->
+  <form class="quiz" id="quiz" data-step="1">
+    <div class="quiz__steps" aria-hidden="true">
+      <i class="is-done"></i><i></i><i></i>
+    </div>
+
+    <div class="quiz__q" id="quiz-q1">¿Ya tienes un curso o comunidad?</div>
+
+    <div role="radiogroup" aria-labelledby="quiz-q1">
+      <label class="opt">
+        <input type="radio" name="tiene_comunidad" value="no">
+        <span>No, aún no</span>
+      </label>
+      <label class="opt">
+        <input type="radio" name="tiene_comunidad" value="skool">
+        <span>Sí, en Skool</span>
+      </label>
+      <label class="opt">
+        <input type="radio" name="tiene_comunidad" value="hotmart">
+        <span>Sí, en Hotmart</span>
+      </label>
+    </div>
+  </form>
+
+  <!-- Variante con botón en lugar del quiz:
+  <a class="cta" href="/registro">Crea tu comunidad</a>
+  -->
+
+  <p class="fine">Sin cuota mensual. Solo pagas una comisión cuando vendes.</p>
+  <p class="rating">Valorado 4.9/5</p>
+  <p class="stars" aria-label="4.9 sobre 5">★★★★★</p>
+</main>
+
+<!-- Prensa: 6 logos repetidos 4 veces; la animación recorre justo una copia -->
+<section class="press" aria-label="Aparecemos en">
+  <div class="press__track">
+    <img src="assets/prensa/forbes.svg" alt="Forbes">
+    <img src="assets/prensa/techcrunch.svg" alt="TechCrunch">
+    <img src="assets/prensa/entrepreneur.svg" alt="Entrepreneur">
+    <img src="assets/prensa/wired.svg" alt="WIRED">
+    <img src="assets/prensa/el-pais.svg" alt="El País">
+    <img src="assets/prensa/business-insider.svg" alt="Business Insider">
+    <img src="assets/prensa/forbes.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/techcrunch.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/entrepreneur.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/wired.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/el-pais.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/business-insider.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/forbes.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/techcrunch.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/entrepreneur.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/wired.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/el-pais.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/business-insider.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/forbes.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/techcrunch.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/entrepreneur.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/wired.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/el-pais.svg" alt="" aria-hidden="true">
+    <img src="assets/prensa/business-insider.svg" alt="" aria-hidden="true">
+  </div>
+</section>
+
+<div class="hero-foot">
+  <div><span class="bar"></span><span>Scroll to explore</span></div>
+  <div><span class="line"></span><span class="pager">01 / 03</span></div>
+</div>
+
+<script>
+  // Paso 1 resuelto: aquí decides qué hacer con la respuesta.
+  document.getElementById('quiz').addEventListener('change', function (e) {
+    if (e.target.name !== 'tiene_comunidad') return;
+    // window.dataLayer?.push({event:'quiz_paso_1', valor:e.target.value});
+    // this.dataset.step = '2';  // pinta el segundo tramo y cambia la pregunta
+  });
+</script>
+
+</body>
+</html>
