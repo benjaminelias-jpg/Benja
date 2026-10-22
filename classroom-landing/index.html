@@ -174,7 +174,7 @@ body{
 .field input:user-invalid{border-color:#e2605f;box-shadow:0 0 0 3px rgba(226,96,95,.12)}
 .tel{display:flex;gap:10px}
 .tel select{flex:none;width:122px;padding-right:10px}
-.quiz__submit{width:100%;margin-top:18px}
+.quiz__submit{width:100%;margin-top:18px;min-height:54px}
 .quiz__note{margin-top:12px;font-size:12px;line-height:1.5;color:var(--faint);text-align:center}
 .quiz__back{
   margin-top:16px;padding:0;border:0;background:none;cursor:pointer;
@@ -243,7 +243,7 @@ body{
 .quiz--full .field > label{font-size:13.5px}
 .quiz--full .field input,.quiz--full .field select{height:58px;font-size:16px;background:#fff;border-color:#e4e4ec}
 .quiz--full .tel select{width:132px}
-.quiz--full .quiz__submit{height:60px;margin-top:24px;font-size:16px}
+.quiz--full .quiz__submit{min-height:62px;margin-top:24px;font-size:16px}
 .quiz--full .quiz__note{font-size:13px}
 .quiz--full .quiz__back{margin-top:22px;font-size:14px}
 .quiz--full .quiz__ok .tick{width:58px;height:58px;font-size:27px}
@@ -379,21 +379,37 @@ body{
 .head--center .lead{margin-inline:auto}
 .block--ink .lead{color:#a9a4b8}
 
-/* --- botones planos --- */
+/* --- botones --- */
 .cta{
-  display:inline-flex;align-items:center;gap:10px;padding:17px 30px;border:0;border-radius:4px;
+  --mx:50%; --my:50%;
+  position:relative;overflow:hidden;isolation:isolate;
+  display:inline-flex;align-items:center;justify-content:center;gap:12px;
+  min-height:52px;padding:0 28px;border:0;border-radius:9px;
   background:var(--ink-strong);color:#fff;cursor:pointer;
   font:500 15px/1 'Inter',sans-serif;letter-spacing:-.008em;text-decoration:none;
-  box-shadow:none;transition:background .18s ease,transform .18s ease;
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.14), 0 1px 2px rgba(16,14,22,.18);
+  transition:transform .2s cubic-bezier(.22,.8,.2,1), box-shadow .2s ease, background .2s ease;
 }
-.cta:hover{background:#000;transform:translateY(-1px)}
-.cta svg{width:14px;height:14px;transition:transform .22s cubic-bezier(.22,.8,.2,1)}
-.cta:hover svg{transform:translateX(3px)}
-.cta--acc{background:var(--acc)}
-.cta--acc:hover{background:#4a22cc}
-.cta--light{background:#fff;color:#121016}
-.cta--light:hover{background:#f1eff7}
-.cta--xl{padding:20px 36px;font-size:16px}
+.cta::before{  /* luz suave que sigue al cursor, nada de brillo de plástico */
+  content:"";position:absolute;inset:0;z-index:-1;opacity:0;transition:opacity .35s ease;
+  background:radial-gradient(130px circle at var(--mx) var(--my), rgba(255,255,255,.18), transparent 62%)}
+.cta:hover{transform:translateY(-1px);box-shadow:inset 0 1px 0 rgba(255,255,255,.16), 0 6px 18px rgba(16,14,22,.16)}
+.cta:hover::before{opacity:1}
+.cta:active{transform:translateY(0) scale(.994);box-shadow:inset 0 1px 0 rgba(255,255,255,.1), 0 1px 2px rgba(16,14,22,.2)}
+.cta:focus-visible{outline:2px solid var(--acc);outline-offset:3px}
+.cta--acc{background:var(--acc);box-shadow:inset 0 1px 0 rgba(255,255,255,.22), 0 1px 2px rgba(74,34,204,.28)}
+.cta--acc:hover{background:#5527e0;box-shadow:inset 0 1px 0 rgba(255,255,255,.24), 0 8px 22px rgba(74,34,204,.22)}
+.cta--light{background:#fff;color:#121016;box-shadow:inset 0 0 0 1px rgba(18,16,22,.1), 0 1px 2px rgba(16,14,22,.08)}
+.cta--light::before{background:radial-gradient(130px circle at var(--mx) var(--my), rgba(18,16,22,.07), transparent 62%)}
+.cta--light:hover{background:#fff;box-shadow:inset 0 0 0 1px rgba(18,16,22,.14), 0 8px 22px rgba(16,14,22,.10)}
+.cta--xl{min-height:60px;padding:0 36px;font-size:16px;border-radius:11px}
+/* la flecha se va y entra otra por la izquierda */
+.cta__ic{position:relative;display:inline-block;width:15px;height:15px;overflow:hidden;flex:none}
+.cta__ic svg{position:absolute;inset:0;width:15px;height:15px;
+  transition:transform .42s cubic-bezier(.65,0,.35,1)}
+.cta__ic svg + svg{transform:translateX(-140%)}
+.cta:hover .cta__ic svg{transform:translateX(140%)}
+.cta:hover .cta__ic svg + svg{transform:translateX(0)}
 .cta-wrap{margin-top:clamp(32px,4vw,52px)}
 .cta-wrap--center{text-align:center}
 .cta-nota{margin-top:14px;font-size:12.5px;letter-spacing:.01em;color:var(--faint)}
@@ -569,7 +585,7 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;
   padding:10px 16px calc(10px + env(safe-area-inset-bottom));
   background:rgba(248,248,248,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
-.sticky .cta{width:100%;justify-content:center;margin:0;padding:16px}
+.sticky .cta{width:100%;justify-content:center;margin:0;min-height:54px}
 
 @media (max-width:980px){
   .player{grid-template-columns:1fr}
@@ -1382,6 +1398,25 @@ html.js .kin.is-in .w{opacity:1;transform:none}
     visible = es[0].isIntersecting;
     if (visible && !encima) arranca(); else para();
   }, { threshold: 0.3 }).observe(player);
+})();
+
+/* ---------- botones: flecha doble y luz que sigue al cursor ---------- */
+(function () {
+  document.querySelectorAll('.cta').forEach(function (b) {
+    var svg = b.querySelector('svg');
+    if (svg && !b.querySelector('.cta__ic')) {
+      var caja = document.createElement('span');
+      caja.className = 'cta__ic';
+      svg.replaceWith(caja);
+      caja.appendChild(svg);
+      caja.appendChild(svg.cloneNode(true));
+    }
+    b.addEventListener('pointermove', function (e) {
+      var r = b.getBoundingClientRect();
+      b.style.setProperty('--mx', (e.clientX - r.left) + 'px');
+      b.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  });
 })();
 
 </script>
