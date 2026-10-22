@@ -7,12 +7,33 @@ No necesita build ni dependencias: súbela tal cual a cualquier hosting estátic
 ```
 classroom-landing/
 ├── index.html
+├── PENDIENTE-CONFIRMAR.md     datos que faltan por cerrar antes de publicar
 └── assets/
     ├── logo-classroom.png     logo del header (wordmark en gris oscuro + "kunfupay" morado)
     ├── sroom-lavanda.png      marca de agua diagonal, PNG transparente
     ├── icon.png               favicon
-    └── prensa/*.svg           Forbes, TechCrunch, Entrepreneur, WIRED, El País, Business Insider
+    ├── prensa/*.svg           Forbes, TechCrunch, Entrepreneur, WIRED, El País, Business Insider
+    ├── demo/cx1..cx7.webp     las 7 pantallas del recorrido del alumno
+    ├── modulos/icono-*.webp   los 6 iconos de módulo de la presentación
+    ├── testimonios/*.webp     fotos de los 6 clientes verificados
+    ├── pago/*.svg             métodos de pago (Bizum, Pix, Nequi, PSE, Mercado Pago…)
+    └── iconos/*.svg           iconos de las apps del ecosistema
 ```
+
+## Las 13 secciones
+
+Hero (quiz) → 1 Qué es Classroom · 2 Lo que dejas de pagar · 3 El precio · 4 Así lo vive tu alumno
+· 5 Quién ya cobra así · 6 Comparativa · 7 Migración · 8 Métodos de pago · 9 Tu dinero
+· 10 ¿Encaja contigo? · 11 Platinum · 12 FAQ · 13 Cierre.
+
+Todas las secciones terminan en un botón `.js-abrir-quiz`: abren el **mismo** cuestionario de 3 pasos
+en el modal, desde su propia posición. No hay un segundo formulario en ninguna parte.
+
+**Regla de contenido:** la página solo afirma lo que está publicado en la presentación comercial de
+Classroom o en la landing fiscal en producción. Ningún porcentaje de comisión (propio o ajeno), ningún
+plazo, ninguna garantía y ninguna cifra de tracción inventada. En la tabla comparativa, las casillas de
+la competencia que no tienen fuente quedan con un guion y la leyenda lo explica. Lo que falta por cerrar
+está en `PENDIENTE-CONFIRMAR.md`.
 
 ## Dónde tocar cada cosa
 

@@ -26,11 +26,9 @@
 }
 
 *{margin:0;padding:0;box-sizing:border-box}
+[hidden]{display:none !important}
 html{-webkit-text-size-adjust:100%}
 body{
-  min-height:100svh;
-  display:flex;
-  flex-direction:column;
   position:relative;
   overflow-x:hidden;
   background:var(--bg);
@@ -39,6 +37,9 @@ body{
   -webkit-font-smoothing:antialiased;
   text-rendering:optimizeLegibility;
 }
+
+/* ---------- bloque del hero (ocupa la primera pantalla) ---------- */
+.hero-shell{position:relative;display:flex;flex-direction:column;min-height:100svh;overflow:hidden}
 
 /* ---------- marca de agua SROOM ---------- */
 .bg-mark{
@@ -348,10 +349,241 @@ body{
   .press__track{animation:none}
   .cta{transition:none}
 }
+
+/* ============ SECCIONES ============ */
+.wrap{width:min(1180px,100% - 56px);margin-inline:auto}
+.wrap--narrow{width:min(900px,100% - 56px)}
+.block{position:relative;z-index:1;padding:clamp(60px,7vw,112px) 0;border-top:1px solid #ededf2}
+.block--tint{background:#f3f1fa;border-top-color:#e8e5f4}
+.block--ink{background:#17151c;color:#fff;border-top-color:#17151c}
+
+.head{max-width:780px}
+.head--center{margin-inline:auto;text-align:center}
+.eyebrow{display:inline-block;margin-bottom:14px;font-size:12px;font-weight:600;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--purple-2)}
+.block--ink .eyebrow{color:#b69cff}
+.t2{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(26px,3vw,42px);font-weight:600;
+  line-height:1.14;letter-spacing:-.03em;color:var(--ink-strong)}
+.block--ink .t2{color:#fff}
+.lead{margin-top:14px;font-size:clamp(15px,1.15vw,17.5px);line-height:1.62;color:var(--muted);max-width:68ch}
+.block--ink .lead{color:#b9b4c6}
+.head--center .lead{margin-inline:auto}
+
+.band{margin-top:clamp(26px,3vw,40px);padding:18px 22px;border-radius:16px;background:#f3f1fa;
+  font-size:clamp(15px,1.1vw,17px);line-height:1.55;color:#3a3a40}
+.band b{color:var(--ink-strong);font-weight:600}
+
+.grid{display:grid;gap:16px;margin-top:clamp(26px,3vw,40px)}
+.grid--2{grid-template-columns:repeat(2,1fr)}
+.grid--3{grid-template-columns:repeat(3,1fr)}
+.grid--4{grid-template-columns:repeat(4,1fr)}
+
+.card{background:#fff;border:1px solid #e9e9f0;border-radius:20px;padding:24px}
+.card--soft{background:#faf9ff;border-color:#e6e0fb}
+.card--mark{background:linear-gradient(160deg,#f6f3ff,#fff);border-color:#cdbcff;
+  box-shadow:0 10px 30px rgba(95,38,227,.08)}
+.card--mute{background:#f6f6f8;border-color:#ebebf1}
+.card h3{font-size:17.5px;font-weight:600;letter-spacing:-.018em;color:var(--ink-strong);margin-bottom:8px}
+.card p{font-size:15px;line-height:1.6;color:var(--muted)}
+.card .mod-ico{width:46px;height:46px;border-radius:13px;display:block;margin-bottom:16px}
+.card ul{margin-top:14px;display:grid;gap:8px}
+.card li{position:relative;padding-left:22px;font-size:14.5px;line-height:1.5;color:var(--muted)}
+.card li::before{content:"";position:absolute;left:0;top:7px;width:7px;height:7px;border-radius:50%;
+  background:var(--purple-1);opacity:.55}
+
+.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:9px 16px;border-radius:999px;
+  background:#fff;border:1px solid #e6e6ee;font-size:14px;color:#3a3a40}
+.pill b{font-weight:600;color:var(--ink-strong)}
+
+.note{margin-top:18px;font-size:12.5px;line-height:1.55;color:var(--faint)}
+.note--tight{margin-top:10px}
+
+.quote{display:flex;flex-direction:column;gap:16px;background:#fff;border:1px solid #e9e9f0;
+  border-radius:20px;padding:22px}
+.quote--mark{border-color:#cdbcff;background:#faf9ff}
+.quote p{font-size:15px;line-height:1.62;color:#35353b}
+.who{display:flex;align-items:center;gap:12px;margin-top:auto}
+.who img{width:42px;height:42px;border-radius:50%;object-fit:cover;flex:none}
+.who b{display:block;font-size:14px;color:var(--ink-strong)}
+.who span{font-size:12.5px;color:var(--faint)}
+.verif{display:inline-flex;align-items:center;gap:5px;margin-bottom:4px;font-size:11px;font-weight:600;
+  letter-spacing:.04em;text-transform:uppercase;color:#1f9d55}
+
+/* tabla de ahorro */
+.tbl{width:100%;margin-top:clamp(26px,3vw,40px);border-collapse:separate;border-spacing:0;
+  background:#fff;border:1px solid #e9e9f0;border-radius:20px;overflow:hidden}
+.tbl th,.tbl td{padding:15px 20px;text-align:left;font-size:15px;border-bottom:1px solid #f1f1f6;vertical-align:middle}
+.tbl thead th{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--faint);background:#fafafc}
+.tbl tbody tr:last-child td{border-bottom:0}
+.tbl .nom{font-weight:600;color:var(--ink-strong);white-space:nowrap}
+.tbl .sust{color:var(--muted)}
+.tbl .precio{text-align:right;color:var(--faint);text-decoration:line-through;white-space:nowrap}
+.tbl tr.destacada{background:#faf9ff;box-shadow:inset 3px 0 0 var(--purple-1)}
+.tag{display:inline-block;margin-left:8px;padding:2px 8px;border-radius:999px;background:#efeaff;
+  color:var(--purple-2);font-size:11px;font-weight:600;letter-spacing:.02em;vertical-align:middle;
+  text-decoration:none}
+
+.total{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-top:16px;background:#e9e9f0;
+  border:1px solid #e9e9f0;border-radius:20px;overflow:hidden}
+.total > div{background:#fff;padding:24px}
+.total .k{font-size:13px;color:var(--muted);margin-bottom:6px}
+.total .v{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(24px,2.6vw,34px);
+  font-weight:600;letter-spacing:-.03em;color:#4a4a52}
+.total .gana{background:linear-gradient(140deg,#f6f3ff,#fff)}
+.total .gana .v{color:var(--purple-2)}
+
+/* comparativa de precio */
+.vs{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:clamp(26px,3vw,40px)}
+.vs .cifra{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(34px,4.4vw,56px);
+  font-weight:600;letter-spacing:-.04em;line-height:1}
+.vs .cifra small{display:block;margin-top:6px;font-size:13px;font-weight:400;letter-spacing:0;color:var(--faint)}
+.vs .card--mute .cifra{color:#8a8a94}
+.vs .card--mark .cifra{color:var(--purple-2)}
+
+/* pasos numerados */
+.steps{display:grid;gap:14px;margin-top:clamp(26px,3vw,40px)}
+.step{display:flex;gap:18px;align-items:flex-start;background:#fff;border:1px solid #e9e9f0;
+  border-radius:18px;padding:22px}
+.step .n{flex:none;width:32px;height:32px;border-radius:50%;display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--purple-1),var(--purple-2));color:#fff;font-size:13px;font-weight:600}
+.step h3{font-size:16.5px;font-weight:600;color:var(--ink-strong);margin-bottom:6px;letter-spacing:-.015em}
+.step p{font-size:15px;line-height:1.6;color:var(--muted)}
+.block--ink .step{background:#211e29;border-color:#2e2938}
+.block--ink .step h3{color:#fff}
+.block--ink .step p{color:#b9b4c6}
+
+/* demo con pestañas */
+.tabs{display:inline-flex;gap:6px;margin-top:clamp(24px,3vw,36px);padding:5px;border-radius:999px;
+  background:#efeff4}
+.tabs button{padding:10px 20px;border:0;border-radius:999px;background:none;cursor:pointer;
+  font:500 14.5px/1 'Inter',sans-serif;color:var(--muted);letter-spacing:-.01em}
+.tabs button[aria-selected="true"]{background:#fff;color:var(--ink-strong);box-shadow:0 2px 8px rgba(24,16,60,.08)}
+.demo{display:grid;grid-template-columns:330px 1fr;gap:28px;margin-top:26px;align-items:start}
+.demo__list{display:grid;gap:8px}
+.demo__list button{display:flex;gap:14px;align-items:center;width:100%;padding:14px 16px;border:1px solid #e9e9f0;
+  border-radius:14px;background:#fff;cursor:pointer;text-align:left;font:500 15px/1.35 'Inter',sans-serif;
+  color:#3a3a40;letter-spacing:-.012em;transition:border-color .16s ease,background .16s ease}
+.demo__list button:hover{border-color:#cdbcff;background:#faf9ff}
+.demo__list button[aria-current="true"]{border-color:var(--purple-1);background:#f6f3ff;color:var(--ink-strong)}
+.demo__list .n{font-size:12px;font-weight:600;color:var(--purple-2);flex:none;width:22px}
+.demo__view{background:#fff;border:1px solid #e9e9f0;border-radius:22px;padding:18px;position:sticky;top:24px}
+.demo__view img{width:100%;height:auto;border-radius:14px;display:block;background:#f6f6f8}
+.demo__cap{margin-top:16px;font-size:15px;line-height:1.6;color:#35353b}
+.demo__cap b{color:var(--ink-strong);font-weight:600}
+.demo__arg{margin-top:8px;font-size:14px;line-height:1.6;color:var(--faint)}
+.demo--b .demo__view{display:none}
+.demo--b{grid-template-columns:1fr}
+.switch{display:grid;gap:12px}
+.switch > div{background:#fff;border:1px solid #e9e9f0;border-radius:18px;padding:20px 22px}
+.switch > div.destacado{border-color:#cdbcff;background:#faf9ff}
+.switch h3{font-size:16px;font-weight:600;color:var(--ink-strong);margin-bottom:6px}
+.switch .cita{font-size:15px;color:#35353b;margin-bottom:6px}
+.switch p{font-size:14.5px;line-height:1.6;color:var(--muted)}
+
+/* comparativa */
+.leyenda{margin-top:28px;font-size:13px;color:var(--faint);line-height:1.6}
+.cmp{width:100%;margin-top:16px;border-collapse:separate;border-spacing:0;background:#fff;
+  border:1px solid #e9e9f0;border-radius:20px;overflow:hidden;font-size:14.5px}
+.cmp th,.cmp td{padding:14px 16px;text-align:left;border-bottom:1px solid #f1f1f6;vertical-align:top}
+.cmp thead th{font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;
+  color:var(--faint);background:#fafafc;white-space:nowrap}
+.cmp thead th.own,.cmp td.own{background:#f4fbf6}
+.cmp thead th.own{color:#1f7a45}
+.cmp .fila{font-weight:500;color:var(--ink-strong);width:34%}
+.cmp .fila small{display:block;margin-top:5px;font-weight:400;font-size:13px;color:var(--muted);line-height:1.5}
+.cmp td.c{text-align:center;color:var(--faint);white-space:nowrap}
+.cmp td.own{text-align:left;color:#1f7a45;font-weight:500}
+.cmp .si{color:#1f9d55;font-weight:700}
+.cmp .no{color:#c4c4cc;font-weight:700}
+.cmp tr:last-child td{border-bottom:0}
+.cmp .cta-row td{background:#f4fbf6;text-align:center;padding:26px}
+
+/* métodos de pago */
+.logos-pago{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.logos-pago img{height:26px;width:auto;padding:10px 14px;background:#fff;border:1px solid #e9e9f0;
+  border-radius:12px;box-sizing:content-box}
+.paises{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.paises span{padding:8px 14px;border-radius:999px;background:#fff;border:1px solid #e9e9f0;font-size:14px}
+
+/* faq */
+.faq{max-width:860px;margin:clamp(26px,3vw,40px) auto 0}
+.faq details{border:1px solid #e9e9f0;border-radius:16px;background:#fff;margin-bottom:10px}
+.faq summary{list-style:none;cursor:pointer;padding:18px 54px 18px 22px;position:relative;
+  font-size:16px;font-weight:500;letter-spacing:-.015em;color:var(--ink-strong)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";position:absolute;right:22px;top:15px;font-size:22px;color:var(--faint)}
+.faq details[open] summary::after{content:"–"}
+.faq .a{padding:0 22px 20px;font-size:15px;line-height:1.68;color:var(--muted)}
+.faq .a p + p{margin-top:10px}
+
+/* cierre + cta */
+.cta-wrap{margin-top:clamp(26px,3vw,38px)}
+.head--center + .cta-wrap,.cta-wrap--center{text-align:center}
+.cta-nota{margin-top:12px;font-size:13px;color:var(--faint)}
+.cta--ghost{background:#fff;color:var(--ink-strong);border:1px solid #dcdce6;box-shadow:none}
+.cta--ghost:hover{background:#f6f6fa}
+.link-cta{display:inline-block;margin-top:22px;font-size:14.5px;color:var(--purple-2);
+  text-decoration:underline;text-underline-offset:3px;background:none;border:0;cursor:pointer;padding:0}
+
+/* prensa estática */
+.prensa{display:flex;flex-wrap:wrap;align-items:center;gap:34px;margin-top:30px;
+  padding-top:26px;border-top:1px solid #e9e9f0}
+.prensa img{height:20px;width:auto;filter:brightness(0) invert(.72)}
+.prensa span{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+
+/* footer */
+.foot{padding:40px 0 56px;border-top:1px solid #ededf2;background:#fff}
+.foot__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
+.foot img{height:34px}
+.foot p{font-size:13px;color:var(--faint)}
+
+/* cta fija en móvil */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;
+  padding:10px 16px calc(10px + env(safe-area-inset-bottom));
+  background:rgba(248,248,248,.94);backdrop-filter:blur(10px);border-top:1px solid #e9e9ef}
+.sticky .cta{width:100%;margin:0;padding:16px}
+
+@media (max-width:980px){
+  .demo{grid-template-columns:1fr}
+  .demo__view{position:static;order:-1}
+  .vs,.total{grid-template-columns:1fr}
+}
+@media (max-width:900px){
+  .wrap,.wrap--narrow{width:min(100%,100% - 40px)}
+  .grid--2,.grid--3,.grid--4{grid-template-columns:1fr}
+  .sticky{display:block}
+  body{padding-bottom:78px}
+  .block{padding:52px 0}
+  /* tablas -> tarjetas */
+  .tbl,.tbl tbody,.tbl tr,.tbl td{display:block;width:100%}
+  .tbl thead{display:none}
+  .tbl{border:0;background:none}
+  .tbl tr{background:#fff;border:1px solid #e9e9f0;border-radius:16px;padding:14px 16px;margin-bottom:10px}
+  .tbl td{border:0;padding:2px 0}
+  .tbl .precio{text-align:left}
+  .cmp,.cmp tbody,.cmp tr,.cmp td{display:block;width:100%}
+  .cmp thead{display:none}
+  .cmp{border:0;background:none}
+  .cmp tr{background:#fff;border:1px solid #e9e9f0;border-radius:16px;padding:14px 16px;margin-bottom:10px}
+  .cmp td{border:0;padding:4px 0;text-align:left}
+  .cmp .fila{width:auto}
+  .cmp td.c{text-align:left}
+  .cmp td.c::before{content:attr(data-col) ": ";color:var(--faint);font-size:13px}
+  .cmp td.own{background:#f4fbf6;border-radius:10px;padding:10px 12px;margin-top:8px}
+  .cmp td.own::before{content:"Classroom: ";font-weight:600}
+  .cmp .cta-row{padding:0;border:0;background:none}
+  .cmp .cta-row td{background:#f4fbf6;border-radius:16px}
+  .prensa{gap:22px}
+  .prensa img{height:17px}
+}
+
 </style>
 </head>
 <body>
 
+<div class="hero-shell">
 <img class="bg-mark" src="assets/sroom-lavanda.png" alt="" aria-hidden="true">
 
 <header class="site-header">
@@ -521,6 +753,992 @@ body{
   <div><span class="bar"></span><span>Scroll to explore</span></div>
   <div><span class="line"></span><span class="pager">01 / 03</span></div>
 </div>
+</div><!-- /hero-shell -->
+
+<!-- ====================== 1 · QUÉ ES CLASSROOM ====================== -->
+<section class="block" id="producto">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Qué es Classroom</span>
+      <h2 class="t2">Classroom reúne tu curso, tu comunidad y tus cobros en un mismo espacio, bajo tu marca.</h2>
+      <p class="lead">Monetiza tu conocimiento mediante vídeos, documentos y otros formatos. No es una plataforma
+        de cursos con una pasarela pegada por fuera: el cobro es uno de los seis módulos del producto.</p>
+    </div>
+
+    <p class="band">El flujo de Classroom está compuesto por: <b>comunidad, aula, calendario, clasificaciones,
+      mensajería y cobro integrado</b>.</p>
+
+    <div class="grid grid--3">
+      <div class="card">
+        <img class="mod-ico" src="assets/modulos/icono-comunidad.webp" alt="" width="46" height="46">
+        <h3>Comunidad</h3>
+        <p>El feed donde tu audiencia se queda, comenta y vuelve: menos dispersión, más conexión.</p>
+      </div>
+      <div class="card">
+        <img class="mod-ico" src="assets/modulos/icono-aula.webp" alt="" width="46" height="46" loading="lazy">
+        <h3>Aula</h3>
+        <p>Tus cursos con vídeo, documentos y sistema de seguimiento, bajo tu marca, desde un solo panel.</p>
+      </div>
+      <div class="card card--mark">
+        <img class="mod-ico" src="assets/modulos/icono-cobro.webp" alt="" width="46" height="46" loading="lazy">
+        <h3>Cobro integrado</h3>
+        <p>Cobra el acceso a tu curso y tu comunidad con un solo link. El checkout vive dentro del curso:
+          Bizum, tarjeta, Apple Pay, cripto o wallet Kunfupay, sin salir de tu marca.</p>
+      </div>
+      <div class="card">
+        <img class="mod-ico" src="assets/modulos/icono-calendario.webp" alt="" width="46" height="46" loading="lazy">
+        <h3>Calendario</h3>
+        <p>Eventos en directo con confirmación de asistencia, para que tu comunidad no se pierda nada.</p>
+      </div>
+      <div class="card">
+        <img class="mod-ico" src="assets/modulos/icono-clasificaciones.webp" alt="" width="46" height="46" loading="lazy">
+        <h3>Clasificaciones</h3>
+        <p>Niveles y puntos que premian la participación, para mantener vivo el interés.</p>
+      </div>
+      <div class="card">
+        <img class="mod-ico" src="assets/modulos/icono-mensajeria.webp" alt="" width="46" height="46" loading="lazy">
+        <h3>Mensajería</h3>
+        <p>Mensajes directos entre miembros, para que las conversaciones no se queden fuera de tu espacio.</p>
+      </div>
+    </div>
+
+    <p class="band" style="margin-top:16px">De aquí sale el «cada mes»: <b>«Sí, puedes crear links de pago único
+      y suscripciones recurrentes desde el mismo panel»</b> — respuesta oficial de la FAQ de Kunfupay. Es lo que
+      convierte un curso de pago único en un ingreso que se renueva.</p>
+
+    <div class="grid grid--2" style="margin-top:16px">
+      <div class="card card--soft">
+        <h3>Detrás del aula hay una infraestructura de cobros, no una app de vídeos</h3>
+        <p>Classroom forma parte del ecosistema de Kunfupay, que te ofrece las herramientas necesarias para
+          desarrollar y gestionar tu actividad digital: publicación de contenidos, <b>cobros y pagos</b>,
+          herramientas como Biolink y <b>soporte humano 24 horas</b>.</p>
+      </div>
+      <div class="quote quote--mark">
+        <p>«Doy mentorías 1:1 y un programa de 8 semanas. Con Kunfupay cobro tranquilo, <b>monto mi Classroom</b>
+          y mis alumnos entran a pagar con Bizum en segundos.»</p>
+        <div class="who">
+          <img src="assets/testimonios/sergio-navarro.webp" alt="" width="42" height="42" loading="lazy">
+          <div>
+            <span class="verif">✓ Cliente verificado</span>
+            <b>Sergio Navarro</b>
+            <span>Coach de oratoria y marca personal · España · 31,5K seguidores</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-wrap">
+      <p class="lead" style="margin-bottom:18px">Lo tenemos todo preparado para que solo tengas que subir tu
+        contenido y empezar a rentabilizar tu conocimiento.</p>
+      <button class="cta js-abrir-quiz" data-origen="producto">Crear mi Classroom</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 2 · LO QUE DEJAS DE PAGAR ====================== -->
+<section class="block block--tint" id="ahorro">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Lo que dejas de pagar</span>
+      <h2 class="t2">No sumas una herramienta más. Quitas hasta siete.</h2>
+      <p class="lead">Cada pieza de Kunfupay reemplaza una app —o un gasto— que hoy pagas aparte. Por separado
+        cuestan desde 508 $/mes. Aquí vienen incluidas en tu cuenta, sin cuota mensual: el mes que vendes y el
+        mes que no.</p>
+    </div>
+
+    <table class="tbl">
+      <thead>
+        <tr><th>Herramienta Kunfupay</th><th>Sustituye a</th><th style="text-align:right">Precio de referencia</th></tr>
+      </thead>
+      <tbody>
+        <tr><td class="nom">Tienda</td><td class="sust">Stripe, Shopify, WooCommerce o PayPal Checkout</td><td class="precio">desde 39 $/mes</td></tr>
+        <tr><td class="nom">BioLink</td><td class="sust">Linktree Pro</td><td class="precio">15 $/mes</td></tr>
+        <tr><td class="nom">Páginas</td><td class="sust">Lovable, Carrd o Leadpages</td><td class="precio">desde 25 $/mes</td></tr>
+        <tr class="destacada"><td class="nom">Classroom<span class="tag">lo que vienes a buscar</span></td><td class="sust">Kajabi, Skool o Hotmart</td><td class="precio">desde 99 $/mes</td></tr>
+        <tr><td class="nom">KunfuCard</td><td class="sust">Revolut, PayPal o tu tarjeta bancaria</td><td class="precio">desde 10 $/mes</td></tr>
+        <tr><td class="nom">Sensei</td><td class="sust">ChatGPT Plus, Gemini, Claude o Perplexity Pro</td><td class="precio">20 $/mes</td></tr>
+        <tr><td class="nom">Cuota de autónomo<span class="tag">la más cara — y no es software</span></td><td class="sust">darte de alta como autónomo para poder facturar</td><td class="precio">desde 300 $/mes</td></tr>
+      </tbody>
+    </table>
+
+    <div class="total">
+      <div><p class="k">Lo que pagarías por separado</p><p class="v">desde 508 $/mes</p></div>
+      <div class="gana"><p class="k">Con Kunfupay</p><p class="v">Incluido, sin cuota mensual</p></div>
+    </div>
+
+    <div class="grid grid--2" style="margin-top:16px">
+      <div class="card">
+        <h3>¿Y cuando venda?</h3>
+        <p>La cuota es cero. Cuando vendes, se cobra una <b>comisión variable según rubro, ticket y volumen</b>
+          — y solo entonces. Si un mes no vendes, no pagas nada.</p>
+      </div>
+      <div class="quote">
+        <p>«Vendo cursos a alumnos de medio mundo y <b>los gestiono desde un solo panel</b>. Se acabó saltar
+          entre cinco herramientas.»</p>
+        <div class="who">
+          <img src="assets/testimonios/lucia-hernandez.webp" alt="" width="42" height="42" loading="lazy">
+          <div>
+            <span class="verif">✓ Cliente verificado</span>
+            <b>Lucía Hernández</b>
+            <span>Formadora online · España · 24,1K seguidores</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="note">Todas viven en la misma cuenta que tu Classroom y ninguna tiene cuota. Entran además el píxel
+      Kunfupay para medir en Google, Meta y TikTok, y soporte humano 24 horas.</p>
+    <p class="note note--tight">Precios de referencia de los planes de entrada públicos de cada herramienta,
+      consultados en 2026 — no incluyen las comisiones adicionales que cobra cada plataforma por venta.</p>
+    <p class="note note--tight">Kunfupay no es una asesoría: es una plataforma que vende por ti, con la estructura
+      fiscal ya montada.</p>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="ahorro">Quiero mi Classroom sin cuota mensual</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 3 · EL PRECIO ====================== -->
+<section class="block" id="precio">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">El precio</span>
+      <h2 class="t2">Cuota mensual: 0. Pagas cuando te paga un alumno.</h2>
+      <p class="lead">La cuenta y las herramientas son gratis. Solo hay una comisión variable cuando vendes,
+        según tu rubro, ticket y volumen. El mes que no vendes, no pagas nada.</p>
+    </div>
+
+    <div class="vs">
+      <div class="card card--mute">
+        <p class="cifra">desde 99 $/mes<small>precio de referencia de la categoría</small></p>
+        <h3 style="margin-top:18px">Lo de siempre: pagas la cuota, vendas o no</h3>
+        <p>La categoría que Classroom sustituye —Kajabi, Skool o Hotmart— tiene un precio de referencia desde
+          99 $/mes. Esa cuota llega igual el mes que lanzas y el mes que estás grabando. Y es solo la entrada:
+          la comisión por venta va aparte.</p>
+        <ul>
+          <li>Pagas los meses que no vendes nada</li>
+          <li>Pagas mientras montas el curso</li>
+          <li>La comisión por venta se suma encima de la cuota</li>
+        </ul>
+      </div>
+      <div class="card card--mark">
+        <p class="cifra">0<small>de cuota al mes</small></p>
+        <h3 style="margin-top:18px">Classroom: primero cobra tu alumno</h3>
+        <p>La cuenta y las herramientas son gratis; solo pagas una pequeña comisión cuando vendes. Montar el
+          aula, subir tus vídeos y abrir tu comunidad no cuesta nada. Si este mes no entra una venta, este mes
+          no hay coste.</p>
+        <ul>
+          <li>0 de cuota mensual</li>
+          <li>Comisión solo sobre lo que vendes</li>
+          <li>Montar el aula y subir tu contenido: gratis</li>
+          <li>El cobro va dentro de Classroom: no sumas una pasarela aparte</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Precios de referencia de los planes de entrada públicos de cada herramienta, consultados en
+      2026 — no incluyen las comisiones adicionales que cobra cada plataforma por venta.</p>
+
+    <div class="card card--soft" style="margin-top:28px">
+      <h3>¿Y el porcentaje? No hay uno fijo que enseñar</h3>
+      <p>No lo escondemos: no existe una tarifa plana. Esta es la respuesta exacta que damos en nuestra web,
+        palabra por palabra: <b>«La cuenta y las herramientas no tienen cuota mensual. Se cobra una comisión
+        variable solo cuando vendes, según rubro, ticket y volumen.»</b> Tu comisión se calcula sobre tu negocio,
+        no sobre una tabla. Tres variables, ni una más.</p>
+    </div>
+
+    <div class="grid grid--3">
+      <div class="card"><h3>Rubro</h3><p>Qué vendes. Curso grabado, membresía o mentoría: el tipo de producto
+        digital entra en el cálculo.</p></div>
+      <div class="card"><h3>Ticket</h3><p>A cuánto lo vendes. El precio de tu curso o del acceso a tu comunidad
+        es la segunda variable.</p></div>
+      <div class="card"><h3>Volumen</h3><p>Cuánto vendes al mes. Es la tercera, y es justo lo que te pregunta el
+        paso 2 del quiz: «¿Cuánto facturas actualmente?».</p></div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>«Sin permanencia» no es una promesa: es que no hay nada que cancelar</h3>
+      <p>Al no haber suscripción no hay contrato que rescindir, ni plan que renovar, ni fecha que vigilar.
+        Quedarte no te cuesta nada y, justo por eso, irte tampoco. Tu Classroom puede pasar dos meses sin
+        publicar y la factura seguirá siendo la misma: ninguna.</p>
+    </div>
+
+    <div class="pill-row">
+      <span class="pill"><b>Sin cuota mensual</b> · no hay cargo el día 1 ni el día 15</span>
+      <span class="pill"><b>Sin permanencia</b> · no hay suscripción que firmar</span>
+      <span class="pill"><b>Alta en minutos</b> · «Sin trámites ni papeleos. Solo crea y conecta»</span>
+      <span class="pill"><b>Sin integraciones técnicas</b> · no necesitas desarrollar nada para empezar a cobrar</span>
+    </div>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="precio">Abrir mi cuenta gratis</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos<br>
+        Dos preguntas sobre tu negocio y dónde te dejamos la cuenta.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 4 · ASÍ LO VIVE TU ALUMNO ====================== -->
+<section class="block block--tint" id="demo">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Las 7 pantallas que ve quien te paga</span>
+      <h2 class="t2">Así lo vive tu alumno. Así lo controlas tú.</h2>
+      <p class="lead">Del primer vistazo al curso hasta el cuestionario final, todo ocurre dentro de tu Classroom.
+        Siete pantallas por las que pasa quien te compra, y cinco interruptores con los que decides cómo se vende.</p>
+    </div>
+
+    <div class="tabs" role="tablist">
+      <button role="tab" aria-selected="true" data-tab="a">Así lo vive tu alumno</button>
+      <button role="tab" aria-selected="false" data-tab="b">Así lo controlas tú</button>
+    </div>
+
+    <!-- pestaña A -->
+    <div class="demo" id="tab-a">
+      <div class="demo__list" id="demo-pasos">
+        <button aria-current="true" data-i="1"><span class="n">01</span> Presentación del curso</button>
+        <button data-i="2"><span class="n">02</span> Pago integrado</button>
+        <button data-i="3"><span class="n">03</span> Onboarding de bienvenida</button>
+        <button data-i="4"><span class="n">04</span> Su aula, con el progreso</button>
+        <button data-i="5"><span class="n">05</span> Índice y contenido</button>
+        <button data-i="6"><span class="n">06</span> Comentarios de la comunidad</button>
+        <button data-i="7"><span class="n">07</span> Cuestionario / Examen</button>
+      </div>
+      <div class="demo__view">
+        <img id="demo-img" src="assets/demo/cx1.webp" alt="Pantalla de Classroom: presentación del curso" width="1000" height="750">
+        <p class="demo__cap" id="demo-cap">Antes de entrar ve <b>precio, duración, módulos, idioma y el temario
+          completo</b>. Sabe exactamente qué compra.</p>
+        <p class="demo__arg" id="demo-arg">La ficha de venta ya viene hecha: tu página de ventas, tu checkout y tu
+          aula son la misma cosa. Y quien sabe exactamente qué compra no te escribe por DM antes ni se lleva una
+          sorpresa después.</p>
+      </div>
+    </div>
+
+    <!-- pestaña B -->
+    <div class="demo demo--b" id="tab-b" hidden>
+      <div class="switch">
+        <div>
+          <h3>Interruptor 1 · Publicación</h3>
+          <p class="cita">Publica tu curso: abierto, por enlace o privado.</p>
+          <p>Abierto, si quieres que se descubra y se venda en frío. Por enlace, si vendes donde ya te lee la
+            gente: Telegram, WhatsApp, tu bio. Privado, si es para los que metes tú: bonus, cohortes, clientes 1:1.</p>
+        </div>
+        <div>
+          <h3>Interruptor 2 · Tipo de acceso</h3>
+          <p class="cita">Define el acceso: gratuito, de pago o exclusivo.</p>
+          <p>La escalera entera en el mismo sitio y con la misma audiencia: regala el primer módulo para captar,
+            cobra el resto, guarda lo exclusivo para tus miembros. No cambias de herramienta cuando el alumno
+            sube de nivel.</p>
+        </div>
+        <div>
+          <h3>Interruptor 3 · Progreso</h3>
+          <p class="cita">Gestiona el avance: exige completar cursos previos.</p>
+          <p>El itinerario se desbloquea solo y el progreso se gestiona de manera automática: nadie se salta
+            módulos y tú no persigues a nadie. Es lo que sostiene un programa de varias semanas sin llevarlo a mano.</p>
+        </div>
+        <div>
+          <h3>Interruptor 4 · Programación</h3>
+          <p class="cita">Programa el lanzamiento a tu ritmo.</p>
+          <p>Súbelo cuando puedas, ábrelo cuando toque. Dejas el contenido cargado y se publica el día que
+            marques: no tienes que estar delante del ordenador a la hora de abrir carrito.</p>
+        </div>
+        <div class="destacado">
+          <h3>Interruptor 5 · Píxel Kunfupay</h3>
+          <p class="cita">Mide resultados en Google, Meta y TikTok con el píxel Kunfupay.</p>
+          <p>La medición se configura desde el propio curso, en tus cuentas de Google, Meta y TikTok. Vendiendo
+            dentro del escaparate de otro, la medición se queda allí; aquí el píxel es el tuyo, así que sigues
+            optimizando y escalando con pauta sin montar integraciones.</p>
+        </div>
+        <div class="card--soft" style="border:1px solid #e6e0fb;border-radius:18px;padding:20px 22px">
+          <h3>¿Todavía no tienes comunidad?</h3>
+          <p>Si en el quiz marcaste «¡Quiero crear la primera!», el camino empieza por los interruptores 1 y 2:
+            montas el aula, publicas un curso gratuito, lo repartes por enlace donde ya te lee la gente y activas
+            el cobro cuando tengas público. Montar el aula y cobrar por ella son dos pasos distintos, y no tienen
+            que pasar el mismo día.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>Lo que de verdad genera devoluciones</h3>
+      <p>Un alumno pide la devolución cuando no sabía qué compraba, no encuentra el acceso o se pierde a los dos
+        días. Las tres cosas las cubren los pasos 01, 03 y 04: ficha completa antes de pagar, entrada guiada y
+        progreso siempre a la vista.</p>
+    </div>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="demo">Quiero que mi curso se vea así</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 5 · QUIÉN YA COBRA ASÍ ====================== -->
+<section class="block" id="clientes">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Quién ya cobra así</span>
+      <h2 class="t2">Mira quién ya cobra así antes de dejarnos tu email</h2>
+      <p class="lead">Seis clientes verificados de Kunfupay, con nombre, perfil, país y número de seguidores.
+        Los tres primeros venden formación y comunidad de pago, como tú. Sergio, además, monta su Classroom.</p>
+    </div>
+
+    <div class="grid grid--3">
+      <div class="quote quote--mark">
+        <p>«Doy mentorías 1:1 y un programa de 8 semanas. Con Kunfupay cobro tranquilo, <b>monto mi Classroom</b>
+          y mis alumnos entran a pagar con Bizum en segundos.»</p>
+        <div class="who"><img src="assets/testimonios/sergio-navarro.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Sergio Navarro</b>
+          <span>Coach de oratoria y marca personal · España · 31,5K</span></div></div>
+      </div>
+      <div class="quote">
+        <p>«Vendo cursos a alumnos de medio mundo y los gestiono <b>desde un solo panel</b>. Se acabó saltar
+          entre cinco herramientas.»</p>
+        <div class="who"><img src="assets/testimonios/lucia-hernandez.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Lucía Hernández</b>
+          <span>Formadora online · España · 24,1K</span></div></div>
+      </div>
+      <div class="quote">
+        <p>«Mi comunidad es 80% brasileña y <b>antes perdía ventas en el pago</b>. Con PIX como método nativo,
+          ahora me pagan sin pensárselo.»</p>
+        <div class="who"><img src="assets/testimonios/marina-costa.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Marina Costa</b>
+          <span>Comunidad de pago en Discord · Portugal · 8,7K</span></div></div>
+      </div>
+      <div class="quote">
+        <p>«Mis suscriptores pagan algunos con USDT y otros con <b>su método local</b>, y a mí me liquidan
+          rapidísimo. Además, puedo retirar en la moneda que quiera.»</p>
+        <div class="who"><img src="assets/testimonios/luis-guerrero.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Luis Guerrero</b>
+          <span>Membresía de señales de trading · Venezuela · 47,2K</span></div></div>
+      </div>
+      <div class="quote">
+        <p>«Cobrar desde Venezuela era casi imposible, y ahora recibo <b>pagos internacionales sin
+          complicaciones</b>, incluso puedo gastar con la tarjeta Kunfupay.»</p>
+        <div class="who"><img src="assets/testimonios/genesis-marcano.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Génesis Marcano</b>
+          <span>Asesorías de marketing digital · Venezuela · 15,8K</span></div></div>
+      </div>
+      <div class="quote">
+        <p>«Con Kunfupay dejé atrás las comisiones de Fiverr y Upwork. Facturo a marcas de cualquier país
+          <b>sin darme de alta como autónomo</b>.»</p>
+        <div class="who"><img src="assets/testimonios/daniel-alcaraz.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Daniel Alcaraz</b>
+          <span>Creador UGC · España · 12,4K</span></div></div>
+      </div>
+    </div>
+
+    <div class="prensa">
+      <span>Aparecemos en</span>
+      <img src="assets/prensa/forbes.svg" alt="Forbes" loading="lazy">
+      <img src="assets/prensa/techcrunch.svg" alt="TechCrunch" loading="lazy">
+      <img src="assets/prensa/entrepreneur.svg" alt="Entrepreneur" loading="lazy">
+      <img src="assets/prensa/wired.svg" alt="WIRED" loading="lazy">
+      <img src="assets/prensa/el-pais.svg" alt="El País" loading="lazy">
+      <img src="assets/prensa/business-insider.svg" alt="Business Insider" loading="lazy">
+    </div>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="testimonios">Unirme a ellos</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 6 · COMPARATIVA ====================== -->
+<section class="block block--tint" id="comparativa">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Comparativa · lo que usas hoy vs. Classroom</span>
+      <h2 class="t2">Hotmart y Stripe existen. Pero Kunfupay es la mejor opción.</h2>
+      <p class="lead">Uno se queda con tu margen, ambos dividen tu negocio y ninguno cuenta con cobertura
+        internacional.</p>
+    </div>
+
+    <div class="grid grid--3">
+      <div class="card card--mute">
+        <h3>Stripe cobra. No te monta el negocio.</h3>
+        <p>Es pasarela, y en EE. UU. y Europa funciona. Pero no te da aula, ni comunidad, ni onboarding, ni
+          progreso, ni cuestionarios. Eso lo montas por fuera, lo pagas por fuera y lo arreglas tú cuando se
+          rompe. Y hay una parte que ni montándola resuelves: nuestra propia landing lo dice así — «funcionan
+          bien en EE. UU. y Europa, pero en LATAM, África y parte de Asia no ofrecen los métodos de pago que
+          usa la gente. Eso hace que muchos clientes no terminen el pago».</p>
+      </div>
+      <div class="card card--mute">
+        <h3>Hotmart te da plataforma. Y se queda con tu margen.</h3>
+        <p>La frase es nuestra y va firmada: «uno se queda con tu margen, ambos dividen tu negocio y ninguno
+          cuenta con cobertura internacional». Tienes aula y escaparate, pero el negocio sigue partido en dos:
+          la plataforma por un lado, tu cobro y tu marca por otro. Un solo negocio en dos sistemas que no se hablan.</p>
+      </div>
+      <div class="card card--mark">
+        <h3>Classroom es pasarela y plataforma en el mismo producto.</h3>
+        <p>No son dos contratos: es el mismo sitio. Curso, comunidad y cobro viven juntos, bajo tu marca, y el
+          dinero cae en la misma cuenta desde la que lo gestionas. El alumno no cambia de dominio ni ve el logo
+          de otro justo cuando saca la tarjeta.</p>
+      </div>
+    </div>
+
+    <p class="leyenda"><b>Cómo leer la tabla:</b> ✓ sí, y está documentado · ✗ no · — no nos consta, y no lo
+      afirmamos. Solo marcamos una casilla de la competencia cuando tenemos fuente. Donde no la tenemos, la
+      dejamos vacía en vez de inventarla.</p>
+
+    <table class="cmp">
+      <thead>
+        <tr><th>Lo que usas hoy</th><th>Stripe</th><th>Hotmart</th><th>Skool</th><th>Kajabi</th>
+          <th class="own">Classroom by Kunfupay</th></tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="fila">¿Qué pagas al mes si no vendes?</td>
+          <td class="c" data-col="Stripe">—</td><td class="c" data-col="Hotmart">desde 99 $/mes*</td>
+          <td class="c" data-col="Skool">desde 99 $/mes*</td><td class="c" data-col="Kajabi">desde 99 $/mes*</td>
+          <td class="own">0. Solo comisión cuando vendes</td>
+        </tr>
+        <tr>
+          <td class="fila">Pasarela de cobro propia
+            <small>El cobro no es una pieza que enchufas: ya es un módulo del producto.</small></td>
+          <td class="c" data-col="Stripe"><span class="si">✓</span></td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span> Módulo del producto</td>
+        </tr>
+        <tr>
+          <td class="fila">Curso, comunidad y aula en el mismo sitio
+            <small>Comunidad, aula, calendario, clasificaciones, mensajería y cobro integrado.</small></td>
+          <td class="c" data-col="Stripe"><span class="no">✗</span></td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span> Los seis módulos</td>
+        </tr>
+        <tr>
+          <td class="fila">Comisión sobre tus ventas
+            <small>En esta tabla no vas a leer un porcentaje de nadie, tampoco el nuestro.</small></td>
+          <td class="c" data-col="Stripe">—</td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own">Variable, y solo cuando vendes</td>
+        </tr>
+        <tr>
+          <td class="fila">Métodos locales de España y LATAM
+            <small>Pix, Bizum, Nequi, PSE, Mercado Pago, Yape. Aquí se decide si tu alumno termina el pago.</small></td>
+          <td class="c" data-col="Stripe">Limitado en LATAM</td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span> Según el país de tu comprador</td>
+        </tr>
+        <tr>
+          <td class="fila">Checkout bajo tu marca, dentro de tu Classroom</td>
+          <td class="c" data-col="Stripe">—</td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span> Sin salir de tu marca</td>
+        </tr>
+        <tr>
+          <td class="fila">Facturación automática en cualquier país
+            <small>Cada venta emite su factura sola. Tú no tocas un papel.</small></td>
+          <td class="c" data-col="Stripe">—</td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span></td>
+        </tr>
+        <tr>
+          <td class="fila">Wallet global EUR/USD + KunfuCard VISA + cripto</td>
+          <td class="c" data-col="Stripe">—</td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span></td>
+        </tr>
+        <tr>
+          <td class="fila">Píxel propio en Google, Meta y TikTok
+            <small>Si inviertes en pauta, esta es la fila que decide si puedes seguir escalando tras mudarte.</small></td>
+          <td class="c" data-col="Stripe">—</td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span> Píxel Kunfupay</td>
+        </tr>
+        <tr>
+          <td class="fila">Soporte humano 24 horas</td>
+          <td class="c" data-col="Stripe">—</td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span> Humano</td>
+        </tr>
+        <tr>
+          <td class="fila">Mudarte: ¿quién hace el trabajo?
+            <small>Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados.</small></td>
+          <td class="c" data-col="Stripe">—</td><td class="c" data-col="Hotmart">—</td>
+          <td class="c" data-col="Skool">—</td><td class="c" data-col="Kajabi">—</td>
+          <td class="own"><span class="si">✓</span> Nosotros</td>
+        </tr>
+        <tr class="cta-row">
+          <td colspan="6">
+            <button class="cta js-abrir-quiz" data-origen="comparativa">Quiero mi Classroom montado</button>
+            <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p class="note">* El «desde 99 $/mes» es el precio de referencia de la categoría que Classroom sustituye
+      (Kajabi, Skool o Hotmart), no el precio individual de cada una. Precios de referencia de los planes de
+      entrada públicos de cada herramienta, consultados en 2026 — no incluyen las comisiones adicionales que
+      cobra cada plataforma por venta.</p>
+    <p class="note note--tight">De Skool, de Kajabi y de «otra plataforma» no vamos a inventarte nada: no tenemos
+      ficha pública verificada de sus funciones, así que sus casillas quedan vacías. Si estás en una de ellas,
+      márcalo en el formulario: revisamos cada solicitud una por una. Y si todavía no tienes nada montado, esta
+      tabla no es una comparación: es la lista de lo que no vas a tener que montar.</p>
+  </div>
+</section>
+
+<!-- ====================== 7 · MIGRACIÓN ====================== -->
+<section class="block" id="migracion">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Cambiar de plataforma</span>
+      <h2 class="t2">¿Vienes de Skool o de Hotmart? La mudanza no la haces tú.</h2>
+      <p class="lead">Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados en la misma
+        cuenta. Tú te dedicas a enseñar.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><span class="n">01</span><div>
+        <h3>Creamos tu Classroom</h3>
+        <p>No abres una plataforma vacía a ver por dónde empiezas. Tu curso, tu comunidad y tus cobros quedan
+          montados en un mismo espacio, bajo tu marca.</p></div></div>
+      <div class="step"><span class="n">02</span><div>
+        <h3>Migramos tu catálogo</h3>
+        <p>Tus cursos no los mueves tú. Nos dices dónde los tienes y los pasamos nosotros.</p></div></div>
+      <div class="step"><span class="n">03</span><div>
+        <h3>Centralizamos los cobros</h3>
+        <p>El cobro deja de vivir en una plataforma distinta a tu curso: checkout dentro del aula, factura
+          automática por venta y saldo, todo en la misma cuenta.</p></div></div>
+    </div>
+
+    <div class="grid grid--3">
+      <div class="card"><h3>No rehaces tu curso para que entre</h3>
+        <p>La lección admite «vídeo, texto, descargables o los enlaces que quieras». Lo que ya tienes —tus
+          vídeos, tus PDFs, tus plantillas, tus enlaces— tiene su sitio dentro del temario.</p></div>
+      <div class="card"><h3>Lo revisamos antes de mover nada</h3>
+        <p>Alumnos matriculados, suscripciones cobrando, progreso a medias. Dinos qué hay dentro y te decimos
+          cómo se mueve cada cosa antes de tocarla.</p></div>
+      <div class="card"><h3>Y la cuota que pagas hoy deja de correr</h3>
+        <p>La categoría que sustituye Classroom —Kajabi, Skool o Hotmart— arranca en 99 $/mes. Aquí no hay cuota
+          mensual: solo una comisión variable cuando vendes, según rubro, ticket y volumen.</p></div>
+    </div>
+
+    <p class="note">Precios de referencia de los planes de entrada públicos de cada herramienta, consultados en
+      2026 — no incluyen las comisiones adicionales que cobra cada plataforma por venta.</p>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="migracion">Que me monten el Classroom</button>
+      <p class="cta-nota">Nos dices dónde está tu curso hoy y lo pasamos nosotros · Sin cuota mensual · Sin permanencia</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 8 · MÉTODOS DE PAGO ====================== -->
+<section class="block block--tint" id="pagos">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Métodos de pago · en todo el mundo</span>
+      <h2 class="t2">Tus alumnos pagan con lo que ya usan en su país. Tú no integras nada.</h2>
+      <p class="lead">Tarjetas internacionales + métodos locales de LATAM. Tú cobras igual, desde un solo panel.</p>
+    </div>
+
+    <div class="grid grid--2">
+      <div class="card">
+        <h3>No es que tu alumno no quiera comprar: es que no puede pagarte</h3>
+        <p>Stripe, PayPal y otras soluciones funcionan bien en EE. UU. y Europa, pero en LATAM, África y parte de
+          Asia no ofrecen los métodos de pago que usa la gente. Eso hace que muchos clientes no terminen el pago.
+          Esa venta ya la hiciste: se cae en la última pantalla.</p>
+      </div>
+      <div class="card card--mark">
+        <p class="cifra" style="font-family:'Inter Display';font-size:44px;font-weight:600;letter-spacing:-.04em;color:var(--purple-2)">1 link</p>
+        <p style="margin-top:10px">Tener audiencia en varios países ya no es un problema. Ahora todos pueden pagar.</p>
+      </div>
+    </div>
+
+    <div class="logos-pago">
+      <img src="assets/pago/visa.svg" alt="Visa" loading="lazy">
+      <img src="assets/pago/mastercard.svg" alt="Mastercard" loading="lazy">
+      <img src="assets/pago/bizum.svg" alt="Bizum" loading="lazy">
+      <img src="assets/pago/pix.svg" alt="Pix" loading="lazy">
+      <img src="assets/pago/nequi.svg" alt="Nequi" loading="lazy">
+      <img src="assets/pago/pse.svg" alt="PSE" loading="lazy">
+      <img src="assets/pago/mercado-pago.svg" alt="Mercado Pago" loading="lazy">
+      <img src="assets/pago/oxxo.svg" alt="OXXO" loading="lazy">
+      <img src="assets/pago/apple-pay.svg" alt="Apple Pay" loading="lazy">
+      <img src="assets/pago/google-pay.svg" alt="Google Pay" loading="lazy">
+      <img src="assets/pago/paypal.svg" alt="PayPal" loading="lazy">
+      <img src="assets/pago/cripto.svg" alt="Cripto" loading="lazy">
+      <img src="assets/pago/sepa.svg" alt="SEPA" loading="lazy">
+    </div>
+
+    <p class="lead" style="margin-top:26px">Países con selector propio en Kunfupay. Y si tu alumno no está en la
+      lista, tu link es el mismo: tarjeta internacional, Apple Pay, cripto o wallet Kunfupay.</p>
+    <div class="paises">
+      <span>🇪🇸 España</span><span>🇲🇽 México</span><span>🇨🇴 Colombia</span><span>🇧🇷 Brasil</span>
+      <span>🇵🇪 Perú</span><span>🇨🇱 Chile</span><span>🇦🇷 Argentina</span><span>🇻🇪 Venezuela</span>
+      <span>🇪🇨 Ecuador</span><span>🇺🇸 Estados Unidos</span><span>🌍 Otro país</span>
+    </div>
+
+    <div class="grid grid--2">
+      <div class="quote">
+        <p>«Mi comunidad es 80% brasileña y antes perdía ventas en el pago. Con PIX como método nativo, ahora me
+          pagan sin pensárselo.»</p>
+        <div class="who"><img src="assets/testimonios/marina-costa.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Marina Costa</b>
+          <span>Comunidad de pago en Discord · Portugal · 8,7K</span></div></div>
+      </div>
+      <div class="card">
+        <h3>Tu alumno paga en el paso 02 de 7, dentro de tu Classroom</h3>
+        <p>Si el curso es de pago va directo al checkout: Bizum, tarjeta, Apple Pay, cripto o wallet Kunfupay,
+          sin salir de tu marca. Viene del paso 01, donde ya vio precio, duración, módulos, idioma y el temario
+          completo. Sabe exactamente qué compra y paga en la misma pantalla en la que estaba.</p>
+      </div>
+    </div>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="pagos">Quiero cobrar en todos esos países</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 9 · TU DINERO ====================== -->
+<section class="block" id="dinero">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Tu dinero, después del cobro</span>
+      <h2 class="t2">Tu alumno paga. La factura sale sola. El dinero cae en tu wallet.</h2>
+      <p class="lead">Monta tu negocio digital desde cualquier parte del mundo y cobra donde estés, sin pelearte
+        con la facturación ni con las complicaciones fiscales de cada país.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><span class="n">01</span><div>
+        <h3>Tu alumno paga dentro de tu Classroom</h3>
+        <p>Paga con el método que ya usa en su país, sin salir de tu marca. Ahí empieza el recorrido de tu dinero.</p></div></div>
+      <div class="step"><span class="n">02</span><div>
+        <h3>El dinero cae en tu wallet global (EUR/USD)</h3>
+        <p>Todo lo que cobras aterriza en el mismo sitio. Desde ahí lo gestionas, pagas a proveedores o
+          colaboradores, o lo gastas con KunfuCard. Nada repartido entre pasarelas y billeteras.</p></div></div>
+      <div class="step"><span class="n">03</span><div>
+        <h3>Lo gastas, lo cambias o lo retiras</h3>
+        <p>Con la KunfuCard VISA retiras tu dinero o pagas directamente en cualquier establecimiento. Y si te
+          conviene, mueves el saldo entre divisas o lo pasas a cripto.</p></div></div>
+    </div>
+
+    <div class="grid grid--2">
+      <div class="card card--soft">
+        <h3>«¿Tengo que darme de alta para vender mi curso?»</h3>
+        <p>Es lo que frena a más gente que el precio: el papeleo. Kunfupay no es una asesoría: es una plataforma
+          que vende por ti, con la estructura fiscal ya montada. Tú no montas estructura, y cada venta emite su
+          factura sola, en el país que sea. En la tabla de ahorro, «darte de alta como autónomo para poder
+          facturar» es la línea más cara de las siete: <b>desde 300 $/mes</b>.</p>
+      </div>
+      <div class="card">
+        <h3>Lo que ya está resuelto</h3>
+        <ul>
+          <li><b>Facturación resuelta.</b> Cada venta emite su factura sola, en el país que sea. Tú no tocas un papel.</li>
+          <li><b>KunfuCard VISA.</b> Retira tu dinero o paga directamente en cualquier establecimiento.</li>
+          <li><b>Multidivisa y cripto.</b> Mueve tu saldo entre divisas o pásalo a cripto cuando te convenga.</li>
+          <li><b>0 líos.</b> Sin trámites ni papeleos. Solo crea y conecta.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid grid--2">
+      <div class="quote">
+        <p>«Con Kunfupay dejé atrás las comisiones de Fiverr y Upwork. Facturo a marcas de cualquier país sin
+          darme de alta como autónomo.»</p>
+        <div class="who"><img src="assets/testimonios/daniel-alcaraz.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Daniel Alcaraz</b>
+          <span>Creador UGC · España · 12,4K</span></div></div>
+      </div>
+      <div class="quote">
+        <p>«Mis suscriptores pagan algunos con USDT y otros con su método local, y a mí me liquidan rapidísimo.
+          Además, puedo retirar en la moneda que quiera.»</p>
+        <div class="who"><img src="assets/testimonios/luis-guerrero.webp" alt="" width="42" height="42" loading="lazy">
+          <div><span class="verif">✓ Cliente verificado</span><b>Luis Guerrero</b>
+          <span>Membresía de señales de trading · Venezuela · 47,2K</span></div></div>
+      </div>
+    </div>
+
+    <p class="note">Optimización fiscal incluida: menos fricción y menos intermediarios significan más margen
+      real por cada venta. Kunfupay no da consejo fiscal; tu situación personal la decides tú, con tu asesor si
+      lo tienes.</p>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="dinero">Quiero cobrar así</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 10 · ¿ENCAJA CONTIGO? ====================== -->
+<section class="block block--tint" id="encaje">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">¿Encaja contigo?</span>
+      <h2 class="t2">Curso grabado, mentoría 1:1, membresía o academia: un mismo panel.</h2>
+      <p class="lead">Se monta, se cobra y se gestiona desde la misma cuenta. Mírate en una de estas cuatro.</p>
+    </div>
+
+    <div class="grid grid--2">
+      <div class="card">
+        <h3>Creadores de contenido</h3>
+        <p>Monetizan la comunidad que ya tienen en Telegram, Discord o WhatsApp sin perder el control de la
+          audiencia. El debate pasa a ocurrir donde también está el cobro.</p>
+        <ul>
+          <li>Su propio feed, dentro de tu Classroom</li>
+          <li>Cada lección tiene su discusión: preguntan y responden ahí mismo</li>
+          <li>Pagan sin salir de tu marca</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Infoproductores</h3>
+        <p>Cursos por módulos, gratuitos o de pago, con tests, seguimiento y venta en cualquier país. Tú decides
+          si se publica abierto, por enlace o privado.</p>
+        <ul>
+          <li>Define el acceso: gratuito, de pago o exclusivo</li>
+          <li>Cuestionarios con nota de corte e intentos limitados</li>
+          <li>Mide resultados en Google, Meta y TikTok con el píxel Kunfupay</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Coaches y mentores</h3>
+        <p>Sesiones 1:1 y programas completos, agendados y cobrados con checkout propio. El alumno ve precio,
+          duración, módulos, idioma y el temario completo antes de entrar.</p>
+        <ul>
+          <li>Checkout propio: Bizum, tarjeta, Apple Pay, cripto o wallet Kunfupay</li>
+          <li>Calendario, una de las seis piezas del flujo de Classroom</li>
+          <li>Aula, comunidad y cobro en la misma cuenta</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>Academias</h3>
+        <p>Desbloquea progresivamente el plan formativo de tus cursos y gestiona de manera automática el progreso
+          de los alumnos. El seguimiento lo lleva la plataforma, no tú.</p>
+        <ul>
+          <li>Exige completar cursos previos para avanzar</li>
+          <li>El progreso de cada alumno se gestiona de manera automática</li>
+          <li>Cuestionarios con nota de corte e intentos limitados</li>
+        </ul>
+      </div>
+    </div>
+
+    <p class="band" style="margin-top:16px">Pago único o suscripción cada mes, los dos desde el mismo panel:
+      <b>«Sí, puedes crear links de pago único y suscripciones recurrentes desde el mismo panel.»</b></p>
+
+    <div class="grid grid--2">
+      <div class="card">
+        <h3>Classroom es para ti si…</h3>
+        <ul>
+          <li>Vendes productos o servicios digitales —cursos, comunidades, mentorías, contenido— y quieres vender fuera de tu país.</li>
+          <li>Ya cobras online pero pierdes ventas porque tu alumno no tiene ese método de pago.</li>
+          <li>Vendes en canales propios (Telegram, WhatsApp, Discord, redes, tu web) y buscas un link fácil de compartir.</li>
+          <li>Quieres cobrar una membresía cada mes, no solo pagos sueltos.</li>
+          <li>No tienes equipo técnico para integrar pasarelas país por país.</li>
+          <li>Ya tienes el curso montado en otra plataforma y lo único que te frena es mudarlo.</li>
+        </ul>
+      </div>
+      <div class="card card--soft">
+        <h3>Hay un filtro de entrada. Mejor que lo sepas antes del formulario</h3>
+        <p>Solicitas la activación de tu tienda dentro de Kunfupay, la aprobamos y ya puedes empezar a vender.</p>
+        <ul>
+          <li>Producto digital, no físico</li>
+          <li>Una comunidad detrás</li>
+          <li>La activación de tu tienda pasa por aprobación</li>
+        </ul>
+        <p style="margin-top:14px">Si en el quiz marcaste «¡Quiero crear la primera!», solicítalo igual: cada
+          activación pasa por revisión y te decimos si encajas.</p>
+      </div>
+    </div>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="encaje">Ver si encajo</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Cero spam</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 11 · PLATINUM ====================== -->
+<section class="block block--ink" id="platinum">
+  <div class="wrap">
+    <div class="head">
+      <span class="eyebrow">Classroom Platinum · Programa de partnership</span>
+      <h2 class="t2">Pasas de 10 mil seguidores: plan personalizado, inversión publicitaria y un growth partner.</h2>
+      <p class="lead">Si ya cuentas con una comunidad de más de 10 mil seguidores, entras al programa de
+        partnership de Classroom. Son 100 plazas y revisamos cada solicitud una por una.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><span class="n">01</span><div><h3>Solicitas tu plaza</h3>
+        <p>Desde el mismo formulario de esta página. No hay un segundo registro en otro sitio.</p></div></div>
+      <div class="step"><span class="n">02</span><div><h3>La revisamos una por una</h3>
+        <p>No es un alta automática: revisamos cada solicitud una por una. Por eso el formulario pide email y
+          WhatsApp, y por eso hay soporte humano 24 horas detrás.</p></div></div>
+      <div class="step"><span class="n">03</span><div><h3>Si entras, empiezas con el programa</h3>
+        <p>Plan personalizado, inversión publicitaria y tu growth partner, sobre el Classroom que ya te dejamos
+          montado.</p></div></div>
+    </div>
+
+    <p class="lead" style="margin-top:28px"><b style="color:#fff">100 plazas disponibles.</b> Revisamos cada
+      solicitud una por una. Lo que añade Platinum sobre tu cuenta Classroom: plan personalizado, inversión
+      publicitaria y el asesoramiento de un growth partner. ¿Todavía no llegas a 10 mil? La cuenta y las
+      herramientas son gratis, sin cuota mensual y sin permanencia: abres tu Classroom, cobras desde tu primer
+      alumno y solicitas tu plaza cuando pases de los 10 mil seguidores.</p>
+
+    <div class="cta-wrap">
+      <button class="cta js-abrir-quiz" data-origen="platinum">Solicitar mi plaza Platinum</button>
+      <p class="cta-nota" style="color:#8d8799">Revisamos cada solicitud una por una · Sin cuota mensual · Sin permanencia</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================== 12 · FAQ ====================== -->
+<section class="block" id="faq">
+  <div class="wrap">
+    <div class="head head--center">
+      <span class="eyebrow">Preguntas frecuentes</span>
+      <h2 class="t2">Lo que preguntan antes de abrir su Classroom</h2>
+      <p class="lead">Las que nos hacen justo antes de dejar sus datos. Respondidas con lo que ya tenemos
+        publicado — y cuando algo no lo tenemos publicado, también lo decimos.</p>
+    </div>
+
+    <div class="faq">
+      <details open><summary>¿Cuánto cuesta abrir mi Classroom?</summary><div class="a">
+        <p>La cuenta y las herramientas no tienen cuota mensual. Se cobra una comisión variable solo cuando
+          vendes, según rubro, ticket y volumen.</p>
+        <p>Traducido: el mes que no vendas, no pagas nada. El coste llega después del ingreso, nunca antes.</p>
+      </div></details>
+
+      <details><summary>¿Hay permanencia? ¿Y si un día me quiero ir?</summary><div class="a">
+        <p>Sin cuota mensual · Sin permanencia · Alta en minutos.</p>
+        <p>No hay suscripción que pagar, así que no hay nada de lo que darse de baja.</p>
+      </div></details>
+
+      <details><summary>¿Necesito tener web, tienda o página de ventas?</summary><div class="a">
+        <p>No. Solicitas la activación de tu tienda dentro de Kunfupay, la aprobamos y ya puedes empezar a vender.</p>
+        <p>Página de ventas tampoco: la ficha de tu curso ya muestra precio, duración, módulos, idioma y el
+          temario completo antes de que el alumno entre.</p>
+      </div></details>
+
+      <details><summary>¿Qué requisitos piden para activarme el Classroom?</summary><div class="a">
+        <p>Que vendas un producto digital (no físico) y que tengas una comunidad detrás.</p>
+        <p>Da igual dónde la tengas hoy: Telegram, Discord, WhatsApp, Skool o tu lista de correo.</p>
+      </div></details>
+
+      <details><summary>Todavía no tengo comunidad. ¿Me vais a aprobar?</summary><div class="a">
+        <p>Te lo decimos claro: el requisito publicado es tener una comunidad detrás, así que no podemos
+          prometerte la aprobación de entrada.</p>
+        <p>Sí puedes marcar «¡Quiero crear la primera!» en el primer paso: así sabemos en qué punto estás antes
+          de revisar tu solicitud.</p>
+      </div></details>
+
+      <details><summary>¿Puedo cobrar una membresía mensual y no solo pagos sueltos?</summary><div class="a">
+        <p>Sí, puedes crear links de pago único y suscripciones recurrentes desde el mismo panel.</p>
+        <p>Es lo que convierte un curso suelto en ingreso que vuelve cada mes.</p>
+      </div></details>
+
+      <details><summary>Ya tengo mi curso en Skool, Hotmart u otra plataforma. ¿Lo muevo yo?</summary><div class="a">
+        <p>No. Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados en la misma cuenta.
+          Tú te dedicas a enseñar.</p>
+        <p>Marca en el primer paso dónde lo tienes hoy y partimos de ahí.</p>
+      </div></details>
+
+      <details><summary>¿Con qué pueden pagarme mis alumnos?</summary><div class="a">
+        <p>Tarjetas internacionales + métodos locales (Pix, Bizum, Nequi, PSE, Mercado Pago, Yape y más), según
+          el país de tu comprador.</p>
+        <p>Y pagan dentro del curso: si es de pago, van directo al checkout con Bizum, tarjeta, Apple Pay, cripto
+          o wallet Kunfupay, sin salir de tu marca.</p>
+      </div></details>
+
+      <details><summary>¿Dónde acaba el dinero y cuándo lo tengo yo?</summary><div class="a">
+        <p>El dinero va a tu wallet global (EUR/USD). Puedes gestionarlo, pagar proveedores o colaboradores, o
+          gastarlo con KunfuCard.</p>
+        <p>Mueves el saldo entre divisas o lo pasas a cripto cuando te convenga, y con la KunfuCard VISA retiras
+          o pagas directamente en cualquier establecimiento.</p>
+      </div></details>
+
+      <details><summary>¿Tengo que darme de alta como autónomo para vender mi curso?</summary><div class="a">
+        <p>Kunfupay no es una asesoría: es una plataforma que vende por ti, con la estructura fiscal ya montada.
+          Por eso no te damos consejo fiscal, te contamos cómo funciona.</p>
+        <p>Cada venta emite su factura sola, en el país que sea. Tú no tocas un papel. Tu situación personal la
+          decides tú, con tu asesor si lo tienes.</p>
+      </div></details>
+
+      <details><summary>Mis alumnos, ¿ven mi marca o la vuestra?</summary><div class="a">
+        <p>La tuya. Del primer vistazo al curso hasta el cuestionario final, todo ocurre dentro de tu Classroom
+          — y el pago también: el alumno va al checkout sin salir de tu marca.</p>
+      </div></details>
+
+      <details><summary>¿Y si me atasco o algo falla un domingo por la noche?</summary><div class="a">
+        <p>El ecosistema de Kunfupay incluye soporte humano 24 horas. Humano.</p>
+        <p>Por eso en el último paso te pedimos el WhatsApp: para escribirte si te atascas con el alta.</p>
+      </div></details>
+    </div>
+
+    <p style="text-align:center"><button class="link-cta js-abrir-quiz" data-origen="faq">Ninguna es la mía:
+      empezar mi alta igualmente</button></p>
+  </div>
+</section>
+
+<!-- ====================== 13 · CIERRE ====================== -->
+<section class="block block--tint" id="empezar">
+  <div class="wrap wrap--narrow">
+    <div class="head head--center">
+      <span class="eyebrow">Cómo empezar</span>
+      <h2 class="t2">Lo tienes todo preparado. Solo falta tu comunidad.</h2>
+      <p class="lead">Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados en la misma
+        cuenta. Tú te dedicas a enseñar.</p>
+    </div>
+
+    <div class="steps">
+      <div class="step"><span class="n">1</span><div><h3>Crea tu cuenta</h3>
+        <p>Sin trámites complicados, en minutos.</p></div></div>
+      <div class="step"><span class="n">2</span><div><h3>Activa tu tienda</h3>
+        <p>Completa la información de tu negocio y personaliza tu tienda en minutos. La aprobamos y ya puedes
+          empezar a vender.</p></div></div>
+      <div class="step"><span class="n">3</span><div><h3>Genera tu primer link de pago</h3>
+        <p>Crea un link en segundos y empieza a recibir pagos al instante.</p></div></div>
+    </div>
+
+    <div class="grid grid--2">
+      <div class="card">
+        <h3>Lo que no montas tú</h3>
+        <ul>
+          <li>Nosotros creamos tu Classroom</li>
+          <li>Nosotros migramos tu catálogo</li>
+          <li>Nosotros dejamos los cobros centralizados en la misma cuenta</li>
+          <li>Tu única tarea: subir tu contenido</li>
+        </ul>
+      </div>
+      <div class="card card--soft">
+        <h3>¿Y si me equivoco? Averiguarlo no te cuesta dinero</h3>
+        <ul>
+          <li><b>Sin cuota mensual.</b> El mes que no vendes, no pagas.</li>
+          <li><b>Sin permanencia.</b> No hay nada de lo que darse de baja.</li>
+          <li><b>Sin trámites ni papeleos.</b> Solo crea y conecta.</li>
+          <li>Si te atascas con el alta, hay soporte humano 24 horas al otro lado.</li>
+          <li>Para activar te pedimos dos cosas: producto digital (no físico) y una comunidad detrás.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="cta-wrap cta-wrap--center">
+      <button class="cta js-abrir-quiz" data-origen="cierre">Crear mi Classroom</button>
+      <p class="cta-nota">Sin cuota mensual · Sin permanencia · Cero spam<br>
+        Dos preguntas y dónde te dejamos la cuenta. Si te atascas con el alta, te escribimos por WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap foot__in">
+    <img src="assets/logo-classroom.png" alt="Classroom by kunfupay">
+    <p>© 2026 Kunfupay. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <button class="cta js-abrir-quiz" data-origen="barra-movil">Crear mi Classroom</button>
+</div>
+
 
 <!-- Modal del quiz. El formulario se clona del hero al cargar, así solo hay
      una fuente de verdad para las preguntas. Lo abre cualquier .js-abrir-quiz -->
@@ -703,6 +1921,63 @@ body{
     if (op) { op.checked = true; op.dispatchEvent(new Event('change', { bubbles: true })); }
   });
 })();
+/* ---------- demo: pestañas y recorrido de 7 pantallas ---------- */
+(function () {
+  var PASOS = [
+    {img:'assets/demo/cx1.webp', alt:'Ficha del curso antes de comprar',
+     cap:'Antes de entrar ve <b>precio, duración, módulos, idioma y el temario completo</b>. Sabe exactamente qué compra.',
+     arg:'La ficha de venta ya viene hecha: tu página de ventas, tu checkout y tu aula son la misma cosa. Y quien sabe exactamente qué compra no te escribe por DM antes ni se lleva una sorpresa después.'},
+    {img:'assets/demo/cx2.webp', alt:'Checkout dentro del curso',
+     cap:'Si el curso es de pago va directo al checkout: <b>Bizum, tarjeta, Apple Pay, cripto o wallet Kunfupay</b>, sin salir de tu marca.',
+     arg:'Fíjate dónde está: paso 2 de 7. El alumno paga donde estaba leyendo, sin que lo mandes a otra plataforma a terminar la compra.'},
+    {img:'assets/demo/cx3.webp', alt:'Onboarding de bienvenida',
+     cap:'Un recorrido guiado de tres minutos le enseña <b>dónde aprender, participar y conectar</b> con el resto de miembros.',
+     arg:'No mandas el audio de bienvenida ni explicas la plataforma uno a uno: entra guiado. El alumno que el día 1 encuentra dónde está todo es el que sigue ahí el mes siguiente.'},
+    {img:'assets/demo/cx4.webp', alt:'Aula del alumno con su progreso',
+     cap:'Todos sus cursos en bloques y el <b>porcentaje completado</b> de cada uno, para que sepa por dónde sigue.',
+     arg:'El seguimiento lo lleva la plataforma: ni hoja de cálculo ni perseguir a nadie para saber por dónde va.'},
+    {img:'assets/demo/cx5.webp', alt:'Índice del curso y lección',
+     cap:'Temario a la izquierda y la lección a la derecha: <b>vídeo, texto, descargables o los enlaces que quieras</b>.',
+     arg:'Si hoy lo repartes por Drive y WhatsApp, aquí va dentro de la lección. Subes lo que ya tienes, en el formato en que ya lo tienes: mudarte no es rehacer tu curso.'},
+    {img:'assets/demo/cx6.webp', alt:'Comentarios de la comunidad en la lección',
+     cap:'Cada lección tiene su discusión: <b>la comunidad pregunta y responde ahí mismo</b>, sin irse a otro canal.',
+     arg:'El soporte se reparte entre los miembros en lugar de caer entero sobre ti, y el debate se queda en tu plataforma, no en un grupo que no controlas.'},
+    {img:'assets/demo/cx7.webp', alt:'Cuestionario del curso',
+     cap:'Cuestionarios con <b>nota de corte e intentos limitados</b> para comprobar que de verdad lo ha entendido.',
+     arg:'Aquí es donde tu formación deja de ser una carpeta de vídeos y pasa a ser un programa que se completa.'}
+  ];
+
+  var lista = document.getElementById('demo-pasos');
+  if (!lista) return;
+  var img = document.getElementById('demo-img');
+  var cap = document.getElementById('demo-cap');
+  var arg = document.getElementById('demo-arg');
+
+  lista.addEventListener('click', function (e) {
+    var b = e.target.closest('button[data-i]');
+    if (!b) return;
+    var p = PASOS[parseInt(b.dataset.i, 10) - 1];
+    lista.querySelectorAll('button').forEach(function (x) { x.removeAttribute('aria-current'); });
+    b.setAttribute('aria-current', 'true');
+    img.src = p.img; img.alt = p.alt;
+    cap.innerHTML = p.cap; arg.textContent = p.arg;
+  });
+  // precarga la siguiente captura al pasar por encima
+  lista.addEventListener('mouseover', function (e) {
+    var b = e.target.closest('button[data-i]');
+    if (b) new Image().src = PASOS[parseInt(b.dataset.i, 10) - 1].img;
+  });
+
+  var tabs = document.querySelectorAll('.tabs button[data-tab]');
+  tabs.forEach(function (t) {
+    t.addEventListener('click', function () {
+      tabs.forEach(function (x) { x.setAttribute('aria-selected', String(x === t)); });
+      document.getElementById('tab-a').hidden = t.dataset.tab !== 'a';
+      document.getElementById('tab-b').hidden = t.dataset.tab !== 'b';
+    });
+  });
+})();
+
 </script>
 
 </body>
