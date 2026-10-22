@@ -1,0 +1,9 @@
+<!-- NOTA: recreación de marca (no es el SVG oficial descargado). El logo oficial de PSE
+     (Pagos Seguros en Línea · ACH Colombia) no está disponible como SVG en fuentes abiertas.
+     Sustituir por el activo oficial del kit de comercio PSE cuando se disponga de él. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 48" width="120" height="48" role="img" aria-label="PSE - Pagos Seguros en Línea">
+  <text x="6" y="34" font-family="Arial, Helvetica, sans-serif" font-weight="800" font-size="34" fill="#0a3d91" letter-spacing="-1">pse</text>
+  <text x="70" y="20" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="9" fill="#0a3d91">Pagos</text>
+  <text x="70" y="31" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="9" fill="#0a3d91">Seguros</text>
+  <text x="70" y="42" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="9" fill="#0a3d91">en Línea</text>
+</svg>

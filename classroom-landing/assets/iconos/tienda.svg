@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Kunfupay Tienda isotipo">
+  <title>Kunfupay Tienda — isotipo</title>
+  <desc>Carrito de la compra en negativo sobre app-icon de gradiente fucsia claro. Mismo contrato visual que classroom.svg (squircle rx 116, gradiente diagonal 500→700 de su familia, filo de luz superior).</desc>
+  <defs>
+    <!-- Gradiente de familia (variedad cromática entre iconos de producto) -->
+    <linearGradient id="tiendaGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#e935c1"/>
+      <stop offset="1" stop-color="#a81f8f"/>
+    </linearGradient>
+    <!-- Filo de luz interior (sello Morfeo) -->
+    <linearGradient id="tiendaEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset=".18" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App-icon tile: gradiente fucsia claro, esquina superredondeada -->
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#tiendaGrad)"/>
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#tiendaEdge)"/>
+
+  <!-- CARRITO en negativo (blanco). Mismo glifo que ya usaba la fila
+       "Tienda" en contorno (lucide shopping-cart, espacio 24×24),
+       escalado ×11 y centrado: 24 × 11 = 264 → (512-264)/2 = 124. -->
+  <g transform="translate(124 118) scale(11)"
+     fill="none" stroke="#ffffff" stroke-width="1.9"
+     stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="8" cy="21" r="1"/>
+    <circle cx="19" cy="21" r="1"/>
+    <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/>
+  </g>
+</svg>

@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Kunfupay Classroom isotipo">
+  <title>Kunfupay Classroom — isotipo (torii: la puerta a tu tatami) · gradiente morado</title>
+  <desc>Torii (la puerta del dojo) como umbral de entrada a tu tatami. App-icon a 32px, una tinta en la version mono.</desc>
+  <defs>
+    <!-- Gradiente de marca Kunfupay: primary-500 -> primary-700 (br) -->
+    <linearGradient id="tatGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#734bfc"/>
+      <stop offset="1" stop-color="#5c21e0"/>
+    </linearGradient>
+    <!-- Filo de luz interior (sello Morfeo) -->
+    <linearGradient id="tatEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset=".18" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App-icon tile: gradiente de marca, esquina superredondeada -->
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#tatGrad)"/>
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#tatEdge)"/>
+
+  <!-- TORII en negativo (blanco): kasagi curvo + nuki + dos pilares.
+       El vano central insinua el umbral: la puerta de entrada a tu tatami. -->
+  <g fill="#ffffff">
+    <path d="M104 150
+             C104 150 162 124 256 124
+             C350 124 408 150 408 150
+             L408 178
+             C408 178 350 160 256 160
+             C162 160 104 178 104 178
+             Z"/>
+    <rect x="138" y="206" width="236" height="34" rx="6"/>
+    <path d="M168 178 L200 178 L208 392 L160 392 Z"/>
+    <path d="M312 178 L344 178 L352 392 L304 392 Z"/>
+  </g>
+</svg>

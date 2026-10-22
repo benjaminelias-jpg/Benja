@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512" role="img" aria-label="Kunfupay KunfuCard isotipo">
+  <title>Kunfupay KunfuCard — isotipo</title>
+  <desc>Tarjeta en negativo sobre app-icon de gradiente fucsia profundo (violeta-magenta). Mismo contrato visual que tienda.svg / paginas.svg / classroom.svg (squircle rx 116, gradiente diagonal 500→700 de su familia, filo de luz superior).</desc>
+  <defs>
+    <!-- Gradiente de familia (variedad cromática entre iconos de producto) -->
+    <linearGradient id="cardGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#b02cd6"/>
+      <stop offset="1" stop-color="#6b1a94"/>
+    </linearGradient>
+    <!-- Filo de luz interior (sello Morfeo) -->
+    <linearGradient id="cardEdge" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity=".22"/>
+      <stop offset=".18" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <!-- App-icon tile: gradiente fucsia profundo (violeta-magenta), esquina superredondeada -->
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#cardGrad)"/>
+  <rect x="0" y="0" width="512" height="512" rx="116" fill="url(#cardEdge)"/>
+
+  <!-- TARJETA en negativo (blanco). Mismo glifo que ya usaba la fila
+       "KunfuCard" en contorno (espacio 24×24), escalado ×11 y centrado:
+       24 × 11 = 264 → (512-264)/2 = 124. -->
+  <g transform="translate(124 124) scale(11)"
+     fill="none" stroke="#ffffff" stroke-width="1.9"
+     stroke-linecap="round" stroke-linejoin="round">
+    <rect x="2.5" y="5.5" width="19" height="13" rx="2.2"/>
+    <path d="M2.5 9.8h19"/>
+    <path d="M6 14.3h4.2"/>
+  </g>
+</svg>
