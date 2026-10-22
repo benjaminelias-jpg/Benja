@@ -352,212 +352,248 @@ body{
 }
 
 /* ============ SECCIONES ============ */
-.wrap{width:min(1140px,100% - 56px);margin-inline:auto;position:relative;z-index:1}
-.block{position:relative;padding:clamp(64px,8vw,124px) 0;overflow:hidden}
-.block--tint{background:linear-gradient(180deg,#f5f3fb,#faf9fe)}
-.block--ink{background:#0f0d14;color:#fff}
-.block--ink::before{
-  content:"";position:absolute;inset:0;
-  background:url('assets/fondo/aurora-oscura.webp') center/cover no-repeat;
-  opacity:.72;
+:root{
+  --line:#e7e4ef;
+  --line-2:#f0eef6;
+  --ink-soft:#4a4754;
+  --acc:#5B2EE8;
+  --acc-soft:#f4f0ff;
+  --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
 }
-.block--ink::after{
-  content:"";position:absolute;inset:0;
-  background:radial-gradient(90% 70% at 50% 40%, rgba(15,13,20,.25), rgba(15,13,20,.92) 78%);
-}
-.block--ink > .wrap{z-index:2}
 
-/* manchas de luz que respiran */
-.aura{position:absolute;inset:0;pointer-events:none;z-index:0;opacity:.55}
-.aura--1{background:url('assets/fondo/aurora-clara.webp') -10% -40%/120% auto no-repeat;
-  -webkit-mask-image:radial-gradient(70% 60% at 80% 0%,#000,transparent 70%);
-  mask-image:radial-gradient(70% 60% at 80% 0%,#000,transparent 70%);
-  animation:drift 26s ease-in-out infinite alternate}
-.aura--2{background:url('assets/fondo/aurora-clara.webp') 110% 120%/130% auto no-repeat;
-  -webkit-mask-image:radial-gradient(60% 60% at 15% 100%,#000,transparent 70%);
-  mask-image:radial-gradient(60% 60% at 15% 100%,#000,transparent 70%);
-  animation:drift 32s ease-in-out infinite alternate-reverse}
-@keyframes drift{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-3%,2%,0) scale(1.08)}}
+.wrap{width:min(1120px,100% - 56px);margin-inline:auto;position:relative;z-index:1}
+.block{position:relative;padding:clamp(76px,9vw,150px) 0}
+.block + .block{border-top:1px solid var(--line-2)}
+.block--tint{background:#f4f3f9}
+.block--ink{background:#0e0d12;color:#fff;border-top:0}
+.block::after{  /* textura fina, nada de degradados de IA */
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background-image:var(--grain);opacity:.035;mix-blend-mode:multiply}
+.block--ink::after{mix-blend-mode:screen;opacity:.05}
+.glow{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+.glow::before{content:"";position:absolute;width:52vw;height:52vw;right:-14vw;top:-22vw;border-radius:50%;
+  background:radial-gradient(circle,rgba(119,79,248,.10),transparent 62%)}
+.glow--left::before{right:auto;left:-18vw;top:auto;bottom:-26vw;
+  background:radial-gradient(circle,rgba(119,79,248,.08),transparent 62%)}
 
-/* cabeceras */
-.head{max-width:760px}
-.head--center{margin-inline:auto;text-align:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;margin-bottom:16px;padding:6px 14px;
-  border-radius:999px;background:rgba(119,79,248,.08);border:1px solid rgba(119,79,248,.16);
-  font-size:12px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--purple-2)}
-.block--ink .eyebrow{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14);color:#c7b6ff}
-.t2{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(28px,3.4vw,46px);font-weight:600;
-  line-height:1.1;letter-spacing:-.034em;color:var(--ink-strong)}
+/* --- cabeceras: etiqueta con filete, titular editorial --- */
+.label{display:flex;align-items:center;gap:12px;margin-bottom:22px;
+  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
+.label::before{content:"";width:28px;height:1px;background:currentColor;opacity:.45}
+.head--center .label{justify-content:center}
+.block--ink .label{color:#8c879c}
+.t2{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(30px,4.1vw,54px);font-weight:500;
+  line-height:1.04;letter-spacing:-.038em;color:var(--ink-strong);max-width:17ch}
+.head--center .t2{margin-inline:auto}
 .block--ink .t2{color:#fff}
-.lead{margin-top:16px;font-size:clamp(15px,1.15vw,17.5px);line-height:1.62;color:var(--muted);max-width:62ch}
+.t2 em{font-style:normal;color:var(--acc)}
+.block--ink .t2 em{color:#b49bff}
+.lead{margin-top:20px;font-size:clamp(15.5px,1.15vw,17px);line-height:1.6;color:var(--muted);max-width:54ch}
+.head--center{text-align:center}
 .head--center .lead{margin-inline:auto}
-.block--ink .lead{color:#b5afc4}
+.block--ink .lead{color:#a9a4b8}
 
-/* revelado al hacer scroll */
-html.js .rv{opacity:0;transform:translateY(18px);transition:opacity .7s cubic-bezier(.22,.8,.2,1) var(--d,0ms),
-  transform .7s cubic-bezier(.22,.8,.2,1) var(--d,0ms)}
+/* --- botones planos --- */
+.cta{
+  display:inline-flex;align-items:center;gap:10px;padding:17px 30px;border:0;border-radius:4px;
+  background:var(--ink-strong);color:#fff;cursor:pointer;
+  font:500 15px/1 'Inter',sans-serif;letter-spacing:-.008em;text-decoration:none;
+  box-shadow:none;transition:background .18s ease,transform .18s ease;
+}
+.cta:hover{background:#000;transform:translateY(-1px)}
+.cta svg{width:14px;height:14px;transition:transform .22s cubic-bezier(.22,.8,.2,1)}
+.cta:hover svg{transform:translateX(3px)}
+.cta--acc{background:var(--acc)}
+.cta--acc:hover{background:#4a22cc}
+.cta--light{background:#fff;color:#121016}
+.cta--light:hover{background:#f1eff7}
+.cta--xl{padding:20px 36px;font-size:16px}
+.cta-wrap{margin-top:clamp(32px,4vw,52px)}
+.cta-wrap--center{text-align:center}
+.cta-nota{margin-top:14px;font-size:12.5px;letter-spacing:.01em;color:var(--faint)}
+.block--ink .cta-nota{color:#827d93}
+
+/* --- revelado --- */
+html.js .rv{opacity:0;transform:translateY(14px);
+  transition:opacity .8s cubic-bezier(.22,.8,.2,1) var(--d,0ms),transform .8s cubic-bezier(.22,.8,.2,1) var(--d,0ms)}
 html.js .rv.is-in{opacity:1;transform:none}
-/* titulares cinéticos: palabra a palabra */
-html.js .kin .w{display:inline-block;opacity:0;transform:translateY(.5em) rotate(1.2deg);
-  transition:opacity .55s cubic-bezier(.22,.8,.2,1) var(--wd),transform .55s cubic-bezier(.22,.8,.2,1) var(--wd)}
+html.js .kin .w{display:inline-block;opacity:0;transform:translateY(.42em);
+  transition:opacity .6s cubic-bezier(.22,.8,.2,1) var(--wd),transform .6s cubic-bezier(.22,.8,.2,1) var(--wd)}
 html.js .kin.is-in .w{opacity:1;transform:none}
 
-/* bento de módulos */
-.bento{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:clamp(30px,4vw,48px)}
-.tile{position:relative;padding:26px;border-radius:22px;background:rgba(255,255,255,.72);
-  border:1px solid #e9e7f3;backdrop-filter:blur(8px);
-  transition:transform .3s cubic-bezier(.22,.8,.2,1),box-shadow .3s ease,border-color .3s ease}
-.tile:hover{transform:translateY(-4px);border-color:#cdbcff;box-shadow:0 18px 40px rgba(60,30,160,.10)}
-.tile img{width:44px;height:44px;border-radius:13px;display:block;margin-bottom:16px}
-.tile h3{font-size:17px;font-weight:600;letter-spacing:-.02em;color:var(--ink-strong);margin-bottom:6px}
-.tile p{font-size:14.5px;line-height:1.55;color:var(--muted)}
-.tile--mark{background:linear-gradient(155deg,#efe8ff,#fff 65%);border-color:#cdbcff}
+/* --- 1 · módulos: índice numerado, sin iconos --- */
+.mods{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(44px,5vw,70px);
+  border-top:1px solid var(--line)}
+.mods > article{position:relative;padding:30px 28px 32px;border-bottom:1px solid var(--line);
+  border-right:1px solid var(--line);transition:background .25s ease}
+.mods > article:nth-child(3n){border-right:0}
+.mods > article:hover{background:#fff}
+.mods .ix{display:block;font-size:11.5px;font-weight:600;letter-spacing:.14em;color:var(--faint);
+  font-variant-numeric:tabular-nums;margin-bottom:26px}
+.mods h3{font-size:19px;font-weight:500;letter-spacing:-.022em;color:var(--ink-strong);margin-bottom:8px}
+.mods p{font-size:14.5px;line-height:1.55;color:var(--muted);max-width:30ch}
+.mods .mk{position:absolute;right:26px;top:28px;width:6px;height:6px;border-radius:50%;background:var(--acc)}
+.quoteline{margin-top:34px;padding-top:26px;border-top:1px solid var(--line);
+  font-size:clamp(16px,1.5vw,19px);line-height:1.5;letter-spacing:-.018em;color:var(--ink-soft);max-width:62ch}
+.quoteline b{color:var(--ink-strong);font-weight:500}
 
-.band{margin-top:18px;padding:18px 22px;border-radius:18px;background:rgba(119,79,248,.06);
-  border:1px solid rgba(119,79,248,.14);font-size:clamp(15px,1.1vw,16.5px);line-height:1.55;color:#3a3a40;
-  text-align:center}
-.band b{color:var(--ink-strong);font-weight:600}
+/* --- 2 · precio en formato factura --- */
+.bill{display:grid;grid-template-columns:1.15fr .85fr;gap:clamp(32px,5vw,80px);
+  margin-top:clamp(44px,5vw,70px);align-items:start}
+.bill__list{border-top:1px solid var(--line)}
+.bill__row{display:flex;align-items:baseline;gap:12px;padding:13px 0;border-bottom:1px solid var(--line-2)}
+.bill__row span:first-child{font-size:15px;color:var(--ink-soft)}
+.bill__dots{flex:1;border-bottom:1px dotted #cfccdb;transform:translateY(-4px)}
+.bill__row span:last-child{font-size:14.5px;color:var(--faint);font-variant-numeric:tabular-nums}
+.bill__row--own span:first-child{color:var(--ink-strong);font-weight:500}
+.bill__row--own em{margin-left:10px;font-style:normal;font-size:11px;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--acc)}
+.bill__row--own span:last-child{color:var(--ink-soft)}
+.bill__total{display:flex;align-items:baseline;gap:12px;padding:20px 0 0;margin-top:4px;
+  border-top:1px solid var(--ink-strong)}
+.bill__total > span:first-child{font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.bill__total b{margin-left:auto;font-family:'Inter Display','Inter',sans-serif;font-size:clamp(26px,3vw,36px);
+  font-weight:500;letter-spacing:-.04em;color:#9c99a8;text-decoration:line-through;
+  text-decoration-thickness:2px;font-variant-numeric:tabular-nums}
+.bill__ours{padding-top:6px}
+.bill__big{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(76px,11vw,148px);font-weight:500;
+  line-height:.84;letter-spacing:-.06em;color:var(--ink-strong);font-variant-numeric:tabular-nums}
+.bill__big sup{font-size:.2em;font-weight:500;letter-spacing:-.01em;vertical-align:super;color:var(--acc)}
+.bill__k{margin-top:18px;font-size:17px;line-height:1.5;color:var(--ink-soft);max-width:34ch}
+.bill__k b{color:var(--ink-strong);font-weight:500}
+.facts{display:flex;flex-wrap:wrap;gap:0;margin-top:clamp(36px,4vw,54px);border-top:1px solid var(--line)}
+.facts div{flex:1 1 220px;padding:20px 24px 20px 0;border-right:1px solid var(--line);
+  border-bottom:1px solid var(--line)}
+.facts div:last-child{border-right:0}
+.facts b{display:block;font-size:15px;font-weight:500;color:var(--ink-strong);margin-bottom:5px}
+.facts span{font-size:13.5px;line-height:1.5;color:var(--muted)}
+.note{margin-top:22px;font-size:12px;line-height:1.55;color:var(--faint);max-width:72ch}
+.head--center + * .note,.note--center{margin-inline:auto;text-align:center}
 
-/* precio */
-.money{display:grid;grid-template-columns:1.1fr 1fr;gap:16px;margin-top:clamp(30px,4vw,48px)}
-.money__col{padding:32px;border-radius:26px;background:#fff;border:1px solid #e9e7f3}
-.money__col--win{background:linear-gradient(150deg,#7C5CFF,#5B2EE8);border:0;color:#fff;
-  box-shadow:0 26px 60px rgba(95,38,227,.26)}
-.money__k{font-size:13px;letter-spacing:.04em;text-transform:uppercase;color:var(--faint);margin-bottom:10px}
-.money__col--win .money__k{color:rgba(255,255,255,.72)}
-.money__v{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(40px,5.4vw,68px);font-weight:600;
-  letter-spacing:-.045em;line-height:1;color:var(--ink-strong)}
-.money__v .u{font-size:.36em;font-weight:500;letter-spacing:-.01em;color:var(--faint)}
-.money__v--old{color:#9a9aa4;text-decoration:line-through;text-decoration-thickness:3px}
-.money__col--win .money__v{color:#fff}
-.money__col--win .money__v .u{color:rgba(255,255,255,.75)}
-.money__chips{display:flex;flex-wrap:wrap;gap:7px;margin-top:20px}
-.money__chips span{padding:6px 11px;border-radius:999px;background:#f5f4fa;border:1px solid #ebe9f4;
-  font-size:12.5px;color:#6a6a74}
-.money__note{margin-top:18px;font-size:15px;line-height:1.6;color:rgba(255,255,255,.88)}
-
-.pill-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px;justify-content:center}
-.pill{padding:10px 18px;border-radius:999px;background:#fff;border:1px solid #e6e4f0;font-size:14px;color:#3a3a40}
-.pill b{font-weight:600;color:var(--ink-strong)}
-.note{margin-top:18px;font-size:12.5px;line-height:1.55;color:var(--faint);text-align:center}
-
-/* reproductor del recorrido */
-.player{display:grid;grid-template-columns:1.35fr .85fr;gap:26px;align-items:start;
-  margin-top:clamp(30px,4vw,48px)}
-.player__frame{border-radius:22px;overflow:hidden;background:#fff;border:1px solid #e4e2ef;
-  box-shadow:0 30px 70px rgba(40,20,110,.13)}
-.chrome{display:flex;align-items:center;gap:7px;padding:12px 16px;background:#f7f6fb;border-bottom:1px solid #eceaf5}
-.chrome i{width:9px;height:9px;border-radius:50%;background:#dcdae8}
-.chrome span{margin-left:12px;padding:4px 12px;border-radius:999px;background:#fff;border:1px solid #eceaf5;
-  font-size:11.5px;color:#9a9aa6}
-.shot{position:relative;aspect-ratio:4/3;background:#faf9fe}
-.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;
-  animation:shot-in .5s cubic-bezier(.22,.8,.2,1)}
-@keyframes shot-in{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:none}}
-.player__cap{font-size:16px;line-height:1.55;color:#35353b;margin-bottom:18px;min-height:3.2em}
-.player__cap b{color:var(--ink-strong);font-weight:600}
-.player__list{display:grid;gap:6px}
-.player__list button{position:relative;display:flex;align-items:center;gap:12px;width:100%;padding:12px 14px;
-  border:1px solid transparent;border-radius:13px;background:none;cursor:pointer;text-align:left;
-  font:500 14.5px/1.3 'Inter',sans-serif;color:#7a7a86;letter-spacing:-.012em;overflow:hidden;
-  transition:color .2s ease,background .2s ease}
-.player__list button:hover{background:#f4f2fc;color:#3a3a40}
-.player__list button[aria-current="true"]{background:#fff;border-color:#e4e1f2;color:var(--ink-strong);
-  box-shadow:0 6px 18px rgba(40,20,110,.06)}
-.player__list .n{font-size:11.5px;font-weight:600;color:var(--purple-2);opacity:.75}
-.player__list .bar{position:absolute;left:0;bottom:0;height:2px;width:0;background:linear-gradient(90deg,var(--purple-1),var(--purple-2))}
+/* --- 3 · recorrido --- */
+.player{display:grid;grid-template-columns:1fr 330px;gap:clamp(28px,4vw,56px);
+  margin-top:clamp(44px,5vw,70px);align-items:start}
+.player__frame{border:1px solid var(--line);border-radius:10px;overflow:hidden;background:#fff}
+.chrome{display:flex;align-items:center;gap:7px;padding:11px 14px;border-bottom:1px solid var(--line-2)}
+.chrome i{width:7px;height:7px;border-radius:50%;background:#dddae8}
+.chrome span{margin-left:10px;font-size:11px;letter-spacing:.02em;color:#a9a6b6}
+.shot{position:relative;aspect-ratio:4/3;background:#fbfafd}
+.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;animation:shot-in .55s cubic-bezier(.22,.8,.2,1)}
+@keyframes shot-in{from{opacity:0}to{opacity:1}}
+.player__cap{font-size:16.5px;line-height:1.5;letter-spacing:-.015em;color:var(--ink-soft);
+  min-height:4.5em;margin-bottom:24px}
+.player__cap b{color:var(--ink-strong);font-weight:500}
+.player__list{border-top:1px solid var(--line)}
+.player__list button{position:relative;display:flex;align-items:baseline;gap:14px;width:100%;
+  padding:12px 0;border:0;border-bottom:1px solid var(--line-2);background:none;cursor:pointer;
+  text-align:left;font:400 14.5px/1.35 'Inter',sans-serif;color:var(--faint);letter-spacing:-.01em;
+  transition:color .2s ease}
+.player__list button:hover{color:var(--ink-soft)}
+.player__list button[aria-current="true"]{color:var(--ink-strong);font-weight:500}
+.player__list .n{font-size:11.5px;font-variant-numeric:tabular-nums;color:var(--faint)}
+.player__list button[aria-current="true"] .n{color:var(--acc)}
+.player__list .bar{position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--acc)}
 .player__list button[aria-current="true"] .bar{animation:fill var(--dur,4200ms) linear forwards}
 @keyframes fill{from{width:0}to{width:100%}}
 
-.mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:20px}
-.mini-grid > div{padding:18px 20px;border-radius:16px;background:rgba(255,255,255,.7);border:1px solid #eae8f4}
-.mini-grid b{display:block;font-size:15px;color:var(--ink-strong);margin-bottom:4px}
-.mini-grid span{font-size:14px;color:var(--muted)}
+/* --- 4 · duelo en dos columnas --- */
+.duel{display:grid;grid-template-columns:1fr 1fr;margin-top:clamp(44px,5vw,70px);border-top:1px solid var(--line)}
+.duel__col{padding:28px 32px 32px 0}
+.duel__col + .duel__col{padding:28px 0 32px 32px;border-left:1px solid var(--line)}
+.duel__h{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--faint);margin-bottom:22px}
+.duel__col--win .duel__h{color:var(--acc)}
+.duel li{display:flex;gap:14px;padding:14px 0;border-bottom:1px solid var(--line-2);
+  font-size:15.5px;line-height:1.45;color:var(--muted);list-style:none}
+.duel__col--win li{color:var(--ink-soft)}
+.duel li::before{content:"—";flex:none;color:#c6c3d2;font-size:13px;line-height:1.5}
+.duel__col--win li::before{content:"✓";color:var(--acc);font-size:12px;font-weight:700}
 
-/* duelo */
-.duel{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:clamp(30px,4vw,48px)}
-.duel__col{padding:30px;border-radius:24px;background:#fff;border:1px solid #e9e7f3}
-.duel__col--win{background:linear-gradient(160deg,#f3eeff,#fff 70%);border-color:#cdbcff;
-  box-shadow:0 20px 50px rgba(95,38,227,.10)}
-.duel__h{font-size:13px;letter-spacing:.06em;text-transform:uppercase;color:var(--faint);margin-bottom:16px}
-.duel__col--win .duel__h{color:var(--purple-2)}
-.duel ul{display:grid;gap:12px}
-.duel li{position:relative;padding-left:30px;font-size:15.5px;line-height:1.5;color:#44444c}
-.duel li::before{content:"✕";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;
-  display:grid;place-items:center;background:#f1f1f5;color:#a5a5b0;font-size:11px;font-weight:700}
-.duel__col--win li::before{content:"✓";background:#e7f7ee;color:#1f9d55}
+/* --- testimonios editoriales --- */
+.quotes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(40px,4.5vw,64px);
+  border-top:1px solid var(--line)}
+.quotes figure{padding:30px 30px 32px 0;border-right:1px solid var(--line)}
+.quotes figure + figure{padding-left:30px}
+.quotes figure:last-child{border-right:0}
+.quotes blockquote{font-size:16px;line-height:1.55;letter-spacing:-.014em;color:var(--ink-soft)}
+.quotes blockquote b{color:var(--ink-strong);font-weight:500}
+.quotes figcaption{display:flex;align-items:center;gap:11px;margin-top:22px}
+.quotes img{width:34px;height:34px;border-radius:50%;object-fit:cover;flex:none;filter:grayscale(1)}
+.quotes figure:hover img{filter:none}
+.quotes b.nm{display:block;font-size:13.5px;font-weight:500;color:var(--ink-strong)}
+.quotes span{font-size:12px;color:var(--faint)}
 
-/* testimonios */
-.grid{display:grid;gap:16px;margin-top:clamp(26px,3vw,38px)}
-.grid--3{grid-template-columns:repeat(3,1fr)}
-.quote{display:flex;flex-direction:column;gap:16px;background:#fff;border:1px solid #e9e7f3;
-  border-radius:22px;padding:24px;transition:transform .3s cubic-bezier(.22,.8,.2,1),box-shadow .3s ease}
-.quote:hover{transform:translateY(-3px);box-shadow:0 16px 40px rgba(40,20,110,.08)}
-.quote p{font-size:15px;line-height:1.62;color:#35353b}
-.who{display:flex;align-items:center;gap:12px;margin-top:auto}
-.who img{width:42px;height:42px;border-radius:50%;object-fit:cover;flex:none}
-.who b{display:block;font-size:14px;color:var(--ink-strong)}
-.who span{font-size:12.5px;color:var(--faint)}
-.verif{display:inline-block;margin-bottom:3px;font-size:10.5px;font-weight:600;letter-spacing:.05em;
-  text-transform:uppercase;color:#1f9d55}
-
-/* tira de métodos de pago */
-.tira{margin-top:26px;overflow:hidden;
-  -webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);
-  mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent)}
-.tira__track{display:flex;align-items:center;gap:14px;width:max-content;animation:tira 40s linear infinite}
+/* --- tira de pagos --- */
+.tira{margin-top:clamp(40px,4.5vw,64px);padding:22px 0;border-top:1px solid var(--line);
+  border-bottom:1px solid var(--line);overflow:hidden;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent)}
+.tira__track{display:flex;align-items:center;gap:52px;width:max-content;animation:tira 46s linear infinite}
 .tira:hover .tira__track{animation-play-state:paused}
-.tira img{flex:none;height:24px;width:auto;padding:12px 18px;background:#fff;border:1px solid #eae8f4;
-  border-radius:14px;box-sizing:content-box}
+.tira img{flex:none;height:20px;width:auto;filter:brightness(0) invert(.68);transition:filter .25s ease}
+.tira:hover img{filter:brightness(0) invert(.5)}
 @keyframes tira{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 
-/* faq */
-.faq{max-width:760px;margin:clamp(28px,3.5vw,44px) auto 0}
-.faq details{border:1px solid rgba(255,255,255,.1);border-radius:16px;background:rgba(255,255,255,.04);
-  margin-bottom:10px;backdrop-filter:blur(6px)}
-.faq summary{list-style:none;cursor:pointer;padding:18px 54px 18px 22px;position:relative;
-  font-size:16px;font-weight:500;letter-spacing:-.015em;color:#fff}
+/* --- 5 · faq oscura --- */
+.faq{max-width:780px;margin:clamp(40px,4.5vw,64px) auto 0;border-top:1px solid rgba(255,255,255,.12)}
+.faq details{border-bottom:1px solid rgba(255,255,255,.12)}
+.faq summary{list-style:none;cursor:pointer;padding:22px 48px 22px 0;position:relative;
+  font-size:16.5px;font-weight:400;letter-spacing:-.016em;color:#fff;transition:color .2s ease}
+.faq summary:hover{color:#c7b6ff}
 .faq summary::-webkit-details-marker{display:none}
-.faq summary::after{content:"+";position:absolute;right:22px;top:14px;font-size:22px;color:#8d87a0}
-.faq details[open] summary::after{content:"–"}
-.faq .a{padding:0 22px 20px;font-size:15px;line-height:1.68;color:#b5afc4}
+.faq summary::after{content:"";position:absolute;right:6px;top:30px;width:11px;height:1px;background:#8c879c}
+.faq summary::before{content:"";position:absolute;right:11px;top:25px;width:1px;height:11px;background:#8c879c;
+  transition:transform .22s ease}
+.faq details[open] summary::before{transform:scaleY(0)}
+.faq .a{padding:0 48px 24px 0;font-size:15px;line-height:1.7;color:#a9a4b8;max-width:62ch}
 
-/* cta */
-.cta-wrap{margin-top:clamp(28px,3.5vw,44px)}
-.cta-wrap--center{text-align:center}
-.cta-nota{margin-top:12px;font-size:13px;color:var(--faint)}
-.block--ink .cta-nota{color:#8d87a0}
-.cta--xl{padding:22px 46px;font-size:16.5px}
+/* --- footer con el logotipo gigante --- */
+.mega{position:relative;overflow:hidden;background:#0e0d12;padding-top:clamp(40px,6vw,80px)}
+.mega__in{border-top:1px solid rgba(255,255,255,.1);padding-top:26px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;
+  width:min(1120px,100% - 56px);margin:0 auto clamp(30px,4vw,52px)}
+.mega__in a{color:#8c879c;font-size:13.5px;text-decoration:none;margin-right:22px;transition:color .2s ease}
+.mega__in a:hover{color:#fff}
+.mega__in p{font-size:12.5px;color:#5f5b6e}
+.mega__word{display:block;width:100%;line-height:.72;text-align:center;
+  font-family:'Inter Display','Inter',sans-serif;font-weight:600;letter-spacing:-.055em;
+  font-size:min(20.2vw,290px);
+  background:linear-gradient(180deg,#78728d 0%,#2a2537 58%,#0e0d12 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+  margin-bottom:-.14em;user-select:none}
 
-/* footer */
-.foot{padding:40px 0 56px;background:#fff;border-top:1px solid #ededf2}
-.foot__in{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:16px}
-.foot img{height:34px}
-.foot p{font-size:13px;color:var(--faint)}
-
-/* barra fija en móvil */
+/* --- barra fija móvil --- */
 .sticky{position:fixed;left:0;right:0;bottom:0;z-index:40;display:none;
   padding:10px 16px calc(10px + env(safe-area-inset-bottom));
-  background:rgba(248,248,248,.94);backdrop-filter:blur(10px);border-top:1px solid #e9e9ef}
-.sticky .cta{width:100%;margin:0;padding:16px}
+  background:rgba(248,248,248,.95);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.sticky .cta{width:100%;justify-content:center;margin:0;padding:16px}
 
 @media (max-width:980px){
   .player{grid-template-columns:1fr}
-  .money,.duel{grid-template-columns:1fr}
-  .bento,.grid--3,.mini-grid{grid-template-columns:repeat(2,1fr)}
+  .bill{grid-template-columns:1fr;gap:40px}
+  .mods{grid-template-columns:repeat(2,1fr)}
+  .mods > article:nth-child(3n){border-right:1px solid var(--line)}
+  .mods > article:nth-child(2n){border-right:0}
+  .quotes{grid-template-columns:1fr}
+  .quotes figure{border-right:0;border-bottom:1px solid var(--line);padding:26px 0}
+  .quotes figure + figure{padding-left:0}
 }
 @media (max-width:900px){
   .wrap{width:min(100%,100% - 40px)}
-  .block{padding:56px 0}
-  .bento,.grid--3,.mini-grid{grid-template-columns:1fr}
+  .block{padding:64px 0}
+  .mods{grid-template-columns:1fr}
+  .mods > article{border-right:0 !important;padding:24px 0 26px}
+  .mods .mk{right:2px;top:26px}
+  .duel{grid-template-columns:1fr}
+  .duel__col{padding:24px 0 26px}
+  .duel__col + .duel__col{padding:24px 0 26px;border-left:0;border-top:1px solid var(--line)}
+  .facts div{flex:1 1 100%;border-right:0;padding-right:0}
   .sticky{display:block}
   body{padding-bottom:78px}
-  .money__col{padding:24px}
-  .tira img{height:19px;padding:10px 14px}
+  .mega__word{font-size:23vw;letter-spacing:-.05em}
+  .mega__in{flex-direction:column;align-items:flex-start;gap:14px}
 }
 @media (prefers-reduced-motion:reduce){
-  .rv,.kin .w{opacity:1;transform:none;transition:none}
-  .aura,.tira__track,.player__list .bar{animation:none}
+  .rv,.kin .w{opacity:1 !important;transform:none !important;transition:none}
+  .tira__track,.player__list .bar{animation:none}
 }
 </style>
 </head>
@@ -737,41 +773,37 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 
 <!-- ====================== 1 · PRODUCTO ====================== -->
 <section class="block" id="producto">
-  <div class="aura aura--1" aria-hidden="true"></div>
+  <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head head--center rv">
-      <span class="eyebrow">Qué es Classroom</span>
+    <div class="head rv">
+      <p class="label">Qué es Classroom</p>
       <h2 class="t2 kin">Tu curso, tu comunidad y tus cobros en el mismo sitio, bajo tu marca.</h2>
-      <p class="lead">Seis módulos, una sola cuenta. El cobro no es una pasarela pegada por fuera: es parte
-        del producto.</p>
+      <p class="lead">Seis módulos y una sola cuenta. El cobro no es una pasarela pegada por fuera:
+        es una de las seis piezas.</p>
     </div>
 
-    <div class="bento">
-      <article class="tile rv" style="--d:0ms">
-        <img src="assets/modulos/icono-comunidad.webp" alt="" width="44" height="44">
+    <div class="mods">
+      <article class="rv" style="--d:0ms"><span class="ix">01</span>
         <h3>Comunidad</h3><p>El feed donde tu audiencia se queda, comenta y vuelve.</p></article>
-      <article class="tile rv" style="--d:60ms">
-        <img src="assets/modulos/icono-aula.webp" alt="" width="44" height="44" loading="lazy">
+      <article class="rv" style="--d:70ms"><span class="ix">02</span>
         <h3>Aula</h3><p>Vídeo, documentos y seguimiento, desde un solo panel.</p></article>
-      <article class="tile tile--mark rv" style="--d:120ms">
-        <img src="assets/modulos/icono-cobro.webp" alt="" width="44" height="44" loading="lazy">
+      <article class="rv" style="--d:140ms"><span class="ix">03</span><span class="mk"></span>
         <h3>Cobro integrado</h3><p>Cobra el acceso a tu curso y tu comunidad con un solo link.</p></article>
-      <article class="tile rv" style="--d:180ms">
-        <img src="assets/modulos/icono-calendario.webp" alt="" width="44" height="44" loading="lazy">
+      <article class="rv" style="--d:210ms"><span class="ix">04</span>
         <h3>Calendario</h3><p>Eventos en directo con confirmación de asistencia.</p></article>
-      <article class="tile rv" style="--d:240ms">
-        <img src="assets/modulos/icono-clasificaciones.webp" alt="" width="44" height="44" loading="lazy">
+      <article class="rv" style="--d:280ms"><span class="ix">05</span>
         <h3>Clasificaciones</h3><p>Niveles y puntos que premian la participación.</p></article>
-      <article class="tile rv" style="--d:300ms">
-        <img src="assets/modulos/icono-mensajeria.webp" alt="" width="44" height="44" loading="lazy">
+      <article class="rv" style="--d:350ms"><span class="ix">06</span>
         <h3>Mensajería</h3><p>Mensajes directos entre miembros, dentro de tu espacio.</p></article>
     </div>
 
-    <p class="band rv">Y el «cada mes» del titular: <b>«puedes crear links de pago único y suscripciones
-      recurrentes desde el mismo panel»</b>.</p>
+    <p class="quoteline rv">Y de aquí sale el «cada mes» del titular: <b>puedes crear links de pago único
+      y suscripciones recurrentes desde el mismo panel.</b></p>
 
-    <div class="cta-wrap cta-wrap--center rv">
-      <button class="cta js-abrir-quiz" data-origen="producto">Crear mi Classroom</button>
+    <div class="cta-wrap rv">
+      <button class="cta cta--acc js-abrir-quiz" data-origen="producto">Crear mi Classroom
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
     </div>
   </div>
@@ -780,63 +812,69 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 <!-- ====================== 2 · PRECIO ====================== -->
 <section class="block block--tint" id="precio">
   <div class="wrap">
-    <div class="head head--center rv">
-      <span class="eyebrow">El precio</span>
-      <h2 class="t2 kin">Cuota mensual: 0. Pagas cuando te paga un alumno.</h2>
-      <p class="lead">La cuenta y las herramientas son gratis. Solo hay una comisión variable cuando vendes,
-        según rubro, ticket y volumen. El mes que no vendes, no pagas nada.</p>
+    <div class="head rv">
+      <p class="label">El precio</p>
+      <h2 class="t2 kin">Cuota mensual: cero. Pagas cuando te paga un alumno.</h2>
+      <p class="lead">La cuenta y las herramientas son gratis. Solo hay una comisión variable cuando
+        vendes, según rubro, ticket y volumen.</p>
     </div>
 
-    <div class="money rv">
-      <div class="money__col">
-        <p class="money__k">Montarlo por separado</p>
-        <p class="money__v money__v--old"><span class="count" data-to="508">0</span> $<span class="u">/mes</span></p>
-        <p class="money__chips">
-          <span>Tienda 39 $</span><span>BioLink 15 $</span><span>Páginas 25 $</span>
-          <span>Classroom 99 $</span><span>KunfuCard 10 $</span><span>Sensei 20 $</span>
-          <span>Cuota de autónomo 300 $</span>
-        </p>
+    <div class="bill">
+      <div class="bill__list rv">
+        <div class="bill__row"><span>Tienda</span><i class="bill__dots"></i><span>39 $/mes</span></div>
+        <div class="bill__row"><span>BioLink</span><i class="bill__dots"></i><span>15 $/mes</span></div>
+        <div class="bill__row"><span>Páginas</span><i class="bill__dots"></i><span>25 $/mes</span></div>
+        <div class="bill__row bill__row--own"><span>Classroom <em>la que vienes a buscar</em></span><i class="bill__dots"></i><span>99 $/mes</span></div>
+        <div class="bill__row"><span>KunfuCard</span><i class="bill__dots"></i><span>10 $/mes</span></div>
+        <div class="bill__row"><span>Sensei</span><i class="bill__dots"></i><span>20 $/mes</span></div>
+        <div class="bill__row"><span>Cuota de autónomo</span><i class="bill__dots"></i><span>300 $/mes</span></div>
+        <div class="bill__total"><span>Montarlo por separado</span>
+          <b><span class="count" data-to="508">0</span> $/mes</b></div>
       </div>
-      <div class="money__col money__col--win">
-        <p class="money__k">Con Kunfupay</p>
-        <p class="money__v">0 <span class="u">de cuota</span></p>
-        <p class="money__note">Las siete, incluidas en la misma cuenta. Y la comisión solo entra cuando entra
-          una venta.</p>
+
+      <div class="bill__ours rv" style="--d:120ms">
+        <p class="bill__big">0</p>
+        <p class="bill__k">de cuota al mes. Las siete herramientas vienen en la misma cuenta que tu
+          Classroom, y la comisión <b>solo entra cuando entra una venta</b>.</p>
       </div>
     </div>
 
-    <div class="pill-row rv">
-      <span class="pill"><b>Sin cuota mensual</b></span>
-      <span class="pill"><b>Sin permanencia</b></span>
-      <span class="pill"><b>Alta en minutos</b></span>
-      <span class="pill"><b>Sin integraciones técnicas</b></span>
+    <div class="facts rv">
+      <div><b>Sin cuota mensual</b><span>El mes que no vendes, no pagas nada.</span></div>
+      <div><b>Sin permanencia</b><span>No hay suscripción que cancelar.</span></div>
+      <div><b>Alta en minutos</b><span>Sin trámites ni papeleos. Solo crea y conecta.</span></div>
+      <div><b>Sin integraciones</b><span>No necesitas desarrollar nada para cobrar.</span></div>
     </div>
-    <p class="note rv">Precios de referencia de los planes de entrada públicos de cada herramienta, consultados
-      en 2026 — no incluyen las comisiones adicionales que cobra cada plataforma por venta.</p>
 
-    <div class="cta-wrap cta-wrap--center rv">
-      <button class="cta js-abrir-quiz" data-origen="precio">Abrir mi cuenta gratis</button>
+    <p class="note rv">Precios de referencia de los planes de entrada públicos de cada herramienta,
+      consultados en 2026 — no incluyen las comisiones adicionales que cobra cada plataforma por venta.</p>
+
+    <div class="cta-wrap rv">
+      <button class="cta js-abrir-quiz" data-origen="precio">Abrir mi cuenta gratis
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <p class="cta-nota">Dos preguntas sobre tu negocio y dónde te dejamos la cuenta</p>
     </div>
   </div>
 </section>
 
-<!-- ====================== 3 · DEMO ====================== -->
+<!-- ====================== 3 · RECORRIDO ====================== -->
 <section class="block" id="demo">
-  <div class="aura aura--2" aria-hidden="true"></div>
+  <div class="glow glow--left" aria-hidden="true"></div>
   <div class="wrap">
-    <div class="head head--center rv">
-      <span class="eyebrow">El recorrido de quien te paga</span>
+    <div class="head rv">
+      <p class="label">El recorrido de quien te paga</p>
       <h2 class="t2 kin">Así lo vive tu alumno, de la ficha al examen.</h2>
-      <p class="lead">Siete pantallas, todas dentro de tu Classroom. Ficha completa antes de pagar, checkout
-        sin salir de tu marca, aula con progreso y comunidad en cada lección.</p>
+      <p class="lead">Siete pantallas, todas dentro de tu Classroom. Ficha completa antes de pagar,
+        checkout sin salir de tu marca, aula con progreso y comunidad en cada lección.</p>
     </div>
 
     <div class="player rv">
       <div class="player__frame">
         <div class="chrome"><i></i><i></i><i></i><span>tuclassroom.com</span></div>
         <div class="shot">
-          <img id="demo-img" src="assets/demo/cx1.webp" alt="Ficha del curso antes de comprar" width="1000" height="750">
+          <img id="demo-img" src="assets/demo/cx1.webp" alt="Ficha del curso antes de comprar"
+               width="1000" height="750">
         </div>
       </div>
       <div class="player__side">
@@ -854,27 +892,29 @@ html.js .kin.is-in .w{opacity:1;transform:none}
       </div>
     </div>
 
-    <div class="mini-grid rv">
-      <div><b>Publica como quieras</b><span>Abierto, por enlace o privado.</span></div>
-      <div><b>Cobra como quieras</b><span>Gratuito, de pago o exclusivo.</span></div>
-      <div><b>Mide con tu píxel</b><span>Google, Meta y TikTok, desde el curso.</span></div>
+    <div class="facts rv">
+      <div><b>Publícalo como quieras</b><span>Abierto, por enlace o privado.</span></div>
+      <div><b>Cóbralo como quieras</b><span>Gratuito, de pago o exclusivo.</span></div>
+      <div><b>Mide con tu píxel</b><span>Google, Meta y TikTok, desde el propio curso.</span></div>
     </div>
 
-    <div class="cta-wrap cta-wrap--center rv">
-      <button class="cta js-abrir-quiz" data-origen="demo">Quiero que mi curso se vea así</button>
+    <div class="cta-wrap rv">
+      <button class="cta cta--acc js-abrir-quiz" data-origen="demo">Quiero que mi curso se vea así
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
     </div>
   </div>
 </section>
 
-<!-- ====================== 4 · PRUEBA Y COMPARATIVA ====================== -->
+<!-- ====================== 4 · COMPARATIVA Y PRUEBA ====================== -->
 <section class="block block--tint" id="prueba">
   <div class="wrap">
-    <div class="head head--center rv">
-      <span class="eyebrow">Quién ya cobra así</span>
-      <h2 class="t2 kin">Lo que cambia frente a lo que usas hoy.</h2>
-      <p class="lead">Stripe cobra pero no te monta el negocio. Hotmart te da plataforma y se queda con tu
-        margen. Aquí las dos cosas son el mismo producto.</p>
+    <div class="head rv">
+      <p class="label">Frente a lo que usas hoy</p>
+      <h2 class="t2 kin">Stripe cobra. Hotmart te da plataforma. <em>Aquí son la misma cosa.</em></h2>
+      <p class="lead">Uno se queda con tu margen, ambos dividen tu negocio y ninguno cuenta con cobertura
+        internacional.</p>
     </div>
 
     <div class="duel rv">
@@ -891,7 +931,7 @@ html.js .kin.is-in .w{opacity:1;transform:none}
       <div class="duel__col duel__col--win">
         <p class="duel__h">Classroom by Kunfupay</p>
         <ul>
-          <li>0 de cuota. Comisión solo cuando vendes</li>
+          <li>Cero de cuota. Comisión solo cuando vendes</li>
           <li>Curso, comunidad y cobro en el mismo producto</li>
           <li>Tarjetas internacionales + Pix, Bizum, Nequi, PSE, Mercado Pago, Yape</li>
           <li>Cada venta emite su factura sola, en el país que sea</li>
@@ -899,54 +939,52 @@ html.js .kin.is-in .w{opacity:1;transform:none}
         </ul>
       </div>
     </div>
-    <p class="note rv">* Precio de referencia de la categoría que Classroom sustituye (Kajabi, Skool o Hotmart),
-      no el precio individual de cada una. De Skool y Kajabi no publicamos casillas que no podamos documentar.</p>
+    <p class="note rv">* Precio de referencia de la categoría que Classroom sustituye (Kajabi, Skool o
+      Hotmart), no el precio individual de cada una. De Skool y Kajabi no publicamos casillas que no
+      podamos documentar.</p>
 
-    <div class="grid grid--3 rv">
-      <div class="quote">
-        <p>«Doy mentorías 1:1 y un programa de 8 semanas. Con Kunfupay cobro tranquilo, <b>monto mi
-          Classroom</b> y mis alumnos entran a pagar con Bizum en segundos.»</p>
-        <div class="who"><img src="assets/testimonios/sergio-navarro.webp" alt="" width="42" height="42" loading="lazy">
-          <div><span class="verif">✓ Cliente verificado</span><b>Sergio Navarro</b>
-          <span>Coach · España · 31,5K</span></div></div>
-      </div>
-      <div class="quote">
-        <p>«Vendo cursos a alumnos de medio mundo y los gestiono <b>desde un solo panel</b>. Se acabó saltar
-          entre cinco herramientas.»</p>
-        <div class="who"><img src="assets/testimonios/lucia-hernandez.webp" alt="" width="42" height="42" loading="lazy">
-          <div><span class="verif">✓ Cliente verificado</span><b>Lucía Hernández</b>
-          <span>Formadora online · España · 24,1K</span></div></div>
-      </div>
-      <div class="quote">
-        <p>«Mi comunidad es 80% brasileña y <b>antes perdía ventas en el pago</b>. Con PIX como método nativo,
-          ahora me pagan sin pensárselo.»</p>
-        <div class="who"><img src="assets/testimonios/marina-costa.webp" alt="" width="42" height="42" loading="lazy">
-          <div><span class="verif">✓ Cliente verificado</span><b>Marina Costa</b>
-          <span>Comunidad en Discord · Portugal · 8,7K</span></div></div>
-      </div>
+    <div class="quotes rv">
+      <figure>
+        <blockquote>«Doy mentorías 1:1 y un programa de 8 semanas. Con Kunfupay cobro tranquilo,
+          <b>monto mi Classroom</b> y mis alumnos entran a pagar con Bizum en segundos.»</blockquote>
+        <figcaption><img src="assets/testimonios/sergio-navarro.webp" alt="" width="34" height="34" loading="lazy">
+          <span><b class="nm">Sergio Navarro</b>Coach · España · 31,5K</span></figcaption>
+      </figure>
+      <figure>
+        <blockquote>«Vendo cursos a alumnos de medio mundo y los gestiono <b>desde un solo panel</b>.
+          Se acabó saltar entre cinco herramientas.»</blockquote>
+        <figcaption><img src="assets/testimonios/lucia-hernandez.webp" alt="" width="34" height="34" loading="lazy">
+          <span><b class="nm">Lucía Hernández</b>Formadora online · España · 24,1K</span></figcaption>
+      </figure>
+      <figure>
+        <blockquote>«Mi comunidad es 80% brasileña y <b>antes perdía ventas en el pago</b>. Con PIX como
+          método nativo, ahora me pagan sin pensárselo.»</blockquote>
+        <figcaption><img src="assets/testimonios/marina-costa.webp" alt="" width="34" height="34" loading="lazy">
+          <span><b class="nm">Marina Costa</b>Comunidad en Discord · Portugal · 8,7K</span></figcaption>
+      </figure>
     </div>
 
-    <div class="tira rv" aria-label="Métodos de pago">
+    <div class="tira" aria-label="Métodos de pago">
       <div class="tira__track">
         <img src="assets/pago/visa.svg" alt="Visa"><img src="assets/pago/mastercard.svg" alt="Mastercard">
         <img src="assets/pago/bizum.svg" alt="Bizum"><img src="assets/pago/pix.svg" alt="Pix">
         <img src="assets/pago/nequi.svg" alt="Nequi"><img src="assets/pago/pse.svg" alt="PSE">
         <img src="assets/pago/mercado-pago.svg" alt="Mercado Pago"><img src="assets/pago/astropay.svg" alt="AstroPay">
         <img src="assets/pago/apple-pay.svg" alt="Apple Pay"><img src="assets/pago/google-pay.svg" alt="Google Pay">
-        <img src="assets/pago/paypal.svg" alt="PayPal"><img src="assets/pago/cripto.svg" alt="Cripto">
-        <img src="assets/pago/sepa.svg" alt="SEPA">
+        <img src="assets/pago/paypal.svg" alt="PayPal"><img src="assets/pago/sepa.svg" alt="SEPA">
         <img src="assets/pago/visa.svg" alt=""><img src="assets/pago/mastercard.svg" alt="">
         <img src="assets/pago/bizum.svg" alt=""><img src="assets/pago/pix.svg" alt="">
         <img src="assets/pago/nequi.svg" alt=""><img src="assets/pago/pse.svg" alt="">
         <img src="assets/pago/mercado-pago.svg" alt=""><img src="assets/pago/astropay.svg" alt="">
         <img src="assets/pago/apple-pay.svg" alt=""><img src="assets/pago/google-pay.svg" alt="">
-        <img src="assets/pago/paypal.svg" alt=""><img src="assets/pago/cripto.svg" alt="">
-        <img src="assets/pago/sepa.svg" alt="">
+        <img src="assets/pago/paypal.svg" alt=""><img src="assets/pago/sepa.svg" alt="">
       </div>
     </div>
 
-    <div class="cta-wrap cta-wrap--center rv">
-      <button class="cta js-abrir-quiz" data-origen="prueba">Unirme a ellos</button>
+    <div class="cta-wrap rv">
+      <button class="cta js-abrir-quiz" data-origen="prueba">Unirme a ellos
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <p class="cta-nota">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
     </div>
   </div>
@@ -956,49 +994,55 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 <section class="block block--ink" id="empezar">
   <div class="wrap">
     <div class="head head--center rv">
-      <span class="eyebrow">Antes de empezar</span>
+      <p class="label">Antes de empezar</p>
       <h2 class="t2 kin">Lo tienes todo preparado. Solo falta tu comunidad.</h2>
-      <p class="lead">Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados en la misma
-        cuenta. Tú te dedicas a enseñar.</p>
+      <p class="lead">Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados en la
+        misma cuenta. Tú te dedicas a enseñar.</p>
     </div>
 
     <div class="faq rv">
       <details open><summary>¿Cuánto cuesta abrir mi Classroom?</summary><div class="a">
-        <p>La cuenta y las herramientas no tienen cuota mensual. Se cobra una comisión variable solo cuando
-          vendes, según rubro, ticket y volumen. El mes que no vendas, no pagas nada.</p></div></details>
+        La cuenta y las herramientas no tienen cuota mensual. Se cobra una comisión variable solo cuando
+        vendes, según rubro, ticket y volumen. El mes que no vendas, no pagas nada.</div></details>
       <details><summary>Ya tengo mi curso en Skool o Hotmart. ¿Lo muevo yo?</summary><div class="a">
-        <p>No. Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados en la misma cuenta.
-          Marca en el primer paso dónde lo tienes hoy y partimos de ahí.</p></div></details>
+        No. Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados en la misma
+        cuenta. Marca en el primer paso dónde lo tienes hoy y partimos de ahí.</div></details>
       <details><summary>¿Qué requisitos piden para activarme?</summary><div class="a">
-        <p>Que vendas un producto digital (no físico) y que tengas una comunidad detrás. Solicitas la activación
-          de tu tienda, la aprobamos y ya puedes empezar a vender.</p></div></details>
+        Que vendas un producto digital (no físico) y que tengas una comunidad detrás. Solicitas la
+        activación de tu tienda, la aprobamos y ya puedes empezar a vender.</div></details>
       <details><summary>¿Puedo cobrar una membresía mensual?</summary><div class="a">
-        <p>Sí: links de pago único y suscripciones recurrentes desde el mismo panel.</p></div></details>
+        Sí: links de pago único y suscripciones recurrentes desde el mismo panel.</div></details>
       <details><summary>¿Tengo que darme de alta como autónomo?</summary><div class="a">
-        <p>Kunfupay no es una asesoría: es una plataforma que vende por ti, con la estructura fiscal ya montada.
-          Cada venta emite su factura sola, en el país que sea. Tu situación personal la decides tú, con tu
-          asesor si lo tienes.</p></div></details>
+        Kunfupay no es una asesoría: es una plataforma que vende por ti, con la estructura fiscal ya
+        montada. Cada venta emite su factura sola, en el país que sea. Tu situación personal la decides
+        tú, con tu asesor si lo tienes.</div></details>
       <details><summary>¿Y si me atasco un domingo por la noche?</summary><div class="a">
-        <p>El ecosistema de Kunfupay incluye soporte humano 24 horas. Por eso en el último paso te pedimos el
-          WhatsApp: para escribirte si te atascas con el alta.</p></div></details>
+        El ecosistema de Kunfupay incluye soporte humano 24 horas. Por eso en el último paso te pedimos el
+        WhatsApp: para escribirte si te atascas con el alta.</div></details>
     </div>
 
     <div class="cta-wrap cta-wrap--center rv">
-      <button class="cta cta--xl js-abrir-quiz" data-origen="cierre">Crear mi Classroom</button>
+      <button class="cta cta--light cta--xl js-abrir-quiz" data-origen="cierre">Crear mi Classroom
+        <svg viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8h11M9 4l4 4-4 4"
+          stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
       <p class="cta-nota">Sin cuota mensual · Sin permanencia · Cero spam</p>
     </div>
   </div>
 </section>
 
-<footer class="foot">
-  <div class="wrap foot__in">
-    <img src="assets/logo-classroom.png" alt="Classroom by kunfupay">
-    <p>© 2026 Kunfupay. Todos los derechos reservados.</p>
+<footer class="mega">
+  <div class="mega__in">
+    <div>
+      <a href="#producto">Producto</a><a href="#precio">Precio</a><a href="#demo">Demo</a>
+      <a href="#empezar">Preguntas</a>
+    </div>
+    <p>© 2026 Kunfupay · Classroom</p>
   </div>
+  <span class="mega__word" aria-hidden="true">Classroom</span>
 </footer>
 
 <div class="sticky">
-  <button class="cta js-abrir-quiz" data-origen="barra-movil">Crear mi Classroom</button>
+  <button class="cta cta--acc js-abrir-quiz" data-origen="barra-movil">Crear mi Classroom</button>
 </div>
 
 <!-- Modal del quiz. El formulario se clona del hero al cargar, así solo hay

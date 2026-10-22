@@ -14,8 +14,6 @@ classroom-landing/
     ├── icon.png               favicon
     ├── prensa/*.svg           Forbes, TechCrunch, Entrepreneur, WIRED, El País, Business Insider
     ├── demo/cx1..cx7.webp     las 7 pantallas del recorrido del alumno
-    ├── fondo/aurora-*.webp    fondos de aurora generados (clara y oscura)
-    ├── modulos/icono-*.webp   los 6 iconos de módulo de la presentación
     ├── testimonios/*.webp     fotos de los 6 clientes verificados
     ├── pago/*.svg             métodos de pago (Bizum, Pix, Nequi, PSE, Mercado Pago…)
     └── iconos/*.svg           iconos de las apps del ecosistema
@@ -29,16 +27,31 @@ lo que usas hoy (comparativa + testimonios + métodos de pago) · 5 FAQ y cierre
 Todas terminan en un botón `.js-abrir-quiz`: abren el **mismo** cuestionario de 3 pasos en el modal,
 desde su propia posición. No hay un segundo formulario en ninguna parte.
 
+## Lenguaje visual
+
+Editorial y plano, sin adornos de plantilla:
+
+- **Nada de botones de plástico**: rectángulos planos de 4 px de radio, negro tinta o morado sólido,
+  sin degradados ni sombras de color. El movimiento es una flecha que avanza 3 px al pasar el ratón.
+- **Nada de iconos genéricos**: los módulos van numerados (01–06) sobre una retícula de filetes de 1 px.
+  Un punto morado marca el único módulo destacado.
+- **Nada de fondos de IA**: se retiraron las auroras generadas. Lo que hay es una textura de grano SVG
+  al 3,5 % y un halo radial muy tenue por sección.
+- **El precio se lee como una factura**: lista con puntos de guía, total tachado y un 0 gigante enfrente,
+  con cifras tabulares.
+- **La comparativa son dos columnas de filetes**, no tarjetas; los testimonios, citas editoriales con
+  foto en blanco y negro que recupera el color al pasar por encima.
+- **El cierre es una sección oscura** y el footer, el logotipo «Classroom» a tamaño gigante, recortado
+  por el borde inferior, con degradado que lo funde en el fondo.
+
 ## Movimiento
 
 - **Revelado al scroll** con `IntersectionObserver` y retardo escalonado (`--d` por tarjeta).
 - **Titulares cinéticos**: el JS parte cada `h2.kin` en palabras y entran una detrás de otra.
-- **Contador** 0 → 508 en el bloque de precio, con easing, al entrar en pantalla.
-- **Recorrido del alumno**: las 7 capturas se pasan solas cada 4,2 s con barra de progreso en el paso
-  activo; se pausa al pasar el ratón y solo corre mientras la sección está en pantalla.
+- **Contador** 0 → 508 en el total de la factura, al entrar en pantalla.
+- **Recorrido del alumno**: las 7 capturas se pasan solas cada 4,2 s con un filete de progreso en el
+  paso activo; se pausa al pasar el ratón y solo corre mientras la sección está en pantalla.
 - **Tira de métodos de pago** en bucle continuo, pausada al hover.
-- **Auroras**: dos fondos generados (`assets/fondo/`) que derivan lentamente; la sección de cierre es
-  oscura con la aurora violeta por debajo.
 - Todo respeta `prefers-reduced-motion`, y sin JS no se oculta nada (las animaciones van bajo `html.js`).
 
 **Regla de contenido:** la página solo afirma lo que está publicado en la presentación comercial de
