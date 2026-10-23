@@ -1100,7 +1100,9 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 <script>
 (function () {
   var LETRAS = 'ABCDEF';
-  var SIGNUP = 'https://classroom.kunfupay.com/signup';   // destino tras el formulario
+  // El formulario termina en /gracias (ahí miden los píxeles) y esa página
+  // es la que lleva al alta a los 3 s.
+  var GRACIAS = 'gracias.html';   // en producción, '/gracias' si tienes reescritura de URLs
 
   /* ---------- motor del quiz (sirve para el del hero y el del modal) ---------- */
   function initQuiz(form, hooks) {
@@ -1168,12 +1170,11 @@ html.js .kin.is-in .w{opacity:1;transform:none}
           ';domain=.kunfupay.com;path=/;max-age=1800;SameSite=Lax';
       } catch (err) {}
 
-      mostrar('ok');
+      mostrar('ok');   // por si la navegación tarda, la tarjeta ya dice que está hecho
 
-      // y de la pantalla de gracias al alta, con el correo ya puesto
-      var destino = SIGNUP + '?email=' + encodeURIComponent(datos.email) +
+      var destino = GRACIAS + '?email=' + encodeURIComponent(datos.email) +
         (window.location.search ? '&' + window.location.search.slice(1) : '');
-      setTimeout(function () { window.location.href = destino; }, 1300);
+      window.location.href = destino;
     });
 
     return { mostrar: mostrar };

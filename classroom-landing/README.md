@@ -7,6 +7,7 @@ No necesita build ni dependencias: súbela tal cual a cualquier hosting estátic
 ```
 classroom-landing/
 ├── index.html
+├── gracias.html              confirmación con URL propia, para los píxeles
 ├── PENDIENTE-CONFIRMAR.md     datos que faltan por cerrar antes de publicar
 └── assets/
     ├── logo-classroom.png     logo del header (wordmark en gris oscuro + "kunfupay" morado)
@@ -75,13 +76,17 @@ plazo, ninguna garantía y ninguna cifra de tracción inventada. Lo que falta po
 
 ## Qué pasa al enviar el formulario
 
-El quiz no termina en una pantalla de gracias: guarda el correo y manda al alta.
+1. El quiz guarda el lead: `localStorage.kf_lead`, cookie `kf_lead_email` en `.kunfupay.com`
+   (30 min) y el `fetch` al backend, que está comentado y marcado como ENDPOINT.
+2. Navega a **`gracias.html`** con `?email=` y los UTM de la visita detrás.
+3. `gracias.html` es una página de verdad, con su URL, para que los píxeles midan ahí. Dentro
+   están los tres disparos comentados (Meta `fbq('track','Lead')`, Google `gtag` y TikTok `ttq`)
+   y un `dataLayer.push({event:'lead_gracias'})` que sí va activo.
+4. A los **3 segundos** salta a `https://classroom.kunfupay.com/signup?email=…`, con los UTM.
+   También hay un botón por si el salto se bloquea.
 
-1. Muestra la confirmación 1,3 s.
-2. Redirige a `https://classroom.kunfupay.com/signup?email=<correo>` arrastrando los UTM que
-   traía la landing.
-3. Además deja el correo en una cookie `kf_lead_email` con `domain=.kunfupay.com` (30 min) y el
-   lead completo en `localStorage.kf_lead`.
+Las dos constantes están arriba del script de cada archivo: `GRACIAS` en `index.html` (ponlo en
+`/gracias` si tienes reescritura de URLs) y `SIGNUP` + `ESPERA` en `gracias.html`.
 
 **Falta un cambio en el alta.** Hoy `/signup` ignora el parámetro: lo comprobé en el navegador y el
 campo llega vacío. Para que el usuario solo tenga que poner contraseña, el formulario de alta tiene
@@ -100,8 +105,6 @@ const email = url.searchParams.get('email')
   || document.cookie.match(/(?:^|; )kf_lead_email=([^;]*)/)?.[1]
 if (email) emailInput.value = decodeURIComponent(email)
 ```
-
-El destino está en una sola constante al principio del script: `var SIGNUP = '…/signup'`.
 
 ## Pendiente antes de publicar
 
