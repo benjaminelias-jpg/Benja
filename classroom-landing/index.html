@@ -503,7 +503,8 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 .player__list .n{font-size:11.5px;font-variant-numeric:tabular-nums;color:var(--faint)}
 .player__list button[aria-current="true"] .n{color:var(--acc)}
 .player__list .bar{position:absolute;left:0;bottom:-1px;height:1px;width:0;background:var(--acc)}
-.player__list button[aria-current="true"] .bar{animation:fill var(--dur,4200ms) linear forwards}
+.player__list button[aria-current="true"] .bar{animation:fill var(--dur,4600ms) linear forwards}
+.player__list.is-paused button[aria-current="true"] .bar{animation-play-state:paused}
 @keyframes fill{from{width:0}to{width:100%}}
 
 /* --- 4 · duelo: lista apagada contra panel oscuro --- */
@@ -525,9 +526,10 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 .duel__panel li:last-of-type{border-bottom:0}
 .duel__panel li::before{content:"✓";flex:none;color:#b49bff;font-size:12px;font-weight:700;line-height:1.5}
 .duel__panel .cta{position:relative;z-index:1;margin-top:22px}
-.duel__vs{position:absolute;left:50%;top:76px;transform:translate(-50%,-50%);z-index:3;
-  width:44px;height:44px;border-radius:50%;background:#fff;border:1px solid var(--line);
-  display:grid;place-items:center;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--faint)}
+.duel__vs{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:3;
+  padding:8px 12px;border-radius:6px;background:#f4f3f9;border:1px solid var(--line);
+  color:var(--ink-soft);font-size:10px;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  box-shadow:0 2px 10px rgba(18,16,22,.06)}
 
 /* --- testimonios editoriales --- */
 .quotes{display:grid;grid-template-columns:repeat(3,1fr);margin-top:clamp(40px,4.5vw,64px);
@@ -610,8 +612,8 @@ html.js .kin.is-in .w{opacity:1;transform:none}
   .mods{grid-template-columns:1fr}
   .mods > article{border-right:0 !important;padding:24px 0 26px}
   .mods .mk{right:2px;top:26px}
-  .duel{grid-template-columns:1fr;gap:34px}
-  .duel__vs{position:static;transform:none;margin:0 auto}
+  .duel{grid-template-columns:1fr;gap:28px}
+  .duel__vs{position:static;transform:none;margin:0 auto;background:none}
   .duel__panel{margin-top:0}
   .facts div{flex:1 1 100%;border-right:0;padding-right:0}
   .sticky{display:block}
@@ -747,7 +749,7 @@ html.js .kin.is-in .w{opacity:1;transform:none}
       <div class="quiz__ok">
         <div class="tick" aria-hidden="true">✓</div>
         <h3>Listo, ya tienes sitio.</h3>
-        <p>Te hemos guardado el registro. Revisa tu correo: ahí sigues el alta de tu Classroom.</p>
+        <p>Te llevamos a crear tu contraseña. Tu correo ya va puesto: solo eliges contraseña y entras.</p>
       </div>
     </div>
 
@@ -802,8 +804,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
     <div class="head rv">
       <p class="label">Qué es Classroom</p>
       <h2 class="t2 kin">Tu curso, tu comunidad y tus cobros en el mismo sitio, bajo tu marca.</h2>
-      <p class="lead">Seis módulos y una sola cuenta. El cobro no es una pasarela pegada por fuera:
-        es una de las seis piezas.</p>
     </div>
 
     <div class="mods">
@@ -897,12 +897,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
       </div>
     </div>
 
-    <div class="facts rv">
-      <div><b>Sin cuota mensual</b><span>El mes que no vendes, no pagas nada.</span></div>
-      <div><b>Sin permanencia</b><span>No hay suscripción que cancelar.</span></div>
-      <div><b>Alta en minutos</b><span>Sin trámites ni papeleos. Solo crea y conecta.</span></div>
-      <div><b>Sin integraciones</b><span>No necesitas desarrollar nada para cobrar.</span></div>
-    </div>
 
     <p class="note rv">Precios de referencia de los planes de entrada públicos de cada herramienta,
       consultados en 2026 — no incluyen las comisiones adicionales que cobra cada plataforma por venta.</p>
@@ -1122,6 +1116,7 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 <script>
 (function () {
   var LETRAS = 'ABCDEF';
+  var SIGNUP = 'https://classroom.kunfupay.com/signup';   // destino tras el formulario
 
   /* ---------- motor del quiz (sirve para el del hero y el del modal) ---------- */
   function initQuiz(form, hooks) {
@@ -1181,7 +1176,20 @@ html.js .kin.is-in .w{opacity:1;transform:none}
       //                      body: JSON.stringify(datos)});
       console.log('lead', datos);
 
+      // El correo se guarda en tres sitios para que el alta lo encuentre:
+      // en la URL, en una cookie de .kunfupay.com y en localStorage.
+      try { localStorage.setItem('kf_lead', JSON.stringify(datos)); } catch (err) {}
+      try {
+        document.cookie = 'kf_lead_email=' + encodeURIComponent(datos.email) +
+          ';domain=.kunfupay.com;path=/;max-age=1800;SameSite=Lax';
+      } catch (err) {}
+
       mostrar('ok');
+
+      // y de la pantalla de gracias al alta, con el correo ya puesto
+      var destino = SIGNUP + '?email=' + encodeURIComponent(datos.email) +
+        (window.location.search ? '&' + window.location.search.slice(1) : '');
+      setTimeout(function () { window.location.href = destino; }, 1300);
     });
 
     return { mostrar: mostrar };
@@ -1330,7 +1338,7 @@ html.js .kin.is-in .w{opacity:1;transform:none}
   }
 })();
 
-/* ---------- recorrido del alumno: 7 pantallas que se pasan solas ---------- */
+/* ---------- recorrido del alumno: cada paso avanza cuando su barra termina ---------- */
 (function () {
   var PASOS = [
     ['assets/demo/cx1.webp', 'Ficha del curso antes de comprar',
@@ -1348,7 +1356,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
     ['assets/demo/cx7.webp', 'Cuestionario del curso',
      'Cuestionarios con <b>nota de corte e intentos limitados</b> para comprobar que lo ha entendido.']
   ];
-  var DUR = 4200;
 
   var lista = document.getElementById('demo-pasos');
   if (!lista) return;
@@ -1356,9 +1363,7 @@ html.js .kin.is-in .w{opacity:1;transform:none}
   var cap = document.getElementById('demo-cap');
   var botones = Array.prototype.slice.call(lista.querySelectorAll('button'));
   var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  var i = 0, reloj = null, visible = false, encima = false;
-
-  botones.forEach(function (b) { b.style.setProperty('--dur', DUR + 'ms'); });
+  var i = 0, visible = false, encima = false;
 
   function pinta(n) {
     i = n;
@@ -1367,37 +1372,33 @@ html.js .kin.is-in .w{opacity:1;transform:none}
       if (k === n) b.setAttribute('aria-current', 'true');
       else b.removeAttribute('aria-current');
     });
-    var nueva = new Image();
-    nueva.src = p[0];
     img.src = p[0]; img.alt = p[1];
     cap.innerHTML = p[2];
-    // precarga la siguiente
-    new Image().src = PASOS[(n + 1) % PASOS.length][0];
+    new Image().src = PASOS[(n + 1) % PASOS.length][0];   // precarga la siguiente
   }
 
-  function arranca() {
-    para();
-    if (quieto) return;
-    reloj = setTimeout(function () { pinta((i + 1) % PASOS.length); arranca(); }, DUR);
-  }
-  function para() { if (reloj) { clearTimeout(reloj); reloj = null; } }
+  function pausa() { lista.classList.toggle('is-paused', quieto || !visible || encima); }
+
+  // la imagen cambia justo cuando el filete del paso llega al final
+  lista.addEventListener('animationend', function (e) {
+    if (e.animationName !== 'fill') return;
+    if (!visible || encima || quieto) return;
+    pinta((i + 1) % PASOS.length);
+  });
 
   lista.addEventListener('click', function (e) {
     var b = e.target.closest('button[data-i]');
-    if (!b) return;
-    pinta(parseInt(b.dataset.i, 10) - 1);
-    if (visible && !encima) arranca();
+    if (b) pinta(parseInt(b.dataset.i, 10) - 1);
   });
 
   var player = lista.closest('.player');
-  player.addEventListener('mouseenter', function () { encima = true; para(); });
-  player.addEventListener('mouseleave', function () { encima = false; if (visible) arranca(); });
-
-  // solo corre mientras la sección está en pantalla
+  player.addEventListener('mouseenter', function () { encima = true; pausa(); });
+  player.addEventListener('mouseleave', function () { encima = false; pausa(); });
   new IntersectionObserver(function (es) {
     visible = es[0].isIntersecting;
-    if (visible && !encima) arranca(); else para();
+    pausa();
   }, { threshold: 0.3 }).observe(player);
+  pausa();
 })();
 
 /* ---------- botones: flecha doble y luz que sigue al cursor ---------- */

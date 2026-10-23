@@ -73,6 +73,36 @@ plazo, ninguna garantía y ninguna cifra de tracción inventada. Lo que falta po
 - El titular parte después de "sobre" por el `max-width:13em` del `h1`; en móvil se libera.
 - Punto de quiebre móvil: `max-width: 900px`.
 
+## Qué pasa al enviar el formulario
+
+El quiz no termina en una pantalla de gracias: guarda el correo y manda al alta.
+
+1. Muestra la confirmación 1,3 s.
+2. Redirige a `https://classroom.kunfupay.com/signup?email=<correo>` arrastrando los UTM que
+   traía la landing.
+3. Además deja el correo en una cookie `kf_lead_email` con `domain=.kunfupay.com` (30 min) y el
+   lead completo en `localStorage.kf_lead`.
+
+**Falta un cambio en el alta.** Hoy `/signup` ignora el parámetro: lo comprobé en el navegador y el
+campo llega vacío. Para que el usuario solo tenga que poner contraseña, el formulario de alta tiene
+que leer el correo. Cualquiera de las dos vale:
+
+```tsx
+// opción A — Server Component de Next
+export default function Signup({ searchParams }) {
+  const email = searchParams?.email ?? ''
+  return <input name="email" type="email" defaultValue={email} readOnly={!!email} />
+}
+
+// opción B — en cliente, sirve también si llegan desde otra pestaña
+const url = new URL(location.href)
+const email = url.searchParams.get('email')
+  || document.cookie.match(/(?:^|; )kf_lead_email=([^;]*)/)?.[1]
+if (email) emailInput.value = decodeURIComponent(email)
+```
+
+El destino está en una sola constante al principio del script: `var SIGNUP = '…/signup'`.
+
 ## Pendiente antes de publicar
 
 - Apuntar el CTA / el envío del quiz a la URL real.
