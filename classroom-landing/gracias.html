@@ -6,7 +6,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Listo — Classroom by kunfupay</title>
 <meta name="description" content="Registro guardado. Te llevamos a crear tu contraseña.">
-<meta name="robots" content="noindex">
+<!-- ===== MEDICIÓN — la misma matriz que el resto de landings de Kunfupay =====
+     1) noindex/nofollow: página de tráfico pagado, no compite en orgánico.
+     2) GTM GTM-K7WQX54Z · 3) GA4 G-V3BVYL1YP3 · 4) Píxel de Meta 611181908386410.
+     No dupliques los IDs ni los cambies sin avisar a marketing. Si algún día GTM
+     pasa a ser el único dueño de la medición, los fbq('trackCustom') de abajo
+     hay que convertirlos en push a dataLayer. -->
+<meta name="robots" content="noindex,nofollow">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K7WQX54Z');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3BVYL1YP3"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V3BVYL1YP3');
+</script>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '611181908386410');
+fbq('track', 'PageView');
+/* Regla de Meta: `value` es un parámetro reservado y numérico. Un dato
+   categórico (modelo, facturación, segmento) nunca va en `value`. */
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=611181908386410&ev=PageView&noscript=1" alt=""></noscript>
 <link rel="icon" href="assets/icon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -91,10 +125,9 @@ p.sub b{color:var(--ink-strong);font-weight:500}
     var m = document.cookie.match(new RegExp('(?:^|; )' + n + '=([^;]*)'));
     return m ? decodeURIComponent(m[1]) : '';
   }
-  function guardado() {
-    try { return (JSON.parse(localStorage.getItem('kf_lead') || '{}').email) || ''; } catch (e) { return ''; }
-  }
-  var email = (params.get('email') || cookie('kf_lead_email') || guardado() || '').trim();
+  var email = (params.get('email') || cookie('kf_lead_email') ||
+    (function () { try { return JSON.parse(localStorage.getItem('kf_lead') || '{}').email || ''; }
+                   catch (e) { return ''; } })()).trim();
 
   if (email) {
     var caja = document.getElementById('mail');
@@ -109,12 +142,25 @@ p.sub b{color:var(--ink-strong);font-weight:500}
     (extra.length ? (email ? '&' : '?') + extra.join('&') : '');
   document.getElementById('ir').href = destino;
 
-  // PÍXELES — descomenta los que uséis; esta página existe para que midan aquí.
-  // window.fbq && fbq('track', 'Lead');
+  // ── medición: lead cualificado (ya factura y ya tiene curso o comunidad) ──
+  function guardado(k) {
+    try { return (JSON.parse(localStorage.getItem('kf_lead') || '{}')[k]) || ''; } catch (e) { return ''; }
+  }
+  var datos = {
+    segmento: params.get('segmento') || 'cualificado',
+    modelo: params.get('tiene_comunidad') || guardado('tiene_comunidad'),
+    facturacion: params.get('facturacion') || guardado('facturacion'),
+    origen: params.get('origen') || '',
+    utm_source: params.get('utm_source') || '',
+    utm_campaign: params.get('utm_campaign') || '',
+    utm_content: params.get('utm_content') || ''
+  };
+  window.fbq && fbq('track', 'Lead', { segmento: datos.segmento, modelo: datos.modelo,
+    facturacion: datos.facturacion });
+  window.fbq && fbq('trackCustom', 'lead_gracias', datos);
+  window.dataLayer.push(Object.assign({ event: 'lead_gracias', email_presente: !!email }, datos));
+  // Si usáis conversión de Google Ads, aquí va su disparo:
   // window.gtag && gtag('event', 'conversion', {send_to: 'AW-XXXXXXXXX/XXXXXXXX'});
-  // window.ttq && ttq.track('CompleteRegistration');
-  window.dataLayer = window.dataLayer || [];
-  window.dataLayer.push({ event: 'lead_gracias', email_presente: !!email });
 
   setTimeout(function () { window.location.href = destino; }, ESPERA);
 

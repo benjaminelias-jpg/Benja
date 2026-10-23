@@ -6,6 +6,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Classroom by kunfupay — Construye tu sueño sobre ingresos recurrentes</title>
 <meta name="description" content="Tu comunidad en Classroom cobra cada mes a alumnos de todo el mundo. Sin cuota mensual: solo pagas una comisión cuando vendes.">
+<!-- ===== MEDICIÓN — la misma matriz que el resto de landings de Kunfupay =====
+     1) noindex/nofollow: página de tráfico pagado, no compite en orgánico.
+     2) GTM GTM-K7WQX54Z · 3) GA4 G-V3BVYL1YP3 · 4) Píxel de Meta 611181908386410.
+     No dupliques los IDs ni los cambies sin avisar a marketing. Si algún día GTM
+     pasa a ser el único dueño de la medición, los fbq('trackCustom') de abajo
+     hay que convertirlos en push a dataLayer. -->
+<meta name="robots" content="noindex,nofollow">
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K7WQX54Z');</script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3BVYL1YP3"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V3BVYL1YP3');
+</script>
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '611181908386410');
+fbq('track', 'PageView');
+/* Regla de Meta: `value` es un parámetro reservado y numérico. Un dato
+   categórico (modelo, facturación, segmento) nunca va en `value`. */
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=611181908386410&ev=PageView&noscript=1" alt=""></noscript>
 <link rel="icon" href="assets/icon.png" type="image/png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1100,9 +1135,11 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 <script>
 (function () {
   var LETRAS = 'ABCDEF';
-  // El formulario termina en /gracias (ahí miden los píxeles) y esa página
-  // es la que lleva al alta a los 3 s.
-  var GRACIAS = 'gracias.html';   // en producción, '/gracias' si tienes reescritura de URLs
+  // El formulario termina en una página con URL propia, que es donde miden los
+  // píxeles. Quien ya factura va a /gracias; quien aún no factura o viene a
+  // crear su primera comunidad va a /potenciales.
+  var GRACIAS     = 'gracias.html';       // en producción, '/gracias'
+  var POTENCIALES = 'potenciales.html';   // en producción, '/potenciales'
 
   /* ---------- motor del quiz (sirve para el del hero y el del modal) ---------- */
   function initQuiz(form, hooks) {
@@ -1111,6 +1148,7 @@ html.js .kin.is-in .w{opacity:1;transform:none}
     var panels = form.querySelectorAll('.quiz__panel');
     var back   = form.querySelector('.quiz__back');
     var paso   = 1;
+    var arrancado = false;
 
     function mostrar(n) {
       paso = n;
@@ -1123,13 +1161,19 @@ html.js .kin.is-in .w{opacity:1;transform:none}
         if (primero) primero.focus({ preventScroll: true });
       }
       if (hooks.onPaso) hooks.onPaso(n);
-      // window.dataLayer && window.dataLayer.push({event:'quiz_paso', paso:n});
+      if (n === 2 || n === 3) {
+        window.fbq && fbq('trackCustom', 'quiz_step_' + n);
+        window.dataLayer.push({ event: 'quiz_step', paso: n });
+      }
     }
 
     // los pasos 1 y 2 avanzan solos; el retardo deja ver la opción marcada
     form.addEventListener('change', function (e) {
-      if (e.target.name === 'tiene_comunidad') setTimeout(function () { mostrar(2); }, 180);
-      if (e.target.name === 'facturacion')     setTimeout(function () { mostrar(3); }, 180);
+      if (e.target.name === 'tiene_comunidad') {
+        if (!arrancado) { arrancado = true; window.fbq && fbq('trackCustom', 'start_quiz'); }
+        setTimeout(function () { mostrar(2); }, 180);
+      }
+      if (e.target.name === 'facturacion') setTimeout(function () { mostrar(3); }, 180);
     });
 
     back.addEventListener('click', function () { mostrar(paso - 1); });
@@ -1162,6 +1206,11 @@ html.js .kin.is-in .w{opacity:1;transform:none}
       //                      body: JSON.stringify(datos)});
       console.log('lead', datos);
 
+      // Quien aún no factura, o viene a montar su primera comunidad, es un
+      // potencial: va a su propia página y se mide aparte.
+      datos.segmento = (datos.facturacion === '0' || datos.tiene_comunidad === 'primera')
+        ? 'potencial' : 'cualificado';
+
       // El correo se guarda en tres sitios para que el alta lo encuentre:
       // en la URL, en una cookie de .kunfupay.com y en localStorage.
       try { localStorage.setItem('kf_lead', JSON.stringify(datos)); } catch (err) {}
@@ -1170,11 +1219,24 @@ html.js .kin.is-in .w{opacity:1;transform:none}
           ';domain=.kunfupay.com;path=/;max-age=1800;SameSite=Lax';
       } catch (err) {}
 
+      window.fbq && fbq('trackCustom', 'quiz_lead_submit', {
+        modelo: datos.tiene_comunidad, facturacion: datos.facturacion,
+        segmento: datos.segmento, origen: datos.origen
+      });
+      window.dataLayer.push({ event: 'quiz_lead_submit', segmento: datos.segmento,
+        modelo: datos.tiene_comunidad, facturacion: datos.facturacion, origen: datos.origen });
+
       mostrar('ok');   // por si la navegación tarda, la tarjeta ya dice que está hecho
 
-      var destino = GRACIAS + '?email=' + encodeURIComponent(datos.email) +
-        (window.location.search ? '&' + window.location.search.slice(1) : '');
-      window.location.href = destino;
+      // todo lo que respondió viaja en la URL de destino, detrás de los UTM
+      var campos = ['nombre', 'email', 'whatsapp', 'tiene_comunidad', 'facturacion',
+                    'segmento', 'origen'];
+      var q = campos.filter(function (k) { return datos[k]; })
+        .map(function (k) { return k + '=' + encodeURIComponent(datos[k]); });
+      if (window.location.search) q.push(window.location.search.slice(1));
+
+      window.location.href = (datos.segmento === 'potencial' ? POTENCIALES : GRACIAS) +
+        '?' + q.join('&');
     });
 
     return { mostrar: mostrar };

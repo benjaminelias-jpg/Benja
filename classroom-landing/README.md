@@ -7,7 +7,8 @@ No necesita build ni dependencias: súbela tal cual a cualquier hosting estátic
 ```
 classroom-landing/
 ├── index.html
-├── gracias.html              confirmación con URL propia, para los píxeles
+├── gracias.html              confirmación de lead cualificado (URL propia, para los píxeles)
+├── potenciales.html          la misma página para quien aún no factura
 ├── PENDIENTE-CONFIRMAR.md     datos que faltan por cerrar antes de publicar
 └── assets/
     ├── logo-classroom.png     logo del header (wordmark en gris oscuro + "kunfupay" morado)
@@ -76,17 +77,40 @@ plazo, ninguna garantía y ninguna cifra de tracción inventada. Lo que falta po
 
 ## Qué pasa al enviar el formulario
 
+El quiz reparte los leads en dos URLs **con la misma página**: lo que ve la persona es idéntico,
+lo que cambia es la dirección y el evento, para que Meta y GA puedan separarlos.
+
+| Respuesta | Destino | Evento |
+|---|---|---|
+| Ya factura y ya tiene curso o comunidad | `gracias.html` | `Lead` + `lead_gracias`, segmento `cualificado` |
+| «¡Quiero crear la primera!» o «Aún no facturo» | `potenciales.html` | `Lead` + `lead_potencial`, segmento `potencial` |
+
+Pasos:
+
 1. El quiz guarda el lead: `localStorage.kf_lead`, cookie `kf_lead_email` en `.kunfupay.com`
    (30 min) y el `fetch` al backend, que está comentado y marcado como ENDPOINT.
-2. Navega a **`gracias.html`** con `?email=` y los UTM de la visita detrás.
-3. `gracias.html` es una página de verdad, con su URL, para que los píxeles midan ahí. Dentro
-   están los tres disparos comentados (Meta `fbq('track','Lead')`, Google `gtag` y TikTok `ttq`)
-   y un `dataLayer.push({event:'lead_gracias'})` que sí va activo.
-4. A los **3 segundos** salta a `https://classroom.kunfupay.com/signup?email=…`, con los UTM.
-   También hay un botón por si el salto se bloquea.
+2. Dispara `quiz_lead_submit` con modelo, facturación, segmento y origen del botón.
+3. Navega a la página que toque llevando **todos los datos en la URL**: `nombre`, `email`,
+   `whatsapp`, `tiene_comunidad`, `facturacion`, `segmento`, `origen` y los UTM de la visita.
+4. Allí se dispara `Lead` (con el segmento como parámetro) y, a los **3 segundos**, salta a
+   `https://classroom.kunfupay.com/signup?email=…` con todo lo anterior detrás.
 
-Las dos constantes están arriba del script de cada archivo: `GRACIAS` en `index.html` (ponlo en
-`/gracias` si tienes reescritura de URLs) y `SIGNUP` + `ESPERA` en `gracias.html`.
+Ojo: nombre, correo y WhatsApp viajan en la query string, así que quedan en los logs del servidor
+y en los informes de analítica. Es lo pedido; si algún día molesta, la alternativa es pasarlos solo
+por la cookie y el `localStorage`, que ya están puestos.
+
+## Medición
+
+La misma matriz que el resto de landings de Kunfupay, en las tres páginas:
+
+- `noindex,nofollow` (tráfico pagado, no compite en orgánico).
+- GTM **GTM-K7WQX54Z** · GA4 **G-V3BVYL1YP3** · Píxel de Meta **611181908386410**.
+- Eventos propios: `start_quiz`, `quiz_step_2`, `quiz_step_3`, `quiz_lead_submit`, y en destino
+  `lead_gracias` o `lead_potencial`, todos con copia en `dataLayer`.
+- Regla de Meta respetada: `value` es numérico y reservado, así que modelo, facturación y segmento
+  viajan como parámetros con nombre propio, nunca en `value`.
+- El hueco de Google Ads está marcado en las dos páginas de destino:
+  `gtag('event','conversion', {send_to:'AW-…'})`.
 
 **Falta un cambio en el alta.** Hoy `/signup` ignora el parámetro: lo comprobé en el navegador y el
 campo llega vacío. Para que el usuario solo tenga que poner contraseña, el formulario de alta tiene
