@@ -363,11 +363,6 @@ body{
   background:radial-gradient(circle,rgba(119,79,248,.08),transparent 62%)}
 
 /* --- cabeceras: etiqueta con filete, titular editorial --- */
-.label{display:flex;align-items:center;gap:12px;margin-bottom:22px;
-  font-size:11px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;color:var(--faint)}
-.label::before{content:"";width:28px;height:1px;background:currentColor;opacity:.45}
-.head--center .label{justify-content:center}
-.block--ink .label{color:#8c879c}
 .t2{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(30px,4.1vw,54px);font-weight:500;
   line-height:1.04;letter-spacing:-.038em;color:var(--ink-strong);max-width:17ch}
 .head--center .t2{margin-inline:auto}
@@ -463,7 +458,7 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 .tools__sum b{font-family:'Inter Display','Inter',sans-serif;font-size:clamp(22px,2.4vw,30px);font-weight:500;
   letter-spacing:-.035em;color:#9c99a8;text-decoration:line-through;text-decoration-thickness:2px;
   font-variant-numeric:tabular-nums;white-space:nowrap}
-.tools__end{display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;
+.tools__end{display:flex;align-items:center;justify-content:flex-start;gap:24px;flex-wrap:wrap;
   margin:0 -26px;padding:26px;background:var(--acc);color:#fff}
 .tools__end-k{font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.72)}
 .tools__end-t{margin-top:8px;font-size:16px;line-height:1.5;max-width:46ch}
@@ -573,8 +568,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 .mega{position:relative;overflow:hidden;background:#0e0d12;padding-top:clamp(40px,6vw,80px)}
 .mega__in{border-top:1px solid rgba(255,255,255,.1);padding-top:26px;display:flex;flex-wrap:wrap;align-items:flex-end;justify-content:space-between;gap:24px;
   width:min(1120px,100% - 56px);margin:0 auto clamp(30px,4vw,52px)}
-.mega__in a{color:#8c879c;font-size:13.5px;text-decoration:none;margin-right:22px;transition:color .2s ease}
-.mega__in a:hover{color:#fff}
 .mega__in p{font-size:12.5px;color:#5f5b6e}
 .mega__word{display:block;width:100%;line-height:.72;text-align:center;
   font-family:'Inter Display','Inter',sans-serif;font-weight:600;letter-spacing:-.055em;
@@ -802,7 +795,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
   <div class="glow" aria-hidden="true"></div>
   <div class="wrap">
     <div class="head rv">
-      <p class="label">Qué es Classroom</p>
       <h2 class="t2 kin">Tu curso, tu comunidad y tus cobros en el mismo sitio, bajo tu marca.</h2>
     </div>
 
@@ -836,7 +828,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 <section class="block block--tint" id="precio">
   <div class="wrap">
     <div class="head rv">
-      <p class="label">El precio</p>
       <h2 class="t2 kin">Cuota mensual: cero. Pagas cuando te paga un alumno.</h2>
       <p class="lead">La cuenta y las herramientas son gratis. Solo hay una comisión variable cuando
         vendes, según rubro, ticket y volumen.</p>
@@ -914,7 +905,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
   <div class="glow glow--left" aria-hidden="true"></div>
   <div class="wrap">
     <div class="head rv">
-      <p class="label">El recorrido de quien te paga</p>
       <h2 class="t2 kin">Así lo vive tu alumno, de la ficha al examen.</h2>
       <p class="lead">Siete pantallas, todas dentro de tu Classroom. Ficha completa antes de pagar,
         checkout sin salir de tu marca, aula con progreso y comunidad en cada lección.</p>
@@ -961,7 +951,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 <section class="block block--tint" id="prueba">
   <div class="wrap">
     <div class="head rv">
-      <p class="label">Frente a lo que usas hoy</p>
       <h2 class="t2 kin">Stripe cobra. Hotmart te da plataforma. <em>Aquí son la misma cosa.</em></h2>
       <p class="lead">Uno se queda con tu margen, ambos dividen tu negocio y ninguno cuenta con cobertura
         internacional.</p>
@@ -1050,7 +1039,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 <section class="block block--ink" id="empezar">
   <div class="wrap">
     <div class="head head--center rv">
-      <p class="label">Antes de empezar</p>
       <h2 class="t2 kin">Lo tienes todo preparado. Solo falta tu comunidad.</h2>
       <p class="lead">Creamos tu Classroom, migramos tu catálogo y dejamos los cobros centralizados en la
         misma cuenta. Tú te dedicas a enseñar.</p>
@@ -1088,10 +1076,6 @@ html.js .kin.is-in .w{opacity:1;transform:none}
 
 <footer class="mega">
   <div class="mega__in">
-    <div>
-      <a href="#producto">Producto</a><a href="#precio">Precio</a><a href="#demo">Demo</a>
-      <a href="#empezar">Preguntas</a>
-    </div>
     <p>© 2026 Kunfupay · Classroom</p>
   </div>
   <span class="mega__word" aria-hidden="true">Classroom</span>
