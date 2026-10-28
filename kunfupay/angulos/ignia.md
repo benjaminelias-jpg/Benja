@@ -509,15 +509,12 @@ Pedido por el usuario y pasado a Hernán. Todos los campos son obligatorios, las
 
 Más la casilla de privacidad obligatoria y los UTM de la URL en campos ocultos. El corte que filtra es 5.000 USD al mes.
 
-## Titulares de la landing, según la VSL v4 (28/10/2026)
+## Titulares de la landing, según la VSL v4 (28/10/2026, versión 2)
 
-Sustituyen a «Descubrí cómo tener los próximos 6 meses de tu negocio resueltos, en un lanzamiento de 45 días» (usuario: «nada que ver»). Encima de cualquiera va el filtro: «Solo para quien ya factura más de 5.000 USD al mes con cursos, infoproductos o mentorías».
+Sustituyen a «Descubrí cómo tener los próximos 6 meses de tu negocio resueltos, en un lanzamiento de 45 días» (usuario: «nada que ver»). Cada titular es una oferta (usuario: «para quién es, qué beneficio obtendrá de manera vivificada, en cuánto tiempo y con qué vehículo»). Los plazos salen de la VSL: el prelanzamiento amortiza el tiempo en la primera semana, y desde el lanzamiento los que entran pagan cada mes. La duración total de las cuatro fases no está en la VSL: [PENDIENTE: días], si se quiere un plazo como los 45 del titular viejo.
 
-1. Lo que hoy es tu pico de facturación, mañana es tu nueva base.
-2. En 2027 los cursos van a morir. Así convertimos el tuyo en una comunidad que te paga todos los meses.
-3. Que el que te pagó una vez te vuelva a pagar todos los meses.
-4. Deja de empezar de cero después de cada lanzamiento.
-5. El sistema híbrido de cuatro fases que convierte tu curso en una comunidad de pago con ingresos recurrentes.
-6. Se viene el Reset del mercado: así nuestros clientes aumentaron un 30 % sus beneficios.
-7. ¿Y si en vez de buscar clientes nuevos, los que ya tienes te pagaran todos los meses?
-8. Tu curso en Classroom de Kunfupay o en Skool, convertido en una comunidad que factura cada mes.
+1. Si vendes cursos en Classroom de Kunfupay, Hotmart o Skool y facturas más de 5.000 USD al mes: haz que los que te pagaron en tu próximo lanzamiento te vuelvan a pagar todos los meses, con nuestro sistema híbrido de cuatro fases.
+2. Infoproductor de más de 5.000 USD al mes: convierte tu curso en una comunidad de pago en Classroom de Kunfupay o en Skool, amortiza tu tiempo en la primera semana y empieza cada mes con tu último pico como base.
+3. Para quien vende cursos y mentorías desde 5.000 USD al mes: tu próximo lanzamiento deja de ser un pico de una semana y pasa a ser lo que cobras todos los meses, con una comunidad de pago en cuatro fases.
+4. Si facturas más de 5.000 USD al mes con lanzamientos: en tu próximo lanzamiento, los alumnos que entren te pagarán cada mes, no una vez, gracias a nuestro sistema híbrido de cuatro fases.
+5. Vendes cursos y facturas más de 5.000 USD al mes: en la primera semana recuperas tu tiempo con un prelanzamiento de 50 personas, y desde el lanzamiento cobras todos los meses con tu comunidad de pago.
