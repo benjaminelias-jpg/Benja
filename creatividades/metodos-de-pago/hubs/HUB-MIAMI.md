@@ -407,19 +407,19 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
   - Etiqueta «CDMX» en SemiBold 32 px #260D68, en y 790.
   - Fila 2, en y 840: 12 comprobantes genéricos de 66×100 px con esquinas de 8 px, relleno #F2F1F6 y borde de 2 px #A7A4B5. Llevan un código de barras #5E5A6E en la mitad inferior.
   - Cada comprobante lleva un código de barras distinto y una rotación alterna (−3°, +2°, −1°…), para que se lea «uno nuevo cada vez».
-  - El comprobante 3 va al 35 % de opacidad. Debajo, una flecha fina de 2 px #5E5A6E sube hasta él desde la etiqueta «Caducado» (SemiBold 28 px #5E5A6E).
-  - «Caducado» va centrada en x 261 (el centro del comprobante 3), con el borde superior en y 1000. La flecha va de y 992 a y 948.
+  - El comprobante 3 va al 35 % de opacidad. Debajo, una flecha fina de 2 px #5E5A6E sube hasta él desde la etiqueta «Vencido» (SemiBold 28 px #5E5A6E).
+  - «Vencido» va centrada en x 261 (el centro del comprobante 3), con el borde superior en y 1000. La flecha va de y 992 a y 948.
   - Sin logo de OXXO, sin sus colores rojo y amarillo y sin números de mes.
 - Logo morado abajo a la derecha.
 
 **Adaptación 1080×1920**
 - Titular a 84 px, entre y 290 e y 760.
-- «Kendall» en y 860, fila 1 en y 910, «CDMX» en y 1040, fila 2 en y 1090 y «Caducado» en y 1260, centrada en x 261. La flecha va de y 1252 a y 1198.
+- «Kendall» en y 860, fila 1 en y 910, «CDMX» en y 1040, fila 2 en y 1090 y «Vencido» en y 1260, centrada en x 261. La flecha va de y 1252 a y 1198.
 - Los elementos miden lo mismo que en 1080×1350, y el logo va donde marca la especificación común.
 
 **Texto literal de la imagen** (15 palabras)
 - **Titular:** *Si cobras membresías desde Miami a México,* caaada mes, un OXXO nuevo.
-- **Etiquetas:** «Kendall» · «CDMX» · «Caducado»
+- **Etiquetas:** «Kendall» · «CDMX» · «Vencido»
 
 **Texto del anuncio:**
 ```text
@@ -430,7 +430,7 @@ El de Ciudad de México te paga en OXXO.
 Y quiere seguir.
 
 Cada renovación, le mandas un cobro nuevo.
-Saca el comprobante. Caduca en unos días.
+Saca el comprobante. Vence en unos días.
 Si se le pasa, vuelta a empezar.
 Y tú, pendiente de quién pagó y quién no.
 
