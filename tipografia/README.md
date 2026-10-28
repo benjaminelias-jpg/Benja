@@ -11,6 +11,7 @@ Tipografía manuscrita original, con trazo redondo de marcador. Se inspira en el
 | `abecedario-neon.png` | Todas las letras en neón sobre fondo oscuro |
 | `muestra.png` | Muestra de la fuente normal y bold |
 | `build_font.py` | Script que genera las fuentes (`python3 build_font.py`, requiere `fonttools` y `skia-pathops`) |
+| `exportar_letras_neon.py` | Genera `lujos-hand-neon.zip`: cada letra, número y signo en neón como PNG transparente, más las fuentes |
 
 ## Para que se vea hecha a mano
 
