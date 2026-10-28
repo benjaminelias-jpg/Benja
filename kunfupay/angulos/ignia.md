@@ -515,6 +515,6 @@ Cada titular es una oferta: para quién, beneficio vivido, plazo y vehículo (us
 
 1. Si facturas más de 5.000 USD al mes con cursos en Classroom de Kunfupay, Hotmart o Skool: empieza cada mes sabiendo cuánto vas a cobrar, desde tu próximo lanzamiento, con una comunidad de pago en cuatro fases.
 2. Infoproductor de más de 5.000 USD al mes: convierte tu curso en una comunidad de pago en Classroom de Kunfupay o en Skool y, desde tu próximo lanzamiento, ten ingresos predecibles todos los meses.
-3. Para quien vende cursos y mentorías desde 5.000 USD al mes: deja de depender del próximo lanzamiento y cobra lo mismo cada mes, desde el primero, con nuestro sistema híbrido de cuatro fases.
+3. Para quien vende cursos y mentorías desde 5.000 USD al mes: deja de depender del próximo lanzamiento y sabe cuánto te entra cada mes, desde el primero, con nuestro sistema híbrido de cuatro fases.
 4. Si facturas más de 5.000 USD al mes con lanzamientos: tu próximo lanzamiento ya no es un pico de una semana, sino ingresos predecibles cada mes, con tu comunidad de pago en Classroom de Kunfupay o en Skool.
 5. Vendes cursos y facturas más de 5.000 USD al mes: abre el mes sabiendo con cuánto cuentas antes de gastar un dólar en anuncios, desde tu próximo lanzamiento y con una comunidad que te paga cada mes.
