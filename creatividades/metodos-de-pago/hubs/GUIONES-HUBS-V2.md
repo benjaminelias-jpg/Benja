@@ -169,7 +169,7 @@ Su renovación caaada año.
 Su asesor.
 Y todo su papeleo, aunque no factures.
 
-Menos impuestos que gestionar. Cero papeleo.
+Menos impuestos que gestionar. Menos papeleo.
 Y tu tiempo, para vender.
 
 Entra y mira si tu negocio encaja.
