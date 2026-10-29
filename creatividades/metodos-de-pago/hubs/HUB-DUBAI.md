@@ -7,7 +7,7 @@
 **Perfil**
 - **Quién es.** Una persona hispanohablante que ya vende conocimiento online: cursos, mentorías, coaching, comunidades o membresías. Vive en Dubái, vende a España y Latinoamérica y cobra en EUR o USD. El perfil sale del brief. No hay ninguna fuente pública sobre cuántas personas son ni cuánto facturan.
 - **Españoles inscritos en EAU.** Eran 9.540 el 1-1-2026, frente a 5.959 en 2020 (un 60 % más). El 52 % tiene entre 25 y 49 años y el 27 % tiene menos de 15. Son adultos en plena etapa laboral, muchos con hijos pequeños. Fuentes: INE, PERE, https://www.ine.es/jaxiT3/Tabla.htm?t=71116&L=0 y https://www.ine.es/jaxiT3/Tabla.htm?t=71119&L=0
-- **Cuántos viven en Dubái.** El 72,45 % de los españoles registrados en EAU vive en Dubái: 5.511 de 7.606 en enero de 2024. Fuente: ficha país de Exteriores, https://www.exteriores.gob.es/Documents/FichasPais/EMIRATOSARABESUNIDOS_FICHA%20PAIS.pdf. Si se mantiene ese porcentaje, hoy serían unos 6.900. Es una estimación propia.
+- **Cuántos viven en Dubái.** El 72,46 % de los españoles registrados en EAU vive en Dubái: 5.511 de 7.606 en enero de 2024. Fuente: ficha país de Exteriores, https://www.exteriores.gob.es/Documents/FichasPais/EMIRATOSARABESUNIDOS_FICHA%20PAIS.pdf. Si se mantiene ese porcentaje, hoy serían unos 6.900. Es una estimación propia.
 - **Latinoamericanos.** No hay cifras fiables.
 - **Contexto.** Dubái tiene unos 4 millones de habitantes y el 92 % son expatriados (https://en.wikipedia.org/wiki/Dubai).
 - **Horario.** Dubái está en UTC+4 y no cambia de hora. Madrid va 3 horas por detrás (2 desde el 28-03-2027). Bogotá y Lima van 9 horas por detrás y Ciudad de México, 10. Fuente: https://en.wikipedia.org/wiki/Time_in_the_United_Arab_Emirates. En la práctica, al cliente de España lo atiende de día y al de Latinoamérica, de noche.
@@ -68,6 +68,7 @@ No hay ninguna cita de un creador hispanohablante con residencia en Dubái. Las 
 - **Lo que Kunfupay sí añade:** un solo enlace propio en el que el cliente elige cómo pagar. Puede ser con tarjeta, por transferencia desde su banco en su moneda, con métodos locales (OXXO, SPEI, Mercado Pago, Nequi, PayPal o Bizum) o con cripto. Al vendedor le llega en euros o en dólares.
   - En la pestaña América salen OXXO, SPEI, Mercado Pago, Nequi, Yape, Pix, PayPal y Webpay (https://kunfupay.com/producto/checkout).
   - En la pestaña Europa salen Bizum y SEPA (https://kunfupay.com/).
+  - Se puede cobrar en pago único o por suscripción (https://kunfupay.com/producto/suscripciones).
   - La web da números distintos de métodos según la página, así que en los anuncios no se usa ninguna cifra de métodos.
 - **Competencia.** Ninguno de los 20 competidores revisados se dirige al hispanohablante que vive en Dubái y vende a España y LATAM. La fuerza es media. Huecos que deja:
   - Bizum para quien vende desde Dubái;
@@ -80,7 +81,7 @@ No hay ninguna cita de un creador hispanohablante con residencia en Dubái. Las 
 1. **«Ya cobro con Stripe y me va bien.»** Para la tarjeta, sí. Pero una cuenta de EAU no figura habilitada para OXXO, Pix, Bizum, transferencia ni PayPal procesado por Stripe. No tiene que dejar Stripe: Kunfupay «Convive con el resto de tu stack» (https://kunfupay.com/producto/api).
 2. **«Vendo en Hotmart y ya tiene métodos locales.»** Es cierto dentro de Hotmart. Kunfupay le sirve para lo que vende fuera, con su propio enlace.
 3. **«Mis clientes pagan con tarjeta.»** Muchos sí, pero las tarjetas de otro país tienen más rechazos. Además, en México y Brasil «customers prefer to pay with cash-based vouchers and bank transfers» (https://stripe.com/guides/payment-methods-guide).
-4. **«Desde Dubái no me van a aceptar.»** La web dice «Abres tu cuenta y tu wallet estés donde estés» (https://kunfupay.com/sensei-prueba-gratis). Encaja con el CTA «Entra y mira si tu negocio encaja.»
+4. **«Desde Dubái no me van a aceptar.»** La web dice «Abres tu cuenta y tu wallet estés donde estés» (https://kunfupay.com/sensei-prueba-gratis). Encaja con el CTA «Entra y mira si tu negocio encaja.» Pendiente de confirmar con el equipo que se aceptan vendedores con residencia en Emiratos (ver «Antes de publicar»).
 5. **«Mis clientes no saben de cripto.»** La cripto es una opción, no un requisito (https://kunfupay.com/blog/retirar-ganancias-peru-chile-creadores-2026).
 6. **«¿Cuánto me cuesta?»** No hay porcentaje publicado; la web habla de «precio a medida» (https://kunfupay.com/tarifas). No se comparan comisiones.
 7. **«Ya tengo PayPal.»** PayPal entra como un método más dentro del mismo enlace.
@@ -121,7 +122,7 @@ Son interpretación, con fuerza débil-media: no salen de entrevistas a resident
 
 ### Ángulo del hub
 
-**En una frase:** desde Dubái vendes a España por la mañana y a Latinoamérica por la noche. Con la pasarela que abriste en Emiratos, esos clientes no encuentran su método. Con tu enlace de Kunfupay, cada uno paga con lo suyo y a ti te llega en euros o en dólares.
+**En una frase:** desde Dubái vendes a España por la mañana y a Latinoamérica por la noche. Con el Stripe que abriste en Emiratos, o con Ziina, Mamo o Wio, esos clientes no encuentran su método. Con tu enlace de Kunfupay, cada uno paga con lo suyo y a ti te llega en euros o en dólares.
 
 **Nombre interno:** «Desde Dubái, cada cliente paga con lo suyo».
 
@@ -137,13 +138,13 @@ Son interpretación, con fuerza débil-media: no salen de entrevistas a resident
 - comisiones, «zero», «gratis», precios y plazos («en 1 día», «en minutos»);
 - los dírhams y el tipo de cambio;
 - la tarjeta y la cuenta de Kunfupay;
-- IBAN, SEPA o Merchant of Record;
+- IBAN, SEPA o Merchant of Record (el logo de SEPA puede verse dentro de la página de pago real de España de E3, sin nombrarlo ni señalarlo);
 - «si eres español o latino»;
 - skyline, bandera, dorado y fondo morado liso;
 - el kit de postal;
 - el viernes como día libre.
 
-**Escenarios que sí se pueden usar:** ninguno de exterior ni con ventana a la ciudad. Solo relojes, frases del cliente en pantalla y pantallas reales.
+**Escenarios que sí se pueden usar:** ninguno de exterior ni con ventana a la ciudad. Solo relojes, frases del cliente en pantalla y páginas de pago reales.
 
 ### Lo que anuncia la competencia aquí
 
@@ -161,7 +162,7 @@ Fuente: Biblioteca de anuncios de Meta, país EAU, anuncios activos el 28-10-202
   - V2 da la vuelta a la promesa de Ziina, «Apple Pay, Google Pay, or card» ([1131286162884183](https://www.facebook.com/ads/library/?id=1131286162884183)), dentro de los 3 primeros segundos: «Nequi y SPEI, no.» Además pierde el plano del portátil en un café, que se confundía con las fotos de estilo de vida de Hubpay, Nomod y Network.
   - E2 cambia los checks por «Aparece», para no repetir el esquema ✗/✓ de EasyFirm y de las plantillas de agencia.
   - E4 deja el morado liso: va sobre blanco, y lo primero que se ve son dos relojes grandes en morado oscuro sobre gris claro, sin franja morada.
-  - E3 pasa a fondo blanco, porque el lila es de Ziina. Sus notas van en Plus Jakarta Sans y no a mano, para que no recuerden la postal de Ziina ([1112014438360733](https://www.facebook.com/ads/library/?id=1112014438360733)). El móvil del cliente es el grande, para que no se lea como el panel del vendedor de Tab y Hubpay.
+  - E3 pasa a fondo blanco, porque el lila es de Ziina. Sus notas van en Plus Jakarta Sans y no a mano, para que no recuerden la postal de Ziina ([1112014438360733](https://www.facebook.com/ads/library/?id=1112014438360733)). Enseña recortes de la página de pago que ve el cliente, sin móviles, para que no se lea como el panel del vendedor de Tab y Hubpay.
   - Los rótulos y titulares empiezan por «Si vendes cursos» o «Si vendes mentorías», con más peso que «Dubái». Así no se leen como otro «Abre tu empresa en Dubái».
   - Se mantienen las horas y ciudades de V1 y E4 y el estático solo de texto de E1, porque aquí no los usa nadie, y la comparativa de E2, porque las del hub son de reseñas o precios y ninguna compara métodos.
 
@@ -171,12 +172,12 @@ Los 4 conjuntos salen a la vez y con los mismos 8 huecos.
 
 | Pieza | Nombre en Meta | Nivel | Tipo | Persona | Emoción | Gancho | Formato |
 |---|---|---|---|---|---|---|---|
-| G1 | `HUB-DXB-G1 \| N2 \| Dolor \| Vende por llamada \| VIDEO-LLAMADA` | N2 | Dolor | Vende mentorías por llamada | Frustración | «"¿Cómo te pago?" Si vendes mentorías por llamada desde Dubái, mira cómo acaba.» | Vídeo ya grabado (llamada). Solo cambia el texto |
-| G2 | `HUB-DXB-G2 \| N3 \| Mecanismo \| Quiere entender cómo funciona \| VIDEO-PANTALLAS` | N3 | Mecanismo | Quiere entender cómo funciona | Curiosidad | «Si vendes cursos desde Dubái, así te pagan Sevilla, Puebla y Bogotá.» | Vídeo ya grabado (pantallas de la app). Solo cambia el texto |
-| V1 | `HUB-DXB-V1 \| N1 \| Dolor \| Vende a España de día y a México de noche \| VIDEO-HISTORIA` | N1 | Dolor contado como historia | Vende a España de día y a México de noche | Impotencia | «Once de la mañana en Dubái: tu alumna de Madrid quiere pagarte.» Rótulo «Si vendes cursos desde Dubái» desde el segundo 0 | Historia con voz en off de una creadora UGC, frases del cliente en pantalla, relojes, pantallas reales (a) y (b) y subtítulos quemados. Sin plano de IA |
-| V2 | `HUB-DXB-V2 \| N2-N3 \| Creencia \| Cree que tarjeta y Apple Pay bastan \| REEL-CAMARA` | N2–N3 (puente) | Creencia que desmontar | Cobra con una pasarela de Emiratos y cree que le basta | Sorpresa | «Tu pasarela de Emiratos acepta tarjeta y Apple Pay. Nequi y SPEI, no.» | Reel hablado a cámara por el equipo, sin plano de apertura, con rótulo desde el segundo 0, subtítulos quemados y pantallas reales (a) y (b) |
+| G1 | `HUB-DXB-G1 \| N2 \| Dolor \| Vende por llamada \| VIDEO-LLAMADA` | N2 | Dolor | Vende mentorías por llamada | Frustración | «“¿Cómo te pago?” Si vendes mentorías por llamada desde Dubái, mira cómo acaba.» | Vídeo ya grabado (llamada). Solo cambia el texto |
+| G2 | `HUB-DXB-G2 \| N3 \| Mecanismo \| Quiere entender cómo funciona \| VIDEO-PANTALLAS` | N3 | Mecanismo | Quiere entender cómo funciona | Curiosidad | «Si vendes cursos desde Dubái, así te pagan Sevilla, Puebla y Bogotá.» | Vídeo ya grabado (Infografía). Solo cambia el texto |
+| V1 | `HUB-DXB-V1 \| N1 \| Dolor \| Vende a España de día y a México de noche \| VIDEO-HISTORIA` | N1 | Dolor contado como historia | Vende a España de día y a México de noche | Impotencia | «Once de la mañana en Dubái: tu alumna de Madrid quiere pagarte.» Rótulo «Si vendes cursos desde Dubái» desde el segundo 0 | Historia con voz en off de una creadora UGC, frases del cliente en pantalla, relojes, páginas de pago reales de España y México y subtítulos quemados. Sin plano de IA |
+| V2 | `HUB-DXB-V2 \| N2-N3 \| Creencia \| Cree que tarjeta y Apple Pay bastan \| REEL-CAMARA` | N2–N3 (puente) | Creencia que desmontar | Cobra con Stripe de Emiratos y cree que le basta | Sorpresa | «Tu Stripe de Emiratos acepta tarjeta y Apple Pay. Nequi y SPEI, no.» | Reel hablado a cámara por el equipo, sin plano de apertura, con rótulo desde el segundo 0, subtítulos quemados y páginas de pago reales de México y Colombia |
 | E1 | `HUB-DXB-E1 \| N1 \| Dolor \| Mentor ticket alto, cliente con tarjeta \| EST-TITULAR` | N1 | Dolor distinto del de V1 | Mentor de ticket alto cuyo cliente sí tiene tarjeta | Miedo | «Si vendes mentorías desde Dubái: tu clienta de Valencia saca la tarjeta. A veces la rechazan.» | Titular tipográfico a toda la imagen, sobre gris claro |
-| E2 | `HUB-DXB-E2 \| N3 \| Comparativa \| Cobra con Stripe de Emiratos \| EST-HOY-VS-CON` | N3 | Comparativa con lo que usa hoy | Cobra con una pasarela de Emiratos y cree que le basta | Descubrimiento | «Si vendes cursos con un Stripe de Emiratos, mira qué le falta.» | Tabla «Hoy / con Kunfupay» sobre blanco, en gris y morado |
+| E2 | `HUB-DXB-E2 \| N3 \| Comparativa \| Cobra con Stripe de Emiratos \| EST-HOY-VS-CON` | N3 | Comparativa con lo que usa hoy | Cobra con Stripe de Emiratos y cree que le basta | Descubrimiento | «Si vendes cursos con un Stripe de Emiratos, mira qué le falta.» | Tabla «Hoy / con Kunfupay» sobre blanco, en gris y morado |
 | E3 | `HUB-DXB-E3 \| N4 \| Prueba \| Quiere ver qué ve su cliente \| EST-CAPTURA-ANOTADA` | N4 | Prueba | Vende a España y México. Ya conoce Kunfupay y quiere ver qué ve su cliente | Confianza | «Si vendes cursos desde Dubái, esto ve tu cliente al pagarte.» | Dos páginas de pago reales (México y España), anotadas, sobre blanco |
 | E4 | `HUB-DXB-E4 \| N5 \| Oferta \| Decidido, quiere probarlo \| EST-LIMPIA-BOTON` | N5 | Oferta directa | Decidido: ya sabe qué método le falta a su cliente y quiere probar | Decisión | «Si vendes cursos desde Dubái, un enlace con Bizum y OXXO.» | Imagen limpia sobre blanco, con dos relojes grandes en #260D68 sobre gris claro y «Registrarte ↓» en texto plano hacia el botón real de Meta |
 
@@ -190,14 +191,16 @@ Los 4 conjuntos salen a la vez y con los mismos 8 huecos.
 - **Personas reales (4, justo el mínimo):**
   - vende mentorías por llamada (G1);
   - vende a España y México (V1, E3 y E4);
-  - cobra con una pasarela de Emiratos y cree que le basta (V2 y E2);
+  - cobra con Stripe de Emiratos y cree que le basta (V2 y E2);
   - mentor de ticket alto cuyo cliente tiene tarjeta (E1).
   - No hay dos piezas con el mismo tipo y la misma persona.
-- **Pantallas reales de la app** (fotogramas del máster del vídeo de la Infografía, a resolución completa). Las usan E3, V1 y V2:
-  - (a) la página de pago con el selector de país en «México» y los métodos OXXO, SPEI, Mercado Pago, Visa, Mastercard y PayPal;
-  - (b) los avisos «Nueva venta» +450,00 € por Bizum y +149,00 € por OXXO, y «Suscripción activada» +29,00 € por Nequi;
-  - (c) el chat de WhatsApp donde el cliente pide el enlace y se le manda.
+- **Páginas de pago reales** (fotogramas del máster del vídeo de la Infografía, a resolución completa). Las usan E3, V1 y V2:
+  - la de «México», recortada al selector y a las casillas de SPEI y Mercado Pago (el logo de OXXO sale cortado, así que no se enseña);
+  - la de «España»: Bizum, Visa, Mastercard, Apple Pay, Google Pay y SEPA;
+  - la de «Colombia»: Nequi, PSE, Bancolombia, Mercado Pago, Visa y Mastercard.
+  - E3 usa la de México y la de España; V1, la de España y la de México; V2, la de México y la de Colombia.
   - No se redibujan ni se tapan. Solo se recortan y se amplían. Los importes no se señalan ni se comentan.
+- **No son pantallas reales.** Los avisos «Nueva venta» y «Suscripción activada» del mismo vídeo son una simulación («Simulación. Cifras a modo de ejemplo.»). El chat de WhatsApp es un montaje. Ninguno se usa como prueba en ninguna pieza. Solo salen dentro del vídeo de G2, que se emite sin cambios y con su nota.
 
 ### Genéricos: texto del anuncio para este hub
 
@@ -215,9 +218,7 @@ Y si alguno prefiere pagarte en cripto, también.
 Y a ti te llega en euros o en dólares.
 
 Si todavía no vendes, no es para ti.
-
 Entra y mira si tu negocio encaja.
-
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
 
@@ -244,9 +245,7 @@ Y si alguno prefiere pagarte en cripto, también.
 A ti te llega en euros o en dólares.
 
 Si todavía no vendes, no es para ti.
-
 Entra y mira si tu negocio encaja.
-
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
 
@@ -257,7 +256,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 ### Vídeos personalizados
 
-> **Versión para grabar de V1:** `GUIONES-HUBS.md`, apartado 3, con ganchos alternativos. Allí los insertos usan la página de pago real. Los avisos de «Nueva venta» (pantalla b) llevan en el vídeo original la nota «Simulación. Cifras a modo de ejemplo.». Si un guion de aquí los usa, van con esa nota visible o se cambian por la página de pago real.
+> **Versión para grabar de V1:** `GUIONES-HUBS.md`, apartado 3, con ganchos alternativos. Es el mismo V1 de aquí: voz en off, relojes, frases del cliente en pantalla y páginas de pago reales. Los avisos de «Nueva venta» y el chat de WhatsApp del vídeo de la Infografía no salen en ningún guion: los avisos son una simulación («Simulación. Cifras a modo de ejemplo.») y el chat es un montaje.
 
 #### V1 · España de día, México de noche
 
@@ -266,7 +265,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 - **Rótulo y subtítulos.** El rótulo «Si vendes cursos desde Dubái» sale desde el segundo 0, en Plus Jakarta Sans y en blanco sobre una caja #260D68. «Si vendes cursos» va en ExtraBold y «desde Dubái» en Medium, para que pese más lo primero. Los subtítulos van quemados en todo el vídeo.
 - **Plano de IA.** No hay. El primer fotograma es el reloj «Dubái 11:00» en grande, en #260D68 sobre #F2F2F5, sin logo.
 - **Frases del cliente.** Van como texto grande en pantalla, junto al reloj: «¿Te hago un Bizum?» y «¿Te lo pago en el OXXO?». En Plus Jakarta Sans, sin bocadillo de chat, sin interfaz, sin respuesta escrita y sin rótulo de recreación.
-- **Pantallas reales.** Se usan la (a), ampliada en la fila de OXXO con «México» a la vista, y la (b), ampliada en los avisos de Bizum y de OXXO.
+- **Páginas de pago reales.** Se usan la de «España», ampliada en Bizum, y la de «México», recortada al selector, SPEI y Mercado Pago. Como la voz dice OXXO y su logo sale cortado, el inserto de México lleva encima el rótulo de texto «OXXO · SPEI · Mercado Pago», sin logos.
 - **Cripto.** La frase «Y si alguno prefiere pagarte en cripto, también.» se graba como toma aparte, con su subtítulo y su plano en un clip propio. Se exportan dos másters: con cripto y sin cripto.
 
 **Guion (teleprompter)**
@@ -277,7 +276,7 @@ Once de la mañana en Dubái: tu alumna de Madrid quiere pagarte.
 
 [Texto en pantalla: «¿Te hago un Bizum?». Reloj: «Madrid 8:00»]
 Allí son las ocho. «¿Te hago un Bizum?»
-Con la pasarela que abriste en Emiratos, le pides tarjeta.
+Con el Stripe que abriste en Emiratos, le pides tarjeta.
 
 [Texto en pantalla: «¿Te lo pago en el OXXO?». Relojes: «Dubái 22:00 · Ciudad de México 12:00»]
 Diez de la noche.
@@ -288,12 +287,12 @@ Otra vez: tarjeta.
 Los dos ya te dijeron que sí.
 Y ninguno puede pagar con lo suyo.
 
-PERO…
-[Pantalla real (a): página de pago con «México», ampliada en la fila de OXXO]
-Les cobras con tu enlace de Kunfupay.
+PERO les cobras con tu enlace de Kunfupay.
 Y cada uno te paga con lo suyo.
-[Pantalla real (b): ampliada en los avisos «Nueva venta» por Bizum y por OXXO]
-Once de la mañana: Bizum. Diez de la noche: OXXO.
+[Página de pago real con «España», ampliada en Bizum]
+A tus once, Madrid te paga con Bizum.
+[Página de pago real con «México» (selector, SPEI y Mercado Pago) + rótulo de texto «OXXO · SPEI · Mercado Pago», sin logos]
+A tus diez de la noche, Ciudad de México, en el OXXO.
 [Clip propio; no va en el máster sin cripto]
 Y si alguno prefiere pagarte en cripto, también.
 Y a ti te llega en euros o en dólares.
@@ -310,16 +309,14 @@ Once de la mañana en Dubái. Tu alumna de Madrid quiere pagarte con Bizum.
 
 Diez de la noche. Tu alumno de Ciudad de México quiere pagar en OXXO.
 
-Y tu pasarela de Emiratos les pide tarjeta a los dos.
+Y tu Stripe de Emiratos les pide tarjeta a los dos.
 
 PERO les cobras con tu enlace de Kunfupay. Y cada uno te paga con lo suyo. Bizum, OXXO, transferencia desde su banco o tarjeta.
 Y si alguno prefiere pagarte en cripto, también.
 Y a ti te llega en euros o en dólares.
 
 Si todavía no vendes, no es para ti.
-
 Entra y mira si tu negocio encaja.
-
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
 
@@ -335,27 +332,28 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 - **Apertura.** Abre directamente a cámara, sin plano de IA ni de estilo de vida. Si los reels de Dubai Connecting son una persona a cámara en español, se aplica la apertura alternativa de «Antes de publicar».
 - **Rótulo y subtítulos.** El rótulo «Si vendes cursos desde Dubái» sale desde el segundo 0, igual que en V1. Los subtítulos van quemados en todo el reel.
 - **Dato en pantalla.** «Nequi: más de 25 millones de colombianos · Fuente: nequi.com.co», en texto, sin logo.
-- **Pantallas reales.** Se usan la (a), ampliada en la fila de SPEI con «México» a la vista, y la (b), ampliada en el aviso «Suscripción activada» por Nequi. Se usa SPEI porque sale en la pantalla (a); Yape no sale en ninguna.
+- **Páginas de pago reales.** Se usan la de «México», recortada en SPEI, y la de «Colombia», ampliada en Nequi. Se usa SPEI porque sale en la de México; Yape no sale en ninguna.
 - **Cripto.** La frase «Y si alguno prefiere pagarte en cripto, también.» se graba como toma aparte, con su subtítulo y su plano en un clip propio. Se exportan dos másters: con cripto y sin cripto.
 
 **Guion (teleprompter)**
 
 ```
 [Rótulo desde el segundo 0: «Si vendes cursos desde Dubái». A cámara]
-Tu pasarela de Emiratos acepta tarjeta y Apple Pay.
+Tu Stripe de Emiratos acepta tarjeta y Apple Pay.
 Nequi y SPEI, no.
 
 En Bogotá, tu alumno paga con Nequi.
 [En pantalla: «Nequi: más de 25 millones de colombianos» · Fuente: nequi.com.co]
 En Monterrey, tu alumna paga por SPEI.
-Abren el enlace de tu pasarela: ni Nequi ni SPEI.
-Solo tarjeta, Apple Pay o Google Pay.
+Abren el enlace de tu Stripe: ni Nequi ni SPEI.
+Les sale tarjeta, Apple Pay o Google Pay.
 
 PERO les cobras con tu enlace de Kunfupay.
-[Pantalla real (a): página de pago con «México», ampliada en la fila de SPEI]
 Y cada uno te paga con lo suyo.
-[Pantalla real (b): ampliada en el aviso «Suscripción activada» por Nequi]
-Él, con Nequi. Ella, por SPEI. O con tarjeta.
+[Página de pago real con «Colombia», ampliada en Nequi]
+Él, con Nequi.
+[Página de pago real con «México», recortada en SPEI]
+Ella, por SPEI. O con tarjeta.
 [Clip propio; no va en el máster sin cripto]
 Y si alguno prefiere pagarte en cripto, también.
 Y a ti te llega en euros o en dólares.
@@ -367,18 +365,16 @@ Entra y mira si tu negocio encaja.
 **Texto del anuncio**
 
 ```text
-Tu pasarela de Emiratos acepta tarjeta y Apple Pay. Nequi y SPEI, no.
+Tu Stripe de Emiratos acepta tarjeta y Apple Pay. Nequi y SPEI, no.
 
-Tu alumno de Bogotá paga con Nequi. Tu alumna de Monterrey, por SPEI. Abren el enlace de tu pasarela y no encuentran lo suyo.
+Tu alumno de Bogotá paga con Nequi. Tu alumna de Monterrey, por SPEI. Abren el enlace de tu Stripe y no encuentran lo suyo.
 
 PERO les cobras con tu enlace de Kunfupay. Y ahí encuentran lo suyo: Nequi, SPEI o tarjeta.
 Y si alguno prefiere pagarte en cripto, también.
 A ti te llega en euros o en dólares.
 
 Si todavía no vendes, no es para ti.
-
 Entra y mira si tu negocio encaja.
-
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
 
@@ -393,12 +389,12 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 #### Reglas comunes de E1–E4
 
-- **Formatos.** Cada pieza se entrega en 1080×1350 (feed) y en 1080×1920 (stories y reels).
-- **Zona segura en 1080×1920.** El texto, las notas y el logo van entre y=270 e y=1250, a un mínimo de 64 px de los lados. Fuera de esa franja solo hay fondo; en E3, también la parte baja de los móviles.
+- **Formatos.** Cada pieza se entrega en 1080×1350 (feed) y en 1080×1920 (Stories). No van en Reels.
+- **Zona segura en 1080×1920.** El texto, las notas y el logo van entre y=270 e y=1250, a un mínimo de 64 px de los lados. Fuera de esa franja solo hay fondo.
 - **Márgenes en 1080×1350.** 80 px a los lados y 72 px arriba y abajo.
 - **Colores (solo estos):**
   - morado de marca #734BFC: filtro del titular, notas, trazos de E3, filetes de los relojes de E4, «Registrarte ↓», columna «Con Kunfupay» y logo;
-  - morado oscuro #260D68: resto del titular, horas de los relojes y marcos de los móviles;
+  - morado oscuro #260D68: resto del titular y horas de los relojes;
   - blanco #FFFFFF: fondo de E2, E3 y E4, y texto sobre morado;
   - gris claro #F2F2F5: fondo de E1, columna «Hoy» de E2 y bloques de reloj de E4;
   - gris #6E6E80: texto secundario y pie de fuente.
@@ -409,8 +405,8 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
   - Bold (700) solo en las cabeceras de E2 y en las notas de E3.
 - **Flecha de «Registrarte ↓».** La ↓ se dibuja como icono vectorial de trazo de 6 px, a la altura de la mayúscula del texto que acompaña y en su color. No se escribe con la fuente.
 - **Logo de Kunfupay.** 44 px de alto, en #734BFC.
-- **Límite de palabras.** Como máximo 20 en toda la imagen. No cuentan el logo ni el texto propio de las pantallas reales de E3. E2 es la excepción.
-- **Nunca:** skyline, Burj Khalifa, banderas, dorado, emojis, estrellas, X rojas, checks, tarjetas dibujadas, fondo morado liso ni logos de Stripe, PayPal u otras marcas. Stripe y PayPal salen solo escritos.
+- **Límite de palabras.** Como máximo 20 en toda la imagen. No cuentan el logo ni el texto propio de las páginas de pago reales de E3. E2 es la excepción.
+- **Nunca:** skyline, Burj Khalifa, banderas, dorado, emojis, estrellas, X rojas, checks, tarjetas dibujadas, fondo morado liso ni logos de Stripe, PayPal u otras marcas. Stripe y PayPal salen solo escritos. Los únicos logos de métodos son los que ya traen las páginas de pago reales de E3.
 
 #### E1 · La tarjeta de tu clienta
 
@@ -430,12 +426,13 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 **Textos literales en la imagen (20 palabras)**
 - **Titular:** «*Si vendes mentorías desde Dubái:* tu clienta de Valencia saca la tarjeta. A veces la rechazan.»
 - **Línea pequeña:** «Con Kunfupay, por transferencia.»
+- **Color en el archivo final:** el filtro, «A veces la rechazan.» y «Con Kunfupay,» van en #734BFC; «tu clienta de Valencia saca la tarjeta.» y «por transferencia.», en #260D68.
 
 **Texto del anuncio**
 
 ```text
 Tu clienta de Valencia quiere tu mentoría más cara.
-Saca su tarjeta. Tu pasarela es de Emiratos.
+Saca su tarjeta. Tu Stripe es de Emiratos.
 Para su banco, es un pago a otro país.
 Y a veces lo rechaza.
 
@@ -495,7 +492,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
   | «PayPal» | «Con una cuenta aparte» | «En el mismo enlace» |
 
 - **Frase de cierre:** «Mandas un enlace, como siempre. Y cada uno paga con lo suyo.»
-- **Pie:** «Fuente: documentación pública de Stripe para Emiratos, octubre de 2026.»
+- **Pie:** «Fuente: documentación pública de Stripe para Emiratos, oct. 2026.»
 
 **Texto del anuncio**
 
@@ -517,7 +514,7 @@ Lo dice la documentación de Stripe para Emiratos.
 PERO a esos clientes les cobras con tu enlace de Kunfupay.
 Se lo mandas, como siempre.
 Y ahí cada uno paga con lo suyo.
-Bizum, OXXO, transferencia desde su banco o PayPal, en el mismo enlace.
+Bizum, OXXO o transferencia desde su banco. Y en México, PayPal. Todo en el mismo enlace.
 A ti te llega en euros o en dólares.
 
 Si todavía no vendes, no es para ti.
@@ -532,16 +529,16 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 #### E3 · Lo que ve tu cliente en México y en España
 
-**Concepto:** dos pantallas reales de la página de pago, una por cada turno del día: España por la mañana y México por la noche.
+**Concepto:** dos páginas de pago reales, una por cada turno del día: España por la mañana y México por la noche.
 
 **Archivos:** `estaticos/HUB-DXB-E3_1080x1350.png` y `estaticos/HUB-DXB-E3_1080x1920.png`
 
-**Pantallas que se usan** (reales, sacadas del vídeo de la Infografía, sin retocar):
+**Páginas de pago que se usan** (reales, sacadas del vídeo de la Infografía, sin retocar):
 - La página de pago con «México», recortada al selector y a las casillas de SPEI y Mercado Pago.
 - La página de pago con «España»: Bizum, Visa, Mastercard, Apple Pay, Google Pay y SEPA.
-- **Por qué cambia respecto al brief:** en la pantalla de México el logo de OXXO sale cortado, y la fila de Visa, Mastercard y PayPal no se puede dejar fuera sin cortarlo también. Los avisos de «Nueva venta» llevan en el vídeo la nota «Simulación. Cifras a modo de ejemplo.», así que no pueden ir como pantalla real. OXXO sigue en E2 y E4.
+- **Por qué cambia respecto al brief:** en la página de pago de México el logo de OXXO sale cortado, y la fila de Visa, Mastercard y PayPal no se puede dejar fuera sin cortarlo también. Los avisos de «Nueva venta» llevan en el vídeo la nota «Simulación. Cifras a modo de ejemplo.» y el chat de WhatsApp es un montaje, así que ninguno de los dos puede ir como pantalla real. OXXO sigue en E2 y E4.
 
-**Texto literal de la imagen** (19 palabras, sin contar el de las pantallas)
+**Texto literal de la imagen** (19 palabras, sin contar el de las páginas de pago)
 - Titular: «*Si vendes cursos desde Dubái,* esto ve tu cliente al pagarte.»
 - Notas: «En México: SPEI» · «En España: Bizum»
 - Pie: «Pantallas reales.»
@@ -549,7 +546,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 **Texto del anuncio**
 ```text
 Si vendes cursos desde Dubái, esto ve tu cliente al pagarte.
-Son pantallas reales de la app de Kunfupay.
+Son las páginas de pago reales.
 
 Le cobras con tu enlace de Kunfupay.
 Tu clienta de Madrid lo abre y ve Bizum.
@@ -601,7 +598,7 @@ Si vendes cursos desde Dubái, un enlace con Bizum y OXXO.
 Once de la mañana en Dubái: te escribe tu alumna de Madrid.
 Diez de la noche: tu alumno de Ciudad de México.
 Ella quiere pagar con Bizum. Él, en OXXO.
-Y tu pasarela de Emiratos les pide tarjeta.
+Y tu Stripe de Emiratos les pide tarjeta.
 
 PERO les cobras a los dos con tu enlace de Kunfupay.
 Y cada uno paga con lo suyo.
@@ -746,6 +743,7 @@ Esta es la respuesta a tu pregunta aparte. **No entra en los anuncios de método
 **Kunfupay**
 - https://kunfupay.com/
 - https://kunfupay.com/producto/checkout
+- https://kunfupay.com/producto/suscripciones
 - https://kunfupay.com/cobros-global
 - https://kunfupay.com/producto/api
 - https://kunfupay.com/sensei-prueba-gratis
@@ -771,14 +769,17 @@ Esta es la respuesta a tu pregunta aparte. **No entra en los anuncios de método
 
 ### Antes de publicar
 
-- **Cripto en Meta.** Si la cuenta publicitaria no tiene autorización de Meta para cripto, se cortan las líneas de cripto en los 4 hubs (en V1 y V2 se sube el máster sin cripto) y G1 se pausa en los 4, porque su vídeo la nombra.
+- **Quién puede registrarse.** Confirmar por escrito con el equipo que Kunfupay acepta vendedores con residencia en Emiratos. Si no, el conjunto de Dubái no sale.
+- **Cripto en Meta.** Si la cuenta publicitaria no tiene autorización de Meta para cripto, se cortan las líneas de cripto en los 4 hubs (en V1 y V2 se sube el máster sin cripto) y G1 se pausa en los 4, porque su vídeo la nombra. Con autorización o sin ella, G1 no sale tal cual: Bali no puede llevar cripto y los 4 salen con los mismos 8, así que G1 se sustituye en los 4 o se espera a su versión sin cripto (regla común del README).
 - **Panel real de Stripe de EAU.** Comprobar que no aparecen Bizum, OXXO, SPEI, Nequi, la transferencia ni PayPal procesado por Stripe. Si aparece alguno, se quita su línea o su fila en V1, V2, E1, E2 y E4.
-- **Revisión legal de E2**, porque es publicidad comparativa.
+- **Revisión legal de la comparación con Stripe.** E2 es publicidad comparativa, y V1, V2, E1 y E4 también nombran «tu Stripe de Emiratos». Legal revisa las cinco piezas.
 - **PayPal en E2.** Confirmar con producto que el vendedor no necesita su propia cuenta de PayPal para que PayPal salga en su enlace de Kunfupay. Si la necesita, la fila de PayPal sale de E2 y de su texto.
-- **Logos de métodos en las pantallas (a) y (b).** OXXO, SPEI, Mercado Pago, Visa, Mastercard, PayPal, Bizum y Nequi pueden salir con su logo dentro de la pantalla real. Legal confirma antes de producir si pueden salir en E3, V1 y V2 como parte de la captura. Si no pueden, se cambia el recorte o la pieza, y nunca se tapan.
+- **Moneda del cliente.** Confirmar con producto que el cliente paga en su moneda con Nequi, PSE y SPEI aunque el producto esté en euros o en dólares. Si no se confirma, en G1 «Te paga en pesos, con Nequi.» pasa a «Te paga con Nequi.».
+- **Logos de métodos en las páginas de pago reales.** SPEI y Mercado Pago en la de México (E3, V1 y V2); Bizum, Visa, Mastercard, Apple Pay, Google Pay y SEPA en la de España (E3 y V1); Nequi, PSE, Bancolombia, Mercado Pago, Visa y Mastercard en la de Colombia (V2). Legal confirma antes de producir si pueden salir como parte de la captura. Si no pueden, se cambia el recorte o la pieza, y nunca se tapan.
+- **Logos en el vídeo de G2.** El vídeo de la Infografía se emite sin cambios y enseña logos de métodos, también dentro de los avisos simulados (con su nota «Simulación»). Legal revisa esos logos antes de publicar. Si G2 no puede salir así, se pausa en los 4 hubs y se aplica «Pieza que no pasa».
 - **Búsquedas de competencia pendientes.** En la Biblioteca de anuncios (EAU, activos), buscar Bizum, OXXO, Nequi, Yape, SPEI, Pix, «link de pago», «mentoría», «coach» e «infoproductor», y las páginas de Telr, PayTabs, Checkout.com y Tabby. Si alguno ya dice en español que el cliente paga con su método, se revisan los ganchos de V1, V2, E2 y E4 antes de publicar.
-- **Reels de Dubai Connecting.** Ver en la Biblioteca 3534594903348234, 2059534224639694 y 3475721459258537. Si son una persona a cámara en español, V2 abre con la pantalla real (a) ampliada en la fila de SPEI durante los 2 primeros segundos, con el rótulo encima, y después pasa a cámara.
-- **Hora de los avisos en la pantalla (b).** Si la pantalla (b) muestra la hora de los avisos y no coincide, la línea de V1 pasa a «Por la mañana, Bizum. Por la noche, OXXO.»
-- **Horas de V1 y E4.** Valen hasta el 27-03-2027. Desde el 28-03-2027 pasan a «Madrid 9:00» y «Allí son las nueve».
+- **Reels de Dubai Connecting.** Ver en la Biblioteca 3534594903348234, 2059534224639694 y 3475721459258537. Si son una persona a cámara en español, V2 abre con la página de pago real de «México», recortada en SPEI, durante los 2 primeros segundos, con el rótulo encima, y después pasa a cámara.
+- **Horas de V1 y E4.** Valen con el horario de invierno de España (del 25-10-2026 al 27-03-2027). Desde el 28-03-2027, el reloj de Madrid pasa a «9:00» en V1 y E4, y la frase de V1, a «Allí son las nueve.». V1 y E4 no siguen activos desde esa fecha sin su versión de verano (reloj «Madrid 9:00» y, en V1, «Allí son las nueve.»).
 - **E4 sobre blanco.** El cambio de fondo y de relojes se hace a la vez en los 4 E4.
+- **Oferta en E4.** E4 no lleva precio ni oferta. Si el equipo cierra una oferta, entra a la vez en los 4 E4, sin «gratis» ni «0 %».
 - **Pieza que no pasa.** No se lanza ningún conjunto hasta tener su sustituta aprobada en los 4 hubs. Si los conjuntos ya están activos, su hueco se pausa en los 4 a la vez y se repone en cuanto haya sustituta. Si G1 se pausa por cripto, su sustituta se decide antes del lanzamiento.

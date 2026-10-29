@@ -53,12 +53,12 @@ Fuentes: https://docs.stripe.com/payments/bizum · https://docs.stripe.com/payme
 
 **Objeciones y la respuesta verdadera**
 - **«Mi Stripe de España ya acepta Bizum.»** Es verdad. Lo que no aparece es Nequi ni Mercado Pago, y SPEI solo existe para cuentas de México.
-- **«Hotmart ya me da OXXO y SPEI.»** También es verdad. Con Hotmart no se compite por métodos ni por precio. Lo distinto es que el cliente puede pagar en cripto y a ti te llegan euros o dólares (débil, porque se basa en que no aparece en su web).
+- **«Hotmart ya me da OXXO y SPEI.»** También es verdad. Con Hotmart no se compite por métodos ni por precio. En este hub no hay una respuesta fuerte: la que había, que el cliente te pague en cripto, no se usa, porque en Indonesia la cripto está prohibida como medio de pago desde 2018. Por eso ningún anuncio de Bali se compara con Hotmart.
 - **«Con PayPal me paga todo el mundo.»** Te paga quien tiene PayPal o tarjeta. El bloqueo de 2022 no se usa como miedo.
 - **«Con tarjeta paga todo el mundo.»** Stripe reconoce más rechazos con tarjetas de otro país, y que no todos los clientes tienen tarjeta o la prefieren. Sin porcentajes.
 - **«No quiero otra pasarela.»** Kunfupay «convive con el resto de tu stack: la sumas donde te aporta» (https://kunfupay.com/producto/api).
 - **«¿Cuánto cuesta?»** No hay precio público (https://kunfupay.com/tarifas). No se habla de precio.
-- **«¿Me aceptan si vivo en Bali?»** Sí, lo confirma el equipo. Landing: https://kunfupay.com/sensei-prueba-gratis.
+- **«¿Me aceptan si vivo en Bali?»** Pendiente de confirmar. La web solo nombra España y Latinoamérica, y no dice que se acepten vendedores con residencia en Indonesia. Hay que confirmarlo por escrito con el equipo antes de publicar (ver «Antes de publicar»). Landing: https://kunfupay.com/sensei-prueba-gratis.
 
 **Lenguaje del hub**
 - **Lugares:** Canggu (Berawa, Pererenan, Batu Bolong), Ubud, Uluwatu y Seminyak.
@@ -72,11 +72,11 @@ Fuentes: https://docs.stripe.com/payments/bizum · https://docs.stripe.com/payme
   - Clichés: «paraíso», templos o arrozales como decorado.
   - Turistas portándose mal.
   - Hablar de Bali como si fuera un país.
-  - Visados, KITAS, efectivo, cajeros, QRIS y gastar cripto en Bali.
+  - Visados, KITAS, efectivo, cajeros y QRIS.
+  - La cripto, en cualquier forma: en Indonesia está prohibida como medio de pago desde 2018.
   - Que quien graba diga que vive allí.
   - Atributos del espectador.
   - «Stripe no funciona en Bali».
-  - Presentar la cripto como algo que Stripe no tiene.
   - Cifras de métodos.
 
 ### Ángulo del hub
@@ -104,17 +104,18 @@ Biblioteca de anuncios de Meta, Indonesia, solo anuncios activos, 28-10-2026: un
 - **Saturado en imagen.** Fondo oscuro con neón y el móvil en la mano (Karta, [1416736439956923](https://www.facebook.com/ads/library/?id=1416736439956923)), degradado azul y morado (MBiA, [4596199407313689](https://www.facebook.com/ads/library/?id=4596199407313689)), Bali de postal (Home Visa), pantalla de bloqueo con avisos de venta (ClientZone, [29129042550067565](https://www.facebook.com/ads/library/?id=29129042550067565)) y testimonio sobre morado con móvil (Tab).
 - **El hueco que ocupamos.** En lo leído, todos hablan de quien cobra. Ninguno habla de quien paga, ni nombra OXXO, SPEI, Nequi, Mercado Pago o Bizum. Ninguno usa la diferencia horaria ni enseña el enlace como lo que resuelve el cobro. Y ninguno le habla de tú al creador en español.
 - **Qué cambié por ello.**
-  - Los 8 textos abren ahora con quien paga. G2, V2, E2 y E4 nombran además su método en la primera línea. E1 abre con Canggu y con el alumno de Puebla en la misma frase.
+  - Los textos abren ahora con quien paga, salvo E3, que abre con «Desde Bali, un enlace» y nombra a quien paga en la misma frase (México y España). G2, V2, E2 y E4 nombran además su método en la primera línea. E1 abre con el alumno de Puebla y con Canggu en la misma frase.
   - Los titulares de E1, E2 y E3 abren con el filtro de quien vende, porque el titular de los estáticos siempre empieza por el filtro. El de E4 abre con sus clientes.
   - El titular de E4 ya no abre con «Desde Bali». Repetía la estructura de MBiA: primero desde dónde trabajas y luego los clientes de cualquier sitio.
+  - E3 sí abre con «Desde Bali», pero sigue con dos países concretos y enseña sus páginas de pago, no «clientes de todo el mundo».
   - E4 ya no habla de abrir una pasarela en cada país, que es el terreno «todo en uno». Ahora dice que no todos tienen tarjeta o no la prefieren, como reconoce Stripe.
   - V2 ya no abre con tu Stripe, sino con Bogotá y Nequi. Stripe sale como lo que ya tienes y se queda, no como meta.
-  - E3 deja el móvil con marco sobre lila, porque era el formato de Tab. V2 deja el fondo morado por lo mismo y pasa a gris claro. E3 tampoco usa los avisos de venta con importes, que son el formato de ClientZone. Ahora enseña el chat y la página de pago reales, anotados.
+  - E3 deja el móvil con marco sobre lila, porque era el formato de Tab. V2 deja el fondo morado por lo mismo y pasa a gris claro. E3 tampoco usa los avisos de venta con importes, que son el formato de ClientZone. Ahora enseña dos páginas de pago reales (México y España), anotadas.
   - G2 no puede cambiar su vídeo, que enseña avisos de venta con importes, el formato de ClientZone. Su miniatura es la página de pago, no los avisos.
   - V1 ya no termina bajando con el longboard a la playa, que es la promesa de Home Visa y de Keep Nomad. Bali sale como situación, no como postal.
   - E4 pasa a morado oscuro liso, sin móvil ni degradado.
   - Ni rastro de «gratis», «fácil», «en minutos» ni «nómada». Todos los textos terminan con el cierre fijo.
-  - La línea de cripto se queda: ellos venden gastarla; aquí tu cliente te paga con ella.
+  - La cripto sale de los 8 anuncios. El conjunto se entrega en Indonesia, donde está prohibida como medio de pago desde 2018. Además, Karta y Varon ya venden tarjetas para gastarla.
   - El hueco de «cobrar sin montar una empresa fuera» no se usa, porque nombrar la LLC está prohibido en los anuncios.
 
 ### Los 8 anuncios
@@ -124,15 +125,15 @@ Los 4 conjuntos salen a la vez, con los mismos 8 huecos.
 | Pieza | Nombre en Meta | Nivel | Tipo | Persona | Emoción | Gancho | Formato |
 |---|---|---|---|---|---|---|---|
 | G1 | HUB-BALI-G1 \| N2 \| Dolor \| Vende por llamada \| VIDEO-LLAMADA | N2 | Dolor | Vende por llamada | Frustración | «Llamada de ventas con Medellín: 19:00 allí, 8:00 en Bali.» | Vídeo genérico ya grabado + texto del hub |
-| G2 | HUB-BALI-G2 \| N3 \| Mecanismo \| Quiere entender cómo funciona \| VIDEO-PANTALLAS | N3 | Mecanismo | Quiere entender cómo funciona | Curiosidad | «Atasco en Canggu. Madrid te paga con Bizum. México, con OXXO.» | Vídeo genérico de pantallas de la app + texto del hub |
+| G2 | HUB-BALI-G2 \| N3 \| Mecanismo \| Quiere entender cómo funciona \| VIDEO-PANTALLAS | N3 | Mecanismo | Quiere entender cómo funciona | Curiosidad | «Atasco en Canggu. Madrid te paga con Bizum. México, con OXXO.» | Vídeo genérico «Infografía», ya grabado + texto del hub |
 | V1 | HUB-BALI-V1 \| N1 \| Dolor \| Mentora por DM a España y México \| VIDEO-HISTORIA | N1 | Dolor (historia del hub) | Mentora que vende por DM y WhatsApp a España y México, con Stripe de España o PayPal | Agobio de estar de guardia, luego alivio | «A tus 4:00 en Bali, un alumno de Guadalajara quiere pagarte.» | UGC con voz en off; el único plano de IA es el del gancho |
 | V2 | HUB-BALI-V2 \| N2-N3 \| Creencia \| Curso grabado con Stripe ES \| REEL-CAMARA | N2-N3 (puente) | Creencia | Vende un curso grabado en automático con Stripe de España | Falsa tranquilidad, luego sorpresa | «Bogotá quiere pagarte con Nequi. Tú cobras desde Bali con Stripe de España.» | Reel a cámara del equipo, en estudio |
 | E1 | HUB-BALI-E1 \| N2 \| Dolor \| Talleres en directo a México \| EST-TITULAR | N2 | Dolor (distinto del de V1) | Formador que vende plazas de talleres en directo a México | Desconcierto, luego lo entiende | «*Si vendes desde Bali a México,* «pago rechazado» no es el wifi.» | Titular grande con iconos dibujados |
 | E2 | HUB-BALI-E2 \| N3 \| Comparativa \| Coach 1:1 que cobra con PayPal \| EST-HOY-VS-CON | N3 | Comparativa | Coach que cobra sus sesiones 1:1 con enlace de PayPal | Claridad | «*Si das sesiones 1:1 desde Ubud,* mira cómo puede pagarte cada cliente.» | Tabla «Hoy, con PayPal / Con tu enlace de Kunfupay» |
-| E3 | HUB-BALI-E3 \| N4 \| Prueba \| Quiere ver qué ve su alumno \| EST-CAPTURA-ANOTADA | N4 | Prueba | Quiere ver qué ve su alumno antes de cambiar nada | Desconfianza, luego seguridad | «*Desde Bali, mandas tu enlace a México:* tu alumno ve esto.» | Chat y página de pago reales de la app, recortados y anotados, sin móvil |
+| E3 | HUB-BALI-E3 \| N4 \| Prueba \| Quiere ver qué ve su alumno \| EST-CAPTURA-ANOTADA | N4 | Prueba | Quiere ver qué ve su alumno antes de cambiar nada | Desconfianza, luego seguridad | «*Desde Bali, un enlace:* así te pagan en México y España.» | Dos páginas de pago reales (México y España), anotadas |
 | E4 | HUB-BALI-E4 \| N5 \| Oferta \| Ya vende a España y LATAM, listo \| EST-LIMPIA-BOTON | N5 | Oferta | Ya vende a España y LATAM y está listo para decidir | Decisión | «*Tus clientes de España y LATAM:* cada uno te paga con lo suyo.» | Fondo morado oscuro liso, chips y «Registrarte ↓» |
 
-**Reparto por nivel:** 3 anuncios en N1–N2 (G1, V1 y E1), 2 en N3 (G2 y E2), V2 como puente N2-N3, 1 en N4 (E3) y 1 en N5 (E4). Hay un solo anuncio de oferta (E4), que sale sin oferta de precio. Las 8 personas son distintas.
+**Reparto por nivel:** 3 anuncios en N1–N2 (G1, V1 y E1), 2 en N3 (G2 y E2), V2 como puente N2-N3, 1 en N4 (E3) y 1 en N5 (E4). Hay un solo anuncio de oferta (E4), que sale sin precio ni oferta. Las 8 personas son distintas.
 
 **Largo de los ganchos, en palabras:** G1 10, G2 11, V1 11, V2 13 (dos frases, de 5 y 8), E1 12, E2 12, E3 11 y E4 13.
 
@@ -152,8 +153,6 @@ Tú solo tienes un enlace de tarjeta.
 PERO si le cobras con tu enlace de Kunfupay, elige él.
 Te paga con Nequi o por transferencia, en pesos colombianos.
 A ti te llega en euros o en dólares.
-
-Y si alguno prefiere pagarte en cripto, también.
 
 Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
@@ -183,8 +182,6 @@ Bogotá, con Nequi.
 Los tres, en el mismo enlace.
 A ti te llega en euros o en dólares.
 
-Y si alguno prefiere pagarte en cripto, también.
-
 Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
@@ -192,12 +189,12 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 - **Título:** Madrid con Bizum, México con OXXO
 - **Descripción:** Creas el producto, sacas tu enlace y lo envías.
 - **Botón:** Registrarte
-- **Miniatura en Meta:** un fotograma de la página de pago (pantalla a), nunca de los avisos de «Nueva venta» con importes (pantalla b).
+- **Miniatura en Meta:** un fotograma de la página de pago real de España o de Colombia. Nunca el de México, que sale con el logo de OXXO cortado, ni el del chat, que es un montaje, ni el de los avisos de «Nueva venta» con importes, que son una simulación.
 - **Nombre en Meta:** HUB-BALI-G2 | N3 | Mecanismo | Quiere entender cómo funciona | VIDEO-PANTALLAS
 
 ### Vídeos personalizados
 
-> **Versión para grabar de V1:** `GUIONES-HUBS.md`, apartado 4, con ganchos alternativos. Allí los insertos usan la página de pago real. Los avisos de «Nueva venta» (pantalla b) llevan en el vídeo original la nota «Simulación. Cifras a modo de ejemplo.». Si un guion de aquí los usa, van con esa nota visible o se cambian por la página de pago real.
+> **Versión para grabar de V1:** `GUIONES-HUBS.md`, apartado 4, con ganchos alternativos. Allí los insertos usan la página de pago real. Del vídeo de la Infografía solo son reales las páginas de pago. El chat de WhatsApp es un montaje, y los avisos de «Nueva venta» son una simulación (llevan la nota «Simulación. Cifras a modo de ejemplo.»). Ninguno de los dos se presenta como pantalla real en V1 ni en V2. En Bali, V1 se graba sin la línea de cripto, también en la versión de `GUIONES-HUBS.md`.
 
 #### V1 · Mentora por DM a España y México
 
@@ -208,11 +205,11 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 - El único plano de IA es el del gancho.
 - Subtítulos quemados de toda la locución, frase a frase, en Plus Jakarta Sans, en el tercio central.
 - Las burbujas de chat están dibujadas en el estilo gráfico de la marca: sin la interfaz ni el logo de WhatsApp, sin nombre, sin foto, sin globo rojo y sin contador.
-- La línea «Y si alguno prefiere pagarte en cripto, también.» se graba en una toma aparte, con su propio subtítulo y sin rótulo encima, para poder cortarla sin volver a grabar.
+- No se nombra la cripto: en Indonesia está prohibida como medio de pago.
 
 **Guion (teleprompter)**
 ```text
-[Plano de IA: habitación a oscuras en Berawa, un longboard apoyado en la pared y un móvil boca abajo en la mesilla que se ilumina. Rótulo pequeño: 14:00 Guadalajara · 04:00 Bali. Rótulo grande: A tus 4:00 en Bali, un alumno de Guadalajara quiere pagarte.]
+[Plano de IA: habitación a oscuras en Berawa, un longboard apoyado en la pared y un móvil boca abajo en la mesilla que se ilumina. Rótulo pequeño: Si vendes desde Bali a México · 14:00 Guadalajara · 04:00 Bali. Rótulo grande: A tus 4:00 en Bali, un alumno de Guadalajara quiere pagarte.]
 A tus 4:00 en Bali, un alumno de Guadalajara quiere pagarte.
 
 Guadalajara, las 14:00.
@@ -248,9 +245,6 @@ A ti te llega en euros o en dólares.
 A las 7:00 ya no hay nadie esperando.
 Guadalajara ya te ha pagado.
 
-[Toma aparte, sin rótulo]
-Y si alguno prefiere pagarte en cripto, también.
-
 Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 ```
@@ -274,8 +268,6 @@ Madrid, con Bizum.
 El mismo enlace.
 A ti te llega en euros o en dólares.
 
-Y si alguno prefiere pagarte en cripto, también.
-
 Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
@@ -292,7 +284,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 - Fondo liso gris claro #F2F2F5, sin degradado. Rótulos de ciudad y método en morado #734BFC. El rótulo grande del gancho, en morado oscuro #260D68.
 - No hay plano de IA, ni logos de Stripe o PayPal, ni capturas de su web. Nadie dice que vive en Bali.
 - Subtítulos quemados de toda la locución, frase a frase, en Plus Jakarta Sans, en el tercio central.
-- La línea «Y si alguno prefiere pagarte en cripto, también.» se graba en una toma aparte, con su propio subtítulo y sin rótulo encima, para poder cortarla sin volver a grabar.
+- No se nombra la cripto: en Indonesia está prohibida como medio de pago.
 
 **Guion (teleprompter)**
 ```text
@@ -304,7 +296,7 @@ Tu curso grabado se vende solo.
 Y tu Stripe de España acepta tarjeta, Bizum y PayPal.
 Cubierto, piensas.
 
-[Rótulo solo de texto: «Fuente: documentación de Stripe, consultada el [fecha de la comprobación]». No se muestran ni la web ni el logo de Stripe.]
+[Rótulo solo de texto: «Fuente: documentación pública de Stripe.». No se muestran ni la web ni el logo de Stripe.]
 Hemos mirado la lista de métodos de Stripe.
 [Rótulo: Lista de Stripe · Nequi: no aparece · Mercado Pago: no aparece]
 Nequi no aparece.
@@ -315,15 +307,11 @@ Tu alumno entra a comprar a las 14:00 de Bogotá.
 En Seminyak son las 3:00.
 Y como va en automático, nadie le ofrece otra opción.
 
-PERO con tu enlace de Kunfupay, le cobras igual que con Stripe.
-Y él elige cómo pagarte.
+PERO si le cobras con tu enlace de Kunfupay, elige él.
 
 [Rótulo: Bogotá → Nequi]
 Bogotá te paga con Nequi.
 A ti te llega en euros o en dólares.
-
-[Toma aparte, sin rótulo]
-Y si alguno prefiere pagarte en cripto, también.
 
 Tu Stripe se queda.
 Y sumas Kunfupay donde te aporta.
@@ -350,12 +338,9 @@ Tu alumno entra a comprar a las 14:00 de Bogotá.
 En Seminyak son las 3:00.
 Y como va en automático, nadie le ofrece otra opción.
 
-PERO con tu enlace de Kunfupay, le cobras igual que con Stripe.
-Y él elige cómo pagarte.
+PERO si le cobras con tu enlace de Kunfupay, elige él.
 Bogotá, con Nequi.
 A ti te llega en euros o en dólares.
-
-Y si alguno prefiere pagarte en cripto, también.
 
 Tu Stripe se queda.
 Y sumas Kunfupay donde te aporta.
@@ -364,7 +349,7 @@ Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
-- **Título:** Tu Stripe se queda. Bogotá paga con Nequi.
+- **Título:** Tu Stripe se queda. Bogotá, con Nequi.
 - **Descripción:** Tu alumno elige; a ti, euros o dólares.
 - **Botón:** Registrarte
 - **Nombre en Meta:** HUB-BALI-V2 | N2-N3 | Creencia | Curso grabado con Stripe ES | REEL-CAMARA
@@ -374,24 +359,24 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 > **Ya están hechos.** Los 4 estáticos de este hub están en `estaticos/`, en 1080×1350 (feed) y 1080×1920 (Stories). Las especificaciones de abajo fueron el brief de diseño. Donde el archivo final no coincide al píxel, manda el archivo. E3 cambió de pantallas: el motivo está en su apartado.
 
 **Especificación común a E1–E4**
-- **Formatos:** 1080×1350 px para el feed y 1080×1920 px para Historias y Reels. En 1080×1920 no va ni texto ni logo en los 250 px de arriba ni en los 340 px de abajo.
+- **Formatos:** 1080×1350 px para el feed y 1080×1920 px para Stories. Los estáticos no van en Reels. En 1080×1920 no va ni texto ni logo en los 250 px de arriba ni en los 340 px de abajo.
 - **Márgenes:** 80 px a los lados.
-- **Colores:** morado de marca #734BFC, morado oscuro #260D68, blanco #FFFFFF, gris claro #F2F2F5 (fondos de celda) y gris texto #6B6B78. Sin degradados, sin neón, sin fotos de stock, sin personas y sin Bali de postal.
+- **Colores:** morado de marca #734BFC, morado oscuro #260D68, blanco #FFFFFF, gris claro #F2F2F5 (fondos de celda), gris texto #6B6B78 y lila claro #CFC9DE (filtro de E4). Sin degradados, sin neón, sin fotos de stock, sin personas y sin Bali de postal.
 - **Tipografía:** Plus Jakarta Sans y ninguna más.
   - El filtro va en Medium Italic.
   - El resto del titular va en ExtraBold, con interlineado de 1,05.
   - Etiquetas, chips y cabeceras en SemiBold. El texto secundario, en Regular.
 - **Titular:** siempre empieza por el filtro en cursiva y sigue en la misma frase, sin punto ni salto de párrafo entre los dos.
 - **Logo de Kunfupay:** mide 170×56 px y va a 64 px de los bordes. Va abajo a la derecha salvo que la pieza diga otra cosa, y en 1080×1920 siempre por encima de la franja de 340 px.
-- **Marcas de terceros** (PayPal, Stripe, OXXO, SPEI, Nequi, Mercado Pago, Bizum): solo como palabra en Plus Jakarta Sans, sin su logo, su tipografía ni sus colores. La única excepción es lo que sale dentro de la captura real de E3.
+- **Marcas de terceros** (PayPal, Stripe, OXXO, SPEI, Nequi, PSE, Mercado Pago, Bizum): solo como palabra en Plus Jakarta Sans, sin su logo, su tipografía ni sus colores. La única excepción es lo que sale dentro de las páginas de pago reales de E3.
 - **Sin** emojis, estrellas, móviles en la mano ni maquetas de dispositivo.
 
 #### E1 · Talleres en directo a México
 
 **Composición 1080×1350**
 - **Fondo:** blanco #FFFFFF.
-- **Titular:** a la izquierda, de y=120 a y≈650, 920 px de ancho, 100 px de cuerpo, en 5 líneas: «Si vendes desde / Bali a México, / «pago rechazado» / no es el wifi.».
-  - El filtro va en Medium Italic #260D68. El resto, en ExtraBold #734BFC.
+- **Titular:** a la izquierda, de y=120 a y≈650, 920 px de ancho, 100 px de cuerpo, en 4 líneas: «Si vendes desde / Bali a México, / «pago rechazado» / no es el wifi.».
+  - El filtro y «pago rechazado» van en #734BFC (Medium Italic y ExtraBold); «no es el wifi.», en ExtraBold #260D68.
   - Las comillas de «pago rechazado» van en el mismo morado. No hay rojo, ni caja, ni icono de alerta: no imita el error de ninguna pasarela.
 - **Iconos:** de y=720 a y=940, alineados a la izquierda. Son dos iconos dibujados a mano, de 220×220 px y separados 48 px, con trazo de 12 px en #734BFC, sin relleno y sin texto:
   - Una señal de wifi con todas las barras llenas.
@@ -413,7 +398,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 Texto principal:
 ```text
-En Canggu, un alumno de Puebla te escribe: «Me sale rechazado».
+Un alumno de Puebla te escribe a Canggu: «Me sale rechazado».
 
 Es para tu taller en directo del jueves.
 Piensas en el wifi y abres tu enlace para comprobarlo.
@@ -442,7 +427,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 **Composición 1080×1350**
 - **Fondo:** blanco #FFFFFF.
-- **Titular:** a la izquierda, de y=90 a y=330, 72 px de cuerpo, en 3 líneas. El filtro va en Medium Italic #260D68 y el resto en ExtraBold #734BFC.
+- **Titular:** a la izquierda, de y=90 a y=330, 72 px de cuerpo, en 3 líneas. El filtro va en Medium Italic #734BFC y el resto en ExtraBold #260D68.
 - **Tabla:** de y=390 a y≈1110 y 920 px de ancho. Tiene tres columnas (220 px para la ciudad, 320 px para «Hoy» y 380 px para «Con tu enlace»), sin bordes y con 12 px entre filas.
   - **Cabecera (80 px de alto).** La columna de la ciudad va vacía. «Hoy, con PayPal» va en SemiBold de 28 px, en gris texto sobre gris claro. «Con tu enlace de Kunfupay» va en dos líneas («Con tu enlace / de Kunfupay»), en SemiBold de 28 px, en blanco sobre #260D68.
   - **Tres filas de 200 px.**
@@ -461,18 +446,20 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 **Texto literal de la imagen** (la tabla es la excepción al tope de 20 palabras)
 - Titular: *Si das sesiones 1:1 desde Ubud,* mira cómo puede pagarte cada cliente.
 - Cabeceras: Hoy, con PayPal | Con tu enlace de Kunfupay
-- Fila 1: Sevilla | PayPal o tarjeta | [Bizum] [tarjeta] [PayPal]
+- Fila 1: Sevilla | PayPal o tarjeta | [Bizum] [tarjeta]
 - Fila 2: Querétaro | PayPal o tarjeta | [OXXO] [SPEI] [tarjeta] [PayPal]
-- Fila 3: Barranquilla | PayPal o tarjeta | [Nequi] [tarjeta] [PayPal]
+- Fila 3: Barranquilla | PayPal o tarjeta | [Nequi] [PSE] [tarjeta]
 - Pie: A ti te llega en euros o en dólares.
+
+El chip «PayPal» solo va en la fila de Querétaro: la página de pago real solo lo enseña con «México».
 
 **Texto del anuncio**
 
 Texto principal:
 ```text
 Tu clienta de Sevilla quiere pagarte con Bizum.
-Tu cliente de Barranquilla, con Nequi.
-El de Querétaro, con OXXO o SPEI desde su banco.
+Tu cliente de Querétaro, con OXXO o SPEI desde su banco.
+El de Barranquilla, con Nequi.
 
 Das tus sesiones 1:1 desde Outpost, en Ubud.
 Las cobras con un enlace de PayPal por WhatsApp.
@@ -480,7 +467,8 @@ En ese enlace, ninguno de esos aparece.
 
 PERO con tu enlace de Kunfupay, la tabla cambia.
 Cada uno te paga con lo suyo.
-Y quien quiera, con PayPal o tarjeta.
+Y quien quiera, con tarjeta.
+En México, también con PayPal.
 A ti te llega en euros o en dólares.
 
 Sigues mandando un enlace por WhatsApp, como ahora.
@@ -489,7 +477,7 @@ Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
-- **Título:** De PayPal o tarjeta a Bizum, Nequi u OXXO
+- **Título:** De PayPal a Bizum, Nequi u OXXO
 - **Descripción:** Mira la tabla: hoy y con Kunfupay.
 - **Botón:** Registrarte
 - **Nombre en Meta:** HUB-BALI-E2 | N3 | Comparativa | Coach 1:1 que cobra con PayPal | EST-HOY-VS-CON
@@ -498,52 +486,52 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 **Archivos:** `estaticos/HUB-BALI-E3_1080x1350.png` y `estaticos/HUB-BALI-E3_1080x1920.png`
 
-**Pantallas que se usan** (reales, sacadas del vídeo de la Infografía, sin retocar):
-- (c) El chat de WhatsApp en el que se pide y se manda el enlace, sin la cabecera del contacto.
-- (a) La página de pago con «México», recortada al selector y a las casillas de SPEI y Mercado Pago.
-- **Por qué no la lista entera de México:** el logo de OXXO sale cortado en esa pantalla. Por eso el texto solo nombra los métodos que se ven: SPEI y Mercado Pago.
+**Pantallas que se usan** (dos páginas de pago reales, sacadas del vídeo de la Infografía, sin retocar; sin chat):
+- La página de pago con «México», recortada al selector y a las casillas de SPEI y Mercado Pago.
+- La página de pago con «España»: Bizum, Visa, Mastercard, Apple Pay, Google Pay y SEPA.
+- **Por qué cambia:** el chat de WhatsApp del vídeo es un montaje (su fondo no es el de WhatsApp) y enseña un servicio de psicología, así que no puede ir como pantalla real. En la página de México el logo de OXXO sale cortado, y por eso va recortada a SPEI y Mercado Pago. El texto solo nombra los métodos que se ven.
 
-**Texto literal de la imagen** (19 palabras, sin contar el de las pantallas)
-- Titular: «*Desde Bali, mandas tu enlace a México:* tu alumno ve esto.»
-- Notas: «① Tu enlace» · «② SPEI: desde su banco.»
-- Sello: «Pantalla real»
+**Texto literal de la imagen** (17 palabras, sin contar el de las páginas de pago)
+- Titular: «*Desde Bali, un enlace:* así te pagan en México y España.»
+- Notas: «México: SPEI» · «España: Bizum»
+- Pie: «Pantallas reales.» Solo cubre las dos páginas de pago.
 
 **Texto del anuncio**
 
 Texto principal:
 ```text
-En México, tu alumno abre tu enlace de Kunfupay y ve esto.
+Desde Bali, un enlace: así te pagan en México y España.
 
-Te lo ha pedido por WhatsApp y se lo mandas desde Pererenan.
-Lo abre en el móvil, como cualquier enlace de pago.
-PERO no ve solo «tarjeta».
-Ve lo que usa en su país.
+Tu alumno de Guadalajara te lo pide por WhatsApp.
+Tu alumna de Madrid, también.
+Les mandas el mismo enlace de Kunfupay.
+PERO cada uno ve lo que usa en su país.
 
-SPEI, para pagarte desde su banco.
-Y Mercado Pago.
+En México, SPEI, para pagarte desde su banco. Y Mercado Pago.
+En España, Bizum.
 
-Elige él y te paga sin escribirte otra vez.
+Eligen ellos y te pagan sin escribirte otra vez.
 A ti te llega en euros o en dólares.
 
 No es una maqueta.
-Es la página de pago real.
+Son las páginas de pago reales.
 
 Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
-- **Título:** Lo que ve tu alumno en México al pagarte
-- **Descripción:** Página de pago real, sin maquetas.
+- **Título:** Así te pagan en México y España
+- **Descripción:** SPEI en México. Bizum en España.
 - **Botón:** Registrarte
 - **Nombre en Meta:** HUB-BALI-E3 | N4 | Prueba | Quiere ver qué ve su alumno | EST-CAPTURA-ANOTADA
 
 #### E4 · Ya vende a España y LATAM, listo para decidir
 
-Sale sin oferta de precio.
+Sale sin precio ni oferta.
 
 **Composición 1080×1350**
 - **Fondo:** morado oscuro #260D68 liso. Sin foto, sin ilustración, sin móvil, sin degradado y sin cifras.
-- **Titular:** centrado, de y=200 a y≈600, con 92 px de cuerpo y en 4 líneas («Tus clientes de / España y LATAM: / cada uno te paga / con lo suyo.»), todo en blanco. El filtro va en Medium Italic y el resto en ExtraBold.
+- **Titular:** centrado, de y=200 a y≈600, con 92 px de cuerpo y en 4 líneas («Tus clientes de / España y LATAM: / cada uno te paga / con lo suyo.»). El filtro va en Medium Italic #CFC9DE y el resto en ExtraBold blanco.
 - **Chips:** tres píldoras en columna, centradas, de y=690 a y=990. Cada una mide 560×84 px, va en #734BFC con el texto en SemiBold de 38 px y blanco, y hay 24 px entre ellas.
 - **«Registrarte ↓»:** centrado, de y=1080 a y=1135, en SemiBold de 44 px y blanco. Es texto plano, sin caja, sin sombra y sin cursor, y apunta al botón real de Meta.
 - **Logo:** en blanco, abajo a la derecha.
@@ -572,13 +560,11 @@ Y no todos tienen tarjeta, o no la prefieren.
 PERO con tu enlace de Kunfupay, cada cliente elige cómo pagarte.
 A ti te llega en euros o en dólares.
 
-Y si alguno prefiere pagarte en cripto, también.
-
 Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
-- **Título:** Valencia, Monterrey y Cali te pagan con lo suyo
+- **Título:** Valencia, Monterrey y Cali, con lo suyo
 - **Descripción:** Bizum, OXXO y Nequi en el mismo enlace.
 - **Botón:** Registrarte
 - **Nombre en Meta:** HUB-BALI-E4 | N5 | Oferta | Ya vende a España y LATAM, listo | EST-LIMPIA-BOTON
@@ -730,14 +716,18 @@ Veredicto: **beneficio real MEDIO, diferenciación DÉBIL.** La frase «en la mo
 ### Antes de publicar
 
 - **Biblioteca, antes de producir.** Buscar en Indonesia, solo anuncios activos: OXXO, SPEI, Nequi, Bizum, «Mercado Pago», «métodos de pago», «link de pago», «pasarela de pago», Gumroad, Stan Store, Payhip, Teachable y Circle. Si algún anuncio nombra el método de quien paga o usa la diferencia horaria, se revisan G2, V2, E2 y E4 antes de publicar. Refrescar todo el análisis antes del 27-12-2026.
-- **Métodos y landing.** Confirmar que quien vende desde Bali puede ofrecer Bizum, OXXO, SPEI, Nequi, Mercado Pago y PayPal, y la transferencia desde su banco en pesos colombianos (G1). Confirmar también que cada país ve el método que le dan los anuncios. La landing tiene que enseñarlos y decir que se acepta a quien vive en Bali.
+- **Quién puede registrarse.** La web solo nombra España y Latinoamérica. Confirmar por escrito con el equipo que Kunfupay acepta vendedores con residencia en Indonesia. Si no se confirma, el conjunto de Bali no sale.
+- **Métodos y landing.** Confirmar que quien vende desde Bali puede ofrecer Bizum, OXXO, SPEI, Nequi, PSE, Mercado Pago y PayPal (este, solo en México), y la transferencia desde su banco en pesos colombianos (G1). Confirmar también que cada país ve el método que le dan los anuncios. La landing tiene que enseñarlos y decir que se acepta a quien vive en Bali.
   - G1: si no se confirma Nequi para Colombia, o el vídeo «¿Cómo te pago?» lo contradice, se quita Nequi de sus dos líneas («Él prefiere pagar desde su banco, en pesos.» y «Te paga por transferencia, en pesos colombianos.»).
   - G1: si no se confirma la transferencia en pesos colombianos, «Él prefiere pagar con Nequi o desde su banco, en pesos.» pasa a «Él prefiere pagar con Nequi, en pesos.», y «Te paga con Nequi o por transferencia, en pesos colombianos.» pasa a «Te paga con Nequi, en pesos colombianos.».
+  - G1: si no se confirma ni Nequi ni la transferencia en pesos colombianos, G1 no sale y su hueco se pausa en los 4 hubs.
+  - E2: PayPal solo sale en la página de pago real de México. Confirmar con producto que el vendedor no necesita su propia cuenta de PayPal para que salga en su enlace. Si la necesita, se quita el chip «PayPal» de Querétaro (se rehacen los dos tamaños) y la línea «En México, también con PayPal.».
+- **Moneda del cliente.** Confirmar con producto que el cliente paga en su moneda local con Nequi, SPEI y la transferencia desde su banco, aunque el producto esté en euros o en dólares. Si no se confirma, se quitan «en pesos» y «en pesos colombianos» de G1, y «en pesos» de V1 (guion y texto), y el título de G1 pasa a «Medellín elige cómo pagarte».
 - **OXXO, tope.** Confirmar el tope de OXXO en Kunfupay. El taller de E1 tiene que costar menos.
 - **OXXO, plazo.** Confirmar cuánto tarda en confirmarse un pago en OXXO con Kunfupay. Si puede pasar de unas horas, en E1 «Es para tu taller en directo del jueves.» pasa a «Es para tu taller en directo.».
-- **E3, capturas.** Comprobar en qué moneda sale el importe de la captura (a) y que el chat (c) no contradice a un alumno de México. Si (a) muestra el importe en MXN, el texto puede decir «SPEI, desde su banco, en pesos.». Si el chat contradice a un alumno de México, el titular pasa a «*Desde Bali, mandas tu enlace:* tu alumno ve esto.».
-- **Cripto en Meta.** Si la cuenta no tiene autorización para cripto, se corta la línea de cripto en los textos y en las locuciones y subtítulos de V1 y V2, en los 4 hubs. G1 no sale hasta tener una versión de su vídeo sin la cripto. Como nunca se publica con menos de 8, los 4 hubs esperan a esa versión. Comprobar también si el vídeo de la Infografía (G2) nombra la cripto.
-- **Comparativas.** Revisión legal de V1, V2, E1 y E2. Comprobar las fuentes de Stripe y PayPal el día de publicar y poner esa fecha en el rótulo de V2. Comprobar con una compra de prueba desde México que el checkout de PayPal no ofrece SPEI ni OXXO, y desde Colombia que no ofrece Nequi. Guardar las capturas con fecha. Si no se comprueba, se quita SPEI de E2, y en V1 se quita PayPal del rótulo, del guion, del texto y de la persona («En tu Stripe de España no está.»).
-- **Marcas en E3.** Visto bueno legal a los logos que salen dentro de la captura real de la página de pago.
-- **Oferta de E4.** Si el equipo cierra una única oferta para los 4 hubs, va bajo «Registrarte ↓» y antes del cierre del texto, en los 4 E4 a la vez.
+- **E3, páginas de pago.** Comprobar que la página de México queda recortada al selector y a las casillas de SPEI y Mercado Pago, sin el logo cortado de OXXO, sin tarjetas ni PayPal y sin tapar nada. Legal revisa los logos y las banderas que quedan a la vista en las dos páginas (en la de España, Bizum, Visa, Mastercard, Apple Pay, Google Pay y SEPA). Si no los autoriza, E3 no pasa (ver «Piezas que no pasan»). Nunca se tapan logos.
+- **Cripto.** Este conjunto se entrega en Indonesia, donde la cripto está prohibida como medio de pago desde 2018 (ver «Pagar y retirar dinero en el hub»). Por eso ningún texto, guion, locución ni subtítulo de Bali la nombra, y V1 y V2 se graban sin esa toma, también en la versión de `GUIONES-HUBS.md`, apartado 4. G1 nombra la cripto en su vídeo, así que no sale en Bali tal cual: antes de lanzar, G1 se sustituye en los 4 hubs o los 4 esperan a una versión de su vídeo sin la cripto, porque nunca se publica con menos de 8. Comprobar también si el vídeo de la Infografía (G2) nombra la cripto; si la nombra, pasa lo mismo.
+- **Comparativas.** Revisión legal de G2, V1, V2, E1, E2 y E4 (las piezas que nombran Stripe, PayPal u OXXO). Comprobar las fuentes de Stripe y PayPal el día de publicar. Comprobar con una compra de prueba desde España que el checkout de PayPal no ofrece Bizum, desde México que no ofrece SPEI ni OXXO y desde Colombia que no ofrece Nequi ni PSE. Guardar las capturas con fecha. Si alguno no se comprueba, E2 no sale (su imagen y su texto dicen que con el enlace de PayPal esos métodos no están) y su hueco se pausa en los 4 hubs. Si el que falla es SPEI, en V1 se quita además PayPal del rótulo, del guion, del texto y de la persona («En tu Stripe de España no está.»), también en `GUIONES-HUBS.md`, apartado 4.
+- **Logos en G2.** El vídeo de la Infografía se deja como está: sus avisos de «Nueva venta» llevan la nota «Simulación. Cifras a modo de ejemplo.». Legal revisa antes de lanzar los logos de métodos que salen en él.
+- **Oferta de E4.** Ningún E4 lleva precio ni oferta. Si el equipo cierra una única oferta para los 4 hubs, va bajo «Registrarte ↓» y antes del cierre del texto, en los 4 E4 a la vez, sin «gratis» ni «0 %».
 - **Piezas que no pasan.** Si una pieza no pasa en un hub, ese hueco se pausa en los 4 hubs hasta que haya sustituta. Nunca se publica con menos de 8 anuncios.

@@ -58,7 +58,7 @@ Lo que **no se promete** en estos anuncios:
 
 **Objeciones y respuesta verdadera**
 - **«Ya vendo con Hotmart».** Es cierto que ya tiene métodos locales. Kunfupay le da un enlace propio para lo que vende por DM o por llamada.
-- **«Con PayPal me basta».** PayPal es un método más, pero no es el de quien paga con OXXO o Nequi. Con Kunfupay, el cliente puede seguir pagando con PayPal.
+- **«Con PayPal me basta».** PayPal es un método más, pero no es el de quien paga con OXXO o Nequi. En la página de pago real, PayPal solo sale con «México»: ahí el cliente puede seguir pagando con PayPal.
 - **«Para cobrar fuera necesito Stripe».** En Latinoamérica solo existe en México y Brasil. El ancla «igual que con Stripe» solo funciona en piezas para México.
 - **«Mis clientes pagan con tarjeta».** En el e-commerce de Colombia manda PSE (63,9 %). Las billeteras y los pagos de cuenta a cuenta suman el 46 % del e-commerce de la región (PCMI, vía Revista EyN).
 - **«Con el link de Mercado Pago ya cobro».** Solo le cobra a clientes de su propio país.
@@ -126,12 +126,12 @@ Biblioteca de anuncios de Meta, 28-10-2026: 50 anuncios activos de 14 anunciante
   - La foto de una persona sonriendo con portátil, y el morado con pegatina de «0 %» (Takenos).
 - **El que más se acerca.** dLocal Go publica desde hoy «Más formas de pagar, más alumnos» (ID 1639884637883776, https://www.facebook.com/ads/library/?id=1639884637883776). No nombra ningún método y usa una foto de banco de imágenes.
   - También: dLocal Go «Tenés tu LLC, tus alumnos en varios países y una reputación que cuidar» (1433287178199921); dLocal Go «Vendiste tu mentoría. El cliente pagó. ¿Y si la plataforma te congela el cobro justo ahí?» (1639884637883776); dLocal Go «Ofrece los métodos de pago en los que tus clientes ya confían» (1107810341873164); Takenos Perú «¿Tus clientes del exterior se complican para pagarte?» (887661997669937).
-- **El hueco que ocupamos.** Entre los 50 anuncios leídos, nadie nombra OXXO, Nequi ni Mercado Pago. No se buscaron por nombre y la búsqueda no cubre España, así que Bizum está sin comprobar. Nadie pone en el centro al alumno que paga ni enseña la pantalla de pago real. Nadie junta varios países en una pieza. Casi todos le hablan al freelancer, no a quien vende cursos o mentorías.
+- **El hueco que ocupamos.** Entre los 50 anuncios leídos, nadie nombra OXXO, Nequi ni Mercado Pago. No se buscaron por nombre y la búsqueda no cubre España, así que Bizum está sin comprobar. Nadie pone en el centro al alumno que paga ni enseña la página de pago real. Nadie junta varios países en una pieza. Casi todos le hablan al freelancer, no a quien vende cursos o mentorías.
 - **Qué cambié por eso:**
   - V1: ya no nombra Stripe. El gancho es la pregunta del alumno, «¿Te puedo pagar en el OXXO?», y la lista de países es la de un tutorial cualquiera.
   - V2: quité Payoneer, que es terreno de Global66. Ahora desmonta con datos la idea de que el alumno paga con tarjeta.
   - E1 y E2: fondo blanco y sin bloques morados con texto blanco. Quité la pegatina sobre morado (recuerda a Takenos) y los checks sobre fondo crema (recuerdan a Zenda).
-  - E3: dos pantallas reales de la app. Las flechas señalan el método y el país, nunca el importe, porque Takenos ya usa el aviso «$500 recibidos».
+  - E3: dos páginas de pago reales. Las flechas señalan el método y el país, nunca el importe, porque Takenos ya usa el aviso «$500 recibidos».
   - E4 y los títulos de G1, G2, V1, V2, E1, E2 y E4 nombran los métodos y nunca dicen «métodos locales» en abstracto, que es lo que hace dLocal Go. E3 se queda con «pantallas reales», otro hueco.
 
 ### Los 8 anuncios
@@ -141,9 +141,9 @@ Los 4 conjuntos salen a la vez, con los mismos 8 huecos y nunca con menos de 8 a
 | Pieza | Nombre en Meta | Nivel | Tipo | Persona | Emoción | Gancho | Formato |
 |---|---|---|---|---|---|---|---|
 | G1 | HUB-LATAM-G1 \| N2 \| Dolor \| Vende por llamada \| VIDEO-LLAMADA | N2 | Dolor | Coach o mentor que cierra por llamada | Frustración | «Tu cliente de Bogotá ya dijo que sí. Y te pregunta: «¿Te pago con Nequi?».» | Vídeo ya grabado (llamada), sin cambios; solo cambia el texto del anuncio |
-| G2 | HUB-LATAM-G2 \| N3 \| Mecanismo \| Quiere entender cómo funciona \| VIDEO-PANTALLAS | N3 | Mecanismo | Creador que vende por WhatsApp y quiere entender cómo funciona | Curiosidad | «Así cobras por WhatsApp a alumnos de Guadalajara, Medellín o Sevilla.» | Vídeo ya grabado (pantallas de la app), sin cambios; solo cambia el texto del anuncio |
+| G2 | HUB-LATAM-G2 \| N3 \| Mecanismo \| Quiere entender cómo funciona \| VIDEO-PANTALLAS | N3 | Mecanismo | Creador que vende por WhatsApp y quiere entender cómo funciona | Curiosidad | «Así cobras por WhatsApp a alumnos de Guadalajara, Medellín o Sevilla.» | Vídeo ya grabado (Infografía), sin cambios; solo cambia el texto del anuncio |
 | V1 | HUB-LATAM-V1 \| N2 \| Dolor \| Creador en CO, AR o PE con alumno en MX \| VIDEO-HISTORIA | N2 | Dolor (historia) | Creador que vende por su cuenta desde Colombia, Argentina o Perú y tiene alumnos en México | Impotencia → alivio | «Si vendes cursos desde Colombia, Argentina o Perú, esto ya lo viviste.» En pantalla: «Si vendes cursos desde Colombia, Argentina o Perú» / «¿Te puedo pagar en el OXXO?» | UGC en tercera persona, ≤ 240 palabras, un plano de IA en el gancho, subtítulos quemados |
-| V2 | HUB-LATAM-V2 \| N2-N3 \| Creencia \| Cree que su alumno paga con tarjeta \| REEL-CAMARA | N2–N3 (puente) | Creencia | Mentor que vende a México y Colombia y da por hecho que su alumno paga con tarjeta | Sorpresa | «Si vendes cursos a México o Colombia, quizá pienses esto: "Si de verdad lo quiere, me paga con tarjeta."» | Reel a cámara, equipo en estudio («nosotros»), datos en tipografía, subtítulos quemados, ≤ 200 palabras |
+| V2 | HUB-LATAM-V2 \| N2-N3 \| Creencia \| Cree que su alumno paga con tarjeta \| REEL-CAMARA | N2–N3 (puente) | Creencia | Creador que vende cursos a México o Colombia y da por hecho que su alumno paga con tarjeta | Sorpresa | «Si vendes cursos a México o Colombia, quizá pienses esto: "Si de verdad lo quiere, me paga con tarjeta".» | Reel a cámara, equipo en estudio («nosotros»), datos en tipografía, subtítulos quemados, ≤ 200 palabras |
 | E1 | HUB-LATAM-E1 \| N2 \| Dolor \| Creador MX con Stripe que vende a ES \| EST-TITULAR | N2 | Dolor distinto | Creador en México que cobra con Stripe y vende a España | Incomodidad | «*Si cobras con Stripe desde México,* Madrid no puede pagarte con Bizum.» | Pregunta de la alumna en tipografía y titular, sobre blanco |
 | E2 | HUB-LATAM-E2 \| N3 \| Comparativa \| Productor Hotmart con mentoría por DM \| EST-HOY-VS-CON | N3 | Comparativa | Productor de Hotmart que cierra la mentoría por DM | Alivio (no tiene que dejar Hotmart) | «*Si vendes en Hotmart,* cobra tu mentoría por DM como el curso.» | «Hoy / con Kunfupay» en dos niveles, sobre blanco |
 | E3 | HUB-LATAM-E3 \| N4 \| Prueba \| Mentor con alumnos en CO y ES \| EST-CAPTURA-ANOTADA | N4 | Prueba | Mentor con alumnos en Colombia y España | Confianza | «*Alumnos en Colombia y España:* así te pagan con tu enlace.» | Dos páginas de pago reales (Colombia y España), anotadas |
@@ -213,7 +213,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 ### Vídeos personalizados
 
-> **Versión para grabar de V1:** `GUIONES-HUBS.md`, apartado 1, con ganchos alternativos. Allí los insertos usan la página de pago real. Los avisos de «Nueva venta» (pantalla b) llevan en el vídeo original la nota «Simulación. Cifras a modo de ejemplo.». Si un guion de aquí los usa, van con esa nota visible o se cambian por la página de pago real.
+> **Versión para grabar de V1:** `GUIONES-HUBS.md`, apartado 1, con ganchos alternativos. El inserto de prueba es la página de pago real con «México», recortada al selector, SPEI y Mercado Pago. Los avisos de «Nueva venta» del vídeo de la Infografía son una simulación (llevan la nota «Simulación. Cifras a modo de ejemplo.») y no se usan en ningún guion de este hub.
 
 #### V1 · El OXXO y la lista de países
 
@@ -225,7 +225,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 - **Plano de IA:** uno solo, en el gancho. Es una calle normal de Bogotá, Buenos Aires o Lima por la mañana (se elige una), sin postal turística.
 - **Texto en pantalla desde el segundo 0,** en dos líneas: «Si vendes cursos desde Colombia, Argentina o Perú» / «¿Te puedo pagar en el OXXO?». La pregunta va en tipografía grande, sin burbuja de chat ni interfaz.
 - **Subtítulos:** quemados en todo el vídeo, frase a frase, con «PERO» y «bajaaas» resaltados.
-- **Marcas:** no salen el logo ni la web de Stripe, y el OXXO no sale con logo. El desplegable del inserto es genérico, sin marca.
+- **Marcas:** no salen el logo ni la web de Stripe, ni el logo de OXXO. El desplegable del primer inserto es genérico, sin marca. El segundo inserto es la página de pago real con «México», recortada al selector, SPEI y Mercado Pago. OXXO solo va en voz y en el rótulo de texto «OXXO · SPEI · Mercado Pago», sin logos.
 
 **Guion (teleprompter)**
 ```text
@@ -239,7 +239,6 @@ Y tú no sabes cómo aceptarlo.
 
 Ves un tutorial para cobrar a otros países.
 Minuto dos: «elige tu país».
-Abres la lista.
 [Inserto: un dedo baja por un desplegable de países sin marca; el suyo no aparece]
 Bajas.
 Y bajaaas.
@@ -254,10 +253,10 @@ Y tú no aceptas ni lo uno ni lo otro.
 
 PERO para cobrarles no necesitas estar en esa lista.
 Les cobras con un solo enlace de Kunfupay.
-
+[Inserto: página de pago real con «México», recortada al selector, SPEI y Mercado Pago. Encima, el rótulo de texto «OXXO · SPEI · Mercado Pago», sin logos]
 El de Monterrey te paga en el OXXO, con su referencia.
 La de Guadalajara, por SPEI.
-Y el que quiera, con tarjeta o transferencia desde su banco.
+Y quien quiera, con tarjeta o desde su banco.
 [Toma aparte, con pausa antes y después, y subtítulo propio que no enlace con la frase anterior ni con la siguiente, para poder cortarla sin rehacer el vídeo]
 Y si alguno prefiere pagarte en cripto, también.
 A ti te llega en euros o en dólares.
@@ -285,7 +284,7 @@ Les cobras con un solo enlace de Kunfupay.
 Y cada uno paga con lo que usa en su país:
 → México: OXXO o SPEI
 → España: Bizum
-→ y quien prefiera, tarjeta o transferencia desde su banco
+→ y quien quiera, tarjeta o transferencia desde su banco
 
 Y si alguno prefiere pagarte en cripto, también.
 
@@ -295,7 +294,7 @@ Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
-- **Título:** Que tu alumno de Monterrey te pague en OXXO
+- **Título:** Tu alumno de Monterrey paga en el OXXO
 - **Descripción:** OXXO, SPEI, Bizum, tarjeta o transferencia.
 - **Botón:** Registrarte
 
@@ -308,7 +307,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 **Quién lo graba y set:**
 - **Quién:** el equipo de Kunfupay en estudio, a cámara, hablando en «nosotros». Es un reel vertical.
 - **Texto en pantalla desde el segundo 0:** «Si vendes cursos a México o Colombia».
-- **La creencia:** «Si de verdad lo quiere, me paga con tarjeta.», entre comillas, en tipografía grande sobre fondo blanco.
+- **La creencia:** «Si de verdad lo quiere, me paga con tarjeta», entre comillas, en tipografía grande sobre fondo blanco.
 - **Los datos:** en tipografía grande sobre fondo liso, con la cifra en morado #734BFC y la fuente en pequeño debajo. Las fuentes son «Global Findex 2025, Banco Mundial» para las tarjetas, «Xataka» para el efectivo en México y «CCCE» para los pagos desde el banco en Colombia.
 - **Subtítulos:** quemados en todo el reel, frase a frase, con «PERO» resaltado.
 - **Marcas:** OXXO, SPEI y Nequi solo en voz y subtítulo, sin logos. No se habla de comisiones de nadie.
@@ -317,7 +316,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 ```text
 [Texto en pantalla desde el segundo 0]
 Si vendes cursos a México o Colombia, quizá pienses esto:
-«Si de verdad lo quiere, me paga con tarjeta.»
+«Si de verdad lo quiere, me paga con tarjeta».
 
 [Datos en tipografía a pantalla completa, con la fuente debajo]
 En México, 14 de cada 100 adultos tienen tarjeta de crédito.
@@ -349,7 +348,7 @@ Entra y mira si tu negocio encaja.
 Texto principal:
 ```text
 Si vendes cursos a México o Colombia, quizá pienses esto:
-«Si de verdad lo quiere, me paga con tarjeta.»
+«Si de verdad lo quiere, me paga con tarjeta».
 
 En México, 14 de cada 100 adultos tienen tarjeta de crédito.
 En Colombia, menos de 9 de cada 100.
@@ -422,13 +421,13 @@ Y no está.
 
 No es un ajuste que te falte.
 Stripe no acepta Bizum en ninguna cuenta de Latinoamérica.
-Fuente: documentación pública de Stripe sobre Bizum, [fecha].
+Fuente: documentación pública de Stripe sobre Bizum.
 
 Así que le pides que pague con tarjeta.
 Y ahora tiene que levantarse a buscarla.
 
-PERO le puedes cobrar con Kunfupay, igual que con Stripe.
-Le mandas tu enlace.
+PERO le cobras con tu enlace de Kunfupay, igual que con Stripe.
+Se lo mandas.
 Ella elige Bizum.
 Y a ti te llega en euros o en dólares.
 
@@ -492,7 +491,7 @@ PERO también le puedes cobrar con tu enlace de Kunfupay.
 Tu alumno de México te paga en el OXXO o por SPEI.
 La de Colombia, con Nequi.
 La de España, con Bizum.
-Quien use PayPal, con PayPal.
+Y en México, quien use PayPal, con PayPal.
 
 A ti te llega en euros o en dólares.
 
@@ -506,18 +505,18 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 ---
 
-#### E3 · Dos pantallas reales, dos países
+#### E3 · Dos páginas de pago reales, dos países
 
 **Nombre en Meta:** `HUB-LATAM-E3 | N4 | Prueba | Mentor con alumnos en CO y ES | EST-CAPTURA-ANOTADA`
 
 **Archivos:** `estaticos/HUB-LATAM-E3_1080x1350.png` y `estaticos/HUB-LATAM-E3_1080x1920.png`
 
-**Pantallas que se usan** (reales, sacadas del vídeo de la Infografía, sin retocar):
+**Páginas de pago que se usan** (reales, sacadas del vídeo de la Infografía, sin retocar):
 - La página de pago con «Colombia»: Nequi, PSE, Bancolombia, Mercado Pago, Visa y Mastercard.
 - La misma página con «España»: Bizum, Visa, Mastercard, Apple Pay, Google Pay y SEPA.
-- **Por qué no México ni los avisos de venta:** en la pantalla de México el logo de OXXO sale cortado, y los avisos de «Nueva venta» llevan en el vídeo la nota «Simulación. Cifras a modo de ejemplo.», así que no pueden ir como «pantallas reales». México ya sale en E1, E2 y E4.
+- **Por qué no México ni los avisos de venta:** la página de México tiene el logo de OXXO cortado y solo se puede usar recortada a SPEI y Mercado Pago (así va en el inserto de V1). Los avisos de «Nueva venta» llevan en el vídeo la nota «Simulación. Cifras a modo de ejemplo.», así que no pueden ir con el pie «Pantallas reales.». México ya sale en E2 y E4.
 
-**Texto literal de la imagen** (18 palabras, sin contar el de las pantallas)
+**Texto literal de la imagen** (19 palabras, sin contar el de las pantallas)
 - Titular: «*Alumnos en Colombia y España:* así te pagan con tu enlace.»
 - Notas: «Colombia: Nequi o PSE» · «España: Bizum»
 - Pie: «Pantallas reales.»
@@ -529,7 +528,7 @@ Alumnos en Colombia y España: así te pagan con tu enlace.
 Dos países. Dos formas de pagar.
 PERO tú mandas un solo enlace de Kunfupay.
 
-Estas son dos pantallas reales de la app.
+Estas son dos páginas de pago reales.
 
 En la primera, tu enlace abierto con Colombia elegido.
 Tu alumna ve Nequi, PSE, Bancolombia o Mercado Pago.
@@ -544,7 +543,7 @@ Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
-- **Título:** Dos pantallas reales de la app
+- **Título:** Dos páginas de pago reales
 - **Descripción:** Nequi y PSE en Colombia. Bizum en España.
 - **Botón:** Registrarte
 
@@ -577,7 +576,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
   - Logo abajo a la derecha, en y 1520–1560.
 - **Texto literal de la imagen** (17 palabras):
   - Titular: «*¿Alumnos en Monterrey, Bogotá o Madrid?* Un enlace: OXXO, Nequi o Bizum.»
-  - Línea secundaria: «Tarjeta y PayPal, también.»
+  - Línea secundaria: «Y con tarjeta, también.»
   - Indicación: «Registrarte ↓»
 - **No lleva:** botón dibujado, personas, móvil, logos de terceros, Hotmart ni precio.
 
@@ -590,9 +589,9 @@ PERO tú les mandas el mismo enlace de Kunfupay.
 El de México paga en el OXXO.
 La de Colombia, con Nequi.
 El de España, con Bizum.
-Y quien prefiera, con tarjeta o PayPal.
+Y quien prefiera, con tarjeta.
 
-Y si alguno prefiere pagarte en cripto, también.
+Y si alguno quiere pagarte en cripto, también.
 
 A ti te llega en euros o en dólares.
 
@@ -601,7 +600,7 @@ Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
 - **Título:** OXXO, Nequi o Bizum con un solo enlace
-- **Descripción:** OXXO, Nequi, Bizum, tarjeta o PayPal.
+- **Descripción:** OXXO, Nequi, Bizum o tarjeta.
 - **Botón:** Registrarte
 
 ### Pagar y retirar dinero en el hub
@@ -781,12 +780,16 @@ Lo único que respalda hoy la web es esta frase: «Pagas con tu Visa digital des
 
 ### Antes de publicar
 
-- **Cripto:** si la cuenta no tiene la autorización de Meta, se cortan las líneas de cripto en los 4 hubs; si G1 lleva cripto en la voz, se sustituye G1 en los 4 antes de lanzar.
+- **Cripto:** si la cuenta no tiene la autorización de Meta, se cortan las líneas de cripto en los 4 hubs (V1 y V2 se montan sin su toma aparte). Con autorización o sin ella, si G1 o G2 nombran la cripto en la voz o en pantalla, se sustituyen en los 4 hubs antes de lanzar, porque Bali no puede llevarla y los 4 salen siempre con 8.
+- **La cuenta en G1 y G2:** este ángulo no habla de la cuenta de Kunfupay. Si G1 o G2 dicen «tu cuenta de Kunfupay» en la voz o en pantalla, se sustituyen en los 4 hubs antes de lanzar.
 - **Huecos:** si una pieza no pasa en un hub, no sale ningún conjunto hasta tener su sustituta, para que los 4 salgan siempre con 8.
 - **Hueco de métodos:** buscar en la Biblioteca de anuncios (MX, CO, AR, PE, CL y EC, solo activos) «OXXO», «Nequi», «Bizum», «paga con Mercado Pago», «sin tarjeta» y «link de pago», y revisar con ese filtro los anuncios de «Hotmart». Si un anunciante de cobros ya pone el método en el gancho, cambiar el gancho de G1, E1 o E4, según el método.
 - **Legal:** revisión de publicidad comparativa en E1 y E2, que nombran Stripe, Hotmart y PayPal.
-- **Fuentes del día:** releer docs.stripe.com/payments/bizum (E1) y poner la fecha donde dice «[fecha]».
-- **Datos de V2:** comprobar las cifras en Global Findex 2025 y CCCE, y confirmar que el 10 % de compras online pagadas en efectivo lo publica el artículo de Xataka, antes de rotularlas. Si ese 10 % no se confirma antes de rotular, la cifra se sustituye por «[dato a validar]».
-- **Logos en E3:** si legal no autoriza los logos de métodos que salen en la pantalla A, E3 se sustituye en los 4 hubs; nunca se tapan logos.
+- **Fuentes del día:** releer docs.stripe.com/payments/bizum (E1) el día de publicar. Si Stripe ya acepta Bizum en alguna cuenta de Latinoamérica, E1 no sale.
+- **Datos de V2:** comprobar las cifras en Global Findex 2025 y CCCE, y confirmar que el 10 % de compras online pagadas en efectivo lo publica el artículo de Xataka, antes de rotularlas. Si ese 10 % no se confirma, se quita «En México, 1 de cada 10 compras online se paga en efectivo.» del guion, del rótulo y del texto del anuncio, y la línea de fuentes queda «Fuente: CCCE.». En ese caso, la línea de Colombia pasa en los tres sitios a «En Colombia, casi 2 de cada 3 compras online, desde su banco.».
+- **PayPal (E2):** en la página de pago real solo sale con «México». Confirmar con producto que el vendedor no necesita su propia cuenta de PayPal para que salga en su enlace. Si la necesita, se quita esa línea de E2.
+- **Moneda del cliente:** confirmar con producto que el cliente paga en su moneda local con Nequi, PSE, SPEI y la transferencia desde su banco, aunque el producto esté en euros o en dólares. Si no se confirma, en G1 la línea pasa a «→ en Colombia, con transferencia desde su banco o con Nequi».
+- **Logos en E3 y en el inserto de V1:** legal revisa los logos que salen dentro de las páginas de pago reales: en Colombia, Nequi, PSE, Bancolombia, Mercado Pago, Visa y Mastercard; en España, Bizum, Visa, Mastercard, Apple Pay, Google Pay y SEPA; en México (recortada), SPEI y Mercado Pago. Si no los autoriza, E3 se sustituye en los 4 hubs y el inserto de México de V1 se quita. Nunca se tapan logos.
+- **Logos en G2:** el vídeo de la Infografía se deja como está; sus avisos de «Nueva venta» llevan la nota «Simulación». Legal revisa antes de lanzar los logos de métodos que salen en él.
 - **Mercado Pago en Argentina:** G1 y G2 ya no lo nombran. Rosario y Argentina solo vuelven si se confirma que el checkout ofrece Mercado Pago a compradores de allí.
-- **Oferta de E4:** si el equipo confirma una, entra a la vez en los 4 E4, sin «gratis» ni «0 %».
+- **Oferta de E4:** ningún E4 lleva precio ni oferta. Si el equipo cierra una, entra a la vez en los 4 E4, sin «gratis» ni «0 %».

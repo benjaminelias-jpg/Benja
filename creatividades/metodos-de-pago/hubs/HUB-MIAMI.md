@@ -20,7 +20,7 @@
   - Brickell (https://en.wikipedia.org/wiki/Brickell).
   - Wynwood, con The LAB Miami (https://thelabmiami.com/).
 - **Horario**
-  - Bogotá está en UTC−5 todo el año. En invierno tiene la misma hora que Miami y en verano, una hora menos: «casi tu misma hora» (https://en.wikipedia.org/wiki/Time_in_Colombia).
+  - Bogotá está en UTC−5 todo el año. Del 1-11-2026 al 14-3-2027 tiene la misma hora que Miami (UTC−5). El resto del año va una hora por detrás (Miami en UTC−4): «casi tu misma hora» (https://en.wikipedia.org/wiki/Time_in_Colombia).
   - Ciudad de México está en UTC−6 y ya no cambia de hora (https://en.wikipedia.org/wiki/Time_in_Mexico).
   - Buenos Aires está en UTC−3 (https://en.wikipedia.org/wiki/Time_in_Argentina).
 - **Dato de casa.** La sede de actividad de Kunfu Global, Inc. está en Hialeah, FL 33015 (https://kunfupay.com/legal/terms).
@@ -69,8 +69,8 @@ Brasil (Pix) se queda fuera a propósito: Stripe EE. UU. ya acepta Pix (https://
   - comisiones, el porcentaje de tarjetas rechazadas o «más de 100 métodos».
 - **Se puede defender, nombrando el país del cliente:**
   - Nequi (Colombia);
-  - PSE (Colombia), solo si sale en una captura real. Hoy no sale en ninguna, así que no se nombra;
-  - Mercado Pago (Argentina, y México en la captura real);
+  - PSE (Colombia): sale en la página de pago real de Colombia (E3 y el inserto de V1), así que se puede nombrar;
+  - Mercado Pago (Argentina, y México en la página de pago real);
   - SPEI (México);
   - un enlace propio que se manda por WhatsApp para cobrar una mentoría fuera de una plataforma de cursos.
 
@@ -83,8 +83,7 @@ Brasil (Pix) se queda fuera a propósito: Stripe EE. UU. ya acepta Pix (https://
 | «Mis clientes me pagan por Zelle.» | Solo los que tienen cuenta en EE. UU. | https://www.zelle.com/faq | V1 |
 | «Mis clientes tienen tarjeta.» | Muchos sí, y aun así hay quien prefiere la transferencia. Sin comparar comisiones | https://www.rebill.com/es/blog/spei-mexico-local-bank-transfer-foreign-companies | V2 |
 | «La cripto ya la acepto con Stripe.» | Es verdad (stablecoins). En Kunfupay es una opción más, en la línea común que se puede cortar | https://docs.stripe.com/payments/stablecoin-payments | G1, G2, V1, V2 y E4 |
-| «¿Cuánto cuesta?» | Kunfupay no publica precios. El FAQ dice: «Tu primer mes es completamente gratis» | https://kunfupay.com/tarifas · https://kunfupay.com/faq | E4 |
-| «¿Me aceptan si vivo en Miami?» | Cada cuenta se revisa a mano, y el CTA ya lo cubre | https://kunfupay.com/legal/terms | Cierre |
+| «¿Me aceptan si vivo en Miami?» | Cada cuenta se revisa a mano. Falta confirmar que Kunfupay acepta vendedores con residencia en EE. UU. (ver «Antes de publicar») | https://kunfupay.com/legal/terms | Cierre |
 | «¿Tengo que dejar Stripe o PayPal?» | No: «Convive con el resto de tu stack» | https://kunfupay.com/producto/api | E2 |
 
 **Lenguaje del hub**
@@ -124,11 +123,11 @@ Brasil (Pix) se queda fuera a propósito: Stripe EE. UU. ya acepta Pix (https://
 - Siempre se nombran el lugar y la situación. Nunca el origen ni la situación bancaria de quien mira.
 - Un barrio no va con el país que más se le asocia. Kendall o Weston con Colombia, no. Doral con una clienta de Bogotá, sí.
 - Con Bogotá se dice «casi tu misma hora», no «tu misma hora».
-- Quien no vive en Miami-Dade o Broward no dice «aquí» en primera persona.
-- Zelle, Stripe, PayPal y OXXO van solo en voz o en texto, nunca con su logo. OXXO solo se nombra como dolor (E1). En E3 puede verse en la captura real, pero no se anota.
+- Nadie dice «aquí» en ningún guion de Miami, ni en el V1 ni en el V2.
+- Zelle, Stripe, PayPal y OXXO van solo en voz o en texto, nunca con su logo. OXXO solo se nombra como dolor (E1).
 - La cripto solo va en la línea común «Y si alguno prefiere pagarte en cripto, también.», suelta para poder cortarla. Va solo en G1, G2, V1 y V2 (textos y guiones) y en el texto de E4.
 - «Dólares» solo como resultado («Y a ti te llega en dólares.»). Nunca como promesa en un gancho ni en un titular.
-- Si hay una flecha de dinero, entra a Miami. No se usan banderas, billetes ni logos de métodos en el diseño.
+- Si hay una flecha de dinero, entra a Miami. No se usan banderas, billetes ni logos de métodos en el diseño, salvo los que salen dentro de las páginas de pago reales de E3.
 - Se dice «celular», no «móvil». Se dice «tu enlace de Kunfupay», no «link de pago».
 
 ### Lo que anuncia la competencia aquí
@@ -158,7 +157,7 @@ Foto del 28-10-2026 en la Biblioteca de anuncios de Meta: 30 anuncios en españo
   - un producto de pagos funcionando.
 - **Qué cambiamos:**
   - E2 deja la tabla «Stripe contra Kunfupay», que recuerda a la de Higlobe, y pasa a dos bandas Buenos Aires → Miami, sin el nombre de Stripe en las bandas y sin nada tachado. Su gancho ya no es una pregunta con el nombre de un método, como «¿Dinero a Nequi?».
-  - E3 usa dos pantallas reales de la app: nadie en el hub enseña su producto.
+  - E3 usa dos páginas de pago reales: nadie en el hub enseña su producto.
   - E3 y E4 nombran «mentorías», y E3 dice «alumno», igual que G2, V2 y E2. En pagos nadie lo hace.
   - V1 cambia el celular en la mano (el plano de Ria) por un celular boca abajo. V2 abre con su gancho en rótulo, sin pregunta.
   - «Dólares» queda solo como resultado. «Tu enlace de Kunfupay» sustituye a «link de pago».
@@ -171,13 +170,13 @@ Los 4 conjuntos salen a la vez y con los mismos 8 huecos.
 | Pieza | Nombre en Meta | Nivel | Tipo | Persona | Emoción | Gancho (primera frase) | Formato |
 |---|---|---|---|---|---|---|---|
 | G1 | `HUB-MIA-G1 \| N2 \| Dolor \| Vende-por-llamada \| VIDEO-LLAMADA` | N2 | Dolor | Cierra ventas por llamada. Su cliente de Colombia no tiene tarjeta | Frustración | «*Si cierras ventas por llamada desde Miami:* "¿Cómo te pago?"» | Vídeo de la escena de llamada (ya grabado) |
-| G2 | `HUB-MIA-G2 \| N3 \| Mecanismo \| Quiere-entender-como-funciona \| VIDEO-PANTALLAS` | N3 | Mecanismo | Quiere entender cómo funciona | Curiosidad | «*Si vendes por WhatsApp desde Miami,* así paga tu alumno de Bogotá.» | Vídeo de pantallas de la app (ya grabado) |
+| G2 | `HUB-MIA-G2 \| N3 \| Mecanismo \| Quiere-entender-como-funciona \| VIDEO-PANTALLAS` | N3 | Mecanismo | Quiere entender cómo funciona | Curiosidad | «*Si vendes por WhatsApp desde Miami,* así paga tu alumno de Bogotá.» | Vídeo de la Infografía (ya grabado) |
 | V1 | `HUB-MIA-V1 \| N1 \| Dolor \| Mentor1a1-WhatsApp-Zelle \| VIDEO-HISTORIA` | N1 | Dolor (historia) | Mentor o coach 1:1 que cierra por WhatsApp y cobra por Zelle | Incomodidad | «*Si vendes mentorías desde Miami,* "te paso mi Zelle" te sale solo.» | Historia UGC en 9:16. Plano de IA con rótulo solo en el gancho y subtítulos quemados |
 | V2 | `HUB-MIA-V2 \| N2-N3 \| Creencia \| Programa-alumnos-MX \| REEL-CAMARA` | N2–N3 (puente) | Creencia | Vende un programa en dólares con alumnos en México que tienen tarjeta | Sorpresa que acaba en alivio | «*Si vendes programas desde Miami a México,* piensas en tarjeta.» | Reel hablado a cámara por el equipo, con subtítulos quemados |
 | E1 | `HUB-MIA-E1 \| N2 \| Dolor \| Membresia-MX \| EST-TITULAR` | N2 | Dolor (la renovación) | Dueño de una membresía mensual con miembros en México | Hartazgo | «*Si cobras membresías desde Miami a México,* caaada mes, un OXXO nuevo.» | Titular grande con una tira de 12 renovaciones a dos filas |
 | E2 | `HUB-MIA-E2 \| N3 \| Comparativa \| Stripe-EEUU-clientes-AR \| EST-HOY-VS-CON` | N3 | Comparativa | Ya cobra con su Stripe de EE. UU. y tiene alumnos en Argentina | Claridad | «*Si cobras con Stripe desde Miami a Argentina,* te falta Mercado Pago.» | Dos bandas Buenos Aires → Miami: «Hoy», en gris, con la tarjeta que llega y Mercado Pago que no sale; «Con tu enlace de Kunfupay», en morado y completa con Mercado Pago |
-| E3 | `HUB-MIA-E3 \| N4 \| Prueba \| Quiere-ver-checkout \| EST-CAPTURA-ANOTADA` | N4 | Prueba | Conoce Kunfupay y quiere ver qué ve su alumno antes de cambiar | Confianza | «*Si vendes mentorías desde Miami,* esto ve tu alumno de Colombia.» | Dos pantallas reales anotadas: el chat de WhatsApp y la página de pago de Colombia |
-| E4 | `HUB-MIA-E4 \| N5 \| Oferta \| Listo-varios-paises \| EST-LIMPIA-BOTON` | N5 | Oferta | Vende mentorías a varios países y está listo para probar | Decisión | «*Si vendes mentorías desde Miami,* cada cliente paga con lo suyo.» | Morado liso, tres píldoras, el primer mes gratis y «Registrarte ↓» en texto plano |
+| E3 | `HUB-MIA-E3 \| N4 \| Prueba \| Quiere-ver-checkout \| EST-CAPTURA-ANOTADA` | N4 | Prueba | Conoce Kunfupay y quiere ver qué ve su alumno antes de cambiar | Confianza | «*Si vendes mentorías desde Miami,* así te pagan en Colombia y México.» | Dos páginas de pago reales (Colombia y México), anotadas |
+| E4 | `HUB-MIA-E4 \| N5 \| Oferta \| Listo-varios-paises \| EST-LIMPIA-BOTON` | N5 | Oferta | Vende mentorías a varios países y está listo para probar | Decisión | «*Si vendes mentorías desde Miami,* cada cliente paga con lo suyo.» | Morado liso, tres píldoras, «Te llega en dólares.» y «Registrarte ↓» en texto plano. Sin precio ni oferta |
 
 ### Genéricos: texto del anuncio para este hub
 
@@ -233,7 +232,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 ### Vídeos personalizados
 
-> **Versión para grabar de V1:** `GUIONES-HUBS.md`, apartado 2, con ganchos alternativos. Allí los insertos usan la página de pago real. Los avisos de «Nueva venta» (pantalla b) llevan en el vídeo original la nota «Simulación. Cifras a modo de ejemplo.». Si un guion de aquí los usa, van con esa nota visible o se cambian por la página de pago real.
+> **Versión para grabar de V1:** `GUIONES-HUBS.md`, apartado 2, con ganchos alternativos. Allí los insertos usan la página de pago real. Del vídeo de la Infografía solo son reales las páginas de pago. El chat de WhatsApp es un montaje, y los avisos de «Nueva venta» son una simulación (llevan la nota «Simulación. Cifras a modo de ejemplo.»). Ninguno de los dos se presenta como pantalla real en V1 ni en V2.
 
 #### V1 «Te paso mi Zelle»
 
@@ -242,6 +241,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 **Quién lo graba:** un creador UGC, en selfie a cámara, en una mesa de casa con luz de día.
 - Habla de Kunfupay en tercera persona («tu enlace de Kunfupay»).
 - No dice que vive en Miami: la historia va en segunda persona.
+- No dice «aquí».
 - Solo el gancho va sobre el plano de IA.
 - Subtítulos quemados entre y 270 e y 1250.
 
@@ -270,7 +270,9 @@ Y te pregunta:
 
 PERO le cobras con tu enlace de Kunfupay.
 Se lo pasas por WhatsApp, igual que tu Zelle.
+[Inserto: página de pago real con «Colombia», ampliada en Nequi y PSE]
 Ella paga con Nequi, en pesos.
+[Toma aparte]
 Y si alguno prefiere pagarte en cripto, también.
 Y a ti te llega en dólares.
 
@@ -336,6 +338,7 @@ PERO si le cobras con tu enlace de Kunfupay, elige él.
 [Rótulo: ‹Tarjeta · SPEI›]
 Tarjeta.
 O SPEI, en pesos.
+[Toma aparte]
 Y si alguno prefiere pagarte en cripto, también.
 Y a ti te llega en dólares.
 
@@ -353,7 +356,7 @@ En México, eso es SPEI, desde su banco.
 Hay quien lo prefiere por costumbre. Por el límite de su tarjeta. O porque ya se la rechazaron una vez.
 
 PERO si le cobras con tu enlace de Kunfupay, elige él.
-Tarjeta o SPEI, en pesos.
+Tarjeta, o SPEI en pesos.
 Y si alguno prefiere pagarte en cripto, también.
 Y a ti te llega en dólares.
 
@@ -371,7 +374,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 #### Especificación común de E1–E4
 
-- **Formatos:** 1080×1350 (feed) y 1080×1920 solo en Stories, en PNG y sRGB. Los estáticos no se publican en la ubicación Reels, salvo que se rehaga su 1080×1920 con texto y logo entre y 270 e y 1250 y a 65 px o más de los lados.
+- **Formatos:** 1080×1350 (feed) y 1080×1920 (Stories), en PNG y sRGB. Los estáticos no van en Reels.
 - **Colores:**
   - morado de marca #734BFC;
   - morado oscuro #260D68;
@@ -387,10 +390,10 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
   - En 1080×1350, a 64 px del borde inferior. En 1080×1920, con su borde inferior en y = 1560.
   - Blanco #FFFFFF sobre morado y morado #734BFC sobre fondo claro.
 - **Prohibido en la imagen:**
-  - logos de terceros, salvo lo que salga en las capturas reales de E3;
-  - banderas, billetes, emojis, personas y botones dibujados;
+  - logos de terceros y banderas, salvo lo que salga en las páginas de pago reales de E3;
+  - billetes, emojis, personas y botones dibujados;
   - flechas de dinero que salgan de Miami.
-- **Recuento de palabras:** se cuenta todo el texto de la imagen menos el logo y el texto propio de las capturas de E3. Máximo 20 palabras, salvo en E2.
+- **Recuento de palabras:** se cuenta todo el texto de la imagen menos el logo y el texto propio de las páginas de pago de E3. Máximo 20 palabras, salvo en E2.
 
 #### E1 «Caaada mes, un OXXO nuevo»
 
@@ -470,7 +473,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
   - Ruta en y 960: los mismos dos puntos, ahora en blanco, con «Buenos Aires» y «Miami» debajo, en SemiBold 30 px blanco.
   - Una línea continua de 6 px blanca, con punta de flecha que entra en el punto de Miami.
   - En el centro va la píldora «Mercado Pago», con fondo blanco y texto ExtraBold 30 px #734BFC. Es el elemento que más destaca.
-- **Fuente:** no va en la imagen. La captura fechada de la tabla de Stripe se guarda para Legal. Si Legal exige que la fuente se vea: «Fuente: métodos de Stripe para EE. UU., [fecha].», en Regular 24 px #5E5A6E, en x 72, y 1180.
+- **Fuente:** no va en la imagen. La captura fechada de la tabla de Stripe se guarda para Legal. Si Legal exige que la fuente se vea: «Fuente: documentación pública de Stripe para EE. UU.», en Regular 24 px #5E5A6E, en x 72, y 1180.
 - Logo morado abajo a la derecha.
 - Sin logos: todas las marcas van como texto. Stripe solo sale en el filtro del titular.
 
@@ -483,7 +486,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 - **Titular:** *Si cobras con Stripe desde Miami a Argentina,* te falta Mercado Pago.
 - **Banda 1:** «Hoy» · «Buenos Aires» · «Miami» · píldora «Tarjeta» · píldora «Mercado Pago» · «No te sale»
 - **Banda 2:** «Con tu enlace de Kunfupay» · «Buenos Aires» · «Miami» · píldora «Mercado Pago»
-- **Fuente** (solo si Legal la exige): Fuente: métodos de Stripe para EE. UU., [fecha].
+- **Fuente** (solo si Legal la exige): Fuente: documentación pública de Stripe para EE. UU.
 
 **Texto del anuncio:**
 ```text
@@ -507,43 +510,41 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 - **Descripción:** No tienes que dejar tu Stripe.
 - **Botón:** Registrarte
 
-#### E3 «Esto ve tu alumno»
+#### E3 «Así te pagan en Colombia y México»
 
 **Nombre en Meta:** `HUB-MIA-E3 | N4 | Prueba | Quiere-ver-checkout | EST-CAPTURA-ANOTADA`
 
 **Archivos:** `estaticos/HUB-MIA-E3_1080x1350.png` y `estaticos/HUB-MIA-E3_1080x1920.png`
 
-**Pantallas que se usan** (reales, sacadas del vídeo de la Infografía, sin retocar):
-- (c) El chat de WhatsApp en el que se pide y se manda el enlace, sin la cabecera del contacto.
-- (a) La página de pago con «Colombia»: Nequi, PSE, Bancolombia, Mercado Pago, Visa y Mastercard.
-- **Por qué Colombia y no México:** en la pantalla de México el logo de OXXO sale cortado y la fila de Visa, Mastercard y PayPal no se puede dejar fuera sin cortar también OXXO. Colombia es además el primer país del ángulo de Miami (Nequi y PSE).
-- **Importe:** la tarjeta del enlace en el chat enseña «450,00 €» y no se puede quitar sin cortar el mensaje. Por eso el texto dice «en euros o en dólares».
+**Pantallas que se usan** (dos páginas de pago reales, sacadas del vídeo de la Infografía, sin retocar; sin chat):
+- La página de pago con «Colombia»: Nequi, PSE, Bancolombia, Mercado Pago, Visa y Mastercard.
+- La página de pago con «México», recortada al selector y a las casillas de SPEI y Mercado Pago.
+- **Por qué cambia:** el chat de WhatsApp del vídeo es un montaje (su fondo no es el de WhatsApp) y enseña un servicio de psicología, así que no puede ir como pantalla real. En la página de México el logo de OXXO sale cortado, y por eso va recortada a SPEI y Mercado Pago.
 
-**Texto literal de la imagen** (19 palabras, sin contar el de las pantallas)
-- Titular: «*Si vendes mentorías desde Miami,* esto ve tu alumno de Colombia.»
-- Notas: «Tu enlace de Kunfupay» · «Elige él.»
-- Pie: «Pantallas reales.»
+**Texto literal de la imagen** (20 palabras, sin contar el de las páginas de pago)
+- Titular: «*Si vendes mentorías desde Miami,* así te pagan en Colombia y México.»
+- Notas: «Colombia: Nequi o PSE» · «México: SPEI»
+- Pie: «Pantallas reales.» Solo cubre las dos páginas de pago.
 
 **Texto del anuncio:**
 ```text
-Si vendes mentorías desde Miami, esto ve tu alumno de Colombia.
+Si vendes mentorías desde Miami, así te pagan en Colombia y México.
 
 Le pasas tu enlace de Kunfupay por WhatsApp.
-Lo abre y le salen los métodos de Colombia.
-PERO no ve solo tarjeta.
-Ve Nequi.
-Y PSE, para pagarte desde su banco.
-Elige él.
+Tu alumno de Bogotá lo abre y ve Nequi y PSE.
+El de Ciudad de México ve SPEI y Mercado Pago.
+PERO tú mandas el mismo enlace.
+Cada uno elige y paga con lo suyo.
 
-Son las pantallas reales.
-Y a ti te llega en euros o en dólares.
+Son las páginas de pago reales.
+Y a ti te llega en dólares.
 
 Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
-- **Título:** Esto ve tu alumno al pagarte
-- **Descripción:** La pantalla real: Nequi y PSE.
+- **Título:** Así te pagan en Colombia y México
+- **Descripción:** Nequi y PSE en Bogotá. SPEI en México.
 - **Botón:** Registrarte
 
 #### E4 «Cada cliente paga con lo suyo»
@@ -561,7 +562,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
   3. A 40 px, el **apoyo** en SemiBold 36 px blanco.
   4. A 72 px, **«Registrarte ↓»** en SemiBold 40 px blanco. Es texto plano: sin caja, sin sombra y sin cursor, y apunta al botón real de Meta.
 - Logo blanco abajo a la derecha.
-- Sin precio. La oferta es el primer mes gratis.
+- Sin precio ni oferta.
 
 **Adaptación 1080×1920**
 - El mismo bloque, centrado entre y 250 e y 1580, con el titular a 88 px.
@@ -570,7 +571,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 **Texto literal de la imagen** (20 palabras)
 - **Titular:** *Si vendes mentorías desde Miami,* cada cliente paga con lo suyo.
 - **Píldoras:** «Nequi» · «SPEI» · «Mercado Pago»
-- **Apoyo:** Tu primer mes, gratis.
+- **Apoyo:** Te llega en dólares.
 - **Indicación al botón:** Registrarte ↓
 
 **Texto del anuncio:**
@@ -581,10 +582,9 @@ Tu cobro está montado para EE. UU.
 Y en Bogotá, Ciudad de México o Buenos Aires pagan distinto.
 
 PERO le cobras a cada uno con tu enlace de Kunfupay.
-Nequi en Bogotá, SPEI en México, Mercado Pago en Buenos Aires.
+Nequi en Bogotá, SPEI en Ciudad de México, Mercado Pago en Buenos Aires.
 Y si alguno prefiere pagarte en cripto, también.
 Y a ti te llega en dólares.
-Tu primer mes es gratis.
 
 Si todavía no vendes, no es para ti.
 Entra y mira si tu negocio encaja.
@@ -598,7 +598,7 @@ Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y ta
 
 Esta sección responde a una pregunta aparte. **No entra en los anuncios de métodos de pago**, porque el ángulo prohíbe hablar de la tarjeta de Kunfupay.
 
-**Respuesta corta.** En Miami, pagar en el día a día no suele ser un problema, y sacar efectivo es una molestia pequeña. La «tarjeta en la moneda del lugar» sería un beneficio **débil** en este hub: la moneda del lugar es el dólar, la misma en la que ya reciben con Kunfupay. Solo llegaría a **medio** en dos casos concretos, y en los dos depende de lo que confirme el equipo.
+**Respuesta corta.** En Miami, pagar en el día a día no suele ser un problema, y sacar efectivo es una molestia pequeña. La «tarjeta en la moneda del lugar» sería un beneficio **débil** en este hub: la moneda del lugar es el dólar, la misma en la que recibirían con Kunfupay si se confirma el punto «Moneda» de «Antes de publicar». Solo llegaría a **medio** en dos casos concretos, y en los dos depende de lo que confirme el equipo.
 
 **Pagar**
 - En EE. UU., el efectivo es solo el 14 % de los pagos y el móvil, el 23 % (datos de 2024: https://www.frbservices.org/binaries/content/assets/crsocms/news/research/2025-diary-of-consumer-payment-choice.pdf).
@@ -728,14 +728,37 @@ Esta sección responde a una pregunta aparte. **No entra en los anuncios de mét
 
 Si una pieza no pasa estos puntos, ningún conjunto sale hasta tener su sustituta validada. La sustituta ocupa el mismo hueco en los 4 hubs.
 
-- **Categoría especial.** Comprobar en Ads Manager si Meta pide «Productos y servicios financieros». Si la pide, declararla y segmentar por ciudad o por un radio de 15 millas o más, sin código postal, edad ni sexo.
-- **Cripto.** Si Meta no la autoriza, se cortan todas las líneas de cripto en los 4 hubs y G1 se sustituye en los 4 antes de salir. V1 y V2 se montan y exportan en dos versiones, con y sin la línea de cripto (voz y subtítulo).
-- **Moneda.** Confirmar que el vendedor de Miami recibe en USD. Si no, «en dólares» pasa a «en euros o en dólares» en todas las piezas.
-- **Legal y fuentes, el día de publicar.** Revisión de publicidad comparativa en V1 (Zelle) y E2 (Stripe). Revisar el FAQ de Zelle y la tabla de Stripe. Guardar la captura fechada de la tabla de Stripe para Legal y, si Legal exige la fuente en la imagen de E2, rellenar [fecha].
-- **E2, G2 y E4.** Abrir un checkout real de Kunfupay con el país «Argentina» y comprobar que sale Mercado Pago. Si no sale, o si Mercado Pago ya sale en la tabla de Stripe, E2 pasa a Colombia: titular «Si cobras con Stripe desde Miami a Colombia, te falta Nequi.», rutas Bogotá → Miami, píldora «Nequi» y texto reescrito con Nequi. En G2, «El de Buenos Aires, con Mercado Pago.» pasa a «El de Monterrey, con Mercado Pago.». En E4, «Buenos Aires» pasa a «Monterrey».
+- **Categoría especial.** Miami se entrega en EE. UU., y ahí Meta exige declarar «Productos y servicios financieros» para este anuncio. Se declara. La segmentación queda por ubicación (ciudad o radio de 15 millas o más, sin código postal), sin edad ni sexo y sin públicos similares. Comprobar en Ads Manager a qué nivel se fija la categoría: si es en la campaña y Miami comparte campaña con LATAM, Dubái y Bali, Miami sale en una campaña aparte.
+- **Quién puede registrarse.** Confirmar por escrito con el equipo que Kunfupay acepta vendedores con residencia en EE. UU. Si no, el conjunto de Miami no sale.
+- **Cripto.** Si Meta no la autoriza, se cortan todas las líneas de cripto en los 4 hubs y G1 se sustituye en los 4 antes de salir. Con autorización o sin ella, G1 no sale tal cual: Bali no puede llevar cripto y los 4 salen con los mismos 8, así que G1 se sustituye en los 4 o se espera a su versión sin cripto (regla común del README). V1 y V2 se montan y exportan en dos versiones, con y sin la línea de cripto (voz y subtítulo).
+- **Moneda.** Confirmar que el vendedor de Miami recibe en USD. Si no, «en dólares» pasa a «en euros o en dólares» en todas las piezas. En la imagen de E4, el apoyo pasa a «Recibes euros o dólares.» (sigue en 20 palabras) y se vuelven a exportar las dos medidas. Si no está confirmado antes de grabar V1 y V2, se graba también la toma «Y a ti te llega en euros o en dólares.».
+- **Moneda del cliente.** Confirmar que el cliente paga en su moneda local con Nequi, PSE y SPEI aunque el producto esté en dólares o en euros. Si no, se quita «en pesos» de V1 y V2.
+- **Legal y fuentes, el día de publicar.** Revisión de publicidad comparativa en V1 (Zelle), E1 (OXXO, en el titular de la imagen) y E2 (Stripe). Revisar el FAQ de Zelle y la tabla de Stripe. Guardar la captura fechada de la tabla de Stripe para Legal. Si Legal exige la fuente en la imagen de E2, se añade «Fuente: documentación pública de Stripe para EE. UU.».
+- **E2, G2 y E4.** Abrir un checkout real de Kunfupay con el país «Argentina» y comprobar que sale Mercado Pago. Si no sale, o si Mercado Pago ya sale en la tabla de Stripe:
+  - E2 pasa a Colombia: titular «*Si cobras con Stripe desde Miami a Colombia,* te falta Nequi.», rutas Bogotá → Miami y píldora «Nequi». Título: «Tu alumno de Colombia, con Nequi». Descripción: «No tienes que dejar tu Stripe.». Texto del anuncio:
+    ```text
+    Si cobras con Stripe desde Miami a Colombia, te falta Nequi.
+
+    Es verdad: tu Stripe de EE. UU. ya acepta tarjeta.
+    Y hay alumnos en Colombia que te pagan así.
+
+    Otros te escriben: «¿Te puedo pagar por Nequi?»
+    En tu Stripe de EE. UU., Nequi no sale.
+
+    PERO con tu enlace de Kunfupay, te paga con Nequi.
+    No tienes que dejar tu Stripe.
+    Y a ti te llega en dólares.
+
+    Si todavía no vendes, no es para ti.
+    Entra y mira si tu negocio encaja.
+    Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+    ```
+  - En G2, «El de Buenos Aires, con Mercado Pago.» pasa a «El de Monterrey, con Mercado Pago.».
+  - En E4, «Buenos Aires» pasa a «Monterrey» en las dos líneas: «Y en Bogotá, Ciudad de México o Monterrey pagan distinto.» y «Nequi en Bogotá, SPEI en Ciudad de México, Mercado Pago en Monterrey.».
 - **G1.** Revisar si su vídeo muestra importes en euros; si los muestra, aplicar el mismo cambio que en G2: «Y a ti te llega en euros o en dólares.».
-- **E1.** Confirmar que la suscripción por SPEI se cobra sola cada mes. Si no, el giro pasa a Mercado Pago. Si tampoco, E1 se rehace con España y Bizum.
-- **E3.** Comprobar que el encuadre deja fuera la cabecera del chat, las tarjetas, PayPal y cualquier importe sin tapar nada. Legal revisa los iconos de método que quedan a la vista.
-- **E4.** Confirmar ese día que el FAQ mantiene el primer mes gratis; si no, el apoyo vuelve a «Te llega en dólares.» y se quita «Tu primer mes es gratis.» del texto.
-- **V1 y V2.** Confirmar quién graba y dónde. Solo se dice «aquí» si se graba en la sede de Hialeah.
+- **G2.** El vídeo de la Infografía enseña los avisos de «Nueva venta» con su nota «Simulación. Cifras a modo de ejemplo.». Se deja como está. Legal revisa los logos de métodos que salen dentro del vídeo.
+- **E1 (bloqueante).** Sin confirmar por escrito que la suscripción por SPEI se cobra sola cada mes, E1 no sale. Si no se cobra sola, el giro pasa a Mercado Pago («PERO con tu enlace de Kunfupay, se suscribe una vez, con Mercado Pago.»), después de confirmar lo mismo con Mercado Pago. Si tampoco, E1 se rehace con España y Bizum.
+- **E3.** Comprobar que la página de México queda recortada al selector y a las casillas de SPEI y Mercado Pago, sin OXXO, tarjetas ni PayPal, y sin tapar nada. Legal revisa los logos y las banderas que quedan a la vista en las dos páginas (en la de Colombia, Bancolombia, Visa y Mastercard).
+- **E4.** No lleva precio ni oferta. Si el equipo cierra una oferta, entra a la vez en los 4 E4, sin «gratis» ni «0 %».
+- **V1 y V2.** Confirmar quién graba y dónde. Nadie dice «aquí».
 - **Voz real.** Antes de publicar, confirmar con creadores de Miami que pasan de verdad «¿Cómo te pago?», «te paso mi Zelle», «¿Te puedo pagar por Nequi?», «¿te puedo pagar por transferencia?» y «¿Te puedo pagar con Mercado Pago?».
