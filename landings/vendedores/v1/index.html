@@ -1650,6 +1650,18 @@ section.trust { display: none; }
 }
 .kf-cal iframe { display: block; width: 100%; height: 720px; border: 0; }
 .kf-cal__vacio { padding: 32px 24px; text-align: center; color: var(--kf-text-muted); font-size: 15px; line-height: 1.6; max-width: 460px; }
+
+/* Renglones parejos: el navegador reparte el texto para que ninguna línea
+   quede mucho más larga o más corta que las demás (titular, subtítulo,
+   topbar y títulos de sección). */
+.hero h1, .hero-subtitle, .topbar p, h2.section-title, .section-lead, .hero-microtrust { text-wrap: balance; }
+.hero h1 { max-width: 1040px; margin-left: auto; margin-right: auto; }
+@media (min-width: 900px) { .hero h1 { font-size: 50px; } }
+.hero-subtitle { max-width: 620px; margin-left: auto; margin-right: auto; }
+/* Titular en dos frases: cada una en su bloque y repartida en renglones
+   parejos. La coma va pegada al subrayado para que nunca abra renglón. */
+.hero h1 .kf-l { display: block; text-wrap: balance; }
+.kf-nw { white-space: nowrap; }
 </style>
 </head>
 <body>
@@ -1749,7 +1761,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="wrap">
     <img class="hero-logo" src="/landings-assets/logo.svg" alt="Kunfupay">
-    <h1>Cobra desde hoy en todo el mundo. Y <span class="highlight" style="--tilt:-1.4deg">olvídate del IVA</span>, la LLC y el asesor.</h1>
+    <h1><span class="kf-l">Cobra desde hoy en todo el mundo.</span> <span class="kf-l">Y&nbsp;<span class="kf-nw"><span class="highlight" style="--tilt:-1.4deg">olvídate del IVA</span>,</span> la&nbsp;LLC y&nbsp;el&nbsp;asesor.</span></h1>
     <p class="hero-subtitle">Cada cliente paga en su moneda local, sin fricciones, y tú recibes euros, dólares o la moneda que prefieras. Como somos Merchant of Record, te representamos en cada venta y pagamos sus impuestos.</p>
 
     <!-- HERO VARIANTE (a) — CTA DIRECTO, sin formulario. Súper-CTA naranja a
@@ -1767,7 +1779,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#agenda" class="btn btn-secundario" id="kf-agendar-btn">Prefiero agendar una llamada</a>
       </div>
 
-      <p class="hero-microtrust">Sin cuota mensual · Sin permanencia · Te responde una persona</p>
+      <p class="hero-microtrust">Sin cuota mensual&nbsp;· Sin permanencia&nbsp;· Te responde una persona</p>
     </div>
 
       </div>
