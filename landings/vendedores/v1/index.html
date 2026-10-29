@@ -34,12 +34,13 @@
 <!-- ═══════════════════════════════════════════════════════════════════
      CAMPAÑA REMARKETING · VENDEDORES · v1
      ======================================
-     Derivada de /landings/fiscal/v1 (patrón quiz). Lo de arriba del pliegue
-     es IDÉNTICO al patrón: topbar, hero oscuro con ondas, logo, titular con
-     subrayado, subtítulo, quiz blanco de 3 pasos y prensa. Cambian solo:
-       · el copy (topbar, titular, subtítulo, microtrust, preguntas),
-       · el paso 3 del quiz: en vez de email + teléfono, el RESULTADO,
+     Derivada de /landings/fiscal/v1. Lo de arriba del pliegue es el mismo
+     del patrón: topbar, hero oscuro con ondas, logo, titular con subrayado,
+     subtítulo y prensa. Cambian:
+       · el copy (topbar, titular, subtítulo, microtrust),
+       · el quiz: SIN formulario, solo los dos CTA (variante (a) del patrón),
        · todo lo de debajo del hero: el equipo de ventas y el calendario.
+     Sin barra fija inferior.
 
      PARA QUIÉN. Anuncio «RMK 3 / AUDIENCIA VENDEDORES» de la campaña
      «🔴 REMARKETING / KUNFUPAY», que solo llega a
@@ -51,13 +52,13 @@
 
      CONVERSIÓN Y MEDICIÓN. 100 % web: el anuncio NO abre WhatsApp, abre esta
      página, y el píxel ve cada paso.
-       · CTA principal (súper-CTA naranja): «Escríbenos por WhatsApp», solo
-         para quien encaja. Dispara `fbq('track','Contact')` — es el evento
-         al que optimiza el conjunto.
+       · CTA principal (súper-CTA naranja): «Escríbenos por WhatsApp».
+         Dispara `fbq('track','Contact')` — es el evento al que optimiza el
+         conjunto.
        · CTA secundario: «Prefiero agendar una llamada» → baja al calendario.
          Reserva hecha en el calendario = `fbq('track','Schedule')`.
-       · Quien no encaja (físicos, no vende o factura ≤ 500 €) no ve el
-         WhatsApp: va a /lp/potencial, igual que en el patrón.
+       · El filtro lo hacen la topbar («Solo si ya vendes online») y el
+         subtítulo, no un formulario.
 
      PENDIENTE ANTES DE LANZAR: KF_WHATSAPP y KF_CALENDAR_URL (bloque de
      config del <head>). Con los dos vacíos la página funciona, pero el
@@ -1600,17 +1601,21 @@ section.trust { display: none; }
    Solo lo que el patrón no trae: el resultado del quiz con dos CTA, las
    caras del equipo y el calendario. Todo con los tokens de arriba. */
 
-/* Resultado del quiz (paso 3) */
-.kf-result__ctas { display: flex; flex-direction: column; gap: 10px; margin-top: 16px; }
-.kf-result__ctas .btn-secundario { height: 48px; }
-.kf-equipo-mini { display: flex; align-items: center; justify-content: center; margin-top: 4px; }
+/* CTA del hero: caras del equipo + WhatsApp (súper-CTA) + agendar */
+.kf-equipo-mini { display: flex; align-items: center; justify-content: center; }
 .kf-equipo-mini img {
   width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
-  border: 2px solid var(--kf-surface); margin-left: -10px;
-  box-shadow: 0 0 0 1.5px rgba(115,75,252,.35);
+  border: 2px solid #140f2e; margin-left: -10px;
+  box-shadow: 0 0 0 1.5px rgba(185,166,255,.55);
 }
 .kf-equipo-mini img:first-child { margin-left: 0; }
-.kf-equipo-mini span { margin-left: 10px; font-size: 13px; font-weight: 600; color: var(--kf-text-secondary); text-align: left; }
+.kf-equipo-mini span { margin-left: 10px; font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,.85); text-align: left; }
+.kf-hero-ctas { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 360px; margin-top: 8px; }
+.kf-hero-ctas .btn { width: 100%; height: 52px; font-size: 16px; }
+/* El secundario del patrón está pensado para fondo claro: en el hero oscuro
+   pasa a blanco para que se lea. */
+.hero--dark .btn-secundario { color: #fff; border-color: rgba(255,255,255,.4); }
+.hero--dark .btn-secundario:hover { background: rgba(255,255,255,.08); }
 
 /* Equipo */
 .kf-equipo__grid {
@@ -1740,87 +1745,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap">
     <img class="hero-logo" src="/landings-assets/logo.svg" alt="Kunfupay">
     <h1>Cobra a todos tus clientes. <span class="highlight" style="--tilt:-1.4deg">Estén donde estén</span>.</h1>
-    <p class="hero-subtitle">Si vendes cursos o mentorías a varios países, una persona del equipo te enseña en 15 minutos cómo cobrarles a todos. Responde 2 preguntas y te decimos si encajas.</p>
+    <p class="hero-subtitle">Si vendes cursos o mentorías a varios países, en 15 minutos te enseñamos cómo cobrarles a todos. Te responde una persona, no un bot.</p>
 
-    <!-- HERO VARIANTE (c) — QUIZ. 2 preguntas + captura de email en la 3ª
-         pantalla; cada pantalla se muestra/oculta con JS (final del body).
-         El mismo #hero-cta envuelve todo el bloque para que la barra fija
-         inferior y el scroll-reveal lo traten igual que a las otras 2
-         variantes (a/formulario en _template/mockup-formulario/). -->
+    <!-- HERO VARIANTE (a) — CTA DIRECTO, sin formulario. Súper-CTA naranja a
+         WhatsApp (la acción suprema de la pieza) y, debajo, el secundario que
+         baja al calendario. El filtro lo hacen la topbar y el subtítulo.
+         #hero-cta envuelve el bloque para la barra fija, igual que en el patrón.
+         (Este div se cierra después del microtrust.) -->
     <div class="hero-cta" id="hero-cta">
-      <div class="hero-quiz hero-quiz--light" id="hero-quiz">
-        <div class="hero-quiz__progress">
-          <span class="hero-quiz__step" data-step="1"></span>
-          <span class="hero-quiz__step" data-step="2"></span>
-          <span class="hero-quiz__step" data-step="3"></span>
-        </div>
-
-        <!-- ═══ LÓGICA DE CUALIFICACIÓN (la misma regla que el patrón) ═══
-             El quiz NUNCA se corta: el resultado se decide en el paso 3.
-
-               qué vende             facturación          resultado
-               ───────────────────── ──────────────────── ─────────────────────
-               físicos / no vende    cualquiera           registro (/lp/potencial)
-               online                0 ó 1–500 €          registro (/lp/potencial)
-               online                más de 500 €         WhatsApp + agendar
-
-             `utm_value` lleva el tope del rango elegido (0/500/2000/10000/30000/60000).
-             ══════════════════════════════════════════════════════════ -->
-        <div class="hero-quiz__screen" data-screen="1">
-          <h2 class="hero-quiz__question">¿Qué vendes?</h2>
-          <div class="hero-quiz__options">
-            <button class="hero-quiz__option" data-value="digitales" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Cursos, mentorías o servicios online</span></button>
-            <button class="hero-quiz__option" data-value="fisicos" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Productos físicos</span></button>
-            <button class="hero-quiz__option" data-value="nada" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Todavía no vendo</span></button>
-          </div>
-        </div>
-
-        <!-- El `data-value` ES la cifra que viaja como utm_value: se lee con
-             parseInt, así que debe ser un número (0, 5000, 10000, 20000). -->
-        <div class="hero-quiz__screen" data-screen="2" hidden>
-          <h2 class="hero-quiz__question">¿Cuánto facturas al mes?</h2>
-          <div class="hero-quiz__options">
-            <!-- El `data-value` ES la cifra que viaja como utm_value y acaba en
-                 "Facturación declarada" de Notion. Tramos más altos que el
-                 patrón: quien se plantea montar una LLC ya factura lo bastante
-                 para justificarla, así que 5.000/10.000/20.000 se quedaba corto
-                 y el dato dejaba de segmentar. La regla de cualificación no
-                 cambia: cualquier valor > 0 cualifica. -->
-            <button class="hero-quiz__option" data-value="0" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Aún no facturo</span></button>
-            <button class="hero-quiz__option" data-value="500" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">De 1 a 500 €</span></button>
-            <button class="hero-quiz__option" data-value="2000" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">De 500 a 2.000 €</span></button>
-            <button class="hero-quiz__option" data-value="10000" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">De 2.000 a 10.000 €</span></button>
-            <button class="hero-quiz__option" data-value="30000" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">De 10.000 a 30.000 €</span></button>
-            <button class="hero-quiz__option" data-value="60000" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Más de 30.000 €</span></button>
-          </div>
-        </div>
-
-        <!-- Paso 3 (último): RESULTADO. Sustituye al email + teléfono del patrón:
-             aquí la conversión es hablar con ventas, no registrarse. Dos
-             variantes; el script enseña UNA según la tabla de arriba. -->
-        <div class="hero-quiz__screen" data-screen="3" hidden>
-          <div class="kf-result" data-result="si">
-            <h2 class="hero-quiz__question">Encajas. Habla con el equipo.</h2>
-            <p class="hero-quiz__result-copy">En 15 minutos te enseñamos cómo cobrar a todos tus clientes. Te responde una persona, no un bot.</p>
-            <div class="kf-equipo-mini" aria-hidden="true">
-              <img src="equipo/taiab.jpg" alt=""><img src="equipo/rafa.jpg" alt=""><img src="equipo/juan.jpg" alt=""><img src="equipo/jorge.jpg" alt="">
-              <span>Taiab, Rafa, Juan y Jorge</span>
-            </div>
-            <div class="kf-result__ctas">
-              <a href="#agenda" class="btn btn-super-cta btn-full" id="kf-wa-btn" rel="noopener">Escríbenos por WhatsApp</a>
-              <a href="#agenda" class="btn btn-secundario btn-full" id="kf-agendar-btn">Prefiero agendar una llamada</a>
-            </div>
-          </div>
-          <div class="kf-result" data-result="no" hidden>
-            <h2 class="hero-quiz__question">Aún no es el momento de la llamada</h2>
-            <p class="hero-quiz__result-copy">La llamada es para quien ya vende online y factura más de 500 € al mes. Mientras tanto, crea tu cuenta gratis y empieza a cobrar.</p>
-            <div class="kf-result__ctas">
-              <a href="#" class="btn btn-super-cta btn-full" id="kf-registro-btn">Crear mi cuenta gratis</a>
-            </div>
-          </div>
-        </div>
-
-        <button type="button" class="hero-quiz__back" id="hero-quiz-back" hidden>← Atrás</button>
+      <div class="kf-equipo-mini" aria-hidden="true">
+        <img src="equipo/taiab.jpg" alt=""><img src="equipo/rafa.jpg" alt=""><img src="equipo/juan.jpg" alt=""><img src="equipo/jorge.jpg" alt="">
+        <span>Taiab, Rafa, Juan y Jorge</span>
+      </div>
+      <div class="kf-hero-ctas">
+        <a href="#agenda" class="btn btn-super-cta" id="kf-wa-btn" rel="noopener">Escríbenos por WhatsApp</a>
+        <a href="#agenda" class="btn btn-secundario" id="kf-agendar-btn">Prefiero agendar una llamada</a>
       </div>
 
       <p class="hero-microtrust">Llamada de 15 minutos · Sin compromiso · Te responde una persona</p>
@@ -1873,9 +1812,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- ============================================================
      3) AGENDA — propio de esta campaña
-     El calendario se carga desde KF_CALENDAR_URL (config del <head>). Hace de
-     id="cta-final-block" para la barra fija: mientras se ve el calendario,
-     la barra se esconde y no tapa los huecos.
+     El calendario se carga desde KF_CALENDAR_URL (config del <head>). Sin
+     barra fija inferior: la página es corta y los dos CTA ya están arriba.
      ============================================================ -->
 <section class="section kf-agenda" id="agenda">
   <div class="wrap section-head reveal">
@@ -1883,24 +1821,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title">Elige tu hueco de <span class="highlight" style="--tilt:-1deg">15 minutos</span></h2>
     <p class="section-lead">Te llama una persona del equipo y te enseña cómo cobrar a tus clientes de cualquier país. Sin compromiso.</p>
   </div>
-  <div class="wrap" id="cta-final-block">
+  <div class="wrap">
     <div class="kf-cal reveal" id="kf-cal">
       <p class="kf-cal__vacio" id="kf-cal-vacio">El calendario se está configurando. Mientras tanto, escríbenos por WhatsApp y te damos hora.</p>
     </div>
   </div>
 </section>
-
-<!-- ============================================================
-     BARRA FIJA INFERIOR — bloque común
-     Igual que en el patrón: aparece cuando no se ve ni el quiz ni el
-     calendario, y al pulsar vuelve al quiz.
-     ============================================================ -->
-<div class="sticky-cta-bar" id="sticky-cta-bar">
-  <div class="wrap sticky-cta-bar__inner">
-    <p class="sticky-cta-bar__text">Habla con el equipo de Kunfupay</p>
-    <button type="button" class="btn btn-super-cta" id="sticky-cta-btn">Ver si encajo</button>
-  </div>
-</div>
 
 <footer class="site-footer">
   <div class="wrap">
@@ -1932,30 +1858,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   if (tb && window.ResizeObserver) new ResizeObserver(medir).observe(tb);
 })();
 
-// Barra fija inferior (igual que el patrón): visible solo cuando no se ve ni
-// el quiz ni el calendario. Al pulsar, vuelve al quiz.
+// ── CTA PRINCIPAL: WhatsApp ────────────────────────────────────────────
+// El enlace se escribe en el href (no con window.open): el navegador de
+// Instagram bloquea muchas ventanas abiertas por script. `Contact` es el
+// evento al que optimiza el conjunto del anuncio.
 (function () {
-  var bar = document.getElementById('sticky-cta-bar');
-  var heroCta = document.getElementById('hero-cta');
-  var stickyBtn = document.getElementById('sticky-cta-btn');
-  if (!bar || !heroCta || !stickyBtn || !('IntersectionObserver' in window)) return;
+  var waBtn = document.getElementById('kf-wa-btn');
+  if (!waBtn) return;
+  var numero = String(window.KF_WHATSAPP || '').replace(/\D/g, '');
+  if (numero) {
+    var texto = 'Hola, vengo de la web de Kunfupay. Vendo online a clientes de varios países y quiero ver cómo cobrarles a todos.';
+    waBtn.href = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(texto);
+    waBtn.target = '_blank';
+  } else {
+    // Sin número configurado: se queda en el ancla #agenda (baja al calendario).
+    console.warn('[Kunfupay] KF_WHATSAPP sin configurar: el botón baja al calendario.');
+  }
+  waBtn.addEventListener('click', function () {
+    fbq('track', 'Contact');
+    gtag('event', 'contact_whatsapp', {});
+  });
+})();
 
-  var finalCtaBlock = document.getElementById('cta-final-block');
-  var targets = [heroCta].concat(finalCtaBlock ? [finalCtaBlock] : []);
-  var visible = new Set();
-
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) visible.add(entry.target);
-      else visible.delete(entry.target);
-    });
-    bar.classList.toggle('is-visible', visible.size === 0);
-  }, { threshold: 0.01 });
-  targets.forEach(function (t) { io.observe(t); });
-
-  stickyBtn.addEventListener('click', function () {
-    fbq('trackCustom', 'cta_click_sticky_bar');
-    heroCta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+// ── CTA SECUNDARIO: agendar (baja a #agenda) ───────────────────────────
+(function () {
+  var btn = document.getElementById('kf-agendar-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    fbq('trackCustom', 'cta_agendar');
+    gtag('event', 'cta_agendar', {});
   });
 })();
 
@@ -1984,135 +1915,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       gtag('event', 'agenda_reservada', {});
     }
   });
-})();
-
-// Hero quiz: 2 preguntas de cualificación y, en el paso 3, el RESULTADO.
-// Quien encaja ve WhatsApp (súper-CTA) y agendar (secundario); quien no,
-// el registro gratuito por /lp/potencial, como en el patrón.
-(function () {
-  var root = document.getElementById('hero-quiz');
-  if (!root) return;
-  var screens = root.querySelectorAll('.hero-quiz__screen');
-  var steps = root.querySelectorAll('.hero-quiz__step');
-  var backBtn = document.getElementById('hero-quiz-back');
-  var answers = {};
-  var current = 1;
-
-  var ETIQUETAS_Q1 = { digitales: 'cursos, mentorías o servicios online', fisicos: 'productos físicos', nada: 'todavía nada' };
-
-  // Igual que el patrón: ?paso=N en la URL sin recargar + page_view virtual.
-  function trackQuizStep(n) {
-    var u = new URL(location.href);
-    u.searchParams.set('paso', n);
-    var path = u.pathname + u.search;
-    if (history.replaceState) history.replaceState({ quizPaso: n }, '', path);
-    gtag('event', 'page_view', { page_path: path, page_title: document.title + ' — paso ' + n });
-    gtag('event', 'quiz_paso', { paso: n });
-  }
-
-  function showScreen(n) {
-    screens.forEach(function (s) { s.hidden = (parseInt(s.dataset.screen, 10) !== n); });
-    steps.forEach(function (s, i) {
-      var stepNum = i + 1;
-      s.classList.toggle('is-active', stepNum === n);
-      s.classList.toggle('is-done', stepNum < n);
-    });
-    backBtn.hidden = (n === 1);
-    current = n;
-    if (n === 3) mostrarResultado();
-    trackQuizStep(n);
-  }
-
-  function facturacion() { return parseInt(answers.q2, 10) || 0; }
-  function cualifica() { return answers.q1 === 'digitales' && facturacion() > 500; }
-
-  function mostrarResultado() {
-    var si = cualifica();
-    root.querySelector('.kf-result[data-result="si"]').hidden = !si;
-    root.querySelector('.kf-result[data-result="no"]').hidden = si;
-    if (si) prepararWhatsApp();
-    var datos = { modelo: answers.q1, facturacion: facturacion(), origen: si ? 'cualificado' : 'no_cualificado' };
-    fbq('trackCustom', 'quiz_resultado', datos);
-    gtag('event', 'quiz_resultado', datos);
-  }
-
-  root.querySelectorAll('.hero-quiz__option').forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var screen = btn.closest('.hero-quiz__screen');
-      var screenNum = parseInt(screen.dataset.screen, 10);
-      var options = screen.querySelectorAll('.hero-quiz__option');
-      options.forEach(function (o) { o.classList.remove('is-selected'); o.disabled = true; });
-      btn.classList.add('is-selected');
-      answers['q' + screenNum] = btn.dataset.value;
-      if (screenNum === 1) fbq('trackCustom', 'start_quiz');
-      fbq(
-        'trackCustom',
-        'quiz_step_' + screenNum,
-        screenNum === 2 ? kfImporte(btn.dataset.value) : { tipo_negocio: btn.dataset.value }
-      );
-      setTimeout(function () {
-        options.forEach(function (o) { o.disabled = false; });
-        showScreen(screenNum + 1);
-      }, 380);
-    });
-  });
-
-  backBtn.addEventListener('click', function () {
-    if (current > 1) showScreen(current - 1);
-  });
-
-  function rangoTexto() {
-    var b = root.querySelector('.hero-quiz__screen[data-screen="2"] .hero-quiz__option.is-selected .hero-quiz__option-label');
-    return b ? b.textContent.trim() : '';
-  }
-
-  // ── CTA PRINCIPAL: WhatsApp ──────────────────────────────────────────
-  // El mensaje sale ya escrito con las respuestas del quiz, para que ventas
-  // sepa con quién habla antes de contestar. `Contact` es el evento al que
-  // optimiza el conjunto del anuncio.
-  // El enlace se escribe en el href (no con window.open): el navegador de
-  // Instagram bloquea muchas ventanas abiertas por script.
-  var waBtn = document.getElementById('kf-wa-btn');
-  function prepararWhatsApp() {
-    var numero = String(window.KF_WHATSAPP || '').replace(/\D/g, '');
-    if (!numero) {
-      // Sin número configurado: se queda en el ancla #agenda (baja al calendario).
-      console.warn('[Kunfupay] KF_WHATSAPP sin configurar: el botón baja al calendario.');
-      return;
-    }
-    var texto = 'Hola, vengo de la web de Kunfupay. Vendo ' + (ETIQUETAS_Q1[answers.q1] || '') +
-      ' y facturo ' + rangoTexto().toLowerCase() + ' al mes. Quiero ver cómo cobrar a mis clientes de varios países.';
-    waBtn.href = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(texto);
-    waBtn.target = '_blank';
-  }
-  waBtn.addEventListener('click', function () {
-    fbq('track', 'Contact', kfImporte(facturacion()));
-    gtag('event', 'contact_whatsapp', { modelo: answers.q1, facturacion: facturacion() });
-  });
-
-  // ── CTA SECUNDARIO: agendar ──────────────────────────────────────────
-  document.getElementById('kf-agendar-btn').addEventListener('click', function () {
-    fbq('trackCustom', 'cta_agendar');
-    gtag('event', 'cta_agendar', {});
-  });
-
-  // ── NO ENCAJA: registro por /lp/potencial (mismo destino que el patrón) ──
-  document.getElementById('kf-registro-btn').addEventListener('click', function (e) {
-    e.preventDefault();
-    fbq('trackCustom', 'cta_registro_no_cualificado');
-    var base = window.KF_DESTINOS_BASE || '';
-    var ruta = base ? base.replace(/\/$/, '') + '/potencial' : 'potencial/index.html';
-    var url = new URL(ruta, location.href);
-    url.searchParams.set('utm_origen', 'no_cualificado');
-    url.searchParams.set('utm_value', String(facturacion()));
-    try {
-      sessionStorage.setItem('kf_utm_origen', 'no_cualificado');
-      sessionStorage.setItem('kf_utm_value', String(facturacion()));
-    } catch (err) {}
-    location.href = forwardTrackingParams(url.toString());
-  });
-
-  showScreen(1);
 })();
 
 // Reveal al hacer scroll (igual que el patrón).
