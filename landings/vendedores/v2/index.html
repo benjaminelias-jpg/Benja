@@ -61,15 +61,18 @@
        · CTA principal (súper-CTA naranja): «Escríbenos por WhatsApp».
          Dispara `fbq('track','Contact')` — es el evento al que optimiza el
          conjunto.
-       · CTA secundario: «Prefiero agendar una llamada» → baja al calendario.
-         Reserva hecha en el calendario = `fbq('track','Schedule')`.
+       · CTA secundario: «Agenda una llamada con <vendedor>» → abre SU página
+         de calendario (no se incrusta). Abajo hay otro botón igual. El clic
+         cuenta como `Contact` con `canal: 'calendario'`.
+       · Con vendedor, su recorte sin fondo sale grande detrás del titular,
+         fundido con el fondo (equipo/<id>-recorte.webp).
        · El filtro lo hacen la topbar («Para quien ya vende cursos…») y el
          subtítulo, no un formulario.
 
-     PENDIENTE ANTES DE LANZAR: el WhatsApp y el calendario de cada vendedor
-     y del equipo (KF_VENDEDORES y KF_EQUIPO, config del <head>). Vacíos,
-     la página funciona, pero WhatsApp baja al calendario y el calendario
-     enseña un aviso.
+     PENDIENTE ANTES DE LANZAR: lo que falte de WhatsApp y calendario en
+     KF_VENDEDORES y KF_EQUIPO (config del <head>). Sin WhatsApp, el botón
+     principal abre el calendario; sin calendario, los botones de agendar y
+     la sección de abajo se esconden.
 
      COPY DEL HERO. Oferta para tráfico frío: cobrar desde hoy en todo el
      mundo + Merchant of Record (impuestos de cada venta, sin LLC ni asesor).
@@ -270,15 +273,21 @@ window.KF_DESTINOS_BASE = '/lp'; // páginas de destino GLOBALES del repo web
 // viendo al mismo.
 //
 // WhatsApp: formato internacional SIN «+» ni espacios (p. ej. '34600111222').
-// Calendario: URL de Calendly, Google Calendar «programación de citas»,
-// Cal.com…; se carga en un <iframe> en #agenda. Con Calendly, la reserva
-// dispara `Schedule` en el píxel. Un campo vacío usa el del equipo.
+// Calendario: URL de SU página de reservas. No se incrusta: el botón
+// «Agenda una llamada» del hero y el de abajo llevan directamente ahí.
+// Sin calendario, esos dos botones no se muestran. Sin WhatsApp, el botón
+// de WhatsApp lleva al calendario (y si tampoco hay, no hace nada).
+// Un campo vacío usa el del equipo.
 window.KF_EQUIPO = { whatsapp: '', calendario: '' };
 window.KF_VENDEDORES = {
-  taiab: { nombre: 'Taiab', ig: 'taiab.kunfupay', whatsapp: '', calendario: '' },
-  rafa:  { nombre: 'Rafa',  ig: 'rafa.kunfupay',  whatsapp: '', calendario: '' },
-  juan:  { nombre: 'Juan',  ig: 'juan.kunfupay',  whatsapp: '', calendario: '' },
-  jorge: { nombre: 'Jorge', ig: 'jorge.kunfupay', whatsapp: '', calendario: '' }
+  taiab: { nombre: 'Taiab', ig: 'taiab.kunfupay', whatsapp: '',
+           calendario: 'https://calendar.kunfupay.com/u/taiab-mirza/sesion-de-15-minutos-con-taiab' },
+  rafa:  { nombre: 'Rafa',  ig: 'rafa.kunfupay',  whatsapp: '34672564451',
+           calendario: 'https://calendar.kunfupay.com/rafa-ku' },
+  juan:  { nombre: 'Juan',  ig: 'juan.kunfupay',  whatsapp: '',
+           calendario: 'https://calendar.kunfupay.com/u/juan-zamora' },
+  jorge: { nombre: 'Jorge', ig: 'jorge.kunfupay', whatsapp: '34603104078',
+           calendario: 'https://calendar.kunfupay.com/u/jorge' }
 };
 
 // Se decide AQUÍ, en el <head>, antes de pintar: el atributo data-vendedor
@@ -1729,6 +1738,27 @@ html[data-vendedor] .kf-solo-equipo { display: none !important; }
 
 /* Sin tira de prensa: el hero ya no reserva su alto abajo. */
 .hero { --kf-press-h: 40px; }
+
+/* Vendedor grande a UN LADO del titular (solo con ?vendedor=): en la
+   esquina derecha, a la altura del principio del texto, fundido con el
+   fondo (máscaras hacia la izquierda y hacia abajo, opacidad baja). No va
+   en el centro: taparía el mensaje. */
+.hero > .wrap { position: relative; z-index: 2; }
+.kf-hero-persona {
+  position: absolute; z-index: 1; pointer-events: none;
+  top: 56px; right: max(-30px, calc(50% - 720px));
+  height: 82%; width: auto;
+  opacity: .5;
+  -webkit-mask-image: linear-gradient(to left, #000 50%, transparent 100%), linear-gradient(to bottom, #000 45%, transparent 92%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to left, #000 50%, transparent 100%), linear-gradient(to bottom, #000 45%, transparent 92%);
+          mask-composite: intersect;
+}
+.kf-hero-persona img { display: block; height: 100%; width: auto; max-width: none; filter: saturate(.85) contrast(1.05); }
+@media (max-width: 767px) {
+  .kf-hero-persona { top: 96px; right: -70px; height: 48%; opacity: .3; }
+}
+.kf-oculto { display: none !important; }
 </style>
 </head>
 <body>
@@ -1825,6 +1855,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <g class="wd"><path d="M0,58 C110,70 240,72 380,58 S640,42 780,58 S1000,72 1000,58" fill="none" stroke="url(#heroGradSoft)" stroke-width="0.55" stroke-linecap="round"/></g>
     <g class="we"><path d="M0,62 C150,44 330,46 520,62 S860,80 1000,62" fill="none" stroke="url(#heroGradA)" stroke-width="2.0" stroke-linecap="round"/></g>
   </svg>
+  <div class="kf-hero-persona kf-solo-vendedor" aria-hidden="true"><img data-v-src="equipo/{id}-recorte.webp" alt=""></div>
 
   <div class="wrap">
     <img class="hero-logo" src="data:image/svg+xml;base64,PCEtLSBJc290aXBvIEt1bmZ1cGF5LiBPcmlnZW46IGt1bmZ1cGF5LWlzb3RpcG8tY3VhZHJhZG9fNzgxeDc4MSAoRmlnbWEpLgogICAgIHZpZXdCb3ggQUpVU1RBRE8gYSBtYW5vOiBlbCBvcmlnaW5hbCBkZWNsYXJhYmEgIjAgMCAzMjkgMzI3IiBtaWVudHJhcyBlbAogICAgIGFydGUgdmEgZGUgeT0tMC41IGEgMzI4LjUsIGFzw60gcXVlIHJlY29ydGFiYSB+MSw1cHggcG9yIGFiYWpvIHkgZGVjbGFyYWJhCiAgICAgdW4gbGllbnpvIG5vIGN1YWRyYWRvICgzMjl4MzI3KSwgZGVmb3JtYW5kbyB1biAwLDYlLiBBaG9yYSAiMCAtMC41IDMyOSAzMjkiLgogICAgIFNpIHNlIHZ1ZWx2ZSBhIGV4cG9ydGFyIGRlc2RlIEZpZ21hLCByZXZpc2FyIGVzdG8gb3RyYSB2ZXouIC0tPgo8c3ZnIHdpZHRoPSIzMjkiIGhlaWdodD0iMzI5IiB2aWV3Qm94PSIwIC0wLjUgMzI5IDMyOSIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPGcgY2xpcC1wYXRoPSJ1cmwoI2NsaXAwXzQ1XzgpIj4KPHBhdGggZD0iTTAgMzI4LjVIMzI5Vi0wLjUwMDAwNkgwVjMyOC41WiIgZmlsbD0iIzczNEJGQyIvPgo8bWFzayBpZD0ibWFzazBfNDVfOCIgc3R5bGU9Im1hc2stdHlwZTpsdW1pbmFuY2UiIG1hc2tVbml0cz0idXNlclNwYWNlT25Vc2UiIHg9IjAiIHk9Ii0xIiB3aWR0aD0iMzI5IiBoZWlnaHQ9IjMzMCI+CjxwYXRoIGQ9Ik0wIC0wLjUwMDAwNkgzMjlWMzI4LjVIMFYtMC41MDAwMDZaIiBmaWxsPSJ3aGl0ZSIvPgo8L21hc2s+CjxnIG1hc2s9InVybCgjbWFzazBfNDVfOCkiPgo8cGF0aCBkPSJNMTc0LjU2OSAxMjIuMTUxSDIwNy43NjlDMjA3Ljc2OSAxMjQuNjc0IDIwNy43NjkgMTI2Ljg4OCAyMDcuNzY5IDEyOS4xMDJDMjA3Ljc2OSAxNTUuMTA0IDIwNy43NTcgMTgxLjEwNiAyMDcuNzg5IDIwNy4xMDdDMjA3Ljc5MiAyMDkuOTkxIDIwNy43MTYgMjEyLjk0MSAyMDguMjc1IDIxNS43NDFDMjA5LjE1MyAyMjAuMTM0IDIxMS43MjQgMjIzLjA2NCAyMTYuNTggMjIzLjU3OEMyMjYuNzE0IDIyNC42NTMgMjM1Ljc1IDIyMS4zNTIgMjQ0LjE3IDIxNi4zMzNDMjQ1LjY1NyAyMTUuNDQ3IDI0Ni4zMzcgMjEyLjE5NCAyNDYuMzQ5IDIxMC4wMjlDMjQ2LjQ5MyAxODMuMjAyIDI0Ni40NDMgMTU2LjM3NSAyNDYuNDQzIDEyOS41NDdDMjQ2LjQ0MyAxMjcuMjg3IDI0Ni40NDMgMTI1LjAyNiAyNDYuNDQzIDEyMi4zSDI3OS42NzJWMjQ5LjEwNEgyNTIuMjQ4QzI1MC43NjEgMjQ0Ljg5NCAyNDkuMjY5IDI0MC42NjkgMjQ3LjkzMyAyMzYuODg5QzI0MC4yNjEgMjQwLjg1OCAyMzIuOTE1IDI0NS4yODQgMjI1LjA4MiAyNDguNTQ4QzIxNS44NyAyNTIuMzg2IDIwNi4xMzEgMjUyLjI0MyAxOTYuNDk2IDI0OS42MDdDMTgzLjkwOCAyNDYuMTY0IDE3NC44ODggMjM1LjgxMSAxNzQuNjg1IDIyMi43NTRDMTc0LjE3NCAxODkuOTU0IDE3NC4yMzcgMTU3LjE0NSAxNzQuMDkgMTI0LjM0QzE3NC4wODcgMTIzLjc1MSAxNzQuMzQgMTIzLjE2MSAxNzQuNTY5IDEyMi4xNTFaIiBmaWxsPSJ3aGl0ZSIvPgo8cGF0aCBkPSJNODIuMTczMyAyNDkuMThINDkuMzMwMVY3Ni40ODE4SDgyLjE3MzNWMjQ5LjE4WiIgZmlsbD0id2hpdGUiLz4KPHBhdGggZD0iTTE1Mi40NDEgMTIxLjg0NkMxNDEuNzI2IDEzOS4xMjkgMTMxLjg5MiAxNTUuMzMzIDEyMS42MzggMTcxLjI2OEMxMTkuMzcgMTc0Ljc5MSAxMTkuNTc5IDE3Ny4zNCAxMjEuMzY1IDE4MC43MTlDMTMyLjMzIDIwMS40NjkgMTQzLjE1MyAyMjIuMjkzIDE1NC4wMTQgMjQzLjA5NkMxNTQuOTUgMjQ0Ljg4OCAxNTUuODI3IDI0Ni43MTEgMTU3LjA3NCAyNDkuMjA0QzE0NC44MjcgMjQ5LjkwMSAxMzMuMTc3IDI1MC42NyAxMjEuNTE0IDI1MS4wNjlDMTIwLjI4OCAyNTEuMTExIDExOC40NTcgMjQ5LjIxOCAxMTcuNzk5IDI0Ny44MDhDMTA3LjI3MSAyMjUuMjU1IDk2Ljg0MzQgMjAyLjY1MyA4Ni41NzAyIDE3OS45ODNDODUuODY3NSAxNzguNDMyIDg1Ljk0MjEgMTc1LjkzNSA4Ni43MTIyIDE3NC40MDhDOTUuMDU5NCAxNTcuODY1IDEwMy41NzQgMTQxLjQwNSAxMTIuMiAxMjUuMDA0QzExMi45MTUgMTIzLjY0NSAxMTQuNzU5IDEyMi4wMSAxMTYuMTA4IDEyMS45ODNDMTI3LjgzOCAxMjEuNzQ2IDEzOS41NzUgMTIxLjg0NiAxNTIuNDQxIDEyMS44NDZaIiBmaWxsPSJ3aGl0ZSIvPgo8L2c+CjwvZz4KPGRlZnM+CjxjbGlwUGF0aCBpZD0iY2xpcDBfNDVfOCI+CjxyZWN0IHk9Ii0wLjUiIHdpZHRoPSIzMjkiIGhlaWdodD0iMzI5IiByeD0iMjUiIGZpbGw9IndoaXRlIi8+CjwvY2xpcFBhdGg+CjwvZGVmcz4KPC9zdmc+Cg==" alt="Kunfupay">
@@ -1833,7 +1864,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <!-- HERO VARIANTE (a) — CTA DIRECTO, sin formulario. Súper-CTA naranja a
          WhatsApp (la acción suprema de la pieza) y, debajo, el secundario que
-         baja al calendario. El filtro lo hacen la topbar y el subtítulo.
+         abre la página de calendario del vendedor (no se incrusta). El filtro lo hacen la topbar y el subtítulo.
          #hero-cta envuelve el bloque, igual que en el patrón.
          PERSONALIZACIÓN: .kf-solo-equipo se ve sin vendedor en la URL;
          .kf-solo-vendedor, con vendedor. Los `data-v` son la plantilla del
@@ -1845,12 +1876,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <span>Taiab, Rafa, Juan y Jorge</span>
       </div>
       <div class="kf-vendedor-hero kf-solo-vendedor">
-        <img data-v-src="equipo/{id}.jpg" alt="">
+        <img data-v-src="equipo/{id}.jpg" data-v-alt alt="">
         <span data-v="<strong>Te atiende {nombre}</strong>@{ig} · equipo de Kunfupay"></span>
       </div>
       <div class="kf-hero-ctas">
         <a href="#agenda" class="btn btn-super-cta" id="kf-wa-btn" rel="noopener" data-v="Escríbele a {nombre} por WhatsApp">Escríbenos por WhatsApp</a>
-        <a href="#agenda" class="btn btn-secundario" id="kf-agendar-btn" data-v="Agenda una llamada con {nombre}">Prefiero agendar una llamada</a>
+        <a href="#agenda" class="btn btn-secundario kf-agendar" id="kf-agendar-btn" data-v="Agenda una llamada con {nombre}">Prefiero agendar una llamada</a>
       </div>
 
       <p class="hero-microtrust">Sin&nbsp;cuota&nbsp;mensual&nbsp;· Sin&nbsp;permanencia&nbsp;· <span data-v="Te&amp;nbsp;responde&amp;nbsp;{nombre}">Te&nbsp;responde&nbsp;una&nbsp;persona</span></p>
@@ -1881,15 +1912,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="kf-persona reveal"><img src="equipo/jorge.jpg" alt="Jorge"><strong>Jorge</strong><span>@jorge.kunfupay</span></div>
     </div>
     <div class="kf-equipo__grid kf-equipo__grid--uno kf-solo-vendedor">
-      <div class="kf-persona reveal"><img data-v-src="equipo/{id}.jpg" alt=""><strong data-v="{nombre}"></strong><span data-v="@{ig}"></span></div>
+      <div class="kf-persona reveal"><img data-v-src="equipo/{id}.jpg" data-v-alt alt=""><strong data-v="{nombre}"></strong><span data-v="@{ig}"></span></div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
      3) AGENDA — propio de esta campaña
-     El calendario es el del vendedor de la URL (o el del equipo). Sin
-     barra fija inferior: la página es corta y los dos CTA ya están arriba.
+     Sin calendario incrustado: un botón que abre la página de reservas del
+     vendedor (la misma que el botón secundario del hero). Si el vendedor no
+     tiene calendario, la sección entera se esconde.
      ============================================================ -->
 <section class="section kf-agenda" id="agenda">
   <div class="wrap section-head reveal">
@@ -1897,10 +1929,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title" data-v='Elige tu hueco de <span class="highlight" style="--tilt:-1deg">15 minutos</span> con {nombre}'>Elige tu hueco de <span class="highlight" style="--tilt:-1deg">15 minutos</span></h2>
     <p class="section-lead" data-v="{nombre} te llama y te enseña cómo cobrar a tus clientes de cualquier país. Sin compromiso.">Te llama una persona del equipo y te enseña cómo cobrar a tus clientes de cualquier país. Sin compromiso.</p>
   </div>
-  <div class="wrap">
-    <div class="kf-cal reveal" id="kf-cal">
-      <p class="kf-cal__vacio" id="kf-cal-vacio" data-v="El calendario de {nombre} se está configurando. Mientras tanto, escríbele por WhatsApp y te da hora.">El calendario se está configurando. Mientras tanto, escríbenos por WhatsApp y te damos hora.</p>
-    </div>
+  <div class="cta-sec reveal">
+    <a href="#agenda" class="btn btn-primary kf-agendar" id="kf-agendar-btn-2" data-v="Agenda tu llamada con {nombre}">Agenda tu llamada</a>
   </div>
 </section>
 
@@ -1951,7 +1981,7 @@ function kfRellena(t) {
   document.querySelectorAll('[data-v]').forEach(function (el) { el.innerHTML = kfRellena(el.getAttribute('data-v')); });
   document.querySelectorAll('[data-v-src]').forEach(function (el) {
     el.src = kfRellena(el.getAttribute('data-v-src'));
-    el.alt = KF_V.nombre;
+    if (el.hasAttribute('data-v-alt')) el.alt = KF_V.nombre;
   });
 })();
 var KF_WHATSAPP_FINAL = String((KF_V && KF_V.whatsapp) || KF_E.whatsapp || '').replace(/\D/g, '');
@@ -1964,6 +1994,16 @@ var KF_CALENDARIO_FINAL = (KF_V && KF_V.calendario) || KF_E.calendario || '';
 (function () {
   var waBtn = document.getElementById('kf-wa-btn');
   if (!waBtn) return;
+  if (!KF_WHATSAPP_FINAL && KF_CALENDARIO_FINAL) {
+    // Sin WhatsApp pero con calendario: el botón principal pasa a ser el de
+    // agendar (texto y enlace) y el secundario del hero se esconde para no
+    // repetir el mismo botón dos veces.
+    waBtn.href = KF_CALENDARIO_FINAL;
+    waBtn.target = '_blank';
+    waBtn.textContent = KF_V ? 'Agenda una llamada con ' + KF_V.nombre : 'Agenda una llamada';
+    var sec = document.getElementById('kf-agendar-btn');
+    if (sec) sec.classList.add('kf-oculto');
+  }
   if (KF_WHATSAPP_FINAL) {
     var texto = (KF_V ? 'Hola ' + KF_V.nombre + ', vengo de tu web de Kunfupay.' : 'Hola, vengo de la web de Kunfupay.') +
       ' Vendo online a clientes de varios países y quiero ver cómo cobrarles a todos.';
@@ -1971,47 +2011,38 @@ var KF_CALENDARIO_FINAL = (KF_V && KF_V.calendario) || KF_E.calendario || '';
     waBtn.target = '_blank';
   } else {
     // Sin número configurado: se queda en el ancla #agenda (baja al calendario).
-    console.warn('[Kunfupay] WhatsApp sin configurar para ' + (KF_VEND || 'el equipo') + ': el botón baja al calendario.');
+    console.warn('[Kunfupay] WhatsApp sin configurar para ' + (KF_VEND || 'el equipo') + '.');
   }
   waBtn.addEventListener('click', function () {
-    fbq('track', 'Contact', kfVend());
-    gtag('event', 'contact_whatsapp', kfVend());
+    var canal = KF_WHATSAPP_FINAL ? 'whatsapp' : 'calendario';
+    fbq('track', 'Contact', Object.assign(kfVend(), { canal: canal }));
+    gtag('event', 'contact_' + canal, kfVend());
   });
 })();
 
-// ── CTA SECUNDARIO: agendar (baja a #agenda) ───────────────────────────
+// ── AGENDAR: el botón secundario del hero y el de abajo ────────────────
+// Abren la página de reservas del vendedor (no se incrusta). Cuentan como
+// `Contact` con canal 'calendario', igual que WhatsApp: los dos son el
+// contacto que buscamos y el conjunto optimiza a Contact. Sin calendario,
+// los botones y la sección de abajo se esconden.
 (function () {
-  var btn = document.getElementById('kf-agendar-btn');
-  if (!btn) return;
-  btn.addEventListener('click', function () {
-    fbq('trackCustom', 'cta_agendar', kfVend());
-    gtag('event', 'cta_agendar', kfVend());
-  });
-})();
-
-// Calendario: el del vendedor (o el del equipo) en #kf-cal. Con Calendly, la
-// reserva confirmada llega por postMessage y se mide como `Schedule`
-// (evento estándar de Meta) + `agenda_reservada` en GA4, con `vendedor`.
-(function () {
-  var caja = document.getElementById('kf-cal');
-  if (!caja) return;
+  var btns = document.querySelectorAll('.kf-agendar');
   if (!KF_CALENDARIO_FINAL) {
+    btns.forEach(function (b) { b.style.display = 'none'; });
+    var sec = document.getElementById('agenda');
+    if (sec) sec.style.display = 'none';
     console.warn('[Kunfupay] Calendario sin configurar para ' + (KF_VEND || 'el equipo') + '.');
     return;
   }
-  var iframe = document.createElement('iframe');
-  iframe.src = KF_CALENDARIO_FINAL;
-  iframe.title = KF_V ? 'Agenda una llamada con ' + KF_V.nombre + ', de Kunfupay' : 'Agenda una llamada con el equipo de Kunfupay';
-  iframe.loading = 'lazy';
-  caja.innerHTML = '';
-  caja.appendChild(iframe);
-
-  window.addEventListener('message', function (e) {
-    var d = e.data;
-    if (d && typeof d === 'object' && d.event === 'calendly.event_scheduled') {
-      fbq('track', 'Schedule', kfVend());
-      gtag('event', 'agenda_reservada', kfVend());
-    }
+  btns.forEach(function (b) {
+    b.href = KF_CALENDARIO_FINAL;
+    b.target = '_blank';
+    b.rel = 'noopener';
+    b.addEventListener('click', function () {
+      fbq('track', 'Contact', Object.assign(kfVend(), { canal: 'calendario' }));
+      fbq('trackCustom', 'cta_agendar', kfVend());
+      gtag('event', 'cta_agendar', kfVend());
+    });
   });
 })();
 

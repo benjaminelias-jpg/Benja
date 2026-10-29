@@ -18,15 +18,16 @@
       <div class="kf-persona reveal"><img src="equipo/jorge.jpg" alt="Jorge"><strong>Jorge</strong><span>@jorge.kunfupay</span></div>
     </div>
     <div class="kf-equipo__grid kf-equipo__grid--uno kf-solo-vendedor">
-      <div class="kf-persona reveal"><img data-v-src="equipo/{id}.jpg" alt=""><strong data-v="{nombre}"></strong><span data-v="@{ig}"></span></div>
+      <div class="kf-persona reveal"><img data-v-src="equipo/{id}.jpg" data-v-alt alt=""><strong data-v="{nombre}"></strong><span data-v="@{ig}"></span></div>
     </div>
   </div>
 </section>
 
 <!-- ============================================================
      3) AGENDA — propio de esta campaña
-     El calendario es el del vendedor de la URL (o el del equipo). Sin
-     barra fija inferior: la página es corta y los dos CTA ya están arriba.
+     Sin calendario incrustado: un botón que abre la página de reservas del
+     vendedor (la misma que el botón secundario del hero). Si el vendedor no
+     tiene calendario, la sección entera se esconde.
      ============================================================ -->
 <section class="section kf-agenda" id="agenda">
   <div class="wrap section-head reveal">
@@ -34,9 +35,7 @@
     <h2 class="section-title" data-v='Elige tu hueco de <span class="highlight" style="--tilt:-1deg">15 minutos</span> con {nombre}'>Elige tu hueco de <span class="highlight" style="--tilt:-1deg">15 minutos</span></h2>
     <p class="section-lead" data-v="{nombre} te llama y te enseña cómo cobrar a tus clientes de cualquier país. Sin compromiso.">Te llama una persona del equipo y te enseña cómo cobrar a tus clientes de cualquier país. Sin compromiso.</p>
   </div>
-  <div class="wrap">
-    <div class="kf-cal reveal" id="kf-cal">
-      <p class="kf-cal__vacio" id="kf-cal-vacio" data-v="El calendario de {nombre} se está configurando. Mientras tanto, escríbele por WhatsApp y te da hora.">El calendario se está configurando. Mientras tanto, escríbenos por WhatsApp y te damos hora.</p>
-    </div>
+  <div class="cta-sec reveal">
+    <a href="#agenda" class="btn btn-primary kf-agendar" id="kf-agendar-btn-2" data-v="Agenda tu llamada con {nombre}">Agenda tu llamada</a>
   </div>
 </section>

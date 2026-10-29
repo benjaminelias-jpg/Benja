@@ -78,3 +78,24 @@ html[data-vendedor] .kf-solo-equipo { display: none !important; }
 
 /* Sin tira de prensa: el hero ya no reserva su alto abajo. */
 .hero { --kf-press-h: 40px; }
+
+/* Vendedor grande a UN LADO del titular (solo con ?vendedor=): en la
+   esquina derecha, a la altura del principio del texto, fundido con el
+   fondo (máscaras hacia la izquierda y hacia abajo, opacidad baja). No va
+   en el centro: taparía el mensaje. */
+.hero > .wrap { position: relative; z-index: 2; }
+.kf-hero-persona {
+  position: absolute; z-index: 1; pointer-events: none;
+  top: 56px; right: max(-30px, calc(50% - 720px));
+  height: 82%; width: auto;
+  opacity: .5;
+  -webkit-mask-image: linear-gradient(to left, #000 50%, transparent 100%), linear-gradient(to bottom, #000 45%, transparent 92%);
+  -webkit-mask-composite: source-in;
+          mask-image: linear-gradient(to left, #000 50%, transparent 100%), linear-gradient(to bottom, #000 45%, transparent 92%);
+          mask-composite: intersect;
+}
+.kf-hero-persona img { display: block; height: 100%; width: auto; max-width: none; filter: saturate(.85) contrast(1.05); }
+@media (max-width: 767px) {
+  .kf-hero-persona { top: 96px; right: -70px; height: 48%; opacity: .3; }
+}
+.kf-oculto { display: none !important; }

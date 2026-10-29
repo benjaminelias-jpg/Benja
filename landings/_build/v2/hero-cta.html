@@ -1,6 +1,6 @@
 <!-- HERO VARIANTE (a) — CTA DIRECTO, sin formulario. Súper-CTA naranja a
          WhatsApp (la acción suprema de la pieza) y, debajo, el secundario que
-         baja al calendario. El filtro lo hacen la topbar y el subtítulo.
+         abre la página de calendario del vendedor (no se incrusta). El filtro lo hacen la topbar y el subtítulo.
          #hero-cta envuelve el bloque, igual que en el patrón.
          PERSONALIZACIÓN: .kf-solo-equipo se ve sin vendedor en la URL;
          .kf-solo-vendedor, con vendedor. Los `data-v` son la plantilla del
@@ -12,10 +12,10 @@
         <span>Taiab, Rafa, Juan y Jorge</span>
       </div>
       <div class="kf-vendedor-hero kf-solo-vendedor">
-        <img data-v-src="equipo/{id}.jpg" alt="">
+        <img data-v-src="equipo/{id}.jpg" data-v-alt alt="">
         <span data-v="<strong>Te atiende {nombre}</strong>@{ig} · equipo de Kunfupay"></span>
       </div>
       <div class="kf-hero-ctas">
         <a href="#agenda" class="btn btn-super-cta" id="kf-wa-btn" rel="noopener" data-v="Escríbele a {nombre} por WhatsApp">Escríbenos por WhatsApp</a>
-        <a href="#agenda" class="btn btn-secundario" id="kf-agendar-btn" data-v="Agenda una llamada con {nombre}">Prefiero agendar una llamada</a>
+        <a href="#agenda" class="btn btn-secundario kf-agendar" id="kf-agendar-btn" data-v="Agenda una llamada con {nombre}">Prefiero agendar una llamada</a>
       </div>

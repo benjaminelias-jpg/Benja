@@ -79,6 +79,12 @@ _i = hero.index('    <!-- Prensa integrada en el hero')
 _j = hero.rindex('</section>')
 hero = hero[:_i] + hero[_j:]
 
+# Vendedor grande ENTRE el fondo y el titular: recorte sin fondo, fundido con
+# el hero (máscara radial y opacidad baja). Solo con vendedor en la URL.
+_svg_end = hero.index('</svg>', hero.index('class="hero-waves"')) + len('</svg>')
+hero = hero[:_svg_end] + """
+  <div class="kf-hero-persona kf-solo-vendedor" aria-hidden="true"><img data-v-src="equipo/{id}-recorte.webp" alt=""></div>""" + hero[_svg_end:]
+
 # ── DEBAJO DEL HERO: equipo + calendario + barra fija + footer ─────────
 footer_start = s.index('<footer class="site-footer">')
 footer_end = s.index('</footer>') + len('</footer>')

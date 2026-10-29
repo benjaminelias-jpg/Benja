@@ -11,15 +11,21 @@
 // viendo al mismo.
 //
 // WhatsApp: formato internacional SIN «+» ni espacios (p. ej. '34600111222').
-// Calendario: URL de Calendly, Google Calendar «programación de citas»,
-// Cal.com…; se carga en un <iframe> en #agenda. Con Calendly, la reserva
-// dispara `Schedule` en el píxel. Un campo vacío usa el del equipo.
+// Calendario: URL de SU página de reservas. No se incrusta: el botón
+// «Agenda una llamada» del hero y el de abajo llevan directamente ahí.
+// Sin calendario, esos dos botones no se muestran. Sin WhatsApp, el botón
+// de WhatsApp lleva al calendario (y si tampoco hay, no hace nada).
+// Un campo vacío usa el del equipo.
 window.KF_EQUIPO = { whatsapp: '', calendario: '' };
 window.KF_VENDEDORES = {
-  taiab: { nombre: 'Taiab', ig: 'taiab.kunfupay', whatsapp: '', calendario: '' },
-  rafa:  { nombre: 'Rafa',  ig: 'rafa.kunfupay',  whatsapp: '', calendario: '' },
-  juan:  { nombre: 'Juan',  ig: 'juan.kunfupay',  whatsapp: '', calendario: '' },
-  jorge: { nombre: 'Jorge', ig: 'jorge.kunfupay', whatsapp: '', calendario: '' }
+  taiab: { nombre: 'Taiab', ig: 'taiab.kunfupay', whatsapp: '',
+           calendario: 'https://calendar.kunfupay.com/u/taiab-mirza/sesion-de-15-minutos-con-taiab' },
+  rafa:  { nombre: 'Rafa',  ig: 'rafa.kunfupay',  whatsapp: '34672564451',
+           calendario: 'https://calendar.kunfupay.com/rafa-ku' },
+  juan:  { nombre: 'Juan',  ig: 'juan.kunfupay',  whatsapp: '',
+           calendario: 'https://calendar.kunfupay.com/u/juan-zamora' },
+  jorge: { nombre: 'Jorge', ig: 'jorge.kunfupay', whatsapp: '34603104078',
+           calendario: 'https://calendar.kunfupay.com/u/jorge' }
 };
 
 // Se decide AQUÍ, en el <head>, antes de pintar: el atributo data-vendedor

@@ -29,7 +29,7 @@ function kfRellena(t) {
   document.querySelectorAll('[data-v]').forEach(function (el) { el.innerHTML = kfRellena(el.getAttribute('data-v')); });
   document.querySelectorAll('[data-v-src]').forEach(function (el) {
     el.src = kfRellena(el.getAttribute('data-v-src'));
-    el.alt = KF_V.nombre;
+    if (el.hasAttribute('data-v-alt')) el.alt = KF_V.nombre;
   });
 })();
 var KF_WHATSAPP_FINAL = String((KF_V && KF_V.whatsapp) || KF_E.whatsapp || '').replace(/\D/g, '');
@@ -42,6 +42,16 @@ var KF_CALENDARIO_FINAL = (KF_V && KF_V.calendario) || KF_E.calendario || '';
 (function () {
   var waBtn = document.getElementById('kf-wa-btn');
   if (!waBtn) return;
+  if (!KF_WHATSAPP_FINAL && KF_CALENDARIO_FINAL) {
+    // Sin WhatsApp pero con calendario: el botón principal pasa a ser el de
+    // agendar (texto y enlace) y el secundario del hero se esconde para no
+    // repetir el mismo botón dos veces.
+    waBtn.href = KF_CALENDARIO_FINAL;
+    waBtn.target = '_blank';
+    waBtn.textContent = KF_V ? 'Agenda una llamada con ' + KF_V.nombre : 'Agenda una llamada';
+    var sec = document.getElementById('kf-agendar-btn');
+    if (sec) sec.classList.add('kf-oculto');
+  }
   if (KF_WHATSAPP_FINAL) {
     var texto = (KF_V ? 'Hola ' + KF_V.nombre + ', vengo de tu web de Kunfupay.' : 'Hola, vengo de la web de Kunfupay.') +
       ' Vendo online a clientes de varios países y quiero ver cómo cobrarles a todos.';
@@ -49,47 +59,38 @@ var KF_CALENDARIO_FINAL = (KF_V && KF_V.calendario) || KF_E.calendario || '';
     waBtn.target = '_blank';
   } else {
     // Sin número configurado: se queda en el ancla #agenda (baja al calendario).
-    console.warn('[Kunfupay] WhatsApp sin configurar para ' + (KF_VEND || 'el equipo') + ': el botón baja al calendario.');
+    console.warn('[Kunfupay] WhatsApp sin configurar para ' + (KF_VEND || 'el equipo') + '.');
   }
   waBtn.addEventListener('click', function () {
-    fbq('track', 'Contact', kfVend());
-    gtag('event', 'contact_whatsapp', kfVend());
+    var canal = KF_WHATSAPP_FINAL ? 'whatsapp' : 'calendario';
+    fbq('track', 'Contact', Object.assign(kfVend(), { canal: canal }));
+    gtag('event', 'contact_' + canal, kfVend());
   });
 })();
 
-// ── CTA SECUNDARIO: agendar (baja a #agenda) ───────────────────────────
+// ── AGENDAR: el botón secundario del hero y el de abajo ────────────────
+// Abren la página de reservas del vendedor (no se incrusta). Cuentan como
+// `Contact` con canal 'calendario', igual que WhatsApp: los dos son el
+// contacto que buscamos y el conjunto optimiza a Contact. Sin calendario,
+// los botones y la sección de abajo se esconden.
 (function () {
-  var btn = document.getElementById('kf-agendar-btn');
-  if (!btn) return;
-  btn.addEventListener('click', function () {
-    fbq('trackCustom', 'cta_agendar', kfVend());
-    gtag('event', 'cta_agendar', kfVend());
-  });
-})();
-
-// Calendario: el del vendedor (o el del equipo) en #kf-cal. Con Calendly, la
-// reserva confirmada llega por postMessage y se mide como `Schedule`
-// (evento estándar de Meta) + `agenda_reservada` en GA4, con `vendedor`.
-(function () {
-  var caja = document.getElementById('kf-cal');
-  if (!caja) return;
+  var btns = document.querySelectorAll('.kf-agendar');
   if (!KF_CALENDARIO_FINAL) {
+    btns.forEach(function (b) { b.style.display = 'none'; });
+    var sec = document.getElementById('agenda');
+    if (sec) sec.style.display = 'none';
     console.warn('[Kunfupay] Calendario sin configurar para ' + (KF_VEND || 'el equipo') + '.');
     return;
   }
-  var iframe = document.createElement('iframe');
-  iframe.src = KF_CALENDARIO_FINAL;
-  iframe.title = KF_V ? 'Agenda una llamada con ' + KF_V.nombre + ', de Kunfupay' : 'Agenda una llamada con el equipo de Kunfupay';
-  iframe.loading = 'lazy';
-  caja.innerHTML = '';
-  caja.appendChild(iframe);
-
-  window.addEventListener('message', function (e) {
-    var d = e.data;
-    if (d && typeof d === 'object' && d.event === 'calendly.event_scheduled') {
-      fbq('track', 'Schedule', kfVend());
-      gtag('event', 'agenda_reservada', kfVend());
-    }
+  btns.forEach(function (b) {
+    b.href = KF_CALENDARIO_FINAL;
+    b.target = '_blank';
+    b.rel = 'noopener';
+    b.addEventListener('click', function () {
+      fbq('track', 'Contact', Object.assign(kfVend(), { canal: 'calendario' }));
+      fbq('trackCustom', 'cta_agendar', kfVend());
+      gtag('event', 'cta_agendar', kfVend());
+    });
   });
 })();
 

@@ -28,15 +28,18 @@
        · CTA principal (súper-CTA naranja): «Escríbenos por WhatsApp».
          Dispara `fbq('track','Contact')` — es el evento al que optimiza el
          conjunto.
-       · CTA secundario: «Prefiero agendar una llamada» → baja al calendario.
-         Reserva hecha en el calendario = `fbq('track','Schedule')`.
+       · CTA secundario: «Agenda una llamada con <vendedor>» → abre SU página
+         de calendario (no se incrusta). Abajo hay otro botón igual. El clic
+         cuenta como `Contact` con `canal: 'calendario'`.
+       · Con vendedor, su recorte sin fondo sale grande detrás del titular,
+         fundido con el fondo (equipo/<id>-recorte.webp).
        · El filtro lo hacen la topbar («Para quien ya vende cursos…») y el
          subtítulo, no un formulario.
 
-     PENDIENTE ANTES DE LANZAR: el WhatsApp y el calendario de cada vendedor
-     y del equipo (KF_VENDEDORES y KF_EQUIPO, config del <head>). Vacíos,
-     la página funciona, pero WhatsApp baja al calendario y el calendario
-     enseña un aviso.
+     PENDIENTE ANTES DE LANZAR: lo que falte de WhatsApp y calendario en
+     KF_VENDEDORES y KF_EQUIPO (config del <head>). Sin WhatsApp, el botón
+     principal abre el calendario; sin calendario, los botones de agendar y
+     la sección de abajo se esconden.
 
      COPY DEL HERO. Oferta para tráfico frío: cobrar desde hoy en todo el
      mundo + Merchant of Record (impuestos de cada venta, sin LLC ni asesor).
