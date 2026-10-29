@@ -20,7 +20,7 @@
 ## LATAM
 
 ### E1 · Dolor (formato tweet de Rubén)
-- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes cursos desde Latinoamérica, estás perdiendo hasta un 27 % de tus ventas al cobrar. Existe una forma de que te pague cualquier alumno, sea de donde sea, y recibir euros o dólares. Descúbrela haciendo clic.»
+- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes cursos desde Latinoamérica y cobras solo con tarjeta, estás perdiendo hasta un 27 % de tu facturación. Tus alumnos de otros países no pueden pagarte. Existe una forma de que te pague cualquiera y recibir euros o dólares. Descúbrela haciendo clic.»
 - **Texto:**
   ```text
   Si vendes cursos desde Latinoamérica, pierdes hasta un 27 % de tus ventas al cobrar.
@@ -95,10 +95,10 @@
 - **Título:** Hasta un 30 % más, sin vender más
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Latinoamérica ya aumentan su conversión hasta un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
-  Creadores en Latinoamérica ya aumentan su conversión hasta un 27 % solo cambiando cómo cobran.
+  Creadores en LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.
 
   No venden más.
   Cobran mejor.
@@ -107,7 +107,7 @@
 
   Haz clic y descubre cómo.
   ```
-- **Título:** Hasta un 27 % más de conversión
+- **Título:** Un 27 % más de conversión
 
 ---
 
@@ -186,10 +186,10 @@
 - **Título:** Hasta un 30 % más desde Miami
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Miami ya aumentan su conversión hasta un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Miami ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
-  Creadores en Miami ya aumentan su conversión hasta un 27 % solo cambiando cómo cobran.
+  Creadores en Miami ya aumentan su conversión un 27 % solo cambiando cómo cobran.
 
   No venden más.
   Cobran mejor.
@@ -198,14 +198,14 @@
 
   Haz clic y descubre cómo.
   ```
-- **Título:** Hasta un 27 % más de conversión
+- **Título:** Un 27 % más de conversión
 
 ---
 
 ## Dubái
 
 ### E1 · Qué es Kunfupay + dolor (formato tweet de Rubén)
-- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes cursos desde Dubái a España y LATAM, tu pasarela de Emiratos te está haciendo perder hasta un 27 % de tus ventas. Existe un solo enlace para que te pague cualquier cliente y recibir euros o dólares. Descúbrelo haciendo clic.»
+- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes cursos desde Dubái y cobras con Stripe, estás perdiendo hasta un 27 % de tu facturación. Tus clientes de España y LATAM no pueden pagarte. Existe una forma de que te pague cualquiera y recibir euros o dólares. Descúbrela haciendo clic.»
 - **Texto:**
   ```text
   Si vendes cursos desde Dubái a España y LATAM, tu pasarela de Emiratos te hace perder hasta un 27 % de tus ventas.
@@ -266,10 +266,10 @@
 - **Título:** Hasta un 30 % más desde Dubái
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Dubái ya aumentan su conversión hasta un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Dubái ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
-  Creadores en Dubái ya aumentan su conversión hasta un 27 % solo cambiando cómo cobran.
+  Creadores en Dubái ya aumentan su conversión un 27 % solo cambiando cómo cobran.
 
   No venden más.
   Cobran mejor.
@@ -278,28 +278,27 @@
 
   Haz clic y descubre cómo.
   ```
-- **Título:** Hasta un 27 % más de conversión
+- **Título:** Un 27 % más de conversión
 
 ---
 
 ## Bali
 
 ### E1 · Dolor (formato tweet de Rubén)
-- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes desde Bali a España y LATAM, estás perdiendo hasta un 27 % de tus ventas mientras duermes. Existe una forma de que cada cliente te pague solo, a cualquier hora, y recibir euros o dólares. Descúbrela haciendo clic.»
+- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes cursos desde Bali y cobras con Stripe o PayPal, estás perdiendo hasta un 27 % de tu facturación. Tus clientes de España y LATAM no pueden pagarte. Existe una forma de que te pague cualquiera y recibir euros o dólares. Descúbrela haciendo clic.»
 - **Texto:**
   ```text
-  Si vendes desde Bali a España y LATAM, pierdes hasta un 27 % de tus ventas mientras duermes.
+  Si vendes cursos desde Bali y cobras con Stripe o PayPal, estás perdiendo hasta un 27 % de tu facturación.
 
-  Te escriben de madrugada para pagarte.
-  No pueden.
-  Cuando te despiertas, ya no quieren.
+  Tus clientes de España y LATAM quieren comprarte.
+  Y no pueden pagarte.
 
-  PERO con tu enlace de Kunfupay cada cliente te paga solo, a cualquier hora.
+  PERO con tu enlace de Kunfupay, sí.
   Y tú recibes euros o dólares.
 
   Haz clic y descubre cómo.
   ```
-- **Título:** Lo que pierdes mientras duermes
+- **Título:** Stripe o PayPal te hacen perder hasta un 27 %
 
 ### E2 · Comparativa
 - **Imagen:** «*Si das sesiones 1:1 desde Bali,* esto pierdes cobrando solo con PayPal.»
@@ -357,10 +356,10 @@
 - **Título:** Hasta un 30 % más, mientras duermes
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Bali ya aumentan su conversión hasta un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Bali ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
-  Creadores en Bali ya aumentan su conversión hasta un 27 % solo cambiando cómo cobran.
+  Creadores en Bali ya aumentan su conversión un 27 % solo cambiando cómo cobran.
 
   No venden más.
   Cobran mejor.
@@ -369,7 +368,7 @@
 
   Haz clic y descubre cómo.
   ```
-- **Título:** Hasta un 27 % más de conversión
+- **Título:** Un 27 % más de conversión
 
 ---
 
