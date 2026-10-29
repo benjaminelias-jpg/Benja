@@ -57,12 +57,17 @@
          conjunto.
        · CTA secundario: «Prefiero agendar una llamada» → baja al calendario.
          Reserva hecha en el calendario = `fbq('track','Schedule')`.
-       · El filtro lo hacen la topbar («Solo si ya vendes online») y el
+       · El filtro lo hacen la topbar («Para quien ya vende cursos…») y el
          subtítulo, no un formulario.
 
      PENDIENTE ANTES DE LANZAR: KF_WHATSAPP y KF_CALENDAR_URL (bloque de
      config del <head>). Con los dos vacíos la página funciona, pero el
      botón de WhatsApp baja al calendario y el calendario enseña un aviso.
+
+     COPY DEL HERO. Oferta para tráfico frío: cobrar desde hoy en todo el
+     mundo + Merchant of Record (impuestos de cada venta, sin LLC ni asesor).
+     ⚠️ El patrón fiscal pide que legal valide cualquier promesa fiscal antes
+     de lanzar: revisar «olvídate del IVA» y «pagamos sus impuestos».
 
      ASSETS. Los comunes salen de /landings-assets/ (logo, prensa). Las caras
      del equipo son propias de esta campaña y van en ./equipo/.
@@ -76,8 +81,8 @@
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/favicon.png">
 
-<title>Cobra a todos tus clientes, estén donde estén | Kunfupay</title>
-<meta name="description" content="Para quien ya vende cursos o mentorías a varios países: una persona del equipo de Kunfupay te enseña en 15 minutos cómo cobrar a todos tus clientes.">
+<title>Cobra a clientes de todo el mundo, sin IVA, LLC ni asesor | Kunfupay</title>
+<meta name="description" content="Cobra desde hoy a clientes de todo el mundo: cada uno paga en su moneda y tú recibes euros o dólares. Kunfupay es Merchant of Record: te representa en cada venta y paga sus impuestos.">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1604,7 +1609,7 @@ section.trust { display: none; }
 /* CTA del hero: caras del equipo + WhatsApp (súper-CTA) + agendar */
 .kf-equipo-mini { display: flex; align-items: center; justify-content: center; }
 .kf-equipo-mini img {
-  width: 40px; height: 40px; border-radius: 50%; object-fit: cover;
+  width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
   border: 2px solid #140f2e; margin-left: -10px;
   box-shadow: 0 0 0 1.5px rgba(185,166,255,.55);
 }
@@ -1629,7 +1634,7 @@ section.trust { display: none; }
   border-radius: var(--radius-xl); padding: 22px 12px; box-shadow: var(--kf-shadow-sm);
 }
 .kf-persona img {
-  width: 96px; height: 96px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;
+  width: 132px; height: 132px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;
   padding: 3px; background: linear-gradient(135deg, #f97316, #ec4899 45%, var(--kf-purple));
 }
 .kf-persona strong { font-family: var(--morfeo-font); font-size: 17px; color: var(--kf-text-primary); }
@@ -1698,7 +1703,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
        escasez de "últimas plazas" del patrón sería inventada aquí y el Brain
        prohíbe fabricar urgencia falsa. Este mensaje además descarta al que
        todavía no cobra de fuera, que es quien no encaja en este ángulo. -->
-  <p><strong>Solo si ya vendes online</strong> — a clientes de varios países.</p>
+  <p><strong>Para quien ya vende cursos, mentorías o servicios online</strong></p>
 </div>
 
 <!-- ============================================================
@@ -1744,8 +1749,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <div class="wrap">
     <img class="hero-logo" src="/landings-assets/logo.svg" alt="Kunfupay">
-    <h1>Cobra a todos tus clientes. <span class="highlight" style="--tilt:-1.4deg">Estén donde estén</span>.</h1>
-    <p class="hero-subtitle">Si vendes cursos o mentorías a varios países, en 15 minutos te enseñamos cómo cobrarles a todos. Te responde una persona, no un bot.</p>
+    <h1>Cobra desde hoy en todo el mundo. Y <span class="highlight" style="--tilt:-1.4deg">olvídate del IVA</span>, la LLC y el asesor.</h1>
+    <p class="hero-subtitle">Cada cliente paga en su moneda local, sin fricciones, y tú recibes euros, dólares o la moneda que prefieras. Como somos Merchant of Record, te representamos en cada venta y pagamos sus impuestos.</p>
 
     <!-- HERO VARIANTE (a) — CTA DIRECTO, sin formulario. Súper-CTA naranja a
          WhatsApp (la acción suprema de la pieza) y, debajo, el secundario que
@@ -1762,7 +1767,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <a href="#agenda" class="btn btn-secundario" id="kf-agendar-btn">Prefiero agendar una llamada</a>
       </div>
 
-      <p class="hero-microtrust">Llamada de 15 minutos · Sin compromiso · Te responde una persona</p>
+      <p class="hero-microtrust">Sin cuota mensual · Sin permanencia · Te responde una persona</p>
     </div>
 
       </div>
