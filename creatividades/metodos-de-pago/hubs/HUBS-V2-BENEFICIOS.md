@@ -95,7 +95,7 @@
 - **Título:** Hasta un 30 % más, sin vender más
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con un móvil con el pago confirmado, billetes y una flecha verde hacia arriba (imagen generada), etiqueta roja «Actualidad» y titular «Creadores en LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo: foto de Rubén (LATAM y Bali) o Stripe y PayPal tachados (Miami y Dubái), etiqueta roja «Actualidad» y titular «Creadores en LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
   Creadores en LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.
@@ -186,7 +186,7 @@
 - **Título:** Hasta un 30 % más desde Miami
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con un móvil con el pago confirmado, billetes y una flecha verde hacia arriba (imagen generada), etiqueta roja «Actualidad» y titular «Creadores en Miami ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo: foto de Rubén (LATAM y Bali) o Stripe y PayPal tachados (Miami y Dubái), etiqueta roja «Actualidad» y titular «Creadores en Miami ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
   Creadores en Miami ya aumentan su conversión un 27 % solo cambiando cómo cobran.
@@ -266,7 +266,7 @@
 - **Título:** Hasta un 30 % más desde Dubái
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con un móvil con el pago confirmado, billetes y una flecha verde hacia arriba (imagen generada), etiqueta roja «Actualidad» y titular «Creadores en Dubái ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo: foto de Rubén (LATAM y Bali) o Stripe y PayPal tachados (Miami y Dubái), etiqueta roja «Actualidad» y titular «Creadores en Dubái ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
   Creadores en Dubái ya aumentan su conversión un 27 % solo cambiando cómo cobran.
@@ -356,7 +356,7 @@
 - **Título:** Hasta un 30 % más, mientras duermes
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con un móvil con el pago confirmado, billetes y una flecha verde hacia arriba (imagen generada), etiqueta roja «Actualidad» y titular «Creadores en Bali ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo: foto de Rubén (LATAM y Bali) o Stripe y PayPal tachados (Miami y Dubái), etiqueta roja «Actualidad» y titular «Creadores en Bali ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
   Creadores en Bali ya aumentan su conversión un 27 % solo cambiando cómo cobran.
