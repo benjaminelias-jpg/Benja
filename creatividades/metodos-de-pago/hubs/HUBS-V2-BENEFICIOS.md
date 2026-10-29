@@ -63,10 +63,10 @@
 - **Título:** Vendes lo mismo, cobras a más alumnos
 
 ### E3 · Así te paga cada uno
-- **Imagen:** «*Si vendes cursos desde Latinoamérica,* cobra a alumnos de cualquier país con un solo enlace.» · notas «Tu alumno de Colombia paga con su moneda local» · «Tu alumno de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
+- **Imagen:** «*Si vendes cursos desde LATAM,* estás perdiendo ventas. Ya no cobres a España y LATAM solo con tarjeta.» · notas «Tu alumno de Colombia paga con su moneda local» · «Tu alumno de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
 - **Texto:**
   ```text
-  Alumnos en otros países: así te paga cada uno con tu enlace.
+  Si vendes cursos desde LATAM, estás perdiendo ventas. Ya no cobres a España y LATAM solo con tarjeta.
 
   Mandas un solo enlace de Kunfupay.
   Cada alumno lo abre y paga con lo que usa en su país.
@@ -95,7 +95,7 @@
 - **Título:** Hasta un 30 % más, sin vender más
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con el logo «ku» de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
   Creadores en LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.
@@ -155,10 +155,10 @@
 - **Título:** Lo que te cuesta cobrar solo con Stripe
 
 ### E3 · Así te paga cada cliente
-- **Imagen:** «*Si vendes cursos desde Miami,* véndele a toda LATAM y cobra en dólares.» · notas «Tu alumno de Colombia paga con su moneda local» · «Tu cliente de México tiene sus métodos de pago» · «Y tú recibes dólares.»
+- **Imagen:** «*Si vendes cursos desde Miami,* estás perdiendo ventas. Ya no cobres a LATAM con Stripe.» · notas «Tu alumno de Colombia paga con su moneda local» · «Tu cliente de México tiene sus métodos de pago» · «Y tú recibes dólares.»
 - **Texto:**
   ```text
-  Si vendes cursos desde Miami, así te paga cada cliente de LATAM.
+  Si vendes cursos desde Miami, estás perdiendo ventas. Ya no cobres a LATAM con Stripe.
 
   Le mandas tu enlace de Kunfupay.
   Lo abre y paga con lo que usa en su país.
@@ -186,7 +186,7 @@
 - **Título:** Hasta un 30 % más desde Miami
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Miami ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con el logo «ku» de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Miami ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
   Creadores en Miami ya aumentan su conversión un 27 % solo cambiando cómo cobran.
@@ -236,10 +236,10 @@
 - **Título:** Lo que no aparece en tu Stripe
 
 ### E3 · Esto ve tu cliente (el que te gustó, con «tú recibes»)
-- **Imagen:** «*Si vendes cursos desde Dubái,* véndele a España y LATAM sin perder ni una venta.» · notas «Tu alumno de México paga con su moneda local» · «Tu cliente de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
+- **Imagen:** «*Si vendes cursos desde Dubái,* estás perdiendo ventas. Ya no cobres a España y LATAM con Stripe.» · notas «Tu alumno de México paga con su moneda local» · «Tu cliente de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
 - **Texto:**
   ```text
-  Si vendes cursos desde Dubái, esto ve tu cliente al pagarte.
+  Si vendes cursos desde Dubái, estás perdiendo ventas. Ya no cobres a España y LATAM con Stripe.
 
   Mandas un solo enlace de Kunfupay.
   Cada cliente paga con lo que usa en su país.
@@ -266,7 +266,7 @@
 - **Título:** Hasta un 30 % más desde Dubái
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Dubái ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con el logo «ku» de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Dubái ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
   Creadores en Dubái ya aumentan su conversión un 27 % solo cambiando cómo cobran.
@@ -327,10 +327,10 @@
 - **Título:** Despiértate con ventas cobradas
 
 ### E3 · Así te paga cada cliente
-- **Imagen:** «*Desde Bali,* cobra a España y LATAM aunque estés durmiendo.» · notas «Tu alumno de México paga con su moneda local» · «Tu cliente de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
+- **Imagen:** «*Si vendes cursos desde Bali,* estás perdiendo ventas. Ya no cobres a España y LATAM con Stripe.» · notas «Tu alumno de México paga con su moneda local» · «Tu cliente de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
 - **Texto:**
   ```text
-  Desde Bali, un enlace: así te paga cada cliente.
+  Si vendes cursos desde Bali, estás perdiendo ventas. Ya no cobres a España y LATAM con Stripe.
 
   Lo abre y paga con lo que usa en su país.
   Sin escribirte.
@@ -356,7 +356,7 @@
 - **Título:** Hasta un 30 % más, mientras duermes
 
 ### E5 · Noticia
-- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Bali ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con el logo «ku» de Kunfupay, etiqueta roja «Actualidad» y titular «Creadores en Bali ya aumentan su conversión un 27 % solo cambiando cómo cobran.»
 - **Texto:**
   ```text
   Creadores en Bali ya aumentan su conversión un 27 % solo cambiando cómo cobran.
