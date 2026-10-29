@@ -1,0 +1,48 @@
+<!-- ═══════════════════════════════════════════════════════════════════
+     CAMPAÑA REMARKETING · VENDEDORES · v2 (una landing, vendedor por URL)
+     =====================================================================
+     UNA sola landing para todo el equipo. El anuncio de cada vendedor
+     lleva `?vendedor=<id>` (o su id en utm_content) y la página enseña
+     SOLO a esa persona: foto, nombre, WhatsApp y calendario. Sin id, sale
+     la versión de equipo. Ver la config del <head> (KF_VENDEDORES).
+     La v1 (equipo) y /landings/vendedor-<id>/v1 siguen existiendo.
+
+     Derivada de /landings/fiscal/v1. Lo de arriba del pliegue es el mismo
+     del patrón: topbar, hero oscuro con ondas, logo, titular con subrayado,
+     subtítulo y prensa. Cambian:
+       · el copy (topbar, titular, subtítulo, microtrust),
+       · el quiz: SIN formulario, solo los dos CTA (variante (a) del patrón),
+       · todo lo de debajo del hero: el equipo de ventas y el calendario.
+     Sin barra fija inferior.
+
+     PARA QUIÉN. Anuncio «RMK 3 / AUDIENCIA VENDEDORES» de la campaña
+     «🔴 REMARKETING / KUNFUPAY», que solo llega a
+     «Audiencia_puerta_fria_instagram»: gente que ha visitado los perfiles
+     de Instagram del equipo de ventas. El creativo es un tuit de Kunfupay
+     con las caras de Taiab, Rafa, Juan y Jorge, «Escríbenos y en 15 minutos
+     te mostramos cómo cobrarles a todos» y «Te responde una persona, no un
+     bot». La landing repite esa promesa y esas caras (message match).
+
+     CONVERSIÓN Y MEDICIÓN. 100 % web: el anuncio NO abre WhatsApp, abre esta
+     página, y el píxel ve cada paso.
+       · CTA principal (súper-CTA naranja): «Escríbenos por WhatsApp».
+         Dispara `fbq('track','Contact')` — es el evento al que optimiza el
+         conjunto.
+       · CTA secundario: «Prefiero agendar una llamada» → baja al calendario.
+         Reserva hecha en el calendario = `fbq('track','Schedule')`.
+       · El filtro lo hacen la topbar («Para quien ya vende cursos…») y el
+         subtítulo, no un formulario.
+
+     PENDIENTE ANTES DE LANZAR: el WhatsApp y el calendario de cada vendedor
+     y del equipo (KF_VENDEDORES y KF_EQUIPO, config del <head>). Vacíos,
+     la página funciona, pero WhatsApp baja al calendario y el calendario
+     enseña un aviso.
+
+     COPY DEL HERO. Oferta para tráfico frío: cobrar desde hoy en todo el
+     mundo + Merchant of Record (impuestos de cada venta, sin LLC ni asesor).
+     ⚠️ El patrón fiscal pide que legal valide cualquier promesa fiscal antes
+     de lanzar: revisar «olvídate del IVA» y «pagamos sus impuestos».
+
+     ASSETS. Los comunes salen de /landings-assets/ (logo, prensa). Las caras
+     del equipo son propias de esta campaña y van en ./equipo/.
+     ═══════════════════════════════════════════════════════════════════ -->
