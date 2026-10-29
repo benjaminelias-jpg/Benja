@@ -2,7 +2,7 @@
 
 Versión editable: https://claude.ai/artifact/GGadYf5TvBy3kevmcTfs3m
 
-Cuatro guiones de 30 a 50 s. Todos abren con Stripe. Todos prometen lo mismo: la factura y los impuestos de cada venta son cosa de Kunfupay. Cada vendedor graba en primera persona y cierra con el botón de su landing: Jorge y Rafa con WhatsApp, Juan y Taiab con agendar.
+Cuatro guiones de 30 a 50 s. Todos abren con Stripe. Todos prometen lo mismo: la factura y los impuestos de cada venta son cosa de Kunfupay. Cada vendedor graba en primera persona y cierra con el botón de su landing: los cuatro con WhatsApp (el calendario queda como segundo botón).
 
 - No se dice «ahorrarte impuestos»: los impuestos no desaparecen, cambian de quién son.
 - No se dice «aumentar tu facturación»: Meta no admite promesas de ingresos en servicios financieros.
@@ -59,7 +59,7 @@ Tu renta, eso sí, sigue siendo tuya.
 Soy Rafa. Escríbeme por WhatsApp aquí abajo.
 Te lo enseño con tus números en 15 minutos.
 
-## Juan · a cámara, «sí y no» · agendar
+## Juan · a cámara, «sí y no» · WhatsApp
 
 ¿Kunfupay es otro Stripe para cobrar tus cursos? Sí y no.
 
@@ -81,10 +81,10 @@ Y si lo que vendes es caro, lo paga a plazos con Afterpay.
 
 Tu renta, eso sí, sigue siendo tuya.
 
-Soy Juan. Agenda 15 minutos conmigo aquí abajo.
-Te digo si tu negocio encaja.
+Soy Juan. Escríbeme por WhatsApp aquí abajo.
+En 15 minutos te digo si tu negocio encaja.
 
-## Taiab · voz en off sobre su foto · agendar
+## Taiab · voz en off sobre su foto · WhatsApp
 
 Si vendes cursos y cobras con Stripe, esto te interesa.
 
@@ -103,7 +103,7 @@ Y si es caro, a plazos con Afterpay.
 
 Tu renta, eso sí, sigue siendo tuya.
 
-Soy Taiab. Agenda 15 minutos conmigo aquí abajo.
+Soy Taiab. Escríbeme por WhatsApp aquí abajo.
 
 ## Antes de grabar
 
@@ -112,5 +112,4 @@ Soy Taiab. Agenda 15 minutos conmigo aquí abajo.
 - Quien financia es Afterpay al cliente, no Kunfupay: por eso se dice «tu cliente lo paga a plazos».
 - Stripe ya tiene Merchant of Record propio (Managed Payments) en algunos países. El ataque vale para el Stripe de siempre.
 - «La única pasarela de España» es un claim del equipo. Netfield Media S.L. también se anuncia como Merchant of Record.
-- Si Taiab y Juan pasan su WhatsApp, cierran con «Escríbeme por WhatsApp».
 - Revisión legal de «los impuestos de esa venta son cosa nuestra».

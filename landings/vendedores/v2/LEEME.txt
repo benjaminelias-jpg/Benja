@@ -1,27 +1,31 @@
 LANDING VENDEDORES v2 · una sola landing, el vendedor sale de la URL
 
 Qué hay:
-  index.html   la landing
-  equipo/      fotos de Taiab, Rafa, Juan y Jorge
+  index.html   la landing (logo y favicon van dentro: se ve aunque se abra suelta)
+  equipo/      fotos de Taiab, Rafa, Juan y Jorge (con y sin fondo)
 
 Dónde va: en la web, junto a las demás landings, como /landings/vendedores/v2/
-(el logo va dentro del index.html: se ve aunque se abra suelta).
+Hay que subir la carpeta entera (index.html + equipo/).
 
-URL de cada anuncio:
+URL de cada anuncio (ya puestas en Meta, con sus UTM):
   .../landings/vendedores/v2/?vendedor=taiab
   .../landings/vendedores/v2/?vendedor=rafa
   .../landings/vendedores/v2/?vendedor=juan
   .../landings/vendedores/v2/?vendedor=jorge
-  Sin ?vendedor= sale la versión de equipo (las 4 caras).
-  También funciona con el nombre dentro de utm_content (p. ej. utm_content=rmk3_jorge).
+  Sin ?vendedor= sale la versión de equipo (las 4 caras). Como el equipo no
+  tiene WhatsApp propio, cada visita se reparte a un vendedor al azar.
 
-Antes de publicar, en index.html (busca KF_VENDEDORES, en el <head>):
-  - whatsapp: número de cada vendedor, con prefijo y sin «+» ni espacios (34600111222)
-  - calendario: link de su calendario (Calendly, Google Calendar, Cal.com...)
-  - KF_EQUIPO: WhatsApp y calendario de la versión de equipo
-  Vacíos, la página funciona, pero el botón de WhatsApp baja al calendario.
+Ya configurado (busca KF_VENDEDORES en el <head> de index.html):
+  Taiab  WhatsApp 34613609973 · calendar.kunfupay.com/u/taiab-mirza/sesion-de-15-minutos-con-taiab
+  Rafa   WhatsApp 34672564451 · calendar.kunfupay.com/rafa-ku
+  Juan   WhatsApp 34661941829 · calendar.kunfupay.com/u/juan-zamora
+  Jorge  WhatsApp 34603104078 · calendar.kunfupay.com/u/jorge
+  KF_EQUIPO vacío: si algún día hay un WhatsApp o calendario de equipo, se pone ahí.
 
-Medición: el clic en WhatsApp dispara «Contact» y la reserva en Calendly
-dispara «Schedule». Los dos llevan el parámetro vendedor.
+Botones: el principal abre WhatsApp con un mensaje ya escrito; el secundario y
+el de abajo abren su página de calendario en otra pestaña.
+
+Medición: los dos clics disparan «Contact» en el píxel con el parámetro
+vendedor (y canal: whatsapp o calendario).
 
 Legal: revisar «olvídate del IVA» y «pagamos sus impuestos» antes de lanzar.

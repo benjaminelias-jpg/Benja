@@ -20,7 +20,25 @@
 var KF_VEND = window.KF_VENDEDOR || '';
 var KF_V = KF_VEND ? window.KF_VENDEDORES[KF_VEND] : null;
 var KF_E = window.KF_EQUIPO || {};
-function kfVend() { return { vendedor: KF_VEND || 'equipo' }; }
+// Versión de equipo sin WhatsApp ni calendario de equipo: la visita se
+// reparte a un vendedor al azar (se recuerda en la sesión) para que los
+// botones lleven a alguien. La página sigue enseñando las cuatro caras.
+var KF_TURNO = '';
+(function () {
+  if (KF_V || KF_E.whatsapp || KF_E.calendario) return;
+  var V = window.KF_VENDEDORES || {}, ids = Object.keys(V), id = '';
+  if (!ids.length) return;
+  try { id = sessionStorage.getItem('kf_turno') || ''; } catch (e) {}
+  if (!V[id]) id = ids[Math.floor(Math.random() * ids.length)];
+  try { sessionStorage.setItem('kf_turno', id); } catch (e) {}
+  KF_TURNO = id;
+})();
+var KF_T = KF_TURNO ? window.KF_VENDEDORES[KF_TURNO] : null;
+function kfVend() {
+  var d = { vendedor: KF_VEND || 'equipo' };
+  if (KF_TURNO) d.turno = KF_TURNO;
+  return d;
+}
 function kfRellena(t) {
   return t.replace(/\{id\}/g, KF_VEND).replace(/\{nombre\}/g, KF_V.nombre).replace(/\{ig\}/g, KF_V.ig);
 }
@@ -32,8 +50,8 @@ function kfRellena(t) {
     if (el.hasAttribute('data-v-alt')) el.alt = KF_V.nombre;
   });
 })();
-var KF_WHATSAPP_FINAL = String((KF_V && KF_V.whatsapp) || KF_E.whatsapp || '').replace(/\D/g, '');
-var KF_CALENDARIO_FINAL = (KF_V && KF_V.calendario) || KF_E.calendario || '';
+var KF_WHATSAPP_FINAL = String((KF_V && KF_V.whatsapp) || KF_E.whatsapp || (KF_T && KF_T.whatsapp) || '').replace(/\D/g, '');
+var KF_CALENDARIO_FINAL = (KF_V && KF_V.calendario) || KF_E.calendario || (KF_T && KF_T.calendario) || '';
 
 // ── CTA PRINCIPAL: WhatsApp ────────────────────────────────────────────
 // El enlace se escribe en el href (no con window.open): el navegador de

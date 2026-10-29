@@ -15,14 +15,15 @@
 // «Agenda una llamada» del hero y el de abajo llevan directamente ahí.
 // Sin calendario, esos dos botones no se muestran. Sin WhatsApp, el botón
 // de WhatsApp lleva al calendario (y si tampoco hay, no hace nada).
-// Un campo vacío usa el del equipo.
+// Un campo vacío usa el del equipo. Si el equipo tampoco tiene (versión
+// sin vendedor), cada visita se reparte a un vendedor al azar.
 window.KF_EQUIPO = { whatsapp: '', calendario: '' };
 window.KF_VENDEDORES = {
-  taiab: { nombre: 'Taiab', ig: 'taiab.kunfupay', whatsapp: '',
+  taiab: { nombre: 'Taiab', ig: 'taiab.kunfupay', whatsapp: '34613609973',
            calendario: 'https://calendar.kunfupay.com/u/taiab-mirza/sesion-de-15-minutos-con-taiab' },
   rafa:  { nombre: 'Rafa',  ig: 'rafa.kunfupay',  whatsapp: '34672564451',
            calendario: 'https://calendar.kunfupay.com/rafa-ku' },
-  juan:  { nombre: 'Juan',  ig: 'juan.kunfupay',  whatsapp: '',
+  juan:  { nombre: 'Juan',  ig: 'juan.kunfupay',  whatsapp: '34661941829',
            calendario: 'https://calendar.kunfupay.com/u/juan-zamora' },
   jorge: { nombre: 'Jorge', ig: 'jorge.kunfupay', whatsapp: '34603104078',
            calendario: 'https://calendar.kunfupay.com/u/jorge' }
