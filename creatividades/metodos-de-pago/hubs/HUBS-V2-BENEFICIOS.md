@@ -13,14 +13,14 @@
   - «Entra y mira si tu negocio encaja.»
   - «Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.»
 
-**Archivos:** `estaticos/HUB-{HUB}-E{1-4}_1080x1350.png` (feed) y `_1080x1920.png` (Stories). Se sobrescribieron los anteriores.
+**Archivos:** `estaticos/HUB-{HUB}-E{1-5}_1080x1350.png` (feed) y `_1080x1920.png` (Stories). E1 va en formato tweet de Rubén y E5 es la noticia con la foto de la ciudad.
 
 ---
 
 ## LATAM
 
-### E1 · Dolor
-- **Imagen:** «*Si vendes cursos desde Latinoamérica,* pierdes hasta un 27 % de tus ventas al cobrar.» · «Kunfupay: un enlace para que te pague cualquier alumno, sea de donde sea.» · «Descubre cómo ↓»
+### E1 · Dolor (formato tweet de Rubén)
+- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes cursos desde Latinoamérica, estás perdiendo hasta un 27 % de tus ventas al cobrar. Existe una forma de que te pague cualquier alumno, sea de donde sea, y recibir euros o dólares. Descúbrela haciendo clic.»
 - **Texto:**
   ```text
   Si vendes cursos desde Latinoamérica, pierdes hasta un 27 % de tus ventas al cobrar.
@@ -63,7 +63,7 @@
 - **Título:** Vendes lo mismo, cobras a más alumnos
 
 ### E3 · Así te paga cada uno
-- **Imagen:** «*Alumnos en otros países:* así te paga cada uno con tu enlace.» · notas «Tu alumno de Colombia» · «Tu alumno de España» · «Y tú recibes euros o dólares.» · «Pantallas reales.»
+- **Imagen:** «*Si vendes cursos desde Latinoamérica,* cobra a alumnos de cualquier país con un solo enlace.» · notas «Tu alumno de Colombia paga con su moneda local» · «Tu alumno de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
 - **Texto:**
   ```text
   Alumnos en otros países: así te paga cada uno con tu enlace.
@@ -72,7 +72,6 @@
   Cada alumno lo abre y paga con lo que usa en su país.
   Y tú recibes euros o dólares.
 
-  Son pantallas reales.
 
   Haz clic y descubre cómo.
   ```
@@ -95,12 +94,26 @@
   ```
 - **Título:** Hasta un 30 % más, sin vender más
 
+### E5 · Noticia
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Ya puedes cobrar desde Latinoamérica a alumnos de todo el mundo sin Stripe ni PayPal.»
+- **Texto:**
+  ```text
+  Ya puedes cobrar desde Latinoamérica a alumnos de todo el mundo, sin Stripe ni PayPal.
+  
+  Un solo enlace.
+  Cada alumno paga como paga en su país.
+  Y tú recibes euros o dólares.
+  
+  Haz clic y descubre cómo.
+  ```
+- **Título:** Ya puedes cobrar sin Stripe ni PayPal
+
 ---
 
 ## Miami
 
-### E1 · Dolor
-- **Imagen:** «*Si vendes cursos desde Miami y cobras con Stripe,* pierdes hasta un 27 % de tu facturación.» · «Tus clientes de LATAM no pueden pagarte. Con Kunfupay, sí.» · «Descubre cómo ↓»
+### E1 · Dolor (formato tweet de Rubén)
+- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes cursos desde Miami y cobras con Stripe, estás perdiendo hasta un 27 % de tu facturación. Tus clientes de LATAM no pueden pagarte. Existe una forma de que te pague cualquiera y recibir dólares. Descúbrela haciendo clic.»
 - **Texto:**
   ```text
   Si vendes cursos desde Miami y cobras con Stripe, pierdes hasta un 27 % de tu facturación.
@@ -141,7 +154,7 @@
 - **Título:** Lo que te cuesta cobrar solo con Stripe
 
 ### E3 · Así te paga cada cliente
-- **Imagen:** «*Si vendes cursos desde Miami,* así te paga cada cliente de LATAM.» · notas «Tu cliente de Colombia» · «Tu cliente de México» · «Y tú recibes dólares.» · «Pantallas reales.»
+- **Imagen:** «*Si vendes cursos desde Miami,* véndele a toda LATAM y cobra en dólares.» · notas «Tu alumno de Colombia paga con su moneda local» · «Tu cliente de México tiene sus métodos de pago» · «Y tú recibes dólares.»
 - **Texto:**
   ```text
   Si vendes cursos desde Miami, así te paga cada cliente de LATAM.
@@ -150,7 +163,6 @@
   Lo abre y paga con lo que usa en su país.
   Y tú recibes dólares.
 
-  Son pantallas reales.
 
   Haz clic y descubre cómo.
   ```
@@ -172,12 +184,26 @@
   ```
 - **Título:** Hasta un 30 % más desde Miami
 
+### E5 · Noticia
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Ya puedes cobrar a toda LATAM desde Miami sin Stripe ni PayPal.»
+- **Texto:**
+  ```text
+  Ya puedes cobrar a toda LATAM desde Miami, sin Stripe ni PayPal.
+  
+  Un solo enlace.
+  Cada cliente paga como paga en su país.
+  Y tú recibes dólares.
+  
+  Haz clic y descubre cómo.
+  ```
+- **Título:** Ya puedes cobrar sin Stripe ni PayPal
+
 ---
 
 ## Dubái
 
-### E1 · Qué es Kunfupay + dolor (formato texto)
-- **Imagen:** «*Si vendes cursos desde Dubái a España y LATAM,* tu pasarela de Emiratos te hace perder hasta un 27 % de tus ventas.» · «Kunfupay: un solo enlace para que te pague cualquier cliente. Tú recibes euros o dólares.» · «Descubre cómo ↓»
+### E1 · Qué es Kunfupay + dolor (formato tweet de Rubén)
+- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes cursos desde Dubái a España y LATAM, tu pasarela de Emiratos te está haciendo perder hasta un 27 % de tus ventas. Existe un solo enlace para que te pague cualquier cliente y recibir euros o dólares. Descúbrelo haciendo clic.»
 - **Texto:**
   ```text
   Si vendes cursos desde Dubái a España y LATAM, tu pasarela de Emiratos te hace perder hasta un 27 % de tus ventas.
@@ -208,7 +234,7 @@
 - **Título:** Lo que no aparece en tu Stripe
 
 ### E3 · Esto ve tu cliente (el que te gustó, con «tú recibes»)
-- **Imagen:** «*Si vendes cursos desde Dubái,* esto ve tu cliente al pagarte.» · notas «Tu cliente de México» · «Tu cliente de España» · «Y tú recibes euros o dólares.» · «Pantallas reales.»
+- **Imagen:** «*Si vendes cursos desde Dubái,* véndele a España y LATAM sin perder ni una venta.» · notas «Tu alumno de México paga con su moneda local» · «Tu cliente de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
 - **Texto:**
   ```text
   Si vendes cursos desde Dubái, esto ve tu cliente al pagarte.
@@ -217,7 +243,6 @@
   Cada cliente paga con lo que usa en su país.
   Y tú recibes euros o dólares.
 
-  Son pantallas reales.
 
   Haz clic y descubre cómo.
   ```
@@ -238,12 +263,26 @@
   ```
 - **Título:** Hasta un 30 % más desde Dubái
 
+### E5 · Noticia
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Ya puedes cobrar a España y LATAM desde Dubái sin Stripe ni PayPal.»
+- **Texto:**
+  ```text
+  Ya puedes cobrar a España y LATAM desde Dubái, sin Stripe ni PayPal.
+  
+  Un solo enlace.
+  Cada cliente paga como paga en su país.
+  Y tú recibes euros o dólares.
+  
+  Haz clic y descubre cómo.
+  ```
+- **Título:** Ya puedes cobrar sin Stripe ni PayPal
+
 ---
 
 ## Bali
 
-### E1 · Dolor
-- **Imagen:** «*Si vendes desde Bali a España y LATAM,* pierdes hasta un 27 % de tus ventas mientras duermes.» · «Kunfupay: un enlace para que cada cliente te pague solo, a cualquier hora.» · «Descubre cómo ↓»
+### E1 · Dolor (formato tweet de Rubén)
+- **Imagen (tweet de Rubén Romero, @rubenromero_kunfupay):** «Si vendes desde Bali a España y LATAM, estás perdiendo hasta un 27 % de tus ventas mientras duermes. Existe una forma de que cada cliente te pague solo, a cualquier hora, y recibir euros o dólares. Descúbrela haciendo clic.»
 - **Texto:**
   ```text
   Si vendes desde Bali a España y LATAM, pierdes hasta un 27 % de tus ventas mientras duermes.
@@ -286,7 +325,7 @@
 - **Título:** Despiértate con ventas cobradas
 
 ### E3 · Así te paga cada cliente
-- **Imagen:** «*Desde Bali, un enlace:* así te paga cada cliente.» · notas «Tu cliente de México» · «Tu cliente de España» · «Y tú recibes euros o dólares.» · «Pantallas reales.»
+- **Imagen:** «*Desde Bali,* cobra a España y LATAM aunque estés durmiendo.» · notas «Tu alumno de México paga con su moneda local» · «Tu cliente de España tiene sus métodos de pago» · «Y tú recibes euros o dólares.»
 - **Texto:**
   ```text
   Desde Bali, un enlace: así te paga cada cliente.
@@ -295,7 +334,6 @@
   Sin escribirte.
   Y tú recibes euros o dólares.
 
-  Son pantallas reales.
 
   Haz clic y descubre cómo.
   ```
@@ -314,6 +352,20 @@
   Haz clic y descubre cómo.
   ```
 - **Título:** Hasta un 30 % más, mientras duermes
+
+### E5 · Noticia
+- **Imagen:** foto de la ciudad en alta resolución, círculo con aro rojo con la tarjeta de Kunfupay, etiqueta roja «Actualidad» y titular «Ya puedes cobrar a España y LATAM desde Bali sin Stripe ni PayPal.»
+- **Texto:**
+  ```text
+  Ya puedes cobrar a España y LATAM desde Bali, sin Stripe ni PayPal.
+  
+  Un solo enlace, a cualquier hora.
+  Cada cliente paga como paga en su país.
+  Y tú recibes euros o dólares.
+  
+  Haz clic y descubre cómo.
+  ```
+- **Título:** Ya puedes cobrar sin Stripe ni PayPal
 
 ---
 
