@@ -68,6 +68,17 @@ hero = pre + open(sys.argv[3] + '/hero-cta.html', encoding='utf-8').read().rstri
 hero = swap(hero, '<p class="hero-microtrust">Sin cuota mensual · Sin permanencia · Alta en minutos</p>',
             '<p class="hero-microtrust">Sin&nbsp;cuota&nbsp;mensual&nbsp;· Sin&nbsp;permanencia&nbsp;· <span data-v="Te&amp;nbsp;responde&amp;nbsp;{nombre}">Te&nbsp;responde&nbsp;una&nbsp;persona</span></p>')
 
+
+# Autónoma: el logo y el favicon van DENTRO del archivo (data URI), para que
+# se vean aunque la página se abra suelta o fuera de kunfupay.com. Sin la
+# tira de prensa del hero (decisión 2026-10-29).
+import base64
+_logo = 'data:image/svg+xml;base64,' + base64.b64encode(open(sys.argv[3] + '/../logo-dl/logo.svg', 'rb').read()).decode()
+_fav = 'data:image/png;base64,' + base64.b64encode(open(sys.argv[3] + '/../logo-dl/favicon.png', 'rb').read()).decode()
+_i = hero.index('    <!-- Prensa integrada en el hero')
+_j = hero.rindex('</section>')
+hero = hero[:_i] + hero[_j:]
+
 # ── DEBAJO DEL HERO: equipo + calendario + barra fija + footer ─────────
 footer_start = s.index('<footer class="site-footer">')
 footer_end = s.index('</footer>') + len('</footer>')
@@ -76,6 +87,8 @@ footer = s[footer_start:footer_end]
 below = open(sys.argv[3] + '/below.html', encoding='utf-8').read()
 script = open(sys.argv[3] + '/script.js', encoding='utf-8').read()
 
+head = head.replace('href="/favicon.png"', 'href="' + _fav + '"')
 out = (head + pre_hero + hero + '\n\n' + below + '\n' + footer + '\n\n<script>\n' + script + '</script>\n\n</body>\n</html>\n')
+out = out.replace('/landings-assets/logo.svg', _logo)
 open(out_path, 'w', encoding='utf-8').write(out)
 print('ok', len(out))

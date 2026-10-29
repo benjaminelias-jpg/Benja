@@ -75,3 +75,6 @@
    <html> antes de pintar: con vendedor se esconde lo de equipo y al revés. */
 html:not([data-vendedor]) .kf-solo-vendedor { display: none !important; }
 html[data-vendedor] .kf-solo-equipo { display: none !important; }
+
+/* Sin tira de prensa: el hero ya no reserva su alto abajo. */
+.hero { --kf-press-h: 40px; }

@@ -5,7 +5,7 @@ Qué hay:
   equipo/      fotos de Taiab, Rafa, Juan y Jorge
 
 Dónde va: en la web, junto a las demás landings, como /landings/vendedores/v2/
-(el logo y la prensa se cargan de /landings-assets/ de kunfupay.com).
+(el logo va dentro del index.html: se ve aunque se abra suelta).
 
 URL de cada anuncio:
   .../landings/vendedores/v2/?vendedor=taiab
