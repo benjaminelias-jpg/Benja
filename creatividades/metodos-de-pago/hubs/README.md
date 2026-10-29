@@ -8,7 +8,7 @@ Nada de esto está creado en Meta. Es el plan y el material para subir.
 
 ---
 
-> **V2 (29-10-2026):** los estáticos E1–E4 y los guiones V1 vigentes están en `HUBS-V2-BENEFICIOS.md` (beneficio, dolor y deseo con cifras). Los apartados E1–E4 y V1 de los documentos de hub y de `GUIONES-HUBS.md` quedan sustituidos.
+> **V2 (29-10-2026):** los estáticos E1–E5 están en `HUBS-V2-BENEFICIOS.md` y los guiones vigentes (4 por hub + 1 fiscal de LATAM), en `GUIONES-HUBS-V2.md` (beneficio, dolor y deseo con cifras). Los apartados E1–E4 y V1 de los documentos de hub y de `GUIONES-HUBS.md` quedan sustituidos.
 
 ## Qué hay en esta carpeta
 
