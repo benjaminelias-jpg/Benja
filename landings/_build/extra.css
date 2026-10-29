@@ -1,0 +1,72 @@
+
+/* ══ PROPIO DE vendedores/v1 ══════════════════════════════════════════
+   Solo lo que el patrón no trae: el resultado del quiz con dos CTA, las
+   caras del equipo y el calendario. Todo con los tokens de arriba. */
+
+/* CTA del hero: caras del equipo + WhatsApp (súper-CTA) + agendar */
+.kf-equipo-mini { display: flex; align-items: center; justify-content: center; }
+.kf-equipo-mini img {
+  width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+  border: 2px solid #140f2e; margin-left: -10px;
+  box-shadow: 0 0 0 1.5px rgba(185,166,255,.55);
+}
+.kf-equipo-mini img:first-child { margin-left: 0; }
+.kf-equipo-mini span { margin-left: 10px; font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,.85); text-align: left; }
+.kf-hero-ctas { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 360px; margin-top: 8px; }
+.kf-hero-ctas .btn { width: 100%; height: 52px; font-size: 16px; }
+/* El secundario del patrón está pensado para fondo claro: en el hero oscuro
+   pasa a blanco para que se lea. */
+.hero--dark .btn-secundario { color: #fff; border-color: rgba(255,255,255,.4); }
+.hero--dark .btn-secundario:hover { background: rgba(255,255,255,.08); }
+
+/* Equipo */
+.kf-equipo__grid {
+  margin-top: 32px; display: grid; gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) { .kf-equipo__grid { grid-template-columns: repeat(4, 1fr); } }
+.kf-persona {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px;
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-xl); padding: 22px 12px; box-shadow: var(--kf-shadow-sm);
+}
+.kf-persona img {
+  width: 132px; height: 132px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;
+  padding: 3px; background: linear-gradient(135deg, #f97316, #ec4899 45%, var(--kf-purple));
+}
+.kf-persona strong { font-family: var(--morfeo-font); font-size: 17px; color: var(--kf-text-primary); }
+.kf-persona span { font-size: 13px; color: var(--kf-text-muted); }
+
+/* Calendario */
+.kf-agenda { padding-top: 24px; }
+.kf-cal {
+  margin-top: 28px; background: var(--kf-surface);
+  border: 1px solid var(--kf-hairline); border-radius: var(--radius-2xl);
+  box-shadow: var(--kf-shadow-lg); overflow: hidden; min-height: 220px;
+  display: flex; align-items: center; justify-content: center;
+}
+.kf-cal iframe { display: block; width: 100%; height: 720px; border: 0; }
+.kf-cal__vacio { padding: 32px 24px; text-align: center; color: var(--kf-text-muted); font-size: 15px; line-height: 1.6; max-width: 460px; }
+
+/* Renglones parejos: el navegador reparte el texto para que ninguna línea
+   quede mucho más larga o más corta que las demás (titular, subtítulo,
+   topbar y títulos de sección). */
+.hero h1, .hero-subtitle, .topbar p, h2.section-title, .section-lead, .hero-microtrust { text-wrap: balance; }
+.hero h1 { max-width: 1040px; margin-left: auto; margin-right: auto; }
+@media (min-width: 900px) { .hero h1 { font-size: 50px; } }
+.hero-subtitle { max-width: 620px; margin-left: auto; margin-right: auto; }
+/* Titular en dos frases: cada una en su bloque y repartida en renglones
+   parejos. La coma va pegada al subrayado para que nunca abra renglón. */
+.hero h1 .kf-l { display: block; text-wrap: balance; }
+.kf-nw { white-space: nowrap; }
+
+/* Landings por vendedor: su cara en el hero y su tarjeta sola, más grande. */
+.kf-vendedor-hero { display: flex; align-items: center; justify-content: center; gap: 12px; text-align: left; }
+.kf-vendedor-hero img {
+  width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
+  padding: 2px; background: linear-gradient(135deg, #f97316, #ec4899 45%, var(--kf-purple));
+}
+.kf-vendedor-hero strong { display: block; font-family: var(--morfeo-font); font-size: 16px; color: #fff; }
+.kf-vendedor-hero span { font-size: 13px; color: rgba(255,255,255,.7); }
+.kf-equipo__grid--uno { grid-template-columns: 1fr !important; max-width: 320px; margin-left: auto; margin-right: auto; }
+.kf-equipo__grid--uno .kf-persona img { width: 200px; height: 200px; }

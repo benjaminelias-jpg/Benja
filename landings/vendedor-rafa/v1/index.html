@@ -1,0 +1,1970 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- ============================================================
+     OBLIGATORIO — no borrar ni comentar en ninguna landing de la matriz:
+     1) noindex/nofollow: son páginas de tráfico pagado / test A-B, no deben
+        competir en orgánico ni indexarse. Sin excepciones.
+     2) GTM (GTM-K7WQX54Z): el contenedor de Google Tag Manager es OBLIGATORIO
+        en TODA landing (requisito de Hernán, 2026-07-30). Es el mismo
+        contenedor que kunfupay.com. Ojo al aviso de doble disparo que hay
+        junto al snippet.
+     2b) Google Analytics (GA4, G-V3BVYL1YP3): el mismo GA4 de kunfupay.com.
+        Verificar con el Realtime de GA4 (o Network → google-analytics.com/g/collect)
+        que el PageView llega antes de dar la landing por cerrada.
+     3) Píxel de Meta (Kunfupay, ID 611181908386410): mismo píxel que ya usa
+        kunfupay.com (ver app/RootLayoutClient.tsx del repo web). Deja el
+        PageView del snippet; añade `fbq('track', ...)` extra solo para los
+        eventos de embudo propios de ESTA landing (start_quiz, cta_click...).
+     4) UTMs: la URL pública de la landing (la que se reparte en el anuncio)
+        SIEMPRE lleva la taxonomía UTM de growth-utms — eso lo registra ese
+        agente antes de lanzar tráfico. Lo que SÍ vive en esta plantilla es la
+        captura de esos UTMs (+ gclid/fbclid/ttclid) en sessionStorage y
+        `forwardTrackingParams(url)` para reenviarlos en los CTAs de registro.
+        NO escribas utm_* a mano en los <a href> hacia business.kunfupay.com /
+        app.kunfupay.com: usa siempre forwardTrackingParams(), o pisarás la
+        atribución del anuncio al saltar de subdominio.
+     5) NO añadas banner de cookies aquí. El consentimiento lo gestiona un
+        script externo que se inyecta aparte — un segundo banner duplicaría
+        el consentimiento y rompería la UX.
+     ============================================================ -->
+<!-- ═══════════════════════════════════════════════════════════════════
+     CAMPAÑA REMARKETING · VENDEDOR RAFA · v1
+     ======================================
+     Copia de /landings/vendedores/v1 (la principal, con todo el equipo)
+     para UN vendedor: Rafa (@rafa.kunfupay). Misma página; cambia quién sale.
+     Rafa aparece en el hero (su foto y «Te atiende Rafa»), en los
+     dos CTA, en la tarjeta de debajo y en el calendario.
+
+     POR QUÉ UNA POR VENDEDOR. Cada vendedor genera su propia audiencia
+     (quien visita SU perfil de Instagram) y su propio anuncio. Ese
+     prospecto ya conoce a Rafa: si le saliera otra cara, el anuncio
+     perdería la confianza ganada. Aquí le responde la misma persona, por
+     su WhatsApp o su calendario, y la venta se queda con quien la abrió.
+
+     MEDICIÓN. Igual que la principal (Contact al pulsar WhatsApp, Schedule
+     al reservar), con el parámetro `vendedor: 'rafa'` en los eventos.
+
+     PENDIENTE ANTES DE LANZAR: el WhatsApp y el calendario de Rafa
+     (KF_WHATSAPP y KF_CALENDAR_URL, en la config del <head>).
+
+     ⚠️ Mismo aviso que la principal: legal valida «olvídate del IVA» y
+     «pagamos sus impuestos» antes de lanzar.
+
+     El resto del cuerpo se arregla en la principal y se vuelve a generar
+     con landings/_build/vendedores.py, no a mano aquí.
+     ═══════════════════════════════════════════════════════════════════ -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Favicon: el mismo /favicon.png del site. Las landings estáticas no
+     heredan el metadata del app router (app/layout.tsx), así que sin esta
+     línea el navegador pide /favicon.ico, que no existe, y la pestaña sale
+     sin icono. -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<title>Cobra a clientes de todo el mundo, sin IVA, LLC ni asesor | Kunfupay</title>
+<meta name="description" content="Cobra desde hoy a clientes de todo el mundo: cada uno paga en su moneda y tú recibes euros o dólares. Kunfupay es Merchant of Record: te representa en cada venta y paga sus impuestos.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ══ Google Tag Manager (GTM-K7WQX54Z) ══ OBLIGATORIO en toda landing.
+     Mismo contenedor que kunfupay.com. Va lo más arriba posible del <head>.
+
+     ⚠️ RIESGO DE DOBLE DISPARO — leer antes de lanzar tráfico: justo debajo
+     siguen los snippets DIRECTOS de GA4 y del Píxel de Meta, que son
+     anteriores a este contenedor. Si dentro de GTM ya hay una etiqueta que
+     dispare GA4 `G-V3BVYL1YP3` o el píxel `611181908386410`, cada PageView se
+     contará DOS veces y el Consent Mode del contenedor no cubrirá al snippet
+     directo. En ese caso hay que BORRAR los dos snippets de abajo y dejar que
+     GTM sea el único dueño de la medición (que es la regla que ya sigue el
+     repo web: ver el comentario de app/RootLayoutClient.tsx).
+     Los `fbq('trackCustom', ...)` de los CTAs dependen del snippet directo del
+     píxel, así que si se borra hay que reemplazarlos por push a dataLayer. -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K7WQX54Z');</script>
+
+<!-- Google Analytics (GA4) — Kunfupay (G-V3BVYL1YP3). Mismo GA4 que kunfupay.com. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3BVYL1YP3"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V3BVYL1YP3');
+</script>
+
+<!-- Meta Pixel — Kunfupay (611181908386410). No lo dupliques ni cambies el ID. -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '611181908386410');
+fbq('track', 'PageView');
+
+/* ══ PARÁMETROS DE EVENTOS DE META — LEER ANTES DE AÑADIR UN EVENTO ══
+   `value` es un parámetro RESERVADO de Meta: espera un NÚMERO (un importe)
+   y debe viajar acompañado de `currency`. Si se le mete texto, o el número
+   como string, el píxel DESCARTA el parámetro y avisa en consola con
+   "Invalid parameter format for value" — el evento llega, pero sin el dato.
+
+   Dos reglas, y por eso existe este helper:
+     · Un importe SIEMPRE se construye con `kfImporte(x)`. Nunca se escribe
+       `value:` a mano en ningún sitio.
+     · Un dato CATEGÓRICO (modelo de negocio, país, plan…) NUNCA va en
+       `value`: se manda con nombre propio (`tipo_negocio`, `pais`…).
+   Los importes de esta landing se declaran en euros — el copy del quiz dice
+   "Facturo 10.000 €" — de ahí la moneda. */
+var KF_MONEDA = 'EUR';
+function kfImporte(v) {
+  if (v === null || v === undefined) return {};
+  var s = String(v).trim();
+  // Cadena vacía = NO hay dato. Hay que descartarla a mano porque Number('')
+  // devuelve 0, y aquí el cero es una respuesta legítima del quiz ("Aún no
+  // facturo"): confundirlas mandaría un importe de 0 € inventado.
+  if (s === '') return {};
+  var n = Number(s);
+  // Sin importe válido no se manda el par value/currency: es preferible un
+  // evento sin importe a uno que Meta descarta entero por formato.
+  if (!isFinite(n)) return {};
+  return { value: n, currency: KF_MONEDA };
+}
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=611181908386410&ev=PageView&noscript=1" /></noscript>
+
+<!-- Captura UTMs/click-ids de la URL de entrada y los guarda en sessionStorage
+     para poder reenviarlos (no pisarlos) en los CTAs de registro. -->
+<script>
+(function () {
+  // Taxonomía extendida GA4 (la de Kunfupay), no los 5 UTMs clásicos. `utm_id`
+  // es el ID de campaña de la plataforma (en Meta, el campaign id): es la llave
+  // que permite cruzar leads con coste real, así que tiene que sobrevivir el
+  // salto a app/business.kunfupay.com igual que los demás.
+  // OJO: NO metas aquí utm_origen ni utm_value — esos dos los pone la landing
+  // con las respuestas del quiz, y al estar en KEYS el reenvío los pisaría con
+  // lo que viniera en la URL de entrada.
+  var KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+              "utm_id", "utm_source_platform", "utm_creative_format", "utm_marketing_tactic",
+              "gclid", "fbclid", "ttclid"];
+  var incoming = new URLSearchParams(location.search);
+  var captured = {};
+  KEYS.forEach(function (k) { if (incoming.get(k)) captured[k] = incoming.get(k); });
+  // EN MEMORIA, siempre. sessionStorage es un extra, no la fuente de verdad: en
+  // el navegador interno de Instagram y en modo privado puede no estar
+  // disponible, y ahí perdíamos la atribución del lead. Medido el 2026-08-03:
+  // dos leads de Instagram llegaron a Notion sin UTMs mientras el registro de la
+  // plataforma SÍ los tenía — porque el reenvío al signup sí tenía respaldo en
+  // memoria y el envío a Notion leía solo de sessionStorage.
+  window.kfTracking = { params: captured, entryHref: location.href };
+  // El try/catch no es decorativo: sin él, un setItem que lanza aborta el resto
+  // de este bloque y deja forwardTrackingParams sin definir, lo que rompería el
+  // redirect entero.
+  try {
+    if (Object.keys(captured).length) {
+      sessionStorage.setItem("kf_tracking_params", JSON.stringify(captured));
+    }
+  } catch (e) {}
+  // URL de entrada COMPLETA (con sus UTMs). Se guarda AQUÍ, en el <head>, y no
+  // al enviar el formulario, porque el quiz reescribe la URL con
+  // history.replaceState(?paso=N) al avanzar de paso: en el submit,
+  // `location.href` ya sería ".../index.html?paso=3" y habríamos perdido de
+  // qué anuncio venía. Con muchas landings sobre la misma base, este dato es
+  // el que dice cuál de ellas trajo al lead.
+  // `once` evita machacarlo si el visitante recarga desde una URL ya reescrita.
+  try {
+    if (!sessionStorage.getItem("kf_url_origen")) {
+      sessionStorage.setItem("kf_url_origen", location.href);
+    }
+  } catch (e) {}
+  // Úsalo en cada CTA hacia business.kunfupay.com / app.kunfupay.com:
+  //   anchor.href = forwardTrackingParams(anchor.href)
+  window.forwardTrackingParams = function (url) {
+    try {
+      var stored = JSON.parse(sessionStorage.getItem("kf_tracking_params") || "{}");
+      var u = new URL(url, location.href);
+      Object.keys(stored).forEach(function (k) { if (!u.searchParams.has(k)) u.searchParams.set(k, stored[k]); });
+      // `v &&`: un parámetro vacío en la URL de entrada (p. ej. `utm_content=`
+      // copiado del generador) NO debe pisar el valor bueno con una cadena vacía.
+      incoming.forEach(function (v, k) { if (v && KEYS.indexOf(k) !== -1) u.searchParams.set(k, v); });
+      return u.toString();
+    } catch (e) {
+      return url;
+    }
+  };
+})();
+</script>
+
+<!-- ═══ GUARDADO DEL LEAD EN NOTION ═══════════════════════════════════════
+     El lead se guarda en la BBDD "🧲 Leads · Landings" del Centro de
+     Marketing (Notion), para poder cruzarlo con ventas y hacer retargeting a
+     quien no termine el registro.
+
+     ⚠️ NO se llama a Notion desde aquí, y no es por comodidad: la API de
+     Notion exige un token secreto, y meterlo en el JS de la página lo haría
+     PÚBLICO — cualquiera podría leer y escribir el workspace entero. Además
+     Notion no permite CORS desde el navegador. Por eso se manda a un endpoint
+     propio que guarda el token en el servidor (código listo para desplegar en
+     `endpoint-leads/api/lead.js` de este mismo entregable).
+
+     PARA ACTIVARLO: despliega ese endpoint y pon su URL aquí abajo. Mientras
+     esté vacío, el quiz funciona igual pero el lead NO se guarda en ningún
+     sitio (se avisa por consola). ═════════════════════════════════════════ -->
+<script>
+window.KF_LEADS_ENDPOINT = '/api/lead'; // ruta del MISMO proyecto Next
+// Relativa a propósito: las landings se sirven desde este mismo deploy, así que
+// es same-origin — sin CORS y sin un segundo proyecto que desplegar. Si algún día
+// una landing se aloja fuera, aquí iría la URL absoluta del endpoint.
+
+// Base de las páginas de destino del quiz. Vacío = las carpetas hermanas
+// `gracias/` y `potencial/` de esta misma landing, para que el patrón funcione
+// suelto (abriéndolo en local, sin servidor Next). Cuando la landing se sirve
+// desde kunfupay.com, se apunta a las páginas GLOBALES: '/lp'.
+window.KF_DESTINOS_BASE = '/lp'; // páginas de destino GLOBALES del repo web
+
+// ── CONFIG DE ESTA LANDING (vendedor-rafa/v1) ─────────────────────────────
+// WhatsApp de Rafa, en formato internacional SIN «+» ni espacios
+// (p. ej. '34600111222'). Vacío = el botón de WhatsApp baja al calendario.
+window.KF_WHATSAPP = '';
+// URL del calendario de Rafa para agendar la llamada (Calendly, Google Calendar
+// «programación de citas», Cal.com…). Se carga en un <iframe> en #agenda.
+// Con Calendly, la reserva dispara `Schedule` en el píxel (ver el script).
+window.KF_CALENDAR_URL = '';
+// Vendedor de esta landing. Vacío = landing principal (todo el equipo).
+// En las landings por vendedor (vendedor-<nombre>/v1) va su id y su nombre:
+// viaja como parámetro `vendedor` en Contact/Schedule y saluda en WhatsApp.
+window.KF_VENDEDOR = 'rafa';
+window.KF_VENDEDOR_NOMBRE = 'Rafa';
+
+function guardarLead(datos) {
+  var url = window.KF_LEADS_ENDPOINT;
+  if (!url) {
+    console.warn('[Kunfupay] KF_LEADS_ENDPOINT sin configurar: el lead NO se ha guardado.');
+    return false;
+  }
+  var cuerpo = JSON.stringify(datos);
+  // sendBeacon es lo correcto aquí: el navegador se lleva la petición aunque
+  // la página se esté descargando por la redirección inmediata. Un fetch
+  // normal se cancelaría y perderíamos el lead justo al convertir.
+  try {
+    if (navigator.sendBeacon) {
+      return navigator.sendBeacon(url, new Blob([cuerpo], { type: 'application/json' }));
+    }
+  } catch (e) { /* cae al fetch de abajo */ }
+  try {
+    fetch(url, {
+      method: 'POST', body: cuerpo,
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true // mismo objetivo: sobrevivir a la navegación
+    });
+    return true;
+  } catch (e) { return false; }
+}
+</script>
+
+<style>
+/* ============================================================
+   MORFEO LIGHT · tokens — copiados 1:1 de la fuente de verdad:
+   Repositorios/web-kunfupay-v2-new-feature/app/globals.css (:root --kf-*)
+   y de Infraestructura-agentes/sistema-visual/tokens/kunfupay.css.
+   No hardcodear colores/tipos/radios fuera de este bloque — si Morfeo
+   cambia un token, se actualiza aquí y todas las landings heredan.
+   Tema por DEFECTO: CLARO.
+   ============================================================ */
+:root{
+  --font-jakarta:'Plus Jakarta Sans';
+  --font-inter:'Inter';
+  --morfeo-font:var(--font-jakarta),-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --body-font:var(--font-inter),-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+
+  --kf-bg:#fafafa; --kf-surface:#ffffff;
+  --kf-purple:#734bfc; --kf-purple-dark:#5c21e0; --kf-purple-soft:#6b33f4;
+  --kf-orange:#f97316;
+  --kf-text-primary:#18181b; --kf-text-secondary:#3f3f46; --kf-text-muted:#71717a; --kf-text-subtle:#a1a1aa;
+  --kf-glass:#ffffff; --kf-glass-hover:#fafafa;
+  --kf-hairline:rgba(24,24,27,.10); --kf-hairline-strong:rgba(24,24,27,.18);
+  --kf-success:#16a34a; --kf-star:#f59e0b;
+  --kf-tint-bg:#f4f3ff; --kf-tint-text:var(--kf-purple-dark);
+  --kf-header-bg:rgba(255,255,255,.85);
+  --kf-glow-purple:0 6px 16px -6px rgba(115,75,252,.5),inset 1px 0 0 rgba(255,255,255,.18);
+  --kf-glow-orange:0 10px 30px -8px rgba(249,115,22,.55),0 3px 10px -4px rgba(249,115,22,.35),inset 0 1px 0 rgba(255,255,255,.4);
+  --kf-shadow-sm:0 2px 6px -2px rgba(13,16,24,.08);
+  --kf-shadow-md:0 6px 16px -6px rgba(115,75,252,.18),0 2px 6px -2px rgba(13,16,24,.06);
+  --kf-shadow-lg:0 12px 28px -10px rgba(115,75,252,.22),0 4px 10px -4px rgba(13,16,24,.08);
+  --kf-shadow-xl:0 24px 48px -16px rgba(115,75,252,.28),0 8px 16px -6px rgba(13,16,24,.1);
+  --kf-ease:cubic-bezier(0.22,1,0.36,1);
+
+  --radius-md:10px; --radius-lg:14px; --radius-xl:18px; --radius-2xl:24px; --radius-pill:999px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--kf-bg);
+  color: var(--kf-text-primary);
+  font-family: var(--body-font);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .heading { font-family: var(--morfeo-font); margin: 0; }
+p { margin: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section { padding: 64px 0; }
+.section--tight { padding: 40px 0; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 12.5px;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--kf-purple-dark); background: var(--kf-tint-bg);
+  border: 1px solid rgba(115,75,252,.18);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+/* ⏸️ BADGES/EYEBROWS OCULTOS TEMPORALMENTE (Hernán, 2026-07-29: "oculta
+   todos los badges que están antes de un titular, no los borres, ocúltalos
+   de momento"). El HTML de los <span class="eyebrow"> SIGUE INTACTO en cada
+   sección — para volver a mostrarlos basta con BORRAR esta única regla. */
+.eyebrow { display: none; }
+h2.section-title {
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+  margin-top: 12px;
+  color: var(--kf-text-primary);
+}
+.section-lead {
+  font-size: 16px;
+  color: var(--kf-text-muted);
+  line-height: 1.6;
+  margin-top: 12px;
+  max-width: 640px;
+}
+.section-head { text-align: center; }
+.section-head .section-title, .section-head .section-lead { margin-left: auto; margin-right: auto; }
+
+/* ── REVEAL AL HACER SCROLL ───────────────────────────────────────────
+   Cada módulo/tarjeta marcado con .reveal empieza invisible y desplazado;
+   el IntersectionObserver del final del body añade .is-visible la primera
+   vez que entra en pantalla (una sola vez, no se repite al subir/bajar). */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .6s var(--kf-ease), transform .6s var(--kf-ease);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+/* Cascada: las tarjetas de una misma rejilla aparecen una tras otra, no
+   todas a la vez, aunque entren juntas en el viewport. */
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(1) { transition-delay: 0s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(2) { transition-delay: .08s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(3) { transition-delay: .16s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(4) { transition-delay: .24s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(5) { transition-delay: .32s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(6) { transition-delay: .40s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
+/* Acento de color para ideas clave en cuerpos de texto (junto a <strong> para negrita). */
+.text-accent { color: var(--kf-purple-dark); font-weight: 700; }
+.hero--dark .text-accent, .cta-final .text-accent { color: #fff; }
+
+/* Botón primario (acción, morado) */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 15px;
+  height: 48px; padding: 0 26px; border-radius: var(--radius-pill);
+  border: 0; cursor: pointer; white-space: nowrap;
+}
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(to bottom right, var(--kf-purple), var(--kf-purple-dark));
+  box-shadow: var(--kf-glow-purple);
+}
+/* Súper-CTA (naranja) — regla del Brain: UNA por pieza, es la acción suprema.
+   Se usa en el CTA principal del hero y se repite igual en el CTA final. */
+.btn-super-cta {
+  color: #fff; text-shadow: 0 1px 2px rgba(124,45,18,.35);
+  background: var(--kf-orange);
+  box-shadow: var(--kf-glow-orange);
+  /* "Bombeo" de la súper-CTA (Hernán, 2026-07-30: "genera una pequeña
+     animación al botón con un delay que dé la sensación de que bombea").
+     La clave del efecto está en el CICLO LARGO con el pulso concentrado al
+     final: 4,2s de los cuales el latido ocupa ~0,5s. Un pulso continuo
+     cansa y se lee como un GIF; así late cada pocos segundos y el ojo
+     vuelve al botón. Doble golpe (1.04 → 0.99 → 1) para que sea un latido
+     y no un rebote plano. Los 1,4s de delay dejan entrar antes al hero. */
+  animation: kf-cta-pump 4.2s ease-in-out 1.4s infinite;
+}
+@keyframes kf-cta-pump {
+  0%, 86%, 100% { transform: scale(1); }
+  90%           { transform: scale(1.04); }
+  94%           { transform: scale(.99); }
+}
+/* En MÓVIL la súper-CTA ocupa todo el ancho (Hernán: "en la versión movil,
+   haz que este CTA ocupe el 100% de la pantalla"): más área de toque y el
+   pulgar la alcanza desde cualquier posición. Solo la de los bloques de CTA
+   (hero y cierre), NO la de la barra fija inferior, que ya es una barra. */
+@media (max-width: 767px) {
+  .hero-cta .btn-super-cta { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-super-cta { animation: none; }
+}
+.btn-full { width: 100%; }
+
+/* ── HERO (variable por campaña) ─────────────────────────────────────
+   Fondo oscuro + "ondas Sensei" (recurso sistema-visual/recursos/sensei-ondas,
+   el mismo efecto que ya usa el hero de kunfupay.com). Si una campaña necesita
+   el hero en claro, quita `.hero--dark` y el bloque `.hero-waves` completo. */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 72px 0 calc(14px + var(--kf-press-h, 42px)); text-align: center;
+}
+/* HERO A PANTALLA COMPLETA EN MÓVIL (Hernán, 2026-07-30: "haz que el hero
+   section siempre ocupe el 100% de la altura del dispositivo móvil").
+   Detalles que importan:
+   · `dvh`, NO `vh`: en móvil `100vh` cuenta la barra de direcciones como si
+     no existiera, así que el hero se corta por abajo y el CTA se va bajo el
+     fold — el clásico bug de iOS/Android. `dvh` sigue el viewport real.
+     Se deja `vh` en una primera declaración como fallback para navegadores
+     sin soporte de `dvh`.
+   · Se RESTA la topbar de campaña, que va justo encima del hero: si no, el
+     conjunto topbar+hero mide más que la pantalla y el hero deja de "llenar
+     la pantalla". Su alto lo mide el JS del final del body en
+     `--kf-topbar-h` (se remide al rotar/cambiar de tamaño, porque el texto
+     de la topbar envuelve a 2 líneas en pantallas estrechas). Si la landing
+     no lleva topbar, la variable vale 0 y no resta nada.
+   · `min-height`, no `height`: en móviles bajos el quiz es más alto que el
+     viewport y con `height` se recortaría. Así crece si hace falta.
+   · Solo hasta 767px, que es lo que se pidió (móvil). En desktop el hero
+     mantiene su alto natural por contenido. */
+@media (max-width: 767px) {
+  .hero {
+    min-height: calc(100vh - var(--kf-topbar-h, 0px));
+    min-height: calc(100dvh - var(--kf-topbar-h, 0px));
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  /* ⚠️ OBLIGATORIO junto al flex de arriba, no es cosmético.
+     `.wrap` lleva `margin: 0 auto`. Al pasar `.hero` a flex container, esos
+     márgenes `auto` del eje transversal ANULAN el estirado por defecto
+     (align-items:stretch) y dimensionan `.wrap` a `fit-content`. Como dentro
+     del hero vive `.press-track` con `width: max-content` (la cinta de
+     logos de prensa), ese fit-content se dispara muy por encima del ancho
+     de pantalla y el hero entero desbordaba a derecha: el h1 salía cortado
+     y el quiz empujado fuera (lo vio Hernán, 2026-07-30: "el hero section
+     no se adapta al ancho de la pantalla" — regresión que introdujo el
+     cambio a pantalla completa).
+     Con un `width: 100%` explícito el tamaño transversal pasa a ser
+     definido, los márgenes auto se quedan sin espacio libre que absorber y
+     el max-content deja de mandar. `min-width: 0` evita que cualquier hijo
+     futuro con contenido ancho vuelva a forzar el mínimo. */
+  .hero > .wrap { width: 100%; min-width: 0; }
+}
+.hero--dark {
+  background: radial-gradient(120% 100% at 50% 0%, #241a4d 0%, #140f2e 45%, #0c0c10 100%);
+  color: #fff;
+}
+.hero > .wrap { position: relative; z-index: 2; }
+.hero-logo { display: block; width: 56px; height: 56px; margin: 0 auto 20px; }
+.hero-waves {
+  position: absolute; left: -12px; top: 50%;
+  height: 220px; width: calc(100% + 24px);
+  transform: translateY(-50%) rotate(-1.2deg);
+  opacity: .95; pointer-events: none; z-index: 1;
+}
+.hero-waves .wa { animation: kf-drift-a 22s ease-in-out infinite alternate; }
+.hero-waves .wb { animation: kf-drift-b 27s ease-in-out infinite alternate; }
+.hero-waves .wc { animation: kf-drift-c 19s ease-in-out infinite alternate; }
+.hero-waves .wd { animation: kf-drift-d 30s ease-in-out infinite alternate; }
+.hero-waves .we { animation: kf-drift-e 16s ease-in-out infinite alternate; }
+@keyframes kf-drift-a { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-58px,13px)} }
+@keyframes kf-drift-b { 0%,100%{transform:translate(0,0)} 50%{transform:translate(72px,-18px)} }
+@keyframes kf-drift-c { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-46px,21px)} }
+@keyframes kf-drift-d { 0%,100%{transform:translate(0,0)} 50%{transform:translate(84px,-12px)} }
+@keyframes kf-drift-e { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,16px)} }
+@media (prefers-reduced-motion: reduce) { .hero-waves * { animation: none !important; } }
+
+.hero--dark .eyebrow {
+  color: #d9d0ff; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16);
+}
+.hero h1 {
+  /* Subido (Hernán, 2026-07-30: "el titular principal de la hero section
+     auméntalo de tamaño"). Se sube el mínimo (28→32), el factor de viewport
+     (5,5→6,4vw) y el máximo (46→56) para que crezca en TODOS los tamaños, no
+     solo en desktop. */
+  font-size: clamp(32px, 6.4vw, 56px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.12;
+  color: var(--kf-text-primary);
+  max-width: 780px;
+  margin: 18px auto 0;
+}
+.hero--dark h1 { color: #fff; }
+.hero--dark h1 .accent { color: #b9a6ff; }
+
+/* ── SUBRAYADO ROTULADOR, 2 PASADAS (parte del titular, no todo) ──────
+   Simula un rotulador real trazado dos veces: pasada A barre de izquierda
+   a derecha, pasada B vuelve de derecha a izquierda justo después, con un
+   ángulo/inset ligeramente distintos (no calcan el mismo rectángulo). Cada
+   pasada va al ~60% de opacidad — donde las dos coinciden (el grueso del
+   trazo) el morado se ve prácticamente sólido; donde solo pasó una (los
+   bordes, por el desalineado "a mano") se queda más flojo. El texto pasa a
+   blanco cuando arranca la 2ª pasada (para cuando el trazo ya cubre casi
+   todo). En titulares con scroll-reveal se dispara junto con `.is-visible`;
+   en el hero (visible desde la carga) se dispara solo, con un retraso. */
+.highlight { position: relative; z-index: 0; display: inline-block; }
+.highlight::before, .highlight::after {
+  content: ""; position: absolute; z-index: -1;
+  background: linear-gradient(135deg, var(--kf-purple), var(--kf-purple-dark));
+  opacity: .6;
+}
+.highlight::before {
+  left: -.12em; right: -.12em; top: 8%; bottom: 4%;
+  /* Pasada 1, izquierda→derecha: extremo de salida (derecha) cortado en
+     diagonal "/" — como el rotulador levantando el trazo hacia arriba. */
+  clip-path: polygon(1% 0%, 100% 0%, 95% 100%, 0% 100%);
+  transform-origin: left center;
+  transform: scaleX(0) rotate(var(--tilt, -1.3deg));
+}
+.highlight::after {
+  left: -.16em; right: -.08em; top: 4%; bottom: 7%;
+  /* Pasada 2, derecha→izquierda: extremo de salida (izquierda) cortado en
+     diagonal "\". */
+  clip-path: polygon(0% 0%, 99% 0%, 100% 100%, 5% 100%);
+  transform-origin: right center;
+  transform: scaleX(0) rotate(calc(var(--tilt, -1.3deg) * -0.55));
+}
+.reveal.is-visible .highlight {
+  color: #fff; transition: color .2s ease .55s;
+}
+.reveal.is-visible .highlight::before {
+  transform: scaleX(1) rotate(var(--tilt, -1.3deg));
+  transition: transform .45s var(--kf-ease) .1s;
+}
+.reveal.is-visible .highlight::after {
+  transform: scaleX(1) rotate(calc(var(--tilt, -1.3deg) * -0.55));
+  transition: transform .45s var(--kf-ease) .55s;
+}
+.hero h1 .highlight { animation: kf-highlight-text .01s linear 1.2s forwards; }
+.hero h1 .highlight::before { animation: kf-highlight-a .45s var(--kf-ease) .75s forwards; }
+.hero h1 .highlight::after { animation: kf-highlight-b .45s var(--kf-ease) 1.2s forwards; }
+@keyframes kf-highlight-a {
+  from { transform: scaleX(0) rotate(var(--tilt, -1.3deg)); }
+  to { transform: scaleX(1) rotate(var(--tilt, -1.3deg)); }
+}
+@keyframes kf-highlight-b {
+  from { transform: scaleX(0) rotate(calc(var(--tilt, -1.3deg) * -0.55)); }
+  to { transform: scaleX(1) rotate(calc(var(--tilt, -1.3deg) * -0.55)); }
+}
+@keyframes kf-highlight-text { to { color: #fff; } }
+@media (prefers-reduced-motion: reduce) {
+  .highlight::before { transition: none !important; animation: none !important; transform: scaleX(1) rotate(var(--tilt, -1.3deg)) !important; }
+  .highlight::after { transition: none !important; animation: none !important; transform: scaleX(1) rotate(calc(var(--tilt, -1.3deg) * -0.55)) !important; }
+  .highlight, .reveal.is-visible .highlight { transition: none !important; animation: none !important; color: #fff !important; }
+}
+.hero .hero-subtitle {
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--kf-text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 18px auto 0;
+}
+.hero--dark .hero-subtitle { color: rgba(255,255,255,.78); }
+.hero .hero-cta { margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .hero-microtrust {
+  margin-top: 14px; font-size: 13px; color: var(--kf-text-muted);
+  display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: center;
+}
+.hero--dark .hero-microtrust { color: rgba(255,255,255,.6); }
+
+/* ── PRENSA integrada en el hero (fondo oscuro, logos claros) ─────────
+   Mismo componente .press-marquee/.press-track que el resto de la matriz,
+   pero con los logos vueltos blancos vía filtro (brightness(0) invert(1))
+   en vez del grayscale oscuro que usan sobre fondo claro. */
+/* La cinta va PEGADA al borde inferior del hero (Hernán, 2026-07-30). Se
+   posiciona en absoluto para que no participe del centrado vertical del
+   contenido: si se quedara en el flujo, el `justify-content: center` del hero
+   la trataría como parte del bloque a centrar y nunca llegaría al fondo.
+   Al salir del flujo deja de aportar altura, así que el hero RESERVA su hueco
+   con padding-bottom — si no, el contenido centrado se le montaría encima. */
+.hero { --kf-press-h: 42px; }
+.hero-press {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  height: var(--kf-press-h);
+  display: flex; align-items: center;
+  padding-bottom: 8px;
+}
+.hero-press .press-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.hero-press .press-track { display: flex; align-items: center; width: max-content; gap: 56px; animation: kf-marquee 34s linear infinite; }
+.hero-press .press-marquee:hover .press-track { animation-play-state: paused; }
+.hero-press .press-logo { flex: none; height: 20px; width: auto; filter: brightness(0) invert(1); opacity: .55; }
+@media (prefers-reduced-motion: reduce) { .hero-press .press-track { animation: none; } }
+@keyframes kf-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── HERO VARIANTE (c): QUIZ ──────────────────────────────────────────
+   Tarjeta de cristal con progreso + pantallas de pregunta/opciones que se
+   muestran una a la vez (JS al final del body). Naranja reservado SOLO
+   para el botón final de la súper-CTA (regla del Brain) — el progreso y
+   las opciones usan morado. */
+.hero-quiz {
+  /* align-self:stretch — .hero-cta es flex column con align-items:center,
+     que si no se anula deja la tarjeta al ancho de su contenido (los
+     botones) en vez de ocupar el ancho disponible hasta max-width. */
+  align-self: stretch;
+  position: relative; margin: 30px auto 0; max-width: 460px; width: 100%; text-align: left;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius-2xl); padding: 26px 22px;
+  backdrop-filter: blur(16px);
+  box-sizing: border-box;
+  /* Halo morado que respira. Va en box-shadow (no en un pseudo-elemento con
+     z-index negativo) a propósito: el `backdrop-filter` de arriba crea un
+     stacking context y complicaría pintar un glow POR DETRÁS del fondo. */
+  animation: kf-quiz-halo 3.2s ease-in-out infinite;
+}
+
+/* ═══ EL QUIZ ES EL ELEMENTO MÁS IMPORTANTE DE LA LANDING ═══
+   Hernán (2026-07-30) pasó como referencia un componente React de
+   "spotlight card" (glow que sigue al cursor) y señaló él mismo el
+   problema: "queda bien en desktop, pero en mobile no tiene ese efecto".
+   Es correcto — ese efecto depende de `pointermove`/`:hover`, que en un
+   móvil no existen, así que la pieza más importante quedaría SIN destacar
+   justo en el dispositivo que manda (ver regla mobile-first del proyecto).
+
+   Por eso aquí se invierte la prioridad respecto a la referencia:
+     · CAPA BASE (todos los dispositivos, incluido móvil, sin input
+       ninguno): borde de gradiente que gira + halo que respira. Se
+       autoanima, así que el quiz destaca igual en un iPhone que en un mac.
+     · CAPA EXTRA (solo punteros finos): el spotlight que sigue al cursor
+       de la referencia, como enriquecimiento — nunca como base.
+   Todo se apaga con `prefers-reduced-motion`, dejando un anillo estático.
+
+   No se copió el componente tal cual: era React + Tailwind + TypeScript
+   (shadcn) y estas landings son HTML autocontenido con CSS plano y tokens
+   Morfeo. Se portó el EFECTO, no el código. ═══════════════════════════ */
+
+/* El ángulo necesita @property para poder interpolarse (un custom property
+   sin tipo no anima). Si el navegador no lo soporta, la animación no corre
+   y queda un anillo de gradiente ESTÁTICO — degradación aceptable. */
+@property --kf-quiz-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Anillo giratorio. Se pinta SOLO el borde vía mask-composite (dos capas:
+   una completa y otra recortada al content-box, se excluyen entre sí), así
+   el interior queda limpio y el contenido del quiz nunca se ensucia. */
+.hero-quiz::before {
+  content: ""; position: absolute; inset: -1.5px;
+  border-radius: calc(var(--radius-2xl) + 1.5px);
+  padding: 2px; /* = grosor del anillo */
+  background: conic-gradient(from var(--kf-quiz-angle),
+    rgba(115,75,252,0)   0deg,
+    var(--kf-purple)    55deg,
+    #cbbdff             95deg,
+    var(--kf-purple)   135deg,
+    rgba(115,75,252,0) 210deg,
+    rgba(115,75,252,0) 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: kf-quiz-spin 4.5s linear infinite;
+  pointer-events: none;
+}
+@keyframes kf-quiz-spin { to { --kf-quiz-angle: 360deg; } }
+@keyframes kf-quiz-halo {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(115,75,252,0), 0 18px 50px -22px rgba(115,75,252,.45); }
+  50%      { box-shadow: 0 0 0 7px rgba(115,75,252,.09), 0 24px 64px -18px rgba(115,75,252,.7); }
+}
+
+/* CAPA EXTRA — spotlight que sigue al cursor (la referencia de Hernán).
+   Gated a punteros finos: en táctil ni se pinta ni se registra el listener,
+   porque `--kf-quiz-mx/my` no existirían y quedaría un borrón fijo. */
+@media (hover: hover) and (pointer: fine) {
+  .hero-quiz::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(200px 200px at var(--kf-quiz-mx, -999px) var(--kf-quiz-my, -999px),
+      rgba(185,166,255,.16), transparent 70%);
+    opacity: 0; transition: opacity .3s var(--kf-ease);
+    pointer-events: none;
+  }
+  .hero-quiz:hover::after { opacity: 1; }
+}
+
+/* Las opciones entran en cascada cada vez que aparece una pantalla (pedido
+   de Hernán: "o que las opciones estén animadas"). Se re-dispara solo: al
+   quitar `hidden`, el paso de display:none a visible reinicia la animación.
+   ⚠️ Anima `translate`, NO `transform`: con `both` el transform final
+   ganaría al `:active { transform: scale(.98) }` y rompería el feedback al
+   pulsar. `translate` es una propiedad independiente y compone sin pisarlo. */
+.hero-quiz__screen:not([hidden]) .hero-quiz__option,
+.hero-quiz__screen:not([hidden]) .hero-quiz__form {
+  animation: kf-quiz-opt-in .42s var(--kf-ease) both;
+}
+.hero-quiz__screen:not([hidden]) .hero-quiz__option:nth-child(1) { animation-delay: .05s; }
+.hero-quiz__screen:not([hidden]) .hero-quiz__option:nth-child(2) { animation-delay: .12s; }
+.hero-quiz__screen:not([hidden]) .hero-quiz__option:nth-child(3) { animation-delay: .19s; }
+.hero-quiz__screen:not([hidden]) .hero-quiz__option:nth-child(4) { animation-delay: .26s; }
+@keyframes kf-quiz-opt-in {
+  from { opacity: 0; translate: 0 9px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-quiz { animation: none; box-shadow: 0 18px 50px -22px rgba(115,75,252,.45); }
+  .hero-quiz::before { animation: none; }
+  .hero-quiz::after { display: none; }
+  .hero-quiz__screen:not([hidden]) .hero-quiz__option,
+  .hero-quiz__screen:not([hidden]) .hero-quiz__form { animation: none; }
+}
+.hero-quiz__progress { display: flex; gap: 6px; margin-bottom: 20px; }
+.hero-quiz__step { flex: 1; height: 4px; border-radius: 999px; background: rgba(255,255,255,.16); }
+.hero-quiz__step.is-active, .hero-quiz__step.is-done {
+  background: linear-gradient(to right, var(--kf-purple), #b9a6ff);
+}
+.hero-quiz__screen[hidden] { display: none; }
+.hero-quiz__question { font-size: 19px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -.01em; }
+.hero-quiz__options { display: flex; flex-direction: column; gap: 10px; }
+.hero-quiz__option {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; font-family: var(--morfeo-font); font-weight: 600; font-size: 14.5px; text-align: left;
+  color: #fff; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16);
+  border-radius: var(--radius-lg); padding: 13px 16px; cursor: pointer;
+  transition: background .2s var(--kf-ease), border-color .2s var(--kf-ease), transform .12s var(--kf-ease);
+}
+.hero-quiz__option:hover { background: rgba(115,75,252,.24); border-color: rgba(115,75,252,.55); }
+.hero-quiz__option:active { transform: scale(.98); }
+.hero-quiz__option:disabled { cursor: default; }
+/* Check circular: vacío por defecto, se ilumina en morado al elegir (deja
+   claro que es una opción a marcar, no solo texto clicable). */
+.hero-quiz__radio {
+  flex: none; width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.35); position: relative;
+  transition: border-color .2s var(--kf-ease), background .2s var(--kf-ease), box-shadow .2s var(--kf-ease);
+}
+.hero-quiz__option.is-selected {
+  background: rgba(115,75,252,.28); border-color: var(--kf-purple-soft);
+}
+.hero-quiz__option.is-selected .hero-quiz__radio {
+  border-color: #fff; background: var(--kf-purple);
+  box-shadow: 0 0 0 4px rgba(115,75,252,.35);
+}
+.hero-quiz__option.is-selected .hero-quiz__radio::after {
+  content: ""; position: absolute; inset: 0; margin: auto;
+  width: 8px; height: 8px; border-radius: 50%; background: #fff;
+}
+.hero-quiz__result-copy { color: rgba(255,255,255,.78); font-size: 14.5px; line-height: 1.55; margin-bottom: 16px; }
+.hero-quiz__form { display: flex; flex-direction: column; gap: 10px; }
+.hero-quiz__form input {
+  height: 48px; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08); color: #fff; padding: 0 16px;
+  font-size: 14.5px; font-family: var(--body-font);
+}
+.hero-quiz__form input::placeholder { color: rgba(255,255,255,.5); }
+/* ── Teléfono internacional (paso WhatsApp) ───────────────────────────
+   Fila selector de país (bandera + prefijo) + número. El input de número
+   hereda el estilo de `.hero-quiz__form input`; el <select> necesita el
+   suyo para igualar alto/colores. Patrón portado 1:1 de
+   classroom-platinum-score/v1 (.campo-tel), reestilado a los tokens de
+   este quiz glassy. */
+.hero-quiz__tel { display: flex; gap: 8px; }
+.hero-quiz__tel-cc {
+  flex: 0 0 auto; width: auto; height: 48px; padding: 0 10px;
+  border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08); color: #fff;
+  font-size: 14.5px; font-family: var(--body-font); cursor: pointer;
+}
+.hero-quiz__tel-num { flex: 1 1 auto; min-width: 0; }
+.hero-quiz__back {
+  margin-top: 16px; background: none; border: 0; color: rgba(255,255,255,.55);
+  font-size: 13px; font-family: var(--body-font); cursor: pointer; padding: 0;
+}
+.hero-quiz__success { color: #fff; font-weight: 700; font-size: 15px; }
+
+/* ═══ QUIZ EN CLARO — TEMA ELEGIDO ══════════════════════════════════════
+   Se probaron 3 temas para el quiz (glassy oscuro original, blanco y bloque
+   morado de marca) porque es el elemento más importante de la landing.
+   **Hernán eligió el BLANCO** (2026-07-30: "que se quede blanco"): sobre el
+   hero oscuro crea un salto de luminosidad total y la tarjeta se lee como
+   EL elemento de la página. El morado se descartó porque comparte familia de
+   tono con el hero (radial morado oscuro) y se integraba en vez de separarse.
+   El tema morado ya se ha BORRADO de este archivo.
+   Sigue siendo una clase modificadora sobre el tema oscuro base: quitar
+   `hero-quiz--light` del div devuelve el glassy original, útil como
+   comparación rápida. Si en algún momento se quiere un solo tema, hay que
+   fundir estos valores en el bloque base y borrar el modificador.
+
+   Colores vía tokens Morfeo de modo claro (--kf-surface, --kf-text-*,
+   --kf-hairline, --kf-tint-bg), no hardcodeados. El anillo giratorio y el
+   halo morado NO se tocan: sobre una tarjeta blanca destacan incluso más
+   que sobre la glassy oscura. Sí se quita el `backdrop-filter`, que con
+   fondo opaco no hace nada y solo cuesta pintarlo. ══════════════════════ */
+.hero-quiz--light {
+  background: var(--kf-surface);
+  border-color: var(--kf-hairline);
+  backdrop-filter: none;
+}
+/* `:not(.is-active):not(.is-done)` es OBLIGATORIO: sin él esta regla
+   (misma especificidad que `.hero-quiz__step.is-active` pero POSTERIOR en
+   la hoja) pisaba el gradiente morado del paso activo y la barra de
+   progreso se quedaba entera en gris — bug real detectado al medir. */
+.hero-quiz--light .hero-quiz__step:not(.is-active):not(.is-done) { background: var(--kf-hairline); }
+.hero-quiz--light .hero-quiz__question { color: var(--kf-text-primary); }
+.hero-quiz--light .hero-quiz__option {
+  color: var(--kf-text-primary);
+  background: var(--kf-bg);
+  border-color: var(--kf-hairline);
+}
+.hero-quiz--light .hero-quiz__option:hover {
+  background: var(--kf-tint-bg);
+  border-color: var(--kf-purple);
+}
+.hero-quiz--light .hero-quiz__radio { border-color: var(--kf-hairline-strong); }
+.hero-quiz--light .hero-quiz__option.is-selected {
+  background: var(--kf-tint-bg);
+  border-color: var(--kf-purple);
+}
+.hero-quiz--light .hero-quiz__option.is-selected .hero-quiz__radio {
+  border-color: var(--kf-purple); background: var(--kf-purple);
+}
+.hero-quiz--light .hero-quiz__result-copy { color: var(--kf-text-secondary); }
+.hero-quiz--light .hero-quiz__form input {
+  background: var(--kf-bg);
+  border-color: var(--kf-hairline);
+  color: var(--kf-text-primary);
+}
+.hero-quiz--light .hero-quiz__form input::placeholder { color: var(--kf-text-muted); }
+.hero-quiz--light .hero-quiz__tel-cc {
+  background: var(--kf-bg);
+  border-color: var(--kf-hairline);
+  color: var(--kf-text-primary);
+}
+.hero-quiz--light .hero-quiz__back { color: var(--kf-text-muted); }
+.hero-quiz--light .hero-quiz__success { color: var(--kf-text-primary); }
+/* El spotlight del cursor era un morado claro pensado para verse sobre la
+   tarjeta oscura; sobre blanco no se vería, así que se sube la opacidad y se
+   usa el morado de marca. */
+@media (hover: hover) and (pointer: fine) {
+  .hero-quiz--light::after {
+    background: radial-gradient(200px 200px at var(--kf-quiz-mx, -999px) var(--kf-quiz-my, -999px),
+      rgba(115,75,252,.13), transparent 70%);
+  }
+}
+
+
+/* ── HERO EN PANTALLAS BAJAS ──────────────────────────────────
+   El `min-height: calc(100dvh - topbar)` es correcto y SÍ descuenta la
+   topbar (medido: topbar 39 + hero 834 = 873 exactos en la ventana de
+   pruebas). Pero en un móvil BAJO eso da igual: en un iPhone SE (375×667)
+   la topbar envuelve a 2 líneas (55px), quedan 612px y el contenido del hero
+   pide 771 → se sale 159px y hay que scrollear para ver el quiz. Se lee
+   igual que si la topbar no se descontara, que es lo que reportó Hernán.
+   Por eso aquí se APRIETA el hero cuando la pantalla es baja, para que el
+   contenido entre de verdad: menos padding, logo y tipografía algo menores,
+   huecos más cortos y la cinta de prensa fuera (es lo más prescindible del
+   hero y libera ~40px). Se toca solo el espaciado, no la jerarquía. */
+@media (max-width: 767px) and (max-height: 740px) {
+  .hero { padding: 26px 0 calc(10px + var(--kf-press-h, 30px)); }
+  .hero-logo { width: 44px; height: 44px; margin-bottom: 12px; }
+  .hero h1 { font-size: clamp(25px, 6vw, 30px); margin-top: 10px; }
+  .hero .hero-subtitle { font-size: 14px; margin-top: 10px; }
+  .hero .hero-cta { margin-top: 18px; }
+  .hero .hero-microtrust { margin-top: 9px; font-size: 12px; }
+  .hero-quiz { margin-top: 16px; padding: 18px 16px; }
+  .hero-quiz__progress { margin-bottom: 14px; }
+  .hero-quiz__question { font-size: 17px; margin-bottom: 12px; }
+  .hero-quiz__option { padding: 11px 14px; font-size: 14px; }
+  .hero-quiz__options { gap: 8px; }
+  /* La cinta de prensa se ACHICA, no se quita. Quitarla fue un error: la
+     prensa es credibilidad de marca y desaparecía en cualquier ventana de
+     menos de 740px de alto, que en escritorio sin maximizar es de lo más
+     común (lo notó Hernán). Se recorta lo que ocupa y se acepta que en los
+     móviles más bajos el hero sobresalga unos píxeles — que además deja ver
+     que hay más página debajo. */
+  .hero { --kf-press-h: 30px; }
+  .hero-press { padding-bottom: 6px; }
+  .hero-press .press-logo { height: 15px; }
+  .hero-press .press-track { gap: 38px; }
+}
+
+/* Solo en viewports REALMENTE diminutos (móvil apaisado, ventanas muy
+   recortadas) se oculta del todo: ahí no cabe ni achicada. */
+@media (max-width: 767px) and (max-height: 600px) {
+  /* Oculta y, sobre todo, sin reservar hueco: si se dejara el padding, el hero
+     tendría 30px de aire inferior sin nada dentro. */
+  .hero { --kf-press-h: 0px; }
+  .hero-press { display: none; }
+}
+
+/* ── TOPBAR DE CAMPAÑA (arriba del todo, ANTES del hero) ──── */
+.topbar {
+  background: linear-gradient(to right, var(--kf-purple), var(--kf-purple-dark));
+  color: #fff; text-align: center; padding: 10px 16px;
+}
+.topbar p { font-size: 13.5px; font-weight: 700; line-height: 1.4; }
+.topbar strong { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px; }
+@media (max-width: 480px) { .topbar p { font-size: 12.5px; } }
+
+/* ── BARRA DE CONFIANZA (debajo del hero) ─────────────────── */
+.trust-bar { background: var(--kf-bg); border-bottom: 1px solid var(--kf-hairline); padding: 16px 0; }
+.trust-bar__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
+.trust-bar__item {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  padding: 8px 16px; border-radius: 999px;
+  border: 1px solid rgba(115,75,252,.28); background: var(--kf-tint-bg);
+  color: var(--kf-purple-dark); font-size: 13px; font-weight: 600;
+}
+.trust-bar__item svg { flex: none; width: 15px; height: 15px; color: var(--kf-purple); }
+.trust-bar__item .trust-bar__logo { flex: none; height: 13px; width: auto; }
+@media (max-width: 480px) { .trust-bar__item { font-size: 12px; padding: 7px 12px; } }
+
+/* ── PRENSA — cinta infinita de medios reales que han cubierto Kunfupay ──
+   Mismos 6 medios que aparecen hoy en la sección de prensa de kunfupay.com
+   (verificado por WebFetch 2026-07-29): Forbes, TechCrunch, Entrepreneur,
+   WIRED, El País, Business Insider. Sin logos oficiales de terceros (no
+   tenemos licencia de sus marcas) — wordmarks en texto plano, mismo
+   criterio que el módulo "Herramientas que sustituyes". ────────────── */
+.press { padding: 20px 0; background: var(--kf-bg); border-bottom: 1px solid var(--kf-hairline); }
+.press__label {
+  text-align: center; font-size: 11.5px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--kf-text-muted); margin-bottom: 14px;
+}
+.press-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.press-track { display: flex; align-items: center; width: max-content; gap: 56px; animation: kf-marquee 34s linear infinite; }
+.press-marquee:hover .press-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .press-track { animation: none; } }
+.press-logo { flex: none; height: 22px; width: auto; filter: grayscale(1); opacity: .6; }
+
+/* ── MÉTODOS DE PAGO — cinta infinita, logos en gris monocromo ────────── */
+.payments { background: var(--kf-surface); border-top: 1px solid var(--kf-hairline); border-bottom: 1px solid var(--kf-hairline); }
+.payments-grid {
+  margin-top: 28px; max-width: 560px; margin-left: auto; margin-right: auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+/* .payments-grid ya fuerza display:grid con la misma especificidad que la
+   regla nativa [hidden]{display:none} del navegador — un author stylesheet
+   siempre gana a la hoja UA, así que [hidden] quedaba ignorado y el bloque
+   "extra" se veía siempre. Fix: toggle por CLASE (.is-open), no por el
+   atributo hidden — visto en real (Hernán, 2026-07-29: "se ven todos"). */
+.payments-grid--extra { margin-top: 12px; display: none; }
+.payments-grid--extra.is-open { display: grid; }
+.payment-tile {
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; border: 1px solid var(--kf-hairline); border-radius: var(--radius-lg);
+  padding: 14px 10px; height: 56px;
+}
+.payment-tile img {
+  height: 22px; width: auto;
+  filter: grayscale(1) opacity(.7) contrast(.9);
+}
+.payment-tile--lg img { height: 34px; }
+.payment-tile--sepa img { height: 29px; } /* 34px -15% */
+.payments-toggle {
+  display: flex; align-items: center; gap: 6px; margin: 20px auto 0;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 14px;
+  color: var(--kf-purple); background: none; border: 0; cursor: pointer; padding: 6px 4px;
+}
+.payments-toggle svg { width: 16px; height: 16px; transition: transform .25s ease; }
+.payments-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+/* ── SELECTOR DE PAÍS ─────────────────────────────────────────
+   Se usa el <select> NATIVO a propósito. Se probó un desplegable propio porque
+   la lista del nativo no se puede estilar y en Chrome de escritorio a ventana
+   estrecha queda un panel del sistema que canta — pero en un MÓVIL REAL el
+   nativo abre el selector del sistema (rueda de iOS / diálogo de Android), que
+   es mejor de usar y trae gratis teclado y accesibilidad. Hernán lo va a
+   probar en un móvil real antes de decidir (2026-07-30). Si al final se quiere
+   el propio, está en el historial de git de este archivo, con roles
+   listbox/option, aria-expanded/selected, flechas, Enter, Escape, Home/End y
+   cierre al pulsar fuera. */
+.pais-selector { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 22px; }
+.pais-pill {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-pill); padding: 9px 14px;
+  box-shadow: var(--kf-shadow-sm); color: var(--kf-text-primary);
+  transition: border-color .2s var(--kf-ease), box-shadow .2s var(--kf-ease);
+}
+.pais-pill:hover { border-color: var(--kf-purple); }
+.pais-pill:focus-within { border-color: var(--kf-purple); box-shadow: 0 0 0 3px rgba(115,75,252,.28); }
+/* El select se desnuda para que la píldora sea el control visible, pero sigue
+   siendo un select nativo por debajo. */
+.pais-pill__select {
+  appearance: none; -webkit-appearance: none; border: 0; background: none; outline: none;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 14.5px;
+  color: inherit; cursor: pointer; padding: 0;
+}
+.pais-pill__chevron { width: 15px; height: 15px; color: var(--kf-text-muted); }
+.pais-selector__nota { font-size: 12.5px; color: var(--kf-text-muted); min-height: 1em; text-align: center; }
+.payment-tile[hidden] { display: none; }
+
+/* Los CTA secundarios llevan al bloque de acción del hero (en la variante de
+   quiz, al quiz; en las otras, a su CTA/formulario) — Hernán, 2026-07-30:
+   "todos los CTAs secundarios deben ir a arriba para hacer el quiz".
+   `scroll-margin-top` evita que el ancla deje el bloque pegado al borde
+   superior por debajo de la topbar. */
+#hero-cta { scroll-margin-top: 90px; }
+
+/* Insignia de verificado + nº de seguidores en los testimonios (Hernán,
+   2026-07-30). Dos decisiones que NO son de estilo:
+
+   1) La insignia va en MORADO DE MARCA, no en el azul de Instagram. Un check
+      azul idéntico al de Instagram afirma que esa persona está verificada EN
+      INSTAGRAM, y eso no lo sabemos. En morado, con aria-label "Cliente
+      verificado", la afirmación es la que SÍ podemos respaldar: son clientes
+      reales (reseñas de la BBDD de Notion + fotos confirmadas por Hernán).
+      Si alguno está verificado de verdad en Instagram y se quiere el azul, se
+      cambia el color — pero persona a persona y con la cuenta comprobada.
+
+   2) El nº de seguidores es un DATO FACTUAL sobre personas reales con nombre y
+      cara. La BBDD "Reseñas Web" de Notion NO tiene ese campo (solo nombre,
+      cargo, país, reseña y foto), así que el dato no existe y NO se inventa:
+      se deja el hueco con un marcador que nadie pueda confundir con una cifra
+      (`••• seguidores`) hasta que lleguen los números reales. */
+.tst-nombre-fila { display: flex; align-items: center; gap: 6px; }
+.tst-verificado { flex: none; width: 19px; height: 19px; color: var(--kf-purple); }
+.tst-seg {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: 6px;
+  font-size: 13px; font-weight: 700; color: var(--kf-text-secondary);
+}
+.tst-seg svg { width: 14px; height: 14px; color: var(--kf-text-muted); }
+/* Marcador de dato pendiente: se ve que falta, no simula un número. */
+.tst-seg--pendiente { color: var(--kf-text-muted); font-weight: 600; }
+
+/* ── CTA SECUNDARIO (cierre de sección) ───────────────────────
+   Contorno morado, no relleno: tiene que leerse como una invitación
+   subordinada, no competir con el súper-CTA naranja (que el Brain reserva a
+   UNA por pieza) ni con el primario sólido del módulo de herramientas. Se
+   repite al final de varias secciones, así que cuanto más callado, mejor. */
+/* `padding: 0 20px` igual que `.wrap`: estos bloques se insertan como hijos
+   DIRECTOS de la <section>, fuera del .wrap, así que no heredaban su padding
+   lateral y en móvil el botón llegaba pegado a los bordes de la pantalla. */
+.cta-sec { display: flex; justify-content: center; margin-top: 34px; padding: 0 20px; }
+.btn-secundario {
+  background: transparent; color: var(--kf-purple-dark);
+  border: 1.5px solid var(--kf-purple);
+  font-size: 14.5px; padding: 0 26px; height: 46px;
+  transition: background .2s var(--kf-ease), transform .18s var(--kf-ease), box-shadow .2s var(--kf-ease);
+}
+.btn-secundario:hover { background: var(--kf-tint-bg); box-shadow: 0 8px 20px -12px rgba(115,75,252,.5); }
+.btn-secundario:active { transform: scale(.98); }
+.btn-secundario svg { width: 16px; height: 16px; margin-left: 7px; }
+/* En móvil ocupa el ancho disponible pero con tope: a ancho completo se
+   leía como una barra pegada a los bordes, no como un botón. */
+@media (max-width: 767px) {
+  .cta-sec { margin-top: 26px; }
+  .btn-secundario { width: 100%; max-width: 340px; }
+}
+
+/* ── PUNTO DE DOLOR ───────────────────────────────────────── */
+.pain-grid { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .pain-grid { grid-template-columns: repeat(3, 1fr); } }
+.pain-card {
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-xl); padding: 22px; box-shadow: var(--kf-shadow-sm);
+}
+.pain-card__head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.pain-card .pain-icon {
+  flex: none; width: 40px; height: 40px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(240,68,56,.10); color: #d92d20; font-size: 18px;
+}
+.pain-card h3 { font-size: 17px; font-weight: 700; line-height: 1.25; }
+.pain-card p { font-size: 14.5px; color: var(--kf-text-muted); line-height: 1.55; }
+
+/* ── CÓMO LO RESUELVE (reveal) ────────────────────────────── */
+.solution {
+  background: linear-gradient(180deg, var(--kf-tint-bg), var(--kf-bg));
+  border-radius: var(--radius-2xl);
+}
+.solution .wrap { text-align: center; padding-top: 56px; padding-bottom: 56px; }
+.solution p.solution-body {
+  max-width: 680px; margin: 16px auto 0; font-size: 16px; color: var(--kf-text-secondary); line-height: 1.65;
+}
+.solution-pillars {
+  margin: 32px auto 0; display: grid; gap: 14px; max-width: 760px;
+  grid-template-columns: 1fr; text-align: left;
+}
+@media (min-width: 768px) { .solution-pillars { grid-template-columns: repeat(3, 1fr); } }
+.pillar {
+  position: relative; overflow: hidden;
+  background: #fff; border: 1px solid var(--kf-hairline); border-radius: var(--radius-lg);
+  padding: 20px; box-shadow: var(--kf-shadow-sm);
+}
+/* Número de fondo — decorativo, detrás del texto (z-index 0 vs. 1). */
+.pillar .pillar-num {
+  position: absolute; top: 0; bottom: 0; right: -4px; z-index: 0;
+  display: flex; align-items: center;
+  font-family: var(--morfeo-font); font-weight: 800; font-size: 130px; line-height: 1;
+  color: rgba(115,75,252,.10);
+  pointer-events: none; user-select: none;
+}
+.pillar h3, .pillar p { position: relative; z-index: 1; }
+.pillar h3 { font-size: 19px; font-weight: 800; margin-top: 6px; letter-spacing: -.01em; color: var(--kf-purple); }
+.pillar p { font-size: 13.5px; color: var(--kf-text-muted); margin-top: 4px; line-height: 1.5; }
+
+/* ── VENTAJAS ─────────────────────────────────────────────── */
+.benefits-grid { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .benefits-grid { grid-template-columns: repeat(3, 1fr); } }
+.benefit-card {
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-xl); padding: 22px; box-shadow: var(--kf-shadow-sm);
+}
+.benefit-card__head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.benefit-card .benefit-icon {
+  flex: none; width: 40px; height: 40px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--kf-tint-bg); color: var(--kf-purple-dark);
+}
+.benefit-card .benefit-icon svg { width: 22px; height: 22px; }
+.benefit-card h3 { font-size: 16.5px; font-weight: 700; line-height: 1.25; }
+.benefit-card p { font-size: 14px; color: var(--kf-text-muted); line-height: 1.55; }
+
+/* ── PARA QUIÉN ES ────────────────────────────────────────── */
+.fit { background: var(--kf-surface); border-top: 1px solid var(--kf-hairline); border-bottom: 1px solid var(--kf-hairline); }
+.fit-list { margin-top: 28px; display: grid; gap: 12px; grid-template-columns: 1fr; max-width: 720px; margin-left: auto; margin-right: auto; }
+@media (min-width: 768px) { .fit-list { grid-template-columns: repeat(2, 1fr); } }
+.fit-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: #fff; border: 1px solid var(--kf-hairline); border-radius: var(--radius-lg); padding: 16px;
+}
+.fit-item .fit-check {
+  flex: none; width: 38px; height: 38px; border-radius: var(--radius-md);
+  background: var(--kf-tint-bg); color: var(--kf-purple-dark);
+  display: flex; align-items: center; justify-content: center;
+}
+.fit-item .fit-check svg { width: 19px; height: 19px; }
+.fit-item p { font-size: 14.5px; color: var(--kf-text-secondary); line-height: 1.5; }
+
+/* ── HERRAMIENTAS QUE SUSTITUYES ──────────────────────────── */
+.tools-replace .section-sub { max-width: 620px; margin: 14px auto 0; text-align: center; font-size: 15px; color: var(--kf-text-muted); line-height: 1.55; }
+.tools-card {
+  max-width: 720px; margin: 32px auto 0; background: var(--kf-surface);
+  border: 1px solid var(--kf-hairline); border-radius: var(--radius-xl);
+  padding: 8px 24px; box-shadow: var(--kf-shadow-sm);
+}
+.tools-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--kf-hairline); }
+.tools-row:last-of-type { border-bottom: none; }
+.tools-row__left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.tools-icon {
+  flex: none; width: 38px; height: 38px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--kf-tint-bg); color: var(--kf-purple-dark);
+}
+.tools-icon svg { width: 20px; height: 20px; }
+.tools-icon--brand { background: none; padding: 0; }
+.tools-icon--brand img { width: 38px; height: 38px; display: block; }
+.sensei-mark {
+  /* Recuadro, NO círculo (Hernán, 2026-07-29: "sensei en recuadro no
+     circulo") — mismo radio proporcional que los squircles SVG del resto de
+     iconos de marca: 116/512 = 22,66% → 38px ≈ 9px. */
+  width: 38px; height: 38px; border-radius: 9px;
+  background: linear-gradient(to bottom right, var(--kf-purple), var(--kf-purple-dark));
+  color: #fff; font-weight: 700; font-size: 18px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Noto Sans JP", var(--body-font, sans-serif);
+}
+.tools-row__name { font-size: 15px; font-weight: 700; color: var(--kf-text-primary); }
+/* "Cuota de autónomo" cierra la lista como el REMATE: es el gasto más caro
+   y el más doloroso de la lista, así que se trata como pieza especial y no
+   como una fila más (Hernán, 2026-07-29: "haz que este item sea especial").
+   El "subrayado" es el MISMO resaltado animado de rotulador de los
+   titulares (`.highlight`, 2 pasadas + texto a blanco), no un subrayado
+   propio — la fila lleva `.reveal`, así que hereda el disparo por scroll
+   de `.reveal.is-visible .highlight` sin CSS nuevo. Aquí solo se viste la
+   fila: fondo con tinte de marca, sin hairline, y el precio en morado. */
+.tools-row--especial {
+  margin: 0 -24px; padding: 18px 24px;
+  background: var(--kf-tint-bg);
+  border-bottom: none !important; border-radius: var(--radius-lg);
+}
+.tools-row--especial .tools-row__replaces { color: var(--kf-purple-dark); opacity: .75; }
+.tools-row--especial .tools-row__price { color: var(--kf-purple-dark); }
+.tools-row__badge { font-weight: 600; font-size: 12px; color: var(--kf-purple-dark); }
+.tools-row__replaces { font-size: 11.5px; color: var(--kf-text-muted); line-height: 1.4; margin-top: 2px; }
+.tools-row__price { flex: none; font-size: 14.5px; font-weight: 700; color: var(--kf-text-muted); text-align: right; white-space: nowrap; }
+.tools-row__price--text { font-weight: 600; font-style: italic; font-size: 13px; }
+.tools-total-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 0; border-top: 2px dashed var(--kf-hairline);
+  font-size: 14px; color: var(--kf-text-muted);
+}
+.tools-total-row .tools-total-price { font-weight: 700; text-decoration: line-through; }
+/* REMATE del módulo: "Con Kunfupay · Incluido, sin cuota mensual". Antes
+   usaba el MISMO tinte claro (--kf-tint-bg) que la fila especial de "Cuota
+   de autónomo", así que las dos competían y no se distinguía cuál era la
+   conclusión (Hernán, 2026-07-29: "la cuota de autónomo se parece mucho a
+   la fila de Con Kunfupay; haz que este último destaque más"). Ahora va en
+   gradiente de marca SÓLIDO con texto en blanco: jerarquía inequívoca
+   —tinte claro = una fila más de la lista, morado sólido = el cierre—, con
+   sombra teñida de morado (sello Morfeo). `margin-bottom:-8px` cancela el
+   padding inferior del card para que sangre a ras del borde. */
+.tools-final-row {
+  display: flex; flex-direction: column; align-items: stretch; gap: 16px;
+  margin: 0 -24px -8px; padding: 20px 24px 22px;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  background: linear-gradient(135deg, var(--kf-purple), var(--kf-purple-dark));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 10px 24px -12px rgba(115,75,252,.55);
+}
+/* La línea de label+precio mantiene el reparto izquierda/derecha que tienen
+   las filas de arriba (nombre ← → precio); el CTA va en su propia línea. */
+.tools-final-row__top {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+}
+/* Botón BLANCO sobre el morado: un morado sobre morado no contrasta. */
+.tools-final-cta {
+  align-self: center; background: #fff; color: var(--kf-purple-dark);
+  font-size: 15.5px; padding: 0 32px;
+  box-shadow: 0 8px 20px -10px rgba(13,16,24,.45);
+  transition: transform .18s var(--kf-ease), box-shadow .18s var(--kf-ease);
+}
+.tools-final-cta:hover { transform: translateY(-1px); box-shadow: 0 12px 26px -10px rgba(13,16,24,.5); }
+.tools-final-cta:active { transform: scale(.98); }
+.tools-final-row .tools-final-label { font-family: var(--morfeo-font); font-weight: 800; font-size: 16px; color: #fff; }
+.tools-final-row .tools-final-price { font-family: var(--morfeo-font); font-weight: 800; font-size: 16px; color: #fff; }
+/* En MÓVIL el remate se apila y crece a escala de titular (Hernán,
+   2026-07-30: "que sean mucho más grande, H2 y H3 y centrados"): la fila
+   deja de ser label-izquierda / precio-derecha y pasa a bloque centrado,
+   con el mismo idioma `clamp()` que `h2.section-title` para no salirse de
+   la escala tipográfica del sistema. */
+@media (max-width: 767px) {
+  .tools-final-row { gap: 18px; padding: 28px 24px; }
+  .tools-final-row__top {
+    flex-direction: column; align-items: center; text-align: center; gap: 6px;
+  }
+  .tools-final-cta { align-self: stretch; }
+  .tools-final-row .tools-final-label {
+    font-size: clamp(24px, 6.2vw, 32px); line-height: 1.12; letter-spacing: -.02em;
+  }
+  .tools-final-row .tools-final-price {
+    font-size: clamp(17px, 4.4vw, 21px); line-height: 1.3;
+  }
+}
+.tools-note { max-width: 620px; margin: 16px auto 0; text-align: center; font-size: 12px; color: var(--kf-text-muted); line-height: 1.5; }
+
+
+/* ═══ TESTIMONIOS · LA FOTO MANDA ═══════════════════════════════════════
+   Dos columnas: mazo de fotos apiladas | texto + navegación. En móvil se
+   apila (foto arriba, texto debajo).
+   ⚠️ Las fotos de origen son 400×400. La foto activa se limita a 300px de
+   lado a propósito: a 320px+ en pantalla retina (2×) se verían blandas.
+   Si se consiguen originales de ~640px, se puede subir este tamaño. */
+.tst {
+  margin-top: 48px; display: grid; gap: 32px; align-items: center;
+  grid-template-columns: 1fr; max-width: 900px; margin-left: auto; margin-right: auto;
+}
+@media (min-width: 768px) { .tst { grid-template-columns: 300px 1fr; gap: 56px; } }
+
+/* El mazo necesita altura propia porque las fotos van en absolute (si no,
+   el contenedor colapsaría a 0). Se reserva un cuadrado. */
+.tst-fotos { position: relative; width: 100%; max-width: 300px; aspect-ratio: 1; margin: 0 auto; }
+.tst-foto {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; border-radius: var(--radius-2xl);
+  box-shadow: 0 26px 50px -20px rgba(13,16,24,.35), 0 8px 20px -12px rgba(115,75,252,.35);
+  /* Estado por defecto = carta del fondo: girada, algo más pequeña y bajada */
+  opacity: 0; transform: rotate(var(--rot, 0deg)) scale(.92) translateY(16px);
+  transition: opacity .42s var(--kf-ease), transform .42s var(--kf-ease);
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
+/* Las 2 siguientes del mazo se dejan ver por detrás, para que se lea como
+   una pila de fotos y no como una sola imagen que cambia. */
+.tst-foto.is-next  { opacity: .5; z-index: 2; }
+.tst-foto.is-next2 { opacity: .28; z-index: 1; }
+.tst-foto.is-active {
+  opacity: 1; z-index: 3;
+  transform: rotate(0deg) scale(1) translateY(0);
+  /* La foto nueva entra un poco después de que la anterior empiece a irse,
+     por el mismo motivo que el texto. */
+  transition: opacity .42s var(--kf-ease) .12s, transform .48s var(--kf-ease) .12s;
+}
+
+.tst-panel { display: flex; flex-direction: column; }
+/* Los textos se apilan en la misma celda (grid + area compartida) en vez de
+   position:absolute: así el contenedor lo dimensiona el MÁS ALTO y no hay
+   salto de altura al cambiar de testimonio ni min-height que calcular. */
+.tst-textos { display: grid; }
+/* El texto que SALE se va rápido y sin retraso; el que ENTRA espera 190ms
+   antes de aparecer. Así no se ven los dos a la vez a media opacidad, que es
+   lo que pasaba con un crossfade simétrico y se leía como un fallo (visto en
+   captura). Es el equivalente en CSS del `AnimatePresence mode="wait"` de la
+   referencia de Hernán: primero sale uno, luego entra el otro. */
+.tst-texto {
+  grid-area: 1 / 1; margin: 0;
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .18s var(--kf-ease), transform .18s var(--kf-ease);
+  pointer-events: none;
+}
+.tst-texto.is-active {
+  opacity: 1; transform: none; pointer-events: auto;
+  transition: opacity .34s var(--kf-ease) .19s, transform .34s var(--kf-ease) .19s;
+}
+.tst-nombre {
+  font-family: var(--morfeo-font); font-weight: 800;
+  font-size: clamp(20px, 3.2vw, 26px); letter-spacing: -.02em;
+  color: var(--kf-text-primary); line-height: 1.2;
+}
+.tst-rol { font-size: 13.5px; color: var(--kf-text-muted); margin-top: 3px; }
+.tst-cita {
+  margin-top: 18px; font-size: clamp(15px, 2vw, 17.5px); line-height: 1.6;
+  color: var(--kf-text-secondary);
+}
+.tst-cita::before { content: '\201C'; } .tst-cita::after { content: '\201D'; }
+
+.tst-nav { display: flex; gap: 10px; margin-top: 28px; }
+.tst-btn {
+  width: 42px; height: 42px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--kf-hairline); background: var(--kf-surface);
+  color: var(--kf-purple-dark); box-shadow: var(--kf-shadow-sm);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s var(--kf-ease), transform .2s var(--kf-ease);
+}
+.tst-btn:hover { background: var(--kf-tint-bg); }
+.tst-btn:active { transform: scale(.94); }
+.tst-btn svg { width: 18px; height: 18px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tst-foto, .tst-texto { transition: none; }
+  .tst-foto { transform: rotate(var(--rot, 0deg)) scale(.92) translateY(16px); }
+  .tst-foto.is-active { transform: none; }
+}
+
+/* ── CONFIANZA / DIFERENCIADORES ──────────────────────────── */
+.trust-grid { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
+.trust-card {
+  border: 1px solid var(--kf-hairline); border-radius: var(--radius-xl); padding: 22px;
+  background: var(--kf-surface); box-shadow: var(--kf-shadow-sm);
+}
+.trust-card h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 6px; }
+.trust-card p { font-size: 14px; color: var(--kf-text-muted); line-height: 1.55; }
+
+/* ── PASOS ────────────────────────────────────────────────── */
+.steps-grid { margin-top: 32px; display: grid; gap: 20px; grid-template-columns: 1fr; counter-reset: step; position: relative; }
+@media (min-width: 768px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+.steps-grid::before {
+  content: ""; position: absolute; left: 15px; top: 16px; bottom: 16px; width: 2px;
+  background: var(--kf-hairline); z-index: 0;
+}
+.steps-grid::after {
+  content: ""; position: absolute; left: 15px; top: 16px; width: 2px; height: 0;
+  background: linear-gradient(to bottom, var(--kf-purple), var(--kf-purple-dark));
+  z-index: 0;
+  animation: kf-steps-fill linear both;
+  animation-timeline: view(block);
+  animation-range: entry 10% cover 75%;
+}
+@keyframes kf-steps-fill { from { height: 0; } to { height: 100%; } }
+@supports not (animation-timeline: view()) {
+  .steps-grid::after { animation: none; height: 100%; opacity: .6; }
+}
+@media (min-width: 768px) { .steps-grid::before, .steps-grid::after { display: none; } }
+@media (prefers-reduced-motion: reduce) { .steps-grid::after { animation: none; height: 100%; } }
+.step-card { position: relative; z-index: 1; padding-left: 44px; }
+.step-card::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: 0; top: 0;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(to bottom right, var(--kf-purple), var(--kf-purple-dark));
+  color: #fff; font-family: var(--morfeo-font); font-weight: 800; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 6px var(--kf-bg);
+  transform: scale(.55); opacity: .35;
+  animation: kf-step-pop linear both;
+  animation-timeline: view(block);
+  animation-range: entry 0% entry 55%;
+}
+@keyframes kf-step-pop { to { transform: scale(1); opacity: 1; } }
+@supports not (animation-timeline: view()) {
+  .step-card::before { transform: none; opacity: 1; animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .step-card::before { transform: none; opacity: 1; animation: none; }
+}
+.step-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.step-card p { font-size: 14px; color: var(--kf-text-muted); line-height: 1.55; }
+
+
+/* ═══ 3 PASOS · tarjeta con número, chip de tiempo y foto ════════════════
+   Rediseño según la referencia de Hernán (2026-07-30). Sustituye la rejilla
+   de 3 columnas anterior por tarjetas apiladas, que es lo que permite meter
+   una foto por paso sin apretujar el texto. */
+.pasos { position: relative; margin-top: 36px; max-width: 720px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; gap: 14px; }
+/* Línea de puntos que une los números. Va DETRÁS de las tarjetas (que son
+   opacas), así solo se ve en los huecos entre ellas — el efecto exacto de la
+   referencia, sin tener que dibujar un tramo por hueco. */
+.pasos::before {
+  content: ""; position: absolute; z-index: 0;
+  left: 29px; top: 30px; bottom: 30px; width: 0;
+  border-left: 2px dashed var(--kf-purple);
+  opacity: .35;
+}
+@media (min-width: 620px) { .pasos::before { left: 31px; } }
+
+/* 3 columnas SIEMPRE — número | contenido | foto (Hernán, 2026-07-30: "en la
+   versión movil, que la imagen quede a la derecha el contenido a la
+   izquierda"). Antes en móvil la foto se iba debajo a todo el ancho; ahora
+   acompaña al texto también en móvil, con la foto más estrecha y el número y
+   los huecos más justos para que al texto le quede sitio suficiente. */
+.paso {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: auto 1fr 112px; gap: 10px; align-items: center;
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-xl); padding: 14px;
+  box-shadow: var(--kf-shadow-sm);
+  /* Necesario para que la foto a sangre quede recortada por el radio de la
+     tarjeta y no asome en pico por las esquinas. */
+  overflow: hidden;
+}
+@media (min-width: 620px) {
+  .paso { grid-template-columns: auto 1fr 190px; gap: 14px; padding: 16px; }
+}
+.paso__num {
+  flex: none; width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(to bottom right, var(--kf-purple), var(--kf-purple-dark));
+  color: #fff; font-family: var(--morfeo-font); font-weight: 800; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  /* El anillo del color del fondo tapa la línea de puntos justo detrás del
+     número, para que no se vea cruzándolo. */
+  box-shadow: 0 0 0 5px var(--kf-surface);
+}
+.paso__titulo { font-family: var(--morfeo-font); font-size: 15px; font-weight: 800; color: var(--kf-text-primary); line-height: 1.22; }
+@media (min-width: 620px) { .paso__titulo { font-size: 16.5px; } }
+.paso__desc { font-size: 13px; color: var(--kf-text-muted); line-height: 1.45; margin-top: 3px; }
+@media (min-width: 620px) { .paso__desc { font-size: 14px; line-height: 1.5; } }
+.paso__desc strong { color: var(--kf-purple-dark); font-weight: 700; }
+.paso__chip {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: 9px;
+  background: var(--kf-tint-bg); color: var(--kf-purple-dark);
+  border-radius: var(--radius-pill); padding: 5px 11px;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 12px;
+}
+.paso__chip svg { width: 11px; height: 11px; }
+
+/* La foto SANGRA hasta el borde de la tarjeta (Hernán, 2026-07-30: "las
+   imágenes que no tengan margen con el card que las contiene"). Los márgenes
+   negativos cancelan el padding de la tarjeta por arriba, abajo y derecha, y
+   `align-self: stretch` hace que ocupe todo el alto de la fila (por eso NO
+   lleva height fijo: lo marca la altura del contenido). El recorte de las
+   esquinas lo da el `overflow: hidden` de la tarjeta, así la foto hereda su
+   radio en vez de tener que replicarlo. */
+.paso__media, .paso__img {
+  grid-column: 3;
+  /* El ancho tiene que ser EXPLÍCITO (`calc(100% + padding)`), no `100%` ni
+     `justify-self: stretch`:
+     · con `width: 100%` el porcentaje se resuelve contra la columna (112px) y
+       el margen negativo solo DESPLAZA la caja, dejando aire a la derecha;
+     · `justify-self: stretch` no funciona aquí porque un <img> es un elemento
+       REEMPLAZADO con relación de aspecto intrínseca, y en ese caso el spec
+       trata `stretch` como `start` — medido: seguían 17px de hueco.
+     Con `calc(100% + 14px)` la foto llena su celda y se come justo el padding
+     de la tarjeta, quedando a ras del borde. */
+  width: calc(100% + 14px);
+  /* ⚠️ OBLIGATORIO junto al width de arriba: el reset trae
+     `img { max-width: 100% }`, que recortaba este `calc(100% + 14px)` de vuelta
+     a los 112px de la columna — de ahí el margen lateral que seguía viéndose.
+     Sin este `max-width: none` el sangrado NO funciona. */
+  max-width: none;
+  align-self: stretch; height: auto; min-height: 96px;
+  margin: -14px -14px -14px 0;
+  /* Redondeo solo en las esquinas de la derecha, las que coinciden con el
+     borde de la tarjeta (Hernán: "bordes redondeados"). El `overflow: hidden`
+     de la tarjeta ya recortaría, pero declararlo aquí lo hace explícito y no
+     depende de que ese overflow siga estando. */
+  border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  overflow: hidden;
+}
+.paso__img { object-fit: cover; display: block; }
+@media (min-width: 620px) {
+  .paso__media, .paso__img {
+    width: calc(100% + 16px);
+    margin: -16px -16px -16px 0; min-height: 116px;
+  }
+}
+/* Marcador visible de foto pendiente: en un mockup es mejor que se VEA que
+   falta un asset que dejar un hueco silencioso que nadie note. */
+.paso__media--pendiente {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--kf-bg); border: 1px dashed var(--kf-hairline-strong);
+  color: var(--kf-text-muted); font-size: 12px; font-weight: 600;
+}
+
+/* ⏸️ SECCIÓN OCULTA TEMPORALMENTE — "Una infraestructura pensada para negocios
+   digitales globales" (Hernán, 2026-07-30: "este apartado escóndelo").
+   El HTML de `<section class="trust section">` SIGUE INTACTO, con sus 3
+   tarjetas (Sin cuota mensual · Sin integraciones técnicas · ¡Vende
+   globalmente!): para volver a mostrarla basta con BORRAR esta única regla.
+   Se usa `section.trust` y no `.trust` a secas para no arrastrar por error a
+   `.trust-grid` / `.trust-card`, que son sus hijos.
+   No llevaba CTA secundario, así que no se pierde ninguno al ocultarla. */
+section.trust { display: none; }
+
+/* ── FAQ ──────────────────────────────────────────────────── */
+.faq-list { margin-top: 28px; max-width: 720px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { border: 1px solid var(--kf-hairline); border-radius: var(--radius-lg); background: var(--kf-surface); overflow: hidden; }
+.faq-question {
+  width: 100%; text-align: left; background: none; border: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 18px; font-family: var(--morfeo-font); font-weight: 700; font-size: 14.5px; color: var(--kf-text-primary);
+}
+.faq-question .faq-icon { flex: none; transition: transform .2s var(--kf-ease); color: var(--kf-purple); }
+.faq-item[data-open="true"] .faq-question .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden; transition: max-height .25s var(--kf-ease);
+  padding: 0 18px; font-size: 14px; color: var(--kf-text-muted); line-height: 1.6;
+}
+.faq-item[data-open="true"] .faq-answer { max-height: 240px; padding-bottom: 18px; }
+
+/* ── CTA FINAL (variable por campaña) ─────────────────────── */
+.cta-final {
+  background: linear-gradient(135deg, var(--kf-purple), var(--kf-purple-dark));
+  border-radius: var(--radius-2xl); text-align: center; color: #fff;
+  padding: 56px 20px;
+}
+.cta-final h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 800; letter-spacing: -.02em; color: #fff; }
+.cta-final p { margin-top: 12px; font-size: 15px; color: rgba(255,255,255,.85); max-width: 520px; margin-left: auto; margin-right: auto; }
+.cta-final .hero-cta { margin-top: 26px; }
+
+
+/* ── BARRA FIJA INFERIOR (aparece al perder de vista el CTA) ──────────── */
+.sticky-cta-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  transform: translateY(120%);
+  transition: transform .35s var(--kf-ease);
+  background: var(--kf-header-bg); backdrop-filter: blur(14px);
+  border-top: 1px solid var(--kf-hairline);
+  box-shadow: 0 -8px 24px -12px rgba(13,16,24,.18);
+  padding-top: 12px; padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+.sticky-cta-bar.is-visible { transform: translateY(0); }
+.sticky-cta-bar__inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+}
+.sticky-cta-bar__text {
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 14px;
+  color: var(--kf-text-primary); margin: 0;
+}
+.sticky-cta-bar .btn { height: 44px; padding: 0 22px; white-space: nowrap; flex: none; }
+@media (max-width: 480px) {
+  .sticky-cta-bar__text { display: none; }
+  .sticky-cta-bar__inner { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .sticky-cta-bar { transition: none; } }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.site-footer { padding: 40px 0 60px; }
+.site-footer .footer-top { display: flex; align-items: center; gap: 10px; }
+/* Sin border-radius: el propio SVG del isotipo ya trae sus esquinas
+   redondeadas. Con el squircle antiguo no se notaba (sus esquinas eran
+   transparentes y el radio del CSS no recortaba nada), pero el isotipo
+   actual lleva el morado hasta el borde: un radio de 10px sobre una caja
+   de 26px es un 38% y lo convertía casi en un círculo. */
+.site-footer .footer-top img { height: 26px; width: 26px; }
+.site-footer .footer-legal { margin-top: 18px; font-size: 12.5px; color: var(--kf-text-subtle); }
+
+/* ══ PROPIO DE vendedores/v1 ══════════════════════════════════════════
+   Solo lo que el patrón no trae: el resultado del quiz con dos CTA, las
+   caras del equipo y el calendario. Todo con los tokens de arriba. */
+
+/* CTA del hero: caras del equipo + WhatsApp (súper-CTA) + agendar */
+.kf-equipo-mini { display: flex; align-items: center; justify-content: center; }
+.kf-equipo-mini img {
+  width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+  border: 2px solid #140f2e; margin-left: -10px;
+  box-shadow: 0 0 0 1.5px rgba(185,166,255,.55);
+}
+.kf-equipo-mini img:first-child { margin-left: 0; }
+.kf-equipo-mini span { margin-left: 10px; font-size: 13.5px; font-weight: 600; color: rgba(255,255,255,.85); text-align: left; }
+.kf-hero-ctas { display: flex; flex-direction: column; gap: 10px; width: 100%; max-width: 360px; margin-top: 8px; }
+.kf-hero-ctas .btn { width: 100%; height: 52px; font-size: 16px; }
+/* El secundario del patrón está pensado para fondo claro: en el hero oscuro
+   pasa a blanco para que se lea. */
+.hero--dark .btn-secundario { color: #fff; border-color: rgba(255,255,255,.4); }
+.hero--dark .btn-secundario:hover { background: rgba(255,255,255,.08); }
+
+/* Equipo */
+.kf-equipo__grid {
+  margin-top: 32px; display: grid; gap: 16px;
+  grid-template-columns: repeat(2, 1fr);
+}
+@media (min-width: 768px) { .kf-equipo__grid { grid-template-columns: repeat(4, 1fr); } }
+.kf-persona {
+  display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px;
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-xl); padding: 22px 12px; box-shadow: var(--kf-shadow-sm);
+}
+.kf-persona img {
+  width: 132px; height: 132px; border-radius: 50%; object-fit: cover; margin-bottom: 10px;
+  padding: 3px; background: linear-gradient(135deg, #f97316, #ec4899 45%, var(--kf-purple));
+}
+.kf-persona strong { font-family: var(--morfeo-font); font-size: 17px; color: var(--kf-text-primary); }
+.kf-persona span { font-size: 13px; color: var(--kf-text-muted); }
+
+/* Calendario */
+.kf-agenda { padding-top: 24px; }
+.kf-cal {
+  margin-top: 28px; background: var(--kf-surface);
+  border: 1px solid var(--kf-hairline); border-radius: var(--radius-2xl);
+  box-shadow: var(--kf-shadow-lg); overflow: hidden; min-height: 220px;
+  display: flex; align-items: center; justify-content: center;
+}
+.kf-cal iframe { display: block; width: 100%; height: 720px; border: 0; }
+.kf-cal__vacio { padding: 32px 24px; text-align: center; color: var(--kf-text-muted); font-size: 15px; line-height: 1.6; max-width: 460px; }
+
+/* Renglones parejos: el navegador reparte el texto para que ninguna línea
+   quede mucho más larga o más corta que las demás (titular, subtítulo,
+   topbar y títulos de sección). */
+.hero h1, .hero-subtitle, .topbar p, h2.section-title, .section-lead, .hero-microtrust { text-wrap: balance; }
+.hero h1 { max-width: 1040px; margin-left: auto; margin-right: auto; }
+@media (min-width: 900px) { .hero h1 { font-size: 50px; } }
+.hero-subtitle { max-width: 620px; margin-left: auto; margin-right: auto; }
+/* Titular en dos frases: cada una en su bloque y repartida en renglones
+   parejos. La coma va pegada al subrayado para que nunca abra renglón. */
+.hero h1 .kf-l { display: block; text-wrap: balance; }
+.kf-nw { white-space: nowrap; }
+
+/* Landings por vendedor: su cara en el hero y su tarjeta sola, más grande. */
+.kf-vendedor-hero { display: flex; align-items: center; justify-content: center; gap: 12px; text-align: left; }
+.kf-vendedor-hero img {
+  width: 64px; height: 64px; border-radius: 50%; object-fit: cover;
+  padding: 2px; background: linear-gradient(135deg, #f97316, #ec4899 45%, var(--kf-purple));
+}
+.kf-vendedor-hero strong { display: block; font-family: var(--morfeo-font); font-size: 16px; color: #fff; }
+.kf-vendedor-hero span { font-size: 13px; color: rgba(255,255,255,.7); }
+.kf-equipo__grid--uno { grid-template-columns: 1fr !important; max-width: 320px; margin-left: auto; margin-right: auto; }
+.kf-equipo__grid--uno .kf-persona img { width: 200px; height: 200px; }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7WQX54Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ============================================================
+     VARIANTE DE HERO: QUIZ
+     Esta carpeta es _template/mockup/ con el hero sustituido por la
+     variante (c) — quiz de 2 preguntas + email. El resto de bloques
+     (métodos de pago, dolor, solución, ventajas, para quién es, confianza,
+     pasos, FAQ, CTA final, footer) es IDÉNTICO a _template/mockup/ — si se
+     actualiza el cuerpo común ahí, replicar el cambio aquí y en
+     _template/mockup-formulario/. Ver también CÓMO USAR ESTA PLANTILLA
+     abajo (lo mismo aplica, cambiando el punto 2 por "ajusta las preguntas
+     y el copy del quiz a la oferta de la campaña").
+     ============================================================ -->
+
+<!-- ============================================================
+     CÓMO USAR ESTA PLANTILLA
+     Copia esta carpeta completa (mockup-quiz/index.html + assets/) a
+     landings-por-marca/<submarca>/quiz-leads/<version>/mockup/ y sustituye:
+     1) <title> y <meta description> arriba.
+     2) La sección HERO (única parte que cambia por campaña): titular,
+        subtítulo y las preguntas/opciones del quiz.
+     3) El CTA del bloque final (.cta-final) para que combine con el de la
+        oferta concreta.
+     El resto de bloques (métodos de pago, punto de dolor, cómo lo resuelve,
+     ventajas, para quién es, confianza, pasos, FAQ, footer) es la
+     estructura COMÚN de toda landing Kunfupay: se ajusta el copy al nicho
+     si hace falta, pero no se reordena ni se quitan bloques sin acordarlo.
+     ============================================================ -->
+
+<!-- ============================================================
+     0) TOPBAR DE CAMPAÑA — ARRIBA DEL TODO, ANTES DEL HERO
+     Barra fina de color llamativo (gradiente morado Morfeo — no naranja,
+     ese color se reserva para la única súper-CTA de la pieza) para un
+     mensaje corto que cambia por campaña. Dos usos típicos (deja solo UNO,
+     borra el otro comentario):
+       (a) FILTRO DE CUALIFICACIÓN — ej.: "Solo para creadores que facturen
+           +2.000€/mes" (descarta tráfico que no encaja antes de que entre
+           al hero).
+       (b) URGENCIA / ESCASEZ — ej.: "🔥 Últimas plazas de la promoción de
+           este mes" (usar solo si la escasez es real, no inventada — regla
+           del Brain de no fabricar prueba social/urgencia falsa).
+     No lleva enlace ni cierre (✕): es un mensaje, no una acción.
+     ============================================================ -->
+<div class="topbar">
+  <!-- CAMPAÑA FISCAL. Se usa como FILTRO DE CUALIFICACIÓN, no como urgencia: la
+       escasez de "últimas plazas" del patrón sería inventada aquí y el Brain
+       prohíbe fabricar urgencia falsa. Este mensaje además descarta al que
+       todavía no cobra de fuera, que es quien no encaja en este ángulo. -->
+  <p><strong>Para quien ya vende cursos, mentorías o servicios online</strong></p>
+</div>
+
+<!-- ============================================================
+     1) HERO — ÚNICA SECCIÓN QUE CAMBIA POR CAMPAÑA
+     Sustituye eyebrow / h1 / subtítulo / CTA según la oferta y el público
+     de esta landing. El CTA puede ser: (a) botón directo a registro,
+     (b) formulario embebido, o (c) arranque de quiz — deja solo UNA de
+     las 3 variantes de abajo y borra las otras dos.
+     ============================================================ -->
+<section class="hero hero--dark">
+  <!-- "Ondas Sensei" — sistema-visual/recursos/sensei-ondas (mismo efecto que
+       el hero real de kunfupay.com). No redibujar a mano: si hace falta
+       regenerarlas, usar recursos/sensei-ondas/tool.html. -->
+  <svg class="hero-waves" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="heroGradA" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"  stop-color="rgba(115,75,252,0)"/>
+        <stop offset="22%" stop-color="rgba(115,75,252,.32)"/>
+        <stop offset="50%" stop-color="rgba(115,75,252,.5)"/>
+        <stop offset="78%" stop-color="rgba(115,75,252,.32)"/>
+        <stop offset="100%" stop-color="rgba(115,75,252,0)"/>
+      </linearGradient>
+      <linearGradient id="heroGradSoft" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"  stop-color="rgba(156,135,254,0)"/>
+        <stop offset="30%" stop-color="rgba(156,135,254,.28)"/>
+        <stop offset="60%" stop-color="rgba(156,135,254,.34)"/>
+        <stop offset="100%" stop-color="rgba(156,135,254,0)"/>
+      </linearGradient>
+      <linearGradient id="heroGradLilac" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"  stop-color="rgba(156,135,254,0)"/>
+        <stop offset="25%" stop-color="rgba(156,135,254,.2)"/>
+        <stop offset="50%" stop-color="rgba(156,135,254,.28)"/>
+        <stop offset="75%" stop-color="rgba(156,135,254,.2)"/>
+        <stop offset="100%" stop-color="rgba(156,135,254,0)"/>
+      </linearGradient>
+    </defs>
+    <g class="wa"><path d="M0,40 C125,18 250,18 375,40 S625,62 750,40 S1000,18 1000,40" fill="none" stroke="url(#heroGradA)" stroke-width="1.1" stroke-linecap="round"/></g>
+    <g class="wb"><path d="M0,48 C140,72 290,70 430,48 S700,24 850,48 S1000,66 1000,48" fill="none" stroke="url(#heroGradSoft)" stroke-width="0.85" stroke-linecap="round"/></g>
+    <g class="wc"><path d="M0,52 C160,36 320,38 500,52 S820,70 1000,52" fill="none" stroke="url(#heroGradLilac)" stroke-width="0.75" stroke-linecap="round"/></g>
+    <g class="wd"><path d="M0,58 C110,70 240,72 380,58 S640,42 780,58 S1000,72 1000,58" fill="none" stroke="url(#heroGradSoft)" stroke-width="0.55" stroke-linecap="round"/></g>
+    <g class="we"><path d="M0,62 C150,44 330,46 520,62 S860,80 1000,62" fill="none" stroke="url(#heroGradA)" stroke-width="2.0" stroke-linecap="round"/></g>
+  </svg>
+
+  <div class="wrap">
+    <img class="hero-logo" src="/landings-assets/logo.svg" alt="Kunfupay">
+    <h1><span class="kf-l">Cobra desde hoy en todo el mundo.</span> <span class="kf-l">Y&nbsp;<span class="kf-nw"><span class="highlight" style="--tilt:-1.4deg">olvídate del IVA</span>,</span> la&nbsp;LLC y&nbsp;el&nbsp;asesor.</span></h1>
+    <p class="hero-subtitle">Cada cliente paga en su moneda local, sin fricciones, y tú recibes euros, dólares o la moneda que prefieras. Como somos Merchant of Record, te representamos en cada venta y pagamos sus impuestos.</p>
+
+    <!-- HERO VARIANTE (a) — CTA DIRECTO, sin formulario. Súper-CTA naranja a
+         WhatsApp (la acción suprema de la pieza) y, debajo, el secundario que
+         baja al calendario. El filtro lo hacen la topbar y el subtítulo.
+         #hero-cta envuelve el bloque para la barra fija, igual que en el patrón.
+         (Este div se cierra después del microtrust.) -->
+    <div class="hero-cta" id="hero-cta">
+      <div class="kf-vendedor-hero">
+        <img src="equipo/rafa.jpg" alt="Rafa">
+        <span><strong>Te atiende Rafa</strong>@rafa.kunfupay · equipo de Kunfupay</span>
+      </div>
+      <div class="kf-hero-ctas">
+        <a href="#agenda" class="btn btn-super-cta" id="kf-wa-btn" rel="noopener">Escríbele a Rafa por WhatsApp</a>
+        <a href="#agenda" class="btn btn-secundario" id="kf-agendar-btn">Agenda una llamada con Rafa</a>
+      </div>
+
+      <p class="hero-microtrust">Sin&nbsp;cuota&nbsp;mensual&nbsp;· Sin&nbsp;permanencia&nbsp;· Te&nbsp;responde&nbsp;Rafa</p>
+    </div>
+
+      </div>
+    </div>
+  </div>
+    <!-- Prensa integrada en el hero (misma pieza común que mockup-cta/ —
+         ver el comentario largo ahí para la explicación completa). -->
+    <div class="hero-press">
+      <div class="press-marquee">
+        <div class="press-track">
+          <img class="press-logo" src="/landings-assets/prensa/forbes.svg" alt="Forbes">
+          <img class="press-logo" src="/landings-assets/prensa/techcrunch.svg" alt="TechCrunch">
+          <img class="press-logo" src="/landings-assets/prensa/entrepreneur.svg" alt="Entrepreneur">
+          <img class="press-logo" src="/landings-assets/prensa/wired.svg" alt="WIRED">
+          <img class="press-logo" src="/landings-assets/prensa/el-pais.svg" alt="El País">
+          <img class="press-logo" src="/landings-assets/prensa/business-insider.svg" alt="Business Insider">
+          <img class="press-logo" src="/landings-assets/prensa/forbes.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/techcrunch.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/entrepreneur.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/wired.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/el-pais.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/business-insider.svg" alt="" aria-hidden="true">
+        </div>
+</section>
+
+<!-- ============================================================
+     2) TU EQUIPO — propio de esta campaña
+     Las mismas 4 caras del creativo, para que quien viene del anuncio
+     reconozca a quien le va a responder. Sin enlaces a Instagram: sacarían
+     de la página justo antes de convertir.
+     ============================================================ -->
+<section class="section kf-equipo">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Tu contacto en Kunfupay</span>
+    <h2 class="section-title">Te responde Rafa, <span class="highlight" style="--tilt:1.2deg">no un bot</span></h2>
+    <p class="section-lead">Más de 16.000 creadores ya cobran con Kunfupay. Escríbele a Rafa y en 15 minutos te enseña cómo cobrar a todos tus clientes.</p>
+  </div>
+  <div class="wrap">
+    <div class="kf-equipo__grid kf-equipo__grid--uno">
+      <div class="kf-persona reveal"><img src="equipo/rafa.jpg" alt="Rafa"><strong>Rafa</strong><span>@rafa.kunfupay</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     3) AGENDA — propio de esta campaña
+     El calendario se carga desde KF_CALENDAR_URL (config del <head>). Sin
+     barra fija inferior: la página es corta y los dos CTA ya están arriba.
+     ============================================================ -->
+<section class="section kf-agenda" id="agenda">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Agenda una llamada</span>
+    <h2 class="section-title">Elige tu hueco de <span class="highlight" style="--tilt:-1deg">15 minutos</span> con Rafa</h2>
+    <p class="section-lead">Rafa te llama y te enseña cómo cobrar a tus clientes de cualquier país. Sin compromiso.</p>
+  </div>
+  <div class="wrap">
+    <div class="kf-cal reveal" id="kf-cal">
+      <p class="kf-cal__vacio" id="kf-cal-vacio">El calendario de Rafa se está configurando. Mientras tanto, escríbele por WhatsApp y te da hora.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <img src="/landings-assets/logo.svg" alt="Kunfupay">
+      <span class="heading" style="font-weight:700;font-size:15px;">Kunfupay</span>
+    </div>
+    <!-- Sin enlaces de Aviso legal/Privacidad/Términos/Cookies (decisión de
+         Hernán 2026-07-29, tras dar 2 vueltas: primero texto sin link, luego
+         enlaces reales a kunfupay.com — ninguna convencía). Si el marco legal
+         exige disclosure en esta landing, se resuelve aparte (footer del
+         sitio real, o un modal), no aquí. -->
+    <p class="footer-legal">© 2026 Kunfupay. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+// Mide la topbar de campaña y publica su alto en --kf-topbar-h (igual que el
+// patrón): el hero ocupa la pantalla MENOS la topbar en móvil.
+(function () {
+  var tb = document.querySelector('.topbar');
+  function medir() {
+    var h = (tb && tb.offsetParent !== null) ? tb.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--kf-topbar-h', h + 'px');
+  }
+  medir();
+  window.addEventListener('resize', medir);
+  window.addEventListener('orientationchange', medir);
+  if (tb && window.ResizeObserver) new ResizeObserver(medir).observe(tb);
+})();
+
+// ── CTA PRINCIPAL: WhatsApp ────────────────────────────────────────────
+// El enlace se escribe en el href (no con window.open): el navegador de
+// Instagram bloquea muchas ventanas abiertas por script. `Contact` es el
+// evento al que optimiza el conjunto del anuncio.
+var KF_VEND = window.KF_VENDEDOR || '';
+var KF_VEND_NOMBRE = window.KF_VENDEDOR_NOMBRE || '';
+// Parámetro `vendedor` en los eventos: separa en Meta y GA4 qué landing (y
+// qué audiencia) trae cada contacto. En la principal va 'equipo'.
+function kfVend() { return { vendedor: KF_VEND || 'equipo' }; }
+
+(function () {
+  var waBtn = document.getElementById('kf-wa-btn');
+  if (!waBtn) return;
+  var numero = String(window.KF_WHATSAPP || '').replace(/\D/g, '');
+  if (numero) {
+    var texto = (KF_VEND_NOMBRE ? 'Hola ' + KF_VEND_NOMBRE + ', vengo de tu web de Kunfupay.' : 'Hola, vengo de la web de Kunfupay.') +
+      ' Vendo online a clientes de varios países y quiero ver cómo cobrarles a todos.';
+    waBtn.href = 'https://wa.me/' + numero + '?text=' + encodeURIComponent(texto);
+    waBtn.target = '_blank';
+  } else {
+    // Sin número configurado: se queda en el ancla #agenda (baja al calendario).
+    console.warn('[Kunfupay] KF_WHATSAPP sin configurar: el botón baja al calendario.');
+  }
+  waBtn.addEventListener('click', function () {
+    fbq('track', 'Contact', kfVend());
+    gtag('event', 'contact_whatsapp', kfVend());
+  });
+})();
+
+// ── CTA SECUNDARIO: agendar (baja a #agenda) ───────────────────────────
+(function () {
+  var btn = document.getElementById('kf-agendar-btn');
+  if (!btn) return;
+  btn.addEventListener('click', function () {
+    fbq('trackCustom', 'cta_agendar', kfVend());
+    gtag('event', 'cta_agendar', kfVend());
+  });
+})();
+
+// Calendario: se carga en #kf-cal desde KF_CALENDAR_URL (config del <head>).
+// Con Calendly, la reserva confirmada llega por postMessage y se mide como
+// `Schedule` (evento estándar de Meta) + `agenda_reservada` en GA4.
+(function () {
+  var caja = document.getElementById('kf-cal');
+  var url = window.KF_CALENDAR_URL;
+  if (!caja) return;
+  if (!url) {
+    console.warn('[Kunfupay] KF_CALENDAR_URL sin configurar: el calendario no se muestra.');
+    return;
+  }
+  var iframe = document.createElement('iframe');
+  iframe.src = url;
+  iframe.title = 'Agenda una llamada con Rafa, de Kunfupay';
+  iframe.loading = 'lazy';
+  caja.innerHTML = '';
+  caja.appendChild(iframe);
+
+  window.addEventListener('message', function (e) {
+    var d = e.data;
+    if (d && typeof d === 'object' && d.event === 'calendly.event_scheduled') {
+      fbq('track', 'Schedule', kfVend());
+      gtag('event', 'agenda_reservada', kfVend());
+    }
+  });
+})();
+
+// Reveal al hacer scroll (igual que el patrón).
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var HERO_HIGHLIGHT_DONE_MS = 1700;
+  var loadedAt = performance.now();
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var target = entry.target;
+      io.unobserve(target);
+      var wait = HERO_HIGHLIGHT_DONE_MS - (performance.now() - loadedAt);
+      if (wait > 0) {
+        setTimeout(function () { target.classList.add('is-visible'); }, wait);
+      } else {
+        target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>

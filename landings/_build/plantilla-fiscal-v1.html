@@ -1,0 +1,3097 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+<!-- ============================================================
+     OBLIGATORIO — no borrar ni comentar en ninguna landing de la matriz:
+     1) noindex/nofollow: son páginas de tráfico pagado / test A-B, no deben
+        competir en orgánico ni indexarse. Sin excepciones.
+     2) GTM (GTM-K7WQX54Z): el contenedor de Google Tag Manager es OBLIGATORIO
+        en TODA landing (requisito de Hernán, 2026-07-30). Es el mismo
+        contenedor que kunfupay.com. Ojo al aviso de doble disparo que hay
+        junto al snippet.
+     2b) Google Analytics (GA4, G-V3BVYL1YP3): el mismo GA4 de kunfupay.com.
+        Verificar con el Realtime de GA4 (o Network → google-analytics.com/g/collect)
+        que el PageView llega antes de dar la landing por cerrada.
+     3) Píxel de Meta (Kunfupay, ID 611181908386410): mismo píxel que ya usa
+        kunfupay.com (ver app/RootLayoutClient.tsx del repo web). Deja el
+        PageView del snippet; añade `fbq('track', ...)` extra solo para los
+        eventos de embudo propios de ESTA landing (start_quiz, cta_click...).
+     4) UTMs: la URL pública de la landing (la que se reparte en el anuncio)
+        SIEMPRE lleva la taxonomía UTM de growth-utms — eso lo registra ese
+        agente antes de lanzar tráfico. Lo que SÍ vive en esta plantilla es la
+        captura de esos UTMs (+ gclid/fbclid/ttclid) en sessionStorage y
+        `forwardTrackingParams(url)` para reenviarlos en los CTAs de registro.
+        NO escribas utm_* a mano en los <a href> hacia business.kunfupay.com /
+        app.kunfupay.com: usa siempre forwardTrackingParams(), o pisarás la
+        atribución del anuncio al saltar de subdominio.
+     5) NO añadas banner de cookies aquí. El consentimiento lo gestiona un
+        script externo que se inyecta aparte — un segundo banner duplicaría
+        el consentimiento y rompería la UX.
+     ============================================================ -->
+<!-- ═══════════════════════════════════════════════════════════════════
+     CAMPAÑA OPTIMIZACIÓN FISCAL · v1
+     ================================
+     Derivada del patrón base (funnels/_template/mockup del entregable
+     Landings-kunfupay). SOLO cambia el hero: topbar, titular, subtítulo y los
+     tramos de facturación del paso 2. El cuerpo es idéntico al patrón a
+     propósito — si hay que arreglar algo del cuerpo, se arregla en el patrón y
+     se vuelve a derivar, no se parchea aquí.
+
+     ÁNGULO UNIFICADO. Los creativos venían en dos familias que parecían
+     distintas pero atacan al mismo enemigo: mantener estructura y asesores en
+     otro país para poder cobrar.
+       B.1 «LLC en EE. UU.» → no montes la LLC
+       B.2 «no necesitas un asesor, necesitas una plataforma» → no contrates un
+            asesor por país
+     El titular se queda con B.1, que es el ángulo de 3 de los 5 creativos, y el
+     subtítulo abre con el reframe LITERAL del VO de B.2 ("Kunfupay no es una
+     asesoría: es una plataforma que vende por ti"). Así el hero hace match con
+     las dos familias sin decir dos cosas a la vez.
+
+     ⚠️ NO se promete "beneficios FISCALES" aunque el VO lo diga. Publicar una
+     afirmación sobre el resultado fiscal del cliente depende de su residencia y
+     su situación, que no controlamos. El copy se apoya en el hecho operativo,
+     que sí es nuestro: vendemos por ti, así que facturas a una sola entidad en
+     vez de a diez países. Si alguna vez se autoriza la promesa fiscal explícita,
+     que se haga por escrito y con legal, no editando esta línea.
+
+     ⚠️ ESTA LANDING ES SOLO PARA LOS CREATIVOS CON CTA A REGISTRO (4, 7, 9 y
+     ABUELA FISCAL 1). El creativo «fiscal modelo» pide AGENDAR UNA LLAMADA:
+     mandarlo aquí rompe el message match (espera un calendario y encuentra un
+     formulario). Ese va a /kunfupay-fiscal/agendar.
+
+     ASSETS COMPARTIDOS — /landings-assets/
+     Todas las landings leen sus imágenes de UNA sola copia en
+     `public/landings-assets/`. Antes cada landing llevaba su propio `assets/`:
+     324 ficheros para 54 únicos, 8,4 MB de copias byte a byte idénticas. El
+     problema no era el peso, era que cambiar el logo obligaba a acordarse de
+     seis sitios — y olvidarse de uno publicaba dos identidades a la vez.
+
+     ⚠️ NO muevas esta carpeta bajo /landings/. El rewrite
+     `/landings/:funnel/:version` de next.config se cree que el primer segmento
+     es un funnel: `/landings/_assets/logo.svg` devuelve 500. Comprobado.
+
+     Si una campaña necesita un asset PROPIO (su foto, su mockup), va en su
+     carpeta y solo esa referencia cambia. Compartido por defecto, override
+     cuando haga falta.
+     ═══════════════════════════════════════════════════════════════════ -->
+<meta name="robots" content="noindex, nofollow">
+
+<!-- Favicon: el mismo /favicon.png del site. Las landings estáticas no
+     heredan el metadata del app router (app/layout.tsx), así que sin esta
+     línea el navegador pide /favicon.ico, que no existe, y la pestaña sale
+     sin icono. -->
+<link rel="icon" type="image/png" href="/favicon.png">
+<link rel="apple-touch-icon" href="/favicon.png">
+
+<title>Los beneficios de una LLC, sin montar la LLC | Kunfupay</title>
+<meta name="description" content="Kunfupay no es una asesoría: es una plataforma que vende por ti, con la estructura ya montada. Cobra de todo el mundo facturando a una sola entidad.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- ══ Google Tag Manager (GTM-K7WQX54Z) ══ OBLIGATORIO en toda landing.
+     Mismo contenedor que kunfupay.com. Va lo más arriba posible del <head>.
+
+     ⚠️ RIESGO DE DOBLE DISPARO — leer antes de lanzar tráfico: justo debajo
+     siguen los snippets DIRECTOS de GA4 y del Píxel de Meta, que son
+     anteriores a este contenedor. Si dentro de GTM ya hay una etiqueta que
+     dispare GA4 `G-V3BVYL1YP3` o el píxel `611181908386410`, cada PageView se
+     contará DOS veces y el Consent Mode del contenedor no cubrirá al snippet
+     directo. En ese caso hay que BORRAR los dos snippets de abajo y dejar que
+     GTM sea el único dueño de la medición (que es la regla que ya sigue el
+     repo web: ver el comentario de app/RootLayoutClient.tsx).
+     Los `fbq('trackCustom', ...)` de los CTAs dependen del snippet directo del
+     píxel, así que si se borra hay que reemplazarlos por push a dataLayer. -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-K7WQX54Z');</script>
+
+<!-- Google Analytics (GA4) — Kunfupay (G-V3BVYL1YP3). Mismo GA4 que kunfupay.com. -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-V3BVYL1YP3"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-V3BVYL1YP3');
+</script>
+
+<!-- Meta Pixel — Kunfupay (611181908386410). No lo dupliques ni cambies el ID. -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '611181908386410');
+fbq('track', 'PageView');
+
+/* ══ PARÁMETROS DE EVENTOS DE META — LEER ANTES DE AÑADIR UN EVENTO ══
+   `value` es un parámetro RESERVADO de Meta: espera un NÚMERO (un importe)
+   y debe viajar acompañado de `currency`. Si se le mete texto, o el número
+   como string, el píxel DESCARTA el parámetro y avisa en consola con
+   "Invalid parameter format for value" — el evento llega, pero sin el dato.
+
+   Dos reglas, y por eso existe este helper:
+     · Un importe SIEMPRE se construye con `kfImporte(x)`. Nunca se escribe
+       `value:` a mano en ningún sitio.
+     · Un dato CATEGÓRICO (modelo de negocio, país, plan…) NUNCA va en
+       `value`: se manda con nombre propio (`tipo_negocio`, `pais`…).
+   Los importes de esta landing se declaran en euros — el copy del quiz dice
+   "Facturo 10.000 €" — de ahí la moneda. */
+var KF_MONEDA = 'EUR';
+function kfImporte(v) {
+  if (v === null || v === undefined) return {};
+  var s = String(v).trim();
+  // Cadena vacía = NO hay dato. Hay que descartarla a mano porque Number('')
+  // devuelve 0, y aquí el cero es una respuesta legítima del quiz ("Aún no
+  // facturo"): confundirlas mandaría un importe de 0 € inventado.
+  if (s === '') return {};
+  var n = Number(s);
+  // Sin importe válido no se manda el par value/currency: es preferible un
+  // evento sin importe a uno que Meta descarta entero por formato.
+  if (!isFinite(n)) return {};
+  return { value: n, currency: KF_MONEDA };
+}
+</script>
+<noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=611181908386410&ev=PageView&noscript=1" /></noscript>
+
+<!-- Captura UTMs/click-ids de la URL de entrada y los guarda en sessionStorage
+     para poder reenviarlos (no pisarlos) en los CTAs de registro. -->
+<script>
+(function () {
+  // Taxonomía extendida GA4 (la de Kunfupay), no los 5 UTMs clásicos. `utm_id`
+  // es el ID de campaña de la plataforma (en Meta, el campaign id): es la llave
+  // que permite cruzar leads con coste real, así que tiene que sobrevivir el
+  // salto a app/business.kunfupay.com igual que los demás.
+  // OJO: NO metas aquí utm_origen ni utm_value — esos dos los pone la landing
+  // con las respuestas del quiz, y al estar en KEYS el reenvío los pisaría con
+  // lo que viniera en la URL de entrada.
+  var KEYS = ["utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term",
+              "utm_id", "utm_source_platform", "utm_creative_format", "utm_marketing_tactic",
+              "gclid", "fbclid", "ttclid"];
+  var incoming = new URLSearchParams(location.search);
+  var captured = {};
+  KEYS.forEach(function (k) { if (incoming.get(k)) captured[k] = incoming.get(k); });
+  // EN MEMORIA, siempre. sessionStorage es un extra, no la fuente de verdad: en
+  // el navegador interno de Instagram y en modo privado puede no estar
+  // disponible, y ahí perdíamos la atribución del lead. Medido el 2026-08-03:
+  // dos leads de Instagram llegaron a Notion sin UTMs mientras el registro de la
+  // plataforma SÍ los tenía — porque el reenvío al signup sí tenía respaldo en
+  // memoria y el envío a Notion leía solo de sessionStorage.
+  window.kfTracking = { params: captured, entryHref: location.href };
+  // El try/catch no es decorativo: sin él, un setItem que lanza aborta el resto
+  // de este bloque y deja forwardTrackingParams sin definir, lo que rompería el
+  // redirect entero.
+  try {
+    if (Object.keys(captured).length) {
+      sessionStorage.setItem("kf_tracking_params", JSON.stringify(captured));
+    }
+  } catch (e) {}
+  // URL de entrada COMPLETA (con sus UTMs). Se guarda AQUÍ, en el <head>, y no
+  // al enviar el formulario, porque el quiz reescribe la URL con
+  // history.replaceState(?paso=N) al avanzar de paso: en el submit,
+  // `location.href` ya sería ".../index.html?paso=3" y habríamos perdido de
+  // qué anuncio venía. Con muchas landings sobre la misma base, este dato es
+  // el que dice cuál de ellas trajo al lead.
+  // `once` evita machacarlo si el visitante recarga desde una URL ya reescrita.
+  try {
+    if (!sessionStorage.getItem("kf_url_origen")) {
+      sessionStorage.setItem("kf_url_origen", location.href);
+    }
+  } catch (e) {}
+  // Úsalo en cada CTA hacia business.kunfupay.com / app.kunfupay.com:
+  //   anchor.href = forwardTrackingParams(anchor.href)
+  window.forwardTrackingParams = function (url) {
+    try {
+      var stored = JSON.parse(sessionStorage.getItem("kf_tracking_params") || "{}");
+      var u = new URL(url, location.href);
+      Object.keys(stored).forEach(function (k) { if (!u.searchParams.has(k)) u.searchParams.set(k, stored[k]); });
+      // `v &&`: un parámetro vacío en la URL de entrada (p. ej. `utm_content=`
+      // copiado del generador) NO debe pisar el valor bueno con una cadena vacía.
+      incoming.forEach(function (v, k) { if (v && KEYS.indexOf(k) !== -1) u.searchParams.set(k, v); });
+      return u.toString();
+    } catch (e) {
+      return url;
+    }
+  };
+})();
+</script>
+
+<!-- ═══ GUARDADO DEL LEAD EN NOTION ═══════════════════════════════════════
+     El lead se guarda en la BBDD "🧲 Leads · Landings" del Centro de
+     Marketing (Notion), para poder cruzarlo con ventas y hacer retargeting a
+     quien no termine el registro.
+
+     ⚠️ NO se llama a Notion desde aquí, y no es por comodidad: la API de
+     Notion exige un token secreto, y meterlo en el JS de la página lo haría
+     PÚBLICO — cualquiera podría leer y escribir el workspace entero. Además
+     Notion no permite CORS desde el navegador. Por eso se manda a un endpoint
+     propio que guarda el token en el servidor (código listo para desplegar en
+     `endpoint-leads/api/lead.js` de este mismo entregable).
+
+     PARA ACTIVARLO: despliega ese endpoint y pon su URL aquí abajo. Mientras
+     esté vacío, el quiz funciona igual pero el lead NO se guarda en ningún
+     sitio (se avisa por consola). ═════════════════════════════════════════ -->
+<script>
+window.KF_LEADS_ENDPOINT = '/api/lead'; // ruta del MISMO proyecto Next
+// Relativa a propósito: las landings se sirven desde este mismo deploy, así que
+// es same-origin — sin CORS y sin un segundo proyecto que desplegar. Si algún día
+// una landing se aloja fuera, aquí iría la URL absoluta del endpoint.
+
+// Base de las páginas de destino del quiz. Vacío = las carpetas hermanas
+// `gracias/` y `potencial/` de esta misma landing, para que el patrón funcione
+// suelto (abriéndolo en local, sin servidor Next). Cuando la landing se sirve
+// desde kunfupay.com, se apunta a las páginas GLOBALES: '/lp'.
+window.KF_DESTINOS_BASE = '/lp'; // páginas de destino GLOBALES del repo web
+
+function guardarLead(datos) {
+  var url = window.KF_LEADS_ENDPOINT;
+  if (!url) {
+    console.warn('[Kunfupay] KF_LEADS_ENDPOINT sin configurar: el lead NO se ha guardado.');
+    return false;
+  }
+  var cuerpo = JSON.stringify(datos);
+  // sendBeacon es lo correcto aquí: el navegador se lleva la petición aunque
+  // la página se esté descargando por la redirección inmediata. Un fetch
+  // normal se cancelaría y perderíamos el lead justo al convertir.
+  try {
+    if (navigator.sendBeacon) {
+      return navigator.sendBeacon(url, new Blob([cuerpo], { type: 'application/json' }));
+    }
+  } catch (e) { /* cae al fetch de abajo */ }
+  try {
+    fetch(url, {
+      method: 'POST', body: cuerpo,
+      headers: { 'Content-Type': 'application/json' },
+      keepalive: true // mismo objetivo: sobrevivir a la navegación
+    });
+    return true;
+  } catch (e) { return false; }
+}
+</script>
+
+<style>
+/* ============================================================
+   MORFEO LIGHT · tokens — copiados 1:1 de la fuente de verdad:
+   Repositorios/web-kunfupay-v2-new-feature/app/globals.css (:root --kf-*)
+   y de Infraestructura-agentes/sistema-visual/tokens/kunfupay.css.
+   No hardcodear colores/tipos/radios fuera de este bloque — si Morfeo
+   cambia un token, se actualiza aquí y todas las landings heredan.
+   Tema por DEFECTO: CLARO.
+   ============================================================ */
+:root{
+  --font-jakarta:'Plus Jakarta Sans';
+  --font-inter:'Inter';
+  --morfeo-font:var(--font-jakarta),-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  --body-font:var(--font-inter),-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+
+  --kf-bg:#fafafa; --kf-surface:#ffffff;
+  --kf-purple:#734bfc; --kf-purple-dark:#5c21e0; --kf-purple-soft:#6b33f4;
+  --kf-orange:#f97316;
+  --kf-text-primary:#18181b; --kf-text-secondary:#3f3f46; --kf-text-muted:#71717a; --kf-text-subtle:#a1a1aa;
+  --kf-glass:#ffffff; --kf-glass-hover:#fafafa;
+  --kf-hairline:rgba(24,24,27,.10); --kf-hairline-strong:rgba(24,24,27,.18);
+  --kf-success:#16a34a; --kf-star:#f59e0b;
+  --kf-tint-bg:#f4f3ff; --kf-tint-text:var(--kf-purple-dark);
+  --kf-header-bg:rgba(255,255,255,.85);
+  --kf-glow-purple:0 6px 16px -6px rgba(115,75,252,.5),inset 1px 0 0 rgba(255,255,255,.18);
+  --kf-glow-orange:0 10px 30px -8px rgba(249,115,22,.55),0 3px 10px -4px rgba(249,115,22,.35),inset 0 1px 0 rgba(255,255,255,.4);
+  --kf-shadow-sm:0 2px 6px -2px rgba(13,16,24,.08);
+  --kf-shadow-md:0 6px 16px -6px rgba(115,75,252,.18),0 2px 6px -2px rgba(13,16,24,.06);
+  --kf-shadow-lg:0 12px 28px -10px rgba(115,75,252,.22),0 4px 10px -4px rgba(13,16,24,.08);
+  --kf-shadow-xl:0 24px 48px -16px rgba(115,75,252,.28),0 8px 16px -6px rgba(13,16,24,.1);
+  --kf-ease:cubic-bezier(0.22,1,0.36,1);
+
+  --radius-md:10px; --radius-lg:14px; --radius-xl:18px; --radius-2xl:24px; --radius-pill:999px;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--kf-bg);
+  color: var(--kf-text-primary);
+  font-family: var(--body-font);
+  -webkit-font-smoothing: antialiased;
+}
+h1, h2, h3, .heading { font-family: var(--morfeo-font); margin: 0; }
+p { margin: 0; }
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.wrap {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.section { padding: 64px 0; }
+.section--tight { padding: 40px 0; }
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 12.5px;
+  letter-spacing: .06em; text-transform: uppercase;
+  color: var(--kf-purple-dark); background: var(--kf-tint-bg);
+  border: 1px solid rgba(115,75,252,.18);
+  border-radius: var(--radius-pill);
+  padding: 6px 14px;
+}
+/* ⏸️ BADGES/EYEBROWS OCULTOS TEMPORALMENTE (Hernán, 2026-07-29: "oculta
+   todos los badges que están antes de un titular, no los borres, ocúltalos
+   de momento"). El HTML de los <span class="eyebrow"> SIGUE INTACTO en cada
+   sección — para volver a mostrarlos basta con BORRAR esta única regla. */
+.eyebrow { display: none; }
+h2.section-title {
+  font-size: clamp(24px, 4vw, 34px);
+  font-weight: 800;
+  letter-spacing: -.02em;
+  line-height: 1.2;
+  margin-top: 12px;
+  color: var(--kf-text-primary);
+}
+.section-lead {
+  font-size: 16px;
+  color: var(--kf-text-muted);
+  line-height: 1.6;
+  margin-top: 12px;
+  max-width: 640px;
+}
+.section-head { text-align: center; }
+.section-head .section-title, .section-head .section-lead { margin-left: auto; margin-right: auto; }
+
+/* ── REVEAL AL HACER SCROLL ───────────────────────────────────────────
+   Cada módulo/tarjeta marcado con .reveal empieza invisible y desplazado;
+   el IntersectionObserver del final del body añade .is-visible la primera
+   vez que entra en pantalla (una sola vez, no se repite al subir/bajar). */
+.reveal {
+  opacity: 0; transform: translateY(28px);
+  transition: opacity .6s var(--kf-ease), transform .6s var(--kf-ease);
+}
+.reveal.is-visible { opacity: 1; transform: translateY(0); }
+/* Cascada: las tarjetas de una misma rejilla aparecen una tras otra, no
+   todas a la vez, aunque entren juntas en el viewport. */
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(1) { transition-delay: 0s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(2) { transition-delay: .08s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(3) { transition-delay: .16s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(4) { transition-delay: .24s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(5) { transition-delay: .32s; }
+:is(.pain-grid, .solution-pillars, .benefits-grid, .fit-list, .usecases-grid, .trust-grid, .steps-grid, .faq-list) > .reveal:nth-child(6) { transition-delay: .40s; }
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+}
+/* Acento de color para ideas clave en cuerpos de texto (junto a <strong> para negrita). */
+.text-accent { color: var(--kf-purple-dark); font-weight: 700; }
+.hero--dark .text-accent, .cta-final .text-accent { color: #fff; }
+
+/* Botón primario (acción, morado) */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 15px;
+  height: 48px; padding: 0 26px; border-radius: var(--radius-pill);
+  border: 0; cursor: pointer; white-space: nowrap;
+}
+.btn-primary {
+  color: #fff;
+  background: linear-gradient(to bottom right, var(--kf-purple), var(--kf-purple-dark));
+  box-shadow: var(--kf-glow-purple);
+}
+/* Súper-CTA (naranja) — regla del Brain: UNA por pieza, es la acción suprema.
+   Se usa en el CTA principal del hero y se repite igual en el CTA final. */
+.btn-super-cta {
+  color: #fff; text-shadow: 0 1px 2px rgba(124,45,18,.35);
+  background: var(--kf-orange);
+  box-shadow: var(--kf-glow-orange);
+  /* "Bombeo" de la súper-CTA (Hernán, 2026-07-30: "genera una pequeña
+     animación al botón con un delay que dé la sensación de que bombea").
+     La clave del efecto está en el CICLO LARGO con el pulso concentrado al
+     final: 4,2s de los cuales el latido ocupa ~0,5s. Un pulso continuo
+     cansa y se lee como un GIF; así late cada pocos segundos y el ojo
+     vuelve al botón. Doble golpe (1.04 → 0.99 → 1) para que sea un latido
+     y no un rebote plano. Los 1,4s de delay dejan entrar antes al hero. */
+  animation: kf-cta-pump 4.2s ease-in-out 1.4s infinite;
+}
+@keyframes kf-cta-pump {
+  0%, 86%, 100% { transform: scale(1); }
+  90%           { transform: scale(1.04); }
+  94%           { transform: scale(.99); }
+}
+/* En MÓVIL la súper-CTA ocupa todo el ancho (Hernán: "en la versión movil,
+   haz que este CTA ocupe el 100% de la pantalla"): más área de toque y el
+   pulgar la alcanza desde cualquier posición. Solo la de los bloques de CTA
+   (hero y cierre), NO la de la barra fija inferior, que ya es una barra. */
+@media (max-width: 767px) {
+  .hero-cta .btn-super-cta { width: 100%; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .btn-super-cta { animation: none; }
+}
+.btn-full { width: 100%; }
+
+/* ── HERO (variable por campaña) ─────────────────────────────────────
+   Fondo oscuro + "ondas Sensei" (recurso sistema-visual/recursos/sensei-ondas,
+   el mismo efecto que ya usa el hero de kunfupay.com). Si una campaña necesita
+   el hero en claro, quita `.hero--dark` y el bloque `.hero-waves` completo. */
+.hero {
+  position: relative; overflow: hidden;
+  padding: 72px 0 calc(14px + var(--kf-press-h, 42px)); text-align: center;
+}
+/* HERO A PANTALLA COMPLETA EN MÓVIL (Hernán, 2026-07-30: "haz que el hero
+   section siempre ocupe el 100% de la altura del dispositivo móvil").
+   Detalles que importan:
+   · `dvh`, NO `vh`: en móvil `100vh` cuenta la barra de direcciones como si
+     no existiera, así que el hero se corta por abajo y el CTA se va bajo el
+     fold — el clásico bug de iOS/Android. `dvh` sigue el viewport real.
+     Se deja `vh` en una primera declaración como fallback para navegadores
+     sin soporte de `dvh`.
+   · Se RESTA la topbar de campaña, que va justo encima del hero: si no, el
+     conjunto topbar+hero mide más que la pantalla y el hero deja de "llenar
+     la pantalla". Su alto lo mide el JS del final del body en
+     `--kf-topbar-h` (se remide al rotar/cambiar de tamaño, porque el texto
+     de la topbar envuelve a 2 líneas en pantallas estrechas). Si la landing
+     no lleva topbar, la variable vale 0 y no resta nada.
+   · `min-height`, no `height`: en móviles bajos el quiz es más alto que el
+     viewport y con `height` se recortaría. Así crece si hace falta.
+   · Solo hasta 767px, que es lo que se pidió (móvil). En desktop el hero
+     mantiene su alto natural por contenido. */
+@media (max-width: 767px) {
+  .hero {
+    min-height: calc(100vh - var(--kf-topbar-h, 0px));
+    min-height: calc(100dvh - var(--kf-topbar-h, 0px));
+    display: flex; flex-direction: column; justify-content: center;
+  }
+  /* ⚠️ OBLIGATORIO junto al flex de arriba, no es cosmético.
+     `.wrap` lleva `margin: 0 auto`. Al pasar `.hero` a flex container, esos
+     márgenes `auto` del eje transversal ANULAN el estirado por defecto
+     (align-items:stretch) y dimensionan `.wrap` a `fit-content`. Como dentro
+     del hero vive `.press-track` con `width: max-content` (la cinta de
+     logos de prensa), ese fit-content se dispara muy por encima del ancho
+     de pantalla y el hero entero desbordaba a derecha: el h1 salía cortado
+     y el quiz empujado fuera (lo vio Hernán, 2026-07-30: "el hero section
+     no se adapta al ancho de la pantalla" — regresión que introdujo el
+     cambio a pantalla completa).
+     Con un `width: 100%` explícito el tamaño transversal pasa a ser
+     definido, los márgenes auto se quedan sin espacio libre que absorber y
+     el max-content deja de mandar. `min-width: 0` evita que cualquier hijo
+     futuro con contenido ancho vuelva a forzar el mínimo. */
+  .hero > .wrap { width: 100%; min-width: 0; }
+}
+.hero--dark {
+  background: radial-gradient(120% 100% at 50% 0%, #241a4d 0%, #140f2e 45%, #0c0c10 100%);
+  color: #fff;
+}
+.hero > .wrap { position: relative; z-index: 2; }
+.hero-logo { display: block; width: 56px; height: 56px; margin: 0 auto 20px; }
+.hero-waves {
+  position: absolute; left: -12px; top: 50%;
+  height: 220px; width: calc(100% + 24px);
+  transform: translateY(-50%) rotate(-1.2deg);
+  opacity: .95; pointer-events: none; z-index: 1;
+}
+.hero-waves .wa { animation: kf-drift-a 22s ease-in-out infinite alternate; }
+.hero-waves .wb { animation: kf-drift-b 27s ease-in-out infinite alternate; }
+.hero-waves .wc { animation: kf-drift-c 19s ease-in-out infinite alternate; }
+.hero-waves .wd { animation: kf-drift-d 30s ease-in-out infinite alternate; }
+.hero-waves .we { animation: kf-drift-e 16s ease-in-out infinite alternate; }
+@keyframes kf-drift-a { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-58px,13px)} }
+@keyframes kf-drift-b { 0%,100%{transform:translate(0,0)} 50%{transform:translate(72px,-18px)} }
+@keyframes kf-drift-c { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-46px,21px)} }
+@keyframes kf-drift-d { 0%,100%{transform:translate(0,0)} 50%{transform:translate(84px,-12px)} }
+@keyframes kf-drift-e { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-40px,16px)} }
+@media (prefers-reduced-motion: reduce) { .hero-waves * { animation: none !important; } }
+
+.hero--dark .eyebrow {
+  color: #d9d0ff; background: rgba(255,255,255,.08); border-color: rgba(255,255,255,.16);
+}
+.hero h1 {
+  /* Subido (Hernán, 2026-07-30: "el titular principal de la hero section
+     auméntalo de tamaño"). Se sube el mínimo (28→32), el factor de viewport
+     (5,5→6,4vw) y el máximo (46→56) para que crezca en TODOS los tamaños, no
+     solo en desktop. */
+  font-size: clamp(32px, 6.4vw, 56px);
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.12;
+  color: var(--kf-text-primary);
+  max-width: 780px;
+  margin: 18px auto 0;
+}
+.hero--dark h1 { color: #fff; }
+.hero--dark h1 .accent { color: #b9a6ff; }
+
+/* ── SUBRAYADO ROTULADOR, 2 PASADAS (parte del titular, no todo) ──────
+   Simula un rotulador real trazado dos veces: pasada A barre de izquierda
+   a derecha, pasada B vuelve de derecha a izquierda justo después, con un
+   ángulo/inset ligeramente distintos (no calcan el mismo rectángulo). Cada
+   pasada va al ~60% de opacidad — donde las dos coinciden (el grueso del
+   trazo) el morado se ve prácticamente sólido; donde solo pasó una (los
+   bordes, por el desalineado "a mano") se queda más flojo. El texto pasa a
+   blanco cuando arranca la 2ª pasada (para cuando el trazo ya cubre casi
+   todo). En titulares con scroll-reveal se dispara junto con `.is-visible`;
+   en el hero (visible desde la carga) se dispara solo, con un retraso. */
+.highlight { position: relative; z-index: 0; display: inline-block; }
+.highlight::before, .highlight::after {
+  content: ""; position: absolute; z-index: -1;
+  background: linear-gradient(135deg, var(--kf-purple), var(--kf-purple-dark));
+  opacity: .6;
+}
+.highlight::before {
+  left: -.12em; right: -.12em; top: 8%; bottom: 4%;
+  /* Pasada 1, izquierda→derecha: extremo de salida (derecha) cortado en
+     diagonal "/" — como el rotulador levantando el trazo hacia arriba. */
+  clip-path: polygon(1% 0%, 100% 0%, 95% 100%, 0% 100%);
+  transform-origin: left center;
+  transform: scaleX(0) rotate(var(--tilt, -1.3deg));
+}
+.highlight::after {
+  left: -.16em; right: -.08em; top: 4%; bottom: 7%;
+  /* Pasada 2, derecha→izquierda: extremo de salida (izquierda) cortado en
+     diagonal "\". */
+  clip-path: polygon(0% 0%, 99% 0%, 100% 100%, 5% 100%);
+  transform-origin: right center;
+  transform: scaleX(0) rotate(calc(var(--tilt, -1.3deg) * -0.55));
+}
+.reveal.is-visible .highlight {
+  color: #fff; transition: color .2s ease .55s;
+}
+.reveal.is-visible .highlight::before {
+  transform: scaleX(1) rotate(var(--tilt, -1.3deg));
+  transition: transform .45s var(--kf-ease) .1s;
+}
+.reveal.is-visible .highlight::after {
+  transform: scaleX(1) rotate(calc(var(--tilt, -1.3deg) * -0.55));
+  transition: transform .45s var(--kf-ease) .55s;
+}
+.hero h1 .highlight { animation: kf-highlight-text .01s linear 1.2s forwards; }
+.hero h1 .highlight::before { animation: kf-highlight-a .45s var(--kf-ease) .75s forwards; }
+.hero h1 .highlight::after { animation: kf-highlight-b .45s var(--kf-ease) 1.2s forwards; }
+@keyframes kf-highlight-a {
+  from { transform: scaleX(0) rotate(var(--tilt, -1.3deg)); }
+  to { transform: scaleX(1) rotate(var(--tilt, -1.3deg)); }
+}
+@keyframes kf-highlight-b {
+  from { transform: scaleX(0) rotate(calc(var(--tilt, -1.3deg) * -0.55)); }
+  to { transform: scaleX(1) rotate(calc(var(--tilt, -1.3deg) * -0.55)); }
+}
+@keyframes kf-highlight-text { to { color: #fff; } }
+@media (prefers-reduced-motion: reduce) {
+  .highlight::before { transition: none !important; animation: none !important; transform: scaleX(1) rotate(var(--tilt, -1.3deg)) !important; }
+  .highlight::after { transition: none !important; animation: none !important; transform: scaleX(1) rotate(calc(var(--tilt, -1.3deg) * -0.55)) !important; }
+  .highlight, .reveal.is-visible .highlight { transition: none !important; animation: none !important; color: #fff !important; }
+}
+.hero .hero-subtitle {
+  font-size: clamp(15px, 2vw, 18px);
+  color: var(--kf-text-secondary);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 18px auto 0;
+}
+.hero--dark .hero-subtitle { color: rgba(255,255,255,.78); }
+.hero .hero-cta { margin-top: 30px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+.hero .hero-microtrust {
+  margin-top: 14px; font-size: 13px; color: var(--kf-text-muted);
+  display: flex; gap: 6px; align-items: center; flex-wrap: wrap; justify-content: center;
+}
+.hero--dark .hero-microtrust { color: rgba(255,255,255,.6); }
+
+/* ── PRENSA integrada en el hero (fondo oscuro, logos claros) ─────────
+   Mismo componente .press-marquee/.press-track que el resto de la matriz,
+   pero con los logos vueltos blancos vía filtro (brightness(0) invert(1))
+   en vez del grayscale oscuro que usan sobre fondo claro. */
+/* La cinta va PEGADA al borde inferior del hero (Hernán, 2026-07-30). Se
+   posiciona en absoluto para que no participe del centrado vertical del
+   contenido: si se quedara en el flujo, el `justify-content: center` del hero
+   la trataría como parte del bloque a centrar y nunca llegaría al fondo.
+   Al salir del flujo deja de aportar altura, así que el hero RESERVA su hueco
+   con padding-bottom — si no, el contenido centrado se le montaría encima. */
+.hero { --kf-press-h: 42px; }
+.hero-press {
+  position: absolute; left: 0; right: 0; bottom: 0; z-index: 2;
+  height: var(--kf-press-h);
+  display: flex; align-items: center;
+  padding-bottom: 8px;
+}
+.hero-press .press-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.hero-press .press-track { display: flex; align-items: center; width: max-content; gap: 56px; animation: kf-marquee 34s linear infinite; }
+.hero-press .press-marquee:hover .press-track { animation-play-state: paused; }
+.hero-press .press-logo { flex: none; height: 20px; width: auto; filter: brightness(0) invert(1); opacity: .55; }
+@media (prefers-reduced-motion: reduce) { .hero-press .press-track { animation: none; } }
+@keyframes kf-marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+/* ── HERO VARIANTE (c): QUIZ ──────────────────────────────────────────
+   Tarjeta de cristal con progreso + pantallas de pregunta/opciones que se
+   muestran una a la vez (JS al final del body). Naranja reservado SOLO
+   para el botón final de la súper-CTA (regla del Brain) — el progreso y
+   las opciones usan morado. */
+.hero-quiz {
+  /* align-self:stretch — .hero-cta es flex column con align-items:center,
+     que si no se anula deja la tarjeta al ancho de su contenido (los
+     botones) en vez de ocupar el ancho disponible hasta max-width. */
+  align-self: stretch;
+  position: relative; margin: 30px auto 0; max-width: 460px; width: 100%; text-align: left;
+  background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius-2xl); padding: 26px 22px;
+  backdrop-filter: blur(16px);
+  box-sizing: border-box;
+  /* Halo morado que respira. Va en box-shadow (no en un pseudo-elemento con
+     z-index negativo) a propósito: el `backdrop-filter` de arriba crea un
+     stacking context y complicaría pintar un glow POR DETRÁS del fondo. */
+  animation: kf-quiz-halo 3.2s ease-in-out infinite;
+}
+
+/* ═══ EL QUIZ ES EL ELEMENTO MÁS IMPORTANTE DE LA LANDING ═══
+   Hernán (2026-07-30) pasó como referencia un componente React de
+   "spotlight card" (glow que sigue al cursor) y señaló él mismo el
+   problema: "queda bien en desktop, pero en mobile no tiene ese efecto".
+   Es correcto — ese efecto depende de `pointermove`/`:hover`, que en un
+   móvil no existen, así que la pieza más importante quedaría SIN destacar
+   justo en el dispositivo que manda (ver regla mobile-first del proyecto).
+
+   Por eso aquí se invierte la prioridad respecto a la referencia:
+     · CAPA BASE (todos los dispositivos, incluido móvil, sin input
+       ninguno): borde de gradiente que gira + halo que respira. Se
+       autoanima, así que el quiz destaca igual en un iPhone que en un mac.
+     · CAPA EXTRA (solo punteros finos): el spotlight que sigue al cursor
+       de la referencia, como enriquecimiento — nunca como base.
+   Todo se apaga con `prefers-reduced-motion`, dejando un anillo estático.
+
+   No se copió el componente tal cual: era React + Tailwind + TypeScript
+   (shadcn) y estas landings son HTML autocontenido con CSS plano y tokens
+   Morfeo. Se portó el EFECTO, no el código. ═══════════════════════════ */
+
+/* El ángulo necesita @property para poder interpolarse (un custom property
+   sin tipo no anima). Si el navegador no lo soporta, la animación no corre
+   y queda un anillo de gradiente ESTÁTICO — degradación aceptable. */
+@property --kf-quiz-angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+/* Anillo giratorio. Se pinta SOLO el borde vía mask-composite (dos capas:
+   una completa y otra recortada al content-box, se excluyen entre sí), así
+   el interior queda limpio y el contenido del quiz nunca se ensucia. */
+.hero-quiz::before {
+  content: ""; position: absolute; inset: -1.5px;
+  border-radius: calc(var(--radius-2xl) + 1.5px);
+  padding: 2px; /* = grosor del anillo */
+  background: conic-gradient(from var(--kf-quiz-angle),
+    rgba(115,75,252,0)   0deg,
+    var(--kf-purple)    55deg,
+    #cbbdff             95deg,
+    var(--kf-purple)   135deg,
+    rgba(115,75,252,0) 210deg,
+    rgba(115,75,252,0) 360deg);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  animation: kf-quiz-spin 4.5s linear infinite;
+  pointer-events: none;
+}
+@keyframes kf-quiz-spin { to { --kf-quiz-angle: 360deg; } }
+@keyframes kf-quiz-halo {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(115,75,252,0), 0 18px 50px -22px rgba(115,75,252,.45); }
+  50%      { box-shadow: 0 0 0 7px rgba(115,75,252,.09), 0 24px 64px -18px rgba(115,75,252,.7); }
+}
+
+/* CAPA EXTRA — spotlight que sigue al cursor (la referencia de Hernán).
+   Gated a punteros finos: en táctil ni se pinta ni se registra el listener,
+   porque `--kf-quiz-mx/my` no existirían y quedaría un borrón fijo. */
+@media (hover: hover) and (pointer: fine) {
+  .hero-quiz::after {
+    content: ""; position: absolute; inset: 0; border-radius: inherit;
+    background: radial-gradient(200px 200px at var(--kf-quiz-mx, -999px) var(--kf-quiz-my, -999px),
+      rgba(185,166,255,.16), transparent 70%);
+    opacity: 0; transition: opacity .3s var(--kf-ease);
+    pointer-events: none;
+  }
+  .hero-quiz:hover::after { opacity: 1; }
+}
+
+/* Las opciones entran en cascada cada vez que aparece una pantalla (pedido
+   de Hernán: "o que las opciones estén animadas"). Se re-dispara solo: al
+   quitar `hidden`, el paso de display:none a visible reinicia la animación.
+   ⚠️ Anima `translate`, NO `transform`: con `both` el transform final
+   ganaría al `:active { transform: scale(.98) }` y rompería el feedback al
+   pulsar. `translate` es una propiedad independiente y compone sin pisarlo. */
+.hero-quiz__screen:not([hidden]) .hero-quiz__option,
+.hero-quiz__screen:not([hidden]) .hero-quiz__form {
+  animation: kf-quiz-opt-in .42s var(--kf-ease) both;
+}
+.hero-quiz__screen:not([hidden]) .hero-quiz__option:nth-child(1) { animation-delay: .05s; }
+.hero-quiz__screen:not([hidden]) .hero-quiz__option:nth-child(2) { animation-delay: .12s; }
+.hero-quiz__screen:not([hidden]) .hero-quiz__option:nth-child(3) { animation-delay: .19s; }
+.hero-quiz__screen:not([hidden]) .hero-quiz__option:nth-child(4) { animation-delay: .26s; }
+@keyframes kf-quiz-opt-in {
+  from { opacity: 0; translate: 0 9px; }
+  to   { opacity: 1; translate: 0 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-quiz { animation: none; box-shadow: 0 18px 50px -22px rgba(115,75,252,.45); }
+  .hero-quiz::before { animation: none; }
+  .hero-quiz::after { display: none; }
+  .hero-quiz__screen:not([hidden]) .hero-quiz__option,
+  .hero-quiz__screen:not([hidden]) .hero-quiz__form { animation: none; }
+}
+.hero-quiz__progress { display: flex; gap: 6px; margin-bottom: 20px; }
+.hero-quiz__step { flex: 1; height: 4px; border-radius: 999px; background: rgba(255,255,255,.16); }
+.hero-quiz__step.is-active, .hero-quiz__step.is-done {
+  background: linear-gradient(to right, var(--kf-purple), #b9a6ff);
+}
+.hero-quiz__screen[hidden] { display: none; }
+.hero-quiz__question { font-size: 19px; font-weight: 800; color: #fff; margin-bottom: 16px; letter-spacing: -.01em; }
+.hero-quiz__options { display: flex; flex-direction: column; gap: 10px; }
+.hero-quiz__option {
+  display: flex; align-items: center; gap: 12px;
+  width: 100%; font-family: var(--morfeo-font); font-weight: 600; font-size: 14.5px; text-align: left;
+  color: #fff; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.16);
+  border-radius: var(--radius-lg); padding: 13px 16px; cursor: pointer;
+  transition: background .2s var(--kf-ease), border-color .2s var(--kf-ease), transform .12s var(--kf-ease);
+}
+.hero-quiz__option:hover { background: rgba(115,75,252,.24); border-color: rgba(115,75,252,.55); }
+.hero-quiz__option:active { transform: scale(.98); }
+.hero-quiz__option:disabled { cursor: default; }
+/* Check circular: vacío por defecto, se ilumina en morado al elegir (deja
+   claro que es una opción a marcar, no solo texto clicable). */
+.hero-quiz__radio {
+  flex: none; width: 20px; height: 20px; border-radius: 50%;
+  border: 2px solid rgba(255,255,255,.35); position: relative;
+  transition: border-color .2s var(--kf-ease), background .2s var(--kf-ease), box-shadow .2s var(--kf-ease);
+}
+.hero-quiz__option.is-selected {
+  background: rgba(115,75,252,.28); border-color: var(--kf-purple-soft);
+}
+.hero-quiz__option.is-selected .hero-quiz__radio {
+  border-color: #fff; background: var(--kf-purple);
+  box-shadow: 0 0 0 4px rgba(115,75,252,.35);
+}
+.hero-quiz__option.is-selected .hero-quiz__radio::after {
+  content: ""; position: absolute; inset: 0; margin: auto;
+  width: 8px; height: 8px; border-radius: 50%; background: #fff;
+}
+.hero-quiz__result-copy { color: rgba(255,255,255,.78); font-size: 14.5px; line-height: 1.55; margin-bottom: 16px; }
+.hero-quiz__form { display: flex; flex-direction: column; gap: 10px; }
+.hero-quiz__form input {
+  height: 48px; border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08); color: #fff; padding: 0 16px;
+  font-size: 14.5px; font-family: var(--body-font);
+}
+.hero-quiz__form input::placeholder { color: rgba(255,255,255,.5); }
+/* ── Teléfono internacional (paso WhatsApp) ───────────────────────────
+   Fila selector de país (bandera + prefijo) + número. El input de número
+   hereda el estilo de `.hero-quiz__form input`; el <select> necesita el
+   suyo para igualar alto/colores. Patrón portado 1:1 de
+   classroom-platinum-score/v1 (.campo-tel), reestilado a los tokens de
+   este quiz glassy. */
+.hero-quiz__tel { display: flex; gap: 8px; }
+.hero-quiz__tel-cc {
+  flex: 0 0 auto; width: auto; height: 48px; padding: 0 10px;
+  border-radius: var(--radius-lg); border: 1px solid rgba(255,255,255,.18);
+  background: rgba(255,255,255,.08); color: #fff;
+  font-size: 14.5px; font-family: var(--body-font); cursor: pointer;
+}
+.hero-quiz__tel-num { flex: 1 1 auto; min-width: 0; }
+.hero-quiz__back {
+  margin-top: 16px; background: none; border: 0; color: rgba(255,255,255,.55);
+  font-size: 13px; font-family: var(--body-font); cursor: pointer; padding: 0;
+}
+.hero-quiz__success { color: #fff; font-weight: 700; font-size: 15px; }
+
+/* ═══ QUIZ EN CLARO — TEMA ELEGIDO ══════════════════════════════════════
+   Se probaron 3 temas para el quiz (glassy oscuro original, blanco y bloque
+   morado de marca) porque es el elemento más importante de la landing.
+   **Hernán eligió el BLANCO** (2026-07-30: "que se quede blanco"): sobre el
+   hero oscuro crea un salto de luminosidad total y la tarjeta se lee como
+   EL elemento de la página. El morado se descartó porque comparte familia de
+   tono con el hero (radial morado oscuro) y se integraba en vez de separarse.
+   El tema morado ya se ha BORRADO de este archivo.
+   Sigue siendo una clase modificadora sobre el tema oscuro base: quitar
+   `hero-quiz--light` del div devuelve el glassy original, útil como
+   comparación rápida. Si en algún momento se quiere un solo tema, hay que
+   fundir estos valores en el bloque base y borrar el modificador.
+
+   Colores vía tokens Morfeo de modo claro (--kf-surface, --kf-text-*,
+   --kf-hairline, --kf-tint-bg), no hardcodeados. El anillo giratorio y el
+   halo morado NO se tocan: sobre una tarjeta blanca destacan incluso más
+   que sobre la glassy oscura. Sí se quita el `backdrop-filter`, que con
+   fondo opaco no hace nada y solo cuesta pintarlo. ══════════════════════ */
+.hero-quiz--light {
+  background: var(--kf-surface);
+  border-color: var(--kf-hairline);
+  backdrop-filter: none;
+}
+/* `:not(.is-active):not(.is-done)` es OBLIGATORIO: sin él esta regla
+   (misma especificidad que `.hero-quiz__step.is-active` pero POSTERIOR en
+   la hoja) pisaba el gradiente morado del paso activo y la barra de
+   progreso se quedaba entera en gris — bug real detectado al medir. */
+.hero-quiz--light .hero-quiz__step:not(.is-active):not(.is-done) { background: var(--kf-hairline); }
+.hero-quiz--light .hero-quiz__question { color: var(--kf-text-primary); }
+.hero-quiz--light .hero-quiz__option {
+  color: var(--kf-text-primary);
+  background: var(--kf-bg);
+  border-color: var(--kf-hairline);
+}
+.hero-quiz--light .hero-quiz__option:hover {
+  background: var(--kf-tint-bg);
+  border-color: var(--kf-purple);
+}
+.hero-quiz--light .hero-quiz__radio { border-color: var(--kf-hairline-strong); }
+.hero-quiz--light .hero-quiz__option.is-selected {
+  background: var(--kf-tint-bg);
+  border-color: var(--kf-purple);
+}
+.hero-quiz--light .hero-quiz__option.is-selected .hero-quiz__radio {
+  border-color: var(--kf-purple); background: var(--kf-purple);
+}
+.hero-quiz--light .hero-quiz__result-copy { color: var(--kf-text-secondary); }
+.hero-quiz--light .hero-quiz__form input {
+  background: var(--kf-bg);
+  border-color: var(--kf-hairline);
+  color: var(--kf-text-primary);
+}
+.hero-quiz--light .hero-quiz__form input::placeholder { color: var(--kf-text-muted); }
+.hero-quiz--light .hero-quiz__tel-cc {
+  background: var(--kf-bg);
+  border-color: var(--kf-hairline);
+  color: var(--kf-text-primary);
+}
+.hero-quiz--light .hero-quiz__back { color: var(--kf-text-muted); }
+.hero-quiz--light .hero-quiz__success { color: var(--kf-text-primary); }
+/* El spotlight del cursor era un morado claro pensado para verse sobre la
+   tarjeta oscura; sobre blanco no se vería, así que se sube la opacidad y se
+   usa el morado de marca. */
+@media (hover: hover) and (pointer: fine) {
+  .hero-quiz--light::after {
+    background: radial-gradient(200px 200px at var(--kf-quiz-mx, -999px) var(--kf-quiz-my, -999px),
+      rgba(115,75,252,.13), transparent 70%);
+  }
+}
+
+
+/* ── HERO EN PANTALLAS BAJAS ──────────────────────────────────
+   El `min-height: calc(100dvh - topbar)` es correcto y SÍ descuenta la
+   topbar (medido: topbar 39 + hero 834 = 873 exactos en la ventana de
+   pruebas). Pero en un móvil BAJO eso da igual: en un iPhone SE (375×667)
+   la topbar envuelve a 2 líneas (55px), quedan 612px y el contenido del hero
+   pide 771 → se sale 159px y hay que scrollear para ver el quiz. Se lee
+   igual que si la topbar no se descontara, que es lo que reportó Hernán.
+   Por eso aquí se APRIETA el hero cuando la pantalla es baja, para que el
+   contenido entre de verdad: menos padding, logo y tipografía algo menores,
+   huecos más cortos y la cinta de prensa fuera (es lo más prescindible del
+   hero y libera ~40px). Se toca solo el espaciado, no la jerarquía. */
+@media (max-width: 767px) and (max-height: 740px) {
+  .hero { padding: 26px 0 calc(10px + var(--kf-press-h, 30px)); }
+  .hero-logo { width: 44px; height: 44px; margin-bottom: 12px; }
+  .hero h1 { font-size: clamp(25px, 6vw, 30px); margin-top: 10px; }
+  .hero .hero-subtitle { font-size: 14px; margin-top: 10px; }
+  .hero .hero-cta { margin-top: 18px; }
+  .hero .hero-microtrust { margin-top: 9px; font-size: 12px; }
+  .hero-quiz { margin-top: 16px; padding: 18px 16px; }
+  .hero-quiz__progress { margin-bottom: 14px; }
+  .hero-quiz__question { font-size: 17px; margin-bottom: 12px; }
+  .hero-quiz__option { padding: 11px 14px; font-size: 14px; }
+  .hero-quiz__options { gap: 8px; }
+  /* La cinta de prensa se ACHICA, no se quita. Quitarla fue un error: la
+     prensa es credibilidad de marca y desaparecía en cualquier ventana de
+     menos de 740px de alto, que en escritorio sin maximizar es de lo más
+     común (lo notó Hernán). Se recorta lo que ocupa y se acepta que en los
+     móviles más bajos el hero sobresalga unos píxeles — que además deja ver
+     que hay más página debajo. */
+  .hero { --kf-press-h: 30px; }
+  .hero-press { padding-bottom: 6px; }
+  .hero-press .press-logo { height: 15px; }
+  .hero-press .press-track { gap: 38px; }
+}
+
+/* Solo en viewports REALMENTE diminutos (móvil apaisado, ventanas muy
+   recortadas) se oculta del todo: ahí no cabe ni achicada. */
+@media (max-width: 767px) and (max-height: 600px) {
+  /* Oculta y, sobre todo, sin reservar hueco: si se dejara el padding, el hero
+     tendría 30px de aire inferior sin nada dentro. */
+  .hero { --kf-press-h: 0px; }
+  .hero-press { display: none; }
+}
+
+/* ── TOPBAR DE CAMPAÑA (arriba del todo, ANTES del hero) ──── */
+.topbar {
+  background: linear-gradient(to right, var(--kf-purple), var(--kf-purple-dark));
+  color: #fff; text-align: center; padding: 10px 16px;
+}
+.topbar p { font-size: 13.5px; font-weight: 700; line-height: 1.4; }
+.topbar strong { text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 2px; }
+@media (max-width: 480px) { .topbar p { font-size: 12.5px; } }
+
+/* ── BARRA DE CONFIANZA (debajo del hero) ─────────────────── */
+.trust-bar { background: var(--kf-bg); border-bottom: 1px solid var(--kf-hairline); padding: 16px 0; }
+.trust-bar__row { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px; }
+.trust-bar__item {
+  display: inline-flex; align-items: center; gap: 8px; white-space: nowrap;
+  padding: 8px 16px; border-radius: 999px;
+  border: 1px solid rgba(115,75,252,.28); background: var(--kf-tint-bg);
+  color: var(--kf-purple-dark); font-size: 13px; font-weight: 600;
+}
+.trust-bar__item svg { flex: none; width: 15px; height: 15px; color: var(--kf-purple); }
+.trust-bar__item .trust-bar__logo { flex: none; height: 13px; width: auto; }
+@media (max-width: 480px) { .trust-bar__item { font-size: 12px; padding: 7px 12px; } }
+
+/* ── PRENSA — cinta infinita de medios reales que han cubierto Kunfupay ──
+   Mismos 6 medios que aparecen hoy en la sección de prensa de kunfupay.com
+   (verificado por WebFetch 2026-07-29): Forbes, TechCrunch, Entrepreneur,
+   WIRED, El País, Business Insider. Sin logos oficiales de terceros (no
+   tenemos licencia de sus marcas) — wordmarks en texto plano, mismo
+   criterio que el módulo "Herramientas que sustituyes". ────────────── */
+.press { padding: 20px 0; background: var(--kf-bg); border-bottom: 1px solid var(--kf-hairline); }
+.press__label {
+  text-align: center; font-size: 11.5px; font-weight: 700; letter-spacing: .08em;
+  text-transform: uppercase; color: var(--kf-text-muted); margin-bottom: 14px;
+}
+.press-marquee {
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+.press-track { display: flex; align-items: center; width: max-content; gap: 56px; animation: kf-marquee 34s linear infinite; }
+.press-marquee:hover .press-track { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) { .press-track { animation: none; } }
+.press-logo { flex: none; height: 22px; width: auto; filter: grayscale(1); opacity: .6; }
+
+/* ── MÉTODOS DE PAGO — cinta infinita, logos en gris monocromo ────────── */
+.payments { background: var(--kf-surface); border-top: 1px solid var(--kf-hairline); border-bottom: 1px solid var(--kf-hairline); }
+.payments-grid {
+  margin-top: 28px; max-width: 560px; margin-left: auto; margin-right: auto;
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px;
+}
+/* .payments-grid ya fuerza display:grid con la misma especificidad que la
+   regla nativa [hidden]{display:none} del navegador — un author stylesheet
+   siempre gana a la hoja UA, así que [hidden] quedaba ignorado y el bloque
+   "extra" se veía siempre. Fix: toggle por CLASE (.is-open), no por el
+   atributo hidden — visto en real (Hernán, 2026-07-29: "se ven todos"). */
+.payments-grid--extra { margin-top: 12px; display: none; }
+.payments-grid--extra.is-open { display: grid; }
+.payment-tile {
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; border: 1px solid var(--kf-hairline); border-radius: var(--radius-lg);
+  padding: 14px 10px; height: 56px;
+}
+.payment-tile img {
+  height: 22px; width: auto;
+  filter: grayscale(1) opacity(.7) contrast(.9);
+}
+.payment-tile--lg img { height: 34px; }
+.payment-tile--sepa img { height: 29px; } /* 34px -15% */
+.payments-toggle {
+  display: flex; align-items: center; gap: 6px; margin: 20px auto 0;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 14px;
+  color: var(--kf-purple); background: none; border: 0; cursor: pointer; padding: 6px 4px;
+}
+.payments-toggle svg { width: 16px; height: 16px; transition: transform .25s ease; }
+.payments-toggle[aria-expanded="true"] svg { transform: rotate(180deg); }
+
+/* ── SELECTOR DE PAÍS ─────────────────────────────────────────
+   Se usa el <select> NATIVO a propósito. Se probó un desplegable propio porque
+   la lista del nativo no se puede estilar y en Chrome de escritorio a ventana
+   estrecha queda un panel del sistema que canta — pero en un MÓVIL REAL el
+   nativo abre el selector del sistema (rueda de iOS / diálogo de Android), que
+   es mejor de usar y trae gratis teclado y accesibilidad. Hernán lo va a
+   probar en un móvil real antes de decidir (2026-07-30). Si al final se quiere
+   el propio, está en el historial de git de este archivo, con roles
+   listbox/option, aria-expanded/selected, flechas, Enter, Escape, Home/End y
+   cierre al pulsar fuera. */
+.pais-selector { display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 22px; }
+.pais-pill {
+  display: inline-flex; align-items: center; gap: 8px; cursor: pointer;
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-pill); padding: 9px 14px;
+  box-shadow: var(--kf-shadow-sm); color: var(--kf-text-primary);
+  transition: border-color .2s var(--kf-ease), box-shadow .2s var(--kf-ease);
+}
+.pais-pill:hover { border-color: var(--kf-purple); }
+.pais-pill:focus-within { border-color: var(--kf-purple); box-shadow: 0 0 0 3px rgba(115,75,252,.28); }
+/* El select se desnuda para que la píldora sea el control visible, pero sigue
+   siendo un select nativo por debajo. */
+.pais-pill__select {
+  appearance: none; -webkit-appearance: none; border: 0; background: none; outline: none;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 14.5px;
+  color: inherit; cursor: pointer; padding: 0;
+}
+.pais-pill__chevron { width: 15px; height: 15px; color: var(--kf-text-muted); }
+.pais-selector__nota { font-size: 12.5px; color: var(--kf-text-muted); min-height: 1em; text-align: center; }
+.payment-tile[hidden] { display: none; }
+
+/* Los CTA secundarios llevan al bloque de acción del hero (en la variante de
+   quiz, al quiz; en las otras, a su CTA/formulario) — Hernán, 2026-07-30:
+   "todos los CTAs secundarios deben ir a arriba para hacer el quiz".
+   `scroll-margin-top` evita que el ancla deje el bloque pegado al borde
+   superior por debajo de la topbar. */
+#hero-cta { scroll-margin-top: 90px; }
+
+/* Insignia de verificado + nº de seguidores en los testimonios (Hernán,
+   2026-07-30). Dos decisiones que NO son de estilo:
+
+   1) La insignia va en MORADO DE MARCA, no en el azul de Instagram. Un check
+      azul idéntico al de Instagram afirma que esa persona está verificada EN
+      INSTAGRAM, y eso no lo sabemos. En morado, con aria-label "Cliente
+      verificado", la afirmación es la que SÍ podemos respaldar: son clientes
+      reales (reseñas de la BBDD de Notion + fotos confirmadas por Hernán).
+      Si alguno está verificado de verdad en Instagram y se quiere el azul, se
+      cambia el color — pero persona a persona y con la cuenta comprobada.
+
+   2) El nº de seguidores es un DATO FACTUAL sobre personas reales con nombre y
+      cara. La BBDD "Reseñas Web" de Notion NO tiene ese campo (solo nombre,
+      cargo, país, reseña y foto), así que el dato no existe y NO se inventa:
+      se deja el hueco con un marcador que nadie pueda confundir con una cifra
+      (`••• seguidores`) hasta que lleguen los números reales. */
+.tst-nombre-fila { display: flex; align-items: center; gap: 6px; }
+.tst-verificado { flex: none; width: 19px; height: 19px; color: var(--kf-purple); }
+.tst-seg {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: 6px;
+  font-size: 13px; font-weight: 700; color: var(--kf-text-secondary);
+}
+.tst-seg svg { width: 14px; height: 14px; color: var(--kf-text-muted); }
+/* Marcador de dato pendiente: se ve que falta, no simula un número. */
+.tst-seg--pendiente { color: var(--kf-text-muted); font-weight: 600; }
+
+/* ── CTA SECUNDARIO (cierre de sección) ───────────────────────
+   Contorno morado, no relleno: tiene que leerse como una invitación
+   subordinada, no competir con el súper-CTA naranja (que el Brain reserva a
+   UNA por pieza) ni con el primario sólido del módulo de herramientas. Se
+   repite al final de varias secciones, así que cuanto más callado, mejor. */
+/* `padding: 0 20px` igual que `.wrap`: estos bloques se insertan como hijos
+   DIRECTOS de la <section>, fuera del .wrap, así que no heredaban su padding
+   lateral y en móvil el botón llegaba pegado a los bordes de la pantalla. */
+.cta-sec { display: flex; justify-content: center; margin-top: 34px; padding: 0 20px; }
+.btn-secundario {
+  background: transparent; color: var(--kf-purple-dark);
+  border: 1.5px solid var(--kf-purple);
+  font-size: 14.5px; padding: 0 26px; height: 46px;
+  transition: background .2s var(--kf-ease), transform .18s var(--kf-ease), box-shadow .2s var(--kf-ease);
+}
+.btn-secundario:hover { background: var(--kf-tint-bg); box-shadow: 0 8px 20px -12px rgba(115,75,252,.5); }
+.btn-secundario:active { transform: scale(.98); }
+.btn-secundario svg { width: 16px; height: 16px; margin-left: 7px; }
+/* En móvil ocupa el ancho disponible pero con tope: a ancho completo se
+   leía como una barra pegada a los bordes, no como un botón. */
+@media (max-width: 767px) {
+  .cta-sec { margin-top: 26px; }
+  .btn-secundario { width: 100%; max-width: 340px; }
+}
+
+/* ── PUNTO DE DOLOR ───────────────────────────────────────── */
+.pain-grid { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .pain-grid { grid-template-columns: repeat(3, 1fr); } }
+.pain-card {
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-xl); padding: 22px; box-shadow: var(--kf-shadow-sm);
+}
+.pain-card__head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.pain-card .pain-icon {
+  flex: none; width: 40px; height: 40px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  background: rgba(240,68,56,.10); color: #d92d20; font-size: 18px;
+}
+.pain-card h3 { font-size: 17px; font-weight: 700; line-height: 1.25; }
+.pain-card p { font-size: 14.5px; color: var(--kf-text-muted); line-height: 1.55; }
+
+/* ── CÓMO LO RESUELVE (reveal) ────────────────────────────── */
+.solution {
+  background: linear-gradient(180deg, var(--kf-tint-bg), var(--kf-bg));
+  border-radius: var(--radius-2xl);
+}
+.solution .wrap { text-align: center; padding-top: 56px; padding-bottom: 56px; }
+.solution p.solution-body {
+  max-width: 680px; margin: 16px auto 0; font-size: 16px; color: var(--kf-text-secondary); line-height: 1.65;
+}
+.solution-pillars {
+  margin: 32px auto 0; display: grid; gap: 14px; max-width: 760px;
+  grid-template-columns: 1fr; text-align: left;
+}
+@media (min-width: 768px) { .solution-pillars { grid-template-columns: repeat(3, 1fr); } }
+.pillar {
+  position: relative; overflow: hidden;
+  background: #fff; border: 1px solid var(--kf-hairline); border-radius: var(--radius-lg);
+  padding: 20px; box-shadow: var(--kf-shadow-sm);
+}
+/* Número de fondo — decorativo, detrás del texto (z-index 0 vs. 1). */
+.pillar .pillar-num {
+  position: absolute; top: 0; bottom: 0; right: -4px; z-index: 0;
+  display: flex; align-items: center;
+  font-family: var(--morfeo-font); font-weight: 800; font-size: 130px; line-height: 1;
+  color: rgba(115,75,252,.10);
+  pointer-events: none; user-select: none;
+}
+.pillar h3, .pillar p { position: relative; z-index: 1; }
+.pillar h3 { font-size: 19px; font-weight: 800; margin-top: 6px; letter-spacing: -.01em; color: var(--kf-purple); }
+.pillar p { font-size: 13.5px; color: var(--kf-text-muted); margin-top: 4px; line-height: 1.5; }
+
+/* ── VENTAJAS ─────────────────────────────────────────────── */
+.benefits-grid { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 640px) { .benefits-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (min-width: 1024px) { .benefits-grid { grid-template-columns: repeat(3, 1fr); } }
+.benefit-card {
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-xl); padding: 22px; box-shadow: var(--kf-shadow-sm);
+}
+.benefit-card__head { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+.benefit-card .benefit-icon {
+  flex: none; width: 40px; height: 40px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--kf-tint-bg); color: var(--kf-purple-dark);
+}
+.benefit-card .benefit-icon svg { width: 22px; height: 22px; }
+.benefit-card h3 { font-size: 16.5px; font-weight: 700; line-height: 1.25; }
+.benefit-card p { font-size: 14px; color: var(--kf-text-muted); line-height: 1.55; }
+
+/* ── PARA QUIÉN ES ────────────────────────────────────────── */
+.fit { background: var(--kf-surface); border-top: 1px solid var(--kf-hairline); border-bottom: 1px solid var(--kf-hairline); }
+.fit-list { margin-top: 28px; display: grid; gap: 12px; grid-template-columns: 1fr; max-width: 720px; margin-left: auto; margin-right: auto; }
+@media (min-width: 768px) { .fit-list { grid-template-columns: repeat(2, 1fr); } }
+.fit-item {
+  display: flex; gap: 14px; align-items: flex-start;
+  background: #fff; border: 1px solid var(--kf-hairline); border-radius: var(--radius-lg); padding: 16px;
+}
+.fit-item .fit-check {
+  flex: none; width: 38px; height: 38px; border-radius: var(--radius-md);
+  background: var(--kf-tint-bg); color: var(--kf-purple-dark);
+  display: flex; align-items: center; justify-content: center;
+}
+.fit-item .fit-check svg { width: 19px; height: 19px; }
+.fit-item p { font-size: 14.5px; color: var(--kf-text-secondary); line-height: 1.5; }
+
+/* ── HERRAMIENTAS QUE SUSTITUYES ──────────────────────────── */
+.tools-replace .section-sub { max-width: 620px; margin: 14px auto 0; text-align: center; font-size: 15px; color: var(--kf-text-muted); line-height: 1.55; }
+.tools-card {
+  max-width: 720px; margin: 32px auto 0; background: var(--kf-surface);
+  border: 1px solid var(--kf-hairline); border-radius: var(--radius-xl);
+  padding: 8px 24px; box-shadow: var(--kf-shadow-sm);
+}
+.tools-row { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 16px 0; border-bottom: 1px solid var(--kf-hairline); }
+.tools-row:last-of-type { border-bottom: none; }
+.tools-row__left { display: flex; align-items: center; gap: 14px; min-width: 0; }
+.tools-icon {
+  flex: none; width: 38px; height: 38px; border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  background: var(--kf-tint-bg); color: var(--kf-purple-dark);
+}
+.tools-icon svg { width: 20px; height: 20px; }
+.tools-icon--brand { background: none; padding: 0; }
+.tools-icon--brand img { width: 38px; height: 38px; display: block; }
+.sensei-mark {
+  /* Recuadro, NO círculo (Hernán, 2026-07-29: "sensei en recuadro no
+     circulo") — mismo radio proporcional que los squircles SVG del resto de
+     iconos de marca: 116/512 = 22,66% → 38px ≈ 9px. */
+  width: 38px; height: 38px; border-radius: 9px;
+  background: linear-gradient(to bottom right, var(--kf-purple), var(--kf-purple-dark));
+  color: #fff; font-weight: 700; font-size: 18px; line-height: 1;
+  display: flex; align-items: center; justify-content: center;
+  font-family: "Noto Sans JP", var(--body-font, sans-serif);
+}
+.tools-row__name { font-size: 15px; font-weight: 700; color: var(--kf-text-primary); }
+/* "Cuota de autónomo" cierra la lista como el REMATE: es el gasto más caro
+   y el más doloroso de la lista, así que se trata como pieza especial y no
+   como una fila más (Hernán, 2026-07-29: "haz que este item sea especial").
+   El "subrayado" es el MISMO resaltado animado de rotulador de los
+   titulares (`.highlight`, 2 pasadas + texto a blanco), no un subrayado
+   propio — la fila lleva `.reveal`, así que hereda el disparo por scroll
+   de `.reveal.is-visible .highlight` sin CSS nuevo. Aquí solo se viste la
+   fila: fondo con tinte de marca, sin hairline, y el precio en morado. */
+.tools-row--especial {
+  margin: 0 -24px; padding: 18px 24px;
+  background: var(--kf-tint-bg);
+  border-bottom: none !important; border-radius: var(--radius-lg);
+}
+.tools-row--especial .tools-row__replaces { color: var(--kf-purple-dark); opacity: .75; }
+.tools-row--especial .tools-row__price { color: var(--kf-purple-dark); }
+.tools-row__badge { font-weight: 600; font-size: 12px; color: var(--kf-purple-dark); }
+.tools-row__replaces { font-size: 11.5px; color: var(--kf-text-muted); line-height: 1.4; margin-top: 2px; }
+.tools-row__price { flex: none; font-size: 14.5px; font-weight: 700; color: var(--kf-text-muted); text-align: right; white-space: nowrap; }
+.tools-row__price--text { font-weight: 600; font-style: italic; font-size: 13px; }
+.tools-total-row {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  padding: 16px 0; border-top: 2px dashed var(--kf-hairline);
+  font-size: 14px; color: var(--kf-text-muted);
+}
+.tools-total-row .tools-total-price { font-weight: 700; text-decoration: line-through; }
+/* REMATE del módulo: "Con Kunfupay · Incluido, sin cuota mensual". Antes
+   usaba el MISMO tinte claro (--kf-tint-bg) que la fila especial de "Cuota
+   de autónomo", así que las dos competían y no se distinguía cuál era la
+   conclusión (Hernán, 2026-07-29: "la cuota de autónomo se parece mucho a
+   la fila de Con Kunfupay; haz que este último destaque más"). Ahora va en
+   gradiente de marca SÓLIDO con texto en blanco: jerarquía inequívoca
+   —tinte claro = una fila más de la lista, morado sólido = el cierre—, con
+   sombra teñida de morado (sello Morfeo). `margin-bottom:-8px` cancela el
+   padding inferior del card para que sangre a ras del borde. */
+.tools-final-row {
+  display: flex; flex-direction: column; align-items: stretch; gap: 16px;
+  margin: 0 -24px -8px; padding: 20px 24px 22px;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  background: linear-gradient(135deg, var(--kf-purple), var(--kf-purple-dark));
+  box-shadow: inset 0 1px 0 rgba(255,255,255,.2), 0 10px 24px -12px rgba(115,75,252,.55);
+}
+/* La línea de label+precio mantiene el reparto izquierda/derecha que tienen
+   las filas de arriba (nombre ← → precio); el CTA va en su propia línea. */
+.tools-final-row__top {
+  display: flex; align-items: center; justify-content: space-between; gap: 10px; flex-wrap: wrap;
+}
+/* Botón BLANCO sobre el morado: un morado sobre morado no contrasta. */
+.tools-final-cta {
+  align-self: center; background: #fff; color: var(--kf-purple-dark);
+  font-size: 15.5px; padding: 0 32px;
+  box-shadow: 0 8px 20px -10px rgba(13,16,24,.45);
+  transition: transform .18s var(--kf-ease), box-shadow .18s var(--kf-ease);
+}
+.tools-final-cta:hover { transform: translateY(-1px); box-shadow: 0 12px 26px -10px rgba(13,16,24,.5); }
+.tools-final-cta:active { transform: scale(.98); }
+.tools-final-row .tools-final-label { font-family: var(--morfeo-font); font-weight: 800; font-size: 16px; color: #fff; }
+.tools-final-row .tools-final-price { font-family: var(--morfeo-font); font-weight: 800; font-size: 16px; color: #fff; }
+/* En MÓVIL el remate se apila y crece a escala de titular (Hernán,
+   2026-07-30: "que sean mucho más grande, H2 y H3 y centrados"): la fila
+   deja de ser label-izquierda / precio-derecha y pasa a bloque centrado,
+   con el mismo idioma `clamp()` que `h2.section-title` para no salirse de
+   la escala tipográfica del sistema. */
+@media (max-width: 767px) {
+  .tools-final-row { gap: 18px; padding: 28px 24px; }
+  .tools-final-row__top {
+    flex-direction: column; align-items: center; text-align: center; gap: 6px;
+  }
+  .tools-final-cta { align-self: stretch; }
+  .tools-final-row .tools-final-label {
+    font-size: clamp(24px, 6.2vw, 32px); line-height: 1.12; letter-spacing: -.02em;
+  }
+  .tools-final-row .tools-final-price {
+    font-size: clamp(17px, 4.4vw, 21px); line-height: 1.3;
+  }
+}
+.tools-note { max-width: 620px; margin: 16px auto 0; text-align: center; font-size: 12px; color: var(--kf-text-muted); line-height: 1.5; }
+
+
+/* ═══ TESTIMONIOS · LA FOTO MANDA ═══════════════════════════════════════
+   Dos columnas: mazo de fotos apiladas | texto + navegación. En móvil se
+   apila (foto arriba, texto debajo).
+   ⚠️ Las fotos de origen son 400×400. La foto activa se limita a 300px de
+   lado a propósito: a 320px+ en pantalla retina (2×) se verían blandas.
+   Si se consiguen originales de ~640px, se puede subir este tamaño. */
+.tst {
+  margin-top: 48px; display: grid; gap: 32px; align-items: center;
+  grid-template-columns: 1fr; max-width: 900px; margin-left: auto; margin-right: auto;
+}
+@media (min-width: 768px) { .tst { grid-template-columns: 300px 1fr; gap: 56px; } }
+
+/* El mazo necesita altura propia porque las fotos van en absolute (si no,
+   el contenedor colapsaría a 0). Se reserva un cuadrado. */
+.tst-fotos { position: relative; width: 100%; max-width: 300px; aspect-ratio: 1; margin: 0 auto; }
+.tst-foto {
+  position: absolute; inset: 0; width: 100%; height: 100%;
+  object-fit: cover; border-radius: var(--radius-2xl);
+  box-shadow: 0 26px 50px -20px rgba(13,16,24,.35), 0 8px 20px -12px rgba(115,75,252,.35);
+  /* Estado por defecto = carta del fondo: girada, algo más pequeña y bajada */
+  opacity: 0; transform: rotate(var(--rot, 0deg)) scale(.92) translateY(16px);
+  transition: opacity .42s var(--kf-ease), transform .42s var(--kf-ease);
+  transform-origin: bottom center;
+  will-change: transform, opacity;
+}
+/* Las 2 siguientes del mazo se dejan ver por detrás, para que se lea como
+   una pila de fotos y no como una sola imagen que cambia. */
+.tst-foto.is-next  { opacity: .5; z-index: 2; }
+.tst-foto.is-next2 { opacity: .28; z-index: 1; }
+.tst-foto.is-active {
+  opacity: 1; z-index: 3;
+  transform: rotate(0deg) scale(1) translateY(0);
+  /* La foto nueva entra un poco después de que la anterior empiece a irse,
+     por el mismo motivo que el texto. */
+  transition: opacity .42s var(--kf-ease) .12s, transform .48s var(--kf-ease) .12s;
+}
+
+.tst-panel { display: flex; flex-direction: column; }
+/* Los textos se apilan en la misma celda (grid + area compartida) en vez de
+   position:absolute: así el contenedor lo dimensiona el MÁS ALTO y no hay
+   salto de altura al cambiar de testimonio ni min-height que calcular. */
+.tst-textos { display: grid; }
+/* El texto que SALE se va rápido y sin retraso; el que ENTRA espera 190ms
+   antes de aparecer. Así no se ven los dos a la vez a media opacidad, que es
+   lo que pasaba con un crossfade simétrico y se leía como un fallo (visto en
+   captura). Es el equivalente en CSS del `AnimatePresence mode="wait"` de la
+   referencia de Hernán: primero sale uno, luego entra el otro. */
+.tst-texto {
+  grid-area: 1 / 1; margin: 0;
+  opacity: 0; transform: translateY(10px);
+  transition: opacity .18s var(--kf-ease), transform .18s var(--kf-ease);
+  pointer-events: none;
+}
+.tst-texto.is-active {
+  opacity: 1; transform: none; pointer-events: auto;
+  transition: opacity .34s var(--kf-ease) .19s, transform .34s var(--kf-ease) .19s;
+}
+.tst-nombre {
+  font-family: var(--morfeo-font); font-weight: 800;
+  font-size: clamp(20px, 3.2vw, 26px); letter-spacing: -.02em;
+  color: var(--kf-text-primary); line-height: 1.2;
+}
+.tst-rol { font-size: 13.5px; color: var(--kf-text-muted); margin-top: 3px; }
+.tst-cita {
+  margin-top: 18px; font-size: clamp(15px, 2vw, 17.5px); line-height: 1.6;
+  color: var(--kf-text-secondary);
+}
+.tst-cita::before { content: '\201C'; } .tst-cita::after { content: '\201D'; }
+
+.tst-nav { display: flex; gap: 10px; margin-top: 28px; }
+.tst-btn {
+  width: 42px; height: 42px; border-radius: 50%; cursor: pointer;
+  border: 1px solid var(--kf-hairline); background: var(--kf-surface);
+  color: var(--kf-purple-dark); box-shadow: var(--kf-shadow-sm);
+  display: flex; align-items: center; justify-content: center;
+  transition: background .2s var(--kf-ease), transform .2s var(--kf-ease);
+}
+.tst-btn:hover { background: var(--kf-tint-bg); }
+.tst-btn:active { transform: scale(.94); }
+.tst-btn svg { width: 18px; height: 18px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .tst-foto, .tst-texto { transition: none; }
+  .tst-foto { transform: rotate(var(--rot, 0deg)) scale(.92) translateY(16px); }
+  .tst-foto.is-active { transform: none; }
+}
+
+/* ── CONFIANZA / DIFERENCIADORES ──────────────────────────── */
+.trust-grid { margin-top: 32px; display: grid; gap: 16px; grid-template-columns: 1fr; }
+@media (min-width: 768px) { .trust-grid { grid-template-columns: repeat(3, 1fr); } }
+.trust-card {
+  border: 1px solid var(--kf-hairline); border-radius: var(--radius-xl); padding: 22px;
+  background: var(--kf-surface); box-shadow: var(--kf-shadow-sm);
+}
+.trust-card h3 { font-size: 15.5px; font-weight: 700; margin-bottom: 6px; }
+.trust-card p { font-size: 14px; color: var(--kf-text-muted); line-height: 1.55; }
+
+/* ── PASOS ────────────────────────────────────────────────── */
+.steps-grid { margin-top: 32px; display: grid; gap: 20px; grid-template-columns: 1fr; counter-reset: step; position: relative; }
+@media (min-width: 768px) { .steps-grid { grid-template-columns: repeat(3, 1fr); } }
+.steps-grid::before {
+  content: ""; position: absolute; left: 15px; top: 16px; bottom: 16px; width: 2px;
+  background: var(--kf-hairline); z-index: 0;
+}
+.steps-grid::after {
+  content: ""; position: absolute; left: 15px; top: 16px; width: 2px; height: 0;
+  background: linear-gradient(to bottom, var(--kf-purple), var(--kf-purple-dark));
+  z-index: 0;
+  animation: kf-steps-fill linear both;
+  animation-timeline: view(block);
+  animation-range: entry 10% cover 75%;
+}
+@keyframes kf-steps-fill { from { height: 0; } to { height: 100%; } }
+@supports not (animation-timeline: view()) {
+  .steps-grid::after { animation: none; height: 100%; opacity: .6; }
+}
+@media (min-width: 768px) { .steps-grid::before, .steps-grid::after { display: none; } }
+@media (prefers-reduced-motion: reduce) { .steps-grid::after { animation: none; height: 100%; } }
+.step-card { position: relative; z-index: 1; padding-left: 44px; }
+.step-card::before {
+  counter-increment: step; content: counter(step);
+  position: absolute; left: 0; top: 0;
+  width: 32px; height: 32px; border-radius: 50%;
+  background: linear-gradient(to bottom right, var(--kf-purple), var(--kf-purple-dark));
+  color: #fff; font-family: var(--morfeo-font); font-weight: 800; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 0 0 6px var(--kf-bg);
+  transform: scale(.55); opacity: .35;
+  animation: kf-step-pop linear both;
+  animation-timeline: view(block);
+  animation-range: entry 0% entry 55%;
+}
+@keyframes kf-step-pop { to { transform: scale(1); opacity: 1; } }
+@supports not (animation-timeline: view()) {
+  .step-card::before { transform: none; opacity: 1; animation: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .step-card::before { transform: none; opacity: 1; animation: none; }
+}
+.step-card h3 { font-size: 16px; font-weight: 700; margin-bottom: 6px; }
+.step-card p { font-size: 14px; color: var(--kf-text-muted); line-height: 1.55; }
+
+
+/* ═══ 3 PASOS · tarjeta con número, chip de tiempo y foto ════════════════
+   Rediseño según la referencia de Hernán (2026-07-30). Sustituye la rejilla
+   de 3 columnas anterior por tarjetas apiladas, que es lo que permite meter
+   una foto por paso sin apretujar el texto. */
+.pasos { position: relative; margin-top: 36px; max-width: 720px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; gap: 14px; }
+/* Línea de puntos que une los números. Va DETRÁS de las tarjetas (que son
+   opacas), así solo se ve en los huecos entre ellas — el efecto exacto de la
+   referencia, sin tener que dibujar un tramo por hueco. */
+.pasos::before {
+  content: ""; position: absolute; z-index: 0;
+  left: 29px; top: 30px; bottom: 30px; width: 0;
+  border-left: 2px dashed var(--kf-purple);
+  opacity: .35;
+}
+@media (min-width: 620px) { .pasos::before { left: 31px; } }
+
+/* 3 columnas SIEMPRE — número | contenido | foto (Hernán, 2026-07-30: "en la
+   versión movil, que la imagen quede a la derecha el contenido a la
+   izquierda"). Antes en móvil la foto se iba debajo a todo el ancho; ahora
+   acompaña al texto también en móvil, con la foto más estrecha y el número y
+   los huecos más justos para que al texto le quede sitio suficiente. */
+.paso {
+  position: relative; z-index: 1;
+  display: grid; grid-template-columns: auto 1fr 112px; gap: 10px; align-items: center;
+  background: var(--kf-surface); border: 1px solid var(--kf-hairline);
+  border-radius: var(--radius-xl); padding: 14px;
+  box-shadow: var(--kf-shadow-sm);
+  /* Necesario para que la foto a sangre quede recortada por el radio de la
+     tarjeta y no asome en pico por las esquinas. */
+  overflow: hidden;
+}
+@media (min-width: 620px) {
+  .paso { grid-template-columns: auto 1fr 190px; gap: 14px; padding: 16px; }
+}
+.paso__num {
+  flex: none; width: 30px; height: 30px; border-radius: 50%;
+  background: linear-gradient(to bottom right, var(--kf-purple), var(--kf-purple-dark));
+  color: #fff; font-family: var(--morfeo-font); font-weight: 800; font-size: 14px;
+  display: flex; align-items: center; justify-content: center;
+  /* El anillo del color del fondo tapa la línea de puntos justo detrás del
+     número, para que no se vea cruzándolo. */
+  box-shadow: 0 0 0 5px var(--kf-surface);
+}
+.paso__titulo { font-family: var(--morfeo-font); font-size: 15px; font-weight: 800; color: var(--kf-text-primary); line-height: 1.22; }
+@media (min-width: 620px) { .paso__titulo { font-size: 16.5px; } }
+.paso__desc { font-size: 13px; color: var(--kf-text-muted); line-height: 1.45; margin-top: 3px; }
+@media (min-width: 620px) { .paso__desc { font-size: 14px; line-height: 1.5; } }
+.paso__desc strong { color: var(--kf-purple-dark); font-weight: 700; }
+.paso__chip {
+  display: inline-flex; align-items: center; gap: 5px; margin-top: 9px;
+  background: var(--kf-tint-bg); color: var(--kf-purple-dark);
+  border-radius: var(--radius-pill); padding: 5px 11px;
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 12px;
+}
+.paso__chip svg { width: 11px; height: 11px; }
+
+/* La foto SANGRA hasta el borde de la tarjeta (Hernán, 2026-07-30: "las
+   imágenes que no tengan margen con el card que las contiene"). Los márgenes
+   negativos cancelan el padding de la tarjeta por arriba, abajo y derecha, y
+   `align-self: stretch` hace que ocupe todo el alto de la fila (por eso NO
+   lleva height fijo: lo marca la altura del contenido). El recorte de las
+   esquinas lo da el `overflow: hidden` de la tarjeta, así la foto hereda su
+   radio en vez de tener que replicarlo. */
+.paso__media, .paso__img {
+  grid-column: 3;
+  /* El ancho tiene que ser EXPLÍCITO (`calc(100% + padding)`), no `100%` ni
+     `justify-self: stretch`:
+     · con `width: 100%` el porcentaje se resuelve contra la columna (112px) y
+       el margen negativo solo DESPLAZA la caja, dejando aire a la derecha;
+     · `justify-self: stretch` no funciona aquí porque un <img> es un elemento
+       REEMPLAZADO con relación de aspecto intrínseca, y en ese caso el spec
+       trata `stretch` como `start` — medido: seguían 17px de hueco.
+     Con `calc(100% + 14px)` la foto llena su celda y se come justo el padding
+     de la tarjeta, quedando a ras del borde. */
+  width: calc(100% + 14px);
+  /* ⚠️ OBLIGATORIO junto al width de arriba: el reset trae
+     `img { max-width: 100% }`, que recortaba este `calc(100% + 14px)` de vuelta
+     a los 112px de la columna — de ahí el margen lateral que seguía viéndose.
+     Sin este `max-width: none` el sangrado NO funciona. */
+  max-width: none;
+  align-self: stretch; height: auto; min-height: 96px;
+  margin: -14px -14px -14px 0;
+  /* Redondeo solo en las esquinas de la derecha, las que coinciden con el
+     borde de la tarjeta (Hernán: "bordes redondeados"). El `overflow: hidden`
+     de la tarjeta ya recortaría, pero declararlo aquí lo hace explícito y no
+     depende de que ese overflow siga estando. */
+  border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+  overflow: hidden;
+}
+.paso__img { object-fit: cover; display: block; }
+@media (min-width: 620px) {
+  .paso__media, .paso__img {
+    width: calc(100% + 16px);
+    margin: -16px -16px -16px 0; min-height: 116px;
+  }
+}
+/* Marcador visible de foto pendiente: en un mockup es mejor que se VEA que
+   falta un asset que dejar un hueco silencioso que nadie note. */
+.paso__media--pendiente {
+  display: flex; align-items: center; justify-content: center;
+  background: var(--kf-bg); border: 1px dashed var(--kf-hairline-strong);
+  color: var(--kf-text-muted); font-size: 12px; font-weight: 600;
+}
+
+/* ⏸️ SECCIÓN OCULTA TEMPORALMENTE — "Una infraestructura pensada para negocios
+   digitales globales" (Hernán, 2026-07-30: "este apartado escóndelo").
+   El HTML de `<section class="trust section">` SIGUE INTACTO, con sus 3
+   tarjetas (Sin cuota mensual · Sin integraciones técnicas · ¡Vende
+   globalmente!): para volver a mostrarla basta con BORRAR esta única regla.
+   Se usa `section.trust` y no `.trust` a secas para no arrastrar por error a
+   `.trust-grid` / `.trust-card`, que son sus hijos.
+   No llevaba CTA secundario, así que no se pierde ninguno al ocultarla. */
+section.trust { display: none; }
+
+/* ── FAQ ──────────────────────────────────────────────────── */
+.faq-list { margin-top: 28px; max-width: 720px; margin-left: auto; margin-right: auto; display: flex; flex-direction: column; gap: 10px; }
+.faq-item { border: 1px solid var(--kf-hairline); border-radius: var(--radius-lg); background: var(--kf-surface); overflow: hidden; }
+.faq-question {
+  width: 100%; text-align: left; background: none; border: 0; cursor: pointer;
+  display: flex; align-items: center; justify-content: space-between; gap: 12px;
+  padding: 16px 18px; font-family: var(--morfeo-font); font-weight: 700; font-size: 14.5px; color: var(--kf-text-primary);
+}
+.faq-question .faq-icon { flex: none; transition: transform .2s var(--kf-ease); color: var(--kf-purple); }
+.faq-item[data-open="true"] .faq-question .faq-icon { transform: rotate(45deg); }
+.faq-answer {
+  max-height: 0; overflow: hidden; transition: max-height .25s var(--kf-ease);
+  padding: 0 18px; font-size: 14px; color: var(--kf-text-muted); line-height: 1.6;
+}
+.faq-item[data-open="true"] .faq-answer { max-height: 240px; padding-bottom: 18px; }
+
+/* ── CTA FINAL (variable por campaña) ─────────────────────── */
+.cta-final {
+  background: linear-gradient(135deg, var(--kf-purple), var(--kf-purple-dark));
+  border-radius: var(--radius-2xl); text-align: center; color: #fff;
+  padding: 56px 20px;
+}
+.cta-final h2 { font-size: clamp(22px, 4vw, 30px); font-weight: 800; letter-spacing: -.02em; color: #fff; }
+.cta-final p { margin-top: 12px; font-size: 15px; color: rgba(255,255,255,.85); max-width: 520px; margin-left: auto; margin-right: auto; }
+.cta-final .hero-cta { margin-top: 26px; }
+
+
+/* ── BARRA FIJA INFERIOR (aparece al perder de vista el CTA) ──────────── */
+.sticky-cta-bar {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 40;
+  transform: translateY(120%);
+  transition: transform .35s var(--kf-ease);
+  background: var(--kf-header-bg); backdrop-filter: blur(14px);
+  border-top: 1px solid var(--kf-hairline);
+  box-shadow: 0 -8px 24px -12px rgba(13,16,24,.18);
+  padding-top: 12px; padding-bottom: max(12px, env(safe-area-inset-bottom));
+}
+.sticky-cta-bar.is-visible { transform: translateY(0); }
+.sticky-cta-bar__inner {
+  display: flex; align-items: center; justify-content: space-between; gap: 14px;
+}
+.sticky-cta-bar__text {
+  font-family: var(--morfeo-font); font-weight: 700; font-size: 14px;
+  color: var(--kf-text-primary); margin: 0;
+}
+.sticky-cta-bar .btn { height: 44px; padding: 0 22px; white-space: nowrap; flex: none; }
+@media (max-width: 480px) {
+  .sticky-cta-bar__text { display: none; }
+  .sticky-cta-bar__inner { justify-content: center; }
+}
+@media (prefers-reduced-motion: reduce) { .sticky-cta-bar { transition: none; } }
+
+/* ── FOOTER ───────────────────────────────────────────────── */
+.site-footer { padding: 40px 0 60px; }
+.site-footer .footer-top { display: flex; align-items: center; gap: 10px; }
+/* Sin border-radius: el propio SVG del isotipo ya trae sus esquinas
+   redondeadas. Con el squircle antiguo no se notaba (sus esquinas eran
+   transparentes y el radio del CSS no recortaba nada), pero el isotipo
+   actual lleva el morado hasta el borde: un radio de 10px sobre una caja
+   de 26px es un 38% y lo convertía casi en un círculo. */
+.site-footer .footer-top img { height: 26px; width: 26px; }
+.site-footer .footer-legal { margin-top: 18px; font-size: 12.5px; color: var(--kf-text-subtle); }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-K7WQX54Z"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!-- ============================================================
+     VARIANTE DE HERO: QUIZ
+     Esta carpeta es _template/mockup/ con el hero sustituido por la
+     variante (c) — quiz de 2 preguntas + email. El resto de bloques
+     (métodos de pago, dolor, solución, ventajas, para quién es, confianza,
+     pasos, FAQ, CTA final, footer) es IDÉNTICO a _template/mockup/ — si se
+     actualiza el cuerpo común ahí, replicar el cambio aquí y en
+     _template/mockup-formulario/. Ver también CÓMO USAR ESTA PLANTILLA
+     abajo (lo mismo aplica, cambiando el punto 2 por "ajusta las preguntas
+     y el copy del quiz a la oferta de la campaña").
+     ============================================================ -->
+
+<!-- ============================================================
+     CÓMO USAR ESTA PLANTILLA
+     Copia esta carpeta completa (mockup-quiz/index.html + assets/) a
+     landings-por-marca/<submarca>/quiz-leads/<version>/mockup/ y sustituye:
+     1) <title> y <meta description> arriba.
+     2) La sección HERO (única parte que cambia por campaña): titular,
+        subtítulo y las preguntas/opciones del quiz.
+     3) El CTA del bloque final (.cta-final) para que combine con el de la
+        oferta concreta.
+     El resto de bloques (métodos de pago, punto de dolor, cómo lo resuelve,
+     ventajas, para quién es, confianza, pasos, FAQ, footer) es la
+     estructura COMÚN de toda landing Kunfupay: se ajusta el copy al nicho
+     si hace falta, pero no se reordena ni se quitan bloques sin acordarlo.
+     ============================================================ -->
+
+<!-- ============================================================
+     0) TOPBAR DE CAMPAÑA — ARRIBA DEL TODO, ANTES DEL HERO
+     Barra fina de color llamativo (gradiente morado Morfeo — no naranja,
+     ese color se reserva para la única súper-CTA de la pieza) para un
+     mensaje corto que cambia por campaña. Dos usos típicos (deja solo UNO,
+     borra el otro comentario):
+       (a) FILTRO DE CUALIFICACIÓN — ej.: "Solo para creadores que facturen
+           +2.000€/mes" (descarta tráfico que no encaja antes de que entre
+           al hero).
+       (b) URGENCIA / ESCASEZ — ej.: "🔥 Últimas plazas de la promoción de
+           este mes" (usar solo si la escasez es real, no inventada — regla
+           del Brain de no fabricar prueba social/urgencia falsa).
+     No lleva enlace ni cierre (✕): es un mensaje, no una acción.
+     ============================================================ -->
+<div class="topbar">
+  <!-- CAMPAÑA FISCAL. Se usa como FILTRO DE CUALIFICACIÓN, no como urgencia: la
+       escasez de "últimas plazas" del patrón sería inventada aquí y el Brain
+       prohíbe fabricar urgencia falsa. Este mensaje además descarta al que
+       todavía no cobra de fuera, que es quien no encaja en este ángulo. -->
+  <p><strong>Para quien ya cobra de varios países</strong> — factura a uno solo.</p>
+</div>
+
+<!-- ============================================================
+     1) HERO — ÚNICA SECCIÓN QUE CAMBIA POR CAMPAÑA
+     Sustituye eyebrow / h1 / subtítulo / CTA según la oferta y el público
+     de esta landing. El CTA puede ser: (a) botón directo a registro,
+     (b) formulario embebido, o (c) arranque de quiz — deja solo UNA de
+     las 3 variantes de abajo y borra las otras dos.
+     ============================================================ -->
+<section class="hero hero--dark">
+  <!-- "Ondas Sensei" — sistema-visual/recursos/sensei-ondas (mismo efecto que
+       el hero real de kunfupay.com). No redibujar a mano: si hace falta
+       regenerarlas, usar recursos/sensei-ondas/tool.html. -->
+  <svg class="hero-waves" viewBox="0 0 1000 100" preserveAspectRatio="none" aria-hidden="true">
+    <defs>
+      <linearGradient id="heroGradA" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"  stop-color="rgba(115,75,252,0)"/>
+        <stop offset="22%" stop-color="rgba(115,75,252,.32)"/>
+        <stop offset="50%" stop-color="rgba(115,75,252,.5)"/>
+        <stop offset="78%" stop-color="rgba(115,75,252,.32)"/>
+        <stop offset="100%" stop-color="rgba(115,75,252,0)"/>
+      </linearGradient>
+      <linearGradient id="heroGradSoft" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"  stop-color="rgba(156,135,254,0)"/>
+        <stop offset="30%" stop-color="rgba(156,135,254,.28)"/>
+        <stop offset="60%" stop-color="rgba(156,135,254,.34)"/>
+        <stop offset="100%" stop-color="rgba(156,135,254,0)"/>
+      </linearGradient>
+      <linearGradient id="heroGradLilac" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="0%"  stop-color="rgba(156,135,254,0)"/>
+        <stop offset="25%" stop-color="rgba(156,135,254,.2)"/>
+        <stop offset="50%" stop-color="rgba(156,135,254,.28)"/>
+        <stop offset="75%" stop-color="rgba(156,135,254,.2)"/>
+        <stop offset="100%" stop-color="rgba(156,135,254,0)"/>
+      </linearGradient>
+    </defs>
+    <g class="wa"><path d="M0,40 C125,18 250,18 375,40 S625,62 750,40 S1000,18 1000,40" fill="none" stroke="url(#heroGradA)" stroke-width="1.1" stroke-linecap="round"/></g>
+    <g class="wb"><path d="M0,48 C140,72 290,70 430,48 S700,24 850,48 S1000,66 1000,48" fill="none" stroke="url(#heroGradSoft)" stroke-width="0.85" stroke-linecap="round"/></g>
+    <g class="wc"><path d="M0,52 C160,36 320,38 500,52 S820,70 1000,52" fill="none" stroke="url(#heroGradLilac)" stroke-width="0.75" stroke-linecap="round"/></g>
+    <g class="wd"><path d="M0,58 C110,70 240,72 380,58 S640,42 780,58 S1000,72 1000,58" fill="none" stroke="url(#heroGradSoft)" stroke-width="0.55" stroke-linecap="round"/></g>
+    <g class="we"><path d="M0,62 C150,44 330,46 520,62 S860,80 1000,62" fill="none" stroke="url(#heroGradA)" stroke-width="2.0" stroke-linecap="round"/></g>
+  </svg>
+
+  <div class="wrap">
+    <img class="hero-logo" src="/landings-assets/logo.svg" alt="Kunfupay">
+    <h1>Los beneficios de una LLC. <span class="highlight" style="--tilt:-1.4deg">Sin montar la LLC</span>.</h1>
+    <p class="hero-subtitle">Kunfupay no es una asesoría: es una plataforma que vende por ti, con la estructura fiscal ya montada. Responde 2 preguntas y te decimos si encajas.</p>
+
+    <!-- HERO VARIANTE (c) — QUIZ. 2 preguntas + captura de email en la 3ª
+         pantalla; cada pantalla se muestra/oculta con JS (final del body).
+         El mismo #hero-cta envuelve todo el bloque para que la barra fija
+         inferior y el scroll-reveal lo traten igual que a las otras 2
+         variantes (a/formulario en _template/mockup-formulario/). -->
+    <div class="hero-cta" id="hero-cta">
+      <div class="hero-quiz hero-quiz--light" id="hero-quiz">
+        <div class="hero-quiz__progress">
+          <span class="hero-quiz__step" data-step="1"></span>
+          <span class="hero-quiz__step" data-step="2"></span>
+          <span class="hero-quiz__step" data-step="3"></span>
+        </div>
+
+        <!-- ═══ LÓGICA DE CUALIFICACIÓN (spec de Hernán, 2026-07-30) ═══
+             El quiz NUNCA se corta: quien responde algo descualificante
+             sigue hasta el final igual, y el destino se decide SOLO al
+             enviar el email. Tabla de decisión:
+
+               modelo      facturación        destino     utm_origen
+               ─────────── ────────────────── ─────────── ───────────────
+               físicos     cualquiera         potencial   no_cualificado
+               digitales   aún no factura (0) / 1–500 (500)
+                                              potencial   no_cualificado
+               digitales   500–2.000 (2000) / 2.000–10.000 (10000) /
+                           10.000–30.000 (30000) / +30.000 (60000)
+                                              gracias     cualificado
+
+             O sea: cualifica SOLO quien vende digital Y factura más de 500 €
+             (rangos de adquisición finales, 2026-10-20).
+             `utm_value` lleva el tope del rango elegido (0/500/2000/10000/30000/60000).
+             ══════════════════════════════════════════════════════════ -->
+        <div class="hero-quiz__screen" data-screen="1">
+          <h2 class="hero-quiz__question">¿Cuál es tu modelo de negocio digital?</h2>
+          <div class="hero-quiz__options">
+            <button class="hero-quiz__option" data-value="fisicos" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Vendo productos físicos</span></button>
+            <button class="hero-quiz__option" data-value="digitales" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Vendo productos digitales</span></button>
+          </div>
+        </div>
+
+        <!-- El `data-value` ES la cifra que viaja como utm_value: se lee con
+             parseInt, así que debe ser un número (0, 5000, 10000, 20000). -->
+        <div class="hero-quiz__screen" data-screen="2" hidden>
+          <h2 class="hero-quiz__question">¿Cuánto facturas al mes?</h2>
+          <div class="hero-quiz__options">
+            <!-- El `data-value` ES la cifra que viaja como utm_value y acaba en
+                 "Facturación declarada" de Notion. Tramos más altos que el
+                 patrón: quien se plantea montar una LLC ya factura lo bastante
+                 para justificarla, así que 5.000/10.000/20.000 se quedaba corto
+                 y el dato dejaba de segmentar. La regla de cualificación no
+                 cambia: cualquier valor > 0 cualifica. -->
+            <button class="hero-quiz__option" data-value="0" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Aún no facturo</span></button>
+            <button class="hero-quiz__option" data-value="500" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">De 1 a 500 €</span></button>
+            <button class="hero-quiz__option" data-value="2000" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">De 500 a 2.000 €</span></button>
+            <button class="hero-quiz__option" data-value="10000" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">De 2.000 a 10.000 €</span></button>
+            <button class="hero-quiz__option" data-value="30000" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">De 10.000 a 30.000 €</span></button>
+            <button class="hero-quiz__option" data-value="60000" type="button"><span class="hero-quiz__radio"></span><span class="hero-quiz__option-label">Más de 30.000 €</span></button>
+          </div>
+        </div>
+
+        <!-- Paso 3 (último): email + WhatsApp en el MISMO paso, OBLIGATORIOS
+             antes de saltar a la app (pedido de Marketing) — así Ventas tiene el
+             número aunque el usuario abandone el registro. Mismo paso a propósito:
+             son 2 campos (regla de conversión: solo se trocea con >4) y separarlos
+             añadía un paso sin recuperar el email de quien abandonaba.
+             Ojo con el copy: NO se le manda el resultado por email (decisión de
+             Hernán) — el email se pide para quedarnos el lead y PRERRELLENAR el
+             registro, así que el texto no puede prometer un envío que no existe.
+             Selector internacional (país + número) portado de
+             classroom-platinum-score/v1. Al enviar: POST único a /api/lead con
+             email + teléfono, se lee el prefillToken y se redirige al destino
+             (gracias/potencial). Súper-CTA naranja: la acción suprema de la pieza. -->
+        <div class="hero-quiz__screen" data-screen="3" hidden>
+          <h2 class="hero-quiz__question">Último paso: ¿dónde te dejamos tu cuenta?</h2>
+          <p class="hero-quiz__result-copy">Tu email para dejarte el registro empezado y tu WhatsApp por si te atascas con el alta. Cero spam.</p>
+          <form class="hero-quiz__form" id="hero-quiz-form" novalidate>
+            <input type="email" name="email" placeholder="Tu email" required autocomplete="email" aria-label="Email">
+            <div class="hero-quiz__tel">
+              <select class="hero-quiz__tel-cc" id="hero-quiz-cc" aria-label="País del teléfono" required></select>
+              <input class="hero-quiz__tel-num" id="hero-quiz-tel" type="tel" name="telefono"
+                     inputmode="numeric" autocomplete="tel-national"
+                     placeholder="Tu número de WhatsApp" aria-label="Número de WhatsApp" required>
+            </div>
+            <button type="submit" class="btn btn-super-cta btn-full">Ir a mi cuenta</button>
+          </form>
+        </div>
+
+        <button type="button" class="hero-quiz__back" id="hero-quiz-back" hidden>← Atrás</button>
+      </div>
+
+      <p class="hero-microtrust">Sin cuota mensual · Sin permanencia · Alta en minutos</p>
+    </div>
+
+      </div>
+    </div>
+  </div>
+    <!-- Prensa integrada en el hero (misma pieza común que mockup-cta/ —
+         ver el comentario largo ahí para la explicación completa). -->
+    <div class="hero-press">
+      <div class="press-marquee">
+        <div class="press-track">
+          <img class="press-logo" src="/landings-assets/prensa/forbes.svg" alt="Forbes">
+          <img class="press-logo" src="/landings-assets/prensa/techcrunch.svg" alt="TechCrunch">
+          <img class="press-logo" src="/landings-assets/prensa/entrepreneur.svg" alt="Entrepreneur">
+          <img class="press-logo" src="/landings-assets/prensa/wired.svg" alt="WIRED">
+          <img class="press-logo" src="/landings-assets/prensa/el-pais.svg" alt="El País">
+          <img class="press-logo" src="/landings-assets/prensa/business-insider.svg" alt="Business Insider">
+          <img class="press-logo" src="/landings-assets/prensa/forbes.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/techcrunch.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/entrepreneur.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/wired.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/el-pais.svg" alt="" aria-hidden="true">
+          <img class="press-logo" src="/landings-assets/prensa/business-insider.svg" alt="" aria-hidden="true">
+        </div>
+</section>
+
+<!-- ============================================================
+     8) PASOS PARA EMPEZAR — bloque común
+     ============================================================ -->
+<section class="steps section">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Cómo empezar</span>
+    <h2 class="section-title">Empieza en <span class="highlight" style="--tilt:1.2deg">menos de 5 minutos</span></h2>
+    <p class="section-lead">3 pasos simples. Sin complicaciones.<br>Empieza hoy, <strong>cobra hoy</strong>.</p>
+  </div>
+  <div class="wrap">
+    <!-- ═══ 3 PASOS — rediseño según referencia de Hernán (2026-07-30) ═══
+         Cada paso es una tarjeta con número + copy + chip de tiempo + foto.
+         Copy confirmado por él: "usa los steps de la imagen de referencia
+         (Activa tu tienda…)", así que se cambiaron los pasos 2 y 3 respecto
+         a los que había (antes: link de pago / wallet).
+         La línea de puntos que une los números va en el ::before del
+         contenedor, DETRÁS de las tarjetas: al ser opacas, la línea solo se
+         ve en los huecos entre ellas — que es el efecto de la referencia.
+         ══════════════════════════════════════════════════════════════ -->
+    <div class="pasos">
+      <article class="paso reveal">
+        <span class="paso__num">1</span>
+        <div class="paso__cuerpo">
+          <h3 class="paso__titulo">Crea tu cuenta</h3>
+          <p class="paso__desc">Sin trámites complicados, <strong>en minutos</strong>.</p>
+          <span class="paso__chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8Z"/></svg>
+            1–2 min
+          </span>
+        </div>
+        <img class="paso__img" style="object-position:50% 30%" src="/landings-assets/pasos/paso-1.jpg"
+             alt="Persona relajada tras crear su cuenta, con el portátil mostrando el alta" loading="lazy" width="760" height="424">
+      </article>
+      <article class="paso reveal">
+        <span class="paso__num">2</span>
+        <div class="paso__cuerpo">
+          <h3 class="paso__titulo">Activa tu tienda</h3>
+          <p class="paso__desc">Completa la información de tu negocio y personaliza tu tienda <strong>en minutos</strong>.</p>
+          <span class="paso__chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8Z"/></svg>
+            1–2 min
+          </span>
+        </div>
+        <img class="paso__img" style="object-position:50% 46%" src="/landings-assets/pasos/paso-2.jpg"
+             alt="Persona completando la información de su negocio para activar la tienda" loading="lazy" width="760" height="424">
+      </article>
+      <article class="paso reveal">
+        <span class="paso__num">3</span>
+        <div class="paso__cuerpo">
+          <h3 class="paso__titulo">Genera tu primer link de pago</h3>
+          <p class="paso__desc">Crea un link en segundos y empieza a recibir pagos <strong>al instante</strong>.</p>
+          <span class="paso__chip">
+            <svg viewBox="0 0 24 24" fill="currentColor" stroke="none" aria-hidden="true"><path d="M13 2 4.5 13.5H11l-1 8.5L19.5 10H13l1-8Z"/></svg>
+            1–2 min
+          </span>
+        </div>
+        <img class="paso__img" style="object-position:50% 38%" src="/landings-assets/pasos/paso-3.jpg"
+             alt="Persona mostrando en el móvil un cobro hecho con un link de pago" loading="lazy" width="760" height="424">
+      </article>
+    </div>
+  </div>
+    <!-- CTA secundario de cierre de sección. Mensaje adaptado al argumento
+         de ESTA sección (Hernán: "adapta el mensaje del botón, breve y que
+         incite a la acción"), en primera persona para que suene a decisión del
+         usuario y no a orden. Evento propio para poder medir qué sección
+         empuja de verdad al registro. -->
+    <div class="cta-sec reveal">
+      <a href="#hero-cta" class="btn btn-secundario"
+         onclick="fbq('trackCustom','cta_sec_pasos');"
+         >Quiero empezar ya<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+</section>
+
+<!-- ============================================================
+     2) MÉTODOS DE PAGO — bloque común
+     ============================================================ -->
+<section class="payments section--tight">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Métodos de pago · en todo el mundo</span>
+    <h2 class="section-title">Todos los métodos de pago que tus clientes usan. <span class="highlight" style="--tilt:1.1deg">Incluso los que no conoces</span></h2>
+    <p class="section-lead">Tarjetas internacionales + <strong>métodos locales de LATAM</strong>. Tú cobras igual, <strong>desde un solo panel</strong>.</p>
+    <!-- Grid ESTÁTICA, sin animación (a petición de Hernán, 2026-07-29: se
+         quitó la cinta infinita de 2 filas). 6 logos principales siempre
+         visibles + "ver más" despliega el resto (25, todos los que tienen
+         SVG real en la BBDD Notion "Métodos de pago con logos" — se
+         excluyen los 5 marcados ahí como "pendiente, sin SVG oficial"). -->
+    <!-- ═══ SELECTOR DE PAÍS ══════════════════════════════════════════
+         Filtra los métodos por país (Hernán, 2026-07-30) y se autodetecta
+         desde el navegador.
+         · Los pares país↔método salen de la BBDD "Métodos de pago con logos"
+           de Notion (campo "Países"). NO hay ninguna asignación inventada:
+           los métodos que allí figuran como "No detectado en el checkout" se
+           marcan data-paises="resto" y NO se atribuyen a ningún país — se
+           siguen mostrando al desplegar, pero sin afirmar disponibilidad
+           local, que sería una afirmación mucho más fuerte.
+         · Se usa un <select> nativo, no un desplegable a medida: en móvil
+           abre el selector del sistema (mejor de usar) y sale gratis la
+           accesibilidad de teclado.
+         ⚠️ Los logos de Yape/Nequi/Pix/Mercado Pago se mantienen con marca
+         oficial por AUTORIZACIÓN EXPRESA de Hernán (2026-07-30), como
+         excepción a Brain §9, que para diseños públicos pide tile neutro
+         morado con el nombre. Queda registrado en ESTADO.md.
+         ════════════════════════════════════════════════════════════════ -->
+    <div class="pais-selector">
+      <label class="pais-pill" for="pais">
+        <select id="pais" class="pais-pill__select" aria-label="Elige tu país para ver sus métodos de pago">
+          <option value="ES" data-bandera="🇪🇸">🇪🇸  España</option>
+          <option value="MX" data-bandera="🇲🇽">🇲🇽  México</option>
+          <option value="CO" data-bandera="🇨🇴">🇨🇴  Colombia</option>
+          <option value="BR" data-bandera="🇧🇷">🇧🇷  Brasil</option>
+          <option value="PE" data-bandera="🇵🇪">🇵🇪  Perú</option>
+          <option value="CL" data-bandera="🇨🇱">🇨🇱  Chile</option>
+          <option value="AR" data-bandera="🇦🇷">🇦🇷  Argentina</option>
+          <option value="VE" data-bandera="🇻🇪">🇻🇪  Venezuela</option>
+          <option value="EC" data-bandera="🇪🇨">🇪🇨  Ecuador</option>
+          <option value="US" data-bandera="🇺🇸">🇺🇸  Estados Unidos</option>
+          <option value="global" data-bandera="🌍">🌍  Otro país</option>
+        </select>
+        <svg class="pais-pill__chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 9 6 6 6-6"/></svg>
+      </label>
+      <p class="pais-selector__nota" id="pais-nota"></p>
+    </div>
+    <div class="payments-grid reveal" id="payments-grid">
+      <div class="payment-tile" data-paises="global"><img src="/landings-assets/metodos-pago/visa.svg" alt="Visa"></div>
+      <div class="payment-tile" data-paises="global"><img src="/landings-assets/metodos-pago/mastercard.svg" alt="Mastercard"></div>
+      <div class="payment-tile" data-paises="global"><img src="/landings-assets/metodos-pago/american-express.svg" alt="American Express"></div>
+      <div class="payment-tile" data-paises="global"><img src="/landings-assets/metodos-pago/apple-pay.svg" alt="Apple Pay"></div>
+      <div class="payment-tile" data-paises="global"><img src="/landings-assets/metodos-pago/google-pay.svg" alt="Google Pay"></div>
+      <div class="payment-tile" data-paises="ES"><img src="/landings-assets/metodos-pago/bizum.svg" alt="Bizum"></div>
+      <div class="payment-tile payment-tile--sepa" data-paises="ES"><img src="/landings-assets/metodos-pago/sepa.svg" alt="SEPA"></div>
+      <div class="payment-tile" data-paises="MX"><img src="/landings-assets/metodos-pago/oxxo.svg" alt="OXXO"></div>
+      <div class="payment-tile" data-paises="BR"><img src="/landings-assets/metodos-pago/pix.svg" alt="Pix Brasil"></div>
+      <div class="payment-tile" data-paises="CO"><img src="/landings-assets/metodos-pago/nequi.svg" alt="Nequi"></div>
+      <div class="payment-tile payment-tile--lg" data-paises="CO"><img src="/landings-assets/metodos-pago/pse.svg" alt="PSE"></div>
+      <div class="payment-tile" data-paises="CO"><img src="/landings-assets/metodos-pago/bancolombia.svg" alt="Bancolombia"></div>
+      <div class="payment-tile payment-tile--lg" data-paises="PE"><img src="/landings-assets/metodos-pago/pagoefectivo.svg" alt="PagoEfectivo"></div>
+      <div class="payment-tile payment-tile--lg" data-paises="AR BR CL MX"><img src="/landings-assets/metodos-pago/mercado-pago.svg" alt="Mercado Pago"></div>
+      <div class="payment-tile" data-paises="AR CL CO EC MX PY"><img src="/landings-assets/metodos-pago/astropay.svg" alt="AstroPay"></div>
+      <div class="payment-tile" data-paises="US"><img src="/landings-assets/metodos-pago/cash-app.svg" alt="Cash App"></div>
+      <div class="payment-tile" data-paises="global"><img src="/landings-assets/metodos-pago/cripto.svg" alt="Cripto"></div>
+      <div class="payment-tile" data-paises="global"><img src="/landings-assets/metodos-pago/binance-pay.svg" alt="Binance Pay"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/paypal.svg" alt="PayPal"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/klarna.svg" alt="Klarna"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/sequra.svg" alt="seQura"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/scalapay.svg" alt="Scalapay"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/billie.svg" alt="Billie"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/afterpay.svg" alt="Afterpay"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/aplazame.svg" alt="Aplazame"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/neteller.svg" alt="Neteller"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/skrill.svg" alt="Skrill"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/paysafecard.svg" alt="Paysafecard"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/ideal.svg" alt="iDEAL"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/7-eleven.svg" alt="7-Eleven"></div>
+      <div class="payment-tile" data-paises="resto"><img src="/landings-assets/metodos-pago/western-union.svg" alt="Western Union"></div>
+    </div>
+    <button type="button" class="payments-toggle" id="payments-toggle" aria-expanded="false" aria-controls="payments-extra" onclick="togglePayments(this)">
+      <span class="payments-toggle__label">Ver todos los métodos</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+    </button>
+    </div>
+</section>
+
+<!-- ============================================================
+     6b) CASOS DE USO — bloque común (CARRUSEL, a petición de Hernán)
+     Prueba social real: foto real + mockup REAL de una pantalla del
+     producto (no inventada) + reseña real, una por vertical. El carrusel
+     muestra 2 tarjetas a la vez (flechas prev/next) para dar más espacio a
+     cada mockup. Fuente de las reseñas: base "💬 Reseñas" en Notion (8
+     sub-bases / 90 revisadas) + una reseña real aportada directamente por
+     Hernán para "Creadores UGC" (única vertical sin cobertura en Notion).
+     Fotos reales de cliente (mejoradas con Higgsfield, confirmado por
+     Hernán 2026-07-29: "son reales"; la de Daniel Alcaraz la aportó él
+     directamente el mismo día). Fuente de los mockups de producto: repo
+     Kunfupay-landing (components/redesign/wallet/wallet-screens.tsx y
+     components/redesign/landing/checkout/checkout-preview.tsx y
+     communities-content.tsx) — mismas pantallas reales de
+     kunfupay.com/producto/wallet, /producto/checkout y /producto/comunidades.
+     ============================================================ -->
+<section class="usecases section">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Casos de uso</span>
+    <h2 class="section-title">Por qué <span class="highlight" style="--tilt:-1.3deg">los mejores</span> eligen Kunfupay</h2>
+  </div>
+  <div class="wrap">
+    <!-- ═══ TESTIMONIOS: LA PERSONA ES LA PROTAGONISTA ═══════════════════
+         Hernán (2026-07-30): "en el apartado de Casos de Uso quiero
+         priorizar las fotos de los usuarios. No la App", con una referencia
+         de componente React (mazo de fotos apiladas + texto al lado).
+
+         ⚠️ CAMBIO DE FONDO: antes cada tarjeta llevaba un mockup real de una
+         pantalla del producto. Se han QUITADO. Ganamos prueba social (la cara
+         manda) y perdemos demostración de producto — si se quiere recuperar,
+         el markup de los móviles está en el historial de git de este archivo.
+
+         La referencia era React + Tailwind + TS con framer-motion; aquí se
+         portó el EFECTO a CSS plano. Diferencias deliberadas:
+         · Las rotaciones del mazo son FIJAS por foto (--rot), no
+           `Math.random()` en cada render como el original: con random el mazo
+           "baila" distinto en cada paso y un fallo no se puede reproducir.
+         · El contenido de los 6 testimonios vive en el HTML (no en un array
+           JS) para que se pueda leer y editar sin tocar código.
+         ═════════════════════════════════════════════════════════════════ -->
+    <div class="tst reveal" id="testimonios">
+      <div class="tst-fotos">
+        <img class="tst-foto" src="/landings-assets/testimonios/daniel-alcaraz.jpg" alt="Daniel Alcaraz"
+             style="--rot:-7deg" draggable="false" loading="eager" fetchpriority="high" width="400" height="400">
+        <img class="tst-foto" src="/landings-assets/testimonios/lucia-hernandez.jpg" alt="Lucía Hernández"
+             style="--rot:-4deg" draggable="false" loading="lazy" width="400" height="400">
+        <img class="tst-foto" src="/landings-assets/testimonios/sergio-navarro.jpg" alt="Sergio Navarro"
+             style="--rot:6.5deg" draggable="false" loading="lazy" width="400" height="400">
+        <img class="tst-foto" src="/landings-assets/testimonios/luis-guerrero.jpg" alt="Luis Guerrero"
+             style="--rot:-5.5deg" draggable="false" loading="lazy" width="400" height="400">
+        <img class="tst-foto" src="/landings-assets/testimonios/genesis-marcano.jpg" alt="Génesis Marcano"
+             style="--rot:4deg" draggable="false" loading="lazy" width="400" height="400">
+        <img class="tst-foto" src="/landings-assets/testimonios/marina-costa.jpg" alt="Marina Costa"
+             style="--rot:5deg" draggable="false" loading="lazy" width="400" height="400">
+      </div>
+
+      <div class="tst-panel">
+        <div class="tst-textos" id="tst-textos">
+        <blockquote class="tst-texto">
+          <p class="tst-nombre tst-nombre-fila">Daniel Alcaraz<svg class="tst-verificado" viewBox="0 0 24 24" fill="currentColor" stroke="none" role="img" aria-label="Cliente verificado"><title>Cliente verificado</title><path d="M12 1.6l2.2 1.7 2.7-.5 1 2.6 2.4 1.4-.6 2.7 1.5 2.3-1.9 2 .2 2.8-2.7.7-1.5 2.3-2.6-.9-2.6.9-1.5-2.3-2.7-.7.2-2.8-1.9-2 1.5-2.3-.6-2.7 2.4-1.4 1-2.6 2.7.5L12 1.6z"/><path d="M10.6 15.2l-2.9-2.9 1.3-1.3 1.6 1.6 4-4 1.3 1.3-5.3 5.3z" fill="#fff"/></svg></p>
+          <p class="tst-rol">Creador UGC · España</p>
+          <!-- ⚠️ CIFRA SIN VERIFICAR (Daniel Alcaraz). La BBDD "Reseñas Web" de
+               Notion NO tiene campo de seguidores: este número es una ESTIMACIÓN
+               coherente con el nicho, pedida expresamente por Hernán (2026-07-30)
+               tras avisarle de que el dato no existe. Es una afirmación factual
+               sobre una persona REAL con nombre y cara: CONFIRMAR o sustituir por
+               la cifra real ANTES de publicar. -->
+          <p class="tst-seg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13A4 4 0 0 1 19 7a4 4 0 0 1-3 3.87"/></svg>12,4K seguidores</p>
+          <p class="tst-cita">Con Kunfupay dejé atrás las comisiones de Fiverr y Upwork. Facturo a marcas de cualquier país sin darme de alta como autónomo.</p>
+        </blockquote>
+        <blockquote class="tst-texto">
+          <p class="tst-nombre tst-nombre-fila">Lucía Hernández<svg class="tst-verificado" viewBox="0 0 24 24" fill="currentColor" stroke="none" role="img" aria-label="Cliente verificado"><title>Cliente verificado</title><path d="M12 1.6l2.2 1.7 2.7-.5 1 2.6 2.4 1.4-.6 2.7 1.5 2.3-1.9 2 .2 2.8-2.7.7-1.5 2.3-2.6-.9-2.6.9-1.5-2.3-2.7-.7.2-2.8-1.9-2 1.5-2.3-.6-2.7 2.4-1.4 1-2.6 2.7.5L12 1.6z"/><path d="M10.6 15.2l-2.9-2.9 1.3-1.3 1.6 1.6 4-4 1.3 1.3-5.3 5.3z" fill="#fff"/></svg></p>
+          <p class="tst-rol">Formadora online · España</p>
+          <!-- ⚠️ CIFRA SIN VERIFICAR (Lucía Hernández). La BBDD "Reseñas Web" de
+               Notion NO tiene campo de seguidores: este número es una ESTIMACIÓN
+               coherente con el nicho, pedida expresamente por Hernán (2026-07-30)
+               tras avisarle de que el dato no existe. Es una afirmación factual
+               sobre una persona REAL con nombre y cara: CONFIRMAR o sustituir por
+               la cifra real ANTES de publicar. -->
+          <p class="tst-seg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13A4 4 0 0 1 19 7a4 4 0 0 1-3 3.87"/></svg>24,1K seguidores</p>
+          <p class="tst-cita">Vendo cursos a alumnos de medio mundo y los gestiono desde un solo panel. Se acabó saltar entre cinco herramientas.</p>
+        </blockquote>
+        <blockquote class="tst-texto">
+          <p class="tst-nombre tst-nombre-fila">Sergio Navarro<svg class="tst-verificado" viewBox="0 0 24 24" fill="currentColor" stroke="none" role="img" aria-label="Cliente verificado"><title>Cliente verificado</title><path d="M12 1.6l2.2 1.7 2.7-.5 1 2.6 2.4 1.4-.6 2.7 1.5 2.3-1.9 2 .2 2.8-2.7.7-1.5 2.3-2.6-.9-2.6.9-1.5-2.3-2.7-.7.2-2.8-1.9-2 1.5-2.3-.6-2.7 2.4-1.4 1-2.6 2.7.5L12 1.6z"/><path d="M10.6 15.2l-2.9-2.9 1.3-1.3 1.6 1.6 4-4 1.3 1.3-5.3 5.3z" fill="#fff"/></svg></p>
+          <p class="tst-rol">Coach de oratoria y marca personal · España</p>
+          <!-- ⚠️ CIFRA SIN VERIFICAR (Sergio Navarro). La BBDD "Reseñas Web" de
+               Notion NO tiene campo de seguidores: este número es una ESTIMACIÓN
+               coherente con el nicho, pedida expresamente por Hernán (2026-07-30)
+               tras avisarle de que el dato no existe. Es una afirmación factual
+               sobre una persona REAL con nombre y cara: CONFIRMAR o sustituir por
+               la cifra real ANTES de publicar. -->
+          <p class="tst-seg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13A4 4 0 0 1 19 7a4 4 0 0 1-3 3.87"/></svg>31,5K seguidores</p>
+          <p class="tst-cita">Doy mentorías 1:1 y un programa de 8 semanas. Con Kunfupay cobro tranquilo, monto mi Classroom y mis alumnos entran a pagar con Bizum en segundos.</p>
+        </blockquote>
+        <blockquote class="tst-texto">
+          <p class="tst-nombre tst-nombre-fila">Luis Guerrero<svg class="tst-verificado" viewBox="0 0 24 24" fill="currentColor" stroke="none" role="img" aria-label="Cliente verificado"><title>Cliente verificado</title><path d="M12 1.6l2.2 1.7 2.7-.5 1 2.6 2.4 1.4-.6 2.7 1.5 2.3-1.9 2 .2 2.8-2.7.7-1.5 2.3-2.6-.9-2.6.9-1.5-2.3-2.7-.7.2-2.8-1.9-2 1.5-2.3-.6-2.7 2.4-1.4 1-2.6 2.7.5L12 1.6z"/><path d="M10.6 15.2l-2.9-2.9 1.3-1.3 1.6 1.6 4-4 1.3 1.3-5.3 5.3z" fill="#fff"/></svg></p>
+          <p class="tst-rol">Membresía de señales de trading · Venezuela</p>
+          <!-- ⚠️ CIFRA SIN VERIFICAR (Luis Guerrero). La BBDD "Reseñas Web" de
+               Notion NO tiene campo de seguidores: este número es una ESTIMACIÓN
+               coherente con el nicho, pedida expresamente por Hernán (2026-07-30)
+               tras avisarle de que el dato no existe. Es una afirmación factual
+               sobre una persona REAL con nombre y cara: CONFIRMAR o sustituir por
+               la cifra real ANTES de publicar. -->
+          <p class="tst-seg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13A4 4 0 0 1 19 7a4 4 0 0 1-3 3.87"/></svg>47,2K seguidores</p>
+          <p class="tst-cita">Mis suscriptores pagan algunos con USDT y otros con su método local, y a mí me liquidan rapidísimo. Además, puedo retirar en la moneda que quiera.</p>
+        </blockquote>
+        <blockquote class="tst-texto">
+          <p class="tst-nombre tst-nombre-fila">Génesis Marcano<svg class="tst-verificado" viewBox="0 0 24 24" fill="currentColor" stroke="none" role="img" aria-label="Cliente verificado"><title>Cliente verificado</title><path d="M12 1.6l2.2 1.7 2.7-.5 1 2.6 2.4 1.4-.6 2.7 1.5 2.3-1.9 2 .2 2.8-2.7.7-1.5 2.3-2.6-.9-2.6.9-1.5-2.3-2.7-.7.2-2.8-1.9-2 1.5-2.3-.6-2.7 2.4-1.4 1-2.6 2.7.5L12 1.6z"/><path d="M10.6 15.2l-2.9-2.9 1.3-1.3 1.6 1.6 4-4 1.3 1.3-5.3 5.3z" fill="#fff"/></svg></p>
+          <p class="tst-rol">Asesorías de marketing digital · Venezuela</p>
+          <!-- ⚠️ CIFRA SIN VERIFICAR (Génesis Marcano). La BBDD "Reseñas Web" de
+               Notion NO tiene campo de seguidores: este número es una ESTIMACIÓN
+               coherente con el nicho, pedida expresamente por Hernán (2026-07-30)
+               tras avisarle de que el dato no existe. Es una afirmación factual
+               sobre una persona REAL con nombre y cara: CONFIRMAR o sustituir por
+               la cifra real ANTES de publicar. -->
+          <p class="tst-seg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13A4 4 0 0 1 19 7a4 4 0 0 1-3 3.87"/></svg>15,8K seguidores</p>
+          <p class="tst-cita">Cobrar desde Venezuela era casi imposible, y ahora recibo pagos internacionales sin complicaciones, incluso puedo gastar con la tarjeta Kunfupay.</p>
+        </blockquote>
+        <blockquote class="tst-texto">
+          <p class="tst-nombre tst-nombre-fila">Marina Costa<svg class="tst-verificado" viewBox="0 0 24 24" fill="currentColor" stroke="none" role="img" aria-label="Cliente verificado"><title>Cliente verificado</title><path d="M12 1.6l2.2 1.7 2.7-.5 1 2.6 2.4 1.4-.6 2.7 1.5 2.3-1.9 2 .2 2.8-2.7.7-1.5 2.3-2.6-.9-2.6.9-1.5-2.3-2.7-.7.2-2.8-1.9-2 1.5-2.3-.6-2.7 2.4-1.4 1-2.6 2.7.5L12 1.6z"/><path d="M10.6 15.2l-2.9-2.9 1.3-1.3 1.6 1.6 4-4 1.3 1.3-5.3 5.3z" fill="#fff"/></svg></p>
+          <p class="tst-rol">Comunidad de pago en Discord · Portugal</p>
+          <!-- ⚠️ CIFRA SIN VERIFICAR (Marina Costa). La BBDD "Reseñas Web" de
+               Notion NO tiene campo de seguidores: este número es una ESTIMACIÓN
+               coherente con el nicho, pedida expresamente por Hernán (2026-07-30)
+               tras avisarle de que el dato no existe. Es una afirmación factual
+               sobre una persona REAL con nombre y cara: CONFIRMAR o sustituir por
+               la cifra real ANTES de publicar. -->
+          <p class="tst-seg"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13A4 4 0 0 1 19 7a4 4 0 0 1-3 3.87"/></svg>8,7K seguidores</p>
+          <p class="tst-cita">Mi comunidad es 80% brasileña y antes perdía ventas en el pago. Con PIX como método nativo, ahora me pagan sin pensárselo.</p>
+        </blockquote>
+        </div>
+        <div class="tst-nav">
+          <button type="button" class="tst-btn" id="tst-prev" aria-label="Testimonio anterior">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 12H5"/><path d="m12 19-7-7 7-7"/></svg>
+          </button>
+          <button type="button" class="tst-btn" id="tst-next" aria-label="Testimonio siguiente">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- CTA secundario de cierre de sección. Mensaje adaptado al argumento
+         de ESTA sección (Hernán: "adapta el mensaje del botón, breve y que
+         incite a la acción"), en primera persona para que suene a decisión del
+         usuario y no a orden. Evento propio para poder medir qué sección
+         empuja de verdad al registro. -->
+    <div class="cta-sec reveal">
+      <a href="#hero-cta" class="btn btn-secundario"
+         onclick="fbq('trackCustom','cta_sec_testimonios');"
+         >Unirme a ellos<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+</section>
+
+<!-- ============================================================
+     6c) HERRAMIENTAS QUE SUSTITUYES — bloque común
+     Precios de referencia comprobados en 2026 (planes de entrada públicos,
+     no incluyen comisiones adicionales de cada plataforma): Linktree Pro
+     15 $/mes, Kajabi Basic 179 $/mes y Skool Pro 99 $/mes (se usa el más
+     barato de los 3 competidores de Classroom), agencia de marketing social
+     desde 500 $/mes (rango real de mercado 500-2.000 $/mes para pymes),
+     ChatGPT Plus / Google AI Pro / Claude Pro / Perplexity Pro 20 $/mes
+     (los 4 convergen en ese precio), Shopify Basic 39 $/mes (checkout/
+     tienda online), Revolut Premium 9,99 $/mes → "desde 10 $/mes" (tarjeta).
+     Storefronts sustituye a Lovable ($25/mes Pro — el más barato de
+     referencia), Carrd (planes anuales, no mensuales, se nombra pero no
+     fija el precio mostrado) y Leadpages ($37/mes) — se muestra "desde
+     25 $/mes" (el más barato con facturación mensual real entre los
+     nombrados). Telegram ROI Manager no tiene un competidor de precio
+     público equivalente (sustituye trabajo manual en hojas de cálculo, no
+     una suscripción) — se deja sin cifra, no se inventa un precio. Fuente
+     de que las herramientas de Kunfupay son gratis (sin cuota mensual):
+     Brain, "Unit economics + pricing". Iconos: no existe un set de iconos
+     oficiales de producto para estas herramientas ni en Notion ni en
+     sistema-visual (comprobado 2026-07-29) — se usan iconos de línea
+     Morfeo nuevos, elegidos para representar de forma reconocible lo que
+     hace cada herramienta (no genéricos reciclados de otro módulo). Orden
+     de filas por importancia (2026-07-29, a petición de Hernán): primero
+     las herramientas centrales de cobro/venta (Tienda, BioLink,
+     Storefronts, Classroom), luego gestión del dinero (KunfuCard), luego
+     crecimiento/soporte (Marketing Booster, Sensei), y al final la más de
+     nicho (Telegram ROI Manager).
+     ============================================================ -->
+<section class="tools-replace section">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Ahorra en herramientas</span>
+    <h2 class="section-title">Ahorra más de 500$ con <span class="highlight" style="--tilt:1.1deg">nuestras funciones 100% gratuitas</span></h2>
+    <p class="section-sub">Cada herramienta de Kunfupay reemplaza una app (o un gasto) que hoy pagarías aparte — y viene <strong>incluida en tu cuenta, sin cuota mensual</strong>.</p>
+  </div>
+  <div class="wrap">
+    <div class="tools-card reveal">
+      <div class="tools-list">
+        <div class="tools-row">
+          <div class="tools-row__left">
+            <span class="tools-icon tools-icon--brand"><img src="/landings-assets/iconos-app/tienda.svg" alt=""></span>
+            <div>
+              <p class="tools-row__name">Tienda</p>
+              <p class="tools-row__replaces">Sustituye a: Stripe, Shopify, WooCommerce o PayPal Checkout</p>
+            </div>
+          </div>
+          <span class="tools-row__price">desde 39 $/mes</span>
+        </div>
+        <div class="tools-row">
+          <div class="tools-row__left">
+            <span class="tools-icon tools-icon--brand"><img src="/landings-assets/iconos-app/biolink.svg" alt=""></span>
+            <div>
+              <p class="tools-row__name">BioLink</p>
+              <p class="tools-row__replaces">Sustituye a: Linktree Pro</p>
+            </div>
+          </div>
+          <span class="tools-row__price">15 $/mes</span>
+        </div>
+        <div class="tools-row">
+          <div class="tools-row__left">
+            <span class="tools-icon tools-icon--brand"><img src="/landings-assets/iconos-app/paginas.svg" alt=""></span>
+            <div>
+              <p class="tools-row__name">Páginas</p>
+              <p class="tools-row__replaces">Sustituye a: Lovable, Carrd o Leadpages</p>
+            </div>
+          </div>
+          <span class="tools-row__price">desde 25 $/mes</span>
+        </div>
+        <div class="tools-row">
+          <div class="tools-row__left">
+            <span class="tools-icon tools-icon--brand"><img src="/landings-assets/iconos-app/classroom.svg" alt=""></span>
+            <div>
+              <p class="tools-row__name">Classroom</p>
+              <p class="tools-row__replaces">Sustituye a: Kajabi, Skool o Hotmart</p>
+            </div>
+          </div>
+          <span class="tools-row__price">desde 99 $/mes</span>
+        </div>
+        <div class="tools-row">
+          <div class="tools-row__left">
+            <span class="tools-icon tools-icon--brand"><img src="/landings-assets/iconos-app/kunfucard.svg" alt=""></span>
+            <div>
+              <p class="tools-row__name">KunfuCard</p>
+              <p class="tools-row__replaces">Sustituye a: Revolut, PayPal o tu tarjeta bancaria</p>
+            </div>
+          </div>
+          <span class="tools-row__price">desde 10 $/mes</span>
+        </div>
+        <div class="tools-row">
+          <div class="tools-row__left">
+            <span class="tools-icon tools-icon--brand"><span class="sensei-mark" aria-hidden="true">先</span></span>
+            <div>
+              <p class="tools-row__name">Sensei</p>
+              <p class="tools-row__replaces">Sustituye a: ChatGPT Plus, Gemini, Claude o Perplexity Pro</p>
+            </div>
+          </div>
+          <span class="tools-row__price">20 $/mes</span>
+        </div>
+        <div class="tools-row tools-row--especial reveal">
+          <div class="tools-row__left">
+            <span class="tools-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/><path d="M3 13h18"/></svg></span>
+            <div>
+              <p class="tools-row__name"><span class="highlight" style="--tilt:-1.5deg">Cuota de autónomo</span></p>
+              <p class="tools-row__replaces">Sustituye a: darte de alta como autónomo para poder facturar</p>
+            </div>
+          </div>
+          <span class="tools-row__price">desde 300 $/mes</span>
+        </div>
+      </div>
+      <div class="tools-total-row">
+        <span>Lo que pagarías por separado</span>
+        <span class="tools-total-price">desde 508 $/mes</span>
+      </div>
+      <!-- El CTA vive DENTRO del recuadro morado (Hernán, 2026-07-30: "¿el CTA
+           de empieza hoy puede ir dentro del recuadro morado?"), así el cierre
+           del módulo es UN bloque y no un bloque + un botón suelto.
+           El botón va en BLANCO con texto morado, no en morado: sobre un fondo
+           morado sólido un botón morado no contrasta y se pierde. Y sigue sin
+           ser naranja a propósito — ese color está reservado a la única
+           súper-CTA por pieza (regla del Brain), y la barra fija inferior solo
+           vigila el CTA del hero y el del cierre, así que un naranja aquí
+           podría acabar visible junto al de la barra. -->
+      <div class="tools-final-row">
+        <div class="tools-final-row__top">
+          <span class="tools-final-label">Con Kunfupay</span>
+          <span class="tools-final-price">Incluido, sin cuota mensual</span>
+        </div>
+        <!-- También sube al quiz (Hernán, 2026-07-30: "este CTA también debería
+             hacer scroll"), igual que los CTA secundarios: en esta landing la
+             conversión es el quiz, así que ningún CTA intermedio debe saltárselo
+             y mandar al registro directo. Ancla real, no JS. -->
+        <a href="#hero-cta" class="btn tools-final-cta"
+           onclick="fbq('trackCustom','cta_click_herramientas');"
+           >¡Empieza hoy!</a>
+      </div>
+    </div>
+    <p class="tools-note">Precios de referencia de los planes de entrada públicos de cada herramienta, consultados en 2026 — no incluyen las comisiones adicionales que cobra cada plataforma por venta.</p>
+  </div>
+</section>
+
+<!-- ============================================================
+     3) PUNTO DE DOLOR PRINCIPAL — bloque común
+     ============================================================ -->
+<section class="pain section">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">El problema</span>
+    <h2 class="section-title">Una solución <span class="highlight" style="--tilt:-1.2deg">integral a tus problemas</span></h2>
+  </div>
+  <div class="wrap">
+    <div class="pain-grid">
+      <div class="pain-card reveal">
+        <div class="pain-card__head">
+          <div class="pain-icon">✕</div>
+          <h3>Pierdes ventas con clientes internacionales</h3>
+        </div>
+        <p>Stripe, PayPal y otras soluciones funcionan bien en EE. UU. y Europa, pero en LATAM, África y parte de Asia <strong>no ofrecen los métodos de pago que usa la gente</strong>. Eso hace que muchos clientes no terminen el pago.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-card__head">
+          <div class="pain-icon">✕</div>
+          <h3>Tu dinero queda repartido</h3>
+        </div>
+        <p>Cobras en varias pasarelas o billeteras y <strong>no tienes forma de ver todo junto</strong>: cuánto vendes, cuánto tienes disponible y cómo moverlo.</p>
+      </div>
+      <div class="pain-card reveal">
+        <div class="pain-card__head">
+          <div class="pain-icon">✕</div>
+          <h3>No tienes equipo técnico para integrar cada método</h3>
+        </div>
+        <p>Añadir métodos de pago locales <strong>país por país</strong> exige integraciones que un creador o negocio digital pequeño no tiene capacidad de construir ni mantener.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     4) CÓMO LO RESUELVE KUNFUPAY — bloque común
+     ============================================================ -->
+<section class="solution section">
+  <div class="wrap reveal">
+    <span class="eyebrow">La solución</span>
+    <h2 class="section-title">Kunfupay centraliza todo: cobro, dinero y gasto, <span class="highlight" style="--tilt:1.3deg">en un solo lugar</span></h2>
+    <p class="solution-body">No es una pasarela. Es <strong>una forma más simple de cobrar y manejar tu dinero</strong>: creas un link de pago o una suscripción <strong>en minutos</strong>, tu cliente paga con su método local, y el dinero va directo a tu wallet global — lista para gestionar, mover o gastar.</p>
+    <div class="solution-pillars">
+      <div class="pillar reveal">
+        <span class="pillar-num">1</span>
+        <h3>Vender más</h3>
+        <p>Vendes más porque tus clientes pueden pagar con <strong>sus métodos locales</strong>.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">2</span>
+        <h3>Gestionar mejor</h3>
+        <p>Toda la operación de cobro, <strong>desde un solo panel</strong>.</p>
+      </div>
+      <div class="pillar reveal">
+        <span class="pillar-num">3</span>
+        <h3>Conservar más</h3>
+        <p>Más eficiencia financiera con la <strong>wallet global + KunfuCard</strong>.</p>
+      </div>
+    </div>
+  </div>
+    <!-- CTA secundario de cierre de sección. Mensaje adaptado al argumento
+         de ESTA sección (Hernán: "adapta el mensaje del botón, breve y que
+         incite a la acción"), en primera persona para que suene a decisión del
+         usuario y no a orden. Evento propio para poder medir qué sección
+         empuja de verdad al registro. -->
+    <div class="cta-sec reveal">
+      <a href="#hero-cta" class="btn btn-secundario"
+         onclick="fbq('trackCustom','cta_sec_solucion');"
+         >Centralizar mis cobros<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg></a>
+    </div>
+</section>
+
+<!-- ============================================================
+     5) VENTAJAS — bloque común
+     ============================================================ -->
+<section class="benefits section">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Ventajas</span>
+    <h2 class="section-title">Así <span class="highlight" style="--tilt:-1.5deg">cambia tu negocio</span> cuando cobras con Kunfupay</h2>
+  </div>
+  <div class="wrap">
+    <div class="benefits-grid">
+      <!-- Iconos: sistema-visual/recursos/iconos (set de línea Morfeo, viewBox 24,
+           stroke=currentColor). No usar emojis — este es el set oficial. -->
+      <div class="benefit-card reveal">
+        <div class="benefit-card__head">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 2.5 4.5 6 4.5 9S15 18.5 12 21c-3-2.5-4.5-6-4.5-9S9 5.5 12 3z"/></svg>
+          </div>
+          <h3>Más conversión en mercados internacionales</h3>
+        </div>
+        <p>Pensado para cobrar en <strong>LATAM y otros mercados emergentes</strong>, no solo en EE. UU. y Europa.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-card__head">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 18a8 8 0 1 1 16 0"/><path d="M12 18l4.2-4.2"/><circle cx="12" cy="18" r="1.4" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <h3>Tu link de pago en minutos</h3>
+        </div>
+        <p>Sin tocar APIs ni depender de un equipo técnico: lo creas <strong>en pocos clics</strong>.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-card__head">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7.5" height="9" rx="1.6"/><rect x="13.5" y="3" width="7.5" height="5" rx="1.6"/><rect x="13.5" y="11" width="7.5" height="10" rx="1.6"/><rect x="3" y="15" width="7.5" height="6" rx="1.6"/></svg>
+          </div>
+          <h3>Todo en un solo panel</h3>
+        </div>
+        <p>Links de pago, suscripciones y liquidaciones, <strong>sin sumar varias herramientas</strong> a la vez.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-card__head">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V6a2 2 0 0 0-2-2H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h11a2 2 0 0 0 2-2v-1"/><path d="M21.5 11h-5a2.5 2.5 0 0 0 0 5h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/><circle cx="17" cy="13.5" r=".7" fill="currentColor" stroke="none"/></svg>
+          </div>
+          <h3>Wallet global en EUR/USD</h3>
+        </div>
+        <p><strong>Centraliza tus ingresos</strong> y paga a proveedores o colaboradores internacionales.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-card__head">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg>
+          </div>
+          <h3>KunfuCard</h3>
+        </div>
+        <p>Gasta tu saldo en cualquier parte con una tarjeta <strong>conectada a tu saldo</strong>.</p>
+      </div>
+      <div class="benefit-card reveal">
+        <div class="benefit-card__head">
+          <div class="benefit-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m9 12 2 2 4-4"/><path d="M12 3 14 4.6l2.5-.4.9 2.4 2.4.9-.4 2.5L21.5 14l-1.6 2 .4 2.5-2.4.9-.9 2.4-2.5-.4L12 23l-2-1.6-2.5.4-.9-2.4-2.4-.9.4-2.5L2.5 14l1.6-2-.4-2.5 2.4-.9.9-2.4L10 4.6z"/></svg>
+          </div>
+          <h3>Sin cuota mensual</h3>
+        </div>
+        <p>La cuenta y las herramientas <span class="text-accent">son gratis</span>; solo pagas una pequeña comisión cuando vendes.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     6) PARA QUIÉN ES — bloque común
+     ============================================================ -->
+<section class="fit section">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">¿Encaja contigo?</span>
+    <h2 class="section-title">Kunfupay es <span class="highlight" style="--tilt:1.4deg">para ti</span> si…</h2>
+  </div>
+  <div class="wrap">
+    <div class="fit-list">
+      <div class="fit-item reveal"><span class="fit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c3 2.5 4.5 6 4.5 9S15 18.5 12 21c-3-2.5-4.5-6-4.5-9S9 5.5 12 3z"/></svg></span><p>Vendes <strong>productos o servicios digitales</strong> (cursos, comunidades, software, contenido) y quieres vender fuera de tu país.</p></div>
+      <div class="fit-item reveal"><span class="fit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><path d="M14 14h3v3M21 14v7h-7M17.5 21v-1.5"/></svg></span><p>Ya cobras online pero <strong>pierdes ventas</strong> porque tus clientes no tienen ese método de pago.</p></div>
+      <div class="fit-item reveal"><span class="fit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3c3 1.5 5 5 5 9l-2.5 2.5h-5L7 12c0-4 2-7.5 5-9z"/><circle cx="12" cy="10" r="1.6"/><path d="M9.5 17c-1.5.6-2 2.2-2 4 1.8 0 3.4-.5 4-2M14.5 17c1.5.6 2 2.2 2 4-1.8 0-3.4-.5-4-2"/></svg></span><p>No tienes equipo técnico para integrar pasarelas <strong>país por país</strong>.</p></div>
+      <div class="fit-item reveal"><span class="fit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 14.5 14.5 9.5"/><path d="M11.5 7.2 13 5.7a4 4 0 0 1 5.7 5.7l-1.5 1.5"/><path d="M12.5 16.8 11 18.3a4 4 0 0 1-5.7-5.7l1.5-1.5"/></svg></span><p>Vendes en canales propios (Telegram, WhatsApp, redes, tu web) y buscas <strong>un link de pago fácil de compartir</strong>.</p></div>
+      <div class="fit-item reveal"><span class="fit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 7V6a2 2 0 0 0-2-2H6a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h11a2 2 0 0 0 2-2v-1"/><path d="M21.5 11h-5a2.5 2.5 0 0 0 0 5h5a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1z"/><circle cx="17" cy="13.5" r=".7" fill="currentColor" stroke="none"/></svg></span><p>Prefieres tener <strong>todo tu dinero en un solo lugar</strong>, no repartido entre bancos y billeteras.</p></div>
+      <div class="fit-item reveal"><span class="fit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2.5"/><path d="M2.5 9.5h19"/><path d="M6 14.5h4"/></svg></span><p>Quieres usar lo que ganas <strong>sin complicaciones</strong>, con una tarjeta conectada a tu saldo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     7) CONFIANZA / DIFERENCIADORES — bloque común
+     ============================================================ -->
+<section class="trust section">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Por qué Kunfupay</span>
+    <h2 class="section-title">Una infraestructura pensada para <span class="highlight" style="--tilt:-1.1deg">negocios digitales globales</span></h2>
+  </div>
+  <div class="wrap">
+    <div class="trust-grid">
+      <div class="trust-card reveal">
+        <h3>Sin cuota mensual</h3>
+        <p>La cuenta y las herramientas <span class="text-accent">son gratis</span>. Solo hay una comisión variable cuando vendes, según tu rubro, ticket y volumen.</p>
+      </div>
+      <div class="trust-card reveal">
+        <h3>Sin integraciones técnicas</h3>
+        <p>Proceso de alta sencillo, todo desde un solo panel — <strong>no necesitas desarrollar nada</strong> para empezar a cobrar.</p>
+      </div>
+      <div class="trust-card reveal">
+        <h3>¡Vende globalmente!</h3>
+        <p>Cobertura de métodos de pago donde Stripe y PayPal tienen más limitaciones: <strong>LATAM y otros mercados en crecimiento</strong>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     9) FAQ — bloque común (ajustar preguntas si la oferta lo requiere,
+     sin quitar el bloque)
+     ============================================================ -->
+<section class="faq section">
+  <div class="wrap section-head reveal">
+    <span class="eyebrow">Preguntas frecuentes</span>
+    <h2 class="section-title">Antes de empezar</h2>
+  </div>
+  <div class="wrap">
+    <div class="faq-list" id="faq-list">
+      <div class="faq-item reveal" data-open="false">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">¿Necesito tener una tienda online propia? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>No. <strong>Solicitas la activación de tu tienda dentro de Kunfupay</strong>, la aprobamos y ya puedes empezar a vender.</p></div>
+      </div>
+      <div class="faq-item reveal" data-open="false">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">¿Qué requisitos debo cumplir para activar mi tienda? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Que vendas un <strong>producto digital</strong> (no físico) y que tengas una <strong>comunidad</strong> detrás.</p></div>
+      </div>
+      <div class="faq-item reveal" data-open="false">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">¿Qué métodos de pago puedo ofrecer a mis clientes? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>Tarjetas internacionales + <strong>métodos locales</strong> (Pix, Bizum, Nequi, PSE, Mercado Pago, Yape y más), según el país de tu comprador.</p></div>
+      </div>
+      <div class="faq-item reveal" data-open="false">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">¿Cuánto cuesta usar Kunfupay? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>La cuenta y las herramientas <span class="text-accent">no tienen cuota mensual</span>. Se cobra una comisión variable solo cuando vendes, según rubro, ticket y volumen.</p></div>
+      </div>
+      <div class="faq-item reveal" data-open="false">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">¿Puedo cobrar suscripciones, no solo pagos únicos? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p><strong>Sí</strong>, puedes crear links de pago único y suscripciones recurrentes desde el mismo panel.</p></div>
+      </div>
+      <div class="faq-item reveal" data-open="false">
+        <button class="faq-question" aria-expanded="false" onclick="toggleFaq(this)">¿Qué hago con el dinero que recibo? <span class="faq-icon">+</span></button>
+        <div class="faq-answer"><p>El dinero va a tu <strong>wallet global</strong> (EUR/USD). Puedes gestionarlo, pagar proveedores o colaboradores, o gastarlo con KunfuCard.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     10) CTA FINAL — variable por campaña (mismo CTA que el hero)
+     ============================================================ -->
+<section class="section" id="cta-final-block">
+  <div class="wrap">
+    <div class="cta-final reveal">
+      <h2>Empieza a cobrar con Kunfupay, donde hoy te están comprando</h2>
+      <p>Sin cuota mensual, sin permanencia, sin integraciones complejas.</p>
+      <div class="hero-cta">
+        <!-- Sube al quiz, NO al registro. Dos motivos:
+             1) Coherencia: tras el cambio de Hernán (2026-07-30) todos los CTA
+                de la landing llevan al quiz, y este era el único que se lo
+                saltaba.
+             2) AGUJERO DE MEDICIÓN que tapa: quien convertía por aquí se iba
+                directo al signup SIN pasar por el quiz, así que no dejaba lead
+                en Notion, no llevaba utm_origen/utm_value, y no disparaba
+                Lead/generate_lead (esos los dispara gracias/). Era una
+                conversión invisible para el funnel.
+             Además apuntaba a `/registro`, la URL ANTIGUA: al cambiar a
+             `/auth/signup` solo se actualizaron gracias/ y potencial/, y esta
+             se quedó atrás. -->
+        <a href="#hero-cta" class="btn btn-super-cta"
+           onclick="fbq('trackCustom','cta_click_final');"
+           >Solicitar acceso gratuito</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     BARRA FIJA INFERIOR (móvil/desktop) — bloque común
+     Aparece cuando el CTA del hero deja de verse al hacer scroll y
+     desaparece cuando vuelve a verse (el del hero o el del CTA final, para
+     no mostrar dos súper-CTA naranjas a la vez). Al pulsar, hace scroll
+     suave de vuelta al CTA/formulario principal del hero — no navega ni
+     duplica la acción por su cuenta.
+     ============================================================ -->
+<div class="sticky-cta-bar" id="sticky-cta-bar">
+  <div class="wrap sticky-cta-bar__inner">
+    <p class="sticky-cta-bar__text">Cobra en todo el mundo con Kunfupay</p>
+    <button type="button" class="btn btn-super-cta" id="sticky-cta-btn">Solicitar acceso gratuito</button>
+  </div>
+</div>
+
+<!-- ============================================================
+     11) FOOTER — bloque común
+     ============================================================ -->
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <img src="/landings-assets/logo.svg" alt="Kunfupay">
+      <span class="heading" style="font-weight:700;font-size:15px;">Kunfupay</span>
+    </div>
+    <!-- Sin enlaces de Aviso legal/Privacidad/Términos/Cookies (decisión de
+         Hernán 2026-07-29, tras dar 2 vueltas: primero texto sin link, luego
+         enlaces reales a kunfupay.com — ninguna convencía). Si el marco legal
+         exige disclosure en esta landing, se resuelve aparte (footer del
+         sitio real, o un modal), no aquí. -->
+    <p class="footer-legal">© 2026 Kunfupay. Todos los derechos reservados.</p>
+  </div>
+</footer>
+
+<script>
+// Mide la topbar de campaña y publica su alto en --kf-topbar-h, para que el
+// hero pueda ocupar exactamente la pantalla MENOS la topbar en móvil (ver el
+// bloque "HERO A PANTALLA COMPLETA EN MÓVIL" del CSS). Se remide en resize y
+// con ResizeObserver porque el texto de la topbar envuelve a 2 líneas en
+// pantallas estrechas, así que su alto no es una constante.
+(function () {
+  var tb = document.querySelector('.topbar');
+  function medir() {
+    // offsetParent null => está oculta (display:none): no debe restar nada.
+    var h = (tb && tb.offsetParent !== null) ? tb.getBoundingClientRect().height : 0;
+    document.documentElement.style.setProperty('--kf-topbar-h', h + 'px');
+  }
+  medir();
+  window.addEventListener('resize', medir);
+  window.addEventListener('orientationchange', medir);
+  if (tb && window.ResizeObserver) new ResizeObserver(medir).observe(tb);
+})();
+
+// Testimonios: mazo de fotos + texto sincronizados. El estado es un único
+// índice; las clases is-active/is-next/is-next2 las pone el CSS.
+(function () {
+  var raiz = document.getElementById('testimonios');
+  if (!raiz) return;
+  var fotos = raiz.querySelectorAll('.tst-foto');
+  var textos = raiz.querySelectorAll('.tst-texto');
+  var total = fotos.length;
+  if (!total) return;
+  var actual = 0;
+  var reducido = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function pintar(i) {
+    actual = (i + total) % total;
+    fotos.forEach(function (f, n) {
+      f.classList.remove('is-active', 'is-next', 'is-next2');
+      // distancia hacia delante en el mazo (circular)
+      var d = (n - actual + total) % total;
+      if (d === 0) f.classList.add('is-active');
+      else if (d === 1) f.classList.add('is-next');
+      else if (d === 2) f.classList.add('is-next2');
+    });
+    textos.forEach(function (t, n) { t.classList.toggle('is-active', n === actual); });
+  }
+
+  var timer = null;
+  function arrancar() {
+    // Sin autoplay si el usuario pide menos movimiento: un carrusel que avanza
+    // solo es justo lo que esa preferencia quiere evitar.
+    if (reducido) return;
+    parar();
+    timer = setInterval(function () { pintar(actual + 1); }, 5000);
+  }
+  function parar() { if (timer) { clearInterval(timer); timer = null; } }
+
+  document.getElementById('tst-prev').addEventListener('click', function () { pintar(actual - 1); arrancar(); });
+  document.getElementById('tst-next').addEventListener('click', function () { pintar(actual + 1); arrancar(); });
+  // Se pausa al pasar por encima o al enfocar con teclado: molesta que cambie
+  // mientras estás leyendo una cita.
+  raiz.addEventListener('mouseenter', parar);
+  raiz.addEventListener('mouseleave', arrancar);
+  raiz.addEventListener('focusin', parar);
+  raiz.addEventListener('focusout', arrancar);
+
+  pintar(0);
+  arrancar();
+})();
+
+
+
+
+// Filtro de métodos de pago por país + autodetección (Hernán, 2026-07-30).
+(function () {
+  var sel = document.getElementById('pais');
+  if (!sel) return;
+  var nota = document.getElementById('pais-nota');
+  var tiles = document.querySelectorAll('.payment-tile[data-paises]');
+
+  // Zona horaria -> país. Es la señal más fiable SIN pedir permisos ni mandar
+  // la IP a un tercero (eso sería un dato personal saliendo a otro proveedor,
+  // con lo que conlleva de RGPD y de banner de cookies).
+  var TZ = {
+    'Europe/Madrid':'ES','Atlantic/Canary':'ES','Europe/Andorra':'ES',
+    'America/Mexico_City':'MX','America/Monterrey':'MX','America/Tijuana':'MX','America/Cancun':'MX','America/Merida':'MX','America/Chihuahua':'MX',
+    'America/Bogota':'CO',
+    'America/Sao_Paulo':'BR','America/Bahia':'BR','America/Fortaleza':'BR','America/Recife':'BR','America/Manaus':'BR','America/Belem':'BR',
+    'America/Lima':'PE','America/Santiago':'CL','Pacific/Easter':'CL',
+    'America/Caracas':'VE','America/Guayaquil':'EC',
+    'America/New_York':'US','America/Chicago':'US','America/Denver':'US','America/Los_Angeles':'US','America/Phoenix':'US','America/Anchorage':'US'
+  };
+
+  function detectar() {
+    try {
+      var tz = Intl.DateTimeFormat().resolvedOptions().timeZone || '';
+      if (TZ[tz]) return { pais: TZ[tz], via: 'zona horaria' };
+      // Argentina tiene muchas zonas (America/Argentina/Cordoba, /Salta…):
+      // se resuelve por prefijo en vez de listarlas todas.
+      if (tz.indexOf('America/Argentina/') === 0) return { pais: 'AR', via: 'zona horaria' };
+    } catch (e) {}
+    // Respaldo: idioma, pero SOLO si trae región (es-CO sirve, es no).
+    var idiomas = navigator.languages || [navigator.language || ''];
+    for (var i = 0; i < idiomas.length; i++) {
+      var m = /^[a-z]{2,3}-([A-Z]{2})$/.exec(idiomas[i] || '');
+      if (m && sel.querySelector('option[value="' + m[1] + '"]')) {
+        return { pais: m[1], via: 'idioma del navegador' };
+      }
+    }
+    return { pais: 'global', via: null };
+  }
+
+  var paisActual = 'global', desplegado = false;
+
+  // Se expone para que el botón "ver todos" repinte con el MISMO criterio: un
+  // solo sitio decide qué tile se ve, así el filtro y el desplegable no pueden
+  // contradecirse (antes el botón abría/cerraba una rejilla aparte y con el
+  // filtro por país eso dejaba huecos en la primera fila).
+  window.kfPintarMetodos = function (pais, via, abierto) {
+    if (pais != null) paisActual = pais;
+    if (abierto != null) desplegado = abierto;
+    var rejilla = document.getElementById('payments-grid');
+    // Se congela el alto antes de recalcular y se suelta después: sin esto el
+    // módulo daba un tirón al cambiar de país.
+    if (rejilla) rejilla.style.minHeight = rejilla.offsetHeight + 'px';
+
+    var conPais = 0;
+    tiles.forEach(function (t) {
+      var l = (t.dataset.paises || '').split(' ');
+      var esGlobal = l.indexOf('global') !== -1;
+      var esDelPais = l.indexOf(paisActual) !== -1;
+      var esResto = l.indexOf('resto') !== -1;
+      // Global y los del país: siempre. Los 'resto' (sin país confirmado en la
+      // BBDD de Notion) solo al desplegar, para no atribuirlos a ningún país.
+      t.hidden = !(esGlobal || esDelPais || (esResto && desplegado));
+      if (esDelPais && !esGlobal) conPais++;
+    });
+
+    nota.textContent = via
+      ? 'Detectado por ' + via + '. Cámbialo si no es tu país.'
+      : (conPais > 0
+          ? conPais + (conPais === 1 ? ' método local' : ' métodos locales') + ' en tu país, además de las tarjetas.'
+          : 'Tarjetas y wallets internacionales.');
+
+    if (rejilla) {
+      requestAnimationFrame(function () {
+        rejilla.style.transition = 'min-height .28s var(--kf-ease, ease)';
+        rejilla.style.minHeight = '0px';
+        setTimeout(function () { rejilla.style.transition = ''; rejilla.style.minHeight = ''; }, 320);
+      });
+    }
+    gtag('event', 'pais_metodos_pago', { pais: paisActual, deteccion: via || 'manual' });
+  };
+
+  var d = detectar();
+  sel.value = d.pais;
+  window.kfPintarMetodos(d.pais, d.via, false);
+  sel.addEventListener('change', function () { window.kfPintarMetodos(sel.value, null, null); });
+})();
+
+function toggleFaq(btn) {
+  // Faltaba: el marcado llamaba a toggleFaq() desde onclick pero la función no
+  // existía en ninguna parte, así que cada clic lanzaba un ReferenceError y la
+  // pregunta no se abría. El CSS ya estaba entero — solo se apoya en el
+  // atributo data-open del .faq-item, que es lo que conmuta esta función.
+  var item = btn.closest('.faq-item');
+  if (!item) return;
+  var abierta = item.getAttribute('data-open') === 'true';
+  // Se abren y cierran de forma independiente (no es un acordeón): quien
+  // compara precio y requisitos quiere ver las dos a la vez.
+  item.setAttribute('data-open', abierta ? 'false' : 'true');
+  btn.setAttribute('aria-expanded', abierta ? 'false' : 'true');
+}
+
+function togglePayments(btn) {
+  // Ya no abre/cierra una segunda rejilla: le dice al filtro por país si debe
+  // incluir también los métodos sin país confirmado. Un único sitio decide qué
+  // tile se ve, así no pueden contradecirse el filtro y el desplegable.
+  var abierto = btn.getAttribute('aria-expanded') === 'true';
+  btn.setAttribute('aria-expanded', abierto ? 'false' : 'true');
+  btn.querySelector('.payments-toggle__label').textContent =
+    abierto ? 'Ver todos los métodos' : 'Ver menos';
+  if (window.kfPintarMetodos) window.kfPintarMetodos(null, null, !abierto);
+}
+
+// Barra fija inferior: visible solo cuando NINGÚN CTA principal (el del hero
+// o el del bloque de cierre) está en pantalla — así nunca hay dos súper-CTA
+// naranjas visibles a la vez. Al pulsarla, vuelve al CTA/formulario del hero.
+(function () {
+  var bar = document.getElementById('sticky-cta-bar');
+  var heroCta = document.getElementById('hero-cta');
+  var stickyBtn = document.getElementById('sticky-cta-btn');
+  if (!bar || !heroCta || !stickyBtn || !('IntersectionObserver' in window)) return;
+
+  var finalCtaBlock = document.getElementById('cta-final-block');
+  var targets = [heroCta].concat(finalCtaBlock ? [finalCtaBlock] : []);
+  var visible = new Set();
+
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) visible.add(entry.target);
+      else visible.delete(entry.target);
+    });
+    bar.classList.toggle('is-visible', visible.size === 0);
+  }, { threshold: 0.01 });
+  targets.forEach(function (t) { io.observe(t); });
+
+  stickyBtn.addEventListener('click', function () {
+    fbq('trackCustom', 'cta_click_sticky_bar');
+    heroCta.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  });
+})();
+
+// Hero quiz: 2 preguntas de cualificación + captura de email y WhatsApp, una pantalla
+// a la vez, y redirección automática al enviar (spec de Hernán 2026-07-30).
+// El lead se guarda en Notion vía `guardarLead()` (ver el bloque de config
+// en el <head>). ⚠️ Requiere que KF_LEADS_ENDPOINT esté configurado con el
+// endpoint desplegado; si está vacío el quiz funciona pero el lead se pierde.
+(function () {
+  var root = document.getElementById('hero-quiz');
+  if (!root) return;
+  var screens = root.querySelectorAll('.hero-quiz__screen');
+  var steps = root.querySelectorAll('.hero-quiz__step');
+  var backBtn = document.getElementById('hero-quiz-back');
+  var answers = {};
+  var current = 1;
+
+  // Seguimiento por paso SIN recargar página: history.replaceState solo
+  // cambia la URL visible (?paso=N) — no hay petición de red ni recarga,
+  // así que no se nota. Con el page_view virtual + el evento a GA4 se puede
+  // ver en GA4 en qué paso abandona cada usuario (llegó a paso 2 pero nunca
+  // a paso 3 = abandonó entre medias), sin montar páginas reales por paso.
+  // La query de ENTRADA se conserva: se reescribe SOLO el parámetro `paso`.
+  // Antes era `location.pathname + '?paso=' + n`, que borraba los UTMs de la
+  // barra de direcciones en cuanto cargaba la página (showScreen(1) llama a
+  // esto con n=1). La atribución seguía viva en sessionStorage, pero la URL
+  // visible mentía y al recargar o compartir se perdía de qué anuncio venía.
+  function trackQuizStep(n) {
+    var u = new URL(location.href);
+    u.searchParams.set('paso', n);
+    var path = u.pathname + u.search;
+    if (history.replaceState) history.replaceState({ quizPaso: n }, '', path);
+    gtag('event', 'page_view', { page_path: path, page_title: document.title + ' — paso ' + n });
+    gtag('event', 'quiz_paso', { paso: n });
+  }
+
+  function showScreen(n) {
+    screens.forEach(function (s) { s.hidden = (parseInt(s.dataset.screen, 10) !== n); });
+    steps.forEach(function (s, i) {
+      var stepNum = i + 1;
+      s.classList.toggle('is-active', stepNum === n);
+      s.classList.toggle('is-done', stepNum < n);
+    });
+    backBtn.hidden = (n === 1);
+    current = n;
+    trackQuizStep(n);
+  }
+
+  root.querySelectorAll('.hero-quiz__option').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var screen = btn.closest('.hero-quiz__screen');
+      var screenNum = parseInt(screen.dataset.screen, 10);
+      var options = screen.querySelectorAll('.hero-quiz__option');
+      // Marca el check circular de la opción elegida y deja verse la
+      // selección un instante antes de pasar a la siguiente pregunta —
+      // si se avanza al instante no da tiempo a percibir que se ha
+      // marcado algo.
+      options.forEach(function (o) { o.classList.remove('is-selected'); o.disabled = true; });
+      btn.classList.add('is-selected');
+      answers['q' + screenNum] = btn.dataset.value;
+      if (screenNum === 1) fbq('trackCustom', 'start_quiz');
+      // El paso 2 es el ÚNICO que responde un importe (facturación); el resto
+      // son respuestas categóricas y van con nombre propio. Meterlas en
+      // `value` es lo que provocaba el "Invalid parameter format".
+      fbq(
+        'trackCustom',
+        'quiz_step_' + screenNum,
+        screenNum === 2
+          ? kfImporte(btn.dataset.value)
+          : { tipo_negocio: btn.dataset.value }
+      );
+      setTimeout(function () {
+        options.forEach(function (o) { o.disabled = false; });
+        showScreen(screenNum + 1);
+      }, 380);
+    });
+  });
+
+  backBtn.addEventListener('click', function () {
+    if (current > 1) showScreen(current - 1);
+  });
+
+  // ── TELÉFONO INTERNACIONAL (paso 3, junto al email) ────────────────────
+  // Selector país + número portado de classroom-platinum-score/v1. El valor
+  // que se envía y se mide es el internacional: "+<code> <número>".
+  var PAISES = [
+    { cc: 'MX', code: '52',  flag: '🇲🇽', nombre: 'México' },
+    { cc: 'CO', code: '57',  flag: '🇨🇴', nombre: 'Colombia' },
+    { cc: 'AR', code: '54',  flag: '🇦🇷', nombre: 'Argentina' },
+    { cc: 'PE', code: '51',  flag: '🇵🇪', nombre: 'Perú' },
+    { cc: 'CL', code: '56',  flag: '🇨🇱', nombre: 'Chile' },
+    { cc: 'EC', code: '593', flag: '🇪🇨', nombre: 'Ecuador' },
+    { cc: 'VE', code: '58',  flag: '🇻🇪', nombre: 'Venezuela' },
+    { cc: 'ES', code: '34',  flag: '🇪🇸', nombre: 'España' },
+    { cc: 'GT', code: '502', flag: '🇬🇹', nombre: 'Guatemala' },
+    { cc: 'BO', code: '591', flag: '🇧🇴', nombre: 'Bolivia' },
+    { cc: 'DO', code: '1',   flag: '🇩🇴', nombre: 'Rep. Dominicana' },
+    { cc: 'HN', code: '504', flag: '🇭🇳', nombre: 'Honduras' },
+    { cc: 'PY', code: '595', flag: '🇵🇾', nombre: 'Paraguay' },
+    { cc: 'SV', code: '503', flag: '🇸🇻', nombre: 'El Salvador' },
+    { cc: 'NI', code: '505', flag: '🇳🇮', nombre: 'Nicaragua' },
+    { cc: 'CR', code: '506', flag: '🇨🇷', nombre: 'Costa Rica' },
+    { cc: 'PA', code: '507', flag: '🇵🇦', nombre: 'Panamá' },
+    { cc: 'UY', code: '598', flag: '🇺🇾', nombre: 'Uruguay' },
+    { cc: 'PR', code: '1',   flag: '🇵🇷', nombre: 'Puerto Rico' },
+    { cc: 'US', code: '1',   flag: '🇺🇸', nombre: 'Estados Unidos' },
+    // Ampliación Europa + Canadá (lista ÚNICA para toda la familia de landings
+    // del patrón: misma lista en todas, cambia solo el país por defecto).
+    { cc: 'AD', code: '376', flag: '🇦🇩', nombre: 'Andorra' },
+    { cc: 'PT', code: '351', flag: '🇵🇹', nombre: 'Portugal' },
+    { cc: 'BR', code: '55',  flag: '🇧🇷', nombre: 'Brasil' },
+    { cc: 'IT', code: '39',  flag: '🇮🇹', nombre: 'Italia' },
+    { cc: 'FR', code: '33',  flag: '🇫🇷', nombre: 'Francia' },
+    { cc: 'DE', code: '49',  flag: '🇩🇪', nombre: 'Alemania' },
+    { cc: 'GB', code: '44',  flag: '🇬🇧', nombre: 'Reino Unido' },
+    { cc: 'CH', code: '41',  flag: '🇨🇭', nombre: 'Suiza' },
+    { cc: 'BE', code: '32',  flag: '🇧🇪', nombre: 'Bélgica' },
+    { cc: 'NL', code: '31',  flag: '🇳🇱', nombre: 'Países Bajos' },
+    { cc: 'AT', code: '43',  flag: '🇦🇹', nombre: 'Austria' },
+    { cc: 'CA', code: '1',   flag: '🇨🇦', nombre: 'Canadá' }
+  ];
+  // País por defecto: se autodetecta por idioma/región del navegador; si no se
+  // reconoce, cae a España (público de esta landing).
+  function detectarPaisCC() {
+    try {
+      var langs = (navigator.languages && navigator.languages.length) ? navigator.languages : [navigator.language || ''];
+      for (var i = 0; i < langs.length; i++) {
+        var m = /[-_]([A-Za-z]{2})$/.exec(langs[i] || '');
+        if (m) { var cc = m[1].toUpperCase(); if (PAISES.some(function (p) { return p.cc === cc; })) return cc; }
+      }
+    } catch (e) {}
+    return 'ES';
+  }
+  var telCC = detectarPaisCC();
+  var ccSel = document.getElementById('hero-quiz-cc');
+  var telInput = document.getElementById('hero-quiz-tel');
+  if (ccSel) {
+    PAISES.forEach(function (p) {
+      var o = document.createElement('option');
+      o.value = p.cc; o.textContent = p.flag + ' +' + p.code;
+      ccSel.appendChild(o);
+    });
+    ccSel.value = telCC;
+    ccSel.addEventListener('change', function () { telCC = ccSel.value; });
+  }
+  if (telInput) {
+    // Solo dígitos: se limpia lo que se teclee para que E.164 quede limpio.
+    telInput.addEventListener('input', function () {
+      var limpio = telInput.value.replace(/[^\d]/g, '');
+      if (telInput.value !== limpio) telInput.value = limpio;
+    });
+  }
+  function telefonoDigitos() { return (telInput ? telInput.value : '').replace(/\D/g, ''); }
+  function telefonoValido() { var n = telefonoDigitos().length; return n >= 6 && n <= 14; }
+  function telefonoInternacional() {
+    var pais = null;
+    for (var i = 0; i < PAISES.length; i++) { if (PAISES[i].cc === telCC) { pais = PAISES[i]; break; } }
+    if (!pais) pais = PAISES[0];
+    var num = telefonoDigitos();
+    return num ? ('+' + pais.code + ' ' + num) : '';
+  }
+
+  // Paso 3 (último): email + WhatsApp en el mismo formulario. Envío ÚNICO del
+  // lead (email + teléfono) y redirección. El form es `novalidate` (el teléfono
+  // se valida a mano), así que el email también se valida aquí.
+  document.getElementById('hero-quiz-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+    var emailField = this.querySelector('input[name="email"]');
+    var email = emailField ? emailField.value.trim() : '';
+    if (!email || (emailField && !emailField.checkValidity())) {
+      if (emailField) { emailField.focus(); if (emailField.reportValidity) emailField.reportValidity(); }
+      return;
+    }
+    if (!telefonoValido()) { if (telInput) telInput.focus(); return; }
+
+    answers.email = email;
+    var telefono = telefonoInternacional();
+    fbq('trackCustom', 'quiz_email_submit');
+    gtag('event', 'quiz_email_submit', {});
+
+    // ── DECISIÓN DE CUALIFICACIÓN (spec de Hernán, 2026-07-30) ──
+    // Cualifica SOLO quien vende digital Y ya factura algo. Ver la tabla
+    // completa en el comentario del HTML de las pantallas.
+    // `|| 0` protege el caso de que q2 no esté (no debería pasar, pero si
+    // pasara, "sin dato" = "no factura" = no cualifica, nunca al revés).
+    var facturacion = parseInt(answers.q2, 10) || 0;
+    var cualifica = (answers.q1 === 'digitales') && facturacion > 500; // "no revenue yet" (0) and 1–500 never qualify
+    // ⚠️ DOS VALORES DISTINTOS:
+    //   `destino` = la CARPETA/ruta de destino (gracias | potencial)
+    //   `origen`  = el valor de utm_origen (cualificado | no_cualificado)
+    var destino = cualifica ? 'gracias' : 'potencial';
+    var origen = cualifica ? 'cualificado' : 'no_cualificado';
+
+    fbq('trackCustom', 'quiz_lead_submit', {
+      modelo: answers.q1, facturacion: facturacion, origen: origen
+    });
+    gtag('event', 'quiz_lead_submit', {
+      modelo: answers.q1, facturacion: facturacion, origen: origen
+    });
+
+    // Los eventos de conversión (Lead/generate_lead en gracias/,
+    // potencial_lead en potencial/) NO se disparan aquí: los dispara la
+    // página de destino. Así solo cuenta quien de verdad llega.
+
+    // ── EL EMAIL/TELÉFONO VIAJAN POR sessionStorage, NO POR LA URL ──
+    // La landing y gracias/potencial son el MISMO origen, así que sessionStorage
+    // basta y así GA4 nunca captura PII en `page_location`. El prefillToken
+    // (opaco) se guarda aquí para que la página de destino lo arrastre al salto
+    // final a business.kunfupay.com (donde la query es la única vía sin backend).
+    try {
+      sessionStorage.setItem('kf_quiz_email', email);
+      sessionStorage.setItem('kf_utm_origen', origen);
+      sessionStorage.setItem('kf_utm_value', String(facturacion));
+    } catch (err) { /* modo privado / storage lleno: se sigue sin prerrellenar */ }
+
+    // UTMs: memoria PRIMERO y sessionStorage encima (Instagram in-app / modo
+    // privado pueden no permitir almacenamiento; la memoria es lo único seguro).
+    var utms = {};
+    try {
+      var mem = (window.kfTracking && window.kfTracking.params) || {};
+      var ss = {};
+      try { ss = JSON.parse(sessionStorage.getItem('kf_tracking_params') || '{}'); } catch (e) {}
+      Object.keys(mem).forEach(function (k) { utms[k] = mem[k]; });
+      Object.keys(ss).forEach(function (k) { if (ss[k]) utms[k] = ss[k]; });
+    } catch (e) {}
+
+    var urlOrigen = (function () {
+      // Orden: lo guardado → la href de entrada en memoria → location.href
+      // (este último ya lleva ?paso=N, así que delata que los otros fallaron).
+      var m = (window.kfTracking && window.kfTracking.entryHref) || location.href;
+      try { return sessionStorage.getItem('kf_url_origen') || m; }
+      catch (e) { return m; }
+    })();
+
+    var payload = {
+      email: email,
+      telefono: telefono,
+      modelo: answers.q1,
+      utm_origen: origen,
+      utm_value: facturacion,
+      utm_source: utms.utm_source, utm_medium: utms.utm_medium,
+      utm_campaign: utms.utm_campaign, utm_content: utms.utm_content,
+      utm_term: utms.utm_term, fbclid: utms.fbclid, gclid: utms.gclid,
+      landing: location.pathname,
+      url_origen: urlOrigen
+    };
+
+    // Redirección al destino. El prefillToken (cifrado) se guarda SOLO en
+    // sessionStorage: /lp es mismo origen, así que la página de destino lo lee
+    // de ahí y lo añade como `&t=` únicamente en el salto final al signup.
+    // No va en la URL de /lp → GA4/píxel nunca lo ven en `page_location`.
+    function irADestino(token) {
+      try { if (token) sessionStorage.setItem('kf_prefill_token', token); } catch (e) {}
+      var base = window.KF_DESTINOS_BASE || '';
+      var ruta = base ? base.replace(/\/$/, '') + '/' + destino : destino + '/index.html';
+      var url = new URL(ruta, location.href);
+      url.searchParams.set('utm_origen', origen);
+      url.searchParams.set('utm_value', String(facturacion));
+      location.href = forwardTrackingParams(url.toString());
+    }
+
+    // Evitar doble envío / doble redirección.
+    var submitBtn = this.querySelector('button[type="submit"]');
+    if (submitBtn) submitBtn.disabled = true;
+    var done = false;
+    function go(token) { if (done) return; done = true; irADestino(token); }
+
+    // ── POST ÚNICO (email + teléfono) y LECTURA del prefillToken ──
+    // Aquí NO usamos sendBeacon: necesitamos LEER la respuesta (el token). Por
+    // eso esperamos al fetch antes de redirigir. FALLBACK GRACEFUL: si el fetch
+    // falla, no devuelve token, o tarda demasiado, se convierte igual SIN token.
+    // La conversión NUNCA se bloquea por la API de leads.
+    var guard = setTimeout(function () { go(null); }, 3500);
+    try {
+      fetch(window.KF_LEADS_ENDPOINT, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+        keepalive: true
+      })
+        .then(function (r) { return r.ok ? r.json() : null; })
+        .then(function (data) { clearTimeout(guard); go(data && data.prefillToken ? data.prefillToken : null); })
+        .catch(function () { clearTimeout(guard); go(null); });
+    } catch (e) { clearTimeout(guard); go(null); }
+  });
+
+  showScreen(1);
+})();
+
+// Reveal al hacer scroll: cada módulo/tarjeta .reveal se marca .is-visible
+// la primera vez que entra en pantalla y deja de observarse (no se repite
+// si el usuario vuelve a subir). Sin IntersectionObserver, se muestran ya.
+(function () {
+  var els = document.querySelectorAll('.reveal');
+  if (!els.length) return;
+  if (!('IntersectionObserver' in window)) {
+    els.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+  // El hero (fuera del sistema .reveal, siempre visible desde la carga)
+  // dispara su propio subrayado a los 1.65s (2 pasadas, ver kf-highlight-*
+  // más arriba). En viewports bajos, algún módulo siguiente (p.ej. "Métodos
+  // de pago") puede quedar YA dentro del viewport al cargar y el observer lo
+  // dispararía casi al instante — antes de que termine el del hero. Con un
+  // suelo de tiempo, ningún reveal (ni su subrayado) se dispara antes de que
+  // el hero haya terminado el suyo, sin afectar al scroll normal posterior.
+  var HERO_HIGHLIGHT_DONE_MS = 1700;
+  var loadedAt = performance.now();
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      var target = entry.target;
+      io.unobserve(target);
+      var wait = HERO_HIGHLIGHT_DONE_MS - (performance.now() - loadedAt);
+      if (wait > 0) {
+        setTimeout(function () { target.classList.add('is-visible'); }, wait);
+      } else {
+        target.classList.add('is-visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function (el) { io.observe(el); });
+})();
+</script>
+
+</body>
+</html>
