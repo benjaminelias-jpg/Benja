@@ -12,7 +12,7 @@ Edición de `hub_latam_pagos.mp4` (carpeta de Drive del 30/10): anuncio de Kunfu
 - `Hub_Latam_Pagos_FINAL.mp4`: se entrega aparte por su tamaño (no está en git).
 - `EDL_Hub_Latam_Pagos.md` / `.csv`.
 - `Hub_Latam_Pagos.srt`: todas las palabras, en bloques de 2–4.
-- `Portada_Hub_Latam_Pagos.png`.
+- `Portada_Hub_Latam_Pagos.png`: fotograma de la escena de Buffett.
 - `proyecto/`: composición (`index.html`, `comp.js`) y scripts del pipeline.
 
 ## Qué lleva
