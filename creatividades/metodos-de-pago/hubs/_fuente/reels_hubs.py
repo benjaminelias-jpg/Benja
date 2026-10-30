@@ -31,8 +31,46 @@ VIDEO = {
 GENERICOS = ['COMO TE PAGO', 'VENTAS QUE PIERDES', 'INFOGRAFIA', 'TRES COSAS']
 PORTADA = json.load(open(os.path.join(here, 'reels_portadas.json'), encoding='utf-8'))
 
-HUBS = {'MIAMI': GENERICOS, 'LATAM': GENERICOS + ['FISCAL PERSONALIZADO'], 'DUBAI': GENERICOS,
-        'BALI': ['TRES COSAS', 'INFOGRAFIA']}
+HUBS = {'MIAMI': GENERICOS + ['PAGOS PERSONALIZADO'],
+        'LATAM': GENERICOS + ['FISCAL PERSONALIZADO'],
+        'DUBAI': GENERICOS + ['PAGOS PERSONALIZADO'],
+        'BALI': ['TRES COSAS', 'INFOGRAFIA', 'PAGOS PERSONALIZADO']}
+# El personalizado de métodos de pago lleva un vídeo distinto en cada hub.
+VIDEO_HUB = {('PAGOS PERSONALIZADO', 'MIAMI'): None, ('PAGOS PERSONALIZADO', 'DUBAI'): None,
+             ('PAGOS PERSONALIZADO', 'BALI'): None}
+
+PERSONALIZADO = {
+    'MIAMI': dict(
+        gancho=("Tu cliente de LATAM te dijo que sí en la llamada. Abrió tu Stripe. Y no pudo "
+                "pagarte. Si vendes cursos desde Miami, eso te puede estar costando hasta un 27 % "
+                "de tu facturación."),
+        corto=("Si vendes cursos desde Miami y cobras con Stripe, pierdes hasta un 27 % de tu "
+               "facturación.\n\nTu cliente de LATAM dijo que sí. Tu Stripe dijo que no.\n\n"
+               "Con tu enlace de Kunfupay, cada cliente paga como paga en su país. Y a ti te "
+               "llegan dólares.\n\nHaz clic y descubre cómo."),
+        t1="Tu cliente dijo que sí. Stripe, que no",
+        t2="Hasta un 30 % más desde Miami"),
+    'DUBAI': dict(
+        gancho=("Por la mañana te compra un cliente de España. Por la noche, uno de LATAM. Los "
+                "dos dijeron que sí. Y ninguno pudo pagarte. Si vendes cursos desde Dubái y "
+                "cobras con Stripe, eso es hasta un 27 % de tu facturación."),
+        corto=("Si vendes cursos desde Dubái y cobras con Stripe, pierdes hasta un 27 % de tu "
+               "facturación.\n\nEspaña te compra por la mañana. LATAM, por la noche. ¿Te pueden "
+               "pagar?\n\nCon tu enlace de Kunfupay, sí. Y tú recibes euros o dólares.\n\n"
+               "Haz clic y descubre cómo."),
+        t1="Dijeron que sí. Y no pudieron pagarte",
+        t2="Un 27 % más de conversión desde Dubái"),
+    'BALI': dict(
+        gancho=("Tu cliente de España dijo que sí. PayPal dijo que no. Si vendes cursos desde "
+                "Bali y cobras con Stripe o PayPal, puedes estar perdiendo hasta un 27 % de tu "
+                "facturación."),
+        corto=("Si vendes cursos desde Bali y cobras con Stripe o PayPal, pierdes hasta un 27 % "
+               "de tu facturación.\n\nTus clientes de España y LATAM quieren pagarte. Y no "
+               "pueden.\n\nCon tu enlace de Kunfupay pagan solos, a cualquier hora. Y tú "
+               "recibes euros o dólares.\n\nHaz clic y descubre cómo."),
+        t1="Dijo que sí. PayPal dijo que no",
+        t2="Que te paguen mientras duermes"),
+}
 # El fiscal (solo LATAM) va a su propia landing y su texto largo no usa el cuerpo del hub.
 LANDING = {'FISCAL PERSONALIZADO': 'fiscal/v1'}
 
@@ -101,6 +139,7 @@ def piezas(hub):
                    "Sin LLC. Sin renovaciones. Sin su papeleo.\n\nHaz clic y descubre cómo."),
             t1="No te montes una LLC para cobrar",
             t2="Menos papeleo, más tiempo para vender"),
+        'PAGOS PERSONALIZADO': PERSONALIZADO.get(hub),
     }
 
 
@@ -118,6 +157,11 @@ for hub, tipos in HUBS.items():
     P = piezas(hub)
     md += [f"## {hub}", ""]
     for tipo in tipos:
+        vid = VIDEO_HUB.get((tipo, hub)) or VIDEO.get(tipo)
+        portada = PORTADA.get(f'{tipo} / {hub}') or PORTADA.get(tipo)
+        if not (vid and portada):
+            print('falta vídeo o portada:', tipo, hub)
+            continue
         c = P[tipo]
         name = f'REEL / {tipo} / {hub}'
         largo = c.get('largo') or (c['gancho'] + "\n\n" + CUERPO[hub] + "\n\n" + FILTRO + "\n\n" + CIERRE)
@@ -131,7 +175,7 @@ for hub, tipos in HUBS.items():
             "object_story_spec": {"page_id": "596973030161591", "instagram_user_id": "17841473965301923"},
             "degrees_of_freedom_spec": {"creative_features_spec": {k: {"enroll_status": "OPT_OUT"} for k in FEATS}},
             "asset_feed_spec": {
-                "videos": [{"video_id": VIDEO[tipo], "thumbnail_hash": PORTADA[tipo], "adlabels": [{"name": p + "_v"}]}],
+                "videos": [{"video_id": vid, "thumbnail_hash": portada, "adlabels": [{"name": p + "_v"}]}],
                 "bodies": [{"text": largo, "adlabels": [{"name": p + "_b"}]},
                            {"text": c['corto'], "adlabels": [{"name": p + "_b"}]}],
                 "titles": [{"text": c['t1'], "adlabels": [{"name": p + "_t"}]},
