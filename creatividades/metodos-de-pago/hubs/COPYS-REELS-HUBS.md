@@ -489,6 +489,55 @@ Haz clic y descubre cómo.
 
 **URL:** https://kunfupay.com/landings/fiscal/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_latam_similar_3_hernan&utm_content=reel_fiscal_personalizado_latam&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
 
+### REEL / PAGOS PERSONALIZADO / LATAM
+
+**Título 1:** Hotmart, Stripe, transferencia: no escala  
+**Título 2:** Un solo enlace para cobrar a todos
+
+**Texto largo**
+
+Si vendes cursos desde Latinoamérica y cobras con Hotmart, con Stripe a través de una LLC o por transferencia, eso no escala. Y te está costando hasta un 27 % de tus ventas.
+
+Te cuento algo que seguro te ha pasado.
+
+Alguien te escribe, le encanta lo que haces, le mandas el enlace de pago… y ahí se queda.
+No es que no quiera tu curso. Es que su tarjeta no pasa, no tiene tarjeta internacional o en su país se paga de otra forma.
+Al día siguiente ya se le pasó la emoción. Y esa venta no vuelve.
+
+Cuando cobras solo con tarjeta, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Creas tu enlace de pago y lo mandas como siempre.
+Tu alumno lo abre y le salen los métodos que usa en su país, en su moneda.
+Paga en el momento, sin escribirte para preguntar cómo.
+Y a ti te llega en euros o en dólares.
+
+No cambias lo que vendes. No haces otro lanzamiento. No persigues a nadie por WhatsApp.
+Solo dejas de perder a los que ya te querían comprar.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+
+**Texto corto**
+
+Si vendes cursos desde Latinoamérica y cobras con Hotmart, Stripe o transferencia, pierdes hasta un 27 % de tus ventas.
+
+Tu alumno quiere pagar como paga en su país. Si no puede, no te lo dice: se va.
+
+Con tu enlace de Kunfupay te paga cualquiera. Y a ti te llega en euros o en dólares.
+
+Haz clic y descubre cómo.
+
+**URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_latam_similar_3_hernan&utm_content=reel_pagos_personalizado_latam&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
+
 ## DUBAI
 
 ### REEL / COMO TE PAGO / DUBAI

@@ -32,15 +32,27 @@ GENERICOS = ['COMO TE PAGO', 'VENTAS QUE PIERDES', 'INFOGRAFIA', 'TRES COSAS']
 PORTADA = json.load(open(os.path.join(here, 'reels_portadas.json'), encoding='utf-8'))
 
 HUBS = {'MIAMI': GENERICOS + ['PAGOS PERSONALIZADO'],
-        'LATAM': GENERICOS + ['FISCAL PERSONALIZADO'],
+        'LATAM': GENERICOS + ['FISCAL PERSONALIZADO', 'PAGOS PERSONALIZADO'],
         'DUBAI': GENERICOS + ['PAGOS PERSONALIZADO'],
         'BALI': ['TRES COSAS', 'INFOGRAFIA', 'PAGOS PERSONALIZADO']}
 # El personalizado de métodos de pago lleva un vídeo distinto en cada hub.
 VIDEO_HUB = {('PAGOS PERSONALIZADO', 'MIAMI'): '1996175377722443',
              ('PAGOS PERSONALIZADO', 'DUBAI'): '1636248447951884',
-             ('PAGOS PERSONALIZADO', 'BALI'): '2034056047293866'}
+             ('PAGOS PERSONALIZADO', 'BALI'): '2034056047293866',
+             ('PAGOS PERSONALIZADO', 'LATAM'): '1708090800876753'}
 
 PERSONALIZADO = {
+    'LATAM': dict(
+        gancho=("Si vendes cursos desde Latinoamérica y cobras con Hotmart, con Stripe a través de "
+                "una LLC o por transferencia, eso no escala. Y te está costando hasta un 27 % de "
+                "tus ventas."),
+        corto=("Si vendes cursos desde Latinoamérica y cobras con Hotmart, Stripe o "
+               "transferencia, pierdes hasta un 27 % de tus ventas.\n\nTu alumno quiere pagar "
+               "como paga en su país. Si no puede, no te lo dice: se va.\n\nCon tu enlace de "
+               "Kunfupay te paga cualquiera. Y a ti te llega en euros o en dólares.\n\n"
+               "Haz clic y descubre cómo."),
+        t1="Hotmart, Stripe, transferencia: no escala",
+        t2="Un solo enlace para cobrar a todos"),
     'MIAMI': dict(
         gancho=("Tu cliente de LATAM te dijo que sí en la llamada. Abrió tu Stripe. Y no pudo "
                 "pagarte. Si vendes cursos desde Miami, eso te puede estar costando hasta un 27 % "
