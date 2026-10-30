@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Hub Latam Pagos</title>
+<style>
+@font-face { font-family: "Manuscrita"; src: url(fonts/manuscrita.otf) format("opentype"); }
+:root { --papel: #e4dfd2; --naranja: #f0601f; --tinta: #151515; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 1080px; height: 1920px; overflow: hidden; background: #0b0b0b; }
+body { font-family: "Inter", sans-serif; -webkit-font-smoothing: antialiased; }
+#stage { position: absolute; inset: 0; overflow: hidden; background: #0b0b0b; }
+
+/* ---------- video del hablante (frames 1440x2560 -> 1080x1920, con punch-in en los jump cuts) ---------- */
+#cam { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; transform-origin: 0 0; }
+
+/* ---------- subtítulos: texto simple; el énfasis va en manuscrita naranja ---------- */
+#subs { position: absolute; inset: 0; pointer-events: none; }
+.sg { position: absolute; left: 540px; top: 1222px; white-space: nowrap; opacity: 0; display: flex; gap: 15px; align-items: baseline;
+  font-weight: 600; font-size: 56px; letter-spacing: -.02em; line-height: 1; }
+.sg .w { color: #fff; text-shadow: 0 0 24px rgba(10,4,34,.78), 0 0 8px rgba(10,4,34,.55), 0 2px 3px rgba(10,4,34,.5); }
+.sg .w.e { font-family: "Manuscrita", cursive; font-weight: 400; font-size: 86px; letter-spacing: -.01em; color: #ff6a26;
+  filter: url(#g-rgb) drop-shadow(0 0 10px rgba(10,4,34,.75)) drop-shadow(0 2px 3px rgba(10,4,34,.6)); transform: rotate(-2deg) translateY(4px) scaleY(.88); display: inline-block; }
+
+/* ---------- motions sencillas sobre el hablante ---------- */
+#fx { position: absolute; inset: 0; pointer-events: none; }
+.tag { position: absolute; opacity: 0; padding: 16px 24px 14px; background: var(--papel); color: var(--tinta);
+  font-family: "Helvetica Neue", "Inter Display", "Inter", sans-serif; font-weight: 600; font-size: 46px; letter-spacing: -.045em; line-height: 1;
+  box-shadow: 8px 10px 18px rgba(0,0,0,.38), 0 0 0 1px rgba(0,0,0,.06); white-space: nowrap; transform-origin: 50% 50%; }
+.tag::after { content: ""; position: absolute; inset: 0; background: url(assets/grano-3.png) 0 0 / 540px 960px; mix-blend-mode: multiply; opacity: .18; }
+.tag small { display: block; font-size: 26px; font-weight: 500; letter-spacing: -.02em; color: #5a554b; margin-bottom: 6px; }
+.tag.stat { padding: 18px 26px 16px; }
+.tag .big { display: block; font-size: 76px; letter-spacing: -.05em; }
+.tag .cod { font-family: "Manuscrita", cursive; font-weight: 400; color: var(--naranja); font-size: 64px; letter-spacing: 0; margin-left: 10px; }
+.hw { position: absolute; opacity: 0; font-family: "Manuscrita", cursive; color: #ff6a26; font-size: 110px; line-height: 1; white-space: nowrap;
+  filter: url(#g-boli) url(#g-rgb) drop-shadow(0 0 12px rgba(10,4,34,.6)); transform-origin: 0 50%; }
+.doodle { position: absolute; inset: 0; width: 1080px; height: 1920px; overflow: visible; }
+.doodle path { fill: none; stroke-linecap: round; stroke-linejoin: round; opacity: 0; }
+
+/* ---------- escenas «estilo Ramiro» (receta de la skill; ver comp.js) ---------- */
+.rs { position: absolute; inset: 0; overflow: hidden; background: var(--papel); visibility: hidden; }
+.rs .escena, .rs .agua { position: absolute; inset: 0; }
+.rs .fondo { position: absolute; top: 435px; left: 420px; width: 1000px; height: 1250px; background: center / cover no-repeat;
+  opacity: .32; mix-blend-mode: multiply; filter: grayscale(1) contrast(1.1);
+  -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 60%, transparent 100%); mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 60%, transparent 100%); }
+.rs .pwrap { position: absolute; filter: drop-shadow(14px 4px 16px rgba(0,0,0,.32)); transform-origin: 50% 100%; }
+.rs .pin { position: relative; width: 100%; height: 100%; }
+.rs .pimg { position: absolute; inset: 0; width: 100%; height: 100%;
+  -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 28%); mask-image: linear-gradient(to top, transparent 0%, #000 28%); }
+.rs .psombra { position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.97) 0%, rgba(0,0,0,.85) 16%, rgba(0,0,0,.45) 28%, rgba(0,0,0,0) 42%);
+  -webkit-mask: var(--sil) 0 0 / 100% 100% no-repeat, linear-gradient(to top, transparent 0%, #000 28%); -webkit-mask-composite: source-in;
+  mask: var(--sil) 0 0 / 100% 100% no-repeat, linear-gradient(to top, transparent 0%, #000 28%); mask-composite: intersect; }
+.rs .texto { position: absolute; top: 360px; left: 120px; right: 60px; display: flex; flex-direction: column; align-items: flex-start; }
+.rs .grot { font-family: "Helvetica Neue", "Inter Display", "Inter", sans-serif; color: var(--tinta); letter-spacing: -0.055em; line-height: 1.05; white-space: nowrap; }
+.rs .l1 { font-size: 124px; font-weight: 400; }
+.rs .l1 b { font-weight: 600; color: #000; }
+.rs .l2 { font-size: 96px; font-weight: 400; margin-top: 2px; }
+.rs .mano { font-family: "Manuscrita", cursive; font-weight: 400; color: var(--naranja); font-size: 92px; line-height: 1.12; letter-spacing: -0.01em;
+  transform: rotate(-2deg) scaleY(.86); transform-origin: left center; overflow: hidden; padding: 0 20px 6px 0; white-space: nowrap; }
+.rs .mano span { display: inline-block; }
+.rs .l3 { margin-top: 18px; }
+.rs .l4 { position: absolute; left: 120px; top: 677px; }
+.rs .flecha { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
+.rs .vineta { position: absolute; inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,.42) 0%, rgba(0,0,0,0) 17%), linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.66) 14%, rgba(0,0,0,0) 36%); }
+.rs .be { position: absolute; width: 760px; height: 900px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+.rs .be.si { top: -120px; left: -260px; -webkit-mask-image: radial-gradient(circle at 25% 15%, #000 0%, #000 28%, transparent 66%); mask-image: radial-gradient(circle at 25% 15%, #000 0%, #000 28%, transparent 66%); }
+.rs .be.ii { bottom: -120px; left: -260px; -webkit-mask-image: radial-gradient(circle at 25% 85%, #000 0%, #000 28%, transparent 66%); mask-image: radial-gradient(circle at 25% 85%, #000 0%, #000 28%, transparent 66%); }
+.rs .be.id { bottom: -120px; right: -260px; -webkit-mask-image: radial-gradient(circle at 75% 85%, #000 0%, #000 28%, transparent 66%); mask-image: radial-gradient(circle at 75% 85%, #000 0%, #000 28%, transparent 66%); }
+.rs .scan { position: absolute; inset: 0; mix-blend-mode: multiply;
+  background: repeating-linear-gradient(to bottom, rgba(0,0,0,.13) 0px, rgba(0,0,0,.13) 1px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 4px); }
+.rs .semi { position: absolute; inset: 0; opacity: .2; mix-blend-mode: multiply; background-image: radial-gradient(circle, #000 1.1px, transparent 1.6px); background-size: 6px 6px; }
+.rs .grano { position: absolute; inset: 0; background-size: 540px 960px; mix-blend-mode: overlay; opacity: .55; background-image: url(assets/grano-0.png); }
+
+/* ---------- tarjeta final ---------- */
+#end .marca { position: absolute; left: 0; right: 0; top: 760px; text-align: center; font-family: "Helvetica Neue", "Inter Display", "Inter", sans-serif;
+  font-weight: 600; font-size: 150px; letter-spacing: -.06em; color: #0d0d0d; }
+#end .frase { position: absolute; left: 0; right: 0; top: 950px; text-align: center; font-family: "Manuscrita", cursive; font-size: 84px; color: var(--naranja);
+  transform: rotate(-2deg) scaleY(.86); overflow: hidden; padding-bottom: 8px; }
+#end .frase span { display: inline-block; }
+</style>
+</head>
+<body>
+<div id="stage">
+  <svg width="0" height="0" style="position:absolute">
+    <!-- filtros globales de las motions sencillas -->
+    <filter id="g-fino"><feMorphology operator="erode" radius="1.1" /></filter>
+    <filter id="g-boli" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="4" result="n" />
+      <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G" />
+    </filter>
+    <filter id="g-rgb" x="-5%" y="-10%" width="110%" height="120%" color-interpolation-filters="sRGB">
+      <feFlood flood-color="#ff1e46" flood-opacity=".35" /><feComposite in2="SourceAlpha" operator="in" /><feOffset dx="-3" result="r" />
+      <feFlood flood-color="#00b4ff" flood-opacity=".28" /><feComposite in2="SourceAlpha" operator="in" /><feOffset dx="3" result="c" />
+      <feMerge><feMergeNode in="r" /><feMergeNode in="c" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </svg>
+  <img id="cam" alt="">
+  <div id="fx"></div>
+  <div id="subs"></div>
+  <div id="scenes"></div>
+</div>
+<script src="node_modules/gsap/dist/gsap.min.js"></script>
+<script src="words.js"></script>
+<script src="data.js"></script>
+<script src="assets/personas.js"></script>
+<script src="comp.js"></script>
+</body>
+</html>

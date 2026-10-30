@@ -1,0 +1,674 @@
+[
+ {
+  "id": "alex-hormozi",
+  "nombre": "Alex Hormozi",
+  "categoria": null,
+  "temas": [
+   "marketing",
+   "ofertas",
+   "ventas",
+   "captación de clientes",
+   "escalar un negocio"
+  ],
+  "por_que": "Fundador de Acquisition.com; referente de ofertas irresistibles, captación de clientes y escalado.",
+  "keywords": [
+   "marketing",
+   "oferta",
+   "ofertas",
+   "venta",
+   "ventas",
+   "vender",
+   "clientes",
+   "captación",
+   "leads",
+   "escalar",
+   "adquisición",
+   "precio",
+   "conversión",
+   "conversiones",
+   "embudo",
+   "cerrar ventas",
+   "vender más",
+   "facturar",
+   "facturación",
+   "negocio"
+  ]
+ },
+ {
+  "id": "jeff-bezos",
+  "nombre": "Jeff Bezos",
+  "categoria": "Jeff Bezos",
+  "temas": [
+   "dinero",
+   "poder",
+   "riqueza",
+   "largo plazo",
+   "obsesión por el cliente",
+   "ecommerce"
+  ],
+  "por_que": "Fundador de Amazon; una de las mayores fortunas del mundo. Visión a largo plazo y obsesión por el cliente.",
+  "keywords": [
+   "dinero",
+   "rico",
+   "riqueza",
+   "millones",
+   "fortuna",
+   "poder",
+   "imperio",
+   "amazon",
+   "ecommerce",
+   "tienda online",
+   "largo plazo",
+   "cliente",
+   "moneda",
+   "pagar",
+   "pago",
+   "pagos",
+   "comprar",
+   "compra",
+   "experiencia de cliente",
+   "escala"
+  ]
+ },
+ {
+  "id": "steve-jobs",
+  "nombre": "Steve Jobs",
+  "categoria": "Steve Jobs",
+  "temas": [
+   "comunicación",
+   "innovación",
+   "producto",
+   "diseño",
+   "presentar",
+   "storytelling"
+  ],
+  "por_que": "Cofundador de Apple; el gran presentador de producto. Innovación, simplicidad y storytelling.",
+  "keywords": [
+   "comunicación",
+   "comunicar",
+   "innovación",
+   "innovar",
+   "producto",
+   "diseño",
+   "presentación",
+   "presentar",
+   "historia",
+   "storytelling",
+   "simple",
+   "apple",
+   "link",
+   "enlace",
+   "un solo",
+   "fácil",
+   "sencillo",
+   "simplicidad"
+  ]
+ },
+ {
+  "id": "elon-musk",
+  "nombre": "Elon Musk",
+  "categoria": "Elon Musk",
+  "temas": [
+   "ambición",
+   "riesgo",
+   "tecnología",
+   "primeros principios",
+   "trabajo duro",
+   "visión"
+  ],
+  "por_que": "Tesla, SpaceX, X. Ambición extrema, riesgo y pensamiento desde primeros principios.",
+  "keywords": [
+   "ambición",
+   "riesgo",
+   "arriesgar",
+   "tecnología",
+   "imposible",
+   "visión",
+   "futuro",
+   "cohete",
+   "tesla",
+   "trabajar duro",
+   "primeros principios",
+   "cripto",
+   "criptomonedas",
+   "bitcoin",
+   "dogecoin",
+   "blockchain"
+  ]
+ },
+ {
+  "id": "warren-buffett",
+  "nombre": "Warren Buffett",
+  "categoria": "Warren Buffett",
+  "temas": [
+   "inversión",
+   "paciencia",
+   "interés compuesto",
+   "ahorro",
+   "valor"
+  ],
+  "por_que": "El inversor más famoso del mundo (Berkshire Hathaway). Paciencia, valor e interés compuesto.",
+  "keywords": [
+   "invertir",
+   "inversión",
+   "inversor",
+   "bolsa",
+   "acciones",
+   "paciencia",
+   "interés compuesto",
+   "ahorro",
+   "ahorrar",
+   "patrimonio",
+   "valor",
+   "perder",
+   "perdiendo",
+   "pierdes",
+   "pérdida",
+   "pérdidas",
+   "regla número uno",
+   "no perder dinero",
+   "rentabilidad"
+  ]
+ },
+ {
+  "id": "charlie-munger",
+  "nombre": "Charlie Munger",
+  "categoria": "Charlie Munger",
+  "temas": [
+   "sabiduría",
+   "decisiones",
+   "modelos mentales",
+   "evitar errores"
+  ],
+  "por_que": "Socio de Buffett. Modelos mentales y decisiones racionales.",
+  "keywords": [
+   "decisión",
+   "decisiones",
+   "sabiduría",
+   "errores",
+   "pensar",
+   "modelo mental",
+   "racional"
+  ]
+ },
+ {
+  "id": "bill-gates",
+  "nombre": "Bill Gates",
+  "categoria": "Bill Gates",
+  "temas": [
+   "tecnología",
+   "software",
+   "aprendizaje",
+   "lectura",
+   "filantropía"
+  ],
+  "por_que": "Cofundador de Microsoft. Tecnología, aprendizaje constante y filantropía.",
+  "keywords": [
+   "software",
+   "ordenador",
+   "microsoft",
+   "aprender",
+   "leer",
+   "libros",
+   "filantropía",
+   "tecnología"
+  ]
+ },
+ {
+  "id": "mark-zuckerberg",
+  "nombre": "Mark Zuckerberg",
+  "categoria": "Mark Zuckerberg",
+  "temas": [
+   "redes sociales",
+   "comunidad",
+   "publicidad online",
+   "velocidad",
+   "startups"
+  ],
+  "por_que": "Fundador de Facebook / Meta. Comunidades digitales y publicidad en redes.",
+  "keywords": [
+   "redes sociales",
+   "facebook",
+   "instagram",
+   "meta",
+   "comunidad",
+   "anuncios",
+   "publicidad",
+   "startup",
+   "rápido",
+   "meta ads",
+   "anuncios en redes"
+  ]
+ },
+ {
+  "id": "gary-vaynerchuk",
+  "nombre": "Gary Vaynerchuk",
+  "categoria": "Gary Vaynerchuk",
+  "temas": [
+   "contenido",
+   "marca personal",
+   "atención",
+   "redes sociales",
+   "constancia"
+  ],
+  "por_que": "GaryVee: contenido a diario, atención y marca personal en redes.",
+  "keywords": [
+   "contenido",
+   "marca personal",
+   "atención",
+   "publicar",
+   "tiktok",
+   "reels",
+   "creador",
+   "constancia",
+   "audiencia",
+   "redes",
+   "publicar a diario",
+   "instagram"
+  ]
+ },
+ {
+  "id": "oprah-winfrey",
+  "nombre": "Oprah Winfrey",
+  "categoria": "Oprah Winfrey",
+  "temas": [
+   "comunicación",
+   "audiencia",
+   "empatía",
+   "medios",
+   "marca personal"
+  ],
+  "por_que": "Reina de la televisión. Conexión con la audiencia y empatía.",
+  "keywords": [
+   "audiencia",
+   "conectar",
+   "empatía",
+   "televisión",
+   "entrevista",
+   "comunicación",
+   "confianza"
+  ]
+ },
+ {
+  "id": "tony-robbins",
+  "nombre": "Tony Robbins",
+  "categoria": "Tony Robbins",
+  "temas": [
+   "motivación",
+   "mentalidad",
+   "desarrollo personal",
+   "energía",
+   "hábitos"
+  ],
+  "por_que": "El coach de desarrollo personal más conocido. Motivación y mentalidad.",
+  "keywords": [
+   "motivación",
+   "mentalidad",
+   "creencias",
+   "energía",
+   "desarrollo personal",
+   "hábitos",
+   "miedo",
+   "cambiar tu vida"
+  ]
+ },
+ {
+  "id": "robert-kiyosaki",
+  "nombre": "Robert Kiyosaki",
+  "categoria": "Robert Kiyosaki",
+  "temas": [
+   "educación financiera",
+   "activos",
+   "ingresos pasivos",
+   "libertad financiera"
+  ],
+  "por_que": "Autor de «Padre rico, padre pobre». Educación financiera y activos.",
+  "keywords": [
+   "educación financiera",
+   "activos",
+   "pasivos",
+   "ingresos pasivos",
+   "libertad financiera",
+   "padre rico",
+   "deuda"
+  ]
+ },
+ {
+  "id": "simon-sinek",
+  "nombre": "Simon Sinek",
+  "categoria": "Simon Sinek",
+  "temas": [
+   "propósito",
+   "el porqué",
+   "liderazgo",
+   "comunicación",
+   "equipos"
+  ],
+  "por_que": "«Empieza con el porqué». Propósito y liderazgo.",
+  "keywords": [
+   "propósito",
+   "por qué",
+   "porqué",
+   "liderazgo",
+   "líder",
+   "equipo",
+   "inspirar",
+   "misión"
+  ]
+ },
+ {
+  "id": "seth-godin",
+  "nombre": "Seth Godin",
+  "categoria": "Seth Godin",
+  "temas": [
+   "marketing",
+   "marca",
+   "tribu",
+   "diferenciación",
+   "vaca púrpura"
+  ],
+  "por_que": "Gurú del marketing moderno: tribus, permiso y la «vaca púrpura».",
+  "keywords": [
+   "marketing",
+   "marca",
+   "diferenciarte",
+   "diferente",
+   "tribu",
+   "nicho",
+   "posicionamiento",
+   "audiencia ideal"
+  ]
+ },
+ {
+  "id": "mrbeast",
+  "nombre": "MrBeast",
+  "categoria": "MrBeast",
+  "temas": [
+   "creadores de contenido",
+   "YouTube",
+   "viralidad",
+   "retención",
+   "reinversión"
+  ],
+  "por_que": "El youtuber más grande del mundo. Viralidad, retención y reinvertir en contenido.",
+  "keywords": [
+   "youtube",
+   "viral",
+   "vídeo",
+   "views",
+   "visualizaciones",
+   "retención",
+   "creador de contenido",
+   "reinvertir",
+   "miniatura",
+   "creadores",
+   "creador",
+   "influencer",
+   "contenido viral"
+  ]
+ },
+ {
+  "id": "jensen-huang",
+  "nombre": "Jensen Huang",
+  "categoria": "Jensen Huang",
+  "temas": [
+   "inteligencia artificial",
+   "tecnología",
+   "chips",
+   "visión"
+  ],
+  "por_que": "Fundador de NVIDIA, el motor de la IA.",
+  "keywords": [
+   "inteligencia artificial",
+   "ia",
+   "chips",
+   "nvidia",
+   "tecnología",
+   "gpu"
+  ]
+ },
+ {
+  "id": "sam-altman",
+  "nombre": "Sam Altman",
+  "categoria": "Sam Altman",
+  "temas": [
+   "inteligencia artificial",
+   "ChatGPT",
+   "startups",
+   "futuro"
+  ],
+  "por_que": "CEO de OpenAI (ChatGPT).",
+  "keywords": [
+   "chatgpt",
+   "inteligencia artificial",
+   "ia",
+   "openai",
+   "startup",
+   "automatizar",
+   "automatización"
+  ]
+ },
+ {
+  "id": "bernard-arnault",
+  "nombre": "Bernard Arnault",
+  "categoria": "Bernard Arnault",
+  "temas": [
+   "lujo",
+   "marca premium",
+   "posicionamiento",
+   "riqueza"
+  ],
+  "por_que": "Dueño de LVMH (Louis Vuitton, Dior). Lujo y marcas premium.",
+  "keywords": [
+   "lujo",
+   "premium",
+   "caro",
+   "exclusivo",
+   "marca",
+   "posicionamiento",
+   "louis vuitton"
+  ]
+ },
+ {
+  "id": "amancio-ortega",
+  "nombre": "Amancio Ortega",
+  "categoria": "Amancio Ortega",
+  "temas": [
+   "empresa española",
+   "retail",
+   "humildad",
+   "trabajo",
+   "logística"
+  ],
+  "por_que": "Fundador de Inditex (Zara). El gran empresario español, discreto y trabajador.",
+  "keywords": [
+   "zara",
+   "inditex",
+   "españa",
+   "español",
+   "tienda",
+   "empresa",
+   "humildad",
+   "logística"
+  ]
+ },
+ {
+  "id": "juan-roig",
+  "nombre": "Juan Roig",
+  "categoria": "Juan Roig",
+  "temas": [
+   "empresa española",
+   "cliente",
+   "cultura de empresa",
+   "esfuerzo"
+  ],
+  "por_que": "Presidente de Mercadona: «el jefe es el cliente».",
+  "keywords": [
+   "mercadona",
+   "cliente",
+   "jefe",
+   "empresa",
+   "españa",
+   "cultura",
+   "esfuerzo"
+  ]
+ },
+ {
+  "id": "cristiano-ronaldo",
+  "nombre": "Cristiano Ronaldo",
+  "categoria": "Cristiano Ronaldo",
+  "temas": [
+   "disciplina",
+   "constancia",
+   "alto rendimiento",
+   "marca personal"
+  ],
+  "por_que": "Disciplina extrema y la marca personal más seguida del mundo.",
+  "keywords": [
+   "disciplina",
+   "constancia",
+   "entrenar",
+   "rendimiento",
+   "ganar",
+   "seguidores",
+   "marca personal",
+   "fútbol"
+  ]
+ },
+ {
+  "id": "rafa-nadal",
+  "nombre": "Rafa Nadal",
+  "categoria": "Rafael Nadal",
+  "temas": [
+   "esfuerzo",
+   "resiliencia",
+   "humildad",
+   "competir"
+  ],
+  "por_que": "Esfuerzo, resiliencia y humildad; referente español.",
+  "keywords": [
+   "esfuerzo",
+   "sacrificio",
+   "resiliencia",
+   "lesión",
+   "volver",
+   "humildad",
+   "competir",
+   "tenis"
+  ]
+ },
+ {
+  "id": "michael-jordan",
+  "nombre": "Michael Jordan",
+  "categoria": "Michael Jordan",
+  "temas": [
+   "competitividad",
+   "ganar",
+   "fracaso",
+   "excelencia"
+  ],
+  "por_que": "El competidor definitivo: fracasar una y otra vez hasta ganar.",
+  "keywords": [
+   "competir",
+   "competitivo",
+   "ganar",
+   "fracaso",
+   "fallar",
+   "excelencia",
+   "el mejor",
+   "baloncesto"
+  ]
+ },
+ {
+  "id": "kobe-bryant",
+  "nombre": "Kobe Bryant",
+  "categoria": "Kobe Bryant",
+  "temas": [
+   "mentalidad",
+   "obsesión",
+   "trabajo",
+   "mamba mentality"
+  ],
+  "por_que": "«Mamba mentality»: obsesión por mejorar cada día.",
+  "keywords": [
+   "mentalidad",
+   "obsesión",
+   "obsesionado",
+   "mejorar",
+   "entrenar",
+   "4 de la mañana",
+   "madrugar"
+  ]
+ },
+ {
+  "id": "walt-disney",
+  "nombre": "Walt Disney",
+  "categoria": "Walt Disney",
+  "temas": [
+   "creatividad",
+   "imaginación",
+   "storytelling",
+   "sueños",
+   "experiencia"
+  ],
+  "por_que": "Creatividad e imaginación convertidas en imperio.",
+  "keywords": [
+   "creatividad",
+   "creativo",
+   "imaginación",
+   "soñar",
+   "sueño",
+   "historia",
+   "experiencia",
+   "magia"
+  ]
+ },
+ {
+  "id": "albert-einstein",
+  "nombre": "Albert Einstein",
+  "categoria": "Albert Einstein",
+  "temas": [
+   "conocimiento",
+   "aprendizaje",
+   "curiosidad",
+   "inteligencia",
+   "interés compuesto"
+  ],
+  "por_que": "El genio por excelencia. Curiosidad y conocimiento.",
+  "keywords": [
+   "conocimiento",
+   "aprender",
+   "aprendizaje",
+   "curiosidad",
+   "inteligente",
+   "genio",
+   "ciencia",
+   "locura"
+  ]
+ },
+ {
+  "id": "henry-ford",
+  "nombre": "Henry Ford",
+  "categoria": "Henry Ford",
+  "temas": [
+   "sistemas",
+   "procesos",
+   "producción",
+   "eficiencia"
+  ],
+  "por_que": "La cadena de montaje: sistemas y procesos que escalan.",
+  "keywords": [
+   "sistema",
+   "sistemas",
+   "proceso",
+   "procesos",
+   "producción",
+   "eficiencia",
+   "fábrica",
+   "automatizar",
+   "escalable",
+   "escalar",
+   "cadena de montaje"
+  ]
+ }
+]

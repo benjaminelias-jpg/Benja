@@ -1,0 +1,2 @@
+{ "name": "hub-latam-pagos", "private": true, "type": "module",
+  "dependencies": { "gsap": "3.13.0", "playwright-core": "1.56.1" } }
