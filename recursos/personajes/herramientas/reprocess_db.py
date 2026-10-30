@@ -20,6 +20,7 @@ def clasifica(m):
 for pid, p in db.items():
     C = {c['file']: c for c in cands.get(pid, [])}
     for im in p['imagenes']:
+        if im.get('uso'): continue
         f = im['archivo_commons']; c = C.get(f)
         n = im['archivo'].rsplit('-', 1)[1][:-4]
         raw = next((os.path.join(ORIG, x) for x in os.listdir(ORIG) if x.startswith(f'{pid}-{n}.')), None)
@@ -30,6 +31,7 @@ for pid, p in db.items():
         os.remove(os.path.join(R, im['archivo'])[:-4] + '.json')
         im.update({'ancho': m['ancho'], 'alto': m['alto'], 'cara': m['cara'], 'toca_borde': m['toca_borde'], 'uso': clasifica(m)})
         print(pid, im['archivo'], im['uso'], m['toca_borde'], flush=True)
+        json.dump(db, open(os.path.join(R, 'personajes.json'), 'w'), ensure_ascii=False, indent=1)   # foto a foto: una interrupción no deja datos viejos
     json.dump(db, open(os.path.join(R, 'personajes.json'), 'w'), ensure_ascii=False, indent=1)
 # fotos de cuerpo entero añadidas a mano (ya recortadas)
 for e in EXTRA:

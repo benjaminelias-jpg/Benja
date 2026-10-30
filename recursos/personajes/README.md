@@ -5,64 +5,73 @@ Cada personaje va asociado a temas: si el guion habla de marketing, va Hormozi; 
 
 ![Hoja de personajes](hoja_personajes.jpg)
 
-- **59 retratos de 24 personajes**: PNG en escala de grises con transparencia (recorte limpio, sin halo), máx. 1600 px de alto.
-- `personajes.json`: temas, palabras clave, por qué encaja y, por foto, posición de la cara (para el ojo de pez y la flecha), autor, licencia y fuente.
+- **61 recortes de 24 personajes**: PNG en escala de grises con transparencia, con la **silueta completa** que trae cada foto (sin encuadre previo y sin halo).
+- `personajes.json`: guarda los datos de cada personaje y de cada foto.
+  - Por personaje: temas, palabras clave y por qué encaja.
+  - Por foto: posición de la cara (para el ojo de pez y la flecha), bordes que toca la silueta, uso recomendado, autor, licencia y fuente.
 - `buscar.py`: sugiere personajes para una frase del guion.
   ```bash
   python3 recursos/personajes/buscar.py "estás perdiendo hasta un 27 % de tus conversiones"
   ```
-- Sin foto todavía: **Alex Hormozi**, Charlie Munger y Amancio Ortega (no hay fotos con licencia libre en Wikimedia Commons). Para Hormozi conviene usar la foto que usó Brayan en la skill.
+- Sin foto todavía: **Alex Hormozi, Charlie Munger, Amancio Ortega**. No hay fotos con licencia libre en Wikimedia Commons. Para Hormozi conviene usar la foto que usó Brayan en la skill.
 
-## Estado
+## Regla: siempre de cuerpo completo, sin cortes
 
-- Regla: una foto en un motion siempre va de **cuerpo completo, sin cortes visibles**. Eso significa cuerpo entero, o cuerpo que sigue fuera del encuadre, sin cortes en cabeza ni hombros.
-- Ya rehechas con la silueta completa (campo `uso`): Jeff Bezos (3 fotos) y Steve Jobs 1 (con el Macintosh).
-- **Pendiente: el resto.** Siguen con el encuadre ajustado de la primera versión.
-  - Se rehacen con `herramientas/reprocess_db.py`.
-  - Ese script añade además las fotos de cuerpo entero de Buffett y Bezos.
+En un motion, la persona nunca muestra un corte (ni en la cabeza, ni en los hombros, ni en la base del recorte). Por eso cada foto lleva su `uso`:
+
+- **cuerpo entero** (4): la silueta está completa. Sirve para cualquier escena.
+- **escena** (4): está completa salvo por abajo, donde el cuerpo sigue. En la escena, ese borde inferior se coloca fuera del encuadre.
+- **primer plano** (53): la foto original corta hombros o cabeza. No sirve para una escena a pantalla completa; úsala solo en tarjetas o en un marco.
 
 ## Mapa de temas
 
-| Personaje | Temas | Fotos |
+| Personaje | Temas | Fotos (uso) |
 |---|---|---|
 | Alex Hormozi | marketing, ofertas, ventas, captación de clientes, escalar un negocio | — pendiente — |
-| Jeff Bezos | dinero, poder, riqueza, largo plazo, obsesión por el cliente, ecommerce | `jeff-bezos-1.png`, `jeff-bezos-2.png`, `jeff-bezos-3.png` |
-| Steve Jobs | comunicación, innovación, producto, diseño, presentar, storytelling | `steve-jobs-1.png`, `steve-jobs-2.png`, `steve-jobs-3.png`, `steve-jobs-4.png` |
-| Elon Musk | ambición, riesgo, tecnología, primeros principios, trabajo duro, visión | `elon-musk-1.png`, `elon-musk-2.png`, `elon-musk-3.png` |
-| Warren Buffett | inversión, paciencia, interés compuesto, ahorro, valor | `warren-buffett-1.png`, `warren-buffett-2.png`, `warren-buffett-3.png` |
+| Jeff Bezos | dinero, poder, riqueza, largo plazo, obsesión por el cliente, ecommerce | `jeff-bezos-1.png` (primer plano), `jeff-bezos-2.png` (primer plano), `jeff-bezos-3.png` (primer plano), `jeff-bezos-4.png` (primer plano) |
+| Steve Jobs | comunicación, innovación, producto, diseño, presentar, storytelling | `steve-jobs-1.png` (cuerpo entero), `steve-jobs-2.png` (primer plano), `steve-jobs-3.png` (escena), `steve-jobs-4.png` (primer plano) |
+| Elon Musk | ambición, riesgo, tecnología, primeros principios, trabajo duro, visión | `elon-musk-1.png` (primer plano), `elon-musk-2.png` (primer plano), `elon-musk-3.png` (primer plano) |
+| Warren Buffett | inversión, paciencia, interés compuesto, ahorro, valor | `warren-buffett-1.png` (primer plano), `warren-buffett-2.png` (primer plano), `warren-buffett-3.png` (primer plano), `warren-buffett-4.png` (cuerpo entero) |
 | Charlie Munger | sabiduría, decisiones, modelos mentales, evitar errores | — pendiente — |
-| Bill Gates | tecnología, software, aprendizaje, lectura, filantropía | `bill-gates-1.png`, `bill-gates-2.png`, `bill-gates-3.png` |
-| Mark Zuckerberg | redes sociales, comunidad, publicidad online, velocidad, startups | `mark-zuckerberg-1.png`, `mark-zuckerberg-2.png`, `mark-zuckerberg-3.png` |
-| Gary Vaynerchuk | contenido, marca personal, atención, redes sociales, constancia | `gary-vaynerchuk-1.png`, `gary-vaynerchuk-2.png` |
-| Oprah Winfrey | comunicación, audiencia, empatía, medios, marca personal | `oprah-winfrey-1.png`, `oprah-winfrey-2.png`, `oprah-winfrey-3.png` |
-| Tony Robbins | motivación, mentalidad, desarrollo personal, energía, hábitos | `tony-robbins-1.png`, `tony-robbins-2.png` |
-| Robert Kiyosaki | educación financiera, activos, ingresos pasivos, libertad financiera | `robert-kiyosaki-1.png`, `robert-kiyosaki-2.png` |
-| Simon Sinek | propósito, el porqué, liderazgo, comunicación, equipos | `simon-sinek-1.png` |
-| Seth Godin | marketing, marca, tribu, diferenciación, vaca púrpura | `seth-godin-1.png` |
-| MrBeast | creadores de contenido, YouTube, viralidad, retención, reinversión | `mrbeast-1.png`, `mrbeast-2.png`, `mrbeast-3.png` |
-| Jensen Huang | inteligencia artificial, tecnología, chips, visión | `jensen-huang-1.png`, `jensen-huang-2.png`, `jensen-huang-3.png` |
-| Sam Altman | inteligencia artificial, ChatGPT, startups, futuro | `sam-altman-1.png`, `sam-altman-2.png` |
-| Bernard Arnault | lujo, marca premium, posicionamiento, riqueza | `bernard-arnault-1.png` |
+| Bill Gates | tecnología, software, aprendizaje, lectura, filantropía | `bill-gates-1.png` (primer plano), `bill-gates-2.png` (primer plano), `bill-gates-3.png` (primer plano) |
+| Mark Zuckerberg | redes sociales, comunidad, publicidad online, velocidad, startups | `mark-zuckerberg-1.png` (primer plano), `mark-zuckerberg-2.png` (primer plano), `mark-zuckerberg-3.png` (primer plano) |
+| Gary Vaynerchuk | contenido, marca personal, atención, redes sociales, constancia | `gary-vaynerchuk-1.png` (primer plano), `gary-vaynerchuk-2.png` (primer plano) |
+| Oprah Winfrey | comunicación, audiencia, empatía, medios, marca personal | `oprah-winfrey-1.png` (primer plano), `oprah-winfrey-2.png` (primer plano), `oprah-winfrey-3.png` (primer plano) |
+| Tony Robbins | motivación, mentalidad, desarrollo personal, energía, hábitos | `tony-robbins-1.png` (primer plano), `tony-robbins-2.png` (primer plano) |
+| Robert Kiyosaki | educación financiera, activos, ingresos pasivos, libertad financiera | `robert-kiyosaki-1.png` (escena), `robert-kiyosaki-2.png` (primer plano) |
+| Simon Sinek | propósito, el porqué, liderazgo, comunicación, equipos | `simon-sinek-1.png` (primer plano) |
+| Seth Godin | marketing, marca, tribu, diferenciación, vaca púrpura | `seth-godin-1.png` (primer plano) |
+| MrBeast | creadores de contenido, YouTube, viralidad, retención, reinversión | `mrbeast-1.png` (primer plano), `mrbeast-2.png` (primer plano), `mrbeast-3.png` (primer plano) |
+| Jensen Huang | inteligencia artificial, tecnología, chips, visión | `jensen-huang-1.png` (primer plano), `jensen-huang-2.png` (primer plano), `jensen-huang-3.png` (primer plano) |
+| Sam Altman | inteligencia artificial, ChatGPT, startups, futuro | `sam-altman-1.png` (primer plano), `sam-altman-2.png` (primer plano) |
+| Bernard Arnault | lujo, marca premium, posicionamiento, riqueza | `bernard-arnault-1.png` (primer plano) |
 | Amancio Ortega | empresa española, retail, humildad, trabajo, logística | — pendiente — |
-| Juan Roig | empresa española, cliente, cultura de empresa, esfuerzo | `juan-roig-1.png` |
-| Cristiano Ronaldo | disciplina, constancia, alto rendimiento, marca personal | `cristiano-ronaldo-1.png`, `cristiano-ronaldo-2.png`, `cristiano-ronaldo-3.png` |
-| Rafa Nadal | esfuerzo, resiliencia, humildad, competir | `rafa-nadal-1.png`, `rafa-nadal-2.png`, `rafa-nadal-3.png` |
-| Michael Jordan | competitividad, ganar, fracaso, excelencia | `michael-jordan-1.png`, `michael-jordan-2.png`, `michael-jordan-3.png` |
-| Kobe Bryant | mentalidad, obsesión, trabajo, mamba mentality | `kobe-bryant-1.png`, `kobe-bryant-2.png`, `kobe-bryant-3.png` |
-| Walt Disney | creatividad, imaginación, storytelling, sueños, experiencia | `walt-disney-1.png`, `walt-disney-2.png`, `walt-disney-3.png` |
-| Albert Einstein | conocimiento, aprendizaje, curiosidad, inteligencia, interés compuesto | `albert-einstein-1.png`, `albert-einstein-2.png` |
-| Henry Ford | sistemas, procesos, producción, eficiencia | `henry-ford-1.png`, `henry-ford-2.png` |
+| Juan Roig | empresa española, cliente, cultura de empresa, esfuerzo | `juan-roig-1.png` (primer plano) |
+| Cristiano Ronaldo | disciplina, constancia, alto rendimiento, marca personal | `cristiano-ronaldo-1.png` (primer plano), `cristiano-ronaldo-2.png` (escena), `cristiano-ronaldo-3.png` (escena) |
+| Rafa Nadal | esfuerzo, resiliencia, humildad, competir | `rafa-nadal-1.png` (primer plano), `rafa-nadal-2.png` (primer plano), `rafa-nadal-3.png` (cuerpo entero) |
+| Michael Jordan | competitividad, ganar, fracaso, excelencia | `michael-jordan-1.png` (primer plano), `michael-jordan-2.png` (primer plano), `michael-jordan-3.png` (primer plano) |
+| Kobe Bryant | mentalidad, obsesión, trabajo, mamba mentality | `kobe-bryant-1.png` (primer plano), `kobe-bryant-2.png` (primer plano), `kobe-bryant-3.png` (primer plano) |
+| Walt Disney | creatividad, imaginación, storytelling, sueños, experiencia | `walt-disney-1.png` (primer plano), `walt-disney-2.png` (primer plano), `walt-disney-3.png` (primer plano) |
+| Albert Einstein | conocimiento, aprendizaje, curiosidad, inteligencia, interés compuesto | `albert-einstein-1.png` (cuerpo entero), `albert-einstein-2.png` (primer plano) |
+| Henry Ford | sistemas, procesos, producción, eficiencia | `henry-ford-1.png` (primer plano), `henry-ford-2.png` (primer plano) |
 
 ## Cómo se usa en una escena
 
-`herramientas/prep_persona.py bbdd personajes.json <id> <n> salida.png` aplica el ojo de pez de la skill centrado en la cara guardada y funde los hombros cortados por el borde de la foto. La composición coloca a la persona por el alto de cara (`cara.h`) y pone la punta de la flecha a la derecha de la cara (`cara.cx`, `cara.cy`).
+`herramientas/prep_persona.py` (y `prep_full.py` en el proyecto del video) aplica el ojo de pez de la skill.
+- Lo centra en la cara guardada y deja margen para no recortar la cabeza.
+- Mide el borde real de la cabeza para que la punta de la flecha nunca la toque.
+- La composición coloca a la persona por el alto de cara (`cara.h`).
 
 ## Cómo se hizo (y cómo ampliarla)
 
-1. `herramientas/fetch_v2.py`: candidatas desde los artículos de Wikipedia (en, es, de, fr, it, pt) y la imagen principal de Wikidata, puntuadas por detección de cara (YuNet): plano medio, de frente, una sola persona.
+1. `herramientas/fetch_v2.py`: candidatas desde los artículos de Wikipedia (en, es, de, fr, it, pt) y la imagen principal de Wikidata, puntuadas por detección de cara (YuNet).
 2. Selección manual sobre hojas de contacto (`sheet_candidates.py`).
-3. `herramientas/process_selected.py`: descarga, licencia, encuadre de plano medio, recorte con BiRefNet, estimación de primer plano (sin halo), B/N con el contraste de la skill.
-4. Para añadir a alguien: una entrada en `herramientas/config.json` y repetir 1–3.
+3. `herramientas/cut_full.py`: recorte de la silueta completa con BiRefNet.
+   - Separa a la persona elegida si hay otra al lado.
+   - Estima el primer plano para que no quede halo.
+   - Pasa a B/N con el contraste de la skill.
+4. `herramientas/reprocess_db.py`: rehace toda la base y clasifica el uso de cada foto.
+5. Para añadir a alguien: una entrada en `herramientas/config.json` y repetir 1–4.
 
 ## Derechos
 
@@ -75,6 +84,7 @@ Las fotos vienen de Wikimedia Commons con licencias libres (dominio público, CC
 | `jeff-bezos-1.png` | U.S. Space Force image by Van Ha | Public domain | [Commons](https://commons.wikimedia.org/wiki/File%3AJeff_Bezos_visits_LAAFB_SMC_%283908618%29_%28cropped%29.jpeg) |
 | `jeff-bezos-2.png` | DoD photo by Senior Master Sgt. Adrian Cadiz (Released) | Public domain | [Commons](https://commons.wikimedia.org/wiki/File%3ASecretary_of_Defense_Ash_Carter_meets_with_Jeff_Bezos%2C_May_5%2C_2016_%281%29_%28cropped%29.jpg) |
 | `jeff-bezos-3.png` | SECWAR | Public domain | [Commons](https://commons.wikimedia.org/wiki/File%3A260202-D-PM193-2205_SECWAR_Arsenal_of_Freedom_Tour_-_Florida_%283x4_cropped_on_Bezos_and_rotated%29.jpg) |
+| `jeff-bezos-4.png` | Daniel Oberhaus | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File%3AJeff_Bezos_Unveils_Blue_Origin_Lunar_Lander.jpg) |
 | `steve-jobs-1.png` | Photo: Bernard Gotfryd - Edited from tif by Cart | Public domain | [Commons](https://commons.wikimedia.org/wiki/File%3ASteve_Jobs_and_Macintosh_computer%2C_January_1984%2C_by_Bernard_Gotfryd_-_edited.jpg) |
 | `steve-jobs-2.png` | Acaben, cropped by Kyro | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File%3ASteve_Jobs_WWDC07.jpg) |
 | `steve-jobs-3.png` | Matthew Yohe | CC BY 3.0 | [Commons](https://commons.wikimedia.org/wiki/File%3ASteve_Jobs.jpg) |
@@ -85,6 +95,7 @@ Las fotos vienen de Wikimedia Commons con licencias libres (dominio público, CC
 | `warren-buffett-1.png` | USA International Trade Administration | Public domain | [Commons](https://commons.wikimedia.org/wiki/File%3AWarren_Buffett_at_the_2015_SelectUSA_Investment_Summit_%28cropped%29.jpg) |
 | `warren-buffett-2.png` | USA International Trade Administration | Public domain | [Commons](https://commons.wikimedia.org/wiki/File%3AWarren_Buffett_at_the_2015_SelectUSA_Investment_Summit.jpg) |
 | `warren-buffett-3.png` | Mark Hirschey | CC BY-SA 2.0 | [Commons](https://commons.wikimedia.org/wiki/File%3AWarren_Buffett_KU_Visit.jpg) |
+| `warren-buffett-4.png` | Minda Haas Kuhlmann | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File%3AWarren_Buffett%21_He_caught_a_ceremonial_first_pitch_tonight.jpg) |
 | `bill-gates-1.png` | © European Union, 2026 | CC BY 4.0 | [Commons](https://commons.wikimedia.org/wiki/File%3ABill_Gates_at_the_European_Commission_-_P067383-987995_%28cropped%29_5.jpg) |
 | `bill-gates-2.png` | Tandy Corporation | Public domain | [Commons](https://commons.wikimedia.org/wiki/File%3ABill_Gates_with_Tandy_2000_running_Windows_1.0_%281984%29.jpg) |
 | `bill-gates-3.png` | DFID - UK Department for International Development | CC BY 2.0 | [Commons](https://commons.wikimedia.org/wiki/File%3ABill_Gates_June_2015.jpg) |

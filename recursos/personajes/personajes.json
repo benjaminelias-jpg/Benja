@@ -142,6 +142,30 @@
      "der": true
     },
     "uso": "primer plano"
+   },
+   {
+    "archivo": "jeff-bezos-4.png",
+    "ancho": 717,
+    "alto": 1062,
+    "cara": {
+     "cx": 0.251,
+     "cy": 0.227,
+     "w": 0.276,
+     "h": 0.261
+    },
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano",
+    "licencia": "CC BY 4.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/4.0",
+    "autor": "Daniel Oberhaus",
+    "fuente": "https://commons.wikimedia.org/wiki/File%3AJeff_Bezos_Unveils_Blue_Origin_Lunar_Lander.jpg",
+    "archivo_commons": "File:Jeff_Bezos_Unveils_Blue_Origin_Lunar_Lander.jpg",
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
    }
   ]
  },
@@ -204,13 +228,13 @@
    },
    {
     "archivo": "steve-jobs-2.png",
-    "ancho": 1125,
-    "alto": 1542,
+    "ancho": 1611,
+    "alto": 1675,
     "cara": {
-     "cx": 0.494,
-     "cy": 0.188,
-     "w": 0.24,
-     "h": 0.245
+     "cx": 0.61,
+     "cy": 0.185,
+     "w": 0.186,
+     "h": 0.243
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -218,17 +242,24 @@
     "autor": "Acaben, cropped by Kyro",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASteve_Jobs_WWDC07.jpg",
     "archivo_commons": "File:Steve_Jobs_WWDC07.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "steve-jobs-3.png",
-    "ancho": 834,
-    "alto": 1554,
+    "ancho": 1279,
+    "alto": 1944,
     "cara": {
-     "cx": 0.482,
-     "cy": 0.134,
-     "w": 0.243,
-     "h": 0.173
+     "cx": 0.571,
+     "cy": 0.135,
+     "w": 0.214,
+     "h": 0.191
     },
     "nota": "",
     "licencia": "CC BY 3.0",
@@ -236,17 +267,24 @@
     "autor": "Matthew Yohe",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASteve_Jobs.jpg",
     "archivo_commons": "File:Steve_Jobs.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "escena"
    },
    {
     "archivo": "steve-jobs-4.png",
-    "ancho": 1202,
-    "alto": 1548,
+    "ancho": 1502,
+    "alto": 1936,
     "cara": {
-     "cx": 0.509,
-     "cy": 0.35,
-     "w": 0.469,
-     "h": 0.515
+     "cx": 0.513,
+     "cy": 0.346,
+     "w": 0.463,
+     "h": 0.479
     },
     "nota": "",
     "licencia": "CC BY-SA 3.0",
@@ -254,7 +292,14 @@
     "autor": "Matthew Yohe at en.wikipedia",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASteve_Jobs_Headshot_2010_%28cropped_4%29.jpg",
     "archivo_commons": "File:Steve_Jobs_Headshot_2010_(cropped_4).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -290,13 +335,13 @@
   "imagenes": [
    {
     "archivo": "elon-musk-1.png",
-    "ancho": 1020,
-    "alto": 1503,
+    "ancho": 1226,
+    "alto": 1808,
     "cara": {
-     "cx": 0.471,
-     "cy": 0.212,
-     "w": 0.281,
-     "h": 0.267
+     "cx": 0.472,
+     "cy": 0.209,
+     "w": 0.272,
+     "h": 0.253
     },
     "nota": "",
     "licencia": "CC BY-SA 3.0",
@@ -304,17 +349,24 @@
     "autor": "The Royal Society",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AElon_Musk_Royal_Society.jpg",
     "archivo_commons": "File:Elon_Musk_Royal_Society.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "elon-musk-2.png",
-    "ancho": 1062,
-    "alto": 1507,
+    "ancho": 1330,
+    "alto": 1885,
     "cara": {
-     "cx": 0.523,
-     "cy": 0.212,
-     "w": 0.276,
-     "h": 0.27
+     "cx": 0.524,
+     "cy": 0.21,
+     "w": 0.284,
+     "h": 0.269
     },
     "nota": "",
     "licencia": "Public domain",
@@ -322,17 +374,24 @@
     "autor": "ver fuente",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASpaceX_CEO_Elon_Musk_visits_N%26NC_and_AFSPC_%28190416-F-ZZ999-006%29_%28cropped%29.jpg",
     "archivo_commons": "File:SpaceX_CEO_Elon_Musk_visits_N&NC_and_AFSPC_(190416-F-ZZ999-006)_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "elon-musk-3.png",
-    "ancho": 1218,
-    "alto": 1537,
+    "ancho": 1222,
+    "alto": 1885,
     "cara": {
-     "cx": 0.513,
-     "cy": 0.333,
-     "w": 0.423,
-     "h": 0.452
+     "cx": 0.38,
+     "cy": 0.317,
+     "w": 0.518,
+     "h": 0.449
     },
     "nota": "",
     "licencia": "CC BY-SA 4.0",
@@ -340,7 +399,14 @@
     "autor": "Gage Skidmore",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AElon_Musk_-_54820081119_%28cropped%29.jpg",
     "archivo_commons": "File:Elon_Musk_-_54820081119_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -379,12 +445,12 @@
    {
     "archivo": "warren-buffett-1.png",
     "ancho": 818,
-    "alto": 1071,
+    "alto": 1075,
     "cara": {
-     "cx": 0.532,
-     "cy": 0.376,
-     "w": 0.466,
-     "h": 0.511
+     "cx": 0.547,
+     "cy": 0.379,
+     "w": 0.439,
+     "h": 0.515
     },
     "nota": "",
     "licencia": "Public domain",
@@ -392,17 +458,24 @@
     "autor": "USA International Trade Administration",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AWarren_Buffett_at_the_2015_SelectUSA_Investment_Summit_%28cropped%29.jpg",
     "archivo_commons": "File:Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "warren-buffett-2.png",
-    "ancho": 871,
-    "alto": 1069,
+    "ancho": 1280,
+    "alto": 1073,
     "cara": {
-     "cx": 0.504,
-     "cy": 0.375,
-     "w": 0.445,
-     "h": 0.515
+     "cx": 0.58,
+     "cy": 0.373,
+     "w": 0.292,
+     "h": 0.5
     },
     "nota": "",
     "licencia": "Public domain",
@@ -410,17 +483,24 @@
     "autor": "USA International Trade Administration",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AWarren_Buffett_at_the_2015_SelectUSA_Investment_Summit.jpg",
     "archivo_commons": "File:Warren_Buffett_at_the_2015_SelectUSA_Investment_Summit.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "warren-buffett-3.png",
-    "ancho": 1248,
-    "alto": 1393,
+    "ancho": 1280,
+    "alto": 1398,
     "cara": {
-     "cx": 0.504,
-     "cy": 0.266,
-     "w": 0.303,
-     "h": 0.36
+     "cx": 0.509,
+     "cy": 0.268,
+     "w": 0.319,
+     "h": 0.381
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -428,6 +508,37 @@
     "autor": "Mark Hirschey",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AWarren_Buffett_KU_Visit.jpg",
     "archivo_commons": "File:Warren_Buffett_KU_Visit.jpg",
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
+   },
+   {
+    "archivo": "warren-buffett-4.png",
+    "ancho": 667,
+    "alto": 1862,
+    "cara": {
+     "cx": 0.435,
+     "cy": 0.103,
+     "w": 0.261,
+     "h": 0.116
+    },
+    "toca_borde": {
+     "arriba": false,
+     "abajo": false,
+     "izq": false,
+     "der": false
+    },
+    "uso": "cuerpo entero",
+    "licencia": "CC BY 2.0",
+    "licencia_url": "https://creativecommons.org/licenses/by/2.0",
+    "autor": "Minda Haas Kuhlmann",
+    "fuente": "https://commons.wikimedia.org/wiki/File%3AWarren_Buffett%21_He_caught_a_ceremonial_first_pitch_tonight.jpg",
+    "archivo_commons": "File:Warren_Buffett!_He_caught_a_ceremonial_first_pitch_tonight.jpg",
     "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
    }
   ]
@@ -477,12 +588,12 @@
    {
     "archivo": "bill-gates-1.png",
     "ancho": 960,
-    "alto": 1224,
+    "alto": 1228,
     "cara": {
-     "cx": 0.499,
-     "cy": 0.273,
-     "w": 0.347,
-     "h": 0.39
+     "cx": 0.503,
+     "cy": 0.282,
+     "w": 0.359,
+     "h": 0.38
     },
     "nota": "",
     "licencia": "CC BY 4.0",
@@ -490,17 +601,24 @@
     "autor": "© European Union, 2026",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ABill_Gates_at_the_European_Commission_-_P067383-987995_%28cropped%29_5.jpg",
     "archivo_commons": "File:Bill_Gates_at_the_European_Commission_-_P067383-987995_(cropped)_5.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "bill-gates-2.png",
-    "ancho": 1166,
-    "alto": 1525,
+    "ancho": 1400,
+    "alto": 1831,
     "cara": {
-     "cx": 0.357,
-     "cy": 0.25,
-     "w": 0.305,
-     "h": 0.291
+     "cx": 0.355,
+     "cy": 0.252,
+     "w": 0.325,
+     "h": 0.289
     },
     "nota": "",
     "licencia": "Public domain",
@@ -508,17 +626,24 @@
     "autor": "Tandy Corporation",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ABill_Gates_with_Tandy_2000_running_Windows_1.0_%281984%29.jpg",
     "archivo_commons": "File:Bill_Gates_with_Tandy_2000_running_Windows_1.0_(1984).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": false
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "bill-gates-3.png",
     "ancho": 960,
-    "alto": 1348,
+    "alto": 1352,
     "cara": {
-     "cx": 0.526,
-     "cy": 0.398,
-     "w": 0.532,
-     "h": 0.514
+     "cx": 0.53,
+     "cy": 0.395,
+     "w": 0.523,
+     "h": 0.52
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -526,7 +651,14 @@
     "autor": "DFID - UK Department for International Development",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ABill_Gates_June_2015.jpg",
     "archivo_commons": "File:Bill_Gates_June_2015.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -556,13 +688,13 @@
   "imagenes": [
    {
     "archivo": "mark-zuckerberg-1.png",
-    "ancho": 1105,
-    "alto": 1374,
+    "ancho": 1382,
+    "alto": 1718,
     "cara": {
-     "cx": 0.543,
-     "cy": 0.277,
-     "w": 0.277,
-     "h": 0.304
+     "cx": 0.539,
+     "cy": 0.272,
+     "w": 0.275,
+     "h": 0.312
     },
     "nota": "",
     "licencia": "CC BY-SA 4.0",
@@ -570,17 +702,24 @@
     "autor": "Jeff Sainlar; Social Producer and Editor, Meta",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AMark_Zuckerberg_%282025%29.jpg",
     "archivo_commons": "File:Mark_Zuckerberg_(2025).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": false
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "mark-zuckerberg-2.png",
-    "ancho": 1067,
-    "alto": 1600,
+    "ancho": 1333,
+    "alto": 2000,
     "cara": {
-     "cx": 0.514,
-     "cy": 0.363,
-     "w": 0.497,
-     "h": 0.463
+     "cx": 0.517,
+     "cy": 0.368,
+     "w": 0.488,
+     "h": 0.46
     },
     "nota": "",
     "licencia": "CC BY 3.0",
@@ -588,17 +727,24 @@
     "autor": "Guillaume Paumier",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AMark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1.jpg",
     "archivo_commons": "File:Mark_Zuckerberg_at_the_37th_G8_Summit_in_Deauville_018_v1.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": true,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "mark-zuckerberg-3.png",
-    "ancho": 1279,
-    "alto": 1450,
+    "ancho": 1920,
+    "alto": 1742,
     "cara": {
-     "cx": 0.502,
-     "cy": 0.307,
-     "w": 0.38,
-     "h": 0.459
+     "cx": 0.504,
+     "cy": 0.305,
+     "w": 0.309,
+     "h": 0.489
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -606,7 +752,14 @@
     "autor": "Anthony Quintano from Honolulu, HI, United States",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AMark_Zuckerberg_F8_2018_Keynote_%28cropped%29.jpg",
     "archivo_commons": "File:Mark_Zuckerberg_F8_2018_Keynote_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -637,13 +790,13 @@
   "imagenes": [
    {
     "archivo": "gary-vaynerchuk-1.png",
-    "ancho": 768,
-    "alto": 935,
+    "ancho": 924,
+    "alto": 938,
     "cara": {
-     "cx": 0.496,
-     "cy": 0.288,
-     "w": 0.325,
-     "h": 0.367
+     "cx": 0.543,
+     "cy": 0.296,
+     "w": 0.273,
+     "h": 0.368
     },
     "nota": "",
     "licencia": "CC0",
@@ -651,17 +804,24 @@
     "autor": "Vaynermedia",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AGary_Vaynerchuk_public_domain.jpg",
     "archivo_commons": "File:Gary_Vaynerchuk_public_domain.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "gary-vaynerchuk-2.png",
-    "ancho": 1024,
-    "alto": 1200,
+    "ancho": 1855,
+    "alto": 1203,
     "cara": {
-     "cx": 0.501,
-     "cy": 0.214,
-     "w": 0.256,
-     "h": 0.287
+     "cx": 0.468,
+     "cy": 0.211,
+     "w": 0.145,
+     "h": 0.295
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -669,7 +829,14 @@
     "autor": "Andrew Kelly",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AGary_Vaynerchuk_%282015%29.jpg",
     "archivo_commons": "File:Gary_Vaynerchuk_(2015).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -696,12 +863,12 @@
    {
     "archivo": "oprah-winfrey-1.png",
     "ancho": 960,
-    "alto": 1367,
+    "alto": 1371,
     "cara": {
-     "cx": 0.542,
-     "cy": 0.43,
-     "w": 0.558,
-     "h": 0.547
+     "cx": 0.55,
+     "cy": 0.436,
+     "w": 0.551,
+     "h": 0.525
     },
     "nota": "",
     "licencia": "Public domain",
@@ -709,17 +876,24 @@
     "autor": "US Embassy South Africa",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AOprah_Winfrey_2016.jpg",
     "archivo_commons": "File:Oprah_Winfrey_2016.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "oprah-winfrey-2.png",
-    "ancho": 1101,
+    "ancho": 1280,
     "alto": 1404,
     "cara": {
-     "cx": 0.517,
+     "cx": 0.566,
      "cy": 0.261,
-     "w": 0.27,
-     "h": 0.319
+     "w": 0.231,
+     "h": 0.32
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -727,17 +901,24 @@
     "autor": "INTX: The Internet & Television Expo",
     "fuente": "https://commons.wikimedia.org/wiki/File%3A2011_Oprah_at_The_Cable_Show_%2829902986311%29_%282%29.jpg",
     "archivo_commons": "File:2011_Oprah_at_The_Cable_Show_(29902986311)_(2).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": true,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "oprah-winfrey-3.png",
-    "ancho": 1206,
-    "alto": 1544,
+    "ancho": 1508,
+    "alto": 1931,
     "cara": {
-     "cx": 0.43,
-     "cy": 0.26,
-     "w": 0.31,
-     "h": 0.32
+     "cx": 0.428,
+     "cy": 0.276,
+     "w": 0.294,
+     "h": 0.318
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -745,7 +926,14 @@
     "autor": "https://www.flickr.com/photos/aphrodite-in-nyc",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AOprah_in_2014.jpg",
     "archivo_commons": "File:Oprah_in_2014.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -773,12 +961,12 @@
    {
     "archivo": "tony-robbins-1.png",
     "ancho": 683,
-    "alto": 947,
+    "alto": 951,
     "cara": {
-     "cx": 0.208,
-     "cy": 0.147,
-     "w": 0.228,
-     "h": 0.215
+     "cx": 0.21,
+     "cy": 0.151,
+     "w": 0.226,
+     "h": 0.21
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -786,17 +974,24 @@
     "autor": "Randy Stewart",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ATony_Robbins_gesturing.jpg",
     "archivo_commons": "File:Tony_Robbins_gesturing.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "tony-robbins-2.png",
-    "ancho": 951,
-    "alto": 1217,
+    "ancho": 1411,
+    "alto": 1221,
     "cara": {
-     "cx": 0.494,
+     "cx": 0.598,
      "cy": 0.165,
-     "w": 0.23,
-     "h": 0.224
+     "w": 0.154,
+     "h": 0.234
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -804,7 +999,14 @@
     "autor": "Brian Solis",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AThe_Twitter_Conference_-_Tony_Robbins.jpg",
     "archivo_commons": "File:The_Twitter_Conference_-_Tony_Robbins.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -829,13 +1031,13 @@
   "imagenes": [
    {
     "archivo": "robert-kiyosaki-1.png",
-    "ancho": 1049,
-    "alto": 1581,
+    "ancho": 1392,
+    "alto": 1977,
     "cara": {
-     "cx": 0.435,
-     "cy": 0.151,
-     "w": 0.231,
-     "h": 0.214
+     "cx": 0.414,
+     "cy": 0.153,
+     "w": 0.219,
+     "h": 0.213
     },
     "nota": "",
     "licencia": "CC BY-SA 3.0",
@@ -843,17 +1045,24 @@
     "autor": "Gage Skidmore",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ARobert_Kiyosaki_by_Gage_Skidmore.jpg",
     "archivo_commons": "File:Robert_Kiyosaki_by_Gage_Skidmore.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "escena"
    },
    {
     "archivo": "robert-kiyosaki-2.png",
-    "ancho": 1244,
-    "alto": 1516,
+    "ancho": 1555,
+    "alto": 1890,
     "cara": {
-     "cx": 0.487,
-     "cy": 0.355,
-     "w": 0.44,
-     "h": 0.515
+     "cx": 0.48,
+     "cy": 0.337,
+     "w": 0.437,
+     "h": 0.497
     },
     "nota": "",
     "licencia": "CC BY-SA 3.0",
@@ -861,7 +1070,14 @@
     "autor": "Gage Skidmore",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ARobert_Kiyosaki_by_Gage_Skidmore_2.jpg",
     "archivo_commons": "File:Robert_Kiyosaki_by_Gage_Skidmore_2.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -888,13 +1104,13 @@
   "imagenes": [
    {
     "archivo": "simon-sinek-1.png",
-    "ancho": 1058,
-    "alto": 1551,
+    "ancho": 1136,
+    "alto": 1659,
     "cara": {
-     "cx": 0.57,
-     "cy": 0.226,
-     "w": 0.33,
-     "h": 0.299
+     "cx": 0.566,
+     "cy": 0.232,
+     "w": 0.329,
+     "h": 0.301
     },
     "nota": "",
     "licencia": "Public domain",
@@ -902,7 +1118,14 @@
     "autor": "Lance Cpl. Brendan Mullin",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASimon_Sinek_speaks_to_I_MIG_Marines_%282%29_%28cropped%29.jpg",
     "archivo_commons": "File:Simon_Sinek_speaks_to_I_MIG_Marines_(2)_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -929,13 +1152,13 @@
   "imagenes": [
    {
     "archivo": "seth-godin-1.png",
-    "ancho": 1012,
-    "alto": 1433,
+    "ancho": 1268,
+    "alto": 1793,
     "cara": {
-     "cx": 0.491,
-     "cy": 0.199,
-     "w": 0.302,
-     "h": 0.288
+     "cx": 0.494,
+     "cy": 0.205,
+     "w": 0.301,
+     "h": 0.303
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -943,7 +1166,14 @@
     "autor": "Joi Ito",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASeth_Godin_in_2009.jpg",
     "archivo_commons": "File:Seth_Godin_in_2009.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -975,13 +1205,13 @@
   "imagenes": [
    {
     "archivo": "mrbeast-1.png",
-    "ancho": 1199,
-    "alto": 1538,
+    "ancho": 1280,
+    "alto": 1645,
     "cara": {
-     "cx": 0.466,
-     "cy": 0.368,
-     "w": 0.463,
-     "h": 0.494
+     "cx": 0.455,
+     "cy": 0.365,
+     "w": 0.443,
+     "h": 0.465
     },
     "nota": "",
     "licencia": "CC BY 4.0",
@@ -989,17 +1219,24 @@
     "autor": "Tyren Redd",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AMrBeast_in_2026_%28cropped_4%29.png",
     "archivo_commons": "File:MrBeast_in_2026_(cropped_4).png",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "mrbeast-2.png",
-    "ancho": 1200,
-    "alto": 1542,
+    "ancho": 1501,
+    "alto": 1928,
     "cara": {
      "cx": 0.476,
-     "cy": 0.286,
-     "w": 0.361,
-     "h": 0.392
+     "cy": 0.282,
+     "w": 0.375,
+     "h": 0.379
     },
     "nota": "",
     "licencia": "CC BY 4.0",
@@ -1007,17 +1244,24 @@
     "autor": "Steven Khan",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AMrBeast_2023_%28cropped%29.jpg",
     "archivo_commons": "File:MrBeast_2023_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "mrbeast-3.png",
     "ancho": 500,
     "alto": 713,
     "cara": {
-     "cx": 0.388,
+     "cx": 0.389,
      "cy": 0.187,
-     "w": 0.278,
-     "h": 0.257
+     "w": 0.264,
+     "h": 0.258
     },
     "nota": "",
     "licencia": "CC BY 3.0",
@@ -1025,7 +1269,14 @@
     "autor": "NickRewind",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AMrBeast_KCA2023_104_%28cropped%29_2.jpg",
     "archivo_commons": "File:MrBeast_KCA2023_104_(cropped)_2.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": true,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1049,13 +1300,13 @@
   "imagenes": [
    {
     "archivo": "jensen-huang-1.png",
-    "ancho": 921,
-    "alto": 1330,
+    "ancho": 992,
+    "alto": 1334,
     "cara": {
-     "cx": 0.396,
-     "cy": 0.261,
-     "w": 0.328,
-     "h": 0.287
+     "cx": 0.371,
+     "cy": 0.265,
+     "w": 0.304,
+     "h": 0.288
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -1063,17 +1314,24 @@
     "autor": "總統府",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AJensen_Huang_20231109.jpg",
     "archivo_commons": "File:Jensen_Huang_20231109.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "jensen-huang-2.png",
-    "ancho": 461,
-    "alto": 596,
+    "ancho": 470,
+    "alto": 598,
     "cara": {
-     "cx": 0.506,
-     "cy": 0.283,
-     "w": 0.353,
-     "h": 0.336
+     "cx": 0.502,
+     "cy": 0.287,
+     "w": 0.342,
+     "h": 0.329
     },
     "nota": "",
     "licencia": "GODL-India",
@@ -1081,17 +1339,24 @@
     "autor": "Prime Minister's Office Parent institution",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AJensen_Huang_%28cropped%29.jpg",
     "archivo_commons": "File:Jensen_Huang_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": true,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "jensen-huang-3.png",
     "ancho": 500,
-    "alto": 649,
+    "alto": 650,
     "cara": {
-     "cx": 0.468,
-     "cy": 0.486,
-     "w": 0.569,
-     "h": 0.548
+     "cx": 0.449,
+     "cy": 0.499,
+     "w": 0.542,
+     "h": 0.534
     },
     "nota": "",
     "licencia": "Public domain",
@@ -1099,7 +1364,14 @@
     "autor": "The White House",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AJen-Hsun_Huang_2025.jpg",
     "archivo_commons": "File:Jen-Hsun_Huang_2025.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": true,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1124,13 +1396,13 @@
   "imagenes": [
    {
     "archivo": "sam-altman-1.png",
-    "ancho": 720,
-    "alto": 834,
+    "ancho": 787,
+    "alto": 838,
     "cara": {
-     "cx": 0.506,
-     "cy": 0.306,
-     "w": 0.302,
-     "h": 0.344
+     "cx": 0.524,
+     "cy": 0.305,
+     "w": 0.277,
+     "h": 0.341
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -1138,17 +1410,24 @@
     "autor": "Steve Jurvetson",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASam_Altman_speaking_at_TED_%28cropped%29.jpg",
     "archivo_commons": "File:Sam_Altman_speaking_at_TED_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "sam-altman-2.png",
-    "ancho": 1280,
-    "alto": 1425,
+    "ancho": 1835,
+    "alto": 1783,
     "cara": {
-     "cx": 0.514,
-     "cy": 0.36,
-     "w": 0.367,
-     "h": 0.452
+     "cx": 0.504,
+     "cy": 0.356,
+     "w": 0.306,
+     "h": 0.456
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -1156,7 +1435,14 @@
     "autor": "TechCrunch",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_%28cropped%29.jpg",
     "archivo_commons": "File:Sam_Altman_TechCrunch_SF_2019_Day_2_Oct_3_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": false
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1181,13 +1467,13 @@
   "imagenes": [
    {
     "archivo": "bernard-arnault-1.png",
-    "ancho": 1225,
-    "alto": 1600,
+    "ancho": 1280,
+    "alto": 1672,
     "cara": {
-     "cx": 0.476,
-     "cy": 0.35,
-     "w": 0.414,
-     "h": 0.453
+     "cx": 0.478,
+     "cy": 0.343,
+     "w": 0.408,
+     "h": 0.42
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -1195,7 +1481,14 @@
     "autor": "Jérémy Barande",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ABernard_Arnault_%283%29_-_2017_%28cropped%29.jpg",
     "archivo_commons": "File:Bernard_Arnault_(3)_-_2017_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": true,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1243,13 +1536,13 @@
   "imagenes": [
    {
     "archivo": "juan-roig-1.png",
-    "ancho": 1112,
-    "alto": 1547,
+    "ancho": 1134,
+    "alto": 1570,
     "cara": {
-     "cx": 0.542,
-     "cy": 0.202,
-     "w": 0.264,
-     "h": 0.25
+     "cx": 0.539,
+     "cy": 0.196,
+     "w": 0.262,
+     "h": 0.251
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -1257,7 +1550,14 @@
     "autor": "Junta Informa",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AJuan_Roig_-_13.10.18_Visita_B.L._Mercadona.Guadix_4.jpg",
     "archivo_commons": "File:Juan_Roig_-_13.10.18_Visita_B.L._Mercadona.Guadix_4.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1283,13 +1583,13 @@
   "imagenes": [
    {
     "archivo": "cristiano-ronaldo-1.png",
-    "ancho": 1067,
-    "alto": 1566,
+    "ancho": 1334,
+    "alto": 1958,
     "cara": {
-     "cx": 0.498,
-     "cy": 0.229,
-     "w": 0.305,
-     "h": 0.302
+     "cx": 0.509,
+     "cy": 0.228,
+     "w": 0.309,
+     "h": 0.297
     },
     "nota": "",
     "licencia": "CC BY-SA 4.0",
@@ -1297,17 +1597,24 @@
     "autor": "Bryan Berlin",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ACristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_%28cropped%29.jpg",
     "archivo_commons": "File:Cristiano_Ronaldo_Croatia_v_Portugal_2_July_2026-075_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "cristiano-ronaldo-2.png",
-    "ancho": 414,
-    "alto": 718,
+    "ancho": 489,
+    "alto": 723,
     "cara": {
-     "cx": 0.608,
-     "cy": 0.133,
-     "w": 0.242,
-     "h": 0.193
+     "cx": 0.66,
+     "cy": 0.141,
+     "w": 0.2,
+     "h": 0.184
     },
     "nota": "",
     "licencia": "CC BY-SA 3.0",
@@ -1315,17 +1622,24 @@
     "autor": "Анна Нэсси",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ACristiano_Ronaldo_Portugal.jpg",
     "archivo_commons": "File:Cristiano_Ronaldo_Portugal.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "escena"
    },
    {
     "archivo": "cristiano-ronaldo-3.png",
-    "ancho": 398,
-    "alto": 635,
+    "ancho": 468,
+    "alto": 639,
     "cara": {
-     "cx": 0.588,
-     "cy": 0.154,
-     "w": 0.247,
-     "h": 0.202
+     "cx": 0.649,
+     "cy": 0.162,
+     "w": 0.208,
+     "h": 0.209
     },
     "nota": "",
     "licencia": "Attribution",
@@ -1333,7 +1647,14 @@
     "autor": "Student News Agency Attribution",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ACristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis%2C_September_2023_%28cropped%29.jpg",
     "archivo_commons": "File:Cristiano_Ronaldo_playing_for_Al_Nassr_FC_against_Persepolis,_September_2023_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "escena"
    }
   ]
  },
@@ -1360,12 +1681,12 @@
    {
     "archivo": "rafa-nadal-1.png",
     "ancho": 960,
-    "alto": 1266,
+    "alto": 1270,
     "cara": {
-     "cx": 0.475,
-     "cy": 0.298,
-     "w": 0.354,
-     "h": 0.361
+     "cx": 0.471,
+     "cy": 0.304,
+     "w": 0.355,
+     "h": 0.371
     },
     "nota": "",
     "licencia": "CC BY-SA 4.0",
@@ -1373,17 +1694,24 @@
     "autor": "Barcex",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ARafael_Nadal_en_2024_%28cropped%29.jpg",
     "archivo_commons": "File:Rafael_Nadal_en_2024_(cropped).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "rafa-nadal-2.png",
-    "ancho": 962,
-    "alto": 1375,
+    "ancho": 1271,
+    "alto": 1721,
     "cara": {
-     "cx": 0.542,
-     "cy": 0.231,
-     "w": 0.243,
-     "h": 0.21
+     "cx": 0.568,
+     "cy": 0.234,
+     "w": 0.229,
+     "h": 0.221
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -1391,17 +1719,24 @@
     "autor": "Christopher Johnson from Tokyo, Japan",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ARafael_Nadal_mordiendo_la_copa_-_0027_Japan_Open_Tennis_Tokio_2010.jpg",
     "archivo_commons": "File:Rafael_Nadal_mordiendo_la_copa_-_0027_Japan_Open_Tennis_Tokio_2010.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "rafa-nadal-3.png",
-    "ancho": 830,
-    "alto": 1561,
+    "ancho": 408,
+    "alto": 540,
     "cara": {
-     "cx": 0.432,
-     "cy": 0.193,
-     "w": 0.273,
-     "h": 0.171
+     "cx": 0.444,
+     "cy": 0.479,
+     "w": 0.69,
+     "h": 0.657
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -1409,7 +1744,14 @@
     "autor": "Tatiana from Moscow, Russia",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ARafael_Nadal_%2816207904747%29.jpg",
     "archivo_commons": "File:Rafael_Nadal_(16207904747).jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": false,
+     "izq": false,
+     "der": false
+    },
+    "uso": "cuerpo entero"
    }
   ]
  },
@@ -1435,13 +1777,13 @@
   "imagenes": [
    {
     "archivo": "michael-jordan-1.png",
-    "ancho": 1173,
-    "alto": 1564,
+    "ancho": 1467,
+    "alto": 1956,
     "cara": {
      "cx": 0.291,
-     "cy": 0.173,
-     "w": 0.239,
-     "h": 0.246
+     "cy": 0.183,
+     "w": 0.238,
+     "h": 0.249
     },
     "nota": "",
     "licencia": "Public domain",
@@ -1449,17 +1791,24 @@
     "autor": "United Press International",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AMichael_Jordan_holds_up_his_Chicago_Bulls_jersey_on_September_12%2C_1984.jpg",
     "archivo_commons": "File:Michael_Jordan_holds_up_his_Chicago_Bulls_jersey_on_September_12,_1984.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "michael-jordan-2.png",
     "ancho": 960,
-    "alto": 1272,
+    "alto": 1276,
     "cara": {
-     "cx": 0.548,
-     "cy": 0.196,
-     "w": 0.308,
-     "h": 0.315
+     "cx": 0.55,
+     "cy": 0.189,
+     "w": 0.314,
+     "h": 0.319
     },
     "nota": "",
     "licencia": "GFDL",
@@ -1467,17 +1816,24 @@
     "autor": "Steve Lipofsky Basketballphoto.com",
     "fuente": "https://commons.wikimedia.org/wiki/File%3ASteve_Lipfosky_--_Michael_Jordan_%281997%29_%28cropped%29_3x4.jpg",
     "archivo_commons": "File:Steve_Lipfosky_--_Michael_Jordan_(1997)_(cropped)_3x4.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "michael-jordan-3.png",
-    "ancho": 1183,
-    "alto": 1539,
+    "ancho": 1257,
+    "alto": 1634,
     "cara": {
-     "cx": 0.397,
-     "cy": 0.421,
-     "w": 0.617,
-     "h": 0.698
+     "cx": 0.383,
+     "cy": 0.445,
+     "w": 0.565,
+     "h": 0.648
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -1485,7 +1841,14 @@
     "autor": "Joshua Massel. Cropped by en:User:Quadzilla99",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AMichael_Jordan.jpg",
     "archivo_commons": "File:Michael_Jordan.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1511,12 +1874,12 @@
    {
     "archivo": "kobe-bryant-1.png",
     "ancho": 500,
-    "alto": 708,
+    "alto": 712,
     "cara": {
-     "cx": 0.563,
-     "cy": 0.191,
-     "w": 0.254,
-     "h": 0.262
+     "cx": 0.56,
+     "cy": 0.199,
+     "w": 0.257,
+     "h": 0.261
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -1524,17 +1887,24 @@
     "autor": "Keith Allison from Hanover, MD, USA",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AKobe_Bryant_2015.jpg",
     "archivo_commons": "File:Kobe_Bryant_2015.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "kobe-bryant-2.png",
-    "ancho": 904,
-    "alto": 1354,
+    "ancho": 1108,
+    "alto": 1358,
     "cara": {
-     "cx": 0.437,
-     "cy": 0.159,
-     "w": 0.248,
-     "h": 0.214
+     "cx": 0.367,
+     "cy": 0.161,
+     "w": 0.203,
+     "h": 0.229
     },
     "nota": "",
     "licencia": "CC BY-SA 2.0",
@@ -1542,17 +1912,24 @@
     "autor": "Keith Allison from Kinston, USA",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AKobe_Bryant_07.jpg",
     "archivo_commons": "File:Kobe_Bryant_07.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "kobe-bryant-3.png",
-    "ancho": 476,
-    "alto": 623,
+    "ancho": 484,
+    "alto": 627,
     "cara": {
-     "cx": 0.541,
-     "cy": 0.233,
-     "w": 0.317,
-     "h": 0.325
+     "cx": 0.533,
+     "cy": 0.23,
+     "w": 0.318,
+     "h": 0.343
     },
     "nota": "",
     "licencia": "CC BY 2.0",
@@ -1560,7 +1937,14 @@
     "autor": "RedMedia from Manila, Philippines",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AKobe_Asia_09.jpg",
     "archivo_commons": "File:Kobe_Asia_09.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": false
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1588,12 +1972,12 @@
    {
     "archivo": "walt-disney-1.png",
     "ancho": 960,
-    "alto": 1257,
+    "alto": 1261,
     "cara": {
-     "cx": 0.496,
-     "cy": 0.317,
-     "w": 0.445,
-     "h": 0.471
+     "cx": 0.499,
+     "cy": 0.32,
+     "w": 0.455,
+     "h": 0.453
     },
     "nota": "",
     "licencia": "Public domain",
@@ -1601,17 +1985,24 @@
     "autor": "autor desconocido",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AWalt-Disney-1956-crop.jpg",
     "archivo_commons": "File:Walt-Disney-1956-crop.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "walt-disney-2.png",
-    "ancho": 1048,
-    "alto": 1473,
+    "ancho": 1130,
+    "alto": 1477,
     "cara": {
-     "cx": 0.374,
-     "cy": 0.307,
-     "w": 0.35,
-     "h": 0.348
+     "cx": 0.352,
+     "cy": 0.316,
+     "w": 0.329,
+     "h": 0.326
     },
     "nota": "",
     "licencia": "Public domain",
@@ -1619,17 +2010,24 @@
     "autor": "New York World-Telegram and the Sun staff photographer: Fisher, Alan, photographer",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AWalt_Disney_NYWTS.jpg",
     "archivo_commons": "File:Walt_Disney_NYWTS.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "walt-disney-3.png",
-    "ancho": 390,
-    "alto": 567,
+    "ancho": 500,
+    "alto": 571,
     "cara": {
-     "cx": 0.576,
-     "cy": 0.195,
-     "w": 0.23,
-     "h": 0.232
+     "cx": 0.669,
+     "cy": 0.203,
+     "w": 0.167,
+     "h": 0.233
     },
     "nota": "",
     "licencia": "CC0",
@@ -1637,7 +2035,14 @@
     "autor": "not listed. New York World-Telegram and the Sun Newspaper Photograph Collection",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AWalt_Disney_with_film_roll_and_Mickey_Mouse_on_his_right_arm%2C_year_1935.jpg",
     "archivo_commons": "File:Walt_Disney_with_film_roll_and_Mickey_Mouse_on_his_right_arm,_year_1935.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1664,13 +2069,13 @@
   "imagenes": [
    {
     "archivo": "albert-einstein-1.png",
-    "ancho": 816,
-    "alto": 1311,
+    "ancho": 1022,
+    "alto": 1650,
     "cara": {
-     "cx": 0.429,
-     "cy": 0.205,
-     "w": 0.271,
-     "h": 0.229
+     "cx": 0.434,
+     "cy": 0.198,
+     "w": 0.27,
+     "h": 0.222
     },
     "nota": "",
     "licencia": "Public domain",
@@ -1678,17 +2083,24 @@
     "autor": "ver fuente",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AEinstein_1921_by_F_Schmutzer_-_restoration.jpg",
     "archivo_commons": "File:Einstein_1921_by_F_Schmutzer_-_restoration.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": false,
+     "izq": false,
+     "der": false
+    },
+    "uso": "cuerpo entero"
    },
    {
     "archivo": "albert-einstein-2.png",
-    "ancho": 1065,
-    "alto": 1395,
+    "ancho": 1387,
+    "alto": 1745,
     "cara": {
-     "cx": 0.501,
-     "cy": 0.202,
-     "w": 0.224,
-     "h": 0.22
+     "cx": 0.494,
+     "cy": 0.199,
+     "w": 0.226,
+     "h": 0.228
     },
     "nota": "",
     "licencia": "Public domain",
@@ -1696,7 +2108,14 @@
     "autor": "Lucien Chavan / ETH Zürich",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AAlbert_Einstein_ETH-Bib_Portr_05937.jpg",
     "archivo_commons": "File:Albert_Einstein_ETH-Bib_Portr_05937.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": true
+    },
+    "uso": "primer plano"
    }
   ]
  },
@@ -1725,13 +2144,13 @@
   "imagenes": [
    {
     "archivo": "henry-ford-1.png",
-    "ancho": 1186,
-    "alto": 1537,
+    "ancho": 1218,
+    "alto": 1575,
     "cara": {
-     "cx": 0.46,
-     "cy": 0.281,
-     "w": 0.366,
-     "h": 0.397
+     "cx": 0.462,
+     "cy": 0.282,
+     "w": 0.371,
+     "h": 0.386
     },
     "nota": "",
     "licencia": "Public domain",
@@ -1739,17 +2158,24 @@
     "autor": "ver fuente",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AHenry_ford_1919.jpg",
     "archivo_commons": "File:Henry_ford_1919.jpg",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": false,
+     "der": true
+    },
+    "uso": "primer plano"
    },
    {
     "archivo": "henry-ford-2.png",
-    "ancho": 1189,
-    "alto": 1487,
+    "ancho": 1487,
+    "alto": 1853,
     "cara": {
-     "cx": 0.513,
-     "cy": 0.323,
-     "w": 0.372,
-     "h": 0.406
+     "cx": 0.511,
+     "cy": 0.318,
+     "w": 0.376,
+     "h": 0.428
     },
     "nota": "",
     "licencia": "Public domain",
@@ -1757,7 +2183,14 @@
     "autor": "Ford Motor Company. Photographic Department",
     "fuente": "https://commons.wikimedia.org/wiki/File%3AHenry_Ford_portrait_1915_original_%283x4_cropped%29.png",
     "archivo_commons": "File:Henry_Ford_portrait_1915_original_(3x4_cropped).png",
-    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo)."
+    "nota_derechos": "Licencia de la foto: ver «licencia». Derechos de imagen de la persona aparte (no implica respaldo).",
+    "toca_borde": {
+     "arriba": false,
+     "abajo": true,
+     "izq": true,
+     "der": false
+    },
+    "uso": "primer plano"
    }
   ]
  }
