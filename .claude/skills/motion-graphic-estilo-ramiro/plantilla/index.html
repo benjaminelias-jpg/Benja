@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>Motion graphic · estilo Ramiro</title>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+  <style>
+    @font-face { font-family: "Manuscrita"; src: url(fonts/manuscrita.otf) format("opentype"); }
+    html, body { margin: 0; background: #0b0b0b; }
+    #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: #e4dfd2; }
+
+    /* Escena (fondo + persona) — ondulación muy leve */
+    #escena { position: absolute; inset: 0; filter: url(#distorsion); }
+
+    /* Capa 1 · ilustración de fondo, grande y tenue a la derecha, fundida en el papel (multiply) */
+    #fondo {
+      position: absolute; top: 330px; left: 420px; width: 1000px; height: 1250px;
+      background: url(assets/fondo.jpg) center / cover no-repeat;
+      opacity: .32; mix-blend-mode: multiply;
+      -webkit-mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 60%, transparent 100%);
+              mask-image: radial-gradient(ellipse 50% 50% at 50% 50%, #000 60%, transparent 100%);
+    }
+
+    /* Capa 2 · persona recortada (B/N + ojo de pez); glitch azul leve a la izquierda, sombra suave a la derecha.
+       La sombra va en el CONTENEDOR: si va en #persona la corta su máscara. */
+    #persona-wrap { position: absolute; left: 14px; bottom: 190px; width: 720px; height: 1080px;
+      filter: drop-shadow(14px 4px 16px rgba(0, 0, 0, .32)); }
+    #persona {
+      position: relative; width: 100%; height: 100%;
+      background: url(assets/persona-fish.png) center bottom / contain no-repeat;
+      filter: url(#glitch) contrast(.85) brightness(1.06);
+      -webkit-mask-image: linear-gradient(to top, transparent 0%, #000 12%);
+              mask-image: linear-gradient(to top, transparent 0%, #000 12%);
+    }
+    /* Viñeta negra inferior SOLO sobre la persona (enmascarada con su silueta), hasta las manos */
+    #persona-sombra {
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,.97) 0%, rgba(0,0,0,.85) 16%, rgba(0,0,0,.45) 28%, rgba(0,0,0,0) 42%);
+      -webkit-mask: url(assets/persona-fish.png) center bottom / contain no-repeat;
+              mask: url(assets/persona-fish.png) center bottom / contain no-repeat;
+    }
+
+    /* Texto: 2 líneas grotesca negra (tinta corrida) + 2 manuscritas naranjas.
+       #l4 es absoluta y vive en #escena, ENTRE fondo y persona → pasa por detrás de la persona. */
+    #texto-agua { position: absolute; inset: 0; filter: url(#distorsion); }
+    #texto {
+      position: absolute; top: 255px; left: 120px; right: 60px;
+      display: flex; flex-direction: column; align-items: flex-start;
+    }
+    .grot {
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: #151515;
+      letter-spacing: -0.055em; line-height: 1.05; filter: url(#tinta);
+    }
+    #l1 { font-size: 104px; font-weight: 400; }
+    #l1 b { font-weight: 600; color: #000; }
+    #l2 { font-size: 80px; font-weight: 400; margin-top: 2px; }
+    .mano span { display: inline-block; }
+    #l4 { position: absolute; left: 120px; top: 566px; }
+    .mano {
+      font-family: "Manuscrita", cursive; font-weight: 400; color: #f0601f;
+      font-size: 128px; line-height: 1.12; letter-spacing: -0.01em; transform: rotate(-2deg); transform-origin: left center;
+      overflow: hidden; padding: 0 20px 6px 0; filter: url(#fino) url(#boli) url(#rgb-mano);
+    }
+    #l3 { margin-top: 26px; }
+    #flecha { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; overflow: visible; }
+
+    /* Viñetas oscuras arriba y abajo */
+    #vineta {
+      position: absolute; inset: 0; pointer-events: none;
+      background:
+        linear-gradient(to bottom, rgba(0,0,0,.42) 0%, rgba(0,0,0,0) 17%),
+        linear-gradient(to top, rgba(0,0,0,.82) 0%, rgba(0,0,0,.45) 9%, rgba(0,0,0,0) 22%);
+    }
+
+    /* Desenfoque en las 4 esquinas, por encima del texto */
+    .blur-esquina { position: absolute; width: 760px; height: 900px; backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px); }
+    #blur-si { top: -120px; left: -260px;
+      -webkit-mask-image: radial-gradient(circle at 25% 15%, #000 0%, #000 28%, transparent 66%);
+              mask-image: radial-gradient(circle at 25% 15%, #000 0%, #000 28%, transparent 66%); }
+    #blur-sd { top: -120px; right: -260px;
+      -webkit-mask-image: radial-gradient(circle at 75% 15%, #000 0%, #000 28%, transparent 66%);
+              mask-image: radial-gradient(circle at 75% 15%, #000 0%, #000 28%, transparent 66%); }
+    #blur-ii { bottom: -120px; left: -260px;
+      -webkit-mask-image: radial-gradient(circle at 25% 85%, #000 0%, #000 28%, transparent 66%);
+              mask-image: radial-gradient(circle at 25% 85%, #000 0%, #000 28%, transparent 66%); }
+    #blur-id { bottom: -120px; right: -260px;
+      -webkit-mask-image: radial-gradient(circle at 75% 85%, #000 0%, #000 28%, transparent 66%);
+              mask-image: radial-gradient(circle at 75% 85%, #000 0%, #000 28%, transparent 66%); }
+
+    /* Textura TV años 90: líneas de barrido + máscara de puntos + grano */
+    #scanlines {
+      position: absolute; inset: 0; pointer-events: none; mix-blend-mode: multiply;
+      background: repeating-linear-gradient(to bottom, rgba(0,0,0,.13) 0px, rgba(0,0,0,.13) 1px, rgba(0,0,0,0) 2px, rgba(0,0,0,0) 4px);
+    }
+    #semitono {
+      position: absolute; inset: 0; pointer-events: none; opacity: .2; mix-blend-mode: multiply;
+      background-image: radial-gradient(circle, #000 1.1px, transparent 1.6px);
+      background-size: 6px 6px;
+    }
+    #grano {
+      position: absolute; inset: 0; pointer-events: none;
+      background-size: 540px 960px; mix-blend-mode: overlay; opacity: .55;
+      background-image: url(assets/grano-0.png);
+    }
+  </style>
+</head>
+<body>
+  <div id="root" data-composition-id="motion-ramiro" data-start="0" data-duration="5" data-width="1080" data-height="1920">
+
+    <svg width="0" height="0" style="position:absolute">
+      <!-- Ondulación de imagen: muy sutil -->
+      <filter id="distorsion" x="-5%" y="-5%" width="110%" height="110%">
+        <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.004 0.006" numOctaves="1" seed="7" result="ruido" />
+        <feDisplacementMap id="desp" in="SourceGraphic" in2="ruido" scale="8" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <!-- Tinta corrida (pasos del tutorial: desenfoque gaussiano → rasterizar → calco = umbral)
+           + separación RGB + estela horizontal -->
+      <filter id="tinta" x="-10%" y="-40%" width="125%" height="180%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0.035" numOctaves="3" seed="11" result="tn" />
+        <feDisplacementMap in="SourceGraphic" in2="tn" scale="7" xChannelSelector="R" yChannelSelector="G" result="dt" />
+        <feGaussianBlur in="dt" stdDeviation="4" result="b" />
+        <feComponentTransfer in="b" result="ink"><feFuncA type="linear" slope="9" intercept="-3.7" /></feComponentTransfer>
+        <feFlood flood-color="#ff1e46" flood-opacity=".55" /><feComposite in2="ink" operator="in" /><feOffset dx="-5" result="r" />
+        <feFlood flood-color="#00b4ff" flood-opacity=".55" /><feComposite in2="ink" operator="in" /><feOffset dx="5" result="c" />
+        <feGaussianBlur in="ink" stdDeviation="5 0.6" /><feOffset dx="12" />
+        <feComponentTransfer result="g"><feFuncA type="linear" slope=".4" /></feComponentTransfer>
+        <feMerge><feMergeNode in="g" /><feMergeNode in="r" /><feMergeNode in="c" /><feMergeNode in="ink" /></feMerge>
+      </filter>
+      <filter id="rgb-mano" x="-5%" y="-10%" width="110%" height="120%" color-interpolation-filters="sRGB">
+        <feFlood flood-color="#ff1e46" flood-opacity=".4" /><feComposite in2="SourceAlpha" operator="in" /><feOffset dx="-3" result="r" />
+        <feFlood flood-color="#00b4ff" flood-opacity=".3" /><feComposite in2="SourceAlpha" operator="in" /><feOffset dx="3" result="c" />
+        <feMerge><feMergeNode in="r" /><feMergeNode in="c" /><feMergeNode in="SourceGraphic" /></feMerge>
+      </filter>
+      <filter id="fino"><feMorphology operator="erode" radius="1.3" /></filter>
+      <filter id="boli" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.09" numOctaves="2" seed="4" result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+      <!-- Solo el color azul del glitch, en el borde izquierdo de la persona -->
+      <filter id="glitch" x="-5%" y="-2%" width="110%" height="104%" color-interpolation-filters="sRGB">
+        <feOffset in="SourceGraphic" dx="0" result="d" />
+        <feFlood flood-color="#00b4ff" flood-opacity=".38" /><feComposite in2="d" operator="in" /><feOffset dx="-3" result="c" />
+        <feMerge><feMergeNode in="c" /><feMergeNode in="d" /></feMerge>
+      </filter>
+    </svg>
+
+    <div id="escena">
+      <div id="fondo"></div>
+      <div class="mano" id="l4"><span>{{LINEA_4}}</span></div>
+      <div id="persona-wrap"><div id="persona"><div id="persona-sombra"></div></div></div>
+    </div>
+
+    <div id="texto-agua">
+    <div id="texto">
+      <div class="grot" id="l1">{{LINEA_1}}</div>
+      <div class="grot" id="l2">{{LINEA_2}}</div>
+      <div class="mano" id="l3"><span>{{LINEA_3}}</span></div>
+    </div>
+    </div>
+
+    <svg id="flecha" viewBox="0 0 1080 1920">
+      <g filter="url(#boli)">
+      <path id="flecha-trazo" d="M 852 668 C 912 684, 942 762, 884 818 C 832 858, 760 866, 665 861"
+            fill="none" stroke="#0b0b0b" stroke-width="7" stroke-linecap="round" opacity="0" />
+      <path id="flecha-punta" d="M 697 832 Q 683 846 663 861 Q 688 870 708 888"
+            fill="none" stroke="#0b0b0b" stroke-width="7" stroke-linecap="round" stroke-linejoin="round" opacity="0" />
+      </g>
+    </svg>
+
+    <div id="vineta"></div>
+    <div class="blur-esquina" id="blur-si"></div>
+    <div class="blur-esquina" id="blur-ii"></div>
+    <div class="blur-esquina" id="blur-id"></div>
+
+    <div id="scanlines"></div>
+    <div id="semitono"></div>
+    <div id="grano"></div>
+
+    <script>
+      window.__timelines = window.__timelines || {};
+      const D = 5;
+      const tl = gsap.timeline({ paused: true });
+
+      // 1 · Fondo: deriva sutil derecha → izquierda (parallax, sentido contrario a la persona)
+      tl.fromTo("#fondo", { x: 60, scale: 1.0 }, { x: -60, scale: 1.04, duration: D, ease: "none" }, 0);
+
+      // 2 · Persona: ya en pantalla, se desplaza muy despacio hacia la derecha
+      tl.fromTo("#persona-wrap", { x: 0, scale: 1.0 }, { x: 50, scale: 1.02, duration: D, ease: "none" }, 0);
+
+      // 2b · Entrada a saltos (30 fps), SIN movimiento visible: A (medio cuerpo fuera) → ~80 % visible → B.
+      //      Dos frames por pose; luego sigue la deriva lenta. Siempre tl.set, nunca tween.
+      tl.set("#persona", { x: -330 }, 0);
+      tl.set("#persona", { x: -150 }, 2 / 30);
+      tl.set("#persona", { x: 0 }, 4 / 30);
+
+      // 3 · Ondulación muy sutil y lenta
+      const turb = document.getElementById("turb");
+      tl.fromTo(turb, { attr: { baseFrequency: "0.004 0.006" } },
+                { attr: { baseFrequency: "0.006 0.004" }, duration: D, ease: "sine.inOut" }, 0);
+      tl.fromTo("#desp", { attr: { scale: 6 } },
+                { attr: { scale: 11 }, duration: D / 2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 0);
+
+      // 4 · Texto: grotesca desde fuera de plano (izquierda); manuscrita sube de abajo arriba
+      tl.from("#l1", { x: -1200, duration: 0.9, ease: "expo.out" }, 0.2);
+      tl.from("#l2", { x: -1200, duration: 0.9, ease: "expo.out" }, 0.38);
+      tl.from("#l3 span", { yPercent: 105, duration: 0.7, ease: "power4.out" }, 1.35);
+      tl.from("#l4 span", { yPercent: 105, duration: 0.7, ease: "power4.out" }, 1.6);
+
+      // 5 · Flecha a mano: nace bajo la última palabra naranja y señala a la persona SIN tocarla
+      const trazo = document.getElementById("flecha-trazo");
+      const L = trazo.getTotalLength();
+      tl.set(trazo, { attr: { opacity: 1 } }, 2.85);
+      tl.fromTo(trazo, { strokeDasharray: L, strokeDashoffset: L },
+                { strokeDashoffset: 0, duration: 0.55, ease: "power2.inOut" }, 2.85);
+      const punta = document.getElementById("flecha-punta");
+      const P = punta.getTotalLength();
+      tl.set(punta, { attr: { opacity: 1 } }, 3.38);
+      tl.fromTo(punta, { strokeDasharray: P, strokeDashoffset: P },
+                { strokeDashoffset: 0, duration: 0.2, ease: "power1.out" }, 3.38);
+
+      // 6 · Grano animado: 12 cambios/seg ciclando 8 texturas (determinista)
+      const grano = document.getElementById("grano");
+      for (let i = 0; i < D * 12; i++) {
+        tl.set(grano, { backgroundImage: `url(assets/grano-${i % 8}.png)`,
+                        backgroundPosition: `${(i * 137) % 540}px ${(i * 251) % 960}px` }, i / 12);
+      }
+
+      window.__timelines["motion-ramiro"] = tl;
+    </script>
+  </div>
+</body>
+</html>
