@@ -26,11 +26,15 @@ VIDEO = {
     'VENTAS QUE PIERDES': '1660427218758817',
     'INFOGRAFIA': '3788426637986683',
     'TRES COSAS': '1800700554573711',
+    'FISCAL PERSONALIZADO': '1032760235890048',
 }
+GENERICOS = ['COMO TE PAGO', 'VENTAS QUE PIERDES', 'INFOGRAFIA', 'TRES COSAS']
 PORTADA = json.load(open(os.path.join(here, 'reels_portadas.json'), encoding='utf-8'))
 
-HUBS = {'MIAMI': list(VIDEO), 'LATAM': list(VIDEO), 'DUBAI': list(VIDEO),
+HUBS = {'MIAMI': GENERICOS, 'LATAM': GENERICOS + ['FISCAL PERSONALIZADO'], 'DUBAI': GENERICOS,
         'BALI': ['TRES COSAS', 'INFOGRAFIA']}
+# El fiscal (solo LATAM) va a su propia landing y su texto largo no usa el cuerpo del hub.
+LANDING = {'FISCAL PERSONALIZADO': 'fiscal/v1'}
 
 
 def piezas(hub):
@@ -72,6 +76,31 @@ def piezas(hub):
                    "Haz clic y descubre cómo."),
             t1="Tres cosas que ya no necesitas",
             t2="Hasta un 30 % más, cobrando mejor"),
+        'FISCAL PERSONALIZADO': dict(
+            largo=("Si vendes cursos desde Latinoamérica, seguro te dijeron que te montes una LLC en "
+                   "Estados Unidos para poder cobrar. Antes de hacerlo, lee esto.\n\n"
+                   "Montar la LLC es solo el principio.\nDespués viene la renovación cada año.\n"
+                   "El asesor.\nLas declaraciones, aunque ese año no factures.\n"
+                   "Y todo el papeleo que nadie te contó.\n\n"
+                   "Y todo eso, solo para poder cobrar a tus alumnos.\n\n"
+                   "Con Kunfupay ya no la necesitas.\n"
+                   "Cobras a clientes de cualquier país con un solo enlace.\n"
+                   "La factura de cada venta la hacemos nosotros.\n"
+                   "Los impuestos de cada venta ya no los gestionas tú.\n"
+                   "Y a ti te llega en euros o en dólares.\n\n"
+                   "Tu renta, eso sí, sigue siendo tuya.\n\n"
+                   "Menos papeleo. Menos cosas que gestionar. Y tu tiempo, para lo que de verdad "
+                   "te hace crecer: vender.\n\n"
+                   "Esto es para ti si:\n"
+                   "✅ Ya vendes cursos, mentorías, comunidades o sesiones online.\n"
+                   "✅ Te estás planteando montar una LLC (o ya la tienes) solo para poder cobrar.\n"
+                   "✅ Tienes clientes en más de un país (o los quieres tener).\n\n" + CIERRE),
+            corto=("Si vendes cursos desde Latinoamérica, no te montes una LLC solo para poder "
+                   "cobrar.\n\nCon Kunfupay cobras a clientes de cualquier país, la factura de cada "
+                   "venta la hacemos nosotros y te llega en euros o en dólares.\n\n"
+                   "Sin LLC. Sin renovaciones. Sin su papeleo.\n\nHaz clic y descubre cómo."),
+            t1="No te montes una LLC para cobrar",
+            t2="Menos papeleo, más tiempo para vender"),
     }
 
 
@@ -91,9 +120,9 @@ for hub, tipos in HUBS.items():
     for tipo in tipos:
         c = P[tipo]
         name = f'REEL / {tipo} / {hub}'
-        largo = c['gancho'] + "\n\n" + CUERPO[hub] + "\n\n" + FILTRO + "\n\n" + CIERRE
+        largo = c.get('largo') or (c['gancho'] + "\n\n" + CUERPO[hub] + "\n\n" + FILTRO + "\n\n" + CIERRE)
         slug = tipo.lower().replace(' ', '_') + '_' + hub.lower()
-        url = ("https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram"
+        url = (f"https://kunfupay.com/landings/{LANDING.get(tipo, 'pagos-globales-es/v1')}?utm_source=instagram"
                "&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay"
                f"&utm_term={TERM[hub]}&utm_content=reel_{slug}&utm_source_platform=meta"
                "&utm_creative_format=video&utm_marketing_tactic=prospecting")

@@ -390,6 +390,56 @@ Haz clic y descubre cómo.
 
 **URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_latam_similar_3_hernan&utm_content=reel_tres_cosas_latam&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
 
+### REEL / FISCAL PERSONALIZADO / LATAM
+
+**Título 1:** No te montes una LLC para cobrar  
+**Título 2:** Menos papeleo, más tiempo para vender
+
+**Texto largo**
+
+Si vendes cursos desde Latinoamérica, seguro te dijeron que te montes una LLC en Estados Unidos para poder cobrar. Antes de hacerlo, lee esto.
+
+Montar la LLC es solo el principio.
+Después viene la renovación cada año.
+El asesor.
+Las declaraciones, aunque ese año no factures.
+Y todo el papeleo que nadie te contó.
+
+Y todo eso, solo para poder cobrar a tus alumnos.
+
+Con Kunfupay ya no la necesitas.
+Cobras a clientes de cualquier país con un solo enlace.
+La factura de cada venta la hacemos nosotros.
+Los impuestos de cada venta ya no los gestionas tú.
+Y a ti te llega en euros o en dólares.
+
+Tu renta, eso sí, sigue siendo tuya.
+
+Menos papeleo. Menos cosas que gestionar. Y tu tiempo, para lo que de verdad te hace crecer: vender.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Te estás planteando montar una LLC (o ya la tienes) solo para poder cobrar.
+✅ Tienes clientes en más de un país (o los quieres tener).
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+
+**Texto corto**
+
+Si vendes cursos desde Latinoamérica, no te montes una LLC solo para poder cobrar.
+
+Con Kunfupay cobras a clientes de cualquier país, la factura de cada venta la hacemos nosotros y te llega en euros o en dólares.
+
+Sin LLC. Sin renovaciones. Sin su papeleo.
+
+Haz clic y descubre cómo.
+
+**URL:** https://kunfupay.com/landings/fiscal/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_latam_similar_3_hernan&utm_content=reel_fiscal_personalizado_latam&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
+
 ## DUBAI
 
 ### REEL / COMO TE PAGO / DUBAI
