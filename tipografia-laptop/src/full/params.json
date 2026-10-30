@@ -1,0 +1,13 @@
+{
+ "thr": 0.5,
+ "blur": 1.05,
+ "bold": -0.5,
+ "warp": 1.0,
+ "warp_len": 55.0,
+ "grid": 0.15,
+ "warp_fine": 0.8,
+ "noise": 0.15,
+ "fine_sigma": 2.0,
+ "rot_mean": 1.5,
+ "rot_sd": 1.2
+}

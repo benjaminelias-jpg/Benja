@@ -1,0 +1,32 @@
+{
+ "1": {
+  "angle": 4.9,
+  "baseline": 958.0,
+  "xheight_top": 502.0,
+  "size": [
+   4380,
+   1300
+  ],
+  "scale": 6
+ },
+ "2": {
+  "angle": 4.9,
+  "baseline": 895.0,
+  "xheight_top": 469.0,
+  "size": [
+   3648,
+   1214
+  ],
+  "scale": 6
+ },
+ "3": {
+  "angle": 4.9,
+  "baseline": 882.0,
+  "xheight_top": 462.0,
+  "size": [
+   2076,
+   1197
+  ],
+  "scale": 6
+ }
+}
