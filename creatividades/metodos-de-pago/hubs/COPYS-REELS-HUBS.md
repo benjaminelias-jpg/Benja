@@ -196,6 +196,55 @@ Haz clic y descubre cómo.
 
 **URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_miami_zona_latina&utm_content=reel_tres_cosas_miami&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
 
+### REEL / PAGOS PERSONALIZADO / MIAMI
+
+**Título 1:** Tu cliente dijo que sí. Stripe, que no  
+**Título 2:** Hasta un 30 % más desde Miami
+
+**Texto largo**
+
+Tu cliente de LATAM te dijo que sí en la llamada. Abrió tu Stripe. Y no pudo pagarte. Si vendes cursos desde Miami, eso te puede estar costando hasta un 27 % de tu facturación.
+
+Te lo digo de tú a tú, porque si vendes desde Miami esto te pasa más de lo que crees.
+
+Tu cliente de Colombia, de México o de Perú te escribe. Quiere entrar.
+Le mandas tu enlace de Stripe y llega el momento de pagar.
+Y no puede: no tiene tarjeta internacional, su banco la rechaza o allí se paga de otra forma.
+Te dice «mañana lo intento». Y mañana ya no está.
+
+Cobrar a LATAM solo con Stripe te puede costar hasta un 27 % de tu facturación. No porque no quieran comprarte. Porque no pueden pagarte.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Le mandas tu enlace, como siempre.
+Tu cliente lo abre y le salen los métodos que usa en su país, en su moneda.
+Paga en el momento.
+Y a ti te llegan dólares.
+
+Mismo producto. Mismo precio. Más clientes de LATAM que por fin pueden pagarte.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+
+**Texto corto**
+
+Si vendes cursos desde Miami y cobras con Stripe, pierdes hasta un 27 % de tu facturación.
+
+Tu cliente de LATAM dijo que sí. Tu Stripe dijo que no.
+
+Con tu enlace de Kunfupay, cada cliente paga como paga en su país. Y a ti te llegan dólares.
+
+Haz clic y descubre cómo.
+
+**URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_miami_zona_latina&utm_content=reel_pagos_personalizado_miami&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
+
 ## LATAM
 
 ### REEL / COMO TE PAGO / LATAM
@@ -630,6 +679,54 @@ Haz clic y descubre cómo.
 
 **URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_dubai_similar_3_hernan&utm_content=reel_tres_cosas_dubai&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
 
+### REEL / PAGOS PERSONALIZADO / DUBAI
+
+**Título 1:** Dijeron que sí. Y no pudieron pagarte  
+**Título 2:** Ni Rolex ni deportivo: cobra mejor
+
+**Texto largo**
+
+No necesitas un Rolex ni un deportivo para vender más desde Dubái. Necesitas que tus clientes puedan pagarte. Por la mañana te compra uno de España. Por la noche, uno de LATAM. Los dos dijeron que sí. Y ninguno pudo pagarte. Si cobras con Stripe, eso es hasta un 27 % de tus ventas.
+
+Te lo cuento como es, porque desde Dubái esto pasa todos los días.
+
+Por la mañana te escriben de España. Por la noche, de LATAM.
+Le mandas tu enlace de pago y a tu cliente le sale tarjeta… y poco más.
+Si no le sirve, no te paga. Te dice «luego lo miro». Y luego no vuelve.
+
+Con una pasarela de Emiratos puedes estar perdiendo hasta un 27 % de tus ventas. No es tu oferta. Es que tu cliente no encuentra cómo pagarte.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace, como siempre.
+Tu cliente de España paga como paga allí.
+Tu cliente de LATAM, como paga allí, en su moneda.
+Y tú recibes euros o dólares.
+
+Sigues vendiendo lo mismo, desde donde estás. Solo que ahora te pueden pagar todos.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+
+**Texto corto**
+
+No necesitas un Rolex para vender más desde Dubái. Si cobras con Stripe, pierdes hasta un 27 % de tus ventas.
+
+España te compra por la mañana. LATAM, por la noche. ¿Te pueden pagar?
+
+Con tu enlace de Kunfupay, sí. Y tú recibes euros o dólares.
+
+Haz clic y descubre cómo.
+
+**URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_dubai_similar_3_hernan&utm_content=reel_pagos_personalizado_dubai&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
+
 ## BALI
 
 ### REEL / TRES COSAS / BALI
@@ -727,3 +824,52 @@ Si vendes cursos desde Bali, así de simple:
 Haz clic y descubre cómo.
 
 **URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_bali_similar_3_hernan&utm_content=reel_infografia_bali&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
+
+### REEL / PAGOS PERSONALIZADO / BALI
+
+**Título 1:** Dijo que sí. PayPal dijo que no  
+**Título 2:** Que te paguen mientras duermes
+
+**Texto largo**
+
+Tu cliente de España dijo que sí. PayPal dijo que no. Si vendes cursos desde Bali y cobras con Stripe o PayPal, puedes estar perdiendo hasta un 27 % de tu facturación.
+
+Te lo digo claro, porque desde Bali esto pasa mientras duermes.
+
+Tus clientes de España y LATAM te escriben cuando aquí es de madrugada.
+Quieren reservar tu sesión o entrar a tu curso.
+Pero tu enlace solo acepta tarjeta o PayPal, y no todos lo tienen.
+Te despiertas con chats sin contestar. Y a esa hora, la mitad ya se enfrió.
+
+Cobrando solo con Stripe o PayPal puedes estar perdiendo hasta un 27 % de tus ventas.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace.
+Cada cliente lo abre y paga con lo que usa en su país, en su moneda.
+Solo, sin escribirte, a la hora que sea.
+Y tú recibes euros o dólares.
+
+Tú duermes. Tus clientes pagan. Y por la mañana te despiertas con ventas cobradas.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+
+**Texto corto**
+
+Si vendes cursos desde Bali y cobras con Stripe o PayPal, pierdes hasta un 27 % de tu facturación.
+
+Tus clientes de España y LATAM quieren pagarte. Y no pueden.
+
+Con tu enlace de Kunfupay pagan solos, a cualquier hora. Y tú recibes euros o dólares.
+
+Haz clic y descubre cómo.
+
+**URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_bali_similar_3_hernan&utm_content=reel_pagos_personalizado_bali&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting

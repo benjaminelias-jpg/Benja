@@ -36,8 +36,9 @@ HUBS = {'MIAMI': GENERICOS + ['PAGOS PERSONALIZADO'],
         'DUBAI': GENERICOS + ['PAGOS PERSONALIZADO'],
         'BALI': ['TRES COSAS', 'INFOGRAFIA', 'PAGOS PERSONALIZADO']}
 # El personalizado de métodos de pago lleva un vídeo distinto en cada hub.
-VIDEO_HUB = {('PAGOS PERSONALIZADO', 'MIAMI'): None, ('PAGOS PERSONALIZADO', 'DUBAI'): None,
-             ('PAGOS PERSONALIZADO', 'BALI'): None}
+VIDEO_HUB = {('PAGOS PERSONALIZADO', 'MIAMI'): '1996175377722443',
+             ('PAGOS PERSONALIZADO', 'DUBAI'): '1636248447951884',
+             ('PAGOS PERSONALIZADO', 'BALI'): '2034056047293866'}
 
 PERSONALIZADO = {
     'MIAMI': dict(
@@ -51,15 +52,16 @@ PERSONALIZADO = {
         t1="Tu cliente dijo que sí. Stripe, que no",
         t2="Hasta un 30 % más desde Miami"),
     'DUBAI': dict(
-        gancho=("Por la mañana te compra un cliente de España. Por la noche, uno de LATAM. Los "
-                "dos dijeron que sí. Y ninguno pudo pagarte. Si vendes cursos desde Dubái y "
-                "cobras con Stripe, eso es hasta un 27 % de tu facturación."),
-        corto=("Si vendes cursos desde Dubái y cobras con Stripe, pierdes hasta un 27 % de tu "
-               "facturación.\n\nEspaña te compra por la mañana. LATAM, por la noche. ¿Te pueden "
+        gancho=("No necesitas un Rolex ni un deportivo para vender más desde Dubái. Necesitas que "
+                "tus clientes puedan pagarte. Por la mañana te compra uno de España. Por la noche, "
+                "uno de LATAM. Los dos dijeron que sí. Y ninguno pudo pagarte. Si cobras con "
+                "Stripe, eso es hasta un 27 % de tus ventas."),
+        corto=("No necesitas un Rolex para vender más desde Dubái. Si cobras con Stripe, "
+               "pierdes hasta un 27 % de tus ventas.\n\nEspaña te compra por la mañana. LATAM, por la noche. ¿Te pueden "
                "pagar?\n\nCon tu enlace de Kunfupay, sí. Y tú recibes euros o dólares.\n\n"
                "Haz clic y descubre cómo."),
         t1="Dijeron que sí. Y no pudieron pagarte",
-        t2="Un 27 % más de conversión desde Dubái"),
+        t2="Ni Rolex ni deportivo: cobra mejor"),
     'BALI': dict(
         gancho=("Tu cliente de España dijo que sí. PayPal dijo que no. Si vendes cursos desde "
                 "Bali y cobras con Stripe o PayPal, puedes estar perdiendo hasta un 27 % de tu "
