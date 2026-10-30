@@ -1,4 +1,6 @@
 import json
+# Los 2 textos y los 2 títulos van como opciones en todas las ubicaciones;
+# por ubicación solo cambia la imagen (4:5 en feed, 9:16 en stories y reels).
 C = json.load(open('copys_hubs.json', encoding='utf-8'))
 H = {  # (feed, stories)
  'MIAMI':{'TWEET':('5455cba43ea26808186855bb723dc2c1','ea0ca2fadbd31609319d03bd36c8b4db'),'COMPARATIVA':('8385ed03911a32c552336f269d1ba2d0','5a894e7b24218b81a812d2ca94a5605d'),'PAGINA DE PAGO':('053aa17690c79a0597895cef8b8959c5','23f974e2ed1409c297c4cc70e3820349'),'DESEO':('5d4c94faac50c8b5b85b256b4f12b0c2','dd8c6eb082771f5687565f85e250eedf'),'NOTICIA':('64c5f83a71592bb803ab2409f050d2c7','6357a0820211a6779262b7db8d7d66d7')},
@@ -21,13 +23,13 @@ for hub, piezas in H.items():
     spec = {"object_story_spec":{"page_id":"596973030161591","instagram_user_id":"17841473965301923"},
       "degrees_of_freedom_spec":{"creative_features_spec":{k:{"enroll_status":"OPT_OUT"} for k in FEATS}},
       "asset_feed_spec":{"images":imgs,
-        "bodies":[{"text":c['largo'],"adlabels":[{"name":p+"_l"}]},{"text":c['corto'],"adlabels":[{"name":p+"_c"}]}],
-        "titles":[{"text":c['t1'],"adlabels":[{"name":p+"_t1"}]},{"text":c['t2'],"adlabels":[{"name":p+"_t2"}]}],
+        "bodies":[{"text":c['largo'],"adlabels":[{"name":p+"_b"}]},{"text":c['corto'],"adlabels":[{"name":p+"_b"}]}],
+        "titles":[{"text":c['t1'],"adlabels":[{"name":p+"_t"}]},{"text":c['t2'],"adlabels":[{"name":p+"_t"}]}],
         "link_urls":[{"website_url":url,"display_url":"kunfupay.com"}],
         "call_to_action_types":["SIGN_UP"],"ad_formats":["SINGLE_IMAGE"],
         "asset_customization_rules":[
-          {"customization_spec":{"publisher_platforms":["instagram"],"instagram_positions":["stream"]},"image_label":{"name":p+"_f"},"body_label":{"name":p+"_l"},"title_label":{"name":p+"_t1"},"priority":1},
-          {"customization_spec":{"publisher_platforms":["instagram"],"instagram_positions":["story","reels"]},"image_label":{"name":p+("_s" if s else "_f")},"body_label":{"name":p+"_c"},"title_label":{"name":p+"_t2"},"priority":2}],
+          {"customization_spec":{"publisher_platforms":["instagram"],"instagram_positions":["stream"]},"image_label":{"name":p+"_f"},"body_label":{"name":p+"_b"},"title_label":{"name":p+"_t"},"priority":1},
+          {"customization_spec":{"publisher_platforms":["instagram"],"instagram_positions":["story","reels"]},"image_label":{"name":p+("_s" if s else "_f")},"body_label":{"name":p+"_b"},"title_label":{"name":p+"_t"},"priority":2}],
         "optimization_type":"PLACEMENT"},
       "contextual_multi_ads":{"enroll_status":"OPT_OUT"}}
     print('###', name)

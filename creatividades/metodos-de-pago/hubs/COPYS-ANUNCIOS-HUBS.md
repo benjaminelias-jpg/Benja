@@ -108,7 +108,7 @@ Haz clic y descubre cómo.
 ### ESTATICA / PAGINA DE PAGO / MIAMI
 
 **Título 1 (feed):** Así te paga cada cliente de LATAM  
-**Título 2 (stories):** Esto ve tu cliente al pagar
+**Título 2 (stories):** Un enlace y tú recibes dólares
 
 **Texto largo (feed)**
 
@@ -365,7 +365,7 @@ Haz clic y descubre cómo.
 ### ESTATICA / PAGINA DE PAGO / LATAM
 
 **Título 1 (feed):** Así te paga cada alumno  
-**Título 2 (stories):** Esto ve tu alumno al pagar
+**Título 2 (stories):** Cobra a todos con un solo enlace
 
 **Texto largo (feed)**
 
@@ -620,7 +620,7 @@ Haz clic y descubre cómo.
 ### ESTATICA / PAGINA DE PAGO / DUBAI
 
 **Título 1 (feed):** Esto ve tu cliente al pagarte  
-**Título 2 (stories):** Así te paga cada cliente
+**Título 2 (stories):** España y LATAM, en un solo enlace
 
 **Texto largo (feed)**
 

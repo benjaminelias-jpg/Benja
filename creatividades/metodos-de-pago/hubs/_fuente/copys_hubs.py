@@ -93,7 +93,7 @@ P['MIAMI'] = {
     'PAGINA DE PAGO': dict(
         gancho="Mira la imagen: eso es lo que ve tu cliente de LATAM cuando abre tu enlace de Kunfupay. Cada uno, con lo que usa en su país.",
         corto="Si vendes cursos desde Miami, ya no cobres a LATAM solo con Stripe.\n\nLe mandas tu enlace de Kunfupay.\nLo abre y paga con lo que usa en su país.\nY tú recibes dólares.\n\nHaz clic y descubre cómo.",
-        t1="Así te paga cada cliente de LATAM", t2="Esto ve tu cliente al pagar"),
+        t1="Así te paga cada cliente de LATAM", t2="Un enlace y tú recibes dólares"),
     'DESEO': dict(
         gancho="¿Y si pudieras facturar hasta un 30 % más desde Miami sin vender ni un curso más? Solo cambiando cómo cobras.",
         corto="Si vendes cursos desde Miami, podrías facturar hasta un 30 % más solo cambiando cómo cobras.\n\nTus clientes de LATAM ya quieren comprarte. Solo falta que puedan pagarte.\n\nCon tu enlace de Kunfupay, pueden. Y te llegan dólares.\n\nHaz clic y descubre cómo.",
@@ -116,7 +116,7 @@ P['LATAM'] = {
     'PAGINA DE PAGO': dict(
         gancho="Mira la imagen: eso es lo que ve tu alumno cuando abre tu enlace de Kunfupay. El de España con sus métodos, el de LATAM con los suyos.",
         corto="Si vendes cursos desde LATAM, ya no cobres a España y LATAM solo con tarjeta.\n\nMandas un solo enlace de Kunfupay.\nCada alumno paga con lo que usa en su país.\nY tú recibes euros o dólares.\n\nHaz clic y descubre cómo.",
-        t1="Así te paga cada alumno", t2="Esto ve tu alumno al pagar"),
+        t1="Así te paga cada alumno", t2="Cobra a todos con un solo enlace"),
     'DESEO': dict(
         gancho="¿Y si pudieras facturar hasta un 30 % más sin vender más, sin otro lanzamiento? Solo cambiando cómo cobras.",
         corto="Si vendes cursos desde Latinoamérica, podrías facturar hasta un 30 % más.\n\nSin vender más. Sin otro lanzamiento. Solo cambiando cómo cobras.\n\nCon tu enlace de Kunfupay te paga cualquier alumno, esté donde esté. Y te llega en euros o en dólares.\n\nHaz clic y descubre cómo.",
@@ -139,7 +139,7 @@ P['DUBAI'] = {
     'PAGINA DE PAGO': dict(
         gancho="Mira la imagen: eso es lo que ve tu cliente cuando abre tu enlace de Kunfupay. El de España con sus métodos, el de LATAM con los suyos.",
         corto="Si vendes cursos desde Dubái, ya no cobres a España y LATAM con Stripe.\n\nMandas un solo enlace de Kunfupay.\nCada cliente paga con lo que usa en su país.\nY tú recibes euros o dólares.\n\nHaz clic y descubre cómo.",
-        t1="Esto ve tu cliente al pagarte", t2="Así te paga cada cliente"),
+        t1="Esto ve tu cliente al pagarte", t2="España y LATAM, en un solo enlace"),
     'DESEO': dict(
         gancho="España te compra por la mañana. LATAM, por la noche. ¿Y si todos pudieran pagarte? Podrías facturar hasta un 30 % más.",
         corto="Si vendes cursos desde Dubái, podrías facturar hasta un 30 % más solo cambiando cómo cobras.\n\nEspaña te compra por la mañana. LATAM, por la noche.\nCon tu enlace de Kunfupay, todos pueden pagarte. Y recibes euros o dólares.\n\nHaz clic y descubre cómo.",
