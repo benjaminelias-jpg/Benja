@@ -1,0 +1,265 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.14.2/dist/gsap.min.js"></script>
+    <link rel="stylesheet" href="kunfupay.css" />
+    <style>
+      @font-face { font-family: "Plus Jakarta Sans"; src: url("fonts/PlusJakartaSans-ExtraBold.ttf"); font-weight: 800; font-display: block; }
+      @font-face { font-family: "Plus Jakarta Sans"; src: url("fonts/PlusJakartaSans-SemiBold.ttf"); font-weight: 600; font-display: block; }
+      @font-face { font-family: "Plus Jakarta Sans"; src: url("fonts/PlusJakartaSans-Medium.ttf"); font-weight: 500; font-display: block; }
+      @font-face { font-family: "Roboto"; src: url("fonts/Roboto-Medium.ttf"); font-weight: 500; font-display: block; }
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: var(--neutral-950); }
+      #root { position: relative; width: 1080px; height: 1920px; overflow: hidden; background: var(--neutral-950);
+              font-family: var(--morfeo-font); color: var(--neutral-900); }
+      /* la persona recortada (#camM) recibe la MISMA cámara que el vídeo: las tarjetas quedan detrás de ella */
+      #cam, #camM { position: absolute; inset: 0; transform-origin: 50% 36%; }
+      #cam video, #camM video { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; display: block; }
+      #cards, #front { position: absolute; inset: 0; }
+
+      /* ---------- liquid glass claro y compacto (Morfeo) ---------- */
+      .glass { position: absolute; left: 50%; top: __TOP__px; width: max-content; max-width: 1000px; border-radius: var(--radius-2xl);
+        padding: 18px 22px; opacity: 0; color: var(--neutral-900); isolation: isolate; overflow: hidden;
+        background: linear-gradient(135deg, color-mix(in srgb, var(--neutral-0) 86%, transparent) 0%, color-mix(in srgb, var(--neutral-0) 70%, transparent) 55%,
+                    color-mix(in srgb, var(--primary-100) 80%, transparent) 100%);
+        backdrop-filter: blur(16px) saturate(180%) brightness(1.06); -webkit-backdrop-filter: blur(16px) saturate(180%) brightness(1.06);
+        border: 1.5px solid color-mix(in srgb, var(--neutral-0) 75%, transparent);
+        box-shadow: inset 0 1.5px 0 color-mix(in srgb, var(--neutral-0) 95%, transparent), inset 0 -20px 34px -20px color-mix(in srgb, var(--primary-300) 50%, transparent), var(--shadow-lg); }
+      .glass:before { content: ""; position: absolute; inset: 0; z-index: -1; pointer-events: none;
+        background: radial-gradient(120% 70% at 18% 0%, color-mix(in srgb, var(--neutral-0) 55%, transparent) 0%, transparent 55%); }
+      .eyebrow { font-weight: 600; font-size: 24px; letter-spacing: .12em; color: var(--primary-700); text-align: center; margin: 2px 0 12px; }
+
+      .chips { display: flex; justify-content: center; align-items: center; }
+      .glass.wrap .chips { flex-wrap: nowrap; }
+      .glass.wrap .chip { padding: 10px 18px; } .glass.wrap .chip b { font-size: 34px; }
+      .glass.col .chips { flex-direction: column; align-items: stretch; }
+      .glass.col .chip { margin: 6px 0; }
+      .glass.wrap .chip { margin: 0 5px; }
+      .chip { position: relative; display: flex; align-items: center; gap: 14px; padding: 12px 24px; margin: 0 7px; overflow: hidden; min-width: 0; flex: none; white-space: nowrap; border-radius: var(--radius-pill); opacity: 0;
+              background: var(--neutral-0); border: 1.5px solid color-mix(in srgb, var(--primary-200) 80%, transparent); box-shadow: var(--shadow-primary); }
+      .chip b { font-weight: 500; font-size: 38px; line-height: 1.1; letter-spacing: -0.005em; color: var(--neutral-900); white-space: nowrap; }
+      .chip.bare { padding: 0; background: none; border: 0; box-shadow: none; }
+      .chip.mp { padding: 8px 22px; height: 76px; }
+      .chip.mp img { height: 56px; width: auto; display: block; }
+      .chip.pl u { text-decoration: none; width: 46px; height: 46px; border-radius: var(--radius-pill); display: grid; place-items: center; flex: none;
+              font-weight: 600; font-size: 36px; line-height: 1; color: var(--neutral-0); background: linear-gradient(135deg, var(--primary-500), var(--primary-700)); }
+      .chip .ic, .rw .ic, .link .ic { width: 46px; height: 46px; color: var(--neutral-900); flex: none; }
+      .ic svg { width: 100%; height: 100%; display: block; }
+      .chip.pl u svg { width: 26px; height: 26px; display: block; }
+      .chip.iso svg { width: 64px; height: 64px; flex: none; display: block; filter: drop-shadow(0 4px 10px color-mix(in srgb, var(--primary-500) 18%, transparent)); }
+      .chip.arrow svg { width: 52px; height: 32px; display: block; }
+      .fl { display: block; width: 60px; height: 45px; border-radius: var(--radius-sm); overflow: hidden; flex: none;
+            border: 1.5px solid color-mix(in srgb, var(--neutral-0) 85%, transparent); box-shadow: var(--shadow-xs); }
+      .fl.lg { width: 104px; height: 78px; border-radius: var(--radius-md); border-width: 2px; box-shadow: var(--shadow-primary); }
+      .fl.sm { width: 48px; height: 36px; }
+      .fl img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+      .rows { display: flex; flex-direction: column; }
+      .rw { position: relative; overflow: hidden; margin: 5px 0; display: flex; align-items: center; gap: 16px; padding: 10px 14px 10px 18px; border-radius: var(--radius-lg); opacity: 0;
+            background: color-mix(in srgb, var(--neutral-0) 82%, transparent); border: 1.5px solid color-mix(in srgb, var(--primary-100) 90%, transparent); }
+      .rw .lead { display: flex; gap: 6px; flex: none; }
+      .rw b { position: relative; font-weight: 500; font-size: 36px; line-height: 1.1; color: var(--neutral-900); flex: 1; white-space: nowrap; padding-right: 8px; }
+      .mk { width: 44px; height: 44px; border-radius: var(--radius-pill); flex: none; display: grid; place-items: center; transform: scale(0); }
+      .mk svg { width: 26px; height: 26px; }
+      .mk.ok { background: linear-gradient(135deg, var(--primary-500), var(--primary-700)); box-shadow: var(--shadow-primary); }
+      .mk.no { background: var(--danger-500); }
+      .st { position: absolute; left: -4px; right: -4px; top: 52%; height: 5px; border-radius: var(--radius-pill); transform: scaleX(0); transform-origin: 0 50%;
+            background: linear-gradient(90deg, var(--primary-500), var(--primary-700)); }
+      .link { display: flex; align-items: center; gap: 16px; padding: 4px 6px; }
+      .link b { font-weight: 500; font-size: 38px; color: var(--neutral-900); white-space: nowrap; }
+
+      .isofin { position: absolute; left: 0; right: 0; top: __TOP__px; text-align: center; opacity: 0; }
+      .isofin img { filter: drop-shadow(0 6px 14px color-mix(in srgb, var(--primary-500) 16%, transparent)); }
+
+      /* elementos sueltos (sin recuadro): banderas por el negro del plano y logos en chip blanco */
+      .free { position: absolute; opacity: 0; }
+      .free .free-fl { width: 100%; height: 100%; border-radius: var(--radius-lg); border-width: 3px; box-shadow: var(--shadow-primary), var(--shadow-lg); }
+      .free .chip { opacity: 1; margin: 0; }
+      .emo { display: block; height: auto; filter: drop-shadow(0 10px 22px color-mix(in srgb, var(--primary-950) 45%, transparent)); }
+      /* bandera que ondea: tiras verticales con la misma imagen, desplazadas en onda */
+      .wave { display: flex; width: 100%; height: 100%; filter: drop-shadow(0 10px 22px color-mix(in srgb, var(--primary-950) 45%, transparent)); }
+      .wave i { flex: 1; height: 100%; background-repeat: no-repeat; }
+      .wave i:first-child { border-radius: var(--radius-sm) 0 0 var(--radius-sm); } .wave i:last-child { border-radius: 0 var(--radius-sm) var(--radius-sm) 0; }
+      .chip.lk { padding: 10px 14px 10px 22px; } .chip.lk .lklogo { height: 44px; width: auto; display: block; }
+      /* cifra grande detrás de la persona (cuenta y aterriza) */
+      .giant { position: absolute; left: 0; right: 0; text-align: center; opacity: 0; }
+      .giant .pre { font-weight: 600; font-size: 44px; letter-spacing: .14em; color: var(--primary-200); opacity: 0;
+                    text-shadow: 0 4px 18px color-mix(in srgb, var(--primary-950) 60%, transparent); }
+      .giant .nv { display: inline-block; font-weight: 800; font-size: 300px; line-height: .95; letter-spacing: -0.06em; font-variant-numeric: tabular-nums;
+                   opacity: 0; transform-origin: 50% 70%; }
+      /* el degradado va en .sq (no en .nv): así respeta su estrechado. Margen interior para que background-clip no corte
+         los bajos de las cifras (Brayan 30/10: «cortas el 3») */
+      .giant .nv .sq { background: linear-gradient(180deg, var(--primary-100) 0%, var(--primary-300) 55%, var(--primary-600) 100%);
+                   -webkit-background-clip: text; background-clip: text; color: transparent;
+                   padding: .06em .1em .16em; margin: -.06em -.1em -.16em; }
+      .giant .nv small { font-size: .5em; margin-left: .06em; }
+      .giant .nv .sq { display: inline-block; }
+      /* cifra GIGANTE (referencia de Brayan 30/10): ocupa el ancho del plano y baja hasta el pecho, detrás de la persona.
+         El ancho se estrecha en .sq (scaleX) para que quepa sin tocar la escala que anima la cuenta (.nv) */
+      .giant.xl { display: flex; flex-direction: column; align-items: center; }   /* centra aunque la cifra sea más ancha que el plano */
+      .giant.xl .nv { font-size: 800px; line-height: .8; letter-spacing: -0.07em; white-space: nowrap; }
+      .giant.xl .nv .sq { transform: scaleX(.92); transform-origin: 50% 50%; }
+      .giant.xl .nv small { font-size: .42em; margin-left: .02em; }
+      .giant.xl .pre { font-size: 54px; margin-bottom: 44px; }
+      /* € y $ a ambos lados (motion graphics) */
+      .token { position: absolute; top: 760px; width: 190px; height: 190px; border-radius: var(--radius-pill); opacity: 0; display: grid; place-items: center;
+               background: linear-gradient(135deg, var(--primary-500), var(--primary-700)); box-shadow: var(--shadow-primary), var(--shadow-lg);
+               border: 3px solid color-mix(in srgb, var(--neutral-0) 55%, transparent); transform-style: preserve-3d; }
+      .token.left { left: 40px; } .token.right { right: 40px; }
+      .token span { font-weight: 800; font-size: 118px; line-height: 1; color: var(--neutral-0); margin-top: -6px; }
+      #front { perspective: 900px; }
+      /* grano de cine (solo en el tramo dramático): texturas que cambian a 12 fps + viñeta */
+      #grano { position: absolute; inset: 0; pointer-events: none; opacity: 0; mix-blend-mode: overlay; background-size: 540px 960px;
+               box-shadow: inset 0 0 220px 60px color-mix(in srgb, var(--neutral-950) 70%, transparent); }
+      /* clic: onda que se expande en el punto de toque */
+      .tapring { position: absolute; left: 540px; width: 90px; height: 90px; margin: -45px 0 0 -45px; border-radius: var(--radius-pill); opacity: 0;
+                 border: 5px solid var(--neutral-0); background: color-mix(in srgb, var(--primary-300) 35%, transparent); }
+      /* ilustración a mano: lápiz morado imperfecto (doble pasada + desplazamiento) */
+      .sketch { position: absolute; width: 300px; height: 300px; overflow: visible; opacity: 0; }
+      .sketch .sk { fill: none; stroke: var(--primary-500); stroke-width: 6.5; stroke-linecap: round; stroke-linejoin: round; }
+      .sketch .sk.ghost { stroke: var(--primary-300); stroke-width: 3; opacity: .7; transform: translate(2.5px, -2px); }
+      video.full { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; }
+
+      /* luz de película del pack de Brayan, en screen, solo en el corte que abre la solución */
+      video.luz { position: absolute; inset: 0; width: 1080px; height: 1920px; object-fit: cover; mix-blend-mode: screen; pointer-events: none; opacity: 0; }
+
+      /* ---------- subtítulos: una línea, Roboto Medium, sin borde, sombra suave difusa ---------- */
+      .cap { position: absolute; left: 30px; right: 30px; top: 1418px; text-align: center; white-space: nowrap; opacity: 0;
+             color: var(--neutral-0); font-family: "Roboto"; font-weight: 500; font-size: 54px; line-height: 1.15;
+             text-shadow: 0 1px 2px color-mix(in srgb, var(--neutral-950) 50%, transparent), 0 3px 12px color-mix(in srgb, var(--neutral-950) 50%, transparent),
+                          0 8px 30px color-mix(in srgb, var(--primary-950) 45%, transparent); }
+    </style>
+  </head>
+  <body>
+    <svg width="0" height="0" style="position:absolute">
+      <!-- glitch RGB suave: separa el rojo y el azul y desplaza franjas horizontales -->
+      <filter id="glitch" x="-2%" y="0%" width="104%" height="100%" color-interpolation-filters="sRGB">
+        <feTurbulence type="fractalNoise" baseFrequency="0 0.06" numOctaves="1" seed="2" result="bandas" />
+        <feDisplacementMap id="gl-disp" in="SourceGraphic" in2="bandas" scale="0" xChannelSelector="R" yChannelSelector="R" result="d" />
+        <feColorMatrix in="d" type="matrix" values="1 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 1 0" result="r" />
+        <feOffset id="gl-r" in="r" dx="0" result="ro" />
+        <feColorMatrix in="d" type="matrix" values="0 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 1 0" result="gb" />
+        <feOffset id="gl-b" in="gb" dx="0" result="gbo" />
+        <feBlend in="ro" in2="gbo" mode="screen" />
+      </filter>
+      <filter id="lapiz" x="-10%" y="-10%" width="120%" height="120%">
+        <feTurbulence id="lapiz-t" type="fractalNoise" baseFrequency="0.045" numOctaves="2" seed="3" result="n" />
+        <feDisplacementMap in="SourceGraphic" in2="n" scale="5" xChannelSelector="R" yChannelSelector="G" />
+      </filter>
+    </svg>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="__DUR__" data-width="1080" data-height="1920">
+      <div id="cam"><video id="src-video" class="clip" data-start="0" data-duration="__DUR__" data-track-index="0" src="assets/video.mp4" muted playsinline></video></div>
+      <div id="cards">
+__CARDS__
+      </div>
+      <div id="camM">__MATTE__</div>
+      <div id="front">
+__FRONT__
+      </div>
+__LUZ__
+      <div id="grano"></div>
+      <div id="sub-layer"></div>
+    </div>
+    <script>window.SUBS = __SUBS__;</script>
+    <script>
+(function () {
+  const $ = (s) => document.querySelector(s);
+  const tl = gsap.timeline({ paused: true }), TL = tl;
+  gsap.set(".glass", { xPercent: -50 });
+  const cardIn = (el, t) => TL.fromTo(el, { opacity: 0, y: -40, scale: .92 }, { opacity: 1, y: 0, scale: 1, duration: .42, ease: "back.out(1.5)", immediateRender: false }, t);
+  const cardOut = (el, t) => TL.to(el, { opacity: 0, y: -24, scale: .96, duration: .24, ease: "power2.in" }, t - .24);
+  const frame = (t, a, b, d) => { TL.set("#cam, #camM", { scale: a }, t); TL.to("#cam, #camM", { scale: b, duration: d, ease: "none" }, t); };
+  /* chip que entra con «blup»: crece de 0, se pasa un poco y rebota */
+  const blup = (el, t) => { TL.fromTo(el, { opacity: 0, scale: 0 }, { opacity: 1, scale: 1.12, duration: .16, ease: "power2.out", immediateRender: false }, t);
+      TL.to(el, { scale: .96, duration: .1, ease: "sine.inOut" }, t + .16); TL.to(el, { scale: 1, duration: .2, ease: "back.out(3)" }, t + .26); };
+  /* la tarjeta crece a medida que entra cada elemento (sin huecos de cristal vacío): ancho para chips, alto para filas */
+  const grow = (el, t, props) => { const e = $(el), cs = getComputedStyle(e), to = {}, from = {};   /* sin medir texto: las fuentes pueden no haber cargado aún */
+      props.forEach((p) => { to[p] = p === "maxWidth" ? 760 : p === "maxHeight" ? 140 : parseFloat(cs[p]); from[p] = 0; });
+      TL.set(e, { ...from, opacity: 0 }, 0);
+      TL.to(e, { ...to, duration: .3, ease: "power1.in" }, t);
+      TL.fromTo(e, { opacity: 0, scale: .4 }, { opacity: 1, scale: 1.08, duration: .16, ease: "power2.out", immediateRender: false }, t + .04);
+      TL.to(e, { scale: 1, duration: .22, ease: "back.out(3)" }, t + .2); };
+  const growW = (el, t) => grow(el, t, ["maxWidth", "paddingLeft", "paddingRight", "marginLeft", "marginRight"]);
+  const growH = (el, t) => grow(el, t, ["maxHeight", "paddingTop", "paddingBottom", "marginTop", "marginBottom"]);
+  const freeIn = (el, t) => { TL.set(el, { xPercent: -50, yPercent: -50 }, 0);
+      TL.fromTo(el, { opacity: 0, scale: 0, rotation: -8 }, { opacity: 1, scale: 1.14, rotation: 3, duration: .18, ease: "power2.out", immediateRender: false }, t);
+      TL.to(el, { scale: .96, rotation: -1, duration: .1, ease: "sine.inOut" }, t + .18); TL.to(el, { scale: 1, rotation: 0, duration: .22, ease: "back.out(3)" }, t + .28);
+      TL.to(el, { y: "-=10", duration: 1.6, ease: "sine.inOut", yoyo: true, repeat: 1 }, t + .5); };
+  const freeOut = (el, t) => TL.to(el, { opacity: 0, scale: .7, duration: .22, ease: "power2.in" }, t - .22);
+  /* cifra: «hasta un» entra, la cifra cuenta creciendo de escala (counting-dynamic-scale) y aterriza con un pequeño golpe */
+  const giant = (el, t0, t1, a, d, n) => { const v = $(el + " .v"), o = { n: 0 };
+      TL.set(el, { opacity: 1 }, t0);
+      TL.fromTo(el + " .pre", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: .3, ease: "power2.out", immediateRender: false }, t0);
+      TL.fromTo(el + " .nv", { opacity: 0, scale: .6 }, { opacity: 1, scale: 1, duration: d, ease: "power2.out", immediateRender: false }, a);
+      TL.fromTo(o, { n: 0 }, { n: n, duration: d, ease: "power1.out", immediateRender: true, onUpdate: () => { v.textContent = Math.round(o.n); } }, a);
+      TL.to(el + " .nv", { scale: 1.08, duration: .1, ease: "power3.out" }, a + d); TL.to(el + " .nv", { scale: 1, duration: .35, ease: "back.out(2)" }, a + d + .1);
+      TL.to(el, { opacity: 0, y: -20, duration: .25, ease: "power2.in" }, t1 - .25); };
+  /* € / $: scale_punch + giro 3D desde fuera, hold_breath flotando y glow; sale con scale_out */
+  const token = (el, t, t1, dir) => {
+      TL.fromTo(el, { opacity: 0, scale: .4, rotationY: 160 * dir, x: -90 * dir }, { opacity: 1, scale: 1, rotationY: 0, x: 0, duration: .55, ease: "back.out(2.2)", immediateRender: false }, t);
+      TL.to(el, { y: -14, duration: .7, ease: "sine.inOut", yoyo: true, repeat: 1 }, t + .55);
+      TL.fromTo(el, { boxShadow: "0 0 0 0 color-mix(in srgb, var(--primary-400) 0%, transparent)" }, { boxShadow: "0 0 60px 8px color-mix(in srgb, var(--primary-400) 55%, transparent)", duration: .35, yoyo: true, repeat: 1, immediateRender: false }, t + .3);
+      TL.to(el, { opacity: 0, scale: 1.08, duration: .2, ease: "power2.in" }, t1 - .2); };
+  /* dibujo a mano: cada trazo se dibuja en orden (dashoffset); la línea «hierve» cambiando la semilla del ruido a 10 fps */
+  const sketch = (el, t, t1) => { const ps = [...document.querySelectorAll(el + " .sk")];
+      TL.set(el, { opacity: 1 }, t);
+      ps.forEach((p, i) => { const L = p.getTotalLength(), k = Math.floor(i / 2), d = k === 0 ? .32 : .16;
+        const st = t + (k === 0 ? 0 : .26 + (k - 1) * .09);
+        const op = p.classList.contains("ghost") ? .7 : 1;   /* invisible hasta su turno: si no, el remate redondo deja un punto suelto */
+        TL.set(p, { opacity: 0 }, 0); TL.set(p, { opacity: op }, st);
+        TL.fromTo(p, { strokeDasharray: L + 2, strokeDashoffset: L + 2 }, { strokeDashoffset: 0, duration: d, ease: "power1.inOut", immediateRender: true }, st); });
+      for (let i = 0; i < Math.round((t1 - t) * 10); i++) TL.set("#lapiz-t", { attr: { seed: 3 + (i % 4) } }, t + i / 10);
+      TL.fromTo(el, { rotation: -4, scale: .94 }, { rotation: 0, scale: 1, duration: .5, ease: "back.out(2)", immediateRender: false }, t);
+      TL.to(el, { opacity: 0, duration: .18, ease: "power2.in" }, t1 - .18); };
+  /* glitch suave: 2-3 sacudidas de fotogramas con separación RGB y franjas, luego vuelve limpio */
+  const glitch = (t0, t1) => { const K = [[6, 10], [-4, 4], [9, 16], [0, 0], [-7, 8], [3, 12], [0, 0], [5, 6], [-3, 3]];
+      TL.set("#cam, #camM", { filter: "url(#glitch)" }, t0);
+      K.forEach(([dx, sc], i) => { const t = t0 + i * (t1 - t0) / K.length;
+        TL.set("#gl-r", { attr: { dx: dx } }, t); TL.set("#gl-b", { attr: { dx: -dx } }, t); TL.set("#gl-disp", { attr: { scale: sc } }, t); });
+      TL.set("#cam, #camM", { filter: "none" }, t1); };
+  /* bandera ondeando: la onda viaja del mástil (izquierda) al extremo, con más amplitud al final y sombreado suave */
+  const wave = (el, t0, t1) => { const sl = [...document.querySelectorAll(el + " .wave i")], o = { t: t0 };
+      const put = () => sl.forEach((s, i) => { const k = i / (sl.length - 1), ph = 2 * Math.PI * (1.4 * o.t - k * 1.1);
+        s.style.transform = `translateY(${(3 + 12 * k) * Math.sin(ph)}px)`; s.style.filter = `brightness(${1 + .16 * Math.cos(ph)})`; });
+      TL.fromTo(o, { t: t0 }, { t: t1, duration: t1 - t0, ease: "none", immediateRender: true, onUpdate: put }, t0); };
+  const tapRing = (el, t) => { TL.fromTo(el, { opacity: .95, scale: .3 }, { opacity: 0, scale: 1.9, duration: .45, ease: "power2.out", immediateRender: false }, t); };
+  /* la caja se abre desde el punto del clic: crece en horizontal y luego en vertical */
+  const openIn = (el, t) => { TL.fromTo(el, { opacity: 0, scaleX: .12, scaleY: .5 }, { opacity: 1, scaleX: 1, scaleY: 1, duration: .34, ease: "back.out(1.5)", immediateRender: false }, t); };
+  /* cámara en mano suave: deriva de senos con frecuencias no múltiplos (determinista), sin tocar la escala */
+  const handheld = (t0, t1, a) => { const o = { t: t0 }, put = () => { const t = o.t;
+        const x = a * (Math.sin(1.3 * t) + .55 * Math.sin(2.7 * t + 1.1) + .25 * Math.sin(5.3 * t + .4));
+        const y = a * (Math.sin(1.1 * t + 2) + .5 * Math.sin(3.1 * t + .7) + .2 * Math.sin(6.1 * t));
+        gsap.set("#cam, #camM", { x: x, y: y, rotation: .12 * Math.sin(.9 * t + .3) }); };
+      TL.fromTo(o, { t: t0 }, { t: t1, duration: t1 - t0, ease: "none", immediateRender: false, onUpdate: put }, t0);
+      TL.set("#cam, #camM", { x: 0, y: 0, rotation: 0 }, t1); };
+  const filmGrain = (t0, t1) => { TL.to("#grano", { opacity: .6, duration: .15 }, t0); TL.to("#grano", { opacity: 0, duration: .12 }, t1 - .12);
+      for (let i = 0; i < Math.round((t1 - t0) * 12); i++)
+        TL.set("#grano", { backgroundImage: `url(assets/grano-${i % 8}.png)`, backgroundPosition: `${(i * 137) % 540}px ${(i * 251) % 960}px` }, t0 + i / 12); };
+  const rowIn = (el, t) => TL.fromTo(el, { opacity: 0, x: -36 }, { opacity: 1, x: 0, duration: .3, ease: "back.out(1.6)", immediateRender: false }, t);
+  const markIn = (el, t) => TL.fromTo(el, { scale: 0 }, { scale: 1, duration: .32, ease: "back.out(3)", immediateRender: false }, t);
+  const strike = (sel, t) => { const s = document.createElement("i"); s.className = "st"; $(sel).appendChild(s);
+      TL.fromTo(s, { scaleX: 0 }, { scaleX: 1, duration: .26, ease: "power2.out", immediateRender: true }, t); };
+  const dim = (el, t) => TL.to(el, { opacity: .55, duration: .25 }, t);
+  /* luz: el blanco solo dura unos fotogramas alrededor del corte y se apaga en ~0,5 s */
+  const luz = (el, t0, cut) => { const pre = Math.max(t0, cut - .4);
+    TL.set(el, { opacity: 0 }, t0);
+    TL.fromTo(el, { opacity: 0 }, { opacity: .3, duration: Math.max(.05, cut - .22 - pre), ease: "power1.in", immediateRender: false }, pre);
+    TL.to(el, { opacity: 1, duration: .16, ease: "power2.in" }, cut - .2);
+    TL.to(el, { opacity: .4, duration: .18, ease: "power2.out" }, cut + .06);
+    TL.to(el, { opacity: 0, duration: .4, ease: "power1.out" }, cut + .26); };
+  /* ---------- subtítulos: la línea entra entera, sin palabras grandes ---------- */
+  const layer = $("#sub-layer");
+  window.SUBS.forEach((g) => {
+    const box = document.createElement("div"); box.className = "cap"; box.textContent = g.text; layer.appendChild(box);
+    tl.fromTo(box, { opacity: 0, y: 10 }, { opacity: 1, y: 0, duration: .12, ease: "power2.out", immediateRender: true }, g.start);
+    tl.to(box, { opacity: 0, duration: .08, ease: "power2.in" }, g.end - .08);
+  });
+__BODY__
+  tl.set({}, {}, __DUR__);
+  window.__timelines = window.__timelines || {}; window.__timelines["main"] = tl;
+})();
+    </script>
+  </body>
+</html>
