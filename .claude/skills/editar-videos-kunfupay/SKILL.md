@@ -75,6 +75,29 @@ Cada regla viene de una corrección de Brayan: respétalas por defecto y no las 
     Cierre = solo el isotipo «ku» (late con un SFX positivo cuando la voz dice «Kunfupay»).
 12. **«No toques X segundos» es sagrado.** Y si mandan varios vídeos con el mismo cuerpo, se monta una vez.
 
+## Reglas añadidas por Benjamin (prioridad sobre las anteriores si chocan)
+- **Recursos: SIEMPRE primero de la carpeta de Drive de recursos**
+  <https://drive.google.com/drive/folders/1T56ip3m1t4sTH9obJq-0V7JDLwpJ22aW> (MUSICA, SONIDOS, EMOJIS, CLIPS, FONDOS,
+  FILM BURNS, GREEN SCREEN, TEXTURAS). Listar con el MCP de Google Drive (`parentId = '<id>'`); descargar archivos
+  grandes con `curl "https://drive.usercontent.google.com/download?id=<ID>&export=download&confirm=t"`.
+- **Música:** de la carpeta MUSICA, preferentemente la **música viral**. No generar música con IA (gasta muchos créditos:
+  una pista de 70 s en Magnific costó 1.400 créditos).
+- **SFX:** de la carpeta SONIDOS. Todo lo que aparece animado lleva su sonido (p. ej. «99$» que carga → sonido de
+  contador + golpe al aterrizar; entradas → pop/whoosh).
+- **Cuidado con los volúmenes:** voz siempre clara por encima, música de fondo con ducking, SFX audibles sin molestar;
+  máster a −14 LUFS.
+- **Logos SIEMPRE que se nombre una marca** (Hotmart, Skool, Stripe… y sobre todo **Kunfupay**). Logos reales: primero
+  la carpeta de Drive, si no, la web oficial de la marca o Wikimedia. Nunca dibujar sustitutos.
+- **Banderas:** emojis de Apple de la carpeta EMOJIS.
+- **Cada vez que la persona hace una pregunta:** ese tramo en **blanco y negro con efecto TV** (scanlines, ruido,
+  ligera aberración) y **subtítulos amarillos** durante la pregunta.
+- **Más efectos y transiciones:** usar las transiciones de la carpeta de Drive (FILM BURNS, etc.) con su whoosh.
+- **Composiciones:** a veces **pantalla dividida**, y a veces una **«presentación arriba»** (panel/diapositiva en la
+  mitad superior con la persona debajo).
+- **Hook hecho aparte + vídeo completo:** si el cuerpo trae repetido el contenido del hook, recortar el inicio del
+  cuerpo justo donde termina el hook (casar última frase y fotograma) para que se una sin que se note la transición
+  ni se repitan palabras.
+
 ## TTS (cuando haya que regrabar o arreglar una palabra)
 - «La voz de Sergio» = ElevenLabs **Sergio Morales** (`voiceId` 558 del catálogo de Magnific), `audio_tts` con `eleven_v3`.
   Texto dicho normal: sin puntos suspensivos ni suspiros; emoción con una sola etiqueta suave.
