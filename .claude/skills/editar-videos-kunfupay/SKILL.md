@@ -97,6 +97,11 @@ Cada regla viene de una corrección de Brayan: respétalas por defecto y no las 
 - **Hook hecho aparte + vídeo completo:** si el cuerpo trae repetido el contenido del hook, recortar el inicio del
   cuerpo justo donde termina el hook (casar última frase y fotograma) para que se una sin que se note la transición
   ni se repitan palabras.
+- **No sobrecargar de SFX:** como mucho 1–2 a la vez y dejar aire entre ellos; en una lista de elementos, un sonido
+  para el grupo, no uno por elemento.
+- **B/N con efecto TV solo para preguntas reales al espectador o momentos dramatizados (p. ej. llamadas)**, no para
+  elecciones retóricas como «¿euros o dólares?». En las llamadas se añade el audio del otro lado con filtro de radio
+  (banda 350–3200 Hz + algo de saturación), colocado mientras la persona escucha, y la música se silencia.
 
 ## TTS (cuando haya que regrabar o arreglar una palabra)
 - «La voz de Sergio» = ElevenLabs **Sergio Morales** (`voiceId` 558 del catálogo de Magnific), `audio_tts` con `eleven_v3`.
