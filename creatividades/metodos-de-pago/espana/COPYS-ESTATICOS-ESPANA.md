@@ -7,7 +7,7 @@ Conjunto: METODOS DE PAGO / ESP. Cada pieza lleva 2 textos (muy largo y corto) y
 **Título 1:** Stripe te hace perder hasta un 27 %  
 **Título 2:** Tu alumno de LATAM sí quiere pagarte
 
-**Texto largo** (1449 caracteres)
+**Texto largo** (1448 caracteres)
 
 ```text
 Si vendes cursos desde España y cobras con Stripe, estás perdiendo hasta un 27 % de tu facturación.
@@ -19,7 +19,7 @@ Le mandas tu enlace de pago… y ahí se queda.
 No es que no quiera tu curso. Es que su tarjeta no pasa, no tiene tarjeta internacional o en su país se paga de otra forma.
 Te dice «mañana lo intento». Y mañana ya no está.
 
-Cuando cobras a LATAM solo con tarjeta, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
+Cuando cobras a LATAM solo con Stripe, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
 
 Con Kunfupay cambia una sola cosa: cómo te pagan.
 Creas tu enlace de pago y lo mandas como siempre.
@@ -58,13 +58,13 @@ Haz clic y descubre cómo.
 
 ## ES-E2 · Comparativa
 
-**Título 1:** Vendes lo mismo, cobras a más alumnos  
-**Título 2:** Hoy con tarjeta vs. con Kunfupay
+**Título 1:** Deja de perder ventas con Stripe  
+**Título 2:** Hoy con Stripe vs. con Kunfupay
 
-**Texto largo** (1430 caracteres)
+**Texto largo** (1427 caracteres)
 
 ```text
-Si vendes cursos desde España, esto es lo que pierdes cobrando solo con tarjeta.
+Si vendes cursos desde España, deja de perder ventas cobrando solo con Stripe.
 
 Te cuento algo que seguro te ha pasado.
 
@@ -73,7 +73,7 @@ Le mandas tu enlace de pago… y ahí se queda.
 No es que no quiera tu curso. Es que su tarjeta no pasa, no tiene tarjeta internacional o en su país se paga de otra forma.
 Te dice «mañana lo intento». Y mañana ya no está.
 
-Cuando cobras a LATAM solo con tarjeta, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
+Cuando cobras a LATAM solo con Stripe, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
 
 Con Kunfupay cambia una sola cosa: cómo te pagan.
 Creas tu enlace de pago y lo mandas como siempre.
@@ -96,10 +96,10 @@ Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
 
-**Texto corto** (250 caracteres)
+**Texto corto** (249 caracteres)
 
 ```text
-Si vendes cursos desde España y solo cobras con tarjeta, pierdes hasta un 27 % de tus ventas.
+Si vendes cursos desde España y solo cobras con Stripe, pierdes hasta un 27 % de tus ventas.
 
 No es que no quieran comprarte.
 Es que no pueden pagarte.
@@ -115,10 +115,10 @@ Haz clic y descubre cómo.
 **Título 1:** Así te paga cada alumno  
 **Título 2:** Esto ve tu alumno de LATAM al pagarte
 
-**Texto largo** (1443 caracteres)
+**Texto largo** (1435 caracteres)
 
 ```text
-Si vendes cursos desde España, estás perdiendo ventas. Ya no cobres a LATAM solo con tarjeta.
+Si vendes cursos desde España, deja de perder ventas cobrando a LATAM solo con Stripe.
 
 Te cuento algo que seguro te ha pasado.
 
@@ -127,7 +127,7 @@ Le mandas tu enlace de pago… y ahí se queda.
 No es que no quiera tu curso. Es que su tarjeta no pasa, no tiene tarjeta internacional o en su país se paga de otra forma.
 Te dice «mañana lo intento». Y mañana ya no está.
 
-Cuando cobras a LATAM solo con tarjeta, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
+Cuando cobras a LATAM solo con Stripe, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
 
 Con Kunfupay cambia una sola cosa: cómo te pagan.
 Creas tu enlace de pago y lo mandas como siempre.
@@ -150,10 +150,10 @@ Entra y mira si tu negocio encaja.
 Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 ```
 
-**Texto corto** (230 caracteres)
+**Texto corto** (223 caracteres)
 
 ```text
-Si vendes cursos desde España, estás perdiendo ventas. Ya no cobres a LATAM solo con tarjeta.
+Si vendes cursos desde España, deja de perder ventas cobrando a LATAM solo con Stripe.
 
 Mandas un solo enlace de Kunfupay.
 Cada alumno lo abre y paga con lo que usa en su país.
@@ -167,7 +167,7 @@ Haz clic y descubre cómo.
 **Título 1:** Hasta un 30 % más, sin vender más  
 **Título 2:** Cambia cómo cobras, no lo que vendes
 
-**Texto largo** (1460 caracteres)
+**Texto largo** (1459 caracteres)
 
 ```text
 Si vendes cursos desde España, podrías facturar hasta un 30 % más. Sin vender más. Solo cambiando cómo cobras.
@@ -179,7 +179,7 @@ Le mandas tu enlace de pago… y ahí se queda.
 No es que no quiera tu curso. Es que su tarjeta no pasa, no tiene tarjeta internacional o en su país se paga de otra forma.
 Te dice «mañana lo intento». Y mañana ya no está.
 
-Cuando cobras a LATAM solo con tarjeta, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
+Cuando cobras a LATAM solo con Stripe, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
 
 Con Kunfupay cambia una sola cosa: cómo te pagan.
 Creas tu enlace de pago y lo mandas como siempre.
@@ -222,7 +222,7 @@ Haz clic y descubre cómo.
 **Título 1:** Un 27 % más de conversión  
 **Título 2:** No venden más: cobran mejor
 
-**Texto largo** (1431 caracteres)
+**Texto largo** (1430 caracteres)
 
 ```text
 Creadores en España ya aumentan su conversión un 27 % solo cambiando cómo cobran.
@@ -234,7 +234,7 @@ Le mandas tu enlace de pago… y ahí se queda.
 No es que no quiera tu curso. Es que su tarjeta no pasa, no tiene tarjeta internacional o en su país se paga de otra forma.
 Te dice «mañana lo intento». Y mañana ya no está.
 
-Cuando cobras a LATAM solo con tarjeta, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
+Cuando cobras a LATAM solo con Stripe, hasta un 27 % de las ventas se cae justo en el pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente desaparecen.
 
 Con Kunfupay cambia una sola cosa: cómo te pagan.
 Creas tu enlace de pago y lo mandas como siempre.

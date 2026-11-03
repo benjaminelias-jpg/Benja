@@ -24,7 +24,7 @@ CUERPO = (
     "No es que no quiera tu curso. Es que su tarjeta no pasa, no tiene tarjeta internacional "
     "o en su país se paga de otra forma.\n"
     "Te dice «mañana lo intento». Y mañana ya no está.\n\n"
-    "Cuando cobras a LATAM solo con tarjeta, hasta un 27 % de las ventas se cae justo en el "
+    "Cuando cobras a LATAM solo con Stripe, hasta un 27 % de las ventas se cae justo en el "
     "pago. Y casi nunca te enteras, porque no te dicen «no pude pagar»: simplemente "
     "desaparecen.\n\n"
     "Con Kunfupay cambia una sola cosa: cómo te pagan.\n"
@@ -48,21 +48,20 @@ PIEZAS = [
                 "Haz clic y descubre cómo."),
          titulos=["Stripe te hace perder hasta un 27 %", "Tu alumno de LATAM sí quiere pagarte"]),
     dict(pieza='ES-E2', nombre='Comparativa',
-         gancho=("Si vendes cursos desde España, esto es lo que pierdes cobrando solo con "
-                 "tarjeta."),
-         corto=("Si vendes cursos desde España y solo cobras con tarjeta, pierdes hasta un "
+         gancho=("Si vendes cursos desde España, deja de perder ventas cobrando solo con Stripe."),
+         corto=("Si vendes cursos desde España y solo cobras con Stripe, pierdes hasta un "
                 "27 % de tus ventas.\n\n"
                 "No es que no quieran comprarte.\n"
                 "Es que no pueden pagarte.\n\n"
                 "PERO con tu enlace de Kunfupay pagan todos.\n"
                 "Un enlace. Euros para ti.\n\n"
                 "Haz clic y descubre cómo."),
-         titulos=["Vendes lo mismo, cobras a más alumnos", "Hoy con tarjeta vs. con Kunfupay"]),
+         titulos=["Deja de perder ventas con Stripe", "Hoy con Stripe vs. con Kunfupay"]),
     dict(pieza='ES-E3', nombre='Así te paga cada alumno (páginas reales)',
-         gancho=("Si vendes cursos desde España, estás perdiendo ventas. Ya no cobres a LATAM "
-                 "solo con tarjeta."),
-         corto=("Si vendes cursos desde España, estás perdiendo ventas. Ya no cobres a LATAM solo "
-                "con tarjeta.\n\n"
+         gancho=("Si vendes cursos desde España, deja de perder ventas cobrando a LATAM solo con "
+                 "Stripe."),
+         corto=("Si vendes cursos desde España, deja de perder ventas cobrando a LATAM solo con "
+                "Stripe.\n\n"
                 "Mandas un solo enlace de Kunfupay.\n"
                 "Cada alumno lo abre y paga con lo que usa en su país.\n"
                 "Y tú recibes euros.\n\n"

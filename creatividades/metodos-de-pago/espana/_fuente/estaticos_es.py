@@ -64,7 +64,7 @@ def e2(h):
              ("Enlaces que mandas", "x", "Uno para cada caso", "Uno"),
              ("Lo que recibes", "g", "Euros", "Euros")]
     css = """.kick{font-size:68px;line-height:1.08}
-h1{font-size:80px;line-height:1.02;font-weight:800;margin:8px 0 40px}
+h1{font-size:72px;line-height:1.04;font-weight:800;margin:8px 0 44px}
 .tb{display:grid;grid-template-columns:240px 1fr 1fr;gap:14px}
 .th{border-radius:22px;color:#fff;font-weight:700;font-size:34px;display:flex;align-items:center;justify-content:center;text-align:center;height:120px;letter-spacing:-0.01em}
 .lab{font-weight:700;font-size:33px;line-height:1.1;display:flex;align-items:center;letter-spacing:-0.02em}
@@ -82,8 +82,8 @@ h1{font-size:80px;line-height:1.02;font-weight:800;margin:8px 0 40px}
         f'<div class="lab">{l}</div><div class="c {t}"><span class="i">{ico[t]}</span>{hoy}</div>'
         f'<div class="c k"><span class="i">✓</span>{ku}</div>' for l, t, hoy, ku in filas)
     body = f"""<div class="safe"><div class="kick">Si vendes cursos<br>desde España,</div>
-<h1>esto pierdes cobrando<br><span class="m">solo con tarjeta</span>.</h1>
-<div class="tb"><div></div><div class="th" style="background:#b3261e">Hoy, solo con tarjeta</div>
+<h1><span class="m">deja de perder ventas</span><br>cobrando solo con Stripe.</h1>
+<div class="tb"><div></div><div class="th" style="background:#b3261e">Hoy, con Stripe</div>
 <div class="th" style="background:{NAVY}">Con Kunfupay</div>{celdas}</div>
 <div class="cierre">Vendes lo mismo. Cobras a más alumnos.</div></div>"""
     return pagina(h, body, css)
@@ -101,9 +101,9 @@ h1{font-size:62px;line-height:1.05;font-weight:800;margin:4px 0 0}
 .fila{position:relative;height:%dpx;margin-top:%dpx}
 .nota{position:absolute;left:0;top:30px;font-weight:700;color:#7047ff;font-size:36px;line-height:1.03}
 .card{position:absolute;right:0;top:0;border-radius:24px;box-shadow:0 14px 40px rgba(38,15,99,.13)}
-.fin{font-size:46px;font-weight:800;margin-top:%dpx}""" % ((380, 54, 40) if h == 1350 else (420, 80, 90))
+.fin{font-size:64px;font-weight:800;margin-top:%dpx}""" % ((380, 54, 70) if h == 1350 else (420, 80, 140))
     body = f"""<div class="safe"><div class="kick">Si vendes cursos desde España,</div>
-<h1><span class="m">estás perdiendo ventas</span>. Ya no cobres a LATAM solo con tarjeta.</h1>
+<h1><span class="m">Deja de perder ventas</span><br>cobrando a LATAM<br>solo con Stripe.</h1>
 <div class="fila">{flecha(320, 230, 318, 135)}<div class="nota" style="width:270px">Tu alumno de Colombia paga con su moneda local</div>
 <img class="card" src="{A}colombia.png" style="width:600px"></div>
 <div class="fila" style="height:230px">{flecha(510, 240, 508, 140)}<div class="nota" style="width:480px;top:0">Tu alumno de México tiene sus métodos de pago</div>
