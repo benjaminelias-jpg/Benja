@@ -102,8 +102,10 @@ Cada regla viene de una corrección de Brayan: respétalas por defecto y no las 
 - **B/N con efecto TV solo para preguntas reales al espectador o momentos dramatizados (p. ej. llamadas)**, no para
   elecciones retóricas como «¿euros o dólares?». En las llamadas se añade el audio del otro lado con filtro de radio
   (banda 350–3200 Hz + algo de saturación), colocado mientras la persona escucha, y la música se silencia.
-- **Transiciones y pantalla dividida/paneles: swoosh limpio y suave** (p. ej. «01 Simple Whoosh A.wav»), nunca sonidos
-  metálicos (cadenas, espada, «Ring Slice»).
+- **Transiciones y pantalla dividida/paneles: UN solo swoosh limpio, suave y claramente audible** (aireado, de banda
+  ancha, sin tono; ≈ 8–10 dB bajo la voz y fuera del ducking). Nunca sonidos metálicos (cadenas, espada, «Ring Slice»),
+  ni de motor/retumbe grave (los «Dynamic SFX» y «01 Simple Whoosh A» son casi todo sub-grave < 200 Hz), ni risers.
+  Comprueba el espectro antes de usar un whoosh.
 
 ## TTS (cuando haya que regrabar o arreglar una palabra)
 - «La voz de Sergio» = ElevenLabs **Sergio Morales** (`voiceId` 558 del catálogo de Magnific), `audio_tts` con `eleven_v3`.
