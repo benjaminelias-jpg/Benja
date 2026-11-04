@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Customer Journey KunfuPay</title>
+<style>
+:root{
+  --bg:#f7f7f5;--card:#ffffff;--ink:#1c1c1e;--muted:#6b6b70;--line:#d9d9de;
+  --accent:#5b3df5;--crit:#e5484d;--crit-bg:#fdecec;--warn:#b7791f;--warn-bg:#fdf5e6;
+  --ok:#1f9d6b;--ok-bg:#e7f6ef;--web:#0b7bd6;--web-bg:#e8f3fc;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141416;--card:#1e1e22;--ink:#ececf0;--muted:#9a9aa3;--line:#33333a;
+  --accent:#8f7bff;--crit:#ff6b70;--crit-bg:#3a1d1f;--warn:#f0b75a;--warn-bg:#3a2f1a;
+  --ok:#4fd19c;--ok-bg:#16322a;--web:#5ab0f5;--web-bg:#16283a;}}
+:root[data-theme="dark"]{
+  --bg:#141416;--card:#1e1e22;--ink:#ececf0;--muted:#9a9aa3;--line:#33333a;
+  --accent:#8f7bff;--crit:#ff6b70;--crit-bg:#3a1d1f;--warn:#f0b75a;--warn-bg:#3a2f1a;
+  --ok:#4fd19c;--ok-bg:#16322a;--web:#5ab0f5;--web-bg:#16283a;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif}
+.wrap{max-width:980px;margin:0 auto;padding:32px 16px 64px}
+h1{font-size:28px;margin:0 0 4px}
+h2{font-size:20px;margin:48px 0 12px}
+.sub{color:var(--muted);margin:0 0 20px}
+.legend{display:flex;flex-wrap:wrap;gap:8px;margin:12px 0 28px}
+.pill{font-size:12px;padding:3px 10px;border-radius:99px;border:1px solid var(--line);background:var(--card)}
+.pill.c{color:var(--crit);border-color:var(--crit)}
+.pill.w{color:var(--warn);border-color:var(--warn)}
+.pill.web{color:var(--web);border-color:var(--web)}
+.flow{position:relative}
+.stage{position:relative;background:var(--card);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:12px;padding:16px 18px;margin:0 0 34px}
+.stage.crit{border-left-color:var(--crit)}
+.stage.web{border-left-color:var(--web)}
+.stage:not(:last-child)::after{content:"▲";position:absolute;left:50%;bottom:-29px;transform:translateX(-50%);color:var(--muted);font-size:16px}
+.head{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.code{font-weight:700;font-size:13px;background:var(--accent);color:#fff;border-radius:6px;padding:2px 8px}
+.crit .code{background:var(--crit)}
+.web .code{background:var(--web)}
+.title{font-weight:700;font-size:17px}
+.tag{font-size:11px;font-weight:600;padding:2px 8px;border-radius:99px}
+.tag.c{background:var(--crit-bg);color:var(--crit)}
+.tag.w{background:var(--warn-bg);color:var(--warn)}
+.goal{color:var(--muted);margin:6px 0 12px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+@media(max-width:760px){.grid{grid-template-columns:1fr}}
+.box h4{margin:0 0 6px;font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.box ul,.box ol{margin:0;padding-left:18px}
+.box li{margin:2px 0}
+.box.risk{background:var(--crit-bg);border-radius:8px;padding:10px}
+.box.fix{background:var(--ok-bg);border-radius:8px;padding:10px}
+.metric{margin-top:10px;font-size:13px;color:var(--muted)}
+.metric b{color:var(--ink)}
+.warn{color:var(--warn);font-weight:600}
+.route{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:12px}
+@media(max-width:760px){.route{grid-template-columns:1fr 1fr}}
+.seg{border:1px solid var(--line);border-radius:8px;padding:8px;font-size:13px;text-align:center}
+.seg b{display:block;font-size:15px}
+.seg.a{border-color:var(--accent)}.seg.b{border-color:var(--ok)}.seg.d{border-color:var(--crit);opacity:.85}
+.pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:10px;margin-top:10px}
+.page{background:var(--web-bg);border-radius:8px;padding:10px;font-size:13px}
+.page b{color:var(--web)}
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;border:1px solid var(--line)}
+th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top;font-size:14px}
+th{background:var(--bg);font-size:12px;text-transform:uppercase;color:var(--muted)}
+.prio{counter-reset:p;list-style:none;padding:0}
+.prio li{counter-increment:p;background:var(--card);border:1px solid var(--line);border-radius:10px;padding:10px 12px 10px 48px;margin-bottom:8px;position:relative}
+.prio li::before{content:counter(p);position:absolute;left:12px;top:9px;width:26px;height:26px;border-radius:50%;background:var(--crit);color:#fff;font-weight:700;display:grid;place-items:center;font-size:13px}
+.note{background:var(--card);border:1px dashed var(--accent);border-radius:10px;padding:12px 14px;margin-top:16px}
+</style>
+</head>
+<body>
+<div class="wrap">
+<h1>Customer journey de KunfuPay</h1>
+<p class="sub">Construido de abajo hacia arriba: del cliente que factura (E9) al primer contacto (E0). Se lee de arriba abajo; las flechas ▲ indican el sentido en que avanza el cliente.</p>
+<div class="legend">
+  <span class="pill">Etapa de producto</span>
+  <span class="pill web">Etapa web</span>
+  <span class="pill c">Punto crítico (prioridad en 30 días)</span>
+  <span class="pill w">⚠️ A validar con Hernán</span>
+</div>
+
+<div class="flow">
+
+<div class="stage">
+  <div class="head"><span class="code">E9</span><span class="title">Cliente que factura de forma recurrente</span></div>
+  <p class="goal">Objetivo: retención, expansión (tarjeta, retiros, herramientas) y referidos.</p>
+  <div class="grid">
+    <div class="box"><h4>Qué hace en la app</h4><ol><li>Revisa ventas y saldo</li><li>Retira y usa la tarjeta</li><li>Crea nuevos productos</li><li>Usa KunfuDM, newsletter y landings</li><li>Recomienda KunfuPay</li></ol></div>
+    <div class="box risk"><h4>Riesgos</h4><ul><li>Los bugs son la causa principal de bajas</li><li>Sin referidos en la app no hay loop</li></ul></div>
+    <div class="box fix"><h4>Optimización MVP</h4><ul><li>Soporte con prioridad para quien factura</li><li>Referidos en el dashboard con incentivo</li><li>Resumen mensual: cobrado, ahorrado y ventas recuperadas</li></ul></div>
+  </div>
+  <p class="metric"><b>Métricas:</b> volumen por cliente · % que usa retiro o tarjeta · referidos por cliente · churn</p>
+</div>
+
+<div class="stage">
+  <div class="head"><span class="code">E8</span><span class="title">Primer cobro recibido</span><span class="tag w">⚠️ validar aviso actual</span></div>
+  <p class="goal">Objetivo: la primera venta, que es el valor real.</p>
+  <div class="grid">
+    <div class="box"><h4>Qué ve</h4><ul><li>Notificación de venta</li><li>Saldo disponible</li></ul></div>
+    <div class="box risk"><h4>Riesgos</h4><ul><li>No se celebra ni se explica el retiro ni sus plazos</li></ul></div>
+    <div class="box fix"><h4>Optimización MVP</h4><ul><li>Mensaje automático con los siguientes pasos</li><li>Evento <code>first_payment</code> → Kommo + Meta CAPI</li><li>Pedir testimonio</li></ul></div>
+  </div>
+  <p class="metric"><b>Métricas:</b> días del registro al primer cobro · % de tiendas aprobadas que cobran</p>
+</div>
+
+<div class="stage crit">
+  <div class="head"><span class="code">E7</span><span class="title">Llevar tráfico al checkout</span><span class="tag c">Crítico #5</span></div>
+  <p class="goal">Objetivo: que su audiencia vea el link de pago. Aquí mueren las tiendas aprobadas que no se usan.</p>
+  <div class="grid">
+    <div class="box"><h4>Qué hace</h4><ul><li>Copia el link del checkout</li><li>Lo pone en bio, DMs o landing</li><li>Migra desde Hotmart/Stripe</li></ul></div>
+    <div class="box risk"><h4>Riesgos</h4><ul><li>Miedo a migrar</li><li>No sabe dónde poner el link</li><li>Se queda con su pasarela anterior</li></ul></div>
+    <div class="box fix"><h4>Optimización MVP</h4><ul><li>Checklist de lanzamiento en el dashboard</li><li>Guía de migración y convivencia con la pasarela anterior</li><li>Disparador: 7 días sin cobro → mensaje automático (segmento A → tarea en Kommo)</li></ul></div>
+  </div>
+  <p class="metric"><b>Métrica:</b> % de tiendas aprobadas con visitas al checkout en los primeros 7 días</p>
+</div>
+
+<div class="stage">
+  <div class="head"><span class="code">E6</span><span class="title">Tienda aprobada y configurada</span><span class="tag w">⚠️ ¿producto antes o después?</span></div>
+  <p class="goal">Objetivo: producto cargado y checkout listo para cobrar.</p>
+  <div class="grid">
+    <div class="box"><h4>Qué hace</h4><ul><li>Carga el producto</li><li>Elige monedas y países</li><li>Personaliza el checkout</li></ul></div>
+    <div class="box risk"><h4>Riesgos</h4><ul><li>Demasiados campos</li><li>No entiende qué métodos verá su cliente</li></ul></div>
+    <div class="box fix"><h4>Optimización MVP</h4><ul><li>Reutilizar lo cargado en E3 (nada dos veces)</li><li>Aviso "tu tienda está lista" → checklist E7</li></ul></div>
+  </div>
+  <p class="metric"><b>Métrica:</b> tiempo de la aprobación al checkout publicado</p>
+</div>
+
+<div class="stage crit">
+  <div class="head"><span class="code">E5</span><span class="title">KYC de empresa</span><span class="tag c">Crítico #1</span><span class="tag w">⚠️ validar pasos, documentos y SLA</span></div>
+  <p class="goal">Objetivo: aprobar rápido y sin pasar por administración. Es el cuello de botella actual: si se atasca, todo el flujo automático se rompe aquí.</p>
+  <div class="grid">
+    <div class="box"><h4>Qué hace</h4><ul><li>Sube documentación personal y de empresa</li><li>Gestiona la LLC</li><li>Espera la aprobación</li></ul></div>
+    <div class="box risk"><h4>Riesgos</h4><ul><li>No sabe qué le van a pedir</li><li>Rechazos manuales</li><li>Sin plazo visible → abandona</li><li>El equipo administrativo no aguanta el volumen</li></ul></div>
+    <div class="box fix"><h4>Optimización MVP</h4><ul><li>Lista de documentos antes de empezar</li><li>Guardar progreso + recordatorios a las 24 h y 72 h</li><li>Estados visibles con plazo</li><li>Dos carriles: KYC simple automatizado / complejo con persona solo para el segmento A</li><li>SLA medido</li></ul></div>
+  </div>
+  <p class="metric"><b>Métricas:</b> inicia → completa → aprobado · horas hasta la aprobación</p>
+</div>
+
+<div class="stage crit">
+  <div class="head"><span class="code">E4</span><span class="title">Solicitar tienda (activación) + ruteo</span><span class="tag c">Crítico #3</span><span class="tag w">⚠️ ¿qué pasa después del clic?</span></div>
+  <p class="goal">Objetivo: que solicite la tienda convencida de lo que gana, y que cada lead vaya al carril que le corresponde.</p>
+  <div class="grid">
+    <div class="box"><h4>Qué hace</h4><ul><li>Pulsa "Activar mi checkout con OXXO, PIX y ahorro fiscal"</li></ul></div>
+    <div class="box risk"><h4>Riesgos</h4><ul><li>Pedirla sin entender el valor → tiendas vacías</li><li>Hoy es un gatillo para ventas</li></ul></div>
+    <div class="box fix"><h4>Optimización MVP</h4><ul><li>El botón solo aparece después de E3</li><li>Ruteo automático por segmento ↓</li></ul></div>
+  </div>
+  <div class="route">
+    <div class="seg a"><b>A</b>Factura más de 10k €<br>→ Ventas (Kommo, con prioridad)</div>
+    <div class="seg b"><b>B</b>Ya factura<br>→ Self-serve automático</div>
+    <div class="seg"><b>C</b>Todavía no factura<br>→ Contenido y Classroom</div>
+    <div class="seg d"><b>D</b>Físico / e-commerce<br>→ Fuera, sin KYC</div>
+  </div>
+  <p class="metric"><b>Métrica:</b> % de registros que solicita la tienda, separado por segmento</p>
+</div>
+
+<div class="stage crit">
+  <div class="head"><span class="code">E3</span><span class="title">Aha moment (hipótesis)</span><span class="tag c">Crítico #4</span><span class="tag w">⚠️ validar con cohortes</span></div>
+  <p class="goal">Ver <b>su propio checkout</b> con su curso, su precio y los métodos de pago de su cliente, más <b>cuánto se ahorra</b>. En el minuto 2–3 y antes del KYC.</p>
+  <div class="grid">
+    <div class="box"><h4>Qué hace</h4><ol><li>Escribe producto, precio y países</li><li>Ve la vista previa del checkout por país</li><li>Ve "te ahorras X € al año"</li></ol></div>
+    <div class="box"><h4>Cómo validarlo</h4><ol><li>Hacer una lista de 6–8 eventos tempranos</li><li>Comparar, para cada evento, el % de primer cobro entre quienes lo hicieron y quienes no</li><li>Quedarse con el de mayor diferencia y alcance razonable</li><li>10 entrevistas a clientes que facturan</li></ol></div>
+    <div class="box fix"><h4>Optimización MVP</h4><ul><li>Todo el onboarding lleva aquí</li><li>Los datos se reutilizan en E6</li></ul></div>
+  </div>
+  <p class="metric"><b>Métricas:</b> % de registros que llega a la vista previa · tiempo hasta llegar</p>
+</div>
+
+<div class="stage web crit">
+  <div class="head"><span class="code">E2</span><span class="title">Registro y onboarding con calificación</span><span class="tag c">Crítico #3</span></div>
+  <p class="goal">Objetivo: crear la cuenta y clasificar al lead sin fricción.</p>
+  <div class="grid">
+    <div class="box"><h4>Qué hace</h4><ol><li>CTA → registro con email o Google</li><li>¿Qué vendes?</li><li>¿Cuánto facturas al mes?</li><li>¿Por dónde cobras hoy?</li><li>→ E3</li></ol></div>
+    <div class="box risk"><h4>Riesgos</h4><ul><li>El onboarding actual pide pocos datos</li><li>Sin calificación no hay ruteo ni medición</li></ul></div>
+    <div class="box fix"><h4>Optimización MVP</h4><ul><li>Una pregunta por pantalla, con botones</li><li>Campos + score en Kommo (A/B/C/D)</li><li>Segmento D: mensaje amable y salida</li></ul></div>
+  </div>
+  <p class="metric"><b>Métricas:</b> % de visitantes que se registran · mix A/B/C/D por canal</p>
+</div>
+
+<div class="stage web">
+  <div class="head"><span class="code">E1</span><span class="title">La web (consideración)</span><span class="tag w">⚠️ ¿existe página de precios?</span></div>
+  <p class="goal">Objetivo: generar confianza y empujar a la calculadora, no a "Crear cuenta".</p>
+  <div class="pages">
+    <div class="page"><b>Home</b><br>Hero con la promesa: cobra a LATAM y ahórrate hasta un 20% · prueba social · ventas fantasma · cuenta del MoR · métodos por país · testimonios (trading) · comparativa · FAQ fiscal · CTA a la calculadora</div>
+    <div class="page"><b>Calculadora</b><br>Facturación + países + pasarela → ahorro y ventas recuperables. Email para ver el detalle = pre-registro con segmento</div>
+    <div class="page"><b>Lanza tu curso con IA</b><br>Gancho de la ola → directo a E3. <i>Fase 2 (mes 2)</i></div>
+    <div class="page"><b>Precios</b><br>Comisiones transparentes con el ahorro al lado</div>
+    <div class="page"><b>Nichos y países</b><br>MVP: Trading + Mentorías en España</div>
+  </div>
+  <div class="box fix" style="margin-top:12px"><h4>Tracking imprescindible (Crítico #2)</h4><ul><li>UTMs → registro → Kommo</li><li>Pixel + CAPI: ViewContent, calculator_complete, Lead, CompleteRegistration, store_request, kyc_approved, first_payment</li><li>Analítica de producto (PostHog/Mixpanel) y grabación de sesiones (Clarity/Hotjar)</li></ul></div>
+  <p class="metric"><b>Métricas:</b> visita → inicia la calculadora → la completa → se registra</p>
+</div>
+
+<div class="stage">
+  <div class="head"><span class="code">E0</span><span class="title">Descubrimiento</span></div>
+  <p class="goal">Cómo conoce KunfuPay.</p>
+  <div class="grid">
+    <div class="box"><h4>Meta Ads (450 €/día)</h4><ul><li>70–80%: campañas actuales a ventas</li><li>20–30%: a la calculadora</li><li>Optimizar con Lead calificado → store_request</li></ul></div>
+    <div class="box"><h4>Orgánico y Outbound</h4><ul><li>Ventas fantasma, ahorro fiscal, anuncios con IA</li><li>Outbound: la calculadora como primer contacto</li></ul></div>
+    <div class="box"><h4>Partners y loops</h4><ul><li>Link de la calculadora con UTM por partner</li><li>"Powered by KunfuPay" en checkouts y landings</li></ul></div>
+  </div>
+</div>
+
+</div>
+
+<h2>Prioridades (de abajo hacia arriba)</h2>
+<ol class="prio">
+  <li><b>KYC (E5):</b> si se atasca, nada de lo de arriba sirve.</li>
+  <li><b>Tracking de punta a punta:</b> sin datos no se puede optimizar ni validar el aha moment.</li>
+  <li><b>Onboarding con calificación y ruteo (E2 + E4).</b></li>
+  <li><b>Vista previa del checkout como aha moment (E3).</b></li>
+  <li><b>Activación después de la aprobación (E7):</b> checklist y disparadores.</li>
+</ol>
+
+<h2>Plan de 30 días</h2>
+<table>
+  <tr><th>Semana</th><th>Entregables</th></tr>
+  <tr><td><b>1</b></td><td>Mapear el flujo real con Hernán (resolver los ⚠️) · tracking + CAPI + UTMs → Kommo · línea base por etapa · arrancar el análisis del aha moment</td></tr>
+  <tr><td><b>2</b></td><td>KYC: lista previa, guardado, estados, recordatorios y SLA · onboarding con 3 preguntas + scoring en Kommo</td></tr>
+  <tr><td><b>3</b></td><td>Vista previa del checkout + ahorro (E3) · ruteo A/B/C/D · checklist E7 y disparadores · mensajes de "tienda lista" y "primer cobro"</td></tr>
+  <tr><td><b>4</b></td><td>Calculadora + nuevo hero de la home · prueba de punta a punta con 10–20 usuarios · campaña Meta a la calculadora (unos 100 €/día)</td></tr>
+</table>
+
+<div class="note"><b>Criterio del 70% para salir:</b> un lead del segmento B pasa del anuncio al checkout publicado <b>sin intervención humana</b>, y cada paso queda medido.</div>
+</div>
+</body>
+</html>
