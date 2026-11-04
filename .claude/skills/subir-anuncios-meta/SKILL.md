@@ -127,14 +127,21 @@ Copia el patrón de `creatividades/metodos-de-pago/_fuente/reel_deja_de_perder_v
   - Guarda el `hash`.
 - **Si el vídeo vuelve con `processing`:** espera a que esté listo (`ads_get_ad_videos`) antes de crear el anuncio.
 
-**Montar el creativo:** con `scripts/build_spec.py` (entrada JSON → creativo JSON listo para `ads_create_ad`). Hace esto:
+**Montar el creativo:** con `scripts/build_spec.py` (entrada JSON → creativo JSON listo para `ads_create_ad`). Pon `solo_instagram` según las ubicaciones **del conjunto**. El formato cambia según eso:
+
+**A. Conjunto solo Instagram** (`solo_instagram: true`): personalización por ubicación.
 - `asset_feed_spec` con **una etiqueta compartida por tipo**: todos los textos llevan `<p>_b` y todos los títulos `<p>_t`. Así salen todas las opciones en todas las ubicaciones. Con etiquetas distintas solo se ve una.
-- **Reglas por ubicación:** Meta exige **al menos 2**.
-  - **Conjunto solo Instagram:** `[stream, explore_home, profile_feed, ig_search]` y `[story, reels]`.
-  - **Ubicaciones automáticas:** `["instagram"]` y `["facebook","audience_network","threads"]`.
-  - **Estático con dos tamaños:** el 4:5 (`_f`) en la regla de feed y el 9:16 (`_s`) en la de stories y reels.
-- `optimization_type: "PLACEMENT"`. Nunca `DEGREES_OF_FREEDOM`, que da el error «link field required».
+- **Reglas por ubicación:** Meta exige **al menos 2**: `[stream, explore_home, profile_feed, ig_search]` y `[story, reels]`.
+- **Estático con dos tamaños:** el 4:5 (`_f`) en la regla de feed y el 9:16 (`_s`) en la de stories y reels.
+- `optimization_type: "PLACEMENT"`.
 - Vídeo con `thumbnail_hash` (la portada) y `ad_formats: ["SINGLE_VIDEO"]`. Imagen con `["SINGLE_IMAGE"]`.
+
+**B. Conjunto con ubicaciones automáticas** (Facebook, Instagram, Audience Network, Threads; `solo_instagram: false`): **nunca reglas por ubicación.**
+- Con reglas, Meta limita el anuncio a menos ubicaciones y casi no lo entrega. Pasó con los reels de Classroom Platinum: 0 impresiones en 3 días.
+- Se monta como un vídeo o imagen normal (`video_data` o `link_data`) con el primer texto y el primer título. El enlace va dentro de `call_to_action.value.link`.
+- Los demás textos y títulos van como opciones en `asset_feed_spec` (`bodies` y `titles` sin etiquetas, `optimization_type: "DEGREES_OF_FREEDOM"`).
+- Sin `video_data`/`link_data`, DEGREES_OF_FREEDOM da «link field required».
+- En imagen solo va el 4:5.
 
 ### 6. Crea el anuncio en borrador
 
@@ -179,7 +186,8 @@ Si quedó en borrador, ofrece publicarlo.
 
 | Error | Causa | Solución |
 |---|---|---|
-| «link field required» | `optimization_type: DEGREES_OF_FREEDOM` | Usa `PLACEMENT` |
+| «link field required» | `DEGREES_OF_FREEDOM` sin `video_data`/`link_data` | Formato B del paso 5 (o `PLACEMENT` con reglas si es solo Instagram) |
+| El anuncio está activo, sin errores y con 0 impresiones; el Administrador avisa de «ubicaciones limitadas» | Reglas por ubicación en un conjunto con ubicaciones automáticas | Edita el creativo del mismo anuncio al formato B (`ads_update_entity` con `creative`, luego `ads_activate_entity` con sus `object_ids`). No crees anuncios duplicados. |
 | «at least 2 rules» | Una sola regla de ubicación | Añade la segunda regla (ver paso 5) |
 | Solo sale 1 texto o 1 título | Etiquetas distintas por texto | Una etiqueta compartida por tipo |
 | «Promoted Object Invalid» | Conversión personalizada mal puesta | Formato `pixel_rule` (ver arriba) |
