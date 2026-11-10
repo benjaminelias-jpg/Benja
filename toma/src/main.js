@@ -214,7 +214,7 @@ function createBubble(deviceId, sizeKey = 'm') {
 function createControls() {
   if (controlsWin) { controlsWin.showInactive(); return; }
   const wa = screen.getPrimaryDisplay().workArea;
-  const w = 68, h = 300;
+  const w = 68, h = 150;
   controlsWin = new BrowserWindow({
     width: w,
     height: h,

@@ -3,10 +3,6 @@ const send = (a) => window.toma.controlAction(a);
 
 $('stop').addEventListener('click', () => send('stop'));
 $('pause').addEventListener('click', () => send('pause'));
-$('restart').addEventListener('click', () => send('restart'));
-$('cancel').addEventListener('click', () => {
-  if (confirm('¿Descartar esta grabación?')) send('cancel');
-});
 
 function fmt(s) {
   s = Math.max(0, Math.floor(s));
