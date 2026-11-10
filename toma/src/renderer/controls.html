@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <style>
+    html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; user-select: none;
+      font: 500 14px system-ui, -apple-system, "Segoe UI", sans-serif; color: #fff; }
+    .bar {
+      position: absolute; inset: 6px; border-radius: 999px; background: rgba(20,22,28,.94);
+      border: 1px solid rgba(255,255,255,.12); display: flex; align-items: center; gap: 6px; padding: 0 8px;
+      -webkit-app-region: drag; box-shadow: 0 6px 20px rgba(0,0,0,.4);
+    }
+    button {
+      -webkit-app-region: no-drag; border: 0; cursor: pointer; color: #fff; background: transparent;
+      height: 36px; min-width: 36px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center;
+      font: inherit; padding: 0 10px; gap: 6px;
+    }
+    button:hover { background: rgba(255,255,255,.1); }
+    .stop { background: #ff5a36; }
+    .stop:hover { background: #ff7a5c; }
+    .sq { width: 12px; height: 12px; background: #fff; border-radius: 3px; }
+    .time { font-variant-numeric: tabular-nums; min-width: 64px; text-align: center; }
+    .dot { width: 8px; height: 8px; border-radius: 50%; background: #ff5a36; display: inline-block; margin-right: 6px; animation: blink 1.2s infinite; }
+    .paused .dot { animation: none; background: #ffcc4d; }
+    @keyframes blink { 50% { opacity: .2; } }
+    .sep { width: 1px; height: 22px; background: rgba(255,255,255,.15); }
+    .count { flex: 1; text-align: center; font-weight: 700; }
+    .spacer { flex: 1; }
+    svg { width: 18px; height: 18px; fill: none; stroke: #fff; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+  </style>
+</head>
+<body>
+  <div class="bar" id="bar">
+    <button class="stop" id="stop" title="Terminar (Alt+Shift+R)"><span class="sq"></span><span>Terminar</span></button>
+    <span class="time" id="time"><span class="dot"></span>0:00</span>
+    <span class="spacer"></span>
+    <button id="pause" title="Pausar / reanudar (Alt+Shift+P)">
+      <svg id="ico-pause" viewBox="0 0 24 24"><path d="M9 5v14M15 5v14"/></svg>
+      <svg id="ico-play" viewBox="0 0 24 24" style="display:none"><path d="M7 5l12 7-12 7z" fill="#fff"/></svg>
+    </button>
+    <button id="restart" title="Reiniciar grabación"><svg viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5"/></svg></button>
+    <span class="sep"></span>
+    <button id="cancel" title="Descartar (Alt+Shift+C)"><svg viewBox="0 0 24 24"><path d="M4 7h16M10 11v6M14 11v6M6 7l1 13h10l1-13M9 7V4h6v3"/></svg></button>
+  </div>
+  <script src="controls.js"></script>
+</body>
+</html>

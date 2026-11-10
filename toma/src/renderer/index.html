@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: toma:; media-src 'self' toma: blob: mediastream:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>Toma</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-dot"></span>Toma</div>
+    <div class="search">
+      <input id="search" type="search" placeholder="Buscar en tus videos…" />
+    </div>
+    <div class="top-actions">
+      <button class="btn ghost" id="btn-import" title="Importar videos">Importar</button>
+      <button class="btn ghost" id="btn-folder" title="Abrir carpeta de videos">Carpeta</button>
+      <button class="btn primary" id="btn-new"><span class="rec-dot"></span>Nueva grabación</button>
+    </div>
+  </header>
+
+  <!-- Biblioteca -->
+  <main id="view-library" class="view">
+    <div class="lib-head">
+      <h1>Mis videos</h1>
+      <div class="lib-tools">
+        <select id="sort">
+          <option value="new">Más recientes</option>
+          <option value="old">Más antiguos</option>
+          <option value="title">Título (A-Z)</option>
+          <option value="long">Más largos</option>
+        </select>
+        <label class="chk"><input type="checkbox" id="only-fav" /> Solo favoritos</label>
+      </div>
+    </div>
+    <div id="lib-stats" class="lib-stats"></div>
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty hidden">
+      <div class="empty-ico">●</div>
+      <h2>Aún no tienes grabaciones</h2>
+      <p>Graba tu pantalla, tu cámara o ambas. Todo se guarda en tu PC.</p>
+      <button class="btn primary" id="btn-empty-new"><span class="rec-dot"></span>Grabar mi primer video</button>
+      <p class="hint">Atajo global: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></p>
+    </div>
+  </main>
+
+  <!-- Reproductor -->
+  <main id="view-player" class="view hidden">
+    <div class="player-layout">
+      <section class="player-main">
+        <button class="btn ghost back" id="btn-back">← Biblioteca</button>
+        <div class="video-wrap">
+          <video id="player" controls preload="metadata"></video>
+        </div>
+        <div class="speed-row">
+          <span class="muted">Velocidad</span>
+          <div class="seg" id="speed">
+            <button data-s="0.75">0.75×</button><button data-s="1" class="on">1×</button>
+            <button data-s="1.25">1.25×</button><button data-s="1.5">1.5×</button>
+            <button data-s="1.75">1.75×</button><button data-s="2">2×</button>
+          </div>
+          <span class="spacer"></span>
+          <button class="btn small ghost" id="btn-trim-toggle">✂ Recortar</button>
+        </div>
+
+        <div id="trim-panel" class="trim-panel hidden">
+          <div class="trim-track" id="trim-track">
+            <div class="trim-sel" id="trim-sel"></div>
+            <div class="trim-handle" id="trim-h-start"></div>
+            <div class="trim-handle" id="trim-h-end"></div>
+            <div class="trim-playhead" id="trim-playhead"></div>
+          </div>
+          <div class="trim-row">
+            <button class="btn small ghost" id="trim-set-start">Inicio aquí</button>
+            <span id="trim-label" class="mono"></span>
+            <button class="btn small ghost" id="trim-set-end">Fin aquí</button>
+            <span class="spacer"></span>
+            <button class="btn small ghost" id="trim-preview">Vista previa</button>
+            <button class="btn small primary" id="trim-apply">Aplicar recorte</button>
+          </div>
+        </div>
+      </section>
+
+      <aside class="player-side">
+        <input id="title" class="title-input" maxlength="120" />
+        <div id="meta" class="meta"></div>
+        <div class="actions">
+          <button class="btn small" id="btn-fav">☆ Favorito</button>
+          <button class="btn small" id="btn-export-mp4">Exportar MP4</button>
+          <button class="btn small ghost" id="btn-export-gif">GIF (30s)</button>
+          <button class="btn small ghost" id="btn-show">Mostrar en carpeta</button>
+          <button class="btn small ghost" id="btn-copy">Copiar ruta</button>
+          <button class="btn small ghost" id="btn-ext">Abrir con…</button>
+          <button class="btn small danger" id="btn-delete">Eliminar</button>
+        </div>
+
+        <h3>Marcadores</h3>
+        <div class="chapter-add">
+          <input id="chapter-label" placeholder="Nombre del marcador" />
+          <button class="btn small" id="chapter-add">+ Añadir</button>
+        </div>
+        <ul id="chapters" class="chapters"></ul>
+
+        <h3>Notas</h3>
+        <textarea id="notes" placeholder="Escribe notas, resumen o tareas de este video…"></textarea>
+        <div class="muted small" id="notes-status"></div>
+      </aside>
+    </div>
+  </main>
+
+  <!-- Grabación solo cámara -->
+  <main id="view-camrec" class="view hidden">
+    <div class="camrec">
+      <video id="camrec-video" autoplay muted playsinline></video>
+      <div id="camrec-count" class="countdown hidden"></div>
+    </div>
+  </main>
+
+  <!-- Configuración de grabación -->
+  <div id="setup" class="modal hidden">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>Nueva grabación</h2>
+        <button class="icon-btn" id="setup-close" title="Cerrar">✕</button>
+      </div>
+
+      <div class="seg big" id="mode">
+        <button data-mode="screen-cam" class="on">Pantalla + Cámara</button>
+        <button data-mode="screen">Solo pantalla</button>
+        <button data-mode="cam">Solo cámara</button>
+      </div>
+
+      <div id="source-block">
+        <div class="row-between">
+          <h4>¿Qué quieres grabar?</h4>
+          <div class="seg" id="src-filter">
+            <button data-f="screen" class="on">Pantallas</button>
+            <button data-f="window">Ventanas</button>
+          </div>
+        </div>
+        <div id="sources" class="sources"></div>
+      </div>
+
+      <div class="form-grid">
+        <label id="cam-field">Cámara
+          <select id="cam-select"></select>
+        </label>
+        <label>Micrófono
+          <select id="mic-select"></select>
+          <div class="meter"><div id="mic-meter"></div></div>
+        </label>
+        <label id="bubble-field">Tamaño de burbuja
+          <div class="seg" id="bubble-size">
+            <button data-b="s">Pequeña</button><button data-b="m" class="on">Mediana</button><button data-b="l">Grande</button>
+          </div>
+        </label>
+        <label>Calidad
+          <select id="quality">
+            <option value="720">720p (ligero)</option>
+            <option value="1080" selected>1080p</option>
+            <option value="1440">1440p</option>
+            <option value="max">Máxima (resolución nativa)</option>
+          </select>
+        </label>
+      </div>
+
+      <div class="toggles">
+        <label class="chk" id="sysaudio-field"><input type="checkbox" id="sysaudio" /> Grabar audio del sistema</label>
+        <label class="chk"><input type="checkbox" id="countdown" checked /> Cuenta regresiva de 3 s</label>
+        <label class="chk"><input type="checkbox" id="hide-main" checked /> Ocultar Toma mientras grabo</label>
+      </div>
+
+      <div class="modal-foot">
+        <span class="muted small">Atajos: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> iniciar/detener · <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> pausa · <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> cancelar</span>
+        <button class="btn primary big" id="btn-start"><span class="rec-dot"></span>Comenzar a grabar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Procesando -->
+  <div id="busy" class="modal hidden">
+    <div class="busy-card"><div class="spinner"></div><div id="busy-text">Procesando…</div></div>
+  </div>
+
+  <div id="toast" class="toast hidden"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>

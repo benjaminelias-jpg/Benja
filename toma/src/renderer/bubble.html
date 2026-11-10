@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; media-src 'self' mediastream: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <style>
+    html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; user-select: none; }
+    .bubble {
+      position: absolute; inset: 6px; border-radius: 50%; overflow: hidden;
+      background: #111; -webkit-app-region: drag;
+      box-shadow: 0 0 0 3px rgba(255,255,255,.9), 0 8px 24px rgba(0,0,0,.45);
+    }
+    .bubble.rec { box-shadow: 0 0 0 3px #ff5a36, 0 8px 24px rgba(0,0,0,.45); }
+    video { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); pointer-events: none; }
+    .tools {
+      position: absolute; left: 50%; bottom: 14%; transform: translateX(-50%);
+      display: flex; gap: 4px; opacity: 0; transition: opacity .15s; -webkit-app-region: no-drag;
+    }
+    body:hover .tools { opacity: 1; }
+    .tools button {
+      background: rgba(0,0,0,.65); color: #fff; border: 0; border-radius: 999px;
+      font: 600 11px system-ui, sans-serif; padding: 4px 8px; cursor: pointer;
+    }
+    .tools button.on { background: #fff; color: #000; }
+    .err { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #ccc; font: 12px system-ui; text-align: center; padding: 20px; }
+  </style>
+</head>
+<body>
+  <div class="bubble" id="bubble">
+    <video id="v" autoplay muted playsinline></video>
+    <div class="err" id="err" hidden>Cámara no disponible</div>
+  </div>
+  <div class="tools" id="tools">
+    <button data-s="s">S</button><button data-s="m">M</button><button data-s="l">L</button>
+  </div>
+  <script src="bubble.js"></script>
+</body>
+</html>
