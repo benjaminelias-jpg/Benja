@@ -7,173 +7,221 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><span class="brand-dot"></span>Toma</div>
-    <div class="search">
-      <input id="search" type="search" placeholder="Buscar en tus videos…" />
-    </div>
-    <div class="top-actions">
-      <button class="btn ghost" id="btn-import" title="Importar videos">Importar</button>
-      <button class="btn ghost" id="btn-folder" title="Abrir carpeta de videos">Carpeta</button>
-      <button class="btn primary" id="btn-new"><span class="rec-dot"></span>Nueva grabación</button>
-    </div>
-  </header>
+  <!-- Iconos -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-grid" viewBox="0 0 24 24"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></symbol>
+      <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.6l2.6 5.3 5.8.8-4.2 4.1 1 5.8-5.2-2.8-5.2 2.8 1-5.8-4.2-4.1 5.8-.8z"/></symbol>
+      <symbol id="i-screen" viewBox="0 0 24 24"><rect x="3" y="4.5" width="18" height="12" rx="2"/><path d="M8.5 20h7M12 16.5V20"/></symbol>
+      <symbol id="i-cam" viewBox="0 0 24 24"><circle cx="12" cy="8.5" r="4"/><path d="M4.5 20c1.2-3.6 4-5.4 7.5-5.4s6.300 1.800 7.500 5.400"/></symbol>
+      <symbol id="i-both" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12.500" rx="2"/><circle cx="8" cy="15.500" r="3.200" class="fill-bg"/><path d="M13 20h5.500"/></symbol>
+      <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="6.500"/><path d="M20 20l-4.200-4.200"/></symbol>
+      <symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 7.500a2 2 0 0 1 2-2h4l2 2.200h8a2 2 0 0 1 2 2V17a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></symbol>
+      <symbol id="i-import" viewBox="0 0 24 24"><path d="M12 4v11M7.500 10.500L12 15l4.500-4.500M5 19.500h14"/></symbol>
+      <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 15V4M7.500 8.500L12 4l4.500 4.500M5 19.500h14"/></symbol>
+      <symbol id="i-more" viewBox="0 0 24 24"><circle cx="6" cy="12" r="1.400" class="solid"/><circle cx="12" cy="12" r="1.400" class="solid"/><circle cx="18" cy="12" r="1.400" class="solid"/></symbol>
+      <symbol id="i-trash" viewBox="0 0 24 24"><path d="M4.500 7h15M10 11v6M14 11v6M6.500 7l.900 12.500h9.200L17.500 7M9.500 7V4.500h5V7"/></symbol>
+      <symbol id="i-cut" viewBox="0 0 24 24"><circle cx="6.500" cy="6.500" r="2.500"/><circle cx="6.500" cy="17.500" r="2.500"/><path d="M8.600 8.200L20 18M8.600 15.800L20 6"/></symbol>
+      <symbol id="i-wave" viewBox="0 0 24 24"><path d="M4 10.500v3M8 7.500v9M12 4.500v15M16 7.500v9M20 10.500v3"/></symbol>
+      <symbol id="i-copy" viewBox="0 0 24 24"><rect x="8.500" y="8.500" width="11" height="11" rx="2"/><path d="M5 15.500V6.500a2 2 0 0 1 2-2h8.500"/></symbol>
+      <symbol id="i-open" viewBox="0 0 24 24"><path d="M13.500 5H19v5.500M19 5l-8 8M10 6.500H6.500a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h9a2 2 0 0 0 2-2V14"/></symbol>
+      <symbol id="i-back" viewBox="0 0 24 24"><path d="M19 12H5.500M11 6l-6 6 6 6"/></symbol>
+      <symbol id="i-x" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></symbol>
+      <symbol id="i-refresh" viewBox="0 0 24 24"><path d="M4 12a8 8 0 0 1 13.700-5.600L20 8.500M20 4v4.500h-4.500M20 12a8 8 0 0 1-13.700 5.600L4 15.500M4 20v-4.500h4.500"/></symbol>
+      <symbol id="i-flag" viewBox="0 0 24 24"><path d="M6 21V4.500M6 5h11l-2.500 4L17 13H6"/></symbol>
+      <symbol id="i-gif" viewBox="0 0 24 24"><rect x="3" y="6" width="18" height="12" rx="2.500"/><path d="M9.500 10.500H8a1.500 1.500 0 0 0 0 3h1.500V12M12.500 10.500v3M15.500 13.500v-3H18M15.500 12h2"/></symbol>
+      <symbol id="i-pen" viewBox="0 0 24 24"><path d="M4.500 19.500l1-4.200L16.200 4.600a1.800 1.800 0 0 1 2.500 0l.700.700a1.800 1.800 0 0 1 0 2.500L8.700 18.500z"/></symbol>
+      <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5.500l11 6.500-11 6.500z" class="solid"/></symbol>
+      <symbol id="i-lock" viewBox="0 0 24 24"><rect x="5" y="10.500" width="14" height="9.500" rx="2"/><path d="M8.500 10.500V8a3.500 3.500 0 0 1 7 0v2.500"/></symbol>
+    </defs>
+  </svg>
 
-  <!-- Biblioteca -->
-  <main id="view-library" class="view">
-    <div class="lib-head">
-      <h1>Mis videos</h1>
-      <div class="lib-tools">
-        <select id="sort">
-          <option value="new">Más recientes</option>
-          <option value="old">Más antiguos</option>
-          <option value="title">Título (A-Z)</option>
-          <option value="long">Más largos</option>
-        </select>
-        <label class="chk"><input type="checkbox" id="only-fav" /> Solo favoritos</label>
+  <div class="app">
+    <!-- Barra lateral -->
+    <aside class="sidebar">
+      <div class="drag-strip"></div>
+      <div class="brand"><span class="brand-mark"><i></i></span><span>Toma</span></div>
+      <button class="btn primary block" id="btn-new"><span class="rec-dot"></span>Nueva grabación</button>
+      <div class="kbd-hint" id="hint-new"></div>
+
+      <nav class="nav" id="nav">
+        <button data-filter="all" class="on"><svg class="ico"><use href="#i-grid"/></svg><span>Todos los videos</span><em id="n-all"></em></button>
+        <button data-filter="fav"><svg class="ico"><use href="#i-star"/></svg><span>Favoritos</span><em id="n-fav"></em></button>
+        <button data-filter="screen"><svg class="ico"><use href="#i-screen"/></svg><span>Pantalla</span><em id="n-screen"></em></button>
+        <button data-filter="cam"><svg class="ico"><use href="#i-cam"/></svg><span>Cámara</span><em id="n-cam"></em></button>
+      </nav>
+
+      <div class="side-foot">
+        <button class="side-link" id="btn-import"><svg class="ico"><use href="#i-import"/></svg>Importar videos</button>
+        <button class="side-link" id="btn-folder"><svg class="ico"><use href="#i-folder"/></svg>Abrir carpeta</button>
+        <div class="storage" id="storage"></div>
       </div>
-    </div>
-    <div id="lib-stats" class="lib-stats"></div>
-    <div id="grid" class="grid"></div>
-    <div id="empty" class="empty hidden">
-      <div class="empty-ico">●</div>
-      <h2>Aún no tienes grabaciones</h2>
-      <p>Graba tu pantalla, tu cámara o ambas. Todo se guarda en tu PC.</p>
-      <button class="btn primary" id="btn-empty-new"><span class="rec-dot"></span>Grabar mi primer video</button>
-      <p class="hint">Atajo global: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd></p>
-    </div>
-  </main>
+    </aside>
 
-  <!-- Reproductor -->
-  <main id="view-player" class="view hidden">
-    <div class="player-layout">
-      <section class="player-main">
-        <button class="btn ghost back" id="btn-back">← Biblioteca</button>
-        <div class="video-wrap">
-          <video id="player" controls preload="metadata"></video>
-        </div>
-        <div class="speed-row">
-          <span class="muted">Velocidad</span>
-          <div class="seg" id="speed">
-            <button data-s="0.75">0.75×</button><button data-s="1" class="on">1×</button>
-            <button data-s="1.25">1.25×</button><button data-s="1.5">1.5×</button>
-            <button data-s="1.75">1.75×</button><button data-s="2">2×</button>
+    <div class="content">
+      <!-- Biblioteca -->
+      <main id="view-library" class="view">
+        <header class="content-head">
+          <label class="search"><svg class="ico"><use href="#i-search"/></svg><input id="search" type="search" placeholder="Buscar por título o notas" /></label>
+          <select id="sort" title="Ordenar">
+            <option value="new">Más recientes</option>
+            <option value="old">Más antiguos</option>
+            <option value="title">Título (A-Z)</option>
+            <option value="long">Más largos</option>
+          </select>
+        </header>
+        <div class="lib-body">
+          <h1 id="lib-title">Todos los videos</h1>
+          <div id="grid" class="grid"></div>
+          <div id="no-results" class="muted hidden">No hay videos que coincidan.</div>
+          <div id="empty" class="empty hidden">
+            <div class="empty-art"><div class="ea-screen"><span></span><span></span><span></span></div><div class="ea-bubble"></div></div>
+            <h2>Graba tu primer video</h2>
+            <p>Pantalla, cámara o las dos a la vez. Todo se queda en tu equipo.</p>
+            <button class="btn primary big" id="btn-empty-new"><span class="rec-dot"></span>Nueva grabación</button>
           </div>
+        </div>
+      </main>
+
+      <!-- Reproductor -->
+      <main id="view-player" class="view hidden">
+        <header class="content-head">
+          <button class="btn ghost" id="btn-back"><svg class="ico"><use href="#i-back"/></svg>Biblioteca</button>
           <span class="spacer"></span>
-          <button class="btn small ghost" id="btn-trim-toggle">✂ Recortar</button>
-        </div>
+          <button class="btn ghost" id="btn-fav"><svg class="ico"><use href="#i-star"/></svg><span>Favorito</span></button>
+          <button class="btn" id="btn-export-mp4"><svg class="ico"><use href="#i-export"/></svg>Exportar MP4</button>
+        </header>
+        <div class="player-layout">
+          <section class="player-main">
+            <div class="video-wrap"><video id="player" controls preload="metadata"></video></div>
+            <div class="under-video">
+              <div class="seg" id="speed" title="Velocidad de reproducción">
+                <button data-s="0.75">0.75×</button><button data-s="1" class="on">1×</button>
+                <button data-s="1.25">1.25×</button><button data-s="1.5">1.5×</button><button data-s="2">2×</button>
+              </div>
+              <span class="spacer"></span>
+              <button class="btn small" id="btn-trim-toggle"><svg class="ico"><use href="#i-cut"/></svg>Recortar</button>
+              <button class="btn small" id="btn-voice" title="Reduce el ruido de fondo y deja la voz más clara"><svg class="ico"><use href="#i-wave"/></svg>Aislar voz</button>
+            </div>
 
-        <div id="trim-panel" class="trim-panel hidden">
-          <div class="trim-track" id="trim-track">
-            <div class="trim-sel" id="trim-sel"></div>
-            <div class="trim-handle" id="trim-h-start"></div>
-            <div class="trim-handle" id="trim-h-end"></div>
-            <div class="trim-playhead" id="trim-playhead"></div>
-          </div>
-          <div class="trim-row">
-            <button class="btn small ghost" id="trim-set-start">Inicio aquí</button>
-            <span id="trim-label" class="mono"></span>
-            <button class="btn small ghost" id="trim-set-end">Fin aquí</button>
-            <span class="spacer"></span>
-            <button class="btn small ghost" id="trim-preview">Vista previa</button>
-            <button class="btn small primary" id="trim-apply">Aplicar recorte</button>
-          </div>
-        </div>
-      </section>
+            <div id="trim-panel" class="trim-panel hidden">
+              <div class="trim-track" id="trim-track">
+                <div class="trim-sel" id="trim-sel"></div>
+                <div class="trim-handle" id="trim-h-start"></div>
+                <div class="trim-handle" id="trim-h-end"></div>
+                <div class="trim-playhead" id="trim-playhead"></div>
+              </div>
+              <div class="trim-row">
+                <button class="btn small ghost" id="trim-set-start">Inicio aquí</button>
+                <button class="btn small ghost" id="trim-set-end">Fin aquí</button>
+                <span id="trim-label" class="mono muted"></span>
+                <span class="spacer"></span>
+                <button class="btn small ghost" id="trim-preview">Vista previa</button>
+                <button class="btn small primary" id="trim-apply">Aplicar recorte</button>
+              </div>
+            </div>
+          </section>
 
-      <aside class="player-side">
-        <input id="title" class="title-input" maxlength="120" />
-        <div id="meta" class="meta"></div>
-        <div class="actions">
-          <button class="btn small" id="btn-fav">☆ Favorito</button>
-          <button class="btn small" id="btn-voice" title="Reduce el ruido de fondo y deja la voz más clara">Aislar voz</button>
-          <button class="btn small" id="btn-export-mp4">Exportar MP4</button>
-          <button class="btn small ghost" id="btn-export-gif">GIF (30s)</button>
-          <button class="btn small ghost" id="btn-show">Mostrar en carpeta</button>
-          <button class="btn small ghost" id="btn-copy">Copiar ruta</button>
-          <button class="btn small ghost" id="btn-ext">Abrir con…</button>
-          <button class="btn small danger" id="btn-delete">Eliminar</button>
-        </div>
+          <aside class="player-side">
+            <input id="title" class="title-input" maxlength="140" spellcheck="false" title="Haz clic para cambiar el título" />
+            <div id="meta" class="meta"></div>
 
-        <h3>Marcadores</h3>
-        <div class="chapter-add">
-          <input id="chapter-label" placeholder="Nombre del marcador" />
-          <button class="btn small" id="chapter-add">+ Añadir</button>
-        </div>
-        <ul id="chapters" class="chapters"></ul>
+            <div class="quick">
+              <button id="btn-show"><svg class="ico"><use href="#i-folder"/></svg>Ver en carpeta</button>
+              <button id="btn-copy"><svg class="ico"><use href="#i-copy"/></svg>Copiar ruta</button>
+              <button id="btn-ext"><svg class="ico"><use href="#i-open"/></svg>Abrir con…</button>
+              <button id="btn-export-gif" title="GIF animado con los primeros 30 segundos"><svg class="ico"><use href="#i-gif"/></svg>Crear GIF</button>
+            </div>
 
-        <h3>Notas</h3>
-        <textarea id="notes" placeholder="Escribe notas, resumen o tareas de este video…"></textarea>
-        <div class="muted small" id="notes-status"></div>
-      </aside>
+            <h3>Marcadores</h3>
+            <div class="chapter-add">
+              <input id="chapter-label" placeholder="Nombre del marcador" />
+              <button class="btn small" id="chapter-add">Añadir</button>
+            </div>
+            <ul id="chapters" class="chapters"></ul>
+
+            <h3>Notas <span class="muted small" id="notes-status"></span></h3>
+            <textarea id="notes" placeholder="Resumen, tareas, enlaces…"></textarea>
+
+            <button class="btn danger block" id="btn-delete"><svg class="ico"><use href="#i-trash"/></svg>Eliminar video</button>
+          </aside>
+        </div>
+      </main>
     </div>
-  </main>
+  </div>
 
   <!-- Grabación solo cámara -->
-  <main id="view-camrec" class="view hidden">
-    <div class="camrec">
-      <video id="camrec-video" autoplay muted playsinline></video>
-      <div id="camrec-count" class="countdown hidden"></div>
-    </div>
-  </main>
+  <div id="view-camrec" class="camrec hidden">
+    <video id="camrec-video" autoplay muted playsinline></video>
+    <div id="camrec-count" class="camrec-count hidden"></div>
+  </div>
 
   <!-- Configuración de grabación -->
   <div id="setup" class="modal hidden">
-    <div class="modal-card">
+    <div class="modal-card setup-card">
       <div class="modal-head">
         <h2>Nueva grabación</h2>
-        <button class="icon-btn" id="setup-close" title="Cerrar">✕</button>
+        <button class="icon-btn" id="setup-close" title="Cerrar"><svg class="ico"><use href="#i-x"/></svg></button>
       </div>
 
-      <div class="seg big" id="mode">
-        <button data-mode="screen-cam" class="on">Pantalla + Cámara</button>
-        <button data-mode="screen">Solo pantalla</button>
-        <button data-mode="cam">Solo cámara</button>
+      <div class="modes" id="mode">
+        <button data-mode="screen-cam"><svg class="ico"><use href="#i-both"/></svg>Pantalla + Cámara</button>
+        <button data-mode="screen"><svg class="ico"><use href="#i-screen"/></svg>Solo pantalla</button>
+        <button data-mode="cam"><svg class="ico"><use href="#i-cam"/></svg>Solo cámara</button>
       </div>
 
-      <div id="source-block">
-        <div class="row-between">
-          <h4>¿Qué quieres grabar?</h4>
-          <div class="seg" id="src-filter">
-            <button data-f="screen" class="on">Pantallas</button>
-            <button data-f="window">Ventanas</button>
+      <div class="setup-cols">
+        <section class="setup-left">
+          <div class="row-between">
+            <h4 id="src-title">¿Qué quieres grabar?</h4>
+            <div class="row" id="src-tools">
+              <div class="seg" id="src-filter">
+                <button data-f="screen" class="on">Pantallas</button>
+                <button data-f="window">Ventanas</button>
+              </div>
+              <button class="icon-btn" id="src-refresh" title="Actualizar lista"><svg class="ico"><use href="#i-refresh"/></svg></button>
+            </div>
           </div>
-        </div>
-        <div id="sources" class="sources"></div>
-      </div>
+          <div id="sources" class="sources"></div>
+          <div id="src-note" class="note hidden"></div>
+        </section>
 
-      <div class="form-grid">
-        <label id="cam-field">Cámara
-          <select id="cam-select"></select>
-        </label>
-        <label>Micrófono
-          <select id="mic-select"></select>
-          <div class="meter"><div id="mic-meter"></div></div>
-        </label>
-        <label id="bubble-field">Tamaño de burbuja
-          <div class="seg" id="bubble-size">
-            <button data-b="s">Pequeña</button><button data-b="m" class="on">Mediana</button><button data-b="l">Grande</button>
+        <section class="setup-right">
+          <label class="field" id="cam-field"><span>Cámara</span>
+            <select id="cam-select"></select>
+          </label>
+          <label class="field"><span>Micrófono</span>
+            <select id="mic-select"></select>
+            <div class="meter"><div id="mic-meter"></div></div>
+            <div class="note hidden" id="mic-note">Los micrófonos Bluetooth graban con menos calidad. Para mejor sonido usa el micrófono del equipo.</div>
+          </label>
+          <div class="field" id="bubble-field"><span>Burbuja de cámara</span>
+            <div class="row">
+              <div class="seg" id="bubble-size">
+                <button data-b="s">Pequeña</button><button data-b="m">Mediana</button><button data-b="l">Grande</button>
+              </div>
+            </div>
           </div>
-        </label>
-        <label>Calidad
-          <select id="quality">
-            <option value="720">720p (ligero)</option>
-            <option value="1080" selected>1080p</option>
-            <option value="1440">1440p</option>
-            <option value="max">Máxima (resolución nativa)</option>
-          </select>
-        </label>
-      </div>
-
-      <div class="toggles">
-        <label class="chk" id="sysaudio-field"><input type="checkbox" id="sysaudio" /> Grabar audio del sistema</label>
-        <label class="chk" title="Reduce el ruido de fondo y deja tu voz más clara"><input type="checkbox" id="voiceiso" checked /> Aislar voz (quitar ruido de fondo)</label>
-        <label class="chk"><input type="checkbox" id="countdown" checked /> Cuenta regresiva de 3 s</label>
-        <label class="chk"><input type="checkbox" id="hide-main" checked /> Ocultar Toma mientras grabo</label>
+          <label class="field"><span>Calidad</span>
+            <select id="quality">
+              <option value="720">720p · archivos ligeros</option>
+              <option value="1080">1080p · recomendado</option>
+              <option value="1440">1440p</option>
+              <option value="max">Máxima (resolución nativa)</option>
+            </select>
+          </label>
+          <div class="checks">
+            <label class="chk" title="Reduce el ruido de fondo y deja tu voz más clara"><input type="checkbox" id="voiceiso" /> Aislar voz (quitar ruido de fondo)</label>
+            <label class="chk" id="sysaudio-field"><input type="checkbox" id="sysaudio" /> Grabar el audio del sistema</label>
+            <label class="chk" id="mirror-field"><input type="checkbox" id="mirror" /> Cámara en espejo</label>
+            <label class="chk"><input type="checkbox" id="countdown" /> Cuenta regresiva de 3 segundos</label>
+            <label class="chk" id="hide-main-field"><input type="checkbox" id="hide-main" /> Ocultar Toma mientras grabo</label>
+          </div>
+        </section>
       </div>
 
       <div class="modal-foot">
-        <span class="muted small">Atajos: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> iniciar/detener · <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> pausa · <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> cancelar</span>
+        <span class="muted small" id="setup-hint"></span>
         <button class="btn primary big" id="btn-start"><span class="rec-dot"></span>Comenzar a grabar</button>
       </div>
     </div>
@@ -181,15 +229,30 @@
 
   <!-- Permisos (macOS) -->
   <div id="perms" class="modal hidden">
-    <div class="modal-card" style="width:min(560px,94vw)">
+    <div class="modal-card narrow">
       <div class="modal-head"><h2>Permisos necesarios</h2></div>
-      <p class="muted">Para grabar, macOS necesita que autorices a Toma. Pulsa "Permitir" en cada uno. En Grabación de pantalla, marca la casilla de <b>Toma</b> en la lista y después reinicia Toma.</p>
-      <div class="perm-row"><span>Grabación de pantalla</span><span class="perm-st" id="perm-st-screen"></span><button class="btn small primary" data-perm="screen">Permitir</button></div>
-      <div class="perm-row"><span>Cámara</span><span class="perm-st" id="perm-st-camera"></span><button class="btn small primary" data-perm="camera">Permitir</button></div>
-      <div class="perm-row"><span>Micrófono</span><span class="perm-st" id="perm-st-microphone"></span><button class="btn small primary" data-perm="microphone">Permitir</button></div>
+      <p class="muted">Para grabar, macOS necesita que autorices a Toma. En Grabación de pantalla, marca la casilla de <b>Toma</b> en la lista y después reinicia la app.</p>
+      <div class="perm-row"><svg class="ico"><use href="#i-screen"/></svg><span>Grabación de pantalla</span><em class="perm-st" id="perm-st-screen"></em><button class="btn small primary" data-perm="screen">Permitir</button></div>
+      <div class="perm-row"><svg class="ico"><use href="#i-cam"/></svg><span>Cámara</span><em class="perm-st" id="perm-st-camera"></em><button class="btn small primary" data-perm="camera">Permitir</button></div>
+      <div class="perm-row"><svg class="ico"><use href="#i-wave"/></svg><span>Micrófono</span><em class="perm-st" id="perm-st-microphone"></em><button class="btn small primary" data-perm="microphone">Permitir</button></div>
       <div class="modal-foot">
-        <button class="btn ghost" id="perms-skip">Continuar sin ellos</button>
+        <button class="btn ghost" id="perms-skip">Ahora no</button>
         <button class="btn primary" id="perms-relaunch">Reiniciar Toma</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Confirmación -->
+  <div id="confirm" class="modal hidden">
+    <div class="modal-card narrow">
+      <h2 id="confirm-title"></h2>
+      <p class="muted" id="confirm-text"></p>
+      <div class="modal-foot plain">
+        <span></span>
+        <div class="row">
+          <button class="btn ghost" id="confirm-no">Cancelar</button>
+          <button class="btn primary" id="confirm-yes">Aceptar</button>
+        </div>
       </div>
     </div>
   </div>
@@ -199,6 +262,7 @@
     <div class="busy-card"><div class="spinner"></div><div id="busy-text">Procesando…</div></div>
   </div>
 
+  <div id="ctx" class="ctx hidden"></div>
   <div id="toast" class="toast hidden"></div>
 
   <script src="app.js"></script>

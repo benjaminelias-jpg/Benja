@@ -1,17 +1,23 @@
 const params = new URLSearchParams(location.search);
+const video = document.getElementById('v');
+const errEl = document.getElementById('err');
 let deviceId = params.get('deviceId') || '';
 let stream = null;
+let starting = 0;
 
 async function startCam() {
-  if (stream) stream.getTracks().forEach((t) => t.stop());
+  const turn = ++starting;
+  if (stream) { stream.getTracks().forEach((t) => t.stop()); stream = null; }
   try {
-    stream = await navigator.mediaDevices.getUserMedia({
+    const s = await navigator.mediaDevices.getUserMedia({
       video: { deviceId: deviceId ? { exact: deviceId } : undefined, width: { ideal: 640 }, height: { ideal: 640 } },
     });
-    document.getElementById('v').srcObject = stream;
-    document.getElementById('err').hidden = true;
+    if (turn !== starting) { s.getTracks().forEach((t) => t.stop()); return; }
+    stream = s;
+    video.srcObject = s;
+    errEl.hidden = true;
   } catch {
-    document.getElementById('err').hidden = false;
+    if (turn === starting) errEl.hidden = false;
   }
 }
 
@@ -24,11 +30,10 @@ document.querySelectorAll('#tools button').forEach((b) =>
 
 window.toma.onBubbleConfig((c) => {
   if (c.sizeKey) markSize(c.sizeKey);
+  if (typeof c.mirror === 'boolean') video.classList.toggle('mirror', c.mirror);
   if (c.deviceId !== undefined && c.deviceId !== deviceId) { deviceId = c.deviceId; startCam(); }
 });
-window.toma.onState((s) => {
-  document.getElementById('bubble').classList.toggle('rec', s.phase === 'recording');
-});
 
+video.classList.toggle('mirror', params.get('mirror') !== '0');
 markSize(params.get('size') || 'm');
 startCam();

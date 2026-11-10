@@ -3,34 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; media-src 'self' mediastream: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'" />
+  <title>Cámara</title>
   <style>
     html, body { margin: 0; height: 100%; background: transparent; overflow: hidden; user-select: none; }
     .bubble {
       position: absolute; inset: 0; border-radius: 50%; overflow: hidden;
-      background: #111; -webkit-app-region: drag;
+      background: #15171c; -webkit-app-region: drag;
     }
-    video { width: 100%; height: 100%; object-fit: cover; transform: scaleX(-1); pointer-events: none; }
+    video { width: 100%; height: 100%; object-fit: cover; pointer-events: none; display: block; }
+    video.mirror { transform: scaleX(-1); }
     .tools {
-      position: absolute; left: 50%; bottom: 14%; transform: translateX(-50%);
+      position: absolute; left: 50%; bottom: 12%; transform: translateX(-50%);
       display: flex; gap: 4px; opacity: 0; transition: opacity .15s; -webkit-app-region: no-drag;
     }
     body:hover .tools { opacity: 1; }
     .tools button {
-      background: rgba(0,0,0,.65); color: #fff; border: 0; border-radius: 999px;
-      font: 600 11px system-ui, sans-serif; padding: 4px 8px; cursor: pointer;
+      background: rgba(10, 11, 14, .7); color: #fff; border: 0; border-radius: 999px;
+      font: 600 11px -apple-system, system-ui, sans-serif; width: 26px; height: 24px; cursor: pointer;
     }
+    .tools button:hover { background: rgba(10, 11, 14, .95); }
     .tools button.on { background: #fff; color: #000; }
+    .err { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #b9bfcc; font: 12px -apple-system, system-ui, sans-serif; text-align: center; padding: 24px; }
     .err[hidden] { display: none; }
-    .err { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; color: #ccc; font: 12px system-ui; text-align: center; padding: 20px; }
   </style>
 </head>
 <body>
   <div class="bubble" id="bubble">
     <video id="v" autoplay muted playsinline></video>
-    <div class="err" id="err" hidden>Cámara no disponible</div>
+    <div class="err" id="err" hidden>No se pudo abrir la cámara</div>
   </div>
   <div class="tools" id="tools">
-    <button data-s="s">S</button><button data-s="m">M</button><button data-s="l">L</button>
+    <button data-s="s" title="Pequeña">S</button><button data-s="m" title="Mediana">M</button><button data-s="l" title="Grande">L</button>
   </div>
   <script src="bubble.js"></script>
 </body>

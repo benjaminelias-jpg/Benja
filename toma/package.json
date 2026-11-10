@@ -1,7 +1,7 @@
 {
   "name": "toma",
   "productName": "Toma",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "Grabador de pantalla y cámara para uso personal (estilo Loom), 100% local.",
   "main": "src/main.js",
   "license": "MIT",
@@ -22,17 +22,33 @@
   "build": {
     "appId": "local.toma.recorder",
     "productName": "Toma",
-    "files": ["src/**/*", "package.json"],
-    "asarUnpack": ["node_modules/ffmpeg-static/**"],
-    "win": { "target": "nsis" },
-    "nsis": { "oneClick": false, "allowToChangeInstallationDirectory": true },
+    "files": [
+      "src/**/*",
+      "package.json"
+    ],
+    "asarUnpack": [
+      "node_modules/ffmpeg-static/**"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
     "mac": {
       "target": "dmg",
       "extendInfo": {
         "NSCameraUsageDescription": "Toma usa la cámara para la burbuja de video.",
         "NSMicrophoneUsageDescription": "Toma usa el micrófono para grabar tu voz."
-      }
+      },
+      "icon": "build/icon.png",
+      "category": "public.app-category.productivity"
     },
-    "linux": { "target": "AppImage" }
+    "linux": {
+      "target": "AppImage",
+      "icon": "build/icon.png"
+    }
   }
 }

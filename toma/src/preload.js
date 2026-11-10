@@ -5,53 +5,57 @@ const on = (channel) => (cb) => {
   ipcRenderer.on(channel, fn);
   return () => ipcRenderer.removeListener(channel, fn);
 };
+const invoke = (channel) => (...args) => ipcRenderer.invoke(channel, ...args);
+const send = (channel) => (...args) => ipcRenderer.send(channel, ...args);
 
 contextBridge.exposeInMainWorld('toma', {
-  info: () => ipcRenderer.invoke('app:info'),
-  screenAccess: () => ipcRenderer.invoke('screen:access'),
-  openScreenSettings: () => ipcRenderer.invoke('screen:open-settings'),
-  permStatus: () => ipcRenderer.invoke('perm:status'),
-  permRequest: (k) => ipcRenderer.invoke('perm:request', k),
-  relaunch: () => ipcRenderer.invoke('app:relaunch'),
+  // Sistema
+  info: invoke('app:info'),
+  permStatus: invoke('perm:status'),
+  permRequest: invoke('perm:request'),
+  relaunch: invoke('app:relaunch'),
 
   // Fuentes de captura
-  listSources: () => ipcRenderer.invoke('sources:list'),
-  selectSource: (id, systemAudio) => ipcRenderer.invoke('sources:select', id, systemAudio),
+  listSources: invoke('sources:list'),
+  selectSource: invoke('sources:select'),
 
   // Ventanas flotantes
-  showBubble: (deviceId, size) => ipcRenderer.send('bubble:show', deviceId, size),
-  hideBubble: () => ipcRenderer.send('bubble:hide'),
-  setBubbleSize: (size) => ipcRenderer.send('bubble:size', size),
+  showBubble: send('bubble:show'),
+  hideBubble: send('bubble:hide'),
+  setBubbleSize: send('bubble:size'),
+  setBubbleMirror: send('bubble:mirror'),
   onBubbleConfig: on('bubble:config'),
   onBubbleSizeChanged: on('bubble:size-changed'),
-  showControls: () => ipcRenderer.send('controls:show'),
-  hideControls: () => ipcRenderer.send('controls:hide'),
-  controlAction: (a) => ipcRenderer.send('controls:action', a),
+  showControls: send('controls:show'),
+  hideControls: send('controls:hide'),
+  controlAction: send('controls:action'),
   onControlAction: on('controls:action'),
-  sendState: (s) => ipcRenderer.send('rec:state', s),
+  sendState: send('rec:state'),
   onState: on('rec:state'),
   onShortcut: on('shortcut'),
-  hideMain: () => ipcRenderer.send('main:hide'),
-  showMain: () => ipcRenderer.send('main:show'),
-  minimizeMain: () => ipcRenderer.send('main:minimize'),
+  onMenu: on('menu'),
+  onLibChanged: on('lib:changed'),
+  hideMain: send('main:hide'),
+  showMain: send('main:show'),
+  minimizeMain: send('main:minimize'),
 
   // Grabación
-  recBegin: () => ipcRenderer.invoke('rec:begin'),
-  recChunk: (id, buf) => ipcRenderer.invoke('rec:chunk', id, buf),
-  recEnd: (id, meta) => ipcRenderer.invoke('rec:end', id, meta),
-  recCancel: (id) => ipcRenderer.invoke('rec:cancel', id),
+  recBegin: invoke('rec:begin'),
+  recChunk: invoke('rec:chunk'),
+  recEnd: invoke('rec:end'),
+  recCancel: invoke('rec:cancel'),
 
   // Biblioteca
-  list: () => ipcRenderer.invoke('lib:list'),
-  update: (id, patch) => ipcRenderer.invoke('lib:update', id, patch),
-  remove: (id) => ipcRenderer.invoke('lib:delete', id),
-  showInFolder: (id) => ipcRenderer.invoke('lib:show', id),
-  openFolder: () => ipcRenderer.invoke('lib:open-folder'),
-  openExternal: (id) => ipcRenderer.invoke('lib:open-external', id),
-  copyPath: (id) => ipcRenderer.invoke('lib:copy-path', id),
-  trim: (id, s, e) => ipcRenderer.invoke('lib:trim', id, s, e),
-  isolateVoice: (id) => ipcRenderer.invoke('lib:isolate-voice', id),
-  exportVideo: (id, fmt) => ipcRenderer.invoke('lib:export', id, fmt),
-  importVideos: () => ipcRenderer.invoke('lib:import'),
-  setDuration: (id, d) => ipcRenderer.invoke('lib:set-duration', id, d),
+  list: invoke('lib:list'),
+  update: invoke('lib:update'),
+  remove: invoke('lib:delete'),
+  showInFolder: invoke('lib:show'),
+  openFolder: invoke('lib:open-folder'),
+  openExternal: invoke('lib:open-external'),
+  copyPath: invoke('lib:copy-path'),
+  trim: invoke('lib:trim'),
+  isolateVoice: invoke('lib:isolate-voice'),
+  exportVideo: invoke('lib:export'),
+  importVideos: invoke('lib:import'),
+  setDuration: invoke('lib:set-duration'),
 });
