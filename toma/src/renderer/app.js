@@ -139,7 +139,7 @@ function openPlayer(v) {
 function renderMeta() {
   const v = current;
   const res = v.width && v.height ? ` · ${v.width}×${v.height}` : '';
-  $('#meta').textContent = `${fmtDate(v.createdAt)} · ${fmtDur(v.duration)} · ${fmtSize(v.size)}${res} · ${MODE_LABEL[v.mode] || ''}`;
+  $('#meta').textContent = `${fmtDate(v.createdAt)} · ${fmtDur(v.duration)} · ${fmtSize(v.size)}${res} · ${MODE_LABEL[v.mode] || ''}${v.voiceIsolated ? ' · Voz aislada' : ''}`;
 }
 function renderFav() {
   $('#btn-fav').textContent = current.favorite ? '★ Favorito' : '☆ Favorito';
@@ -236,6 +236,19 @@ async function doExport(fmt) {
     if (out) toast('Exportado: ' + out);
   } catch (e) { busy(); toast('Error al exportar: ' + e.message, true); }
 }
+$('#btn-voice').addEventListener('click', async () => {
+  if (current.voiceIsolated && !confirm('Este video ya tiene la voz aislada. ¿Aplicarlo otra vez?')) return;
+  try {
+    const t = player.currentTime;
+    player.pause();
+    busy('Aislando la voz…');
+    const v = await api.isolateVoice(current.id);
+    busy();
+    openPlayer(v);
+    player.currentTime = t;
+    toast('Voz aislada: se redujo el ruido de fondo');
+  } catch (e) { busy(); toast('Error al aislar la voz: ' + e.message, true); }
+});
 $('#btn-export-mp4').addEventListener('click', () => doExport('mp4'));
 $('#btn-export-gif').addEventListener('click', () => doExport('gif'));
 $('#btn-show').addEventListener('click', () => api.showInFolder(current.id));
@@ -340,10 +353,12 @@ const cfg = {
   bubble: localStorage.getItem('bubble') || 'm',
   quality: localStorage.getItem('quality') || '1080',
   systemAudio: localStorage.getItem('systemAudio') === '1',
+  voiceIso: localStorage.getItem('voiceIso') !== '0',
   countdown: localStorage.getItem('countdown') !== '0',
   hideMain: localStorage.getItem('hideMain') !== '0',
 };
 let sources = [];
+let sysAudioOk = true;
 let micPreview = null, micCtx = null, micRaf = 0;
 let camPreviewStream = null;
 let setupOpen = false;
@@ -372,8 +387,10 @@ async function fillDevices() {
 }
 function escapeHtml(s) { return s.replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c])); }
 
+let screenAccess = 'granted';
 async function loadSources() {
   try { sources = await api.listSources(); } catch { sources = []; }
+  try { screenAccess = await api.screenAccess(); } catch {}
   if (!sources.some((s) => s.id === cfg.sourceId)) cfg.sourceId = (sources.find((s) => s.type === 'screen') || sources[0])?.id || null;
   renderSources();
 }
@@ -387,6 +404,17 @@ function renderSources() {
   }
   const list = sources.filter((s) => s.type === cfg.filter);
   box.innerHTML = '';
+  if (!list.length && screenAccess !== 'granted') {
+    box.innerHTML = `<div class="perm" style="grid-column:1/-1">
+      <strong>Falta el permiso de Grabación de pantalla</strong>
+      <p class="muted">macOS no deja que Toma vea tus pantallas hasta que lo autorices. Abre los ajustes, marca la casilla de <b>Toma</b> en "Grabación de pantalla" (si no aparece, pulsa + y elígela) y luego reinicia Toma.</p>
+      <button class="btn primary small" id="perm-open">1. Abrir ajustes de privacidad</button>
+      <button class="btn small" id="perm-relaunch">2. Reiniciar Toma</button>
+    </div>`;
+    $('#perm-open').addEventListener('click', () => api.openScreenSettings());
+    $('#perm-relaunch').addEventListener('click', () => api.relaunch());
+    return;
+  }
   if (!list.length) box.innerHTML = `<p class="muted">No hay ${cfg.filter === 'screen' ? 'pantallas' : 'ventanas'} disponibles.</p>`;
   list.forEach((s, i) => {
     const el = document.createElement('div');
@@ -406,7 +434,7 @@ function applyModeUI() {
   const needsCam = cfg.mode !== 'screen';
   $('#cam-field').classList.toggle('hidden', !needsCam);
   $('#bubble-field').classList.toggle('hidden', cfg.mode !== 'screen-cam');
-  $('#sysaudio-field').classList.toggle('hidden', cfg.mode === 'cam');
+  $('#sysaudio-field').classList.toggle('hidden', cfg.mode === 'cam' || !sysAudioOk);
   $('#src-filter').classList.toggle('hidden', cfg.mode === 'cam');
   $('#source-block h4').textContent = cfg.mode === 'cam' ? 'Vista previa de la cámara' : '¿Qué quieres grabar?';
   $$('#bubble-size button').forEach((b) => b.classList.toggle('on', b.dataset.b === cfg.bubble));
@@ -470,6 +498,7 @@ async function openSetup() {
   $('#setup').classList.remove('hidden');
   $('#quality').value = cfg.quality;
   $('#sysaudio').checked = cfg.systemAudio;
+  $('#voiceiso').checked = cfg.voiceIso;
   $('#countdown').checked = cfg.countdown;
   $('#hide-main').checked = cfg.hideMain;
   await ensureDeviceLabels();
@@ -505,6 +534,7 @@ $('#cam-select').addEventListener('change', (e) => { cfg.camId = e.target.value;
 $('#mic-select').addEventListener('change', (e) => { cfg.micId = e.target.value; localStorage.setItem('micId', cfg.micId); startMicMeter(); });
 $('#quality').addEventListener('change', (e) => { cfg.quality = e.target.value; localStorage.setItem('quality', cfg.quality); });
 $('#sysaudio').addEventListener('change', (e) => { cfg.systemAudio = e.target.checked; localStorage.setItem('systemAudio', e.target.checked ? '1' : '0'); });
+$('#voiceiso').addEventListener('change', (e) => { cfg.voiceIso = e.target.checked; localStorage.setItem('voiceIso', e.target.checked ? '1' : '0'); });
 $('#countdown').addEventListener('change', (e) => { cfg.countdown = e.target.checked; localStorage.setItem('countdown', e.target.checked ? '1' : '0'); });
 $('#hide-main').addEventListener('change', (e) => { cfg.hideMain = e.target.checked; localStorage.setItem('hideMain', e.target.checked ? '1' : '0'); });
 $('#btn-start').addEventListener('click', () => startRecording());
@@ -578,7 +608,7 @@ async function startRecording(overrides) {
     if (c.micId && c.micId !== 'none') {
       try {
         mic = await navigator.mediaDevices.getUserMedia({
-          audio: { deviceId: { exact: c.micId }, echoCancellation: true, noiseSuppression: true, autoGainControl: true },
+          audio: { deviceId: { exact: c.micId }, echoCancellation: true, noiseSuppression: !!c.voiceIso, autoGainControl: true, voiceIsolation: !!c.voiceIso },
         });
         owned.push(mic);
       } catch (e) { toast('No se pudo usar el micrófono: ' + e.message, true); }
@@ -594,6 +624,8 @@ async function startRecording(overrides) {
 
     rec = {
       cfg: c, owned, audioCtx, width, height,
+      // El filtro de voz solo se aplica si no hay audio del sistema mezclado (lo estropearía)
+      voiceIsolation: !!(c.voiceIso && mic && !sysAudio),
       stream: new MediaStream(tracks),
       id: null, recorder: null, phase: 'countdown', count: 0,
       startedAt: 0, pausedAt: 0, pausedTotal: 0,
@@ -711,7 +743,7 @@ async function finishRecording(r) {
   api.showMain();
   busy('Guardando grabación…');
   try {
-    const v = await api.recEnd(r.id, { duration: r.duration, mode: r.cfg.mode, width: r.width, height: r.height });
+    const v = await api.recEnd(r.id, { duration: r.duration, mode: r.cfg.mode, width: r.width, height: r.height, voiceIsolation: r.voiceIsolation });
     library.unshift(v);
     busy();
     openPlayer(v);
@@ -746,6 +778,42 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && setupOpe
 (async () => {
   const info = await api.info();
   if (!info.ffmpeg) toast('Aviso: ffmpeg no encontrado; recortar/exportar no funcionará', true);
-  if (info.platform === 'linux') $('#sysaudio-field').title = 'El audio del sistema no está soportado en Linux';
+  sysAudioOk = !!info.systemAudio;
+  if (!sysAudioOk) cfg.systemAudio = false;
   await loadLibrary();
+  checkPerms(true);
 })();
+
+// ---------- Permisos (macOS) ----------
+let permTimer = null;
+async function refreshPerms() {
+  const st = await api.permStatus();
+  let all = true;
+  for (const k of ['screen', 'camera', 'microphone']) {
+    const ok = st[k] === 'granted';
+    all = all && ok;
+    const el = $('#perm-st-' + k);
+    el.textContent = ok ? '✓ Permitido' : 'Pendiente';
+    el.classList.toggle('ok', ok);
+    $('[data-perm="' + k + '"]').classList.toggle('hidden', ok);
+  }
+  return { st, all };
+}
+async function checkPerms(first) {
+  const { st, all } = await refreshPerms();
+  if (all) { closePerms(); return; }
+  $('#perms').classList.remove('hidden');
+  clearInterval(permTimer);
+  permTimer = setInterval(async () => { const r = await refreshPerms(); if (r.all) closePerms(); }, 1500);
+  if (first) {
+    // Lanza los avisos del sistema uno tras otro
+    if (st.camera === 'not-determined') await api.permRequest('camera');
+    if (st.microphone === 'not-determined') await api.permRequest('microphone');
+    if (st.screen !== 'granted') await api.permRequest('screen');
+    refreshPerms();
+  }
+}
+function closePerms() { clearInterval(permTimer); $('#perms').classList.add('hidden'); }
+$$('[data-perm]').forEach((b) => b.addEventListener('click', async () => { await api.permRequest(b.dataset.perm); refreshPerms(); }));
+$('#perms-skip').addEventListener('click', closePerms);
+$('#perms-relaunch').addEventListener('click', () => api.relaunch());

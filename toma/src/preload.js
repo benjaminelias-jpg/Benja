@@ -8,6 +8,11 @@ const on = (channel) => (cb) => {
 
 contextBridge.exposeInMainWorld('toma', {
   info: () => ipcRenderer.invoke('app:info'),
+  screenAccess: () => ipcRenderer.invoke('screen:access'),
+  openScreenSettings: () => ipcRenderer.invoke('screen:open-settings'),
+  permStatus: () => ipcRenderer.invoke('perm:status'),
+  permRequest: (k) => ipcRenderer.invoke('perm:request', k),
+  relaunch: () => ipcRenderer.invoke('app:relaunch'),
 
   // Fuentes de captura
   listSources: () => ipcRenderer.invoke('sources:list'),
@@ -45,6 +50,7 @@ contextBridge.exposeInMainWorld('toma', {
   openExternal: (id) => ipcRenderer.invoke('lib:open-external', id),
   copyPath: (id) => ipcRenderer.invoke('lib:copy-path', id),
   trim: (id, s, e) => ipcRenderer.invoke('lib:trim', id, s, e),
+  isolateVoice: (id) => ipcRenderer.invoke('lib:isolate-voice', id),
   exportVideo: (id, fmt) => ipcRenderer.invoke('lib:export', id, fmt),
   importVideos: () => ipcRenderer.invoke('lib:import'),
   setDuration: (id, d) => ipcRenderer.invoke('lib:set-duration', id, d),

@@ -86,6 +86,7 @@
         <div id="meta" class="meta"></div>
         <div class="actions">
           <button class="btn small" id="btn-fav">☆ Favorito</button>
+          <button class="btn small" id="btn-voice" title="Reduce el ruido de fondo y deja la voz más clara">Aislar voz</button>
           <button class="btn small" id="btn-export-mp4">Exportar MP4</button>
           <button class="btn small ghost" id="btn-export-gif">GIF (30s)</button>
           <button class="btn small ghost" id="btn-show">Mostrar en carpeta</button>
@@ -166,6 +167,7 @@
 
       <div class="toggles">
         <label class="chk" id="sysaudio-field"><input type="checkbox" id="sysaudio" /> Grabar audio del sistema</label>
+        <label class="chk" title="Reduce el ruido de fondo y deja tu voz más clara"><input type="checkbox" id="voiceiso" checked /> Aislar voz (quitar ruido de fondo)</label>
         <label class="chk"><input type="checkbox" id="countdown" checked /> Cuenta regresiva de 3 s</label>
         <label class="chk"><input type="checkbox" id="hide-main" checked /> Ocultar Toma mientras grabo</label>
       </div>
@@ -173,6 +175,21 @@
       <div class="modal-foot">
         <span class="muted small">Atajos: <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>R</kbd> iniciar/detener · <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>P</kbd> pausa · <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>C</kbd> cancelar</span>
         <button class="btn primary big" id="btn-start"><span class="rec-dot"></span>Comenzar a grabar</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Permisos (macOS) -->
+  <div id="perms" class="modal hidden">
+    <div class="modal-card" style="width:min(560px,94vw)">
+      <div class="modal-head"><h2>Permisos necesarios</h2></div>
+      <p class="muted">Para grabar, macOS necesita que autorices a Toma. Pulsa "Permitir" en cada uno. En Grabación de pantalla, marca la casilla de <b>Toma</b> en la lista y después reinicia Toma.</p>
+      <div class="perm-row"><span>Grabación de pantalla</span><span class="perm-st" id="perm-st-screen"></span><button class="btn small primary" data-perm="screen">Permitir</button></div>
+      <div class="perm-row"><span>Cámara</span><span class="perm-st" id="perm-st-camera"></span><button class="btn small primary" data-perm="camera">Permitir</button></div>
+      <div class="perm-row"><span>Micrófono</span><span class="perm-st" id="perm-st-microphone"></span><button class="btn small primary" data-perm="microphone">Permitir</button></div>
+      <div class="modal-foot">
+        <button class="btn ghost" id="perms-skip">Continuar sin ellos</button>
+        <button class="btn primary" id="perms-relaunch">Reiniciar Toma</button>
       </div>
     </div>
   </div>

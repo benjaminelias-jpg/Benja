@@ -1,7 +1,7 @@
 // Toma — grabador de pantalla y cámara local (proceso principal)
 const {
   app, BrowserWindow, ipcMain, desktopCapturer, session, protocol,
-  screen, shell, dialog, globalShortcut, clipboard, Menu,
+  screen, shell, dialog, globalShortcut, clipboard, Menu, systemPreferences,
 } = require('electron');
 const path = require('path');
 const fs = require('fs');
@@ -48,6 +48,15 @@ function runFfmpeg(args) {
     p.on('error', reject);
     p.on('close', (code) => (code === 0 ? resolve() : reject(new Error(err || `ffmpeg salió con código ${code}`))));
   });
+}
+
+// Aislar voz: corta graves (golpes, zumbidos), reduce ruido de fondo constante
+// (ventilador, aire, tráfico) y nivela el volumen de la voz.
+const VOICE_AF = 'highpass=f=90,afftdn=nr=20:nf=-32:tn=1,lowpass=f=11000,dynaudnorm=f=250:g=15:p=0.9';
+function audioCodecFor(file) {
+  return path.extname(file).toLowerCase() === '.webm'
+    ? ['-c:a', 'libopus', '-b:a', '128k']
+    : ['-c:a', 'aac', '-b:a', '160k'];
 }
 
 async function makeThumb(videoFile, id, duration) {
@@ -156,6 +165,17 @@ function createMainWindow() {
   });
 }
 
+// Mantiene una ventana flotante encima de todo, en todos los escritorios (Spaces)
+// y también sobre apps a pantalla completa (p. ej. Chrome en pantalla completa en macOS).
+const IS_MAC = process.platform === 'darwin';
+const FLOAT_TYPE = IS_MAC ? { type: 'panel' } : {};
+function keepOnTop(win) {
+  if (!win || win.isDestroyed()) return;
+  win.setAlwaysOnTop(true, 'screen-saver', 1);
+  win.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true, skipTransformProcessType: true });
+  if (IS_MAC) win.setFullScreenable(false);
+}
+
 const BUBBLE_SIZES = { s: 160, m: 240, l: 340 };
 
 function createBubble(deviceId, sizeKey = 'm') {
@@ -175,6 +195,7 @@ function createBubble(deviceId, sizeKey = 'm') {
     y: wa.y + wa.height - size - 32,
     frame: false,
     transparent: true,
+    ...FLOAT_TYPE,
     resizable: false,
     hasShadow: false,
     alwaysOnTop: true,
@@ -184,24 +205,24 @@ function createBubble(deviceId, sizeKey = 'm') {
     show: false,
     webPreferences: webPrefs,
   });
-  bubbleWin.setAlwaysOnTop(true, 'screen-saver');
-  bubbleWin.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
+  keepOnTop(bubbleWin);
   bubbleWin.loadFile(path.join(__dirname, 'renderer', 'bubble.html'), { query: { deviceId: deviceId || '', size: sizeKey } });
-  bubbleWin.once('ready-to-show', () => bubbleWin && bubbleWin.showInactive());
+  bubbleWin.once('ready-to-show', () => { if (bubbleWin) { bubbleWin.showInactive(); keepOnTop(bubbleWin); } });
   bubbleWin.on('closed', () => { bubbleWin = null; });
 }
 
 function createControls() {
   if (controlsWin) { controlsWin.showInactive(); return; }
   const wa = screen.getPrimaryDisplay().workArea;
-  const w = 380, h = 64;
+  const w = 68, h = 300;
   controlsWin = new BrowserWindow({
     width: w,
     height: h,
-    x: Math.round(wa.x + (wa.width - w) / 2),
-    y: wa.y + wa.height - h - 24,
+    x: wa.x + 16,
+    y: Math.round(wa.y + (wa.height - h) / 2),
     frame: false,
     transparent: true,
+    ...FLOAT_TYPE,
     resizable: false,
     hasShadow: false,
     alwaysOnTop: true,
@@ -212,10 +233,9 @@ function createControls() {
   });
   // Excluye la barra de controles de la grabación (Windows 10 2004+ / macOS)
   controlsWin.setContentProtection(true);
-  controlsWin.setAlwaysOnTop(true, 'screen-saver');
-  controlsWin.setVisibleOnAllWorkspaces(true, { visibleOnFullScreen: true });
+  keepOnTop(controlsWin);
   controlsWin.loadFile(path.join(__dirname, 'renderer', 'controls.html'));
-  controlsWin.once('ready-to-show', () => controlsWin && controlsWin.showInactive());
+  controlsWin.once('ready-to-show', () => { if (controlsWin) { controlsWin.showInactive(); keepOnTop(controlsWin); } });
   controlsWin.on('closed', () => { controlsWin = null; });
 }
 
@@ -267,7 +287,7 @@ ipcMain.on('rec:state', (_e, state) => {
   if (bubbleWin) bubbleWin.webContents.send('rec:state', state);
 });
 
-ipcMain.on('main:hide', () => { if (mainWin) mainWin.hide(); });
+ipcMain.on('main:hide', () => { if (mainWin) mainWin.hide(); keepOnTop(bubbleWin); keepOnTop(controlsWin); });
 ipcMain.on('main:show', () => { if (mainWin) { mainWin.show(); mainWin.focus(); } });
 ipcMain.on('main:minimize', () => { if (mainWin) mainWin.minimize(); });
 
@@ -310,11 +330,21 @@ ipcMain.handle('rec:end', async (_e, id, meta) => {
   const file = `${id}.webm`;
   const finalPath = path.join(VIDEOS_DIR, file);
   // Remux con ffmpeg para que el WebM tenga duración y sea navegable
-  try {
-    await runFfmpeg(['-i', r.tmp, '-c', 'copy', finalPath]);
-    fs.rmSync(r.tmp, { force: true });
-  } catch {
-    fs.renameSync(r.tmp, finalPath);
+  let voiceIsolated = false;
+  if (meta && meta.voiceIsolation) {
+    try {
+      await runFfmpeg(['-i', r.tmp, '-c:v', 'copy', '-af', VOICE_AF, ...audioCodecFor(finalPath), finalPath]);
+      voiceIsolated = true;
+    } catch {}
+  }
+  if (voiceIsolated) fs.rmSync(r.tmp, { force: true });
+  else {
+    try {
+      await runFfmpeg(['-i', r.tmp, '-c', 'copy', finalPath]);
+      fs.rmSync(r.tmp, { force: true });
+    } catch {
+      fs.renameSync(r.tmp, finalPath);
+    }
   }
   const duration = Number(meta && meta.duration) || 0;
   const thumb = await makeThumb(finalPath, id, duration);
@@ -325,6 +355,7 @@ ipcMain.handle('rec:end', async (_e, id, meta) => {
     notes: '',
     duration,
     mode: (meta && meta.mode) || 'screen',
+    voiceIsolated,
     width: meta && meta.width,
     height: meta && meta.height,
     thumb,
@@ -414,6 +445,23 @@ ipcMain.handle('lib:trim', async (_e, id, start, end) => {
   return publicVideo(v);
 });
 
+ipcMain.handle('lib:isolate-voice', async (_e, id) => {
+  const lib = loadLibrary();
+  const v = lib.find((x) => x.id === id);
+  if (!v) throw new Error('Video no encontrado');
+  const src = path.join(VIDEOS_DIR, v.file);
+  const ext = path.extname(v.file);
+  const outName = `${v.id}-${Date.now().toString(36)}${ext}`;
+  const out = path.join(VIDEOS_DIR, outName);
+  await runFfmpeg(['-i', src, '-c:v', 'copy', '-af', VOICE_AF, ...audioCodecFor(out), out]);
+  shell.trashItem(src).catch(() => fs.rmSync(src, { force: true }));
+  v.file = outName;
+  v.voiceIsolated = true;
+  v.updatedAt = new Date().toISOString();
+  saveLibrary(lib);
+  return publicVideo(v);
+});
+
 ipcMain.handle('lib:export', async (_e, id, format) => {
   const v = loadLibrary().find((x) => x.id === id);
   if (!v) throw new Error('Video no encontrado');
@@ -486,7 +534,50 @@ ipcMain.handle('lib:set-duration', (_e, id, duration) => {
   saveLibrary(lib);
 });
 
-ipcMain.handle('app:info', () => ({ videosDir: VIDEOS_DIR, ffmpeg: !!ffmpegPath, platform: process.platform }));
+// Audio del sistema: Windows siempre; macOS solo desde la versión 13
+function systemAudioSupported() {
+  if (process.platform === 'win32') return true;
+  if (process.platform === 'darwin') return parseInt(process.getSystemVersion().split('.')[0], 10) >= 13;
+  return false;
+}
+ipcMain.handle('app:info', () => ({
+  videosDir: VIDEOS_DIR, ffmpeg: !!ffmpegPath, platform: process.platform, systemAudio: systemAudioSupported(),
+}));
+
+// Permiso de grabación de pantalla (macOS)
+ipcMain.handle('screen:access', () => {
+  if (process.platform !== 'darwin') return 'granted';
+  return systemPreferences.getMediaAccessStatus('screen');
+});
+ipcMain.handle('screen:open-settings', () =>
+  shell.openExternal('x-apple.systempreferences:com.apple.preference.security?Privacy_ScreenCapture'));
+// Permisos del sistema (macOS): cámara, micrófono y grabación de pantalla
+ipcMain.handle('perm:status', () => {
+  if (process.platform !== 'darwin') return { camera: 'granted', microphone: 'granted', screen: 'granted' };
+  return {
+    camera: systemPreferences.getMediaAccessStatus('camera'),
+    microphone: systemPreferences.getMediaAccessStatus('microphone'),
+    screen: systemPreferences.getMediaAccessStatus('screen'),
+  };
+});
+ipcMain.handle('perm:request', async (_e, kind) => {
+  if (process.platform !== 'darwin') return true;
+  const pane = { camera: 'Privacy_Camera', microphone: 'Privacy_Microphone', screen: 'Privacy_ScreenCapture' }[kind];
+  const openPane = () => shell.openExternal('x-apple.systempreferences:com.apple.preference.security?' + pane);
+  if (kind === 'screen') {
+    // Pedir las fuentes hace que macOS muestre su aviso y registre a Toma en la lista
+    try { await desktopCapturer.getSources({ types: ['screen'], thumbnailSize: { width: 1, height: 1 } }); } catch {}
+    if (systemPreferences.getMediaAccessStatus('screen') !== 'granted') openPane();
+    return true;
+  }
+  const st = systemPreferences.getMediaAccessStatus(kind);
+  if (st === 'not-determined') {
+    const ok = await systemPreferences.askForMediaAccess(kind);
+    if (!ok) openPane();
+  } else if (st !== 'granted') openPane();
+  return true;
+});
+ipcMain.handle('app:relaunch', () => { app.relaunch(); app.exit(0); });
 
 // ---------- Arranque ----------
 app.whenReady().then(() => {
@@ -499,7 +590,7 @@ app.whenReady().then(() => {
       const sources = await desktopCapturer.getSources({ types: ['screen', 'window'] });
       const src = sources.find((s) => s.id === selectedSource.id) || sources.find((s) => s.id.startsWith('screen'));
       const res = { video: src };
-      if (selectedSource.systemAudio && process.platform !== 'linux') res.audio = 'loopback';
+      if (selectedSource.systemAudio && systemAudioSupported()) res.audio = 'loopback';
       callback(res);
     } catch {
       callback({});

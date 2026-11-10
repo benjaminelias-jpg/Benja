@@ -20,11 +20,9 @@ window.toma.onState((st) => {
   bar.classList.toggle('paused', st.phase === 'paused');
   $('ico-pause').style.display = st.phase === 'paused' ? 'none' : '';
   $('ico-play').style.display = st.phase === 'paused' ? '' : 'none';
-  if (st.phase === 'countdown') {
-    $('time').textContent = st.count ? `Empieza en ${st.count}…` : 'Preparando…';
-  } else if (st.phase === 'stopping') {
-    $('time').textContent = 'Guardando…';
-  } else {
-    $('time').innerHTML = `<span class="dot"></span>${fmt(st.elapsed)}`;
-  }
+  const t = $('time');
+  t.classList.toggle('big', st.phase === 'countdown' && !!st.count);
+  if (st.phase === 'countdown') t.textContent = st.count ? String(st.count) : '…';
+  else if (st.phase === 'stopping') t.textContent = '…';
+  else t.textContent = fmt(st.elapsed);
 });
