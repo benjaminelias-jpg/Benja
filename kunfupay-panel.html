@@ -828,6 +828,8 @@ body.tf-on{overflow:hidden}
 @media (max-width:520px){.sd-top{flex-direction:column;align-items:stretch}.sd-top>*{min-width:0;max-width:100%;width:100%}.sd-tabs{overflow-x:auto;flex-wrap:nowrap;scrollbar-width:none;margin:0 -2px;padding:0 2px}.sd-tabs::-webkit-scrollbar{display:none}.sd-tab{flex:none}.sd-new{justify-content:center}.sd-id .sd-link{width:100%}}
 .tf-chip-free{margin-top:14px}
 .tf-seg[hidden],.tf-note[hidden],.tf-cls-load[hidden]{display:none}
+.tf-curseg{margin-top:14px}.tf-curseg button:disabled{opacity:.4;cursor:not-allowed}
+.tf-curnote{display:flex;align-items:flex-start;gap:7px}.tf-curnote svg{width:15px;height:15px;flex:none;margin-top:2px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}.tf-curnote b{font-weight:700}
 /* tienda: la moneda, discreta junto al nombre */
 .sd-store{grid-template-columns:auto minmax(0,1fr)}
 .sd-name{display:flex;align-items:center;gap:6px 10px;flex-wrap:wrap}
@@ -2186,20 +2188,6 @@ new MutationObserver(function(){var t=window.__kuTheme;if(t&&document.documentEl
       <div class="tf-act"><button class="tf-ok" type="button" onclick="tfNext()">OK<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button><span class="tf-hint">pulsa <b>Intro ↵</b></span><button class="tf-back" type="button" onclick="tfPrev()">← Atrás</button></div>
     </section>
 
-    <section class="tf-step" data-s="cur">
-      <p class="tf-kick">¡Genial, ya casi terminas!</p>
-      <p class="tf-q">Dinos qué moneda quieres recibir en tu tienda</p>
-      <p class="tf-sub">Tus <span id="tfWho">clientes</span> de todo el mundo pagan en su moneda local y tú recibes la que elijas.</p>
-      <div class="tf-opts" id="tfCur" role="radiogroup">
-        <button class="tf-opt" type="button" role="radio" data-v="EUR"><kbd>A</kbd>Euros · €<svg class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button>
-        <button class="tf-opt" type="button" role="radio" data-v="USD"><kbd>B</kbd>Dólares · $<svg class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button>
-        <button class="tf-opt" type="button" role="radio" data-v="GBP"><kbd>C</kbd>Libras · £<svg class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button>
-      </div>
-      <p class="tf-curpick" id="tfCurPick" aria-live="polite"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg><span>Elígela bien: una vez creada la tienda, su moneda queda fija y no se puede cambiar.</span></p>
-      <p class="tf-err" role="alert">Elige una para seguir.</p>
-      <div class="tf-act"><button class="tf-ok" type="button" onclick="tfNext()">OK<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button><span class="tf-hint">pulsa una letra o <b>Intro ↵</b></span><button class="tf-back" type="button" onclick="tfPrev()">← Atrás</button></div>
-    </section>
-
     <section class="tf-step" data-s="price">
       <p class="tf-kick">¡GENIAL! Llegaste al último y es el más importante 🤑</p>
       <p class="tf-q">¿Cuánto quieres cobrar?</p>
@@ -2207,6 +2195,8 @@ new MutationObserver(function(){var t=window.__kuTheme;if(t&&document.documentEl
       <p class="tf-note tf-phint" id="tfPHint">Si quieres que sea gratis, escribe <b>0</b>. Si cobras, el mínimo es <b>0,99</b>.</p>
       <div class="tf-seg" id="tfPay" role="radiogroup" aria-label="Cómo se cobra"><button type="button" data-v="once" class="on">Pago único</button><button type="button" data-v="month">Cada mes</button></div>
       <p class="tf-note" id="tfPayNote">Lo cobraremos en un solo pago.</p>
+      <div class="tf-seg tf-curseg" id="tfCurSeg" role="radiogroup" aria-label="Moneda"><button type="button" role="radio" data-v="EUR" class="on" aria-checked="true">€ Euros</button><button type="button" role="radio" data-v="USD" aria-checked="false">$ Dólares</button><button type="button" role="radio" data-v="GBP" aria-checked="false">£ Libras</button></div>
+      <p class="tf-note tf-curnote" id="tfCurNote"></p>
       <span class="tf-chip tf-chip-free" id="tfFree"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><span>Tu producto será gratis: lo dejamos configurado como gratis automáticamente.</span></span>
       <p class="tf-err" role="alert">Escribe un precio para seguir. Si quieres que sea gratis, pon 0.</p>
       <div class="tf-act"><button class="tf-ok" type="button" onclick="tfNext()">Crear mi producto<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button><span class="tf-hint">pulsa <b>Intro ↵</b></span><button class="tf-back" type="button" onclick="tfPrev()">← Atrás</button></div>
@@ -2374,9 +2364,9 @@ function tfSel(sel,b){document.querySelectorAll(sel+" .tf-opt").forEach(x=>{cons
 function tfBegin(mode){clearTimeout(TF.auto);TF.mode=mode==="store"&&KU.stores.length?"store":"product";TF.i=0;TF.finished=false;TF.newStore=!KU.setup||TF.mode==="store";
   TF.end="pdone";["tf-name","tf-desc","tf-dlink","tf-price"].forEach(id=>$tf(id).value="");TF.del="";TF.dt="";TF.payAuto=false;TF.file=null;TF.tpl=null;TF.cal={plat:"meet",dur:60,days:[1,2,3,4,5],from:"09:00",to:"17:00",link:""};$tf("tfCalLink").value="";$tf("tfFIn").value="";TF.cls=null;TF.clsPrice=false;TF.clsReady=false;TF.biz="";tfSel("#tfBiz",null);tfSel("#tfDel",null);$tf("tfDetect").classList.remove("on");tfDelBuild();tfLinkUpd();
   if(!TF.newStore){TF.flow=["biz","info","deliver","price"];TF.cur=KU.setup.cur;TF.nets=KU.setup.nets.slice()}
-  else{TF.flow=(KU.stores.length?["sname"]:[]).concat(["biz","info","deliver","nets","urls","cur","price"]);TF.nets=[];for(const k in TFU)delete TFU[k];
+  else{TF.flow=(KU.stores.length?["sname"]:[]).concat(["biz","info","deliver","nets","urls","price"]);TF.nets=[];for(const k in TFU)delete TFU[k];
     $tf("tf-sname").value="";tfSnameRender();
-    TF.cur="EUR";tfSel("#tfCur",document.querySelector('#tfCur .tf-opt[data-v="EUR"]'));$tf("tfUrls").innerHTML="";
+    TF.cur="EUR";$tf("tfUrls").innerHTML="";
     document.querySelectorAll("#tfNets .tf-opt").forEach(b=>{b.classList.remove("on");b.setAttribute("aria-pressed","false")})}
   TF.pay="once";tfOkLabels();
   $tf("tfBizQ").textContent=TF.newStore?"Nos encantaría saber qué tipo de negocio tienes":"¿Qué tipo de producto vas a crear?";
@@ -2392,9 +2382,8 @@ function tfShow(n,back,initial){clearTimeout(TF.auto);
   if(n==="info"){tfCountRender();tfBrRender();requestAnimationFrame(()=>{tfNameFit();tfDescFit()})}
   tfStep(n).querySelectorAll(".tf-back").forEach(b=>b.hidden=TF.i===0);
   if(n==="urls")tfBuildUrls();
-  if(n==="cur"){$tf("tfWho").textContent=({curso:"alumnos",evento:"alumnos",comunidad:"miembros"})[TF.biz]||"clientes";tfCurPickRender()}
   if(n==="sname")tfSnameRender();
-  if(n==="price"){$tf("tfSym").textContent=SYM[TF.cur]||"€";tfPayRender()}
+  if(n==="price"){tfCurRender();tfPayRender()}
   if(n==="deliver"){tfDelBuild();if(TF.del==="cls"){if(TF.clsReady)tfClsRender();else tfClsFind()}}
   if(n==="pdone")tfPdone();
   tfEl().scrollTop=0;
@@ -2417,7 +2406,6 @@ function tfNext(){const n=tfNow();
   if(n==="biz"&&!TF.biz)return tfErr(n);
   if(n==="nets"&&!TF.nets.length)return tfErr(n);
   if(n==="urls"){let ok=true;document.querySelectorAll("#tfUrls .tf-url").forEach(r=>{const v=r.querySelector("input").value.trim();r.classList.toggle("err",!v);if(!v)ok=false});if(!ok)return tfErr(n)}
-  if(n==="cur"&&!TF.cur)return tfErr(n);
   if(n==="price"){const p=tfPrice();if(!tfVal("tf-price")||isNaN(p))return tfErr(n,"Escribe un precio para seguir. Si quieres que sea gratis, pon 0.");if(p>0&&p<0.99)return tfErr(n,"El mínimo es 0,99. Si no quieres cobrar nada, pon 0 y será gratis.")}
   if(TF.i>=TF.flow.length)return;
   if(TF.i===TF.flow.length-1)tfCommitProduct();   /* el último paso crea el producto (si conecta Classroom, no hay paso de precio) */
@@ -2612,9 +2600,12 @@ function tfBuildUrls(){const w=$tf("tfUrls");w.querySelectorAll("input").forEach
     const i=document.createElement("input");i.type="text";i.placeholder=ph;i.autocomplete="off";i.setAttribute("autocapitalize","off");i.spellcheck=false;i.dataset.n=k;i.setAttribute("aria-label","Usuario de "+name);i.value=TFU[k]||"";i.addEventListener("input",()=>row.classList.remove("err"));row.appendChild(i);w.appendChild(row)})}
 /* moneda */
 /* sin avance automático: es una decisión que no se puede cambiar, que la confirme con OK */
-document.querySelectorAll("#tfCur .tf-opt").forEach(b=>b.addEventListener("click",()=>{tfSel("#tfCur",b);TF.cur=b.dataset.v;tfStep("cur").querySelector(".tf-err").classList.remove("on");clearTimeout(TF.auto);tfCurPickRender()}));
-function tfCurPickRender(){const e=$tf("tfCurPick");e.classList.toggle("on",!!TF.cur);
-  e.innerHTML=LOCK+(TF.cur?"<span>Tu tienda cobrará siempre en <b>"+CURN[TF.cur]+" ("+SYM[TF.cur]+")</b>. Si te convence, pulsa OK.</span>":"<span>Elígela bien: una vez creada la tienda, su moneda queda fija y no se puede cambiar.</span>")}
+document.querySelectorAll("#tfCurSeg button").forEach(b=>b.addEventListener("click",()=>{if(!TF.newStore||b.disabled)return;TF.cur=b.dataset.v;tfCurRender();tfPayRender()}));
+/* moneda: en una tienda nueva se elige aquí (euros por defecto); en una tienda que ya existe es la suya y no se cambia */
+function tfCurRender(){if(!TF.cur)TF.cur="EUR";$tf("tfSym").textContent=SYM[TF.cur]||"€";
+  document.querySelectorAll("#tfCurSeg button").forEach(b=>{const on=b.dataset.v===TF.cur;b.classList.toggle("on",on);b.setAttribute("aria-checked",on?"true":"false");b.disabled=!TF.newStore&&!on});
+  $tf("tfCurSeg").classList.toggle("is-locked",!TF.newStore);
+  $tf("tfCurNote").innerHTML=LOCK+(TF.newStore?"<span>Es la moneda de tu tienda: una vez creada, queda fija y no se puede cambiar. Tus clientes pagan en su moneda local.</span>":"<span>Se cobra en <b>"+CURN[TF.cur]+"</b>, la moneda de tu tienda.</span>")}
 /* precio */
 document.querySelectorAll("#tfPay button").forEach(b=>b.addEventListener("click",()=>{TF.pay=b.dataset.v;tfPayRender()}));
 function tfPayRender(){const free=tfVal("tf-price")!==""&&tfPrice()===0;tfStep("price").querySelector(".tf-act .tf-ok").classList.toggle("is-off",tfVal("tf-price")==="");$tf("tfPHint").hidden=free;$tf("tfFree").classList.toggle("on",free);$tf("tfPay").hidden=free;$tf("tfPayNote").hidden=free;
