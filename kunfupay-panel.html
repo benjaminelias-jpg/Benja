@@ -520,13 +520,14 @@ body.tf-on{overflow:hidden}
 .tf-in::placeholder{color:var(--tf-line)}
 .tf-in:focus{border-color:var(--tf-ink);box-shadow:none}
 .tf-ta{resize:none;min-height:110px;font-size:clamp(18px,2.2vw,22px)}
-.tf-act{display:flex;align-items:center;gap:14px;margin-top:18px;flex-wrap:wrap}
+.tf-act{display:flex;align-items:center;justify-content:flex-end;gap:14px;margin-top:18px;flex-wrap:wrap}
 .tf-ok{height:46px;padding:0 22px;border-radius:12px;border:0;background:var(--p600);color:#fff;font-weight:700;font-size:16px;display:inline-flex;align-items:center;gap:8px;transition:background .18s var(--ease),transform .14s var(--ease)}
 .tf-ok:hover{background:var(--p700)}.tf-ok:active{transform:scale(.97)}
 .tf-ok svg{width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
 .tf-hint{font-size:12.5px;color:var(--muted)}
+.tf-act .tf-ok{order:1}  /* Atrás a la izquierda, OK a la derecha */
 .tf-hint b{font-weight:700;color:var(--subtle)}
-.tf-back{margin-left:auto;border:0;background:transparent;color:var(--muted);font-weight:600;font-size:13.5px;padding:8px 4px}
+.tf-back{order:-1;margin-right:auto;border:0;background:transparent;color:var(--muted);font-weight:600;font-size:13.5px;padding:8px 4px}
 .tf-back:hover{color:var(--ink)}
 .tf-err{display:none;align-items:center;gap:8px;font-size:13.5px;font-weight:600;color:var(--tf-err)}
 .tf-err.on{display:flex}
