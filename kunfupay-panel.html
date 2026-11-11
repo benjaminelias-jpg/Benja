@@ -1085,6 +1085,8 @@ body.tf-on{overflow:hidden}
 .fn-side{padding:22px 20px;display:flex;flex-direction:column;gap:26px;position:sticky;top:20px}
 .fn-sec{display:flex;flex-direction:column;gap:12px}
 .fn-sec .eyebrow{color:var(--muted)}
+.fn-sh{display:flex;align-items:center;justify-content:space-between;gap:10px;min-height:34px}
+.fn-copy-m{display:none!important}
 .fn-main{display:flex;flex-direction:column;gap:6px;font-size:12.5px;font-weight:600;color:var(--muted)}
 .fn-main select{height:42px;border-radius:12px;border:0;background:var(--sunken);color:var(--ink);font:600 14px var(--font);padding:0 12px}
 .fn-steps{position:relative;display:flex;flex-direction:column;gap:4px}
@@ -1197,6 +1199,9 @@ body.tf-on{overflow:hidden}
   .fn-bar .tag{display:none}
   .fn-flow{padding:18px 14px}
   #fnDev{display:none}
+  /* móvil: «Copiar link» sube a la fila de «Estilo de tu tienda» y la vista previa sube con él */
+  .fn-bar{display:none}
+  .fn-copy-m{display:inline-flex!important}
 }
 /* candado en el menú hasta que exista la tienda */
 .lock-b{display:none}
@@ -2034,7 +2039,7 @@ new MutationObserver(function(){var t=window.__kuTheme;if(t&&document.documentEl
     <label class="fn-main" id="fnStoreWrap" hidden><span>Tienda</span><select id="fnStore"></select></label>
    </div>
    <div class="fn-sec">
-    <span class="eyebrow">Estilo de tu tienda</span>
+    <div class="fn-sh"><span class="eyebrow">Estilo de tu tienda</span><button class="btn btn-glass sm fn-copy-m" type="button" onclick="tfCopy(this,'kunfupay.com/'+fnH())">Copiar link</button></div>
     <div class="fn-styles" id="fnStyles"></div>
     <p class="fn-why" id="fnWhy"></p>
    </div>
