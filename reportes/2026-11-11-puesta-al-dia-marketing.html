@@ -1,0 +1,279 @@
+<title>Puesta al día de marketing</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: una sola columna de lectura (~68ch), como una carta del equipo; los datos aparecen como notas al margen dentro del texto y una tabla final de apoyo */
+:root{
+  --bg:#f6f8f7; --surface:#ffffff; --ink:#14211e; --muted:#5b6b67; --line:#dbe3e0;
+  --accent:#0f7a63; --accent-soft:#e1f2ec;
+  --good:#1d7a45; --good-bg:#e3f4ea; --warn:#9a6400; --warn-bg:#fbf0d9; --bad:#b03a2e; --bad-bg:#f9e4e1;
+  --display:"Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body:"Manrope", "Segoe UI", system-ui, -apple-system, sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1715; --surface:#16211e; --ink:#e6eeeb; --muted:#9db0aa; --line:#2a3a36;
+  --accent:#4fc7a6; --accent-soft:#173a31;
+  --good:#6fd39a; --good-bg:#16352a; --warn:#f0c062; --warn-bg:#3a2e14; --bad:#f08b80; --bad-bg:#3d1f1c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1715; --surface:#16211e; --ink:#e6eeeb; --muted:#9db0aa; --line:#2a3a36;
+  --accent:#4fc7a6; --accent-soft:#173a31;
+  --good:#6fd39a; --good-bg:#16352a; --warn:#f0c062; --warn-bg:#3a2e14; --bad:#f08b80; --bad-bg:#3d1f1c; color-scheme:dark}
+
+body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16.5px;line-height:1.65}
+.wrap{max-width:46rem;margin:0 auto;padding-block:48px 80px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{display:grid;gap:10px;margin-bottom:36px}
+.eyebrow{font-size:.78rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:600}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(2rem,6vw,2.8rem);line-height:1.08;margin:0;text-wrap:balance}
+.lede{font-size:1.12rem;color:var(--muted);margin:0}
+h2{font-family:var(--display);font-weight:700;font-size:1.6rem;line-height:1.2;margin:56px 0 12px;text-wrap:balance;padding-top:20px;border-top:1px solid var(--line)}
+h3{font-family:var(--display);font-weight:600;font-size:1.18rem;margin:30px 0 6px;text-wrap:balance}
+p{margin:0 0 14px}
+ul,ol{margin:0 0 14px;padding-left:1.25rem}
+li{margin-bottom:6px}
+strong{font-weight:700}
+.num{font-variant-numeric:tabular-nums;font-weight:700;color:var(--accent);white-space:nowrap}
+nav.toc{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 20px;margin-bottom:8px}
+nav.toc ol{margin:0;columns:2;column-gap:28px}
+nav.toc a{color:var(--ink);text-decoration:none;border-bottom:1px solid var(--line)}
+nav.toc a:hover,nav.toc a:focus-visible{color:var(--accent);border-color:var(--accent)}
+@media (max-width:560px){nav.toc ol{columns:1}}
+.quote{border-left:3px solid var(--accent);padding:4px 0 4px 16px;margin:18px 0;color:var(--ink);font-size:1.05rem}
+.note{border-radius:10px;padding:14px 16px;margin:16px 0;font-size:.95rem}
+.note.ojo{background:var(--warn-bg);color:var(--ink)}
+.note.ojo b{color:var(--warn)}
+.note.bien{background:var(--good-bg)}
+.note.bien b{color:var(--good)}
+.pill{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:2px 8px;border-radius:999px;vertical-align:2px;margin-left:6px}
+.pill.up{background:var(--good-bg);color:var(--good)}
+.pill.hold{background:var(--warn-bg);color:var(--warn)}
+.pill.down{background:var(--bad-bg);color:var(--bad)}
+.brief{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;margin:18px 0}
+.brief h3{margin-top:0}
+.brief dl{display:grid;grid-template-columns:8.5rem 1fr;gap:6px 14px;margin:10px 0 0}
+.brief dt{font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700;padding-top:3px}
+.brief dd{margin:0;min-width:0}
+@media (max-width:560px){.brief dl{grid-template-columns:1fr}.brief dt{padding-top:8px}}
+.tablebox{overflow-x:auto;margin:16px 0;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.88rem;min-width:600px}
+th,td{padding:9px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:.72rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:700}
+td.r,th.r{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.foot{margin-top:40px;font-size:.85rem;color:var(--muted)}
+a{color:var(--accent)}
+</style>
+
+<div class="wrap">
+<header>
+  <span class="eyebrow">Marketing · 11 de noviembre de 2026 · datos del 28 oct al 10 nov</span>
+  <h1>Benja, así vamos</h1>
+  <p class="lede">Lo que está pasando en las campañas, lo que hemos hecho nuevo, hacia dónde vamos el mes que viene y las campañas nuevas que nos pediste estudiar.</p>
+</header>
+
+<nav class="toc" aria-label="Índice">
+<ol>
+  <li><a href="#resumen">En corto</a></li>
+  <li><a href="#campanas">Qué está pasando en cada campaña</a></li>
+  <li><a href="#nuevo">Qué hemos hecho nuevo</a></li>
+  <li><a href="#direccion">Hacia dónde vamos</a></li>
+  <li><a href="#producto">Sugerencias de producto</a></li>
+  <li><a href="#nuevas">Campañas nuevas a estudiar</a></li>
+  <li><a href="#pendientes">Lo que teníamos pendiente</a></li>
+  <li><a href="#numeros">Los números, de un vistazo</a></li>
+</ol>
+</nav>
+
+<h2 id="resumen">En corto</h2>
+<p>La adquisición de Kunfupay es hoy la que más leads trae, y lo mejor no es solo cuántos: son <strong>mejores</strong>. En la última reunión con Juane vimos que la calidad está bastante por encima de otras temporadas. Entra gente que tiene un problema concreto y que sabe para qué quiere Kunfupay. Cada vez entran más personas que ya venden productos digitales y a las que les falta esa pieza del negocio. Estamos apuntando mucho mejor al nicho.</p>
+<p>Lo hablamos también con Jorge: la gente ya no entra en blanco a la plataforma. Cuando llega, más o menos sabe qué tiene que hacer y por qué está ahí. Le dijimos a Juane que esa es nuestra prioridad máxima: <strong>que cada persona sepa por qué entra a Kunfupay, con un dolor concreto al que podamos dar soporte con la plataforma.</strong> Eso es un lead cualificado.</p>
+<p>En estas dos semanas hemos invertido unos <span class="num">5.360 €</span> en Meta. El conjunto que más nos importa, Optimización fiscal, está trayendo leads a unos <span class="num">29 €</span>. Los meses de leads a 150 o 200 € se están acabando.</p>
+<div class="note bien"><b>Lo que más nos ha sorprendido:</b> LATAM. En los diez días del experimento de hubs ya hay leads cerrados, en tiempo récord. Esto no habla solo de marketing. Un aplauso para ventas, que tiene el proceso comercial cada vez más aceitado: un SDR contacta, el lead agenda con Rafa, negocian y se cierra en cada vez menos días.</div>
+
+<h2 id="campanas">Qué está pasando en cada campaña</h2>
+
+<h3>Adquisición Kunfupay: Métodos de pago y Optimización fiscal <span class="pill up">Escalar</span></h3>
+<p>El conjunto que era nuestro ganador en calidad, pero no en volumen, lo fuimos subiendo de presupuesto muy poco a poco. Pasó lo contrario de lo que esperábamos: el coste por lead está <strong>bajando</strong>. Y tiene mucho que ver con lo que está pasando dentro de marketing: alinear el mensaje no solo subió la calidad, también nos abarata cada lead.</p>
+<p>En números: el conjunto de Optimización fiscal con la audiencia de Hernán al 3 % gastó <span class="num">971 €</span> y trajo <span class="num">33 leads</span>, a unos <span class="num">29 € cada uno</span>. El de Métodos de pago (audiencia de Hernán al 1 %) va más caro, unos <span class="num">40 €</span> por registro. En Kommo esta campaña ya tiene 5 leads en negociación y 2 videollamadas agendadas.</p>
+
+<h3>El experimento de la audiencia de Rubén <span class="pill hold">En prueba</span></h3>
+<p>Ahora mismo estamos probando la audiencia nueva que nos pasó Rubén. La ponemos a competir contra la audiencia estable de Hernán al 3 %. Las previsiones son buenas, pero está muy verde: lleva activa desde el 9 de noviembre (<span class="num">123 €</span> y 2 leads). En los próximos días actualizamos con resultados de verdad.</p>
+
+<h3>Hubs: Miami, Bali, LATAM y Dubái <span class="pill up">V1 en marcha</span></h3>
+<p>Llevamos toda la información que recogimos estos meses a los tests, en un lanzamiento más que certero para ser la primera versión que lanza este equipo. Cuatro hubs, unos 10 € al día cada uno:</p>
+<ul>
+  <li><strong>LATAM</strong> es la sorpresa: <span class="num">49 leads</span> con <span class="num">110 €</span>, a poco más de <span class="num">2 €</span> cada uno, y ya hay 2 cerrados en Kommo.</li>
+  <li><strong>Bali</strong> tiene un problema muy concreto y duele. Llegan más leads que en Miami o Dubái: 5, a unos <span class="num">21 €</span>.</li>
+  <li><strong>Dubái</strong> y <strong>Miami</strong> traen los leads más caros y en volumen mucho más bajo (2 en Dubái a unos 54 €; 1 en Miami a 107 €). Tiene sentido por la puja que hay en esas zonas.</li>
+</ul>
+<p>Estos cuatro son experimentos que estamos optimizando mano a mano con Juanjo: cuidamos los detalles y mejoramos cómo testeamos ángulos y creatividades. Además, experimentamos con audiencias sobre lo que ya tenemos, para terminar de estabilizar las campañas y tener más activos en marketing que nos permitan escalar.</p>
+
+<h3>Classroom Platinum <span class="pill hold">Mover presupuesto</span></h3>
+<p>En Platinum el lead cualificado ya está por debajo de los 100 €. El conjunto de registro en España trae <span class="num">31 leads</span> con <span class="num">495 €</span>, y 5 de ellos cualificados a unos <span class="num">99 €</span>. En Kommo hay 3 llamadas reservadas y 1 venta cerrada.</p>
+<p>Lo que no nos gusta: el conjunto con la audiencia de Hernán para UGC Founder se lleva la mitad del presupuesto (<span class="num">1.195 €</span>) y sale a unos <span class="num">120 €</span> por lead. Además, de lo que entra por Platinum, 23 leads acabaron como no cualificados en Kommo. Proponemos pasar presupuesto de ese conjunto al de registro y filtrar mejor en la landing antes de pedir los datos.</p>
+
+<h3>UGC Accelerator <span class="pill up">Barato y constante</span></h3>
+<p>Con solo 5 € al día trae registros a menos de <span class="num">2 €</span>: <span class="num">75 registros</span> en dos semanas. Es nuestra puerta de entrada más barata a la comunidad UGC.</p>
+
+<h3>Tributaless e Ignia <span class="pill hold">Menor prioridad, pero ojo</span></h3>
+<p>Tienen menos prioridad, pero en Tributaless habíamos previsto un cambio que quedó en stand by. Vimos que con muy poquito presupuesto traía leads más que interesantes: <span class="num">5 leads cualificados</span> con <span class="num">269 €</span>. Y <strong>ya se cerró el primer lead para Kunfupay que viene de esta campaña</strong>, lo cual es más que interesante. Tenemos que añadir ángulos nuevos (abajo van las propuestas).</p>
+<p>Ignia, para infoproductores de LATAM, trae leads a unos <span class="num">22 €</span> (6 en dos semanas, con 10 € al día).</p>
+
+<h3>Andorra <span class="pill down">Refrescar o pausar</span></h3>
+<p>Es la campaña más cansada de la cuenta: Meta marca sus creatividades como las más quemadas, y el registro sale a unos <span class="num">68 €</span> (4 en dos semanas). O le metemos creatividades nuevas, o movemos esos 15 € al día a LATAM.</p>
+
+<h3>Remarketing y Awareness <span class="pill up">Haciendo su trabajo</span></h3>
+<p>El remarketing a <strong>registrados sin tienda</strong> funciona: 7 solicitudes de tienda a menos de <span class="num">6 €</span> cada una. Los anuncios por vendedor (Jorge, Juan, Taiab) acaban de empezar y aún no hay nada que leer. Awareness llegó a <span class="num">641.000 personas</span> con 138 €, para alimentar todo lo demás.</p>
+
+<h2 id="nuevo">Qué hemos hecho nuevo</h2>
+<ul>
+  <li><strong>Hubs por ciudad</strong> (Miami, Bali, LATAM y Dubái): la primera V1 lanzada entera por este equipo, con todo lo aprendido estos meses.</li>
+  <li><strong>Audiencia de Rubén contra la de Hernán al 3 %</strong>, en competencia directa.</li>
+  <li><strong>Mensaje alineado</strong> entre marketing y ventas. Por eso sube la calidad y baja el coste.</li>
+  <li><strong>Remarketing por etapa y por vendedor</strong>: registrados sin tienda, audiencia de vendedores y un conjunto por cada comercial.</li>
+  <li><strong>Tracking del embudo</strong> con Juanjo: pixel y eventos en cada paso. Nos falta medir lo que pasa dentro de la app para ver el recorrido completo de cada persona.</li>
+  <li><strong>Flujo de testeo de landings</strong> de Hernán: versiones B1, B2, B3… para probar las que queramos.</li>
+  <li><strong>Análisis de los reels de Alejo Muñoz</strong> (está en el repo): su embudo de "comenta X y te llega por DM" con ManyChat nos sirve directamente para AutoDM.</li>
+</ul>
+
+<h2 id="direccion">Hacia dónde vamos el mes que viene</h2>
+<p>En Meta ya tenemos la parte de arriba del embudo, el TOFU, más que estabilizada. Así que ahora queremos empezar a pivotar a las otras partes del funnel: tocar los porcentajes de dentro, que pueden subir muchísimo la conversión, la calidad del lead y los leads activados. Esos leads activados son los que el día de mañana llegan a una venta.</p>
+
+<h3>1. Optimizar las landings</h3>
+<p>Hoy las landings están desoptimizadas y creemos que podemos subirlas al menos un punto. Si una landing convierte al 2 % y la llevamos al 3 %, con el mismo tráfico entra <strong>un 50 % más de leads</strong>. Lo vamos a hacer con el flujo de Hernán (B1, B2, B3…).</p>
+
+<h3>2. Optimizar el registro y la creación de tienda</h3>
+<p>Lo mismo en las siguientes etapas: el registro y la creación de tienda con el flujo nuevo. Si entramos en la app y mejoramos esto al menos un 2 %, o lo doblamos, podemos tener el doble de leads activados que hoy.</p>
+<p>Hoy esto no se nota tanto porque, en nuestro día a día, quien se registra recibe enseguida la llamada de ventas. Pero vamos a pasar a un sistema self-service, en el que la gente tendrá que encontrar las funcionalidades por su cuenta. Y si la app no le explica qué tiene que hacer, la activación va a ser muy baja. Haciendo solo este cambio podemos subirla muchísimo y optimizar el funnel <strong>sin tocar ni el presupuesto ni las campañas</strong>: convirtiendo mejor lo que ya nos llega.</p>
+
+<h3>3. Lo que vamos a experimentar</h3>
+<ul>
+  <li>Audiencia de Rubén contra la de Hernán al 3 %, hasta tener un ganador claro.</li>
+  <li>Subir LATAM poco a poco (un 10-20 % cada 2-3 días) y bajar Miami si sigue a más de 100 € por lead.</li>
+  <li>Ángulos nuevos en Tributaless y las seis campañas nuevas de abajo.</li>
+  <li>Creatividades nuevas para Andorra, o apagarla.</li>
+</ul>
+
+<h2 id="producto">Sugerencias de producto</h2>
+<p>Benja, viste el funnel de compra de Classroom y te pareció malísimo. Todavía no lo hemos auditado paso a paso con datos, así que esto son propuestas para revisarlo juntos:</p>
+<h3>Compra en Classroom</h3>
+<ul>
+  <li><strong>Precio y qué te llevas, antes de pedir nada.</strong> Que no haya que registrarse para ver lo que cuesta.</li>
+  <li><strong>Pago en una sola pantalla</strong>, sin crear la cuenta antes de pagar. La cuenta se crea después del pago.</li>
+  <li><strong>Métodos de pago locales</strong> según el país (Bizum, OXXO, PIX…). Es justo lo que vendemos con Kunfupay: Classroom tiene que ser el mejor escaparate de ello.</li>
+  <li><strong>Recuperar el carrito abandonado</strong> por WhatsApp o email en la primera hora.</li>
+  <li><strong>Medir cada paso</strong> (ver la página, empezar el pago, pagar) para saber exactamente dónde se cae la gente.</li>
+</ul>
+<h3>Activación en Kunfupay (self-service)</h3>
+<ul>
+  <li><strong>Una lista de primeros pasos</strong> al entrar: crea tu tienda, sube tu producto, conecta tu cobro. Con una barra de progreso.</li>
+  <li><strong>Pantallas vacías que explican qué hacer</strong>, en vez de pantallas vacías a secas.</li>
+  <li><strong>Plantillas de tienda</strong> por tipo de negocio (curso, comunidad, mentoría), para no empezar de cero.</li>
+  <li>El dato que lo justifica: el remarketing a <em>registrados sin tienda</em> funciona a menos de 6 € por solicitud. Hay mucha gente que se registra y se para justo antes de la tienda.</li>
+</ul>
+
+<h2 id="nuevas">Campañas nuevas a estudiar</h2>
+<p>Para cada una: para quién es, qué buscamos, el ángulo y cómo la lanzaríamos. La propuesta es lanzar cada test con 10-20 € al día durante 7 días sin tocarlo, y juzgarlo por el lead cualificado, no por el clic.</p>
+
+<div class="note ojo"><b>Ojo antes de escribir los anuncios de Tributaless:</b> "sin pagar impuestos en España" y "retirar siendo invisible" no se pueden decir. Primero, porque no es verdad: un residente en España paga la renta por todo lo que gana, esté donde esté el dinero (art. 2 de la Ley del IRPF), y Hacienda recibe información por CRS y por DAC8 desde enero de 2026. Segundo, porque Meta no aprueba anuncios que faciliten esquivar la ley, y nos jugamos la cuenta publicitaria entera, Kunfupay incluido. Lo que sí vende igual: "a tu nombre y en regla", "deja de pagar lo que no te toca", "invisible no, tranquilo sí".</div>
+
+<div class="brief">
+<h3>AutoDM · ManyChat gratis para creadores</h3>
+<dl>
+  <dt>Para quién</dt><dd>Solo creadores de contenido que ya publican y tienen comunidad.</dd>
+  <dt>Objetivo</dt><dd>Top funnel de creadores: que entren gratis y luego cobren con Kunfupay.</dd>
+  <dt>El funnel</dt><dd>Anuncio → registro gratis → <strong>conecta su primer flujo</strong> "comenta X y te llega por DM" → emails o DMs con casos → "y cuando vendas, cobra con Kunfupay". Lo que medimos es el coste por cuenta con un flujo activo, no el registro: un registro sin flujo no vale nada.</dd>
+  <dt>Ángulo</dt><dd>"Lo que los creadores grandes pagan cada mes en ManyChat, tú lo montas gratis en 5 minutos." En el anuncio se demuestra: un reel, un comentario y el DM llegando.</dd>
+  <dt>Filtro</dt><dd>En el registro, una pregunta: "¿cuántos seguidores tienes y dónde?". Así separamos al creador de la marca o la pyme.</dd>
+</dl>
+</div>
+
+<div class="brief">
+<h3>Tributaless · Creadoras de plataformas de suscripción</h3>
+<dl>
+  <dt>Para quién</dt><dd>Creadoras que cobran de plataformas de suscripción. Tenemos su audiencia.</dd>
+  <dt>Objetivo</dt><dd>Top funnel de creadoras que quieren retirar su dinero.</dd>
+  <dt>Ángulo</dt><dd>"Tres apps para cobrar lo que ganas en tu plataforma, a tu nombre y en regla." Estáticos rápidos, de texto, para lanzar ya.</dd>
+  <dt>Ojo</dt><dd>Nada de nombrarla ni de guiños tipo "plataforma azul": Meta los lee igual y rechaza el anuncio o marca la cuenta. Mensaje genérico ("donde sea que tengas tus ingresos") y que el filtro lo haga la audiencia que ya tenemos. Mejor ponerla en un conjunto aparte, para no contaminar el aprendizaje de Kunfupay.</dd>
+</dl>
+</div>
+
+<div class="brief">
+<h3>Tributaless · UGC que pagan la cuota de autónomo</h3>
+<dl>
+  <dt>Para quién</dt><dd>Creadores UGC que cobran de Upwork, Fiverr y similares. Tenemos su audiencia y una comunidad muy interesante (UGC Accelerator trae registros a menos de 2 €).</dd>
+  <dt>Objetivo</dt><dd>Top funnel a UGC. Antes de escribir nada, preguntar a Daniel (Viralagency) cómo lo vive su gente: tienen el problema y les interesa el sistema Kunfupay.</dd>
+  <dt>Ángulo</dt><dd>"Eres UGC y cobras de Upwork o Fiverr: así lo están organizando otros creadores." La historia es la de cobrar de fuera y lo que te cuesta cada mes.</dd>
+  <dt>Ojo</dt><dd>"Sin pagar tu autónomo" no se puede prometer: si cobras de forma habitual por un trabajo, en España toca darse de alta. Se habla del lío de cobrar de fuera, no de saltarse la cuota.</dd>
+</dl>
+</div>
+
+<div class="brief">
+<h3>Tributaless · Traders con cuenta de fondeo</h3>
+<dl>
+  <dt>Para quién</dt><dd>Traders que cobran payouts de una cuenta de fondeo. Hay muchos en todo el mundo.</dd>
+  <dt>Objetivo</dt><dd>Abrir el sector trader. No tenemos audiencia, así que el anuncio tiene que filtrar solo.</dd>
+  <dt>Ángulo</dt><dd>En el primer segundo: "Si te han pagado un payout de tu cuenta de fondeo, mira esto". Así quien no es trader pasa de largo. Después, "tres apps para retirar sin dejarte un dineral en comisiones y cambios".</dd>
+  <dt>Cómo</dt><dd>Probar 3 o 4 zonas donde se concentran traders, un conjunto por zona, con el mismo anuncio. España y LATAM primero, porque es donde ya hablamos su idioma.</dd>
+  <dt>Ojo</dt><dd>"Invisible" fuera. "Invisible no, tranquilo sí" sí se puede usar.</dd>
+</dl>
+</div>
+
+<div class="brief">
+<h3>Kunfupay · Retira de tu cuenta de fondeo y gasta con tarjeta</h3>
+<dl>
+  <dt>Para quién</dt><dd>Los mismos traders, pero con el producto ya delante (el anuncio de GCM).</dd>
+  <dt>Objetivo</dt><dd>Traer al sector trader directamente a Kunfupay.</dd>
+  <dt>Ángulo</dt><dd>"Ahora puedes cobrar tus payouts directo en tu cuenta de Kunfupay y gastarlos con la tarjeta." Se enseña el retiro real llegando a la cuenta: enseñarlo vende más que decirlo.</dd>
+  <dt>Cómo</dt><dd>Lanzarla a la vez que la de Tributaless traders, en las mismas zonas. Así comparamos qué entra mejor: la puerta educativa o la del producto.</dd>
+</dl>
+</div>
+
+<div class="brief">
+<h3>Kunfupay · Buscamos 5 creadores para hacerles su propia app</h3>
+<dl>
+  <dt>Para quién</dt><dd>Creadores con negocio de verdad.</dd>
+  <dt>Objetivo</dt><dd>Que se registren en Kunfupay y filtrar a los más grandes para hacerles una app de verdad.</dd>
+  <dt>El formulario</dt><dd>Dónde venden hoy (Skool, Hotmart, Kajabi, Teachable, otra), cuánto facturan al mes (por tramos), cuántos alumnos o miembros tienen, nicho y enlace. Los que pasen el corte van directos a Rafa; el resto entra al registro normal.</dd>
+  <dt>Ángulo</dt><dd>"Buscamos 5 creadores para construirles su propia app. Solo 5." La escasez tiene que ser real: si decimos 5, son 5.</dd>
+</dl>
+</div>
+
+<h2 id="pendientes">Lo que teníamos pendiente</h2>
+<ul>
+  <li><strong>Bali, Miami y Dubái:</strong> ya no están pendientes, están corriendo dentro de los hubs (ver arriba). Bali va bien para el presupuesto que tiene; Miami y Dubái son caros y con poco volumen.</li>
+  <li><strong>Hotmart contra Kunfupay:</strong> sigue pendiente y no está lanzada. Una cosa a tener en cuenta: Hotmart ya se ocupa del IVA de las ventas a Europa, así que la comparación tiene que ir por lo que Hotmart no resuelve: las ventas a LATAM, el dinero que tarda en llegar y poder recibir los retiros de Hotmart en tu cuenta de Kunfupay con IBAN. Proponemos lanzarla como un conjunto nuevo dentro de Adquisición, con la audiencia de Hernán al 3 %.</li>
+</ul>
+
+<h2 id="numeros">Los números, de un vistazo</h2>
+<p>Para quien quiera el detalle. Meta Ads, del 28 de octubre al 10 de noviembre. Cada campaña cuenta como lead su propio evento (lead cualificado, registro o formulario), así que los costes no son del todo comparables entre campañas.</p>
+<div class="tablebox">
+<table>
+<thead><tr><th>Campaña / conjunto</th><th class="r">Gasto</th><th class="r">Resultados</th><th class="r">Coste</th><th>Qué es el resultado</th></tr></thead>
+<tbody>
+<tr><td>Adquisición · Opt. fiscal, aud. Hernán 3 %</td><td class="r">971 €</td><td class="r">33</td><td class="r">29 €</td><td>Lead cualificado</td></tr>
+<tr><td>Adquisición · Métodos de pago, aud. Hernán 1 %</td><td class="r">554 €</td><td class="r">14</td><td class="r">40 €</td><td>Registro</td></tr>
+<tr><td>Adquisición · Opt. fiscal, aud. Rubén (desde 9/11)</td><td class="r">123 €</td><td class="r">2</td><td class="r">62 €</td><td>Lead cualificado</td></tr>
+<tr><td>Hub LATAM</td><td class="r">110 €</td><td class="r">49</td><td class="r">2 €</td><td>Lead cualificado</td></tr>
+<tr><td>Hub Bali</td><td class="r">107 €</td><td class="r">5</td><td class="r">21 €</td><td>Lead cualificado</td></tr>
+<tr><td>Hub Dubái</td><td class="r">107 €</td><td class="r">2</td><td class="r">54 €</td><td>Lead cualificado</td></tr>
+<tr><td>Hub Miami</td><td class="r">107 €</td><td class="r">1</td><td class="r">107 €</td><td>Lead cualificado</td></tr>
+<tr><td>Platinum · Registro ESP</td><td class="r">495 €</td><td class="r">5</td><td class="r">99 €</td><td>Lead cualificado (31 leads en total)</td></tr>
+<tr><td>Platinum · aud. Hernán UGC Founder</td><td class="r">1.195 €</td><td class="r">10</td><td class="r">120 €</td><td>Lead cualificado</td></tr>
+<tr><td>Platinum · Andromeda (pausado)</td><td class="r">544 €</td><td class="r">5</td><td class="r">109 €</td><td>Lead cualificado</td></tr>
+<tr><td>UGC Accelerator</td><td class="r">131 €</td><td class="r">75</td><td class="r">1,74 €</td><td>Registro</td></tr>
+<tr><td>Tributaless · VSL</td><td class="r">269 €</td><td class="r">5</td><td class="r">54 €</td><td>Lead cualificado</td></tr>
+<tr><td>Ignia · Infoproductores LATAM</td><td class="r">132 €</td><td class="r">6</td><td class="r">22 €</td><td>Lead</td></tr>
+<tr><td>Andorra · Registro</td><td class="r">272 €</td><td class="r">4</td><td class="r">68 €</td><td>Registro</td></tr>
+<tr><td>Remarketing · Registrados sin tienda</td><td class="r">40 €</td><td class="r">7</td><td class="r">5,71 €</td><td>Solicitud de tienda</td></tr>
+<tr><td>Remarketing · Por vendedor</td><td class="r">65 €</td><td class="r">–</td><td class="r">–</td><td>Recién empezado</td></tr>
+<tr><td>Awareness · Visitas</td><td class="r">138 €</td><td class="r">641.024</td><td class="r">0,21 €</td><td>Personas alcanzadas</td></tr>
+</tbody>
+</table>
+</div>
+<p><strong>En Kommo</strong> (leads creados del 28/10 al 11/11): la campaña de hubs tiene 2 ventas cerradas, 2 en negociación y 1 videollamada. Adquisición tiene 5 en negociación y 2 videollamadas. Platinum tiene 3 llamadas reservadas y 1 venta. Tributaless tiene 1 en negociación y 1 en decisión.</p>
+<div class="note ojo"><b>Un dato para revisar con ventas:</b> en el pipeline de No Cualificados de Kommo hay 77 entradas de Adquisición y 54 de Hubs. Si son formularios que el filtro manda ahí antes de que llegue ventas, el filtro está haciendo su trabajo. Pero conviene confirmarlo con Juane, porque es justo el indicador de calidad que más nos importa.</div>
+
+<p class="foot">Datos sacados de Meta Ads (cuenta de Kunfupay) y Kommo el 11 de noviembre de 2026. Las valoraciones de calidad salen de las reuniones con Juane y Jorge.</p>
+</div>
