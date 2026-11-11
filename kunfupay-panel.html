@@ -980,6 +980,30 @@ body.tf-on{overflow:hidden}
 .tf-tile{width:44px;height:44px;flex:none;display:block}
 .tf-tile svg{width:100%;height:100%;display:block;stroke:none}
 #tfBiz .tf-opt.tall{gap:12px;padding-left:8px}
+/* 1ª pregunta sin OK (avanza sola al elegir): opciones más grandes */
+#tfBiz{gap:10px}
+#tfBiz .tf-opt.tall{min-height:78px;padding:12px 18px 12px 12px;gap:16px;border-radius:14px}
+#tfBiz .tf-tile{width:52px;height:52px}
+#tfBiz .tx{gap:3px}
+#tfBiz .tx>b{font-size:17.5px}
+#tfBiz .tx small{font-size:14.5px}
+.tf-step[data-s="biz"] .tf-act{margin-top:4px}
+.tf-step[data-s="biz"] .tf-act:not(:has(.tf-back:not([hidden]))){display:none}
+@media (max-width:600px){
+  #tfBiz{gap:8px}
+  #tfBiz .tf-opt.tall{min-height:0;padding:10px 12px 10px 10px;gap:12px}
+  #tfBiz .tf-tile{width:46px;height:46px}
+  #tfBiz .tx>b{font-size:15.5px;line-height:1.3}
+  #tfBiz .tx small{font-size:13px;line-height:1.32}
+}
+/* móviles bajitos (iPhone SE y similares): fuera la leyenda de arriba para que las 6 quepan sin scroll */
+@media (max-width:600px) and (max-height:760px){
+  .tf-step[data-s="biz"] .tf-sub{display:none}
+  .tf-step[data-s="biz"] .tf-q{font-size:21px}
+  #tfBiz{gap:6px}
+  #tfBiz .tf-opt.tall{padding-block:8px}
+  #tfBiz .tf-tile{width:42px;height:42px}
+}
 /* nombre + descripción en un paso */
 .tf-flab{display:block;margin:12px 0 0;font-size:13px;font-weight:600;color:var(--subtle)}
 .tf-step[data-s="info"] .tf-in{margin-top:4px}
@@ -1097,7 +1121,10 @@ body.tf-on{overflow:hidden}
 .fst b{font-size:12.5px;font-weight:700;padding-left:2px}
 .fst em{position:absolute;top:0;right:0;transform:translate(4px,-6px);height:18px;padding:0 7px;border-radius:999px;background:var(--p600);color:#fff;font:700 10px/18px var(--font);font-style:normal}
 .fn-why{margin:0;font-size:12.5px;line-height:1.45;color:var(--muted)}
+.fn-col{display:flex;flex-direction:column;gap:16px;min-width:0}
 .fn-prev{padding:16px;display:flex;flex-direction:column;gap:14px;min-width:0}
+.fn-flow{padding:22px 20px}
+.fn-side .fn-sec:has(> #fnStoreWrap[hidden]){display:none}
 .fn-bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
 .fn-bar .btn{margin-left:auto}
 .fn-browser{border-radius:18px;border:1px solid var(--sunken-2);overflow:hidden;width:100%;margin:0 auto;transition:max-width .35s var(--ease);max-width:100%}
@@ -1162,6 +1189,8 @@ body.tf-on{overflow:hidden}
   .fn-side{padding:18px 14px}.fn-prev{padding:12px}
   .fn-styles{grid-template-columns:repeat(5,minmax(78px,1fr));overflow-x:auto;scrollbar-width:none;margin:0 -14px;padding:8px 14px 2px}
   .fn-bar .tag{display:none}
+  .fn-flow{padding:18px 14px}
+  #fnDev{display:none}
 }
 /* candado en el menú hasta que exista la tienda */
 .lock-b{display:none}
@@ -1997,9 +2026,6 @@ new MutationObserver(function(){var t=window.__kuTheme;if(t&&document.documentEl
   <div class="glass fn-side">
    <div class="fn-sec">
     <label class="fn-main" id="fnStoreWrap" hidden><span>Tienda</span><select id="fnStore"></select></label>
-    <span class="eyebrow">Tu funnel</span>
-    <label class="fn-main" id="fnMainWrap" hidden><span>Producto principal</span><select id="fnMain"></select></label>
-    <div class="fn-steps" id="fnSteps"></div>
    </div>
    <div class="fn-sec">
     <span class="eyebrow">Estilo de tu tienda</span>
@@ -2007,6 +2033,7 @@ new MutationObserver(function(){var t=window.__kuTheme;if(t&&document.documentEl
     <p class="fn-why" id="fnWhy"></p>
    </div>
   </div>
+  <div class="fn-col">
   <div class="glass fn-prev" id="fnPrev">
    <div class="fn-bar">
     <div class="seg" id="fnDev" role="radiogroup" aria-label="Vista previa"><button type="button" class="on" data-d="desk">Escritorio</button><button type="button" data-d="mob">Móvil</button></div>
@@ -2019,6 +2046,14 @@ new MutationObserver(function(){var t=window.__kuTheme;if(t&&document.documentEl
      <div class="fn-screen"><div class="lp-wrap"><div class="lp" id="fnLp" data-st="kunfu"></div></div></div>
     </div>
    </div>
+  </div>
+  <div class="glass fn-flow">
+   <div class="fn-sec">
+    <span class="eyebrow">Tu funnel</span>
+    <label class="fn-main" id="fnMainWrap" hidden><span>Producto principal</span><select id="fnMain"></select></label>
+    <div class="fn-steps" id="fnSteps"></div>
+   </div>
+  </div>
   </div>
  </div>
 </section>
@@ -2163,7 +2198,7 @@ new MutationObserver(function(){var t=window.__kuTheme;if(t&&document.documentEl
       <div class="tf-opts tf-dlist" id="tfBiz" role="radiogroup" aria-label="Qué tipo de negocio tienes"></div>
       <span class="tf-chip" id="tfDetect" aria-live="polite"><svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg><span id="tfDetectTxt">Será un pago único</span></span>
       <p class="tf-err" role="alert">Elige una opción para seguir.</p>
-      <div class="tf-act"><button class="tf-ok" type="button" onclick="tfNext()">OK<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button><span class="tf-hint">pulsa <b>Intro ↵</b></span><button class="tf-back" type="button" onclick="tfPrev()">← Atrás</button></div>
+      <div class="tf-act"><button class="tf-back" type="button" onclick="tfPrev()">← Atrás</button></div>
     </section>
 
     <section class="tf-step" data-s="nets">
@@ -2175,6 +2210,7 @@ new MutationObserver(function(){var t=window.__kuTheme;if(t&&document.documentEl
         <button class="tf-opt" type="button" aria-pressed="false" data-v="tg"><kbd>C</kbd><span class="tf-ic" style="background:#2aabee"><svg viewBox="0 0 24 24"><path d="M21 4L3 11l6 2 2 6 3-4 5 3z"/><path d="M9 13l12-9"/></svg></span>Telegram<svg class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button>
         <button class="tf-opt" type="button" aria-pressed="false" data-v="web"><kbd>D</kbd><span class="tf-ic" style="background:var(--p600)"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5a13 13 0 0 1 0 17M12 3.5a13 13 0 0 0 0 17"/></svg></span>Página web<svg class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button>
         <button class="tf-opt" type="button" aria-pressed="false" data-v="yt"><kbd>E</kbd><span class="tf-ic" style="background:#e62117"><svg viewBox="0 0 24 24"><rect x="3.5" y="6" width="17" height="12" rx="4"/><path d="M10.5 9.5v5l4-2.5z" fill="currentColor"/></svg></span>YouTube<svg class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button>
+        <button class="tf-opt" type="button" aria-pressed="false" data-v="otra"><kbd>F</kbd><span class="tf-ic" style="background:#6B7280"><svg viewBox="0 0 24 24"><path d="M10 14a4.5 4.5 0 0 0 6.4 0l3-3a4.5 4.5 0 0 0-6.4-6.4l-1 1"/><path d="M14 10a4.5 4.5 0 0 0-6.4 0l-3 3a4.5 4.5 0 0 0 6.4 6.4l1-1"/></svg></span>Otra<svg class="chk" viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button>
       </div>
       <p class="tf-err" role="alert">Marca al menos una.</p>
       <div class="tf-act"><button class="tf-ok" type="button" onclick="tfNext()">OK<svg viewBox="0 0 24 24"><path d="M5 12l5 5 9-10"/></svg></button><span class="tf-hint">pulsa las letras o <b>Intro ↵</b></span><button class="tf-back" type="button" onclick="tfPrev()">← Atrás</button></div>
@@ -2337,7 +2373,7 @@ const KU={stores:[],active:-1,_none:[],
   get products(){const s=this.store;return s?s.products:this._none}};
 const TF={mode:"",flow:[],i:0,end:"pdone",finished:true,newStore:false,cls:null,clsPrice:false,fact:"",biz:"",nets:[],cur:"",pay:"once",del:"",file:"",origin:null,auto:0};
 const TFU={};
-const NETS={ig:["Instagram","www.instagram.com/","tu-usuario"],x:["X","x.com/","tu-usuario"],tg:["Telegram","t.me/","tu-usuario"],web:["Página web","https://","tu-sitio.com"],yt:["YouTube","www.youtube.com/@","tu-canal"]};
+const NETS={ig:["Instagram","www.instagram.com/","tu-usuario"],x:["X","x.com/","tu-usuario"],tg:["Telegram","t.me/","tu-usuario"],web:["Página web","https://","tu-sitio.com"],yt:["YouTube","www.youtube.com/@","tu-canal"],otra:["Otra red","https://","tiktok.com/@tu-usuario"]};
 const SYM={USD:"$",EUR:"€",GBP:"£"},CURN={USD:"dólares",EUR:"euros",GBP:"libras"},CURT={USD:"Dólares",EUR:"Euros",GBP:"Libras"};
 const LOCK='<svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 0 1 8 0v3"/></svg>';
 /* comunidades de Classroom (en el mockup, una de ejemplo) */
@@ -2408,7 +2444,7 @@ function tfNext(){const n=tfNow();
   if(n==="urls"){let ok=true;document.querySelectorAll("#tfUrls .tf-url").forEach(r=>{const v=r.querySelector("input").value.trim();r.classList.toggle("err",!v);if(!v)ok=false});if(!ok)return tfErr(n)}
   if(n==="price"){const p=tfPrice();if(!tfVal("tf-price")||isNaN(p))return tfErr(n,"Escribe un precio para seguir. Si quieres que sea gratis, pon 0.");if(p>0&&p<0.99)return tfErr(n,"El mínimo es 0,99. Si no quieres cobrar nada, pon 0 y será gratis.")}
   if(TF.i>=TF.flow.length)return;
-  if(TF.i===TF.flow.length-1)tfCommitProduct();   /* el último paso crea el producto (si conecta Classroom, no hay paso de precio) */
+  if(TF.i===TF.flow.length-1){tfCommitProduct();TF.i=TF.flow.length;TF.finished=true;tfClose("funnels");return}   /* el último paso crea el producto (si conecta Classroom, no hay paso de precio) */
   TF.i++;if(TF.i>=TF.flow.length)TF.finished=true;tfShow(tfNow(),false)}
 function tfPrev(){if(TF.i>0&&TF.i<TF.flow.length){TF.i--;tfShow(tfNow(),true)}}
 function tfCommitProduct(){TF.firstStore=TF.newStore;
