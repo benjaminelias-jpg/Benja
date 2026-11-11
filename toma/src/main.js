@@ -824,6 +824,9 @@ ipcMain.handle('app:info', () => ({
   platform: process.platform,
   systemAudio: systemAudioSupported(),
   version: app.getVersion(),
+  osVersion: process.getSystemVersion(),
+  // Cámara de Continuidad (iPhone como cámara, sin cable o por USB): macOS 13 o posterior
+  continuity: IS_MAC && parseInt(process.getSystemVersion().split('.')[0], 10) >= 13,
 }));
 
 // Permisos del sistema (macOS): cámara, micrófono y grabación de pantalla

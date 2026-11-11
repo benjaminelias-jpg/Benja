@@ -16,8 +16,16 @@ async function startCam() {
     stream = s;
     video.srcObject = s;
     errEl.hidden = true;
+    s.getVideoTracks()[0].addEventListener('ended', () => {
+      if (stream !== s) return;
+      errEl.textContent = 'Se desconectó la cámara';
+      errEl.hidden = false;
+    });
   } catch {
-    if (turn === starting) errEl.hidden = false;
+    if (turn === starting) {
+      errEl.textContent = 'No se pudo abrir la cámara';
+      errEl.hidden = false;
+    }
   }
 }
 

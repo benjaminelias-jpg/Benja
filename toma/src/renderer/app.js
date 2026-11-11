@@ -547,6 +547,46 @@ async function fillDevices() {
   }
   updateMicNote();
 }
+// Cámara de Continuidad: el iPhone aparece como una cámara más del sistema
+const isPhoneCam = (label) => /iphone|ipad/i.test(label || '') && !/desk view|cenital/i.test(label || '');
+let phoneTimer = null;
+async function findPhoneCam() {
+  const devs = await navigator.mediaDevices.enumerateDevices();
+  return devs.find((d) => d.kind === 'videoinput' && isPhoneCam(d.label)) || null;
+}
+async function usePhoneCam(dev) {
+  cfg.camId = dev.deviceId;
+  store.set('camId', cfg.camId);
+  await fillDevices();
+  syncCamPreview();
+  toast('Usando ' + dev.label);
+}
+function closePhoneGuide() {
+  clearInterval(phoneTimer);
+  phoneTimer = null;
+  $('#iphone').classList.add('hidden');
+}
+async function openPhoneGuide() {
+  const req = $('#iphone-req');
+  if (INFO.continuity) {
+    req.textContent = `Tu Mac (macOS ${INFO.osVersion}) es compatible.`;
+    req.className = 'note good';
+  } else {
+    req.textContent = `Tu Mac tiene macOS ${INFO.osVersion || 'anterior a 13'}. La Cámara de Continuidad necesita macOS 13 (Ventura) o posterior. Si tu Mac lo permite, actualízalo desde el menú Apple → Actualización de software.`;
+    req.className = 'note';
+  }
+  $('#iphone').classList.remove('hidden');
+  const look = async () => {
+    const dev = await findPhoneCam().catch(() => null);
+    if (!dev || !phoneTimer) return;
+    closePhoneGuide();
+    usePhoneCam(dev);
+  };
+  clearInterval(phoneTimer);
+  phoneTimer = setInterval(look, 1500);
+  look();
+}
+
 function updateMicNote() {
   const opt = $('#mic-select').selectedOptions[0];
   const bt = !!opt && /bluetooth|airpods|hands-?free|headset/i.test(opt.textContent);
@@ -614,6 +654,7 @@ function applyModeUI() {
   $$('#mode button').forEach((b) => b.classList.toggle('on', b.dataset.mode === cfg.mode));
   const cam = cfg.mode === 'cam';
   $('#cam-field').classList.toggle('hidden', cfg.mode === 'screen');
+  $('#iphone-help').classList.toggle('hidden', INFO.platform !== 'darwin');
   $('#bubble-field').classList.toggle('hidden', cfg.mode !== 'screen-cam');
   $('#mirror-field').classList.toggle('hidden', cfg.mode === 'screen');
   $('#sysaudio-field').classList.toggle('hidden', cam || !INFO.systemAudio);
@@ -703,6 +744,7 @@ async function openSetup() {
 }
 function closeSetup(keepBubble = false) {
   setupOpen = false;
+  closePhoneGuide();
   $('#setup').classList.add('hidden');
   stopMicMeter();
   stopCamPreview();
@@ -753,7 +795,16 @@ bindCheck('#mirror', 'mirror', () => {
   if (v) v.classList.toggle('mirror', cfg.mirror);
 });
 $('#btn-start').addEventListener('click', () => startRecording());
-navigator.mediaDevices.addEventListener('devicechange', () => { if (setupOpen) fillDevices(); });
+$('#iphone-help').addEventListener('click', openPhoneGuide);
+$('#iphone-close').addEventListener('click', closePhoneGuide);
+$('#iphone').addEventListener('mousedown', (e) => { if (e.target.id === 'iphone') closePhoneGuide(); });
+// Si se conecta o desconecta una cámara (por ejemplo el iPhone), la lista y la vista previa se actualizan
+navigator.mediaDevices.addEventListener('devicechange', async () => {
+  if (!setupOpen) return;
+  const before = cfg.camId;
+  await fillDevices();
+  if (cfg.camId !== before) syncCamPreview();
+});
 
 // ---------- Motor de grabación ----------
 let rec = null; // estado de la grabación en curso
@@ -793,7 +844,6 @@ function createCompositor(screenTrack, camTrack, opt) {
   const canvas = new OffscreenCanvas(2, 2);
   const ctx = canvas.getContext('2d', { alpha: false });
   const FRAC = { s: 0.2, m: 0.28, l: 0.38 }[opt.sizeKey] || 0.28;
-  const readers = [];
   let sFrame = null, cFrame = null, stopped = false, W = 0, H = 0, last = 0, writing = false, frames = 0;
 
   function emit() {
@@ -841,7 +891,6 @@ function createCompositor(screenTrack, camTrack, opt) {
 
   async function pump(proc, set) {
     const reader = proc.readable.getReader();
-    readers.push(reader);
     try {
       for (;;) {
         const { value, done } = await reader.read();
@@ -850,7 +899,10 @@ function createCompositor(screenTrack, camTrack, opt) {
         set(value);
         emit();
       }
-    } catch {}
+    } catch {} finally {
+      // Se libera al salir del bucle para no dejar fotogramas en cola sin cerrar
+      reader.cancel().catch(() => {});
+    }
   }
   pump(sProc, (f) => { if (sFrame) sFrame.close(); sFrame = f; });
   if (cProc) pump(cProc, (f) => { if (cFrame) cFrame.close(); cFrame = f; });
@@ -862,7 +914,6 @@ function createCompositor(screenTrack, camTrack, opt) {
     stop() {
       if (stopped) return;
       stopped = true;
-      readers.forEach((r) => r.cancel().catch(() => {}));
       if (sFrame) sFrame.close();
       if (cFrame) cFrame.close();
       sFrame = cFrame = null;
@@ -1152,6 +1203,7 @@ document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape') {
     if (!$('#ctx').classList.contains('hidden')) return hideCtx();
     if (confirmDone) return confirmDone(false);
+    if (phoneTimer) return closePhoneGuide();
     if (setupOpen) return closeSetup();
     return;
   }

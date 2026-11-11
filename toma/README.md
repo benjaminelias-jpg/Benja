@@ -19,6 +19,10 @@ App de escritorio personal para grabar la pantalla, la cámara o ambas, con bibl
   - `Alt+Shift+P` (Mac: `⌥⇧P`) — pausar o reanudar
   - `Alt+Shift+C` (Mac: `⌥⇧C`) — descartar
 
+**iPhone como cámara (Mac)**
+- Con la Cámara de Continuidad de Apple, el iPhone aparece en la lista de cámaras, sin cable o por USB. Requiere macOS 13 o posterior, iPhone XR o posterior con iOS 16, la misma cuenta de Apple en ambos y Wi-Fi y Bluetooth activados.
+- El botón "Usar mi iPhone como cámara" del panel de grabación muestra los pasos, comprueba si tu Mac es compatible y selecciona el iPhone en cuanto aparece.
+
 **Guardar**
 - Las grabaciones se guardan directamente en **MP4 (H.264 + AAC)**, listas para enviar por WhatsApp o correo. Si el equipo no puede codificar H.264, se guardan en WebM.
 - El video se escribe en disco cada segundo: las grabaciones largas no llenan la memoria.

@@ -320,3 +320,12 @@ textarea#notes { min-height: 130px; resize: vertical; flex: none; }
 .btn.danger-solid:hover { filter: brightness(1.08); background: var(--danger); }
 #trim-label { white-space: nowrap; font-size: 12px; }
 .kbd-hint { white-space: nowrap; }
+
+/* iPhone como cámara */
+.link-btn { align-self: flex-start; background: none; border: 0; padding: 2px 0; color: var(--accent-2); font: inherit; font-size: 12px; cursor: pointer; }
+.link-btn:hover { text-decoration: underline; }
+.note.good { color: var(--ok); background: rgba(62, 207, 142, .08); border-color: rgba(62, 207, 142, .25); }
+.steps { margin: 16px 0 0; padding-left: 20px; display: flex; flex-direction: column; gap: 9px; line-height: 1.45; }
+.steps li::marker { color: var(--muted); font-weight: 600; }
+.iphone-status { display: flex; align-items: center; gap: 12px; margin-top: 20px; padding-top: 16px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; }
+.spinner.small { width: 16px; height: 16px; border-width: 2px; flex: none; }

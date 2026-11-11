@@ -187,9 +187,10 @@
         </section>
 
         <section class="setup-right">
-          <label class="field" id="cam-field"><span>Cámara</span>
+          <div class="field" id="cam-field"><span>Cámara</span>
             <select id="cam-select"></select>
-          </label>
+            <button type="button" class="link-btn hidden" id="iphone-help">Usar mi iPhone como cámara</button>
+          </div>
           <label class="field"><span>Micrófono</span>
             <select id="mic-select"></select>
             <div class="meter"><div id="mic-meter"></div></div>
@@ -224,6 +225,26 @@
         <span class="muted small" id="setup-hint"></span>
         <button class="btn primary big" id="btn-start"><span class="rec-dot"></span>Comenzar a grabar</button>
       </div>
+    </div>
+  </div>
+
+  <!-- iPhone como cámara (macOS) -->
+  <div id="iphone" class="modal hidden">
+    <div class="modal-card narrow">
+      <div class="modal-head">
+        <h2>Usar tu iPhone como cámara</h2>
+        <button class="icon-btn" id="iphone-close" title="Cerrar"><svg class="ico"><use href="#i-x"/></svg></button>
+      </div>
+      <p class="muted">Toma usa la <b>Cámara de Continuidad</b> de Apple: tu iPhone aparece como una cámara más, sin cable o conectado por USB.</p>
+      <div class="note" id="iphone-req"></div>
+      <ol class="steps">
+        <li>iPhone XR o posterior, con iOS 16 o más reciente.</li>
+        <li>El Mac y el iPhone con la <b>misma cuenta de Apple</b>.</li>
+        <li><b>Wi-Fi y Bluetooth</b> activados en los dos.</li>
+        <li>En el iPhone: Ajustes → General → AirPlay y Handoff (o «AirPlay y Continuidad») → activa <b>Cámara de Continuidad</b>.</li>
+        <li>Acerca el iPhone al Mac con la pantalla bloqueada. Con cable: conéctalo por USB y pulsa <b>Confiar</b> en el iPhone.</li>
+      </ol>
+      <div class="iphone-status"><div class="spinner small"></div><span>Buscando tu iPhone… se seleccionará solo en cuanto aparezca.</span></div>
     </div>
   </div>
 
