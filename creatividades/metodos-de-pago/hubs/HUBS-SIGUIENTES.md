@@ -50,6 +50,48 @@ El conjunto apunta a México, Panamá, Argentina, Chile, Perú, Colombia, Paragu
 - Puerto Rico, Austin y Nueva York: CPM como Miami y categoría especial de EE. UU.
 - Georgia, Chipre, Malta y Vietnam: público mínimo, y en Vietnam la cripto tampoco es medio de pago legal.
 
+## LATAM B: los países que hoy no tocamos (12-11-2026)
+
+La campaña de awareness LATAM ya se entrega en ellos (últimos 28 días): hay alcance y cuesta muy poco.
+
+| País | Alcance | Visitas a la web | Veredicto |
+|---|---|---|---|
+| Bolivia | 123.475 | 43 | Entra: Kunfupay lista métodos de Bolivia |
+| Ecuador | 26.475 | 13 | Entra: Kunfupay lista métodos de Ecuador |
+| República Dominicana | 28.478 | 7 | Entra |
+| El Salvador | 20.280 | 7 | Entra |
+| Guatemala | 24.791 | 6 | Entra |
+| Honduras | 16.846 | 4 | Entra |
+| Nicaragua | 57.465 | 6 | Entra |
+| Costa Rica | 8.051 | 0 | Entra (ojo: Kunfupay no lista SINPE) |
+| Venezuela | 232.074 | 59 | **Fuera:** sin métodos de Venezuela en Kunfupay; confirmar con el equipo antes |
+| Belice, Guyana, Surinam | — | — | **Fuera:** no hablan español |
+
+**Propuesta:** un solo conjunto, «HUB LATAM B», con los 8 países que entran, los mismos anuncios del LATAM y 10 €/día.
+
+## Micro-hubs de creadores (ciudad, radio y español)
+
+Solo donde el anuncio sale barato (España y LATAM). Cada uno, con anuncios que nombran su ciudad.
+
+| Micro-hub | Por qué | Dato de la cuenta |
+|---|---|---|
+| Medellín (El Poblado, Laureles) | La capital de los nómadas y creadores de LATAM | Colombia: 3,07 €/lead |
+| Ciudad de México (Roma, Condesa) + Playa del Carmen y Tulum | Creadores mexicanos y extranjeros; entre 12.000 y 14.000 argentinos en la Riviera Maya | México: 1,41 €/lead |
+| Asunción | Creadores argentinos y españoles que se radican allí | Paraguay: 1,90 €/lead, el CPM más bajo (3,42 €) |
+| Montevideo + Punta del Este | Creadores y streamers argentinos | Uruguay: muestra mínima (1 lead) |
+| Ciudad de Panamá | Base de muchos emprendedores digitales | Panamá: 1,94 €/lead |
+| Canarias (Las Palmas, Santa Cruz de Tenerife) | Nómadas y diáspora latinoamericana | CPM de España (~8 €) |
+
+**Para que no se pisen:** cada micro-hub va en su propio conjunto y su ciudad se excluye del hub LATAM general.
+
+**Ritmo:** de 2 a 3 a la vez, 7 días cada uno. Se apaga el que pase de 3 veces el €/lead del LATAM.
+
+**Bangkok** ya está dentro del hub de Tailandia. Se separa solo cuando el desglose por región de Meta diga que rinde distinto que Chiang Mai o las islas.
+
+**Chipre, Malta y Georgia: no.** Tienen 722, 1.116 y 85 españoles inscritos, cero anuncios en español y CPM de Europa. Con 10 €/día no da para aprender nada.
+
+**Mercado en inglés:** se dejará para más adelante. Por ahora, solo español.
+
 ## Antes de lanzar cualquiera
 
 - **Kommo por país.** Comprobar la calidad de los leads por país: la conversión de los hubs cuenta cualquier URL con «gracias».
