@@ -922,3 +922,101 @@ Con tu enlace de Kunfupay pagan solos, a cualquier hora. Y tú recibes euros o d
 Haz clic y descubre cómo.
 
 **URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_bali_similar_3_hernan&utm_content=reel_pagos_personalizado_bali&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
+
+## TAILANDIA
+
+### REEL / TRES COSAS / TAILANDIA
+
+**Título 1:** Tres cosas que ya no necesitas  
+**Título 2:** Hasta un 30 % más, cobrando mejor
+
+**Texto largo**
+
+Si vendes cursos desde Tailandia a clientes de varios países, hay tres cosas que ya no necesitas para cobrarles. Te las cuento en el vídeo.
+
+Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.
+
+Cuando en Bangkok, en Chiang Mai o en las islas es de madrugada, en España es por la tarde y en LATAM es de día.
+Y es justo cuando tus clientes te escriben para entrar a tu curso o reservar tu mentoría.
+Pero tu enlace solo acepta tarjeta, y no todos la tienen o se la aceptan.
+Te despiertas con chats sin contestar. Y a esa hora, muchos ya se enfriaron.
+
+Cobrando solo con tarjeta puedes estar perdiendo hasta un 27 % de tus ventas.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace.
+Cada cliente lo abre y paga con lo que usa en su país, en su moneda.
+Solo, sin escribirte, a la hora que sea.
+Y tú recibes euros o dólares.
+
+Mismo producto. Mismo precio. Y por la mañana, ventas cobradas.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+
+**Texto corto**
+
+Si vendes cursos desde Tailandia a clientes de varios países, hay tres cosas que ya no necesitas para cobrarles.
+
+Con un solo enlace de Kunfupay, cada cliente paga como paga en su país. Y tú recibes euros o dólares.
+
+Haz clic y descubre cómo.
+
+**URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_tailandia_similar_3_hernan&utm_content=reel_tres_cosas_tailandia&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting
+
+### REEL / INFOGRAFIA / TAILANDIA
+
+**Título 1:** Un enlace y te pagan todos  
+**Título 2:** Así cobras a cualquier país
+
+**Texto largo**
+
+Mira en 30 segundos cómo cobras con Kunfupay desde Tailandia: creas un enlace, cada cliente paga con lo que usa en su país y tú recibes euros o dólares.
+
+Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.
+
+Cuando en Bangkok, en Chiang Mai o en las islas es de madrugada, en España es por la tarde y en LATAM es de día.
+Y es justo cuando tus clientes te escriben para entrar a tu curso o reservar tu mentoría.
+Pero tu enlace solo acepta tarjeta, y no todos la tienen o se la aceptan.
+Te despiertas con chats sin contestar. Y a esa hora, muchos ya se enfriaron.
+
+Cobrando solo con tarjeta puedes estar perdiendo hasta un 27 % de tus ventas.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace.
+Cada cliente lo abre y paga con lo que usa en su país, en su moneda.
+Solo, sin escribirte, a la hora que sea.
+Y tú recibes euros o dólares.
+
+Mismo producto. Mismo precio. Y por la mañana, ventas cobradas.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+
+**Texto corto**
+
+Si vendes cursos desde Tailandia, así de simple:
+
+1. Creas tu enlace de pago.
+2. Tu cliente paga con lo que usa en su país.
+3. Y tú recibes euros o dólares.
+
+Haz clic y descubre cómo.
+
+**URL:** https://kunfupay.com/landings/pagos-globales-es/v1?utm_source=instagram&utm_medium=paid_social&utm_campaign=hubs_metodos_de_pago_kunfupay&utm_term=hub_tailandia_similar_3_hernan&utm_content=reel_infografia_tailandia&utm_source_platform=meta&utm_creative_format=video&utm_marketing_tactic=prospecting

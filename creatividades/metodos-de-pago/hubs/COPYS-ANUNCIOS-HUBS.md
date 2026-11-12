@@ -1020,3 +1020,258 @@ Y ellos reciben euros o dólares.
 
 Haz clic y descubre cómo.
 ```
+
+## TAILANDIA
+
+### ESTATICA / TWEET / TAILANDIA
+
+**Título 1 (feed):** Hasta un 27 % se cae en el pago  
+**Título 2 (stories):** Que te pague cualquiera
+
+**Texto largo (feed)**
+
+```text
+Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, estás perdiendo hasta un 27 % de tu facturación. Mientras duermes.
+
+Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.
+
+Cuando en Bangkok, en Chiang Mai o en las islas es de madrugada, en España es por la tarde y en LATAM es de día.
+Y es justo cuando tus clientes te escriben para entrar a tu curso o reservar tu mentoría.
+Pero tu enlace solo acepta tarjeta, y no todos la tienen o se la aceptan.
+Te despiertas con chats sin contestar. Y a esa hora, muchos ya se enfriaron.
+
+Cobrando solo con tarjeta puedes estar perdiendo hasta un 27 % de tus ventas.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace.
+Cada cliente lo abre y paga con lo que usa en su país, en su moneda.
+Solo, sin escribirte, a la hora que sea.
+Y tú recibes euros o dólares.
+
+Mismo producto. Mismo precio. Y por la mañana, ventas cobradas.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+```
+
+**Texto corto (stories y reels)**
+
+```text
+Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, pierdes hasta un 27 % de tu facturación.
+
+Tus clientes de España y LATAM quieren comprarte. Y no pueden pagarte.
+
+PERO con tu enlace de Kunfupay, sí. Y recibes euros o dólares.
+
+Haz clic y descubre cómo.
+```
+
+### ESTATICA / COMPARATIVA / TAILANDIA
+
+**Título 1 (feed):** Que te paguen aunque estés dormido  
+**Título 2 (stories):** Un enlace, cada uno con lo suyo
+
+**Texto largo (feed)**
+
+```text
+Si vendes tu mentoría desde Tailandia, mira la tabla: hoy, lo que te compran mientras duermes se enfría. Con Kunfupay, pagan solos.
+
+Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.
+
+Cuando en Bangkok, en Chiang Mai o en las islas es de madrugada, en España es por la tarde y en LATAM es de día.
+Y es justo cuando tus clientes te escriben para entrar a tu curso o reservar tu mentoría.
+Pero tu enlace solo acepta tarjeta, y no todos la tienen o se la aceptan.
+Te despiertas con chats sin contestar. Y a esa hora, muchos ya se enfriaron.
+
+Cobrando solo con tarjeta puedes estar perdiendo hasta un 27 % de tus ventas.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace.
+Cada cliente lo abre y paga con lo que usa en su país, en su moneda.
+Solo, sin escribirte, a la hora que sea.
+Y tú recibes euros o dólares.
+
+Mismo producto. Mismo precio. Y por la mañana, ventas cobradas.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+```
+
+**Texto corto (stories y reels)**
+
+```text
+Si vendes tu mentoría desde Tailandia y cobras solo con tarjeta, pierdes hasta un 27 % de tus ventas.
+
+Hoy, si te compran mientras duermes, se enfrían. Con Kunfupay, pagan solos.
+
+Un enlace. Cada uno paga con lo suyo. Y recibes euros o dólares.
+
+Haz clic y descubre cómo.
+```
+
+### ESTATICA / PAGINA DE PAGO / TAILANDIA
+
+**Título 1 (feed):** Así te paga cada cliente  
+**Título 2 (stories):** Pagan solos, sin escribirte
+
+**Texto largo (feed)**
+
+```text
+Mira la imagen: eso es lo que ve tu cliente cuando abre tu enlace de Kunfupay. Paga solo, con lo que usa en su país, sin escribirte.
+
+Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.
+
+Cuando en Bangkok, en Chiang Mai o en las islas es de madrugada, en España es por la tarde y en LATAM es de día.
+Y es justo cuando tus clientes te escriben para entrar a tu curso o reservar tu mentoría.
+Pero tu enlace solo acepta tarjeta, y no todos la tienen o se la aceptan.
+Te despiertas con chats sin contestar. Y a esa hora, muchos ya se enfriaron.
+
+Cobrando solo con tarjeta puedes estar perdiendo hasta un 27 % de tus ventas.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace.
+Cada cliente lo abre y paga con lo que usa en su país, en su moneda.
+Solo, sin escribirte, a la hora que sea.
+Y tú recibes euros o dólares.
+
+Mismo producto. Mismo precio. Y por la mañana, ventas cobradas.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+```
+
+**Texto corto (stories y reels)**
+
+```text
+Si vendes cursos desde Tailandia, ya no cobres a España y LATAM con Stripe.
+
+Tu cliente abre tu enlace y paga con lo que usa en su país. Sin escribirte.
+Y tú recibes euros o dólares.
+
+Haz clic y descubre cómo.
+```
+
+### ESTATICA / DESEO / TAILANDIA
+
+**Título 1 (feed):** Hasta un 30 % más desde Tailandia  
+**Título 2 (stories):** Cambia cómo cobras
+
+**Texto largo (feed)**
+
+```text
+De madrugada en Tailandia, España y LATAM siguen comprando. ¿Y si también pudieran pagarte? Podrías facturar hasta un 30 % más.
+
+Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.
+
+Cuando en Bangkok, en Chiang Mai o en las islas es de madrugada, en España es por la tarde y en LATAM es de día.
+Y es justo cuando tus clientes te escriben para entrar a tu curso o reservar tu mentoría.
+Pero tu enlace solo acepta tarjeta, y no todos la tienen o se la aceptan.
+Te despiertas con chats sin contestar. Y a esa hora, muchos ya se enfriaron.
+
+Cobrando solo con tarjeta puedes estar perdiendo hasta un 27 % de tus ventas.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace.
+Cada cliente lo abre y paga con lo que usa en su país, en su moneda.
+Solo, sin escribirte, a la hora que sea.
+Y tú recibes euros o dólares.
+
+Mismo producto. Mismo precio. Y por la mañana, ventas cobradas.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+```
+
+**Texto corto (stories y reels)**
+
+```text
+Si vendes cursos desde Tailandia, podrías facturar hasta un 30 % más solo cambiando cómo cobras.
+
+De madrugada aquí, de día en LATAM: te pagan igual.
+Con tu enlace de Kunfupay. Y recibes euros o dólares.
+
+Haz clic y descubre cómo.
+```
+
+### ESTATICA / NOTICIA / TAILANDIA
+
+**Título 1 (feed):** Un 27 % más de conversión  
+**Título 2 (stories):** No venden más, cobran mejor
+
+**Texto largo (feed)**
+
+```text
+Creadores que venden a España y LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran. No venden más: cobran mejor.
+
+Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.
+
+Cuando en Bangkok, en Chiang Mai o en las islas es de madrugada, en España es por la tarde y en LATAM es de día.
+Y es justo cuando tus clientes te escriben para entrar a tu curso o reservar tu mentoría.
+Pero tu enlace solo acepta tarjeta, y no todos la tienen o se la aceptan.
+Te despiertas con chats sin contestar. Y a esa hora, muchos ya se enfriaron.
+
+Cobrando solo con tarjeta puedes estar perdiendo hasta un 27 % de tus ventas.
+
+Con Kunfupay cambia una sola cosa: cómo te pagan.
+Mandas un solo enlace.
+Cada cliente lo abre y paga con lo que usa en su país, en su moneda.
+Solo, sin escribirte, a la hora que sea.
+Y tú recibes euros o dólares.
+
+Mismo producto. Mismo precio. Y por la mañana, ventas cobradas.
+
+Esto es para ti si:
+✅ Ya vendes cursos, mentorías, comunidades o sesiones online.
+✅ Tienes clientes en más de un país (o los quieres tener).
+✅ Alguna vez alguien te dijo «quiero entrar, pero no puedo pagarte».
+
+Si todavía no vendes, esto no es para ti.
+
+Entra y mira si tu negocio encaja.
+
+Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+```
+
+**Texto corto (stories y reels)**
+
+```text
+Creadores que venden a España y LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.
+
+No venden más. Cobran mejor.
+Si vendes desde Tailandia, con un solo enlace cada cliente paga como paga en su país.
+Y tú recibes euros o dólares.
+
+Haz clic y descubre cómo.
+```

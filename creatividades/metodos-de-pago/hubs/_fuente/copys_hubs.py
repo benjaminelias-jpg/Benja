@@ -173,6 +173,46 @@ P['BALI'] = {
         t1="Un 27 % más de conversión", t2="No venden más, cobran mejor"),
 }
 
+# Tailandia (12-11-2026): mismo enfoque que Bali (husos horarios: tu noche es la tarde de España y
+# el día de LATAM), sin cripto, que en Tailandia no se puede usar para pagar bienes ni servicios.
+CUERPO['TAILANDIA'] = (
+    "Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.\n\n"
+    "Cuando en Bangkok, en Chiang Mai o en las islas es de madrugada, en España es por la tarde "
+    "y en LATAM es de día.\n"
+    "Y es justo cuando tus clientes te escriben para entrar a tu curso o reservar tu mentoría.\n"
+    "Pero tu enlace solo acepta tarjeta, y no todos la tienen o se la aceptan.\n"
+    "Te despiertas con chats sin contestar. Y a esa hora, muchos ya se enfriaron.\n\n"
+    "Cobrando solo con tarjeta puedes estar perdiendo hasta un 27 % de tus ventas.\n\n"
+    "Con Kunfupay cambia una sola cosa: cómo te pagan.\n"
+    "Mandas un solo enlace.\n"
+    "Cada cliente lo abre y paga con lo que usa en su país, en su moneda.\n"
+    "Solo, sin escribirte, a la hora que sea.\n"
+    "Y tú recibes euros o dólares.\n\n"
+    "Mismo producto. Mismo precio. Y por la mañana, ventas cobradas.")
+
+P['TAILANDIA'] = {
+    'TWEET': dict(
+        gancho="Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, estás perdiendo hasta un 27 % de tu facturación. Mientras duermes.",
+        corto="Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, pierdes hasta un 27 % de tu facturación.\n\nTus clientes de España y LATAM quieren comprarte. Y no pueden pagarte.\n\nPERO con tu enlace de Kunfupay, sí. Y recibes euros o dólares.\n\nHaz clic y descubre cómo.",
+        t1="Hasta un 27 % se cae en el pago", t2="Que te pague cualquiera"),
+    'COMPARATIVA': dict(
+        gancho="Si vendes tu mentoría desde Tailandia, mira la tabla: hoy, lo que te compran mientras duermes se enfría. Con Kunfupay, pagan solos.",
+        corto="Si vendes tu mentoría desde Tailandia y cobras solo con tarjeta, pierdes hasta un 27 % de tus ventas.\n\nHoy, si te compran mientras duermes, se enfrían. Con Kunfupay, pagan solos.\n\nUn enlace. Cada uno paga con lo suyo. Y recibes euros o dólares.\n\nHaz clic y descubre cómo.",
+        t1="Que te paguen aunque estés dormido", t2="Un enlace, cada uno con lo suyo"),
+    'PAGINA DE PAGO': dict(
+        gancho="Mira la imagen: eso es lo que ve tu cliente cuando abre tu enlace de Kunfupay. Paga solo, con lo que usa en su país, sin escribirte.",
+        corto="Si vendes cursos desde Tailandia, ya no cobres a España y LATAM con Stripe.\n\nTu cliente abre tu enlace y paga con lo que usa en su país. Sin escribirte.\nY tú recibes euros o dólares.\n\nHaz clic y descubre cómo.",
+        t1="Así te paga cada cliente", t2="Pagan solos, sin escribirte"),
+    'DESEO': dict(
+        gancho="De madrugada en Tailandia, España y LATAM siguen comprando. ¿Y si también pudieran pagarte? Podrías facturar hasta un 30 % más.",
+        corto="Si vendes cursos desde Tailandia, podrías facturar hasta un 30 % más solo cambiando cómo cobras.\n\nDe madrugada aquí, de día en LATAM: te pagan igual.\nCon tu enlace de Kunfupay. Y recibes euros o dólares.\n\nHaz clic y descubre cómo.",
+        t1="Hasta un 30 % más desde Tailandia", t2="Cambia cómo cobras"),
+    'NOTICIA': dict(
+        gancho="Creadores que venden a España y LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran. No venden más: cobran mejor.",
+        corto="Creadores que venden a España y LATAM ya aumentan su conversión un 27 % solo cambiando cómo cobran.\n\nNo venden más. Cobran mejor.\nSi vendes desde Tailandia, con un solo enlace cada cliente paga como paga en su país.\nY tú recibes euros o dólares.\n\nHaz clic y descubre cómo.",
+        t1="Un 27 % más de conversión", t2="No venden más, cobran mejor"),
+}
+
 out = {}
 md = ["# Copys de los anuncios · HUBS / METODOS DE PAGO", "",
       "Un texto largo (feed) y uno corto (stories y reels) por anuncio, y dos títulos.", ""]

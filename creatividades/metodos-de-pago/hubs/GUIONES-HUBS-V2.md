@@ -145,6 +145,41 @@ Entra y mira si tu negocio encaja.
 
 ---
 
+## 4 bis. Tailandia (12-11-2026)
+
+Mismo enfoque que Bali. Sin la toma de cripto: en Tailandia no se puede usar para pagar bienes ni servicios. Las horas están comprobadas: Bangkok va en UTC+7 todo el año y Ciudad de México en UTC−6, así que son 13 horas de diferencia.
+
+**Rótulo (0–3 s):** «Si vendes cursos desde Tailandia y cobras con Stripe o PayPal»
+
+```text
+Si vendes cursos desde Tailandia y cobras con Stripe o PayPal…
+estás perdiendo hasta un 27 % de tu facturación.
+
+[A cámara]
+Son las tres de la madrugada en Bangkok.
+En México, las dos de la tarde.
+Tu cliente de allí ya dijo que sí.
+Abre tu enlace.
+Y no puede pagarte.
+
+PERO con tu enlace de Kunfupay, sí.
+[Inserto: página de pago real]
+Cada cliente paga como paga en su país.
+A cualquier hora, sin escribirte.
+Y tú recibes euros o dólares.
+
+Creadores que venden a España y LATAM ya aumentan su conversión un 27 %.
+Solo cambiando cómo cobran.
+
+Entra y mira si tu negocio encaja.
+```
+
+**Ganchos alternativos:**
+- Si vendes cursos desde Tailandia, podrías facturar hasta un 30 % más.
+- Tres de la madrugada en Bangkok. Tu cliente de México quiere pagarte.
+
+---
+
 ## 5. LATAM · Optimización fiscal (impuestos y papeleo)
 
 Solo LATAM. Es de otro ángulo: va en un conjunto propio, no en HUBS de métodos de pago.

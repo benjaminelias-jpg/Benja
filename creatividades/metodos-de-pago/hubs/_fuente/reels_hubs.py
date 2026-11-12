@@ -14,11 +14,13 @@ here = os.path.dirname(os.path.abspath(__file__))
 sys.path.insert(0, here)
 from copys_hubs import CIERRE, CUERPO, FILTRO  # noqa: E402
 
-LUGAR = {'MIAMI': 'Miami', 'LATAM': 'Latinoamérica', 'DUBAI': 'Dubái', 'BALI': 'Bali'}
+LUGAR = {'MIAMI': 'Miami', 'LATAM': 'Latinoamérica', 'DUBAI': 'Dubái', 'BALI': 'Bali', 'TAILANDIA': 'Tailandia'}
 RECIBES = {'MIAMI': 'a ti te llegan dólares', 'LATAM': 'a ti te llega en euros o en dólares',
-           'DUBAI': 'tú recibes euros o dólares', 'BALI': 'tú recibes euros o dólares'}
+           'DUBAI': 'tú recibes euros o dólares', 'BALI': 'tú recibes euros o dólares',
+           'TAILANDIA': 'tú recibes euros o dólares'}
 TERM = {'MIAMI': 'hub_miami_zona_latina', 'LATAM': 'hub_latam_similar_3_hernan',
-        'DUBAI': 'hub_dubai_similar_3_hernan', 'BALI': 'hub_bali_similar_3_hernan'}
+        'DUBAI': 'hub_dubai_similar_3_hernan', 'BALI': 'hub_bali_similar_3_hernan',
+        'TAILANDIA': 'hub_tailandia_similar_3_hernan'}
 
 # Vídeo en Meta y portada (hash de la imagen subida).
 VIDEO = {
@@ -34,7 +36,9 @@ PORTADA = json.load(open(os.path.join(here, 'reels_portadas.json'), encoding='ut
 HUBS = {'MIAMI': GENERICOS + ['PAGOS PERSONALIZADO'],
         'LATAM': GENERICOS + ['FISCAL PERSONALIZADO', 'PAGOS PERSONALIZADO'],
         'DUBAI': GENERICOS + ['PAGOS PERSONALIZADO'],
-        'BALI': ['TRES COSAS', 'INFOGRAFIA', 'PAGOS PERSONALIZADO']}
+        'BALI': ['TRES COSAS', 'INFOGRAFIA', 'PAGOS PERSONALIZADO'],
+        # Tailandia: como Bali (los otros dos nombran la cripto). Su personalizado está por grabar.
+        'TAILANDIA': ['TRES COSAS', 'INFOGRAFIA']}
 # El personalizado de métodos de pago lleva un vídeo distinto en cada hub.
 VIDEO_HUB = {('PAGOS PERSONALIZADO', 'MIAMI'): '1996175377722443',
              ('PAGOS PERSONALIZADO', 'DUBAI'): '1636248447951884',
