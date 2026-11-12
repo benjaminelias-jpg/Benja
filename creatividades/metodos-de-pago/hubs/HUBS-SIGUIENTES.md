@@ -92,6 +92,37 @@ Solo donde el anuncio sale barato (España y LATAM). Cada uno, con anuncios que 
 
 **Mercado en inglés:** se dejará para más adelante. Por ahora, solo español.
 
+## Micro-localidades fuera de LATAM (12-11-2026)
+
+LATAM ya se cubre, y España también (adquisición España). Andorra también se toca: ANDORRA / REGISTRO / ABIERTO va a todo el país, con un CPM de 3,32 € y 69,58 € por registro en 28 días.
+
+**Españoles residentes por país** (INE, PERE a 1-1-2026, tabla 71119). No incluye a los latinoamericanos que viven allí.
+
+| Micro-localidad | Españoles en el país (nacidos en España) | Por qué | Veredicto |
+|---|---|---|---|
+| **Lisboa + Madeira** (Funchal, Ponta do Sol) | Portugal: 18.341 (7.844) | Nómadas y creadores; en Madeira hay 3.004 venezolanos y la comunidad habla de 10.000–12.000. Stripe Portugal cobra Bizum, pero no Nequi, PSE, Yape ni OXXO | **Sí** |
+| **Londres** | Reino Unido: 202.885 (91.645) | La comunidad española más grande fuera de Francia, más la latinoamericana | **Sí** |
+| **Sídney + Melbourne** | Australia: 25.753 (13.643) | Gente joven con visado de working holiday. Sídney va 10 h por delante de España y 17 h por delante de México: es el ángulo «mientras duermes» de Bali y Tailandia | **Sí** |
+| **Dublín** | Irlanda: 14.617 (8.035) | Gente joven de España y LATAM en tecnología | Segunda tanda |
+| **Ámsterdam** | Países Bajos: 36.411 (17.567) | Comunidad grande y joven | Segunda tanda |
+| **Berlín** | Alemania: 197.961 (85.054) | Escena creativa | Segunda tanda |
+| **Zúrich / Ginebra** | Suiza: 142.863 (54.287) | Mucho poder adquisitivo, pero el anuncio sale caro | Segunda tanda |
+| **Bangkok / Chiang Mai / Koh Phangan** | Tailandia: 1.563 (959) | Ya van en el hub de Tailandia | Separarlos solo con datos por región |
+| Chipre (Limassol) | 722 (451) | Público mínimo, sin anuncios en español | No |
+| Malta | 1.116 (664) | Público mínimo | No |
+| Georgia (Tiflis) | 85 (50) | Público mínimo | No |
+| Doha, Riad | 2.213 y 2.332 | Trabajadores expatriados, no creadores | No |
+| Nueva York, Los Ángeles, Austin, Puerto Rico | EE. UU.: 236.394 | Anuncio a precio de Miami (CPM de 35,65 €) y categoría especial | No |
+| Tokio, Singapur | 3.996 y 2.008 | Pequeños y caros | No |
+
+**Reglas para todos:**
+- Idioma español obligatorio como control de público.
+- Edad mínima la que pida el país.
+- 10 €/día y 7 días.
+- Se pausa el que pase de unos 40 € por lead (el nivel de Dubái). La referencia fuera de LATAM es Bali (23 €), no LATAM (2,29 €).
+- Hace falta que el equipo confirme por escrito que acepta vendedores con residencia en ese país, igual que en Bali, Dubái, Miami y Tailandia.
+- Sin cripto.
+
 ## Antes de lanzar cualquiera
 
 - **Kommo por país.** Comprobar la calidad de los leads por país: la conversión de los hubs cuenta cualquier URL con «gracias».
