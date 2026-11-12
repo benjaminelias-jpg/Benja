@@ -52,7 +52,7 @@ El conjunto apunta a México, Panamá, Argentina, Chile, Perú, Colombia, Paragu
 
 ## LATAM B: los países que hoy no tocamos (12-11-2026)
 
-La campaña de awareness LATAM ya se entrega en ellos (últimos 28 días): hay alcance y cuesta muy poco.
+**Todos los hubs son de adquisición:** optimizan a lead (Leads_logrados_gracias), como LATAM y Tailandia. Ninguna campaña de adquisición ha llegado nunca a estos países, así que no hay coste por lead. Lo único que prueba que hay público es la campaña de awareness LATAM, que sí se entrega en ellos (últimos 28 días):
 
 | País | Alcance | Visitas a la web | Veredicto |
 |---|---|---|---|
@@ -67,7 +67,7 @@ La campaña de awareness LATAM ya se entrega en ellos (últimos 28 días): hay a
 | Venezuela | 232.074 | 59 | **Fuera:** sin métodos de Venezuela en Kunfupay; confirmar con el equipo antes |
 | Belice, Guyana, Surinam | — | — | **Fuera:** no hablan español |
 
-**Propuesta:** un solo conjunto, «HUB LATAM B», con los 8 países que entran, los mismos anuncios del LATAM y 10 €/día.
+**Propuesta:** un solo conjunto de adquisición, «HUB LATAM B», dentro de la campaña de hubs. Con los 8 países que entran, los mismos anuncios del LATAM, la misma optimización a lead y 10 €/día.
 
 ## Micro-hubs de creadores (ciudad, radio y español)
 
