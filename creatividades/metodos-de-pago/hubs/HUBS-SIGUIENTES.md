@@ -43,7 +43,7 @@ El conjunto apunta a México, Panamá, Argentina, Chile, Perú, Colombia, Paragu
 
 **Para después:**
 - **Canarias**, cuando «Latinos en España» esté probado.
-- **Portugal (Lisboa y Madeira)**, cuando el equipo confirme por escrito que acepta vendedores con residencia allí.
+- **Italia (Milán y Roma)**: es el único hub nuevo fuera de LATAM con datos propios (ver «Micro-localidades fuera de LATAM»).
 
 **Los que no:**
 - Buenos Aires: es el peor país del LATAM y el más saturado.
@@ -92,36 +92,53 @@ Solo donde el anuncio sale barato (España y LATAM). Cada uno, con anuncios que 
 
 **Mercado en inglés:** se dejará para más adelante. Por ahora, solo español.
 
-## Micro-localidades fuera de LATAM (12-11-2026)
+## Micro-localidades fuera de LATAM: gente que habla español y tiene negocio (12-11-2026)
 
-LATAM ya se cubre, y España también (adquisición España). Andorra también se toca: ANDORRA / REGISTRO / ABIERTO va a todo el país, con un CPM de 3,32 € y 69,58 € por registro en 28 días.
+**Cambio de criterio.** La primera versión de esta lista ordenaba los países por españoles inscritos (INE). Eso no sirve: que haya muchos españoles no quiere decir que haya negocios que venden en español. Ahora se mira dónde vive gente que habla español (de España o de LATAM) y tiene un negocio. Hay dos fuentes:
 
-**Españoles residentes por país** (INE, PERE a 1-1-2026, tabla 71119). No incluye a los latinoamericanos que viven allí.
+1. **Los vendors de Kunfupay** (Daneris; catálogo del 12-11-2026; altas de los últimos 12 meses). Se cuentan los que viven fuera de España y LATAM y venden más de la mitad (en volumen o en número de ventas) a compradores de España o LATAM. Se mira a quién venden y no su documento: un argentino con pasaporte italiano sale como italiano.
+2. **Datos públicos de negocios hispanos** de cada ciudad.
 
-| Micro-localidad | Españoles en el país (nacidos en España) | Por qué | Veredicto |
+| Lugar | Vendors de Kunfupay que venden sobre todo a España/LATAM | Datos públicos | Veredicto |
 |---|---|---|---|
-| **Lisboa + Madeira** (Funchal, Ponta do Sol) | Portugal: 18.341 (7.844) | Nómadas y creadores; en Madeira hay 3.004 venezolanos y la comunidad habla de 10.000–12.000. Stripe Portugal cobra Bizum, pero no Nequi, PSE, Yape ni OXXO | **Sí** |
-| **Londres** | Reino Unido: 202.885 (91.645) | La comunidad española más grande fuera de Francia, más la latinoamericana | **Sí** |
-| **Sídney + Melbourne** | Australia: 25.753 (13.643) | Gente joven con visado de working holiday. Sídney va 10 h por delante de España y 17 h por delante de México: es el ángulo «mientras duermes» de Bali y Tailandia | **Sí** |
-| **Dublín** | Irlanda: 14.617 (8.035) | Gente joven de España y LATAM en tecnología | Segunda tanda |
-| **Ámsterdam** | Países Bajos: 36.411 (17.567) | Comunidad grande y joven | Segunda tanda |
-| **Berlín** | Alemania: 197.961 (85.054) | Escena creativa | Segunda tanda |
-| **Zúrich / Ginebra** | Suiza: 142.863 (54.287) | Mucho poder adquisitivo, pero el anuncio sale caro | Segunda tanda |
-| **Bangkok / Chiang Mai / Koh Phangan** | Tailandia: 1.563 (959) | Ya van en el hub de Tailandia | Separarlos solo con datos por región |
-| Chipre (Limassol) | 722 (451) | Público mínimo, sin anuncios en español | No |
-| Malta | 1.116 (664) | Público mínimo | No |
-| Georgia (Tiflis) | 85 (50) | Público mínimo | No |
-| Doha, Riad | 2.213 y 2.332 | Trabajadores expatriados, no creadores | No |
-| Nueva York, Los Ángeles, Austin, Puerto Rico | EE. UU.: 236.394 | Anuncio a precio de Miami (CPM de 35,65 €) y categoría especial | No |
-| Tokio, Singapur | 3.996 y 2.008 | Pequeños y caros | No |
+| **Andorra** | 8 de los 68 que viven allí; 37.542 € | — | **Ya se toca** (ANDORRA / REGISTRO / ABIERTO). Es el mejor sitio fuera de España y LATAM |
+| **Dubái** | 2; 22.852 € (hay 7 con documento de España o LATAM, que suman 33.942 €) | — | **Ya es hub** |
+| **Italia: Milán y Roma** | 4; 726 ventas y 11.901 €. Ninguno tiene documento de España ni de LATAM, así que por nacionalidad no se verían | Milán: 907 empresas artesanas de dueños peruanos y 677 de ecuatorianos (fin de 2023); 16.324 peruanos en la ciudad | **Sí: es el único nuevo con datos propios** |
+| Suiza | 1; 9.196 € | — | Esperar: es un solo caso |
+| EE. UU. (fuera de Miami) | 1 activo, con documento de LATAM; 31.448 €. Además, EE. UU. es el 57,9 % de lo que los vendors hispanohablantes venden fuera de España y LATAM | Casi 60.000 negocios latinos en Miami (2022), más que en ninguna otra área metropolitana; 406.086 empresas hispanas con empleados en el país (2021) | **No por ahora.** Es donde más negocio hispano hay, pero Miami cuesta 106,51 € por lead. Otra ciudad, solo cuando Miami baje |
+| Madeira, Lisboa | Portugal: 1; 2 € | 3.004 venezolanos en Madeira | No por ahora |
+| Londres | Ninguno: viven allí 13 vendors y ninguno ha vendido | Entre 120 y 150 negocios latinos en Elephant and Castle, según la fuente | No por ahora |
+| Sídney, Melbourne | Ninguno | Unos 9.900 colombianos en Melbourne y 6.930 argentinos en Sídney (2021); sobre todo gente joven con visado de estudiante o de working holiday | No |
+| Berlín, Ámsterdam, Dublín | Ninguno | — | No: estaban en la lista solo por el número de españoles |
+| Chipre, Malta, Georgia, Marruecos, Turquía, Kenia, Rumanía | 1 como mucho en cada país | — | No |
+
+**Italia, en concreto:**
+- Ya viven en Italia 50 vendors de Kunfupay, y 7 de ellos venden: en la práctica se aceptan. Aun así, el equipo lo confirma por escrito, como en los demás hubs.
+- El catálogo no guarda la ciudad: Milán y Roma salen de los datos públicos. Si el conjunto entrega poco, se abre a toda Italia con el mismo control de idioma.
+- Ángulo: «Vives en Italia y tus clientes están en España y LATAM: tu alumno de Bogotá quiere pagar con Nequi, el de Lima con Yape y la de Madrid con Bizum.» No se dice nada de Stripe Italia hasta comprobarlo.
+
+**El hueco más grande: no sabemos dónde viven.** 97 vendors sin país de residencia venden sobre todo a España/LATAM: 74.201 ventas y 521.196 €, seis veces lo que venden los 21 que sí tienen país. Solo el 29 % de los vendors tiene la residencia rellenada.
+- Pedir a producto que el país (y la ciudad) de residencia sean obligatorios en el alta. Con eso, la próxima lista de hubs sale de datos propios.
+- Esos 118 vendors (los 21 con país más los 97 sin país) son la mejor semilla para un público similar en los hubs fuera de EE. UU. (en EE. UU., la categoría especial no lo permite). Subir la lista a Meta lo decide el equipo.
 
 **Reglas para todos:**
+- Adquisición: se optimiza a lead (Leads_logrados_gracias).
 - Idioma español obligatorio como control de público.
 - Edad mínima la que pida el país.
 - 10 €/día y 7 días.
 - Se pausa el que pase de unos 40 € por lead (el nivel de Dubái). La referencia fuera de LATAM es Bali (23 €), no LATAM (2,29 €).
 - Hace falta que el equipo confirme por escrito que acepta vendedores con residencia en ese país, igual que en Bali, Dubái, Miami y Tailandia.
 - Sin cripto.
+
+**Fuentes:**
+- Catálogo de Kunfupay, vía Daneris (12-11-2026).
+- [Brookings: el auge de los negocios latinos en EE. UU.](https://www.brookings.edu/articles/charting-the-surge-in-latino-or-hispanic-owned-businesses-in-the-us/)
+- [Census Bureau: empresas de dueños hispanos](https://census.gov/library/stories/2024/10/hispanic-owned-businesses.html)
+- [Italpress: artesanos extranjeros en Milán](https://www.italpress.com/?p=423953)
+- [Tuttitalia: peruanos en la provincia de Milán](https://www.tuttitalia.it/lombardia/provincia-di-milano/statistiche/cittadini-stranieri/peru/)
+- [Anglo Ecuadorian Society: Elephant and Castle](https://angloecuadoriansociety.org/2025/02/04/ecuadorians-at-the-centre-of-new-look-elephant-and-castle/)
+- [ABS: nacidos en Colombia en Melbourne](https://www.abs.gov.au/census/find-census-data/quickstats/2021/8205_2GMEL)
+- [ABS: nacidos en Argentina en Sídney](https://www.abs.gov.au/census/find-census-data/quickstats/2021/8201_1GSYD)
 
 ## Antes de lanzar cualquiera
 
