@@ -8,8 +8,13 @@ Uso:  python3 estaticos_tailandia.py <dir_html>
 - E3 parte del E3 de Bali, que ya enseña las páginas de pago reales de México (recortada a SPEI
   y Mercado Pago, sin OXXO) y de España. Solo se sustituye la primera línea («desde Bali» pasa a
   «desde Tailandia»): las capturas no se tocan ni se tapan.
-- E5 usa una foto de Bangkok de stock con licencia (Freepik/Magnific, «cityscape view and building
-  at twilight in Bangkok, Thailand»).
+- E5 usa dos fotos en alta resolución:
+  - assets/tailandia_bandera.jpg: foto real de stock con licencia (Freepik/Magnific, «Thailand flag
+    and Buddhist temple», Wat Pho, Bangkok; 2867×4300). Se baja a 2160 px de ancho con la saturación
+    un 18 % más alta.
+  - assets/ruben_hd.jpg: recorte cuadrado de 1200 px de la foto de estudio de Rubén (4000×6000) que
+    Brayan pasó por Slack el 12-11-2026.
+  bangkok.jpg ya no se usa.
 """
 import os
 import sys
@@ -150,16 +155,18 @@ E5_TITULAR = "Creadores que venden a España y LATAM ya aumentan su conversión 
 
 def e5(h):
     st = h == 1920
-    foto = PROPIO + 'bangkok.jpg'
-    css = f"""body{{background:#000 url('{foto}') center 30%/cover no-repeat}}
-.sh{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 34%,rgba(0,0,0,.74) 58%,#000 {'82' if st else '96'}%)}}
-.circ{{position:absolute;left:72px;top:{300 if st else 50}px;width:{484 if st else 380}px;height:{484 if st else 380}px;border-radius:50%;overflow:hidden;border:14px solid #e3202b;background:{LILA}}}
+    foto = PROPIO + 'tailandia_bandera.jpg'
+    # La foto se sube para que la bandera quede entera por encima del titular; lo que sobra abajo es negro.
+    tam, pos = ('1080px auto', 'center -240px') if st else ('1080px auto', 'center -400px')
+    css = f"""body{{background:#000 url('{foto}') {pos}/{tam} no-repeat}}
+.sh{{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) {'50' if st else '52'}%,rgba(0,0,0,.74) {'62' if st else '68'}%,#000 {'71' if st else '88'}%)}}
+.circ{{position:absolute;left:72px;top:{300 if st else 50}px;width:{440 if st else 380}px;height:{440 if st else 380}px;border-radius:50%;overflow:hidden;border:14px solid #e3202b;background:{LILA}}}
 .circ img{{width:100%;height:100%;object-fit:cover}}
 .kua{{position:absolute;right:72px;top:{290 if st else 50}px;width:84px;height:84px;border-radius:14px}}
 .txt{{position:absolute;left:72px;right:72px;bottom:{380 if st else 70}px;color:#fff}}
 .tag{{display:inline-block;background:#e3202b;font-weight:700;font-size:{76 if st else 62}px;padding:0 28px;line-height:1.35;letter-spacing:-0.02em}}
 h1{{font-size:{74 if st else 62}px;line-height:1.08;font-weight:800;margin-top:28px;letter-spacing:-0.04em}}"""
-    body = f"""<div class="sh"></div><div class="circ"><img src="{COMUN}ruben.png"></div>
+    body = f"""<div class="sh"></div><div class="circ"><img src="{PROPIO}ruben_hd.jpg"></div>
 <img class="kua" src="{COMUN}ku.png"><div class="txt"><span class="tag">Actualidad</span>
 <h1>{E5_TITULAR}</h1></div>"""
     return pagina(h, body, css, ku=False)
