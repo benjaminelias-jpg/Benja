@@ -1031,7 +1031,7 @@ Haz clic y descubre cómo.
 **Texto largo (feed)**
 
 ```text
-Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, estás perdiendo hasta un 27 % de tu facturación. Mientras duermes.
+Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, estás perdiendo hasta un 27 % de tu facturación.
 
 Te lo cuento como es, porque desde Tailandia esto pasa mientras duermes.
 

@@ -8,6 +8,8 @@ Nada de esto está creado en Meta. Es el plan y el material para subir.
 
 ---
 
+> **Tailandia (12-11-2026):** quinto hub, montado en borrador en Meta con 5 estáticos y 2 reels genéricos. El reel personalizado está por grabar. Todo está en `HUB-TAILANDIA.md`. Qué hubs lanzar después, con los datos de la cuenta: `HUBS-SIGUIENTES.md`.
+
 > **V2 (29-10-2026):** los estáticos E1–E5 están en `HUBS-V2-BENEFICIOS.md` y los guiones vigentes (4 por hub + 1 fiscal de LATAM), en `GUIONES-HUBS-V2.md` (beneficio, dolor y deseo con cifras). Los apartados E1–E4 y V1 de los documentos de hub y de `GUIONES-HUBS.md` quedan sustituidos.
 
 ## Qué hay en esta carpeta

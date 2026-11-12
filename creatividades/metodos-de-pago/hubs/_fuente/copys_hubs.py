@@ -192,7 +192,7 @@ CUERPO['TAILANDIA'] = (
 
 P['TAILANDIA'] = {
     'TWEET': dict(
-        gancho="Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, estás perdiendo hasta un 27 % de tu facturación. Mientras duermes.",
+        gancho="Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, estás perdiendo hasta un 27 % de tu facturación.",
         corto="Si vendes cursos desde Tailandia y cobras con Stripe o PayPal, pierdes hasta un 27 % de tu facturación.\n\nTus clientes de España y LATAM quieren comprarte. Y no pueden pagarte.\n\nPERO con tu enlace de Kunfupay, sí. Y recibes euros o dólares.\n\nHaz clic y descubre cómo.",
         t1="Hasta un 27 % se cae en el pago", t2="Que te pague cualquiera"),
     'COMPARATIVA': dict(
