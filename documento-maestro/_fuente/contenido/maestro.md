@@ -61,6 +61,67 @@ Siempre una cifra, nunca redonda y con «hasta» delante. Se repite en los tres 
 
 Por qué: un número exacto parece medido y se cree más que uno redondo; y hace concreto un problema que sin cifra suena a opinión. Origen de las cifras: pendiente de confirmar.
 
+## Lo que funciona en varios conjuntos y nichos || Patrones que se repiten fuera de un solo anuncio
+
+{lead} Un anuncio que gana en un conjunto puede ser suerte. Si el mismo recurso gana en varios conjuntos o en varios negocios, es un patrón. Esto es lo que se repite en los últimos 90 días.
+
+### El mismo anuncio en varios conjuntos
+
+<div class="ficha"><div><b>68 resultados</b><span>Profitstride · 3 conjuntos</span></div><div><b>45</b><span>Podcast Juanen · 3 conjuntos</span></div><div><b>39 a 4,7 €</b><span>Ignia «Dios Benji» · 3 conjuntos</span></div><div><b>39 a 6,0 €</b><span>Vídeo avatar Tributaless · 2 conjuntos</span></div><div><b>288 a 2,0 €</b><span>Marcas UGC (UGC Accelerator) · 2 conjuntos</span></div></div>
+
+Un anuncio que da resultados en 2 o 3 conjuntos distintos es el candidato a escalar. Los de Kunfupay que lo cumplen son reels fiscales con una persona hablando.
+
+### Lo que se repite entre nichos
+
+<div class="tres"><div class="caja"><b>Una persona habla a cámara</b><span>Profitstride y Podcast Juanen (Kunfupay), «Dios Benji» (Ignia), el avatar (Tributaless), las marcas UGC. En todos los negocios, lo que mejor cuesta es una voz humana contando un problema concreto.</span></div><div class="caja"><b>El lenguaje del nicho en la primera frase</b><span>«Si vendes cursos…», «¿Eres autónomo…?», «me faltan agendas…». Filtra antes del clic en todos.</span></div><div class="caja"><b>Una cifra concreta</b><span>27 % en Kunfupay, $97 en Ignia. Una cifra hace real el problema.</span></div></div>
+
+<div class="dos"><div class="si"><h4>Se repite y funciona</h4><ul><li>Persona a cámara con el problema dicho en voz alta.</li><li>Pantalla real del producto (página de pago).</li><li>Un solo mensaje por pieza.</li></ul></div><div class="no"><h4>Se repite y no funciona</h4><ul><li>El tweet en Classroom: 1.836 € y 73 € por lead.</li><li>Estáticos que solo explican, sin cara ni prueba.</li><li>Muchos anuncios nuevos a la vez.</li></ul></div></div>
+
+Aviso: los resultados no son del mismo evento en todos los negocios (registro, lead, conversación). Sirven para ver patrones, no para decir qué negocio va mejor.
+
+## Mapa de todos los ángulos || Qué dice cada uno, qué toca y dónde se usa
+
+{lead} Un ángulo es un problema o un deseo con el que entramos. Todos los ángulos son nuestros y valen en cualquier país o hub: lo que cambia es el lugar que se nombra. Cada ficha dice qué toca (dolor, deseo, miedo, objeción o curiosidad) y qué datos hay.
+
+### Impuestos y estructura: «no hace falta irte ni montar nada»
+
+<div class="dos"><div class="caja"><b>No te mudes a Andorra, Dubái o Miami</b><span><em>Toca: miedo y deseo (pagar menos sin irte).</em> Lo que buscas allí ya lo tienes sin irte de España.<br><b style="font-weight:600">Datos:</b> reel «Rubén ahorro imp.» y estático A-01 («sin LLC y sin irte a Andorra»). Los reels fiscales son lo que mejor ha ido: Profitstride, 66 registros a 13,24 €.</span></div><div class="caja"><b>No te montes una LLC</b><span><em>Toca: miedo (papeleo, coste) y deseo (simplicidad).</em> Te ahorras montarla, renovarla y su papeleo. «Ahorrar» solo se dice de la LLC.<br><b style="font-weight:600">Datos:</b> reels «LLC España 2» (hook 30,7 %, el mejor) y «LLC Rubén EEUU».</span></div></div>
+
+<div class="dos"><div class="caja"><b>No hagas más facturas</b><span><em>Toca: dolor (tiempo y errores).</em> «La factura se la hacemos nosotros a tu cliente».<br><b style="font-weight:600">Datos:</b> dentro de A-01 y los reels de producto. Sin prueba propia por separado.</span></div><div class="caja"><b>Los impuestos de cada venta, con un MoR</b><span><em>Toca: deseo (quitarse un problema).</em> «Los impuestos de cada venta son cosa nuestra». No es «ahorra impuestos»: ver regla de impuestos.<br><b style="font-weight:600">Datos:</b> todo el ángulo fiscal. Ojo: se pidió como «ahorra impuestos con un MoR»; esa redacción no se puede usar.</span></div></div>
+
+### Cobrar: «que te pague cualquiera»
+
+<div class="dos"><div class="caja"><b>Ya se puede cobrar sin Stripe ni PayPal</b><span><em>Toca: sorpresa y alivio (para quien no tiene acceso).</em> Para lugares donde esas herramientas no llegan o no abren cuenta.<br><b style="font-weight:600">Datos:</b> sin pieza registrada con este mensaje. Es un ángulo por localidad: hay que probarlo en un conjunto propio.</span></div><div class="caja"><b>Tu plataforma no tiene todos los métodos de pago</b><span><em>Toca: dolor (ventas que se pierden).</em> Un anuncio por plataforma: Skool, Hotmart, Stripe.<br><b style="font-weight:600">Datos:</b> «Ni Skool ni Stripe» (1 registro, 31,56 €); «Skool + Stripe = problemas» (186 €, 0 resultados); Hotmart: «Ventas que pierdes».</span></div></div>
+
+<div class="dos"><div class="caja"><b>Aumenta tus conversiones un X %</b><span><em>Toca: deseo (más ventas con lo mismo).</em> «Ya aumentan su conversión un 27 %».<br><b style="font-weight:600">Datos:</b> tweet, noticia, cifra «+30 %»: el 27 % está en 45 de 58 anuncios. Sin origen documentado.</span></div><div class="caja"><b>Tu cliente quería pagarte y no pudo</b><span><em>Toca: objeción de tu cliente.</em> La escena: «¿Cómo te pago?», «luego lo miro».<br><b style="font-weight:600">Datos:</b> reel «¿Cómo te pago?»: 3,8 % de clic, el mejor de su conjunto.</span></div></div>
+
+<div class="dos"><div class="caja"><b>Stripe te retiene el dinero</b><span><em>Toca: miedo (fondos bloqueados).</em> Aparece como dolor en los guiones.<br><b style="font-weight:600">Datos:</b> sin pieza con datos. Los contracargos son un dato débil: no usarlos como cifra.</span></div><div class="caja"><b>Analizamos tu cuenta antes de abrirla</b><span><em>Toca: confianza y exclusividad (no entra cualquiera).</em> «Entra y mira si tu negocio encaja»: la cuenta se revisa antes de activarla.<br><b style="font-weight:600">Datos:</b> es el cierre de 56 de 58 anuncios. Aún no se ha usado como ángulo principal.</span></div></div>
+
+### Dinero y cuenta
+
+<div class="dos"><div class="caja"><b>Cuenta a tu nombre, con IBAN</b><span><em>Toca: deseo (control) y miedo (¿de dónde sale este dinero?).</em> Beneficio primero, el IBAN después.<br><b style="font-weight:600">Datos:</b> estáticos «De dónde sale» y «Nuevo IBAN». Sin resultados propios en las notas.</span></div><div class="caja"><b>Dinero parado en la plataforma</b><span><em>Toca: dolor (cobrar tarde).</em> Sacar el dinero de Hotmart sin pasar por el banco: ver aviso de redacción.<br><b style="font-weight:600">Datos:</b> «Nuevo IBAN». El texto «sin pasar por tu banco» se descartó.</span></div></div>
+
+### Otros negocios y embudos
+
+<div class="dos"><div class="caja"><b>Aumenta tus agendas un X %</b><span><em>Toca: deseo (calendario lleno).</em> Para el embudo self-service: seteo, closers, agendamientos.<br><b style="font-weight:600">Datos:</b> documento de Self-service. Cifras de ejemplo: «dato a confirmar».</span></div><div class="caja"><b>Tener un todo en uno</b><span><em>Toca: comodidad.</em> Una sola herramienta para varias.<br><b style="font-weight:600">Datos:</b> Ojo: la guía de marca prohíbe «todo en uno» y «centraliza tus plataformas». Hay que decidir antes de usarlo.</span></div></div>
+
+<div class="dos"><div class="caja"><b>Dinero, acompañamiento, metodología (Classroom)</b><span><em>Toca: deseo (crecer con apoyo).</em> «Entramos con nuestro dinero en anuncios».<br><b style="font-weight:600">Datos:</b> Classroom: 168 leads a 45 €. El estático del videojuego, 53 leads a 25,53 €.</span></div><div class="caja"><b>Te responde una persona, no un bot</b><span><em>Toca: confianza (remarketing).</em> Foto del vendedor y «Escríbeme».<br><b style="font-weight:600">Datos:</b> remarketing de vendedores: sin resultados en los conjuntos 3 y 4.</span></div></div>
+
+
+### Qué ángulos faltan por probar
+
+Mirando el mapa, quedan sin pieza propia con datos: **sin Stripe ni PayPal** (por localidad), **Stripe te retiene el dinero**, **analizamos tu cuenta antes de abrirla** y **no hagas más facturas** como mensaje principal. Son los que merece la pena meter primero en un conjunto de prueba, cada uno en el suyo.
+
+### Qué parte del deseo toca cada ángulo
+
+<div class="tres"><div class="caja"><b>Dinero</b><span>Aumenta tus conversiones; aumenta tus agendas; cuenta a tu nombre.</span></div><div class="caja"><b>Tiempo y tranquilidad</b><span>No hagas más facturas; sin LLC; los impuestos de cada venta son nuestros.</span></div><div class="caja"><b>Alivio y control</b><span>Cobrar sin Stripe ni PayPal; Stripe te retiene; analizamos tu cuenta.</span></div></div>
+
+Los ángulos de dinero y tiempo son los que más hemos probado. Los de alivio y control, casi nada.
+
+### Datos del CRM
+
+Kommo y Daneris no estaban conectados al preparar esta versión. Cuando lo estén, se cruzarán los ángulos con los leads que sí cualifican, y se marcarán los que dan leads buenos en cualquier país o hub.
+
 ## Cómo se ve un anuncio por dentro || Tres anuncios destripados
 
 {lead} Tres imágenes que han funcionado, con cada elemento explicado. Se lee de la nota al anuncio.
