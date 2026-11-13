@@ -114,6 +114,43 @@ def pizarra(obj_html, w, lineas):
             f'<div class="notas der">{der}</div><svg class="cables"></svg></div>{cap}</figure>')
 
 
+def cambio(resto, lineas):
+    """Antes y después de un anuncio. Líneas: antes: ruta | título ; despues: ruta | título ;
+    x,y | Qué se cambió | Por qué (x,y sobre la imagen «después», 0 a 1) ; pie: texto."""
+    m = re.search(r'w=(\d+)', resto)
+    w = int(m.group(1)) if m else 250
+    antes = despues = None
+    notas, pie = [], ''
+    for ln in lineas:
+        ln = ln.strip()
+        if not ln:
+            continue
+        if ln.startswith('antes:'):
+            r, _, t = ln[6:].partition('|')
+            antes = (r.strip(), t.strip())
+        elif ln.startswith('despues:'):
+            r, _, t = ln[8:].partition('|')
+            despues = (r.strip(), t.strip())
+        elif ln.lower().startswith('pie:'):
+            pie = ln[4:].strip()
+        else:
+            xy, e, p = [t.strip() for t in ln.split('|', 2)]
+            x, y = xy.split(',')
+            notas.append((float(x), float(y), e, p))
+    pins = ''.join(f'<span class="pin" style="left:{x * 100:.1f}%;top:{y * 100:.1f}%">{i}</span>'
+                   for i, (x, y, _e, _p) in enumerate(notas, 1))
+    lista = ''.join(f'<div class="co"><div class="num">{i}</div><div><b>{enlinea(e)}</b>'
+                    f'<span>{enlinea(p)}</span></div></div>' for i, (_x, _y, e, p) in enumerate(notas, 1))
+    cap = f'<figcaption>{enlinea(pie)}</figcaption>' if pie else ''
+    return (f'<figure class="cambio"><div class="par">'
+            f'<div class="lado"><div class="etq no">Antes</div><img src="{ruta_img(antes[0])}" style="width:{w}px">'
+            f'<div class="tt">{enlinea(antes[1])}</div></div>'
+            f'<div class="flecha">&#8594;</div>'
+            f'<div class="lado"><div class="etq si">Ahora</div><div class="conpins"><img src="{ruta_img(despues[0])}" style="width:{w}px">{pins}</div>'
+            f'<div class="tt">{enlinea(despues[1])}</div></div></div>'
+            f'<div class="notas2">{lista}</div>{cap}</figure>')
+
+
 class Doc:
     def __init__(self, texto):
         self.l = texto.split('\n')
@@ -208,6 +245,15 @@ class Doc:
             ls = self.hasta_fin()
             corte = ls.index('--')
             return pizarra('<div class="obj txt">' + '\n'.join(ls[:corte]) + '</div>', w, ls[corte + 1:])
+        if cmd == 'imagen':
+            r, _, pie = resto.partition('|')
+            m = re.search(r'\s+w=(\d+)', r)
+            w = int(m.group(1)) if m else 220
+            r = re.sub(r'\s+w=\d+', '', r)
+            return (f'<figure><div class="solo"><img src="{ruta_img(r)}" style="width:{w}px">'
+                    f'<figcaption>{enlinea(pie.strip())}</figcaption></div></figure>')
+        if cmd == 'cambio':
+            return cambio(resto, self.hasta_fin())
         raise SystemExit('orden desconocida: ' + ln)
 
     def run(self, sub=False):

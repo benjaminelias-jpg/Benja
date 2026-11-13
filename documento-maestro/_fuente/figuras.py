@@ -153,3 +153,63 @@ def semaforo():
 
 def prueba():
     return _fig('<div class="caja"><b>Figura de prueba</b><span>Texto</span></div>')
+
+
+def _datos():
+    import json
+    import os
+    return json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'datos', 'patrones.json'), encoding='utf-8'))
+
+
+def patrones():
+    """Patrones que se repiten, contados sobre los copys reales (ver patrones.py)."""
+    d = _datos()
+    n, c = d['total'], d['cuenta']
+    filas = [
+        (c['cierre'], 'Cierra con «Entra y mira si tu negocio encaja»', 'La misma frase de cierre en casi todos.'),
+        (c['no_vendes'], 'Descarta a quien no vende: «Si todavía no vendes, esto no es para ti»', 'Se dice sin miedo: filtra antes del clic.'),
+        (c['paraTi'], 'El texto largo lista «Esto es para ti si:»', 'Tres puntos que dicen quién sí.'),
+        (c['filtro'], 'Abre con el filtro: «Si vendes cursos desde…»', 'En la imagen, en el rótulo del vídeo o en el texto.'),
+        (c['clic'], 'El texto corto acaba con «Haz clic y descubre cómo»', 'Una sola acción.'),
+        (c['hasta'], 'La cifra va con «hasta» delante', '«hasta un 27 %», «hasta un 30 % más».'),
+        (c['cifra27'], 'Usa el 27 %', 'Pierdes hasta un 27 %; ya aumentan un 27 %.'),
+        (c['stripe'], 'Nombra la herramienta que usa hoy: Stripe', 'Y PayPal en %d; Hotmart solo en %d.' % (c['paypal'], c['hotmart'])),
+        (c['recibes'], 'Cierra con lo que recibe quien vende: «recibes euros o dólares»', 'Después de enseñar cómo paga el cliente.'),
+        (c['cifra30'], 'Usa el 30 %', 'Solo en la pieza de la cifra y en «Tres cosas».'),
+        (c['impuestos'], 'Habla de impuestos', 'Solo los reels de fiscal. Es un ángulo aparte.'),
+    ]
+    h = (f'<div style="font-size:9.6pt;font-weight:700;color:{MARCA};margin-bottom:8px">'
+         f'Cuántos de nuestros {n} anuncios con copy lo hacen</div>')
+    for k, t, ej in filas:
+        w = k / n * 100
+        h += (f'<div style="display:flex;gap:10px;align-items:center;margin-bottom:6px;break-inside:avoid">'
+              f'<div style="flex:none;width:58px;text-align:right"><b style="font-size:12.5pt;color:{MARCA}">{k}</b>'
+              f'<span style="font-size:7.8pt;color:{GRIS}"> de {n}</span></div>'
+              f'<div style="flex:1"><div style="height:7px;background:{LINEA};border-radius:3px;margin-bottom:3px">'
+              f'<div style="width:{w:.0f}%;height:7px;background:{MARCA};border-radius:3px"></div></div>'
+              f'<div style="font-size:8.9pt;font-weight:650;line-height:1.3">{t}</div>'
+              f'<div style="font-size:8pt;color:{GRIS};line-height:1.3">{ej}</div></div></div>')
+    pie = ('Cuenta hecha sobre los textos de %d anuncios: 25 estáticos y 21 reels de hubs, 5 estáticos de España, 4 reels de fiscal, '
+           '2 de Classroom y 1 de métodos de pago en España. Datos de la carpeta de copys, a 13 de noviembre de 2026.' % n)
+    return _fig(h, pie)
+
+
+def mor():
+    """El vehículo: cómo pasa la venta por Kunfupay."""
+    def caja(tt, sub, fuerte=False):
+        st = (f'border:1.5px solid {MARCA};background:{SUAVE}' if fuerte else f'border:1px solid {LINEA}')
+        return (f'<div style="flex:1;{st};border-radius:6px;padding:9px 10px;min-width:0">'
+                f'<div style="font-size:9.4pt;font-weight:700;color:{MARCA};line-height:1.25">{tt}</div>'
+                f'<div style="font-size:8.3pt;color:#444;line-height:1.4;margin-top:3px">{sub}</div></div>')
+    fl = f'<div style="flex:none;align-self:center;font-size:15pt;color:{MARCA}">&#8594;</div>'
+    arriba = ('<div style="display:flex;gap:6px">'
+              + caja('1 · Tu alumno paga', 'Entra en tu enlace de Kunfupay y paga con lo que usa en su país.')
+              + fl
+              + caja('2 · Kunfupay vende', 'Le hace la factura al alumno. De los impuestos de esa venta nos encargamos nosotros.', True)
+              + fl
+              + caja('3 · Tú recibes', 'Euros o dólares. Tú le facturas a Kunfupay: tu venta es con nosotros.')
+              + '</div>')
+    abajo = (f'<div style="margin-top:8px;border:1px dashed {GRIS};border-radius:6px;padding:8px 11px;font-size:8.6pt;line-height:1.4">'
+             f'<b style="color:{MARCA}">Lo que no cambia:</b> tu renta. Quien vive en España tributa por lo que gana, esté donde esté el dinero. '
+             f'Por eso cada frase de impuestos acaba con «Tu renta, eso sí, sigue siendo tuya».</div>')
+    return _fig(arriba + abajo, 'El vehículo detrás de las frases de impuestos: Kunfupay funciona como Merchant of Record, es decir, representa a quien vende en cada venta. Pendiente de revisión legal.')
