@@ -213,3 +213,55 @@ def mor():
              f'<b style="color:{MARCA}">Lo que no cambia:</b> tu renta. Quien vive en España tributa por lo que gana, esté donde esté el dinero. '
              f'Por eso cada frase de impuestos acaba con «Tu renta, eso sí, sigue siendo tuya».</div>')
     return _fig(arriba + abajo, 'El vehículo detrás de las frases de impuestos: Kunfupay funciona como Merchant of Record, es decir, representa a quien vende en cada venta. Pendiente de revisión legal.')
+
+
+def ocho():
+    """Los 8 anuncios de un conjunto nuevo y el nivel de cada uno."""
+    casillas = [
+        ('Dolor 1', 'Una pérdida con su cifra', '1–2'), ('Dolor 2', 'Otro momento del mismo dolor', '1–2'),
+        ('Dolor 3', 'Un peligro que no había visto', '1–2'), ('Creencia', 'Algo que cree y no es verdad', '2–3'),
+        ('Comparativa', 'Hoy, con X / Con Kunfupay', '2–3'), ('Cómo funciona', 'El mecanismo, paso a paso', '3'),
+        ('Prueba', 'Cómo se ve por dentro', '4'), ('Oferta', 'Qué hacer ahora', '5'),
+    ]
+    h = '<div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px">'
+    for i, (t, d, n) in enumerate(casillas):
+        op = (0.95, 0.95, 0.95, 0.7, 0.7, 0.5, 0.3, 0.15)[i]
+        fg = '#fff' if i < 5 else MARCA
+        h += (f'<div style="border:1px solid {LINEA};border-radius:5px;overflow:hidden;break-inside:avoid">'
+              f'<div style="background:rgba(38,15,99,{op});color:{fg};font-size:8.4pt;font-weight:700;padding:5px 8px">{t}'
+              f'<span style="float:right;font-weight:500">nivel {n}</span></div>'
+              f'<div style="font-size:8.4pt;color:#333;padding:7px 8px;line-height:1.35">{d}</div></div>')
+    h += '</div>'
+    return _fig(h, 'Reparto de partida de un conjunto nuevo. Las 8 primeras frases son distintas; hay un solo anuncio de oferta.')
+
+
+def hooks():
+    return barras([
+        ('LLC España 2', 30.7, 'reel fiscal'), ('MoR no es magia', 28.7, 'reel fiscal'),
+        ('Podcast Juanen', 26.0, '25–27 %'), ('Profitstride', 24.9, 'reel fiscal'),
+        ('Infografía España', 14.7, 'pantallas'), ('Infografía Dubái', 12.2, 'pantallas'),
+        ('Infografía Bali', 9.2, 'pantallas'),
+    ], 'Hook rate: de cada 100 que ven el vídeo, cuántos siguen a los 3 s', ' %',
+        'Objetivo: 25–30 % o más. Datos de Meta, 90 días hasta el 12 de noviembre de 2026.')
+
+
+def estvid():
+    filas = [('Testeo España · por registro', 38.65, 17.04, 'Vídeo'), ('Andorra · por registro', 91.64, 39.87, 'Vídeo'),
+             ('Hubs · por lead', 4.31, 11.76, 'Estático'), ('Classroom · por lead', 42.81, 85.27, 'Estático')]
+    h = (f'<div style="font-size:9.6pt;font-weight:700;color:{MARCA};margin-bottom:8px">Coste por resultado: cuanto más corta la barra, mejor</div>')
+    for t, e, v, g in filas:
+        mx = max(e, v)
+        def b(val, lab, fuerte):
+            return (f'<div style="display:flex;align-items:center;gap:6px;margin:2px 0"><div style="width:52px;font-size:8pt;color:{GRIS}">{lab}</div>'
+                    f'<div style="width:{val / mx * 52:.0f}%;height:11px;background:{MARCA};opacity:{1 if fuerte else .35};border-radius:2px"></div>'
+                    f'<div style="font-size:8.4pt;font-weight:700">{str(val).replace(".", ",")} €</div></div>')
+        h += (f'<div style="display:flex;gap:12px;align-items:center;border-top:1px solid {LINEA};padding:6px 0">'
+              f'<div style="width:150px;font-size:8.8pt;font-weight:650">{t}</div><div style="flex:1">'
+              + b(e, 'Estático', g == 'Estático') + b(v, 'Vídeo', g == 'Vídeo') + f'</div><div style="width:74px;font-size:8.8pt;font-weight:700;color:{MARCA}">Gana {g.lower()}</div></div>')
+    return _fig(h, 'Mismo público, campaña y evento. Últimos 90 días hasta el 12 de noviembre de 2026.')
+
+
+def crm():
+    return barras([('Testeo España', 258, '61 leads · 74 % descartados'), ('Hubs', 44, '63 leads · 56 % descartados'),
+                   ('Classroom', 251, '21 leads · 71 % descartados')],
+                  'Coste por lead cualificado', ' €', 'Meta cruzado con el CRM, 3 a 9 de noviembre de 2026. Los hubs gastaron el 19 % y dieron 5 de los 9 leads cualificados.')
