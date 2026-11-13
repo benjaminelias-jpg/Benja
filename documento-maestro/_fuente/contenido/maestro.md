@@ -479,7 +479,91 @@ Semana del 3 al 9 de noviembre. Los hubs, que usan el mensaje con filtro, dan le
 4. **Sin formulario instantáneo.** Se rellena con un toque y trae gente con menos interés; llevar a nuestra página pide un paso más.
 5. **Prueba real.** Enseñar la página de pago de verdad responde antes de que la persona pregunte.
 
-Esto es una explicación razonable, no una prueba: no tengo la serie de calidad de leads de hace dos o tres meses para compararla. Kommo estaba desconectado al preparar este documento. Cuando se conecte, se puede medir cada cambio contra los leads que de verdad cualificaron.
+### Lo que dice Kommo (15 oct a 12 nov)
+
+::fig kommo
+
+Tres cosas que salen de aquí:
+
+1. **Los hubs descartan menos** (52 % frente a 69 % en el testeo de España), pero **lo que avanza es parecido** (6 % y 5 %). El filtro limpia la entrada; todavía no convierte más.
+2. **Google Ads, con gente que busca, avanza el 15 %.** Es el triple que los hubs. Un ángulo que funciona en Meta puede rendir más donde la persona ya busca la solución: conviene llevar los mismos ángulos allí.
+3. **La atribución es floja.** En ese periodo, 3.663 de 4.215 leads se atribuyeron por origen y solo 465 por la campaña de Meta. Hasta que cada lead lleve el identificador de su campaña, no se puede saber qué anuncio trae el lead bueno. Es lo primero que hay que arreglar.
+
+Esto es una explicación razonable, no una prueba. Kommo cambió de estructura en octubre (nuevos embudos «Campañas Ads» y «Google Ads»), así que no hay una serie limpia de calidad de leads de hace dos o tres meses para comparar. Lo que se puede medir bien es lo de arriba, desde mediados de octubre.
+
+## Classroom Platinum, a fondo || Qué ha dado leads, cuáles no se cualifican y qué cambiar
+
+{lead} Es el negocio donde más se ha gastado y donde peor cuesta el lead. Aquí va lo que enseñan los datos de Meta y de Kommo.
+
+<div class="ficha"><div><b>7.575 €</b><span>gastados en 90 días</span></div><div><b>168</b><span>leads</span></div><div><b>45 €</b><span>coste por lead medio</span></div><div><b>31 de 40</b><span>leads de la landing, no cualificados en Kommo (78 %)</span></div></div>
+
+::fig platinum
+
+### Qué patrones salen
+
+<div class="tres"><div class="caja"><b>Lo que baja el coste</b><span>El estático «Videojuego» (20–30 €) y los reels con persona y nombre propio dentro del conjunto «UGC Founder» (9 € el mejor). Los estáticos con una imagen potente y el reel con cara llegan antes al lead.</span></div><div class="caja"><b>Lo que lo sube</b><span>El tweet (43–118 €), los reels de inversión y de VC (39–167 €) y «Skool + Stripe = problemas» (84 €). Hablan de dinero o de la herramienta, no de la persona que ya factura.</span></div><div class="caja"><b>Lo que filtra de verdad</b><span>El conjunto «Creator Business Score» (formulario con puntuación): 9,90 € y 8,85 % de clic. El propio anuncio pide un dato y descarta antes del clic.</span></div></div>
+
+### Qué se hace mejor para traer mejores leads
+
+<div class="dos"><div class="no"><h4>Hoy</h4><ul><li>El tweet y los reels de inversión o de VC como anuncios con más gasto.</li><li>El requisito de facturación, solo en la landing y en la llamada.</li><li>Resultado: 31 de 40 leads de la landing sin cualificar.</li></ul></div><div class="si"><h4>Propuesta ahora</h4><ul><li>Decir el requisito en el anuncio: quién ya factura y cuánto, sin preguntarlo como pregunta.</li><li>Mantener el filtro «revisamos cada negocio uno por uno».</li><li>Más estático «Videojuego» y reels con persona; menos tweet.</li><li>Probar el formulario con puntuación en más conjuntos.</li></ul></div></div>
+
+Por qué: de los 40 leads que entraron por la landing, 31 acabaron en «No cualificado». Quien no factura lo suficiente no debería ni llegar a rellenar el formulario. Poner el requisito en la imagen o en la primera línea lo expulsa antes y baja ese descarte. Está marcado como propuesta: todavía no se ha probado.
+
+Cuidado con las cifras: el formulario con puntuación y la landing no miden el mismo evento, y no se pueden comparar a pelo.
+
+## Mejores leads: antes y ahora en cada ángulo || Qué se cambió y qué falta para que el lead sea mejor
+
+{lead} Un lead barato que no vende no sirve. En cada ángulo se enseña lo que había, lo que hay ahora y por qué eso trae a quien sí vende.
+
+### Métodos de pago
+
+<div class="dos"><div class="no"><h4>Antes</h4><ul><li>«Solo con tarjeta», sin nombrar la herramienta.</li><li>Carrusel «Pago global» y noticias sin filtro.</li><li>Un texto corto.</li></ul></div><div class="si"><h4>Ahora</h4><ul><li>«Cobrando solo con Stripe»: se nombra la herramienta.</li><li>«Si vendes cursos desde…» al principio.</li><li>Texto largo con «esto no es para ti si no vendes».</li><li>Página de pago real.</li></ul></div></div>
+
+Por qué trae mejores leads: quien cobra con Stripe se reconoce; quien no vende nada, no. Y quien lee 1.400 caracteres ya sabe a qué entra. En los hubs, esto da 52 % de descartados frente a 69 % en el testeo de España.
+
+### Optimización fiscal
+
+<div class="dos"><div class="no"><h4>Antes</h4><ul><li>«Carga fiscal», «Sin riesgo», «Factura»: sin decir a quién.</li><li>Prometía de forma general. Ninguno pasó de 8 € de gasto.</li></ul></div><div class="si"><h4>Ahora</h4><ul><li>«Si vendes productos digitales, cobra igual que con Stripe…».</li><li>«De cada venta», la razón (Merchant of Record) y «tu renta sigue siendo tuya».</li><li>Alternativa concreta: «sin LLC y sin irte a Andorra».</li></ul></div></div>
+
+Por qué trae mejores leads: el mensaje ya no promete «pagar menos» a cualquiera, y el requisito («vendes productos digitales») está en el titular. Con todo, en la semana del 3 al 9 de noviembre el 67 % de este ángulo acabó en «No cualificados»: el filtro del titular todavía no basta, y es lo siguiente que hay que reforzar.
+
+### Andorra (y Dubái o Miami)
+
+<div class="dos"><div class="no"><h4>Antes</h4><ul><li>Campaña para un país pequeño: cada persona vio el anuncio hasta 9 veces.</li><li>Se cambió casi todo de golpe: de 73 € a 115 € por registro.</li></ul></div><div class="si"><h4>Ahora</h4><ul><li>«No te mudes a Andorra, Dubái o Miami» como ángulo, para toda España.</li><li>Un conjunto estable con pocas piezas nuevas a la vez.</li></ul></div></div>
+
+Por qué trae mejores leads: el ángulo habla a quien está pensando en irse y no necesita hacerlo; y un público grande no se agota. Es una propuesta que falta probar con datos.
+
+### Cuenta a tu nombre
+
+<div class="dos"><div class="no"><h4>Antes</h4><ul><li>«Sin pasar por tu banco»: puede leerse como esconder dinero.</li></ul></div><div class="si"><h4>Ahora</h4><ul><li>«A tu nombre y en regla».</li><li>Nota a boli con la duda real y filtro «solo si ya vendes formación online».</li></ul></div></div>
+
+Por qué trae mejores leads: atrae a quien quiere orden, no a quien quiere esconder algo. Aún sin datos propios.
+
+### Classroom Platinum
+
+Ver el apartado anterior: requisito dicho en el anuncio y formulario con puntuación.
+
+### Google Ads
+
+Aquí el lead busca la solución. El 15 % avanza, el triple que en los hubs. La propuesta es llevar allí los ángulos que funcionan en Meta: «sin Stripe ni PayPal», «aumenta tus conversiones» y «analizamos tu cuenta antes de abrirla».
+
+## Todas las verticales y embudos || Qué hay, qué se ha probado y dónde se explica
+
+{lead} Kunfupay no es un solo negocio. Esto es todo lo que se hace en la cuenta, con lo que se sabe de cada uno.
+
+::fig verticales
+
+Tributaless e Ignia tienen su propio documento («Verticales»), con sus ángulos, sus embudos y sus anuncios destripados. El embudo de herramientas gratuitas está en «Self-service». Aquí va lo que cada vertical aporta al sistema:
+
+<div class="tres"><div class="caja"><b>Tributaless</b><span>Un avatar de IA («Marta») y UGC con IA dan lead a 6 € y 13 €. Probaron WhatsApp, formulario, landing con y sin filtro.</span></div><div class="caja"><b>Ignia</b><span>Reels de «Dios Benji» a 4,7 €; es la vertical con lead más barato después de UGC Accelerator. El lead barato no siempre llegó a ventas.</span></div><div class="caja"><b>UGC Accelerator</b><span>885 € y 364 registros a 2,43 €; y formulario condicional a 1,16 €. Mucho volumen, calidad por demostrar.</span></div></div>
+
+<div class="tres"><div class="caja"><b>Google Ads</b><span>Búsqueda con intención: 15 % avanza en Kommo.</span></div><div class="caja"><b>Partners</b><span>Embudo de socios con valor asociado en Kommo. No tiene creatividad de Meta.</span></div><div class="caja"><b>Puerta fría y redes</b><span>Contacto directo por Instagram de cada vendedor (Jorge, Juan, Rafa, Taiab). Los anuncios de remarketing alimentan estos embudos.</span></div></div>
+
+### Lo que falta
+
+- **Atribución:** que cada lead lleve el identificador de campaña y de anuncio de Meta.
+- **Vertical «OF»:** existe un embudo en Kommo con pocos leads y sin campañas recientes. La regla es no nombrar OnlyFans ni plataformas de adultos en los anuncios.
+- **Datos de Daneris** (pagos y conversión de compradores): sin conectar al preparar este documento.
 
 ## Lo que no funcionó || Para no repetirlo
 

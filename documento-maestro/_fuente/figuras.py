@@ -288,3 +288,44 @@ def matriz():
               f'<div style="padding:7px 8px;background:{bg}">{nv}</div>')
     h += '</div>'
     return _fig(h, 'Matriz de lanzamiento: 8 anuncios que cubren todos los ángulos desde el primer día. Después se sofistica con la investigación.')
+
+
+def kommo():
+    """Mezcla de etapas en Kommo por origen (15 oct a 12 nov 2026)."""
+    filas = [('Hubs (Meta)', 126, 52, 6), ('Testeo España (Meta)', 160, 69, 5),
+             ('Classroom, landing (Meta)', 40, 78, 18), ('Google Ads (búsqueda)', 231, 44, 15)]
+    h = (f'<div style="font-size:9.6pt;font-weight:700;color:{MARCA};margin-bottom:4px">De cada 100 leads, cuántos acaban descartados y cuántos avanzan</div>'
+         f'<div style="font-size:8pt;color:{GRIS};margin-bottom:8px"><span style="display:inline-block;width:10px;height:8px;background:{MARCA};opacity:.35"></span> no cualificados &nbsp; '
+         f'<span style="display:inline-block;width:10px;height:8px;background:{MARCA}"></span> avanzan (videollamada, negociación, decisión o cerrado)</div>')
+    for n, tot, nc, av in filas:
+        h += (f'<div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:150px;font-size:8.8pt;font-weight:600;text-align:right">{n}'
+              f'<div style="font-weight:400;font-size:7.6pt;color:{GRIS}">{tot} leads</div></div><div style="flex:1">'
+              f'<div style="display:flex;align-items:center;gap:6px;margin:2px 0"><div style="width:{nc * .8}%;height:11px;background:{MARCA};opacity:.35;border-radius:2px"></div><b style="font-size:8.4pt">{nc} %</b></div>'
+              f'<div style="display:flex;align-items:center;gap:6px;margin:2px 0"><div style="width:{max(av * .8, 1)}%;height:11px;background:{MARCA};border-radius:2px"></div><b style="font-size:8.4pt">{av} %</b></div></div></div>')
+    return _fig(h, 'Kommo, leads creados del 15 de octubre al 12 de noviembre de 2026, por etapa del embudo. El resto está en lead frío o en contacto. Cuenta aproximada por etapas; la atribución a campaña en Kommo es incompleta.')
+
+
+def platinum():
+    return barras([('Rubén «3 22»', 9.02, 'UGC Founder'), ('Tweet Rubén Score', 9.90, 'formulario con puntuación'),
+                   ('Rubén pizarra (similar)', 19.06, 'UGC Founder'), ('Videojuego', 20.12, 'Andrómeda'),
+                   ('Videojuego', 30.00, 'Audiencia Hernán'), ('Tweet', 43.37, 'Audiencia Hernán'),
+                   ('Hormozi ataúd', 50.45, 'Audiencia Hernán'), ('Skool + Stripe', 83.78, 'reel'),
+                   ('Tweet', 118.53, 'Andrómeda'), ('Reel inversión Rubén', 166.90, 'reel')],
+                  'Coste por lead de los anuncios de Classroom Platinum con más gasto', ' €',
+                  'Meta, 15 de agosto a 12 de noviembre de 2026. El resultado no es el mismo evento en todos los conjuntos: úsalo para ver el orden, no para compararlo con otros negocios.')
+
+
+def verticales():
+    filas = [('Kunfupay (Meta)', 'Métodos de pago, fiscal, cuenta a tu nombre, hubs', 'Meta + Kommo', 'Maestro'),
+             ('Classroom Platinum', 'Creadores que ya facturan', '7.575 € · 168 leads · 45 €', 'Maestro'),
+             ('Tributaless', 'Impuestos para creadores', '1.227 € · 94 res. · 13 €', 'Verticales'),
+             ('Ignia', 'Agencia de lanzamiento', '1.550 € · 205 res. · 7,6 €', 'Verticales'),
+             ('UGC Accelerator', 'UGC', '940 € · 412 res. · 2,3 €', 'Maestro'),
+             ('Google Ads', 'Búsqueda', 'Kommo: 231 leads', 'Maestro'),
+             ('Self-service', 'Herramientas gratuitas', 'Embudo nuevo', 'Self-service')]
+    h = (f'<div style="display:grid;grid-template-columns:130px 1.1fr 1.1fr 78px;border:1px solid {LINEA};border-radius:5px;overflow:hidden;font-size:8.4pt">'
+         + ''.join(f'<div style="background:{MARCA};color:#fff;font-weight:700;padding:6px 8px;font-size:7.8pt">{c}</div>' for c in ('Vertical', 'A quién', 'Meta, 90 días', 'Dónde')))
+    for i, r in enumerate(filas):
+        bg = '#fff' if i % 2 == 0 else SUAVE
+        h += ''.join(f'<div style="padding:6px 8px;background:{bg};{"font-weight:700;color:" + MARCA if j == 0 else ""}">{c}</div>' for j, c in enumerate(r))
+    return _fig(h + '</div>', 'Resultados de Meta: el evento que se cuenta no es el mismo en todas las verticales (registro, lead o formulario).')
