@@ -10,23 +10,23 @@ pie-pdf: Verticales · Tributaless e Ignia · Kunfupay
 
 ### Los embudos probados
 
-Un embudo es el camino que sigue la persona después de ver el anuncio. En tres meses se probaron cuatro en cada vertical.
+Un embudo es el camino que sigue la persona después de ver el anuncio.
 
-| Vertical | Embudo | Fechas (2026) | Gasto | Qué cuenta como resultado | Resultados | Coste por resultado |
-|---|---|---|---|---|---|---|
-| Tributaless | Anuncio a WhatsApp | 12 ago – 24 ago | 138,40 € | Conversación iniciada | 0 | no hay |
-| Tributaless | Anuncio a formulario instantáneo | 11 ago – 25 sep | 526,39 € | Lead de formulario de Meta | 79 | 6,66 € |
-| Tributaless | Anuncio a landing, sin filtro | 15 oct – 20 oct | 131,11 € | Cualquier lead en la web | 11 | 11,92 € |
-| Tributaless | Anuncio a landing, con filtro | 21 oct – hoy | 479,14 € | Lead en la página de gracias de calificados | 8 | 59,89 € |
-| Ignia | Anuncio a WhatsApp (LATAM) | 11 ago – 14 sep | 495,80 € | Conversación iniciada | 144 | 3,44 € |
-| Ignia | Anuncio a WhatsApp (España) | 18 ago – 24 ago | 83,44 € | Conversación iniciada | 0 | no hay |
-| Ignia | Anuncio a formulario instantáneo (España) | 24 ago – 25 sep | 551,04 € | Lead de formulario de Meta | 73 | 7,55 € |
-| Ignia | Anuncio a landing «entrenamiento» | 7 sep – 25 sep | 269,33 € | Visita a la página de gracias | 17 | 15,84 € |
-| Ignia | Anuncio a landing nueva (LATAM) | 21 oct – hoy | 198,88 € | Lead en la página de gracias nueva | 10 | 19,89 € |
+| Embudo | Fechas (2026) | Gasto | Qué cuenta como resultado | Resultados | Coste |
+|---|---|---|---|---|---|
+| **Tributaless** · a WhatsApp | 12 – 24 ago | 138,40 € | Conversación iniciada | 0 | no hay |
+| **Tributaless** · a formulario | 11 ago – 25 sep | 526,39 € | Lead de formulario de Meta | 79 | 6,66 € |
+| **Tributaless** · a landing, sin filtro | 15 – 20 oct | 131,11 € | Cualquier lead en la web | 11 | 11,92 € |
+| **Tributaless** · a landing, con filtro | 21 oct – hoy | 479,14 € | Lead calificado en la página de gracias | 8 | 59,89 € |
+| **Ignia** · a WhatsApp, LATAM | 11 ago – 14 sep | 495,80 € | Conversación iniciada | 144 | 3,44 € |
+| **Ignia** · a WhatsApp, España | 18 – 24 ago | 83,44 € | Conversación iniciada | 0 | no hay |
+| **Ignia** · a formulario, España | 24 ago – 25 sep | 551,04 € | Lead de formulario de Meta | 73 | 7,55 € |
+| **Ignia** · a landing «entrenamiento» | 7 – 25 sep | 269,33 € | Visita a la página de gracias | 17 | 15,84 € |
+| **Ignia** · a landing nueva, LATAM | 21 oct – hoy | 198,88 € | Lead en la página de gracias nueva | 10 | 19,89 € |
 
 > **Ojo al comparar:** cada embudo cuenta una cosa distinta. Una conversación es alguien que abrió el chat. Un lead de formulario dejó sus datos sin salir de Meta. Un lead de página de gracias rellenó un formulario en la web y, a veces, pasó un filtro. El coste de una fila no se compara con el de otra.
 
-Los datos son de Meta Ads y del CRM hasta el 13 de noviembre de 2026, y de lo que el equipo escribió en Slack. No hemos visto las imágenes ni los vídeos: lo que decimos de cada pieza sale de su nombre y de su texto.
+Datos de Meta Ads, del CRM y de Slack hasta el 13 de noviembre de 2026. No hemos visto las piezas: lo que decimos de ellas sale de su nombre y de su texto.
 
 ## Tributaless: a quién le habla y qué le dice || El público, los ángulos y cómo se hicieron las piezas
 
@@ -34,9 +34,7 @@ Los datos son de Meta Ads y del CRM hasta el 13 de noviembre de 2026, y de lo qu
 
 ### Qué es
 
-La web la presenta como «Asesoría fiscal para creadores de contenido». Promete llevar el alta de autónomo o de sociedad, el IVA, el IRPF y la facturación internacional.
-
-La idea de origen fue una «agencia fiscal» para creadores que pensaban en irse a Andorra. Hoy el mensaje es otro: **Kunfupay como alternativa a montar una LLC o a mudarse**. Corre con 20 € al día.
+La web la presenta como «Asesoría fiscal para creadores de contenido». La idea de origen fue una «agencia fiscal» para creadores que pensaban en irse a Andorra. Hoy el mensaje es otro: **Kunfupay como alternativa a montar una LLC o a mudarse**. Corre con 20 € al día.
 
 ### A quién apunta
 
@@ -47,13 +45,13 @@ La idea de origen fue una «agencia fiscal» para creadores que pensaban en irse
 
 Para el equipo, un lead es **calificado** si vende productos digitales y factura 2.000 € al mes o más.
 
-> **Por qué importa el filtro:** en agosto los anuncios decían «si eres creador de contenido» y nada más. Entró mucha gente y casi toda se descartó. En octubre el texto empezó a decir cuánto hay que facturar.
+En agosto los anuncios decían «si eres creador de contenido» y nada más. Entró mucha gente y casi toda se descartó. En octubre el texto empezó a decir cuánto hay que facturar.
 
-En Meta no se usan intereses. Los primeros conjuntos iban a toda España. El actual usa un público parecido a una lista de dueños de comunidades de Skool.
+En Meta no se usan intereses. El conjunto actual usa un público parecido a una lista de dueños de comunidades de Skool.
 
 ### Los ángulos que se usaron
 
-Un ángulo es el problema con el que entramos. Se usaron cuatro, en este orden.
+Un ángulo es el problema con el que entramos. Se usaron cuatro.
 
 | Ángulo | Qué dice | A quién le habla | Embudo |
 |---|---|---|---|
@@ -129,9 +127,7 @@ Hay un aviso: la vista previa de Meta enseñó este anuncio con otro texto, el d
 
 <figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>Carrusel y vídeos (avatar y persona a cámara). Botón de WhatsApp.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Un chat de WhatsApp. Sin landing.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Conversación iniciada.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Qué pasó después</b><span>562 clics y 0 conversaciones registradas en Meta.</span></div></div><figcaption>Embudo 1 · Anuncio a WhatsApp · del 12 al 24 de agosto de 2026</figcaption></figure>
 
-- Gasto: 138,40 €. Clics: 562. Conversaciones registradas: 0.
-- La primera campaña duró menos de dos días. Se borró y se volvió a crear el 13 de agosto.
-- Meta rechazó varios vídeos en agosto. Dos de este embudo siguen rechazados.
+Gasto: 138,40 €. Clics: 562. Conversaciones registradas: 0. Meta rechazó varios vídeos en agosto, y dos de este embudo siguen rechazados.
 
 No sabemos si nadie escribió o si Meta no lo midió. El equipo tenía una hoja con leads de WhatsApp, así que algo entró. No consta cuántos.
 
@@ -154,11 +150,9 @@ Los otros ocho anuncios del conjunto no llegaron a gastar 13 € cada uno. De el
 
 <figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>8 vídeos con personaje de IA.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Landing con vídeo de ventas y formulario.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Cualquier lead del píxel, sin filtro.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué pasó después</b><span>Según el plan del equipo, la página de gracias era el registro de Kunfupay.</span></div></div><figcaption>Embudo 3 · Anuncio a landing, lead sin filtro · del 15 al 20 de octubre de 2026</figcaption></figure>
 
-- Gasto: 131,11 €. Visitas a la landing: 1.018. Leads: 11. Coste por lead: 11,92 €.
-- De cada 100 visitas, 1,1 dejó sus datos.
-- Los 11 leads vinieron de un solo vídeo, el del IVA del 21 %. Gastó 109,20 € de los 131,11 €.
+Gasto: 131,11 €. Visitas a la landing: 1.018. Leads: 11. Coste por lead: 11,92 €. De cada 100 visitas, 1,1 dejó sus datos.
 
-Ese vídeo tuvo cifras raras: 21 de cada 100 personas que lo vieron hicieron clic, y cada clic costó 0,07 €. No sabemos en qué ubicación se enseñó. Por eso no lo tomamos como referencia.
+Los 11 leads vinieron de un solo vídeo, el del IVA del 21 %. Tuvo cifras raras: de cada 100 veces que se enseñó, 21 acabaron en clic, a 0,07 € el clic. No sabemos en qué ubicación salió. Por eso no lo tomamos como referencia.
 
 Duró cinco días. Se cambió porque contaba cualquier lead, valiera o no.
 
@@ -166,33 +160,21 @@ Duró cinco días. Se cambió porque contaba cualquier lead, valiera o no.
 
 <figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>4 estáticos nuevos y 4 de los vídeos de IA.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>La misma landing, con formulario de 6 preguntas.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Filtro</b><span>Calificado: vende productos digitales y factura 2.000 € al mes o más.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Solo quien llega a la página de gracias de calificados.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué pasó después</b><span>El lead entra en el CRM y ventas lo contacta.</span></div></div><figcaption>Embudo 4 · Anuncio a landing, lead calificado · del 21 de octubre de 2026 a hoy. Es el que está activo.</figcaption></figure>
 
-- Gasto: 479,14 €. Visitas a la landing: 391. Leads calificados: 8. Coste: 59,89 €.
-- De cada 100 visitas, 2,0 acabaron como lead calificado.
-- Meta marca este conjunto como «aprendizaje fallido»: con 8 conversiones no tiene datos suficientes para optimizar.
+Gasto: 479,14 €. Visitas a la landing: 391. Leads calificados: 8. Coste: 59,89 €. De cada 100 visitas, 2,0 acabaron como lead calificado.
 
-El formulario de la landing tiene seis preguntas: qué vendes, cómo tienes montada tu parte fiscal, cuánto facturas al mes, nombre, correo y teléfono.
+El formulario tiene seis preguntas: qué vendes, cómo tienes montada tu parte fiscal, cuánto facturas al mes, nombre, correo y teléfono. Según la respuesta, la persona va a la página de gracias de calificados o a la de no calificados. Meta solo cuenta la primera.
 
-Según la respuesta, la persona va a una página de gracias o a otra: la de calificados o la de no calificados. Meta solo cuenta la primera.
+Meta marca este conjunto como «aprendizaje fallido»: con 8 conversiones no tiene datos suficientes para optimizar.
 
 <figure><div class="caja" style="padding:12px 14px"><div style="font-size:9.6pt;font-weight:700;color:var(--marca);margin-bottom:8px">Embudo 4 · a qué anuncios fue el gasto (479,14 € en total)</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">IMG / SOBRE</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:55.0%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">316,49 €</div><div style="font-size:8.1pt;color:var(--gris)">7 leads calificados</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">IMG / PIZARRA</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:16.4%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">94,39 €</div><div style="font-size:8.1pt;color:var(--gris)">1 lead calificado</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">4 vídeos de IA</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:10.3%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">59,34 €</div><div style="font-size:8.1pt;color:var(--gris)">0 leads</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Otros 2 estáticos</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:1.5%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">8,91 €</div><div style="font-size:8.1pt;color:var(--gris)">0 leads</div></div></div></div><figcaption>Dos imágenes se llevan el 86 % del gasto del conjunto.</figcaption></figure>
 
-> **Por qué cuesta más:** este embudo cuenta algo más difícil. No cuenta a quien deja sus datos, sino a quien además pasa el filtro. Comparar sus 59,89 € con los 6,66 € del formulario no tiene sentido.
-
-La landing con el vídeo no se ha podido abrir desde fuera. Por eso no describimos lo que pone en ella ni en sus páginas de gracias.
+> **Por qué cuesta más:** no cuenta a quien deja sus datos, sino a quien además pasa el filtro. Comparar sus 59,89 € con los 6,66 € del formulario no tiene sentido.
 
 ### Qué funcionó y qué no
 
 <div class="dos"><div class="si"><h4>Funcionó</h4><ul><li><strong>La imagen del sobre</strong> (LLC): 7 de los 8 leads calificados, a 45,21 € cada uno. Es el único anuncio que Meta puntúa por encima de la media en conversión.</li><li><strong>Poner el filtro en el texto:</strong> «más de 3.000 euros al mes» y «no es para ti si…».</li><li><strong>La landing con filtro:</strong> de sus 10 leads en el CRM, 9 siguen vivos y 2 están en fase de cierre.</li><li><strong>Para volumen:</strong> el vídeo con avatar (39 leads a 5,97 €) y el meme del cerebro (20 leads a 6,55 €).</li></ul></div><div class="no"><h4>No funcionó</h4><ul><li><strong>WhatsApp:</strong> 138,40 € y ninguna conversación registrada.</li><li><strong>El formulario instantáneo como fuente de clientes:</strong> barato, pero sus leads acabaron descartados.</li><li><strong>Los vídeos de IA en el embudo con filtro:</strong> 59,34 € y 0 leads. Meta casi no les dio gasto.</li><li><strong>Varios vídeos de agosto:</strong> Meta rechazó al menos tres.</li></ul></div></div>
 
-### Lo que no se llegó a probar
-
-Estas piezas gastaron menos de 12 € cada una. No sabemos si funcionan:
-
-- Los vídeos de IA del 3 al 8.
-- Las imágenes de la bolsa de impuestos y del frasco.
-- Cuatro de los cinco memes.
-
-> **Por qué pasa:** Meta elige pronto un anuncio y le da casi todo el gasto. En el embudo actual, dos imágenes se llevan el 86 %. Si queremos probar una pieza, hay que ponerla en un conjunto aparte.
+**Lo que no se llegó a probar.** Estas piezas gastaron menos de 12 € cada una y no sabemos si funcionan: los vídeos de IA del 3 al 8, las imágenes de la bolsa de impuestos y del frasco, y cuatro de los cinco memes.
 
 ### Qué pasó con los leads en el CRM
 
@@ -205,10 +187,10 @@ Estas piezas gastaron menos de 12 € cada una. No sabemos si funcionan:
 | Con nombre de campaña | 3 | 2 en «lead frío» y 1 en «SIN VALOR» |
 
 - Los 36 importados encajan por fechas con el formulario instantáneo. No está confirmado: el CRM no guarda de qué anuncio vino cada uno.
-- Los 10 de la landing son los que mejor avanzan. Con 10 leads, la muestra es pequeña.
-- Meta cuenta 98 leads entre los tres embudos. En el CRM hay 49. No sabemos dónde están los demás.
+- Los 10 de la landing son los que mejor avanzan. Es una muestra pequeña.
+- Meta cuenta 98 leads y en el CRM hay 49. No sabemos por qué.
 
-**Una cosa por aclarar.** El informe del 11 de noviembre dice que Tributaless «ya cerró su primer cliente para Kunfupay». Lo cuenta el equipo. En el CRM no hay ninguna venta registrada.
+**Una cosa por aclarar.** El informe del 11 de noviembre dice que Tributaless «ya cerró su primer cliente para Kunfupay». En el CRM no hay ninguna venta registrada.
 
 ### Lo que se propone ahora
 
@@ -220,19 +202,18 @@ El 11 de noviembre Rubén propuso tres públicos nuevos para Tributaless. Benja 
 | Traders con cuenta de fondeo | Retirar sin pagar en España y «siendo invisible» | «Solo si ya cobras payouts y vives en España.» |
 | Creadoras de plataformas de suscripción | Retirar sin pagar impuestos en España, usando siglas para no nombrar la plataforma | «Cobras de una plataforma de fuera: decláralo bien y paga solo lo que te toca.» |
 
-La tercera queda para el final. Lleva tres condiciones: sin siglas ni nombres en clave, solo para mayores de 18 años y sin imágenes sugerentes.
-
-Para los traders no tenemos público guardado. El filtro tiene que ir en el propio anuncio y se probará por zonas de España. Las primeras piezas son dos reels del 12 de noviembre.
+La tercera queda para el final y con condiciones: sin siglas ni nombres en clave, solo para mayores de 18 años y sin imágenes sugerentes. Para los traders ya hay dos reels, del 12 de noviembre.
 
 ### Los riesgos
 
 > **La regla que nos protege:** tal como llegaron, las tres propuestas prometen no pagar impuestos o no pagar autónomo. Para quien vive en España no es verdad. Y Meta lo lee como ayudar a un fraude: puede restringir la cuenta que compartimos con Kunfupay.
 
-Por eso hay tres decisiones tomadas:
+Por eso hay dos decisiones tomadas:
 
-1. **Solo se lanza la versión verdadera.** Nada de «sin pagar impuestos», «invisible» ni palabras en clave para esquivar la revisión de Meta. Además del riesgo con Meta, prometer algo falso sobre impuestos es un riesgo legal.
+1. **Solo se lanza la versión verdadera.** Nada de «sin pagar impuestos», «invisible» ni palabras en clave para esquivar la revisión de Meta. Prometer algo falso sobre impuestos es, además, un riesgo legal.
 2. **Cuenta publicitaria propia.** Meta recomendó sacar Tributaless e Ignia a sus propias cuentas y dejar en la actual solo Kunfupay. Así un bloqueo no arrastra a Kunfupay.
-3. **Calendario.** El equipo repasa y pone fecha a estas campañas el lunes 16 de noviembre.
+
+El equipo les pone fecha el lunes 16 de noviembre.
 
 ## Ignia: a quién le habla y qué le dice || El público, los ángulos y cómo se hicieron las piezas
 
@@ -240,7 +221,7 @@ Por eso hay tres decisiones tomadas:
 
 ### Qué es
 
-La landing lo resume así: «Tus lanzamientos ya no serán picos, sino ingresos predecibles cada mes». Promete pasar de lanzamientos sueltos a ingresos que se repiten cada mes con una comunidad de pago.
+La landing lo resume así: «Tus lanzamientos ya no serán picos, sino ingresos predecibles cada mes». Corre con 10 € al día.
 
 ### A quién apunta
 
@@ -249,20 +230,18 @@ La landing lo resume así: «Tus lanzamientos ya no serán picos, sino ingresos 
 - **Cuánto factura:** los anuncios actuales dicen «ya facturas más de $5.000 al mes».
 - **Dónde vende:** Skool, Hotmart o Classroom de Kunfupay. El formulario lo pregunta.
 
-Para el equipo, un lead es **calificado** si vende productos digitales y factura 5.000 USD al mes o más.
-
-En Meta no se usan intereses. Hasta septiembre se usó una lista de administradores de cursos de Skool y un público parecido. Desde octubre, un público parecido más amplio.
+Para el equipo, un lead es **calificado** si vende productos digitales y factura 5.000 USD al mes o más. En Meta no se usan intereses: se usa un público parecido a una lista de dueños de comunidades de Skool.
 
 ### Los ángulos que se usaron
 
 | Ángulo | Qué dice | A quién le habla |
 |---|---|---|
-| 1. Del curso barato al caro | «Un curso de 97 dólares no da para pagar un equipo, uno de $3.000 si. Por eso lo haces todo tú — y por eso no escalas.» | Quien vende barato y lo hace todo solo |
-| 2. Escalar de 3–10k a más de 50k | «llevar tu negocio de infoproductos de 3–10k a más de 50k en menos de 120 días» | Quien factura 3–5k al mes y está estancado |
-| 3. Tu negocio depende de ti | «Irte de vacaciones sin llevarte el trabajo contigo puede parecer imposible...» | Coach o infoproductor quemado |
+| 1. Del curso barato al caro | «Un curso de 97 dólares no da para pagar un equipo, uno de $3.000 si.» | Quien vende barato y lo hace todo solo |
+| 2. Escalar de 3–10k a más de 50k | «de 3–10k a más de 50k en menos de 120 días» | Quien factura 3–5k al mes y está estancado |
+| 3. Tu negocio depende de ti | «Irte de vacaciones sin llevarte el trabajo contigo…» | Coach o infoproductor quemado |
 | 4. Leads malos y oferta que no cierra | «Fue al cielo a preguntarle a Dios por qué sus leads eran una basura» | Quien ya invierte en anuncios y no cierra |
 | 5. Lanzar en vez de publicar a diario | «Publicar todos los días no es una estrategia. Es una condena.» | Quien vive del contenido orgánico |
-| 6. Llena tu comunidad | «Si tienes tu comunidad en Classroom de Kunfupay o en Skool, esto es para ti.» | Dueño de comunidad de pago |
+| 6. Llena tu comunidad | «Si tienes tu comunidad en Classroom de Kunfupay o en Skool…» | Dueño de comunidad de pago |
 | 7. La herramienta no arregla el lanzamiento | «Puedes vender en Skool, Hotmart, Kunfupay o donde quieras.» | Quien cambia de plataforma buscando solución |
 | 8. Sistema contra los picos | De picos de lanzamiento a ingresos cada mes, en cuatro fases | Quien factura más de 5.000 $ al mes |
 
@@ -321,9 +300,7 @@ En LATAM: 495,80 € y 144 conversaciones, a 3,44 € cada una. En España: 83,4
 
 <figure><div class="caja" style="padding:12px 14px"><div style="font-size:9.6pt;font-weight:700;color:var(--marca);margin-bottom:8px">Ignia · WhatsApp en LATAM · hasta dónde llegó cada conversación</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Conversaciones</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:55.0%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">144</div><div style="font-size:8.1pt;color:var(--gris)">a 3,44 € cada una</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Primera respuesta</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:53.5%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">140</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">2 mensajes o más</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:16.4%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">43</div><div style="font-size:8.1pt;color:var(--gris)">el 30 %</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">3 mensajes o más</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:4.6%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">12</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div></div><figcaption>Datos de Meta. No consta cuántas se calificaron.</figcaption></figure>
 
-El problema lo dijo Benja el 26 de agosto: «No contestan los mensajes y no puedo medirlo». Se cambiaron los mensajes de bienvenida para filtrar mejor. No bastó.
-
-En España se usaron las mismas piezas y no hubo ninguna conversación. La conclusión del equipo fue que los ángulos de LATAM no servían para España.
+El problema lo dijo Benja el 26 de agosto: «No contestan los mensajes y no puedo medirlo». En España, con las mismas piezas, no hubo ninguna conversación. El equipo concluyó que los ángulos de LATAM no servían allí.
 
 ### Embudo 2 · Anuncio a formulario instantáneo
 
@@ -348,54 +325,36 @@ Gasto: 551,04 €. Leads: 73. Coste por lead: 7,55 €. Solo se usó en España.
 | LATAM | 101,47 € | 1.172 | 9 | 11,27 € | 0,8 |
 | LATAM, segundo test | 48,72 € | 167 | 5 | 9,74 € | 3,0 |
 
-- En España hubo 3 resultados. Es muy poco para sacar conclusiones.
-- En LATAM, las 14 visitas a gracias vinieron de dos estáticos del ángulo del curso de 97 dólares.
-- El formulario preguntaba qué vendes, dónde vendes, cuánto facturas, y país y teléfono.
+En España hubo 3 resultados: muy poco para concluir. En LATAM, las 14 visitas a gracias vinieron de dos estáticos del ángulo del curso de 97 dólares.
 
-**La página de gracias.** Confirma la solicitud y dice que el proyecto encaja. Avisa de que el equipo escribirá por WhatsApp en menos de 48 horas. Mientras tanto, pide crear una cuenta en Kunfupay. No tiene calendario para reservar la llamada.
+**La página de gracias.** Confirma la solicitud y avisa de que el equipo escribirá por WhatsApp en menos de 48 horas. Mientras tanto, pide crear una cuenta en Kunfupay. No tiene calendario para reservar la llamada.
 
 ### Embudo 4 · Anuncio a landing nueva
 
 <figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>4 reels y 5 estáticos nuevos.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Landing nueva con formulario de 4 pasos.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Filtro</b><span>Calificado: vende productos digitales y factura 5.000 USD al mes o más.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Qué cuenta</b><span>Debería ser el lead de la página de gracias nueva. El conjunto mira otra cosa.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué pasó después</b><span>No consta. En el CRM no aparece ninguno de estos leads.</span></div></div><figcaption>Embudo 4 · Anuncio a landing nueva · solo LATAM · del 21 de octubre de 2026 a hoy. Es el que está activo.</figcaption></figure>
 
-- Gasto: 198,88 €. Visitas a la landing: 171. Leads: 10. Coste por lead: 19,89 €.
-- De cada 100 visitas, 5,8 dejaron sus datos. Es la mejor tasa de las cuatro landings de Ignia.
-- Ningún anuncio llega a 5 leads. Todavía no se puede decir cuál gana.
+Gasto: 198,88 €. Visitas a la landing: 171. Leads: 10. Coste por lead: 19,89 €. De cada 100 visitas, 5,8 dejaron sus datos: la mejor tasa de las landings de Ignia.
 
-Los 10 leads se reparten así: 6 vienen de tres reels y 4 de tres imágenes. El que más trajo es el reel del dolor de lanzamientos, con 3.
+Los 10 leads vienen de tres reels (6) y de tres imágenes (4). Ningún anuncio llega a 5, así que todavía no se puede decir cuál gana.
 
-El plan de Rubén para este embudo era: anuncios hechos con IA, landing con vídeo y calendario para reservar. La landing nueva no se ha podido abrir desde fuera. No sabemos si tiene calendario.
+El plan era: anuncios con IA, landing con vídeo y calendario para reservar. La landing no se ha podido abrir desde fuera: no sabemos si tiene calendario.
 
 ### Dos cosas que hay que arreglar en el conjunto activo
 
-<div class="dos"><div class="no"><h4>1. Optimiza a algo que ya no pasa</h4><ul><li>El conjunto sigue buscando visitas a la página de gracias <strong>antigua</strong>.</li><li>Esa página no recibe visitas desde el 9 de octubre.</li><li>Los leads de verdad entran por la página de gracias <strong>nueva</strong>.</li><li>Resultado: Meta ve 0 conversiones y marca el conjunto como «aprendizaje fallido».</li><li><strong>Arreglo:</strong> cambiar el conjunto a la conversión nueva.</li></ul></div><div class="no"><h4>2. El enlace visible es de otra empresa</h4><ul><li>Los anuncios enseñan «www.ignia.com».</li><li>Ese dominio es hoy la web de otra empresa, una de ingeniería de software.</li><li>La web de la agencia es ignia.agency.</li><li>Puede ser solo el texto que se ve, pero confunde.</li><li><strong>Arreglo:</strong> revisar el enlace visible y el destino de los nueve anuncios.</li></ul></div></div>
-
-> **Por qué urge el primero:** Meta aprende de las conversiones que ve. Si ve cero, reparte el gasto a ciegas. Los 10 leads han llegado a pesar de eso, no gracias a eso.
+<div class="dos"><div class="no"><h4>1. Optimiza a algo que ya no pasa</h4><ul><li>El conjunto sigue buscando visitas a la página de gracias <strong>antigua</strong>.</li><li>Esa página no recibe visitas desde el 9 de octubre. Los leads entran por la <strong>nueva</strong>.</li><li>Resultado: Meta ve 0 conversiones y marca el conjunto como «aprendizaje fallido».</li><li><strong>Arreglo:</strong> cambiar el conjunto a la conversión nueva. Urge: si Meta ve cero, reparte el gasto a ciegas.</li></ul></div><div class="no"><h4>2. El enlace visible es de otra empresa</h4><ul><li>Los anuncios enseñan «www.ignia.com».</li><li>Ese dominio es hoy la web de otra empresa, una de ingeniería de software.</li><li>La web de la agencia es ignia.agency.</li><li><strong>Arreglo:</strong> revisar el enlace visible y el destino de los nueve anuncios.</li></ul></div></div>
 
 ### Qué funcionó y qué no
 
 <div class="dos"><div class="si"><h4>Funcionó</h4><ul><li><strong>WhatsApp en LATAM, para abrir conversaciones:</strong> 144 a 3,44 €.</li><li><strong>El estático del curso de 97 dólares:</strong> 49 conversaciones a 1,73 € en WhatsApp. En la landing, 11 visitas a gracias a 7,35 €.</li><li><strong>El reel «Dios»:</strong> la pieza con más resultados en WhatsApp y en formulario.</li><li><strong>La landing nueva:</strong> 5,8 de cada 100 visitas dejan sus datos.</li></ul></div><div class="no"><h4>No funcionó</h4><ul><li><strong>WhatsApp en España:</strong> 83,44 € y ninguna conversación.</li><li><strong>El chat como embudo:</strong> solo 43 de 144 conversaciones pasaron del primer mensaje.</li><li><strong>La landing en España:</strong> 119,14 € y 3 resultados. Muestra pequeña.</li><li><strong>El paso a ventas:</strong> 0 calificados y 0 reuniones en el CRM.</li></ul></div></div>
 
-### Vídeos que se ven mucho y no traen nada
-
-Dos reels de septiembre tuvieron un hook rate del 87,9 % y del 76,6 %, y ningún lead. El hook rate dice, de cada 100 personas que ven el anuncio, cuántas se quedan más de 3 segundos.
-
-Gastaron 4,11 € y 6,10 €. Meta enseñó el primero a 0,81 € por cada mil impresiones, un precio que suele verse en ubicaciones de poca calidad. No consta en cuál.
-
-> **Lo que enseña:** un hook rate enorme no demuestra nada si el gasto es mínimo y no hay leads. Se mira junto al coste y a los resultados.
+**Vídeos que se ven mucho y no traen nada.** Dos reels de septiembre retuvieron más de 3 segundos al 87,9 % y al 76,6 % de quien los vio, y no trajeron ningún lead. Con 4,11 € y 6,10 € de gasto, no demuestra nada.
 
 ### Qué pasó con los leads en el CRM
 
 Hay 37 leads: 36 en «lead frío o no válido» y 1 en «venta perdida». Ninguno llegó a reunión, a negociación ni a venta.
 
-- De los 37, 35 vienen de los formularios instantáneos de Meta.
-- Meta cuenta 73 leads de formulario. En el CRM hay 35. No sabemos dónde están los otros 38.
-- De las 144 conversaciones de WhatsApp no hay rastro en el CRM.
-- De las 17 visitas a gracias de septiembre y de los 10 leads actuales, tampoco.
-
-Mientras no se sepa dónde están, no se puede decir si la landing nueva trae gente mejor.
-
-Ignia sigue con presupuesto mínimo: 10 € al día desde el 28 de octubre. Meta recomendó pasarla a una cuenta publicitaria propia, igual que Tributaless.
+- De los 37, 35 vienen de los formularios instantáneos. Meta cuenta 73: faltan 38.
+- De las conversaciones de WhatsApp y de los leads de las dos landings no hay rastro en el CRM. Por eso no se puede decir si la landing nueva trae gente mejor.
 
 ## Lo que enseñan las dos juntas || Cinco lecciones que sostienen las cifras
 
@@ -452,9 +411,7 @@ Ignia en WhatsApp, con las mismas piezas: 144 conversaciones en LATAM y 0 en Esp
 
 Gasto total: 422,96 €. Registros: 199. La campaña está pausada.
 
-Se anunciaron cinco herramientas: ArtistGPT (avatares con IA), Sensei (de la idea al producto), Telegram ROI Manager (qué campaña llena tu canal), Biolinks (página de enlaces) y el bot de acceso a Telegram.
-
-En Meta sí se usaron intereses: inteligencia artificial, «Youtuber», «Content Creator» y edición de vídeo.
+Se anunciaron cinco herramientas: ArtistGPT (avatares con IA), Sensei (de la idea al producto), Telegram ROI Manager (qué campaña llena tu canal), Biolinks (página de enlaces) y el bot de acceso a Telegram. Aquí sí se usaron intereses: inteligencia artificial, «Youtuber» y «Content Creator».
 
 <figure><div class="caja" style="padding:12px 14px"><div style="font-size:9.6pt;font-weight:700;color:var(--marca);margin-bottom:8px">Herramientas · coste por registro gratuito</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:70px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">LATAM</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:7.5%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">1,38 €</div><div style="font-size:8.1pt;color:var(--gris)">182 registros con 251,21 €</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:70px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">España</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:55.0%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">10,10 €</div><div style="font-size:8.1pt;color:var(--gris)">17 registros con 171,75 €</div></div></div></div><figcaption>El CPM en España fue casi cinco veces mayor: 6,18 € frente a 1,28 €.</figcaption></figure>
 
@@ -464,15 +421,14 @@ En Meta sí se usaron intereses: inteligencia artificial, «Youtuber», «Conten
 | Telegram ROI Manager | LATAM | 102,13 € | 70 | 1,46 € |
 | ArtistGPT | España | 142,63 € | 14 | 10,19 € |
 
-Sensei, Biolinks y el bot de Telegram gastaron menos de 11 € cada uno. No se llegaron a probar.
+Sensei, Biolinks y el bot de Telegram gastaron menos de 11 € cada uno: no se llegaron a probar.
 
 ### Lo que deja para el self-service
 
 - **Un registro gratuito es barato, sobre todo en LATAM.** El mismo anuncio de ArtistGPT costó casi ocho veces más en España.
 - **Un registro no es un cliente.** No consta cuántos de los 199 usaron la herramienta o cobraron con Kunfupay. En el CRM no se pueden separar.
 - **El público era otro.** ArtistGPT y Sensei hablaban a creadores en general, incluso a quien «tiene una idea» y aún no vende. Hoy la regla es hablar solo a quien ya vende.
-
-AutoDM y Skool Radar, las herramientas del embudo self-service actual, no tienen ningún anuncio en la cuenta de Meta.
+- **AutoDM y Skool Radar no tienen anuncios.** Las herramientas del embudo self-service actual no aparecen en la cuenta de Meta.
 
 ## Lo que falta por confirmar || Lo que no consta y a quién hay que preguntar
 
@@ -486,7 +442,7 @@ AutoDM y Skool Radar, las herramientas del embudo self-service actual, no tienen
 | Las preguntas de los formularios instantáneos | No sabemos si filtraban algo |
 | Las imágenes y los vídeos | No se han visto. El tipo de pieza sale del nombre |
 | Los guiones de los vídeos | Están en documentos de Google que no se han leído |
-| En qué ubicaciones salieron los vídeos con clics anómalos | Explicaría los hook rate de más del 75 % sin leads |
+| En qué ubicaciones salieron los vídeos con clics anómalos | Explicaría por qué se veían tanto y no traían leads |
 | Por qué Meta y el CRM no cuadran | Faltan leads en el CRM y no sabemos dónde están |
 
 ### De Tributaless
@@ -495,9 +451,8 @@ AutoDM y Skool Radar, las herramientas del embudo self-service actual, no tienen
 - **Por qué WhatsApp marcó 0 conversaciones.** O nadie escribió o no se midió.
 - **El cliente cerrado.** El equipo lo da por hecho. En el CRM no hay ninguna venta.
 - **Qué texto enseña la imagen del sobre.** La vista previa devolvió otro.
-- **El texto de los carruseles y del primer vídeo.** Meta no lo devuelve. El primer vídeo está borrado.
+- **El texto de los carruseles y del primer vídeo.** Meta no lo devuelve.
 - **Cuáles de los estáticos de octubre se subieron.** Se hicieron diecisiete y hay cuatro en Meta.
-- **El formulario de 4 pasos.** Se pidió para Ignia. No consta si se aplicó también a Tributaless.
 
 ### De Ignia
 
@@ -505,9 +460,9 @@ AutoDM y Skool Radar, las herramientas del embudo self-service actual, no tienen
 - **La regla de calificado.** Benja escribió 5.000 USD al mes. Un resumen del mismo día dice «500 o más». Hay que confirmar la cifra.
 - **Los vídeos UGC de agosto.** No consta si son de persona real o de IA.
 - **Dónde están los leads de WhatsApp y de las landings.** No aparecen en el CRM.
-- **Casos y cifras reales de clientes.** La landing tenía ese hueco «pendiente de datos verificados».
 - **Si «www.ignia.com» es solo el texto visible o también el destino.**
+
 
 ### De la campaña de herramientas
 
-No consta cuántos de los 199 registros usaron la herramienta. Tampoco por qué el anuncio «IMAGEN / TelegramROI» figura como imagen y tiene 36.213 reproducciones de vídeo.
+No consta cuántos de los 199 registros usaron la herramienta.
