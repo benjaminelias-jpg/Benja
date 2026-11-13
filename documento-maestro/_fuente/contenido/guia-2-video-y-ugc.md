@@ -27,7 +27,7 @@ Antes de escribir nada, elige qué tipo de vídeo vas a hacer. Así se ven cuatr
 | **Fundador o equipo a cámara** | Alguien de Kunfupay explica algo mirando a cámara, en el estudio. | Explicar cómo funciona algo y dar confianza. Es lo que se usa en fiscal y en Classroom Platinum. |
 | **UGC** | Vídeo con aspecto casero, grabado con el móvil por un creador de fuera del equipo. | Contar una escena del día a día sin que parezca un anuncio. |
 | **Vendedor en primera persona** | Un vendedor del equipo se presenta y pide que le escriban por WhatsApp. | Remarketing: lo ve gente que ya visitó el perfil de ese vendedor. |
-| **Podcast** | Un corte de una conversación grabada. | «REEL PODCAST JUANEN» tenía el mejor coste de la cuenta: 5,52 € por registro con 22 registros (dato del 6-10-2026). |
+| **Podcast** | Un corte de una conversación grabada. | «REEL PODCAST JUANEN» trajo 25 registros a 7,66 € cada uno, de lo más barato de la cuenta (15-8 a 12-11-2026). |
 
 ### Quién habla: «nosotros», «ellos» o «yo»
 
@@ -107,7 +107,7 @@ L 0.16,0.755 | El filtro, en el subtítulo | «Si vendes cursos desde Bali…».
 R 0.62,0.13 | Aquí falta el rótulo fijo | El guion pide un rótulo con el filtro desde el segundo 0. Aquí el filtro va solo en el subtítulo, que entra con la voz.
 R 0.86,0.42 | Fondo liso y oscuro | Nada compite con la cara ni con el texto. La regla: tres cosas en pantalla como máximo.
 R 0.845,0.755 | Nombra el lugar | «Bali» hace que quien vende desde allí lo sienta suyo. Es el vídeo personalizado del hub.
-pie: Fotograma de portada del reel «PAGOS PERSONALIZADO» de Bali. Filtro en el subtítulo.
+pie: Fotograma de portada del reel «PAGOS PERSONALIZADO» de Bali. Filtro en el subtítulo. Hook rate: 18,63 %. Retención: 25,89 % (9.307 impresiones hasta el 12-11-2026).
 ::fin
 
 ::pizarra creatividades/optimizacion-fiscal/portadas/reel-benja-30-mor.jpg w=190
@@ -139,7 +139,7 @@ pie: Fotograma de portada del genérico «¿CÓMO TE PAGO?». No sale en Bali ni
 El mismo vídeo se publica con varios inicios distintos. Así se ve cuál filtra y retiene mejor.
 
 - Cada guion de hub trae un rótulo principal y dos ganchos alternativos. En Bali, el principal es «Si vendes cursos desde Bali y cobras con Stripe o PayPal». Un alternativo: «Tu cliente de España dijo que sí. PayPal dijo que no.»
-- En Classroom Platinum se montaron 8 versiones del mismo vídeo: el mismo cuerpo y un inicio distinto en cada una (19-10-2026).
+- En Classroom Platinum se editaron varias versiones del mismo vídeo, con el mismo cuerpo y un inicio distinto, para probarlas en Meta (19-10-2026).
 - La guía de guiones pide de 3 a 5 inicios por vídeo: «Es la variable que más mueve la aguja.»
 
 > **Por qué:** cambiar el inicio es lo más barato de grabar y lo que más cambia el resultado. Ojo: cada versión empieza con una frase distinta de verdad. Si dos empiezan igual, Meta las trata como el mismo anuncio. Cambiar una palabra por un sinónimo no cuenta.
@@ -154,7 +154,7 @@ El mismo vídeo se publica con varios inicios distintos. Así se ve cuál filtra
 
 <div class="tres"><div class="caja"><b>100 impresiones</b><span>Meta enseña el vídeo 100 veces.</span></div><div class="caja"><b>→ 25 a 30 ven 3 segundos</b><span>Es el hook rate. Objetivo: del 25 al 30 % o más.</span></div><div class="caja"><b>→ 10 a 12 llegan a los 15 s</b><span>Es la retención. Objetivo: el 40 % o más de esos 25 a 30.</span></div></div>
 
-> **Por qué estos objetivos:** son los de la guía de marca de Kunfupay. Son referencias generales, no datos de nuestra cuenta: cada cuenta se compara con su propio histórico.
+> **Por qué estos objetivos:** son los de la guía de marca de Kunfupay. Son referencias generales: cada cuenta se compara con su propio histórico. Los datos de la nuestra están al final de esta parte.
 
 ### Cómo leer las combinaciones
 
@@ -165,6 +165,34 @@ Tres avisos para no leer mal:
 - **Estos números diagnostican el vídeo; no deciden solos.** Decide lo que cuesta cada lead y si ese lead es bueno.
 - **Mucho clic no es lo mismo que registros.** «¿Cómo te pago?» tenía el CTR más alto de métodos de pago (3,8 %). El único vídeo con registros era «Infografía» (auditoría del 10-11-2026).
 - **Un vídeo que casi no ha gastado no se lee.** Los 4 reels fiscales del 3-11-2026 entraron en un conjunto con un ganador y recibieron 1 o 2 € en 7 días.
+
+### Lo que dice nuestra cuenta
+
+Datos de Meta del 15-8 al 12-11-2026. Son los 59 vídeos de Kunfupay en campañas de conversión con al menos 1.000 impresiones.
+
+<div class="tres"><div class="caja"><b>Hook rate medio: 19,94 %</b><span>Va del 9,19 % al 30,69 %. Solo 4 de los 59 pasan del 25 %.</span></div><div class="caja"><b>Retención media: 27,15 %</b><span>Va del 12,02 % al 46,08 %. Solo 2 de los 59 llegan al 40 %.</span></div><div class="caja"><b>Qué significa</b><span>El objetivo de hook rate lo alcanzan los mejores. El de retención, casi ninguno: hay que fijar uno propio.</span></div></div>
+
+| Vídeo | Línea | Impresiones | Hook rate | Retención |
+|---|---|---|---|---|
+| REEL / LLC ESPAÑA 2 | Fiscal | 6.478 | **30,69 %** | 28,17 % |
+| A-V8 · Explicativo · MoR no es magia | Fiscal | 2.888 | **28,74 %** | 25,18 % |
+| REEL PODCAST JUANEN | Fiscal | 29.786 | **25,37 %** | 28,79 % |
+| REEL / Profitstride - FISCAL | Fiscal | 105.470 | **24,92 %** | 23,19 % |
+| REEL / PAGOS PERSONALIZADO / BALI | Hub de Bali | 9.307 | **18,63 %** | 25,89 % |
+| B-V1 · Infografía · Cobros en la app | Métodos de pago | 21.419 | **14,72 %** | 29,24 % |
+| REEL / TRES COSAS / BALI | Hub de Bali | 1.383 | **13,23 %** | 12,02 % |
+| REEL / Cristian 1 stripe - REGISTRO | Andorra | 41.154 | **12,80 %** | 25,82 % |
+| REEL / INFOGRAFIA / DUBAI | Hub de Dubái | 1.366 | **12,15 %** | 19,28 % |
+| REEL / INFOGRAFIA / BALI | Hub de Bali | 2.273 | **9,19 %** | 16,27 % |
+
+Arriba, los cuatro mejores. Abajo, cinco de los peores (quedan fuera dos vídeos de remarketing y uno de Brasil). En medio, el personalizado de Bali. Lo que tienen en común:
+
+- **Los mejores son todos de optimización fiscal.** Es la línea con mejor hook rate medio: 23,76 %. Los hubs se quedan en 16,56 %.
+- **Tres de los peores son vídeos de «Infografía».** La de los hubs es una animación sin persona. Su primer fotograma dice «Tú eliges cómo cobrar» y no dice para quién es.
+- **En Bali, el personalizado dobla a «Infografía».** Empieza con «Si vendes cursos desde Bali» y tiene un 18,63 %. En el mismo conjunto, «Infografía» tiene un 9,19 %.
+- **«Infografía» es el caso de «hook rate bajo».** En métodos de pago engancha poco (14,72 %), pero quien se queda la ve: su retención (29,24 %) está por encima de la media. Falla el inicio, no el cuerpo.
+
+Ojo: son pocos datos. Los reels de hubs tienen entre 1.000 y 9.000 impresiones, y los 4 reels fiscales del 3-11-2026 no llegan a 350. Esta lectura sale del nombre y de la portada de cada anuncio; no se han revisado los vídeos enteros.
 
 ## El guion || La plantilla de ocho pasos, un guion real destripado y sus reglas
 
@@ -247,7 +275,7 @@ En métodos de pago y en cuenta nominativa, cada gancho va solo con el cuerpo de
 
 ### Cómo se nombra
 
-El nombre dice qué gancho y qué cuerpo lleva el anuncio. En los guiones de octubre el código es línea, cuerpo y gancho: `CN-C1-1A` es cuenta nominativa, cuerpo 1, gancho 1A. En Classroom Platinum se escribe «REEL / 1 · ACOMPAÑAMIENTO»: gancho 1 con el cuerpo de acompañamiento.
+El nombre dice qué gancho y qué cuerpo lleva el anuncio. En los guiones el código es línea, cuerpo y gancho: `CN-C1-1A` es cuenta nominativa, cuerpo 1, gancho 1A. En Meta, los de métodos de pago se llaman «MP-C1 | VÍDEO | UN SOLO ENLACE | VID» y los de Classroom Platinum, «REEL / HOOK 1 / CUERPO 2».
 
 > **Por qué:** así, al mirar los resultados, se ve qué gancho y qué cuerpo trajo cada lead sin abrir el anuncio.
 
@@ -278,6 +306,7 @@ pie: Anuncio modular de cuenta nominativa: gancho 1A + cuerpo 1.
 - **Si fallan todos los ganchos de un cuerpo, falla el cuerpo.** Si el cuerpo funciona y sus ganchos no, se graban ganchos nuevos y el cuerpo se queda.
 - **Para comparar cuerpos,** se usa el mismo gancho con cuerpos distintos, cada cuerpo en su conjunto, con el mismo presupuesto y el mismo público. Si van juntos, Meta ve el mismo inicio y puede darle todo el gasto a uno.
 - **El orden:** primero se leen los ganchos. Después, con los ganchos que ganan, los cuerpos. Y el cuerpo se juzga por la calidad de los leads, no solo por lo que cuestan.
+- **Un ejemplo real.** Los tres cuerpos de métodos de pago tienen casi el mismo hook rate (del 22 al 23 %), pero la retención cambia: 37,78 % en «Un solo enlace», 30,29 % en «Todo en un enlace» y 19,18 % en «Ventas que pierdes». Con unas 2.200 a 3.300 impresiones cada uno, es una señal y no una conclusión.
 
 ## Cómo se graba y cómo se edita || Sesión, tomas aparte, UGC, subtítulos, zona segura y portada
 
@@ -299,8 +328,9 @@ pie: Anuncio modular de cuenta nominativa: gancho 1A + cuerpo 1.
 No hay una guía de rodaje de UGC escrita. Lo que sí consta:
 
 - **Habla en «ellos» y no se hace pasar por cliente.** «La factura se la hacen ellos.»
-- **Habla a quien vende productos digitales.** El 10-11-2026 Benja revisó el reel de un creador colaborador. Decía que con Kunfupay puedes vender «lo que sea», y ponía de ejemplo arreglar ordenadores. Benja: «no apunta a lo que Kunfupay quiere». De momento, ese reel no se usa en anuncios.
-- **El aspecto casero gusta.** De un vídeo en formato de videollamada, Benja dijo: «quedó nice», «muy UGC» (4-11-2026). La guía de marca reserva al fundador para descubrir ángulos y al UGC para escalar los que ya ganan.
+- **Habla a quien vende productos digitales.** El 10-11-2026 Benja revisó el reel de un creador colaborador que decía que con Kunfupay puedes vender «lo que sea». Benja: «no apunta a lo que Kunfupay quiere». De momento, ese reel no se usa en anuncios.
+- **El aspecto casero gusta.** De un vídeo en formato de videollamada, Benja dijo: «quedó nice», «muy UGC» (4-11-2026).
+- **Casi no hay datos.** En 90 días solo un anuncio de Kunfupay lleva «UGC» en el nombre, «REEL / UGC ANDORRA»: 98 € y ningún resultado, en una línea que no funcionó.
 
 ### Cómo se edita
 
@@ -345,13 +375,13 @@ Tres cuidados al reutilizar y al subir:
 
 | Línea | Qué lleva | Qué se graba | Por qué |
 |---|---|---|---|
-| **Optimización fiscal** | Manda el vídeo: 4 reels nuevos a cámara (3-11-2026). Hay un estático de comparativa preparado. | Equipo o fundador a cámara, en el estudio. | Hay que explicar cómo funciona. En octubre ganaban dos reels (11,80 € y 5,52 € por registro). Los 5 estáticos no pasaron de 10 € de gasto. |
-| **Métodos de pago y hubs** | Se alterna: 5 estáticos, los genéricos y un personalizado por lugar. | Solo el personalizado de cada hub. | La prueba se ve de un vistazo en una imagen: el estático «Página de pago» trajo 26 de los 27 leads de LATAM. El vídeo añade la escena y el lugar. |
-| **Classroom Platinum** | Solo vídeo. | Fundador y equipo a cámara: cuerpos de 65 a 70 segundos y sus ganchos. | El mensaje es largo: un programa con requisitos y cuatro fases. No hay estáticos preparados. El anuncio tipo tweet pasó de 4 leads a 0. |
-| **Cuenta nominativa** | Mitad y mitad: 4 estáticos y 4 vídeos. | Los 4 vídeos. El sistema modular prevé 3 cuerpos y 12 ganchos en una sesión. | Es un conjunto nuevo y sin datos. Cada mensaje va en su formato, y ningún estático repite el mensaje de un vídeo. |
-| **Remarketing de vendedores** | Hoy, solo estáticos con la cara del vendedor. Hay 4 guiones de vídeo escritos y sin grabar. | Cada vendedor, en primera persona, de 30 a 50 segundos. | Quien lo ve ya visitó el perfil de ese vendedor. Con los estáticos, cada persona vio el anuncio de 6 a 15 veces y no hubo resultados. |
+| **Optimización fiscal** | Manda el vídeo: 4 reels nuevos a cámara (3-11-2026). Hay un estático de comparativa preparado. | Equipo o fundador a cámara, en el estudio. | Hay que explicar cómo funciona. En la campaña de testeo de España, el vídeo trae registros a 17,04 € y el estático, a 38,65 €. |
+| **Métodos de pago y hubs** | Se alterna: 5 estáticos, los genéricos y un personalizado por lugar. | Solo el personalizado de cada hub. | La prueba se ve de un vistazo en una imagen. En hubs, el estático trae leads a 4,31 € y el vídeo, a 11,76 €. Casi todos vienen de un solo anuncio: «Página de pago» de LATAM (48 leads a 2,02 €). |
+| **Classroom Platinum** | Las piezas nuevas son solo vídeo. | Fundador y equipo a cámara: cuerpos de 65 a 70 segundos y sus ganchos. | El mensaje es largo: un programa con requisitos y cuatro fases. Pero los datos no lo apoyan: en su campaña, el estático trae leads a 42,81 € y el vídeo, a 85,27 €. |
+| **Cuenta nominativa** | El plan es mitad y mitad: 4 estáticos y 4 vídeos. | Los 4 vídeos. El sistema modular prevé 3 cuerpos y 12 ganchos en una sesión. | Es una línea nueva: en Meta aún no hay anuncios suyos con gasto. Cada mensaje va en su formato, y ningún estático repite el mensaje de un vídeo. |
+| **Remarketing de vendedores** | Estáticos con la cara del vendedor y, desde el 5-11-2026, reels de dos vendedores. | Cada vendedor, en primera persona, de 30 a 50 segundos. | Quien lo ve ya visitó el perfil de ese vendedor. Con los estáticos, cada persona vio el anuncio de 6 a 15 veces y no hubo resultados. Los reels aún no tienen datos. |
 
-Ojo: los estáticos de fiscal competían con un reel que se llevaba casi todo el gasto. No llegaron a enseñarse, así que no prueban que un estático fiscal funcione mal. Los datos de LATAM y de remarketing son de la auditoría del 10-11-2026.
+Los datos son de Meta, del 15-8 al 12-11-2026; el de remarketing, de la auditoría del 10-11-2026. Ojo: el «lead» de hubs y de Classroom Platinum cuenta cualquier visita a una página de gracias. No dice si el contacto es bueno.
 
 ### Dónde va vídeo y dónde va imagen, según el mensaje
 
@@ -426,7 +456,7 @@ Lo que se aprende: una frase dicha a cámara no se arregla en edición sin corta
 
 | Qué falta | Por qué importa |
 |---|---|
-| El hook rate y la retención de cada reel de la cuenta. | Sin esos datos no se puede decir qué inicios han funcionado mejor ni fijar objetivos propios. |
+| Un objetivo propio de hook rate y de retención. | Los de la guía son de fuera. En la cuenta, la media es 19,94 % y 27,15 %, y casi ningún vídeo llega al 40 % de retención. |
 | La fórmula exacta de la retención. | Una guía interna la calcula sobre impresiones. Así, el objetivo del 40 % sería imposible: no puede llegar más gente a los 15 segundos que a los 3. Aquí se calcula sobre los que vieron 3 segundos. |
 | De dónde salen el 27 % y el 30 %. | El 27 % se usa con tres sentidos distintos, y un reel dice «hasta un 30 %» de pérdida. |
 | Una guía de rodaje de UGC. | No consta a quién se le encarga, con qué instrucciones, cuántas tomas ni qué permisos de uso se piden. |
@@ -435,7 +465,8 @@ Lo que se aprende: una frase dicha a cámara no se arregla en edición sin corta
 | Cuántas palabras tiene el rótulo. | La regla dice 7 como máximo. Los rótulos de los guiones de hubs tienen de 8 a 11. |
 | Qué se hace con el audio de los dos vídeos de Rubén. | Dice frases de impuestos que no se usan. |
 | El guion escrito de los reels ya publicados. | De los 4 de fiscal, los 2 de Classroom Platinum, «Tres cosas» y «Ventas que pierdes» solo se guardan la portada y los textos. |
-| Si se grabaron los cuerpos modulares de métodos de pago y de cuenta nominativa, y los 4 guiones de vendedores. | Figuran como «listos para grabar». |
-| Cómo se nombra en Meta un anuncio modular. | La norma actual es `REEL / TIPO / LUGAR`. El código de octubre (`CN-C1-1A`) es anterior. |
+| Qué pasó con los guiones de cuenta nominativa. | En Meta no hay ningún anuncio con gasto de esa línea. Sí hay vídeos de los tres cuerpos de métodos de pago y reels de dos vendedores. |
+| Si Classroom Platinum debe ser solo vídeo. | En 90 días sus estáticos trajeron leads más baratos que sus vídeos. Falta mirar la calidad de esos leads. |
+| Cómo se nombra en Meta un anuncio modular. | La norma actual es `REEL / TIPO / LUGAR`. Los modulares publicados usan otros dos formatos de nombre. |
 | La revisión legal de «la única pasarela de España que funciona como Merchant of Record» y de «los impuestos de esa venta son cosa nuestra». | Los propios guiones las marcan como pendientes. |
 | Cómo se hace un corte de podcast, y qué música se usa. | No hay nada escrito. |

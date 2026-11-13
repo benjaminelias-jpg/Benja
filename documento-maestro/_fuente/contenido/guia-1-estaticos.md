@@ -10,17 +10,19 @@ pie-pdf: Guía 1 · Anuncios estáticos · Kunfupay
 
 ::galeria creatividades/metodos-de-pago/espana/estaticos/ES-E1_1080x1350.png = Tweet ; creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png = Página de pago con flechas ; creatividades/metodos-de-pago/hubs/estaticos/HUB-TAILANDIA-E5_1080x1350.png = Noticia ; creatividades/metodos-de-pago/espana/estaticos/ES-E2_1080x1350.png = Comparativa ; creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E4_1080x1350.png = Cifra
 
-| Formato | Qué hace | Parte del embudo |
-|---|---|---|
-| **Tweet** | Cuenta el problema con una cifra. Lo firma una persona | Media |
-| **Página de pago con flechas** | Enseña el producto tal como lo ve el cliente | Baja: es la prueba |
-| **Noticia** | Para el dedo con color y dice que otros ya lo hacen | Alta |
-| **Comparativa** | Pone lado a lado lo de hoy y lo nuestro | Media |
-| **Cifra** | Enseña lo que se puede ganar, con un número enorme | Alta |
+| Formato | Qué hace | Parte del embudo | En los hubs, 90 días |
+|---|---|---|---|
+| **Tweet** | Cuenta el problema con una cifra. Lo firma una persona | Media | 12,08 € · 1 lead |
+| **Página de pago con flechas** | Enseña el producto tal como lo ve el cliente | Baja: es la prueba | 122,93 € · 48 leads |
+| **Noticia** | Para el dedo con color y dice que otros ya lo hacen | Alta | 158,56 € · 7 leads |
+| **Comparativa** | Pone lado a lado lo de hoy y lo nuestro | Media | 17,14 € · 1 lead |
+| **Cifra** | Enseña lo que se puede ganar, con un número enorme | Alta | 1,74 € · 0 leads |
+
+La última columna es el gasto y los leads en Meta del 15-08 al 12-11-2026. Solo la página de pago y la noticia han recibido gasto suficiente para opinar. Las otras tres están sin probar.
 
 El embudo es el camino de una persona: arriba todavía no nos conoce y abajo ya quiere probar. Las cinco piezas salen juntas, en campañas de público frío. La parte del embudo dice a qué persona le habla cada una, no en qué campaña va. Lo explica el Documento maestro, parte «El sistema en una página».
 
-Se hicieron primero para los hubs y después para España. Un hub es un lugar con gente que habla español y tiene negocio online: LATAM, Miami, Dubái, Bali y Tailandia.
+Un hub es un lugar con gente que habla español y tiene negocio online: LATAM, Miami, Dubái, Bali y Tailandia. Los formatos se hicieron para los hubs y después para España.
 
 ### Los dos tamaños
 
@@ -99,7 +101,7 @@ pie: Tweet de España, imagen de feed (1080×1350). En la versión vertical el m
 | Qué pasó | Qué se cambió |
 |---|---|
 | Los tweets de remarketing llevaban dibujada la barra de iconos de la red social. Meta los rechazó | Se rehicieron sin la barra. La foto y el nombre se quedaron. Benja: «libre de botones, pero el perfil de la persona no lo quites» |
-| «TWEET CLASSROOM» pasó de 4 leads a 0. El remarketing de vendedores, con tweets y fotos, dio 0 resultados: cada persona había visto el anuncio entre 6 y 15 veces | El formato no arregla un público cansado. Son datos de la auditoría del 10-11-2026 |
+| «TWEET CLASSROOM» gastó 1.835,95 € para 25 leads, a 73,44 € cada uno, y pasó de 4 leads a 0. Los tweets antiguos de Kunfupay gastaron 124,76 € sin un registro | El formato solo no basta: hay que volver a probarlo. Datos de Meta, 90 días hasta el 12-11-2026 |
 
 ### Antes de darlo por bueno
 
@@ -115,10 +117,11 @@ pie: Tweet de España, imagen de feed (1080×1350). En la versión vertical el m
 - En teoría es de la parte baja del embudo: para quien ya nos conoce. En la práctica funciona también con público frío.
 - Benja: «usar flechas siempre funciona».
 
-| Anuncio | Resultado en 7 días (auditoría del 10-11-2026) | Coste |
-|---|---|---|
-| Página de pago · LATAM | 26 de los 27 leads del hub | 1,94 € por lead |
-| Página de pago · España | 4 registros | 37 € por registro (su conjunto, 41 €) |
+| Anuncio | Periodo | Resultado | Coste |
+|---|---|---|---|
+| Página de pago · LATAM | 7 días (auditoría del 10-11-2026) | 26 de los 27 leads del hub | 1,94 € por lead |
+| Página de pago · LATAM | 90 días, hasta el 12-11-2026 | 48 leads con 97,08 € | 2,02 € por lead |
+| Página de pago · España | 90 días, hasta el 12-11-2026 | 6 registros con 162,13 € | 27,02 € por registro |
 
 > **Por qué:** casi ningún anunciante de cobros enseña su producto por dentro. Nosotros sí. Y en una captura lo que vale es la nota: la flecha le dice al ojo dónde mirar.
 
@@ -191,6 +194,7 @@ Tres cosas pendientes de confirmar:
 - Para el dedo de quien todavía no nos conoce. Por eso va en la parte alta del embudo.
 - Cambia la pieza de «publicidad» a «información».
 - Es la prueba social: dice que otros ya lo hacen.
+- En los hubs, en 90 días: 158,56 € y 7 leads, a 22,65 € cada uno. La de Miami gastó 45,68 € sin leads.
 
 Benja: se hace «con elementos sobresaturados», mostrando banderas, y «siempre con elementos llamativos como una banda de ACTUALIDAD, un círculo rojo con una imagen dentro».
 
@@ -267,7 +271,7 @@ Dos cosas pendientes de confirmar:
 
 - Le habla a quien ya sabe que hay solución y la compara con lo que usa hoy: parte media del embudo.
 - El color hace el trabajo: rojo es hoy, morado es Kunfupay.
-- Datos propios todavía no hay. La auditoría del 10-11-2026 no destaca ninguna comparativa.
+- Está sin probar: en los hubs recibió 17,14 € entre 6 anuncios en 90 días.
 
 > **Por qué:** quien ya cobra con una herramienta no la cambia por una promesa. La cambia si ve, fila a fila, qué gana.
 
@@ -336,7 +340,7 @@ pie: Comparativa de España, imagen de feed (1080×1350). El logo «ku» va abaj
 
 - Es la pieza del deseo. En Meta se llama así: «ESTATICA / DESEO» y el lugar.
 - Va en la parte alta del embudo. El número se ve antes de leer nada, y enseña el premio en vez del problema.
-- Datos propios todavía no hay: la auditoría del 10-11-2026 no la destaca.
+- Está sin probar: en los hubs recibió 1,74 € entre 4 anuncios en 90 días.
 
 ### El anuncio, destripado
 
@@ -414,7 +418,7 @@ pie: Anuncio «ESTATICA / DESEO / LATAM», imagen de feed (1080×1350). El botó
 | **Flujo** | De arriba abajo: hoy necesitas tres cosas, con Kunfupay un solo enlace | La primera versión hablaba de lo fiscal y se quitó: en métodos de pago no entra. Resultado: no consta |
 | **Mapa** | Tú en España y líneas de puntos a cinco países | Resultado: no consta |
 | **Meme** | Seis cuchillos con etiqueta frente a uno solo: «un solo enlace» | Pieza extra, pensada como relevo. Sin logo y sin color de marca. Resultado: no consta |
-| **Carrusel «Pago Global»** | Varias imágenes que se pasan con el dedo | No funcionó: 277 € para 8 registros, a 34,62 € cada uno. Su última semana gastó 67 € sin registros. No se rehace |
+| **Carrusel «Pago Global»** | Varias imágenes que se pasan con el dedo | No funcionó: 277 € para 8 registros, a 34,62 € cada uno (dato de septiembre). Su última semana gastó 67 € sin registros. No se rehace |
 | **Noticia «Pago Global»** | Imagen de noticia: «Un solo link de Kunfupay los cobra a todos» | Fue la única señal de métodos de pago en septiembre: 3 registros a 10,42 € en su última semana |
 
 Los cuatro primeros se sustituyeron por los cinco formatos de esta guía. Del carrusel y de la noticia «Pago Global» no hay imagen en el repositorio.
@@ -480,9 +484,9 @@ Todas las rutas cuelgan de `creatividades/metodos-de-pago/`.
 
 | Qué | Dónde afecta |
 |---|---|
+| Probar el tweet, la comparativa y la cifra: Meta casi no les ha dado gasto | Los tres |
 | De dónde salen el 27 % y el 30 %. El 30 % es redondo y habla de «facturar más» | Todos. Sobre todo, la cifra |
 | Los verticales dejan 380 px abajo y Reels tapa 670 | Todos |
-| Revisión legal de las comparativas y de los logos de las capturas | Comparativa y página de pago |
-| «Paga con su moneda local» y qué herramienta se nombra en vez de «tarjeta» | Página de pago, tweet y comparativa |
+| Revisión legal de comparativas y logos. Confirmar «paga con su moneda local». Decidir qué se nombra en vez de «tarjeta» | Comparativa, página de pago y tweet |
 | Rehacer las noticias antiguas y confirmar que aceptamos vendedores de cada hub | Noticia |
 | Vertical de la página de pago de Bali, tweet de equipo sin iconos y generador de los primeros hubs | Subida y fabricación |
