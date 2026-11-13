@@ -1,5 +1,5 @@
 pie-pdf: Documento maestro de creatividades · Kunfupay
-::portada Kunfupay · Marketing | Documento maestro de creatividades | Todo en un solo documento: el sistema, los ángulos, las guías de estáticos, vídeo y copys, las verticales y el embudo self-service. | Versión del 13 de noviembre de 2026
+::portada Kunfupay · Marketing | Documento maestro de creatividades | Todo en un solo documento: el sistema, los ángulos, y las guías de estáticos, vídeo y copys. | Versión del 13 de noviembre de 2026
 ::indice
 
 
@@ -14,7 +14,7 @@ pie-pdf: Documento maestro de creatividades · Kunfupay
 | **Guía 2 · Vídeo y UGC** | Guion, grabación y medición |
 | **Guía 3 · Copys, subida y medición** | Textos, nombres, subida a Meta y lectura |
 | **Inventario** | Todas las creatividades, una por una |
-| **Self-service** y **Verticales** | Documentos aparte |
+| **Self-service, Tributaless e Ignia** | Más adelante |
 
 Cómo se lee: cada anuncio aparece con números y flechas. El número dice **qué se hizo** y el comentario dice **por qué**. Cuando algo se cambió, se enseña el antes y el ahora.
 
@@ -75,13 +75,13 @@ Por qué: un número exacto parece medido y se cree más que uno redondo; y hace
 
 ### El mismo anuncio en varios conjuntos
 
-<div class="ficha"><div><b>68 resultados</b><span>Profitstride · 3 conjuntos</span></div><div><b>45</b><span>Podcast Juanen · 3 conjuntos</span></div><div><b>39 a 4,7 €</b><span>Ignia «Dios Benji» · 3 conjuntos</span></div><div><b>39 a 6,0 €</b><span>Vídeo avatar Tributaless · 2 conjuntos</span></div><div><b>288 a 2,0 €</b><span>Marcas UGC (UGC Accelerator) · 2 conjuntos</span></div></div>
+<div class="ficha"><div><b>68 resultados</b><span>Profitstride · 3 conjuntos</span></div><div><b>45</b><span>Podcast Juanen · 3 conjuntos</span></div><div><b>288 a 2,0 €</b><span>Marcas UGC (UGC Accelerator) · 2 conjuntos</span></div></div>
 
 Un anuncio que da resultados en 2 o 3 conjuntos distintos es el candidato a escalar. Los de Kunfupay que lo cumplen son reels fiscales con una persona hablando.
 
 ### Lo que se repite entre nichos
 
-<div class="tres"><div class="caja"><b>Una persona habla a cámara</b><span>Profitstride y Podcast Juanen (Kunfupay), «Dios Benji» (Ignia), el avatar (Tributaless), las marcas UGC. En todos los negocios, lo que mejor cuesta es una voz humana contando un problema concreto.</span></div><div class="caja"><b>El lenguaje del nicho en la primera frase</b><span>«Si vendes cursos…», «¿Eres autónomo…?», «me faltan agendas…». Filtra antes del clic en todos.</span></div><div class="caja"><b>Una cifra concreta</b><span>27 % en Kunfupay, $97 en Ignia. Una cifra hace real el problema.</span></div></div>
+<div class="tres"><div class="caja"><b>Una persona habla a cámara</b><span>Profitstride y Podcast Juanen (Kunfupay), los reels con persona de Classroom y las marcas UGC. En todos los negocios, lo que mejor cuesta es una voz humana contando un problema concreto.</span></div><div class="caja"><b>El lenguaje del nicho en la primera frase</b><span>«Si vendes cursos…», «¿Eres autónomo…?». Filtra antes del clic en todos.</span></div><div class="caja"><b>Una cifra concreta</b><span>27 % en Kunfupay; 9 € por lead en el reel «3 22» de Classroom. Una cifra hace real el problema.</span></div></div>
 
 <div class="dos"><div class="si"><h4>Se repite y funciona</h4><ul><li>Persona a cámara con el problema dicho en voz alta.</li><li>Pantalla real del producto (página de pago).</li><li>Un solo mensaje por pieza.</li></ul></div><div class="no"><h4>Se repite y no funciona</h4><ul><li>El tweet en Classroom: 1.836 € y 73 € por lead.</li><li>Estáticos que solo explican, sin cara ni prueba.</li><li>Muchos anuncios nuevos a la vez.</li></ul></div></div>
 
@@ -111,7 +111,7 @@ Aviso: los resultados no son del mismo evento en todos los negocios (registro, l
 
 ### Otros negocios y embudos
 
-<div class="dos"><div class="caja"><b>Aumenta tus agendas un X %</b><span><em>Toca: deseo (calendario lleno).</em> Para el embudo self-service: seteo, closers, agendamientos.<br><b style="font-weight:600">Datos:</b> documento de Self-service. Cifras de ejemplo: «dato a confirmar».</span></div><div class="caja"><b>Tener un todo en uno</b><span><em>Toca: comodidad.</em> Una sola herramienta para varias.<br><b style="font-weight:600">Datos:</b> Ojo: la guía de marca prohíbe «todo en uno» y «centraliza tus plataformas». Hay que decidir antes de usarlo.</span></div></div>
+<div class="dos"><div class="caja"><b>Aumenta tus agendas un X %</b><span><em>Toca: deseo (calendario lleno).</em> Para un embudo futuro: seteo, closers, agendamientos.<br><b style="font-weight:600">Datos:</b> sin piezas todavía.</span></div><div class="caja"><b>Tener un todo en uno</b><span><em>Toca: comodidad.</em> Una sola herramienta para varias.<br><b style="font-weight:600">Datos:</b> Ojo: la guía de marca prohíbe «todo en uno» y «centraliza tus plataformas». Hay que decidir antes de usarlo.</span></div></div>
 
 <div class="dos"><div class="caja"><b>Dinero, acompañamiento, metodología (Classroom)</b><span><em>Toca: deseo (crecer con apoyo).</em> «Entramos con nuestro dinero en anuncios».<br><b style="font-weight:600">Datos:</b> Classroom: 168 leads a 45 €. El estático del videojuego, 53 leads a 25,53 €.</span></div><div class="caja"><b>Te responde una persona, no un bot</b><span><em>Toca: confianza (remarketing).</em> Foto del vendedor y «Escríbeme».<br><b style="font-weight:600">Datos:</b> remarketing de vendedores: sin resultados en los conjuntos 3 y 4.</span></div></div>
 
@@ -553,11 +553,11 @@ Aquí el lead busca la solución. El 15 % avanza, el triple que en los hubs. La 
 
 ::fig verticales
 
-Tributaless e Ignia tienen su propio documento («Verticales»), con sus ángulos, sus embudos y sus anuncios destripados. El embudo de herramientas gratuitas está en «Self-service». Aquí va lo que cada vertical aporta al sistema:
+Tributaless, Ignia y el embudo self-service se tratarán aparte más adelante. Aquí va lo que aportan las demás:
 
-<div class="tres"><div class="caja"><b>Tributaless</b><span>Un avatar de IA («Marta») y UGC con IA dan lead a 6 € y 13 €. Probaron WhatsApp, formulario, landing con y sin filtro.</span></div><div class="caja"><b>Ignia</b><span>Reels de «Dios Benji» a 4,7 €; es la vertical con lead más barato después de UGC Accelerator. El lead barato no siempre llegó a ventas.</span></div><div class="caja"><b>UGC Accelerator</b><span>885 € y 364 registros a 2,43 €; y formulario condicional a 1,16 €. Mucho volumen, calidad por demostrar.</span></div></div>
+<div class="dos"><div class="caja"><b>UGC Accelerator</b><span>885 € y 364 registros a 2,43 €; y formulario condicional a 1,16 €. Mucho volumen, calidad por demostrar.</span></div><div class="caja"><b>Google Ads</b><span>Búsqueda con intención: 15 % avanza en Kommo.</span></div></div>
 
-<div class="tres"><div class="caja"><b>Google Ads</b><span>Búsqueda con intención: 15 % avanza en Kommo.</span></div><div class="caja"><b>Partners</b><span>Embudo de socios con valor asociado en Kommo. No tiene creatividad de Meta.</span></div><div class="caja"><b>Puerta fría y redes</b><span>Contacto directo por Instagram de cada vendedor (Jorge, Juan, Rafa, Taiab). Los anuncios de remarketing alimentan estos embudos.</span></div></div>
+<div class="dos"><div class="caja"><b>Partners</b><span>Embudo de socios con valor asociado en Kommo. No tiene creatividad de Meta.</span></div><div class="caja"><b>Puerta fría y redes</b><span>Contacto directo por Instagram de cada vendedor (Jorge, Juan, Rafa, Taiab). Los anuncios de remarketing alimentan estos embudos.</span></div></div>
 
 ### Lo que falta
 
@@ -634,7 +634,6 @@ Formas de subir que fallaron: un texto para feed y otro para Stories (solo salí
 
 ### Los cinco formatos
 
-::galeria creatividades/metodos-de-pago/espana/estaticos/ES-E1_1080x1350.png = Tweet ; creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png = Página de pago con flechas ; creatividades/metodos-de-pago/hubs/estaticos/HUB-TAILANDIA-E5_1080x1350.png = Noticia ; creatividades/metodos-de-pago/espana/estaticos/ES-E2_1080x1350.png = Comparativa ; creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E4_1080x1350.png = Cifra
 
 | Formato | Qué hace | Parte del embudo | En los hubs, 90 días |
 |---|---|---|---|
@@ -690,16 +689,6 @@ Cada estático se entrega dos veces: una imagen para el feed y otra vertical par
 
 ### El anuncio, destripado
 
-::pizarra creatividades/metodos-de-pago/espana/estaticos/ES-E1_1080x1350.png w=236
-L 0.09,0.205 | Foto, nombre y check azul | Lo firma una persona con cara. No habla la marca.
-L 0.088,0.346 | La primera línea filtra | «Si vendes cursos desde España…». Quien no vende cursos deja de leer aquí.
-L 0.088,0.64 | La salida, sin decir cuál | No nombra el producto. Para saber cuál es hay que hacer clic.
-R 0.86,0.10 | Fondo blanco, sin logo | Ni color de marca ni botones. Nada avisa de que es un anuncio.
-R 0.815,0.405 | La herramienta, por su nombre | «Stripe», escrito. Es lo que la persona usa hoy.
-R 0.89,0.464 | «Hasta un 27 %» | Un número que no es redondo suena a dato medido.
-R 0.815,0.757 | La llamada, dentro del texto | «Descúbrela haciendo clic.» Escrita, sin botón dibujado.
-pie: Tweet de España, imagen de feed (1080×1350). En la versión vertical el mismo bloque va centrado en la zona blanca.
-::fin
 
 ### Receta paso a paso
 
@@ -753,16 +742,6 @@ pie: Tweet de España, imagen de feed (1080×1350). En la versión vertical el m
 
 ### El anuncio, destripado
 
-::pizarra creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png w=236
-L 0.07,0.082 | El filtro, en cursiva | Arriba del todo y en letra más fina que el titular.
-L 0.07,0.20 | El titular: qué pierdes | Hoy nombraríamos la herramienta en vez de «tarjeta».
-L 0.132,0.445 | Una nota y una flecha | La nota dice quién paga y cómo. La flecha lleva el ojo hasta el método.
-L 0.07,0.858 | Lo que recibe quien vende | Cierra la imagen. En España se hizo más grande.
-R 0.912,0.30 | El país, a la vista | La bandera enseña que cada país ve su propia página de pago.
-R 0.90,0.444 | Captura real, con sus logos | Solo se recorta y se amplía. No se retoca ni se tapa.
-R 0.50,0.621 | El óvalo marca el método | Señala el método y el país. Nunca un importe.
-pie: Anuncio «ESTATICA / PAGINA DE PAGO / LATAM», imagen de feed (1080×1350). Es el estático con mejores datos de la cuenta.
-::fin
 
 ### Receta paso a paso
 
@@ -828,16 +807,6 @@ se hace «con elementos sobresaturados», mostrando banderas, y «siempre con el
 
 ### El anuncio, destripado
 
-::pizarra creatividades/metodos-de-pago/hubs/estaticos/HUB-TAILANDIA-E5_1080x1350.png w=236
-L 0.067,0.18 | Círculo rojo con una cara | El rojo se ve desde lejos. Dentro va una persona, nunca un logo ajeno.
-L 0.067,0.698 | Banda roja «Actualidad» | La etiqueta de las noticias. La pieza se lee como información.
-L 0.067,0.778 | El titular afirma | Aquí la cifra no lleva «hasta»: cuenta algo que ya pasa.
-R 0.936,0.068 | El logo, pequeño y arriba | La marca no manda. Manda la noticia.
-R 0.625,0.13 | Foto real, en alta definición | Con la saturación un poco subida. Una foto pixelada delata el montaje.
-R 0.925,0.45 | La bandera del lugar | Quien vive allí la reconoce al instante. Es el filtro, en imagen.
-R 0.76,0.925 | Negro detrás del texto | Para que el texto blanco se lea sobre cualquier foto.
-pie: Anuncio «ESTATICA / NOTICIA / TAILANDIA», imagen de feed (1080×1350). Es la versión que Se pidió rehacer el 12-11-2026.
-::fin
 
 ### Receta paso a paso
 
@@ -903,16 +872,6 @@ Dos cosas pendientes de confirmar:
 
 ### El anuncio, destripado
 
-::pizarra creatividades/metodos-de-pago/espana/estaticos/ES-E2_1080x1350.png w=236
-L 0.07,0.156 | El filtro, en cursiva | Igual que en el resto de formatos.
-L 0.305,0.398 | Columna roja: lo de hoy | La herramienta va escrita, sin logo.
-L 0.07,0.595 | La fila de la cifra | «Hasta un 27 %». Es la única cifra de toda la tabla.
-L 0.305,0.748 | Celda gris: aquí empatamos | No se pinta de rojo lo que hoy ya funciona.
-R 0.91,0.315 | El titular nombra la herramienta |  en lugar de «solo con tarjeta».
-R 0.93,0.495 | Columna morada: con Kunfupay | Todo ✓. La mirada va de rojo a morado.
-R 0.80,0.856 | La frase de cierre | Resume la tabla para quien no la lee entera.
-pie: Comparativa de España, imagen de feed (1080×1350). El logo «ku» va abajo a la derecha, como en casi todos.
-::fin
 
 ### Receta paso a paso
 
@@ -970,16 +929,6 @@ pie: Comparativa de España, imagen de feed (1080×1350). El logo «ku» va abaj
 
 ### El anuncio, destripado
 
-::pizarra creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E4_1080x1350.png w=236
-L 0.09,0.278 | La cifra, lo más grande | Es lo único que se ve cuando el anuncio sale en pequeño.
-L 0.07,0.385 | El filtro, justo debajo | Quien no vende cursos ya sabe que no es para él.
-L 0.07,0.506 | Titular en condicional | «Podrías» y «hasta»: es un tope, no una promesa.
-L 0.07,0.924 | «Descubre cómo ↓» | Solo texto. La flecha apunta al botón de verdad, el de Meta.
-R 0.86,0.10 | Fondo liso, un solo color | Sin foto ni dibujo. Nada compite con la cifra.
-R 0.865,0.781 | Una línea para ese lugar | Es lo único que cambia de un lugar a otro.
-R 0.93,0.922 | El logo, abajo y pequeño | Primero la cifra. Después, quién lo dice.
-pie: Anuncio «ESTATICA / DESEO / LATAM», imagen de feed (1080×1350). El botón de Meta de este anuncio es «Registrarte».
-::fin
 
 ### Receta paso a paso
 
@@ -1215,25 +1164,7 @@ En las dos primeras el texto va entrando con la voz. Con el vídeo parado no dic
 
 Los dos reels son anteriores a la regla del 12-11-2026. Sirven para ver qué funciona y qué hay que cambiar.
 
-::pizarra creatividades/metodos-de-pago/hubs/videos/portadas/pagos-personalizado-bali.jpg w=190
-L 0.38,0.36 | Un solo protagonista | Una cara y nada más. La guía avisa: una persona hablando a cámara, sin más, rinde poco. Por eso hace falta el texto.
-L 0.05,0.60 | Luz morada, sin logo | La marca está en el color de la luz. Un logo en el primer fotograma avisa de que es un anuncio.
-L 0.16,0.755 | El filtro, en el subtítulo | «Si vendes cursos desde Bali…». Quien no vende cursos deja de mirar. Va escrito porque mucha gente lo ve sin sonido.
-R 0.62,0.13 | Aquí falta el rótulo fijo | El guion pide un rótulo con el filtro desde el segundo 0. Aquí el filtro va solo en el subtítulo, que entra con la voz.
-R 0.86,0.42 | Fondo liso y oscuro | Nada compite con la cara ni con el texto. La regla: tres cosas en pantalla como máximo.
-R 0.845,0.755 | Nombra el lugar | «Bali» hace que quien vende desde allí lo sienta suyo. Es el vídeo personalizado del hub.
-pie: Fotograma de portada del reel «PAGOS PERSONALIZADO» de Bali. Filtro en el subtítulo. Hook rate: 18,63 %. Retención: 25,89 % (9.307 impresiones hasta el 12-11-2026).
-::fin
 
-::pizarra creatividades/optimizacion-fiscal/portadas/reel-benja-30-mor.jpg w=190
-L 0.03,0.172 | Filtro por oficio, en grande | «Autónomo» dice a quién se habla. Dos palabras en mayúsculas: se leen de un golpe, también con el vídeo parado.
-L 0.33,0.565 | Señala a quien mira | El gesto dice lo mismo que el rótulo: «te hablo a ti». Imagen y texto cuentan una sola cosa.
-L 0.10,0.90 | Abajo no hay texto | La interfaz de Reels tapa la parte baja de la pantalla. Por eso el rótulo va arriba.
-R 0.80,0.07 | Blanco sobre negro | El máximo contraste. Detrás del texto no hay nada que estorbe.
-R 0.975,0.172 | La pregunta está a medias | Falta «…y vendes online?». Con la regla del 12-11, el rótulo entero está desde el primer fotograma.
-R 0.93,0.667 | El mismo plató | Fondo negro y luz morada en los cuatro reels nuevos de fiscal. La marca se reconoce sin poner el logo.
-pie: Fotograma de portada del reel «BENJA 30 % MOR» de optimización fiscal. Filtro en un rótulo grande.
-::fin
 
 ### En un genérico, el lugar lo pone el texto del anuncio
 
@@ -1592,22 +1523,6 @@ Lo que se aprende: una frase dicha a cámara no se arregla en edición sin corta
 
 Estas son las piezas que se rellenan al subir un anuncio a Meta. En toda la guía se llaman así.
 
-::pizarratexto w=236
-<p style="margin:0 0 6px"><b>kunfupay</b> <span style="color:var(--gris)">· Publicidad</span></p>
-<p style="margin:0 0 8px">Mira la imagen: eso es lo que ve tu alumno cuando abre tu enlace de Kunfupay. El de España con sus métodos… <span style="color:var(--gris)">Ver más</span></p>
-<img src="../../../creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png">
-<div style="display:flex;align-items:center;justify-content:space-between;margin-top:9px"><span style="color:var(--gris)">kunfupay.com</span><span style="border:1px solid var(--gris);border-radius:4px;padding:2px 8px;font-weight:600">Registrarte</span></div>
-<p style="margin:5px 0 0"><b>Así te paga cada alumno</b></p>
---
-L 0.04,0.105 | Texto principal | Hay 2 por anuncio: uno largo y uno corto. Va escrito, fuera de la imagen.
-L 0.04,0.50 | Imagen o vídeo | En estáticos se suben dos tamaños: 4:5 para el feed y 9:16 para Stories y Reels.
-L 0.04,0.897 | URL visible | La dirección que se lee junto al botón. Siempre kunfupay.com.
-L 0.04,0.952 | Título | Hay 2 por anuncio. De 40 caracteres como máximo y muy distintos entre sí.
-R 0.965,0.206 | «Ver más» | Meta corta el texto. Solo se ven las primeras líneas: por eso el gancho va arriba.
-R 0.965,0.897 | Botón | El mismo que llevan los anuncios activos del conjunto. Si no hay, «Registrarte» o «Ver más».
-R 0.72,0.952 | Descripción | Iría junto al título. Antes llevábamos una. Hoy no se usa.
-pie: Esquema de un anuncio con las piezas reales de «ESTATICA / PAGINA DE PAGO / LATAM». No es una captura: la posición de cada pieza cambia según la ubicación.
-::fin
 
 ### La norma de hoy
 
@@ -2030,868 +1945,3 @@ Esta guía no inventa los porqués. Estos puntos no están escritos o siguen abi
 | Enlace | Qué es `utm_id`. Y unificar `utm_source`: remarketing usa `meta` y el resto, `instagram` |
 | Montaje | Si los estáticos 9:16 deben salir en Reels. Por qué va sin formulario y sin descripción |
 | Medición | Confirmar el objetivo y el techo de coste, fijar uno para los hubs, decir qué clic se cuenta y cómo se calcula la retención |
-
-## Verticales · Las dos verticales en una página || Qué es cada una, cuánto se gastó y qué embudos se probaron
-
-{lead} Tributaless e Ignia son dos marcas pequeñas que acompañan a Kunfupay. Atraen a gente con un problema concreto y, por el camino, le presentan Kunfupay.
-
-<div class="dos"><div class="caja"><b>Tributaless</b><span>Asesoría fiscal para creadores y negocios digitales de España. Gasto: 1.274,93 € desde agosto, hoy a 20 € al día. En el CRM: 49 leads, 2 en fase de cierre, 0 ventas registradas.</span></div><div class="caja"><b>Ignia</b><span>Agencia de lanzamientos para infoproductores de LATAM y España. Gasto: 1.598,44 € desde agosto, hoy a 10 € al día. En el CRM: 37 leads, 0 calificados, 0 reuniones.</span></div></div>
-
-### Los embudos probados
-
-Un embudo es el camino que sigue la persona después de ver el anuncio.
-
-| Embudo | Fechas (2026) | Gasto | Qué cuenta como resultado | Resultados | Coste |
-|---|---|---|---|---|---|
-| **Tributaless** · a WhatsApp | 12 – 24 ago | 138,40 € | Conversación iniciada | 0 | no hay |
-| **Tributaless** · a formulario | 11 ago – 25 sep | 526,39 € | Lead de formulario de Meta | 79 | 6,66 € |
-| **Tributaless** · a landing, sin filtro | 15 – 20 oct | 131,11 € | Cualquier lead en la web | 11 | 11,92 € |
-| **Tributaless** · a landing, con filtro | 21 oct – hoy | 479,14 € | Lead calificado en la página de gracias | 8 | 59,89 € |
-| **Ignia** · a WhatsApp, LATAM | 11 ago – 14 sep | 495,80 € | Conversación iniciada | 144 | 3,44 € |
-| **Ignia** · a WhatsApp, España | 18 – 24 ago | 83,44 € | Conversación iniciada | 0 | no hay |
-| **Ignia** · a formulario, España | 24 ago – 25 sep | 551,04 € | Lead de formulario de Meta | 73 | 7,55 € |
-| **Ignia** · a landing «entrenamiento» | 7 – 25 sep | 269,33 € | Visita a la página de gracias | 17 | 15,84 € |
-| **Ignia** · a landing nueva, LATAM | 21 oct – hoy | 198,88 € | Lead en la página de gracias nueva | 10 | 19,89 € |
-
-> **Ojo al comparar:** cada embudo cuenta una cosa distinta. Una conversación es alguien que abrió el chat. Un lead de formulario dejó sus datos sin salir de Meta. Un lead de página de gracias rellenó un formulario en la web y, a veces, pasó un filtro. El coste de una fila no se compara con el de otra.
-
-Datos de Meta Ads, del CRM y de Slack hasta el 13 de noviembre de 2026. No hemos visto las piezas: lo que decimos de ellas sale de su nombre y de su texto.
-
-## Verticales · Tributaless: a quién le habla y qué le dice || El público, los ángulos y cómo se hicieron las piezas
-
-{lead} Tributaless es una asesoría fiscal para gente que vende por internet desde España. Su trabajo para Kunfupay es traer a quien tiene un problema con los impuestos y enseñarle que Kunfupay lo resuelve.
-
-### Qué es
-
-La web la presenta como «Asesoría fiscal para creadores de contenido». La idea de origen fue una «agencia fiscal» para creadores que pensaban en irse a Andorra. Hoy el mensaje es otro: **Kunfupay como alternativa a montar una LLC o a mudarse**. Corre con 20 € al día.
-
-### A quién apunta
-
-- **Dónde vive:** España. Todos los conjuntos se dirigen solo a España.
-- **Qué hace:** vende formación, mentorías, comunidades o servicios digitales.
-- **Cuánto factura:** los anuncios actuales dicen «más de 3.000 euros al mes».
-- **A quién se descarta:** a quien empieza, a quien vende productos físicos y a quien «busca pagar cero impuestos». Lo dice el propio anuncio.
-
-Para el equipo, un lead es **calificado** si vende productos digitales y factura 2.000 € al mes o más.
-
-En agosto los anuncios decían «si eres creador de contenido» y nada más. Entró mucha gente y casi toda se descartó. En octubre el texto empezó a decir cuánto hay que facturar.
-
-En Meta no se usan intereses. El conjunto actual usa un público parecido a una lista de dueños de comunidades de Skool.
-
-### Los ángulos que se usaron
-
-Un ángulo es el problema con el que entramos. Se usaron cuatro.
-
-| Ángulo | Qué dice | A quién le habla | Embudo |
-|---|---|---|---|
-| 1. Fiscalidad en general | «Si vendes productos digitales y tienes clientes internacionales, seguramente estes perdiendo dinero por no saber como tributar correctamente.» | Creador o profesional digital, sin filtro de facturación | WhatsApp y formulario |
-| 2. Delega tu fiscalidad | «Tú céntrate en crecer. Nosotros nos ocupamos de tu fiscalidad» | Infoproductor preocupado por Hacienda | Formulario |
-| 3. Miedo a Hacienda | «Hacienda puede bloquear tu cuenta en menos de 24h.» | Dueño de una comunidad de pago que factura mucho | Formulario |
-| 4. Cobra con Kunfupay y olvídate | Kunfupay le hace la factura a tu cliente. Tú solo le facturas a Kunfupay | Negocio digital que factura más de 3.000 € al mes | Landing |
-
-El ángulo 4 es el actual. Explica que Kunfupay funciona como «Merchant of Record»: es quien vende de cara al cliente, le hace la factura y se ocupa de los impuestos de esa venta.
-
-Dentro del ángulo 4, cada pieza cuenta un problema distinto:
-
-| Problema | Pieza | A quién nombra |
-|---|---|---|
-| Hacer 40 facturas después de un directo | Vídeo de IA 1 | Creador de contenido |
-| El 21 % de IVA de cada venta | Vídeo de IA 2 e imagen del frasco | Negocio digital |
-| Alumnos de Latinoamérica que no pueden pagar | Vídeo de IA 3 | Quien vende cursos con alumnos en LATAM |
-| No hace falta una LLC en Estados Unidos | Vídeo de IA 4, imagen del sobre e imagen de la pizarra | Coach o mentor |
-| Una factura por alumno | Vídeo de IA 5 e imagen de la bolsa | Infoproductor |
-| Dinero parado en Hotmart | Vídeo de IA 6 | Quien cobra por Hotmart |
-| Tu asesor no sabe qué es Hotmart | Vídeo de IA 7 | Quien vende cursos |
-| No hace falta irse a Andorra o a Dubái | Vídeo de IA 8 | Dueño de academia online |
-
-### Cómo se hicieron las piezas
-
-| Cuándo | Qué se hizo | Cómo |
-|---|---|---|
-| Agosto | Carrusel | Diseño del equipo. Cinco láminas: portada, dolor, giro, salida y cierre |
-| Agosto | Vídeos con avatar | Avatar de IA («Marta»). Hubo una versión con un gancho delante que no llegó a subirse |
-| Agosto | «Video Pol» | Persona a cámara, según el nombre. No está comprobado |
-| Septiembre | Cinco memes y tres estáticos | Imágenes. Los nombres dicen el formato: meme del cerebro, «change my mind», testimonio |
-| 8 de octubre | Vídeo de ventas de la landing | Grabado por el equipo |
-| 15 de octubre | Ocho vídeos «UGC con IA» | Personaje generado con IA. No es una persona real |
-| 20 de octubre | Estáticos nuevos | Doce hechos con IA (Claude) y cinco de diseño: pizarra, carpeta de la LLC, lista, monedas y tarro de impuestos. En Meta hay cuatro |
-| 12 de noviembre | Reel para traders | Dos versiones. Todavía no está en Meta |
-
-No consta ningún vídeo UGC grabado por una persona real. Un compañero pidió grabar los de octubre con alguien de verdad. La respuesta fue que nadie del equipo quiere salir en los anuncios de estas marcas.
-
-> **Corrección de Benja a los estáticos de octubre:** no poner a Kunfupay tan de frente. La pieza debe decir «Tributaless usa Kunfupay para darte este beneficio», no vender Kunfupay directamente.
-
-**Los guiones.** Los guiones de los vídeos están en documentos de Google que no hemos podido leer. Lo que sí tenemos es el texto que acompaña a cada anuncio. Abajo va el del anuncio que mejor funciona hoy.
-
-### Un anuncio por dentro: la imagen del sobre
-
-Es el estático que trajo 7 de los 8 leads calificados. Este es su texto, tal cual.
-
-::pizarratexto w=325
-<p>Si estás pensando en abrir una empresa en Estados Unidos solo para cobrar a tus clientes, mira lo que viene dentro de la carpeta.</p>
-<p>Un gestor allí. Una renovación cada año. Y cada año, el formulario 5472. Si se te pasa, la multa puede ser de 25.000 dólares.</p>
-<p>Todo eso para algo tan simple como cobrar.</p>
-<p>Tributaless, un negocio digital como el tuyo, se lo ahorró. Cobra a clientes de todo el mundo con Kunfupay, sin montar una LLC.</p>
-<p>¿Cómo? Kunfupay es la única pasarela de España que funciona como Merchant of Record: es su representante en cada venta. Kunfupay le hace la factura al cliente y los impuestos de esa venta son cosa suya. Tributaless solo le factura a Kunfupay.</p>
-<p>Y la renta la sigue haciendo en su país, como tiene que ser.</p>
-<p>Si vendes formación, mentorías, comunidades o servicios digitales, entra y mira si puedes cobrar igual.</p>
---
-R 0.97,0.04 | El filtro es una intención | No dice quién eres. Dice lo que estás pensando hacer: abrir una LLC. Solo se para quien ya vende fuera.
-R 0.97,0.20 | Datos exactos | Un formulario con número y una multa con cifra. Parecen medidos y se creen más.
-R 0.97,0.33 | La frase que lo resume | Compara el lío con algo sencillo. Deja el problema en ridículo.
-R 0.97,0.44 | Tributaless como ejemplo | Kunfupay no se vende de frente. Es lo que pidió Benja para estas piezas.
-R 0.97,0.60 | El mecanismo, explicado | Dice cómo funciona en tres frases. Sin esto, «sin LLC» suena a truco.
-R 0.97,0.80 | La frase que protege | Deja claro que no se promete pagar menos renta. Es verdad y evita problemas con Meta.
-R 0.97,0.93 | El cierre vuelve a filtrar | Nombra lo que vendes y pide un solo paso.
-pie: Texto del anuncio «IMG / SOBRE». Título: «Antes de abrir una LLC, mira esto».
-::fin
-
-Hay un aviso: la vista previa de Meta enseñó este anuncio con otro texto, el de las 40 facturas. Conviene abrirlo en el Administrador de anuncios y comprobar cuál se está mostrando.
-
-## Verticales · Tributaless: los embudos y sus resultados || Cuatro caminos en orden de fechas, qué funcionó y qué se propone
-
-{lead} Se probaron cuatro embudos en tres meses. El formulario trajo muchos leads que no valieron. La landing con filtro trae pocos, y son los únicos que avanzan en ventas.
-
-### Embudo 1 · Anuncio a WhatsApp
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>Carrusel y vídeos (avatar y persona a cámara). Botón de WhatsApp.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Un chat de WhatsApp. Sin landing.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Conversación iniciada.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Qué pasó después</b><span>562 clics y 0 conversaciones registradas en Meta.</span></div></div><figcaption>Embudo 1 · Anuncio a WhatsApp · del 12 al 24 de agosto de 2026</figcaption></figure>
-
-Gasto: 138,40 €. Clics: 562. Conversaciones registradas: 0. Meta rechazó varios vídeos en agosto, y dos de este embudo siguen rechazados.
-
-No sabemos si nadie escribió o si Meta no lo midió. El equipo tenía una hoja con leads de WhatsApp, así que algo entró. No consta cuántos.
-
-### Embudo 2 · Anuncio a formulario instantáneo
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>Vídeo con avatar, memes, carrusel y estáticos.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Formulario instantáneo: se rellena dentro de Meta. Sin landing.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Lead de formulario.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Qué pasó después</b><span>No hay página de gracias. Los leads se pasan a ventas. Casi todos acabaron en «SIN VALOR».</span></div></div><figcaption>Embudo 2 · Anuncio a formulario instantáneo · del 11 al 13 de agosto y del 18 de agosto al 25 de septiembre de 2026</figcaption></figure>
-
-Gasto: 526,39 €. Leads: 79. Coste por lead: 6,66 €. Fue el embudo con más volumen y el más barato. Las preguntas del formulario no constan.
-
-| Anuncio | Formato | Gasto | Leads | Coste por lead |
-|---|---|---|---|---|
-| VIDEO AVATAR | Vídeo con avatar de IA | 232,75 € | 39 | 5,97 € |
-| IMG MEME CEREBRO | Imagen (meme) | 131,01 € | 20 | 6,55 € |
-| IMG HACIENDA KUNFU | Imagen | 68,82 € | 7 | 9,83 € |
-| Carrusel FORM | Carrusel | 53,70 € | 7 | 7,67 € |
-
-Los otros ocho anuncios del conjunto no llegaron a gastar 13 € cada uno. De ellos no se puede concluir nada.
-
-### Embudo 3 · Anuncio a landing, lead sin filtro
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>8 vídeos con personaje de IA.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Landing con vídeo de ventas y formulario.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Cualquier lead del píxel, sin filtro.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué pasó después</b><span>Según el plan del equipo, la página de gracias era el registro de Kunfupay.</span></div></div><figcaption>Embudo 3 · Anuncio a landing, lead sin filtro · del 15 al 20 de octubre de 2026</figcaption></figure>
-
-Gasto: 131,11 €. Visitas a la landing: 1.018. Leads: 11. Coste por lead: 11,92 €. De cada 100 visitas, 1,1 dejó sus datos.
-
-Los 11 leads vinieron de un solo vídeo, el del IVA del 21 %. Tuvo cifras raras: de cada 100 veces que se enseñó, 21 acabaron en clic, a 0,07 € el clic. No sabemos en qué ubicación salió. Por eso no lo tomamos como referencia.
-
-Duró cinco días. Se cambió porque contaba cualquier lead, valiera o no.
-
-### Embudo 4 · Anuncio a landing, lead calificado
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>4 estáticos nuevos y 4 de los vídeos de IA.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>La misma landing, con formulario de 6 preguntas.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Filtro</b><span>Calificado: vende productos digitales y factura 2.000 € al mes o más.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Solo quien llega a la página de gracias de calificados.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué pasó después</b><span>El lead entra en el CRM y ventas lo contacta.</span></div></div><figcaption>Embudo 4 · Anuncio a landing, lead calificado · del 21 de octubre de 2026 a hoy. Es el que está activo.</figcaption></figure>
-
-Gasto: 479,14 €. Visitas a la landing: 391. Leads calificados: 8. Coste: 59,89 €. De cada 100 visitas, 2,0 acabaron como lead calificado.
-
-El formulario tiene seis preguntas: qué vendes, cómo tienes montada tu parte fiscal, cuánto facturas al mes, nombre, correo y teléfono. Según la respuesta, la persona va a la página de gracias de calificados o a la de no calificados. Meta solo cuenta la primera.
-
-Meta marca este conjunto como «aprendizaje fallido»: con 8 conversiones no tiene datos suficientes para optimizar.
-
-<figure><div class="caja" style="padding:12px 14px"><div style="font-size:9.6pt;font-weight:700;color:var(--marca);margin-bottom:8px">Embudo 4 · a qué anuncios fue el gasto (479,14 € en total)</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">IMG / SOBRE</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:55.0%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">316,49 €</div><div style="font-size:8.1pt;color:var(--gris)">7 leads calificados</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">IMG / PIZARRA</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:16.4%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">94,39 €</div><div style="font-size:8.1pt;color:var(--gris)">1 lead calificado</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">4 vídeos de IA</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:10.3%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">59,34 €</div><div style="font-size:8.1pt;color:var(--gris)">0 leads</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Otros 2 estáticos</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:1.5%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">8,91 €</div><div style="font-size:8.1pt;color:var(--gris)">0 leads</div></div></div></div><figcaption>Dos imágenes se llevan el 86 % del gasto del conjunto.</figcaption></figure>
-
-> **Por qué cuesta más:** no cuenta a quien deja sus datos, sino a quien además pasa el filtro. Comparar sus 59,89 € con los 6,66 € del formulario no tiene sentido.
-
-### Qué funcionó y qué no
-
-<div class="dos"><div class="si"><h4>Funcionó</h4><ul><li><strong>La imagen del sobre</strong> (LLC): 7 de los 8 leads calificados, a 45,21 € cada uno. Es el único anuncio que Meta puntúa por encima de la media en conversión.</li><li><strong>Poner el filtro en el texto:</strong> «más de 3.000 euros al mes» y «no es para ti si…».</li><li><strong>La landing con filtro:</strong> de sus 10 leads en el CRM, 9 siguen vivos y 2 están en fase de cierre.</li><li><strong>Para volumen:</strong> el vídeo con avatar (39 leads a 5,97 €) y el meme del cerebro (20 leads a 6,55 €).</li></ul></div><div class="no"><h4>No funcionó</h4><ul><li><strong>WhatsApp:</strong> 138,40 € y ninguna conversación registrada.</li><li><strong>El formulario instantáneo como fuente de clientes:</strong> barato, pero sus leads acabaron descartados.</li><li><strong>Los vídeos de IA en el embudo con filtro:</strong> 59,34 € y 0 leads. Meta casi no les dio gasto.</li><li><strong>Varios vídeos de agosto:</strong> Meta rechazó al menos tres.</li></ul></div></div>
-
-**Lo que no se llegó a probar.** Estas piezas gastaron menos de 12 € cada una y no sabemos si funcionan: los vídeos de IA del 3 al 8, las imágenes de la bolsa de impuestos y del frasco, y cuatro de los cinco memes.
-
-### Qué pasó con los leads en el CRM
-
-<figure><div class="caja" style="padding:12px 14px"><div style="font-size:9.6pt;font-weight:700;color:var(--marca);margin-bottom:8px">Tributaless · dónde están los 49 leads del CRM</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">SIN VALOR</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:55.0%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">37</div><div style="font-size:8.1pt;color:var(--gris)">descartados (76 %)</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Contacto inicial</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:11.9%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">8</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Lead frío</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:3.0%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">2</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Negociación</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:1.5%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">1</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Tomar decisión</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:1.5%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">1</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Venta</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:0.7%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">0</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div></div><figcaption>Foto del 13 de noviembre de 2026.</figcaption></figure>
-
-| De dónde viene el lead | Leads | Dónde están |
-|---|---|---|
-| Importados o sin campaña | 36 | 35 en «SIN VALOR» y 1 en contacto inicial |
-| Landing | 10 | 7 en contacto inicial, 1 en negociación, 1 en «tomar decisión» y 1 en «SIN VALOR» |
-| Con nombre de campaña | 3 | 2 en «lead frío» y 1 en «SIN VALOR» |
-
-- Los 36 importados encajan por fechas con el formulario instantáneo. No está confirmado: el CRM no guarda de qué anuncio vino cada uno.
-- Los 10 de la landing son los que mejor avanzan. Es una muestra pequeña.
-- Meta cuenta 98 leads y en el CRM hay 49. No sabemos por qué.
-
-**Una cosa por aclarar.** El informe del 11 de noviembre dice que Tributaless «ya cerró su primer cliente para Kunfupay». En el CRM no hay ninguna venta registrada.
-
-### Lo que se propone ahora
-
-El 11 de noviembre Rubén propuso tres públicos nuevos para Tributaless. Benja los reescribió en lo que llamó su «versión verdadera».
-
-| Público | La propuesta, tal como llegó | La versión de Benja |
-|---|---|---|
-| Creadores de UGC | Retirar de plataformas de trabajo sin pagar la cuota de autónomo | «¿Estás en el tramo correcto de autónomo? Te lo decimos en un diagnóstico.» |
-| Traders con cuenta de fondeo | Retirar sin pagar en España y «siendo invisible» | «Solo si ya cobras payouts y vives en España.» |
-| Creadoras de plataformas de suscripción | Retirar sin pagar impuestos en España, usando siglas para no nombrar la plataforma | «Cobras de una plataforma de fuera: decláralo bien y paga solo lo que te toca.» |
-
-La tercera queda para el final y con condiciones: sin siglas ni nombres en clave, solo para mayores de 18 años y sin imágenes sugerentes. Para los traders ya hay dos reels, del 12 de noviembre.
-
-### Los riesgos
-
-> **La regla que nos protege:** tal como llegaron, las tres propuestas prometen no pagar impuestos o no pagar autónomo. Para quien vive en España no es verdad. Y Meta lo lee como ayudar a un fraude: puede restringir la cuenta que compartimos con Kunfupay.
-
-Por eso hay dos decisiones tomadas:
-
-1. **Solo se lanza la versión verdadera.** Nada de «sin pagar impuestos», «invisible» ni palabras en clave para esquivar la revisión de Meta. Prometer algo falso sobre impuestos es, además, un riesgo legal.
-2. **Cuenta publicitaria propia.** Meta recomendó sacar Tributaless e Ignia a sus propias cuentas y dejar en la actual solo Kunfupay. Así un bloqueo no arrastra a Kunfupay.
-
-El equipo les pone fecha el lunes 16 de noviembre.
-
-## Verticales · Ignia: a quién le habla y qué le dice || El público, los ángulos y cómo se hicieron las piezas
-
-{lead} Ignia es una agencia de lanzamientos para quien ya vende cursos o comunidades. Su trabajo para Kunfupay es poner a Kunfupay al lado de Skool y de Hotmart delante de ese público.
-
-### Qué es
-
-La landing lo resume así: «Tus lanzamientos ya no serán picos, sino ingresos predecibles cada mes». Corre con 10 € al día.
-
-### A quién apunta
-
-- **Dónde vive:** empezó en LATAM y España. Desde el 20 de octubre, solo LATAM: Argentina, Chile, Perú, Colombia, Ecuador, Paraguay y Uruguay.
-- **Qué hace:** infoproductor o coach que ya vende.
-- **Cuánto factura:** los anuncios actuales dicen «ya facturas más de $5.000 al mes».
-- **Dónde vende:** Skool, Hotmart o Classroom de Kunfupay. El formulario lo pregunta.
-
-Para el equipo, un lead es **calificado** si vende productos digitales y factura 5.000 USD al mes o más. En Meta no se usan intereses: se usa un público parecido a una lista de dueños de comunidades de Skool.
-
-### Los ángulos que se usaron
-
-| Ángulo | Qué dice | A quién le habla |
-|---|---|---|
-| 1. Del curso barato al caro | «Un curso de 97 dólares no da para pagar un equipo, uno de $3.000 si.» | Quien vende barato y lo hace todo solo |
-| 2. Escalar de 3–10k a más de 50k | «de 3–10k a más de 50k en menos de 120 días» | Quien factura 3–5k al mes y está estancado |
-| 3. Tu negocio depende de ti | «Irte de vacaciones sin llevarte el trabajo contigo…» | Coach o infoproductor quemado |
-| 4. Leads malos y oferta que no cierra | «Fue al cielo a preguntarle a Dios por qué sus leads eran una basura» | Quien ya invierte en anuncios y no cierra |
-| 5. Lanzar en vez de publicar a diario | «Publicar todos los días no es una estrategia. Es una condena.» | Quien vive del contenido orgánico |
-| 6. Llena tu comunidad | «Si tienes tu comunidad en Classroom de Kunfupay o en Skool…» | Dueño de comunidad de pago |
-| 7. La herramienta no arregla el lanzamiento | «Puedes vender en Skool, Hotmart, Kunfupay o donde quieras.» | Quien cambia de plataforma buscando solución |
-| 8. Sistema contra los picos | De picos de lanzamiento a ingresos cada mes, en cuatro fases | Quien factura más de 5.000 $ al mes |
-
-El ángulo 8 es el actual. Lo llevan los nueve anuncios activos.
-
-Una regla que pidió Rubén para esta marca: poner siempre a Kunfupay al nivel de Skool y de Hotmart, junto a un problema o a una meta.
-
-### Cómo se hicieron las piezas
-
-| Cuándo | Qué se hizo | Cómo |
-|---|---|---|
-| Agosto | Tres vídeos UGC y un estático | No consta si los vídeos son de persona real o de IA. Los planos de apoyo se generaron con IA (Higgsfield) |
-| Finales de agosto | Reel «Dios» | Sketch con Benja a cámara, según el nombre y el texto |
-| Septiembre | Reels para España | Benja a cámara, según el nombre. Cada ángulo se grabó en tres formatos de vídeo distintos |
-| Septiembre | Estáticos del curso de 97 dólares | Cinco imágenes con el mismo texto. El ángulo cambia en la imagen: balanza, niveles, sistemas… |
-| 20 de octubre | Estáticos «de cartel» | Hechos con IA. Siete en la primera tanda. En Meta hay cinco: tuit, tráfico frío, pizarra, videojuego y MRR |
-| 20 de octubre | Cuatro vídeos | El mismo cuerpo con cuatro inicios: filtro, prueba social, dolor de lanzamientos y dolor de orgánico |
-| Octubre | Vídeo de ventas de la landing | En horizontal, de unos 3 minutos, con teleprompter. Tuvo tres versiones |
-
-> **Correcciones de Benja a los estáticos de octubre:** quitar «imagen ilustrativa». Empezar por «Si vendes en una de estas plataformas» con los tres logos debajo. Decir a partir de cuánto se factura. Y cerrar con «Agenda aquí», no con «diagnóstico gratis por WhatsApp».
-
-**Los guiones.** Igual que en Tributaless: los guiones de los vídeos están en documentos que no hemos podido leer. Tenemos los textos de los anuncios.
-
-### Un anuncio por dentro: el reel «Dios»
-
-Fue la pieza con más resultados en dos embudos: 39 conversaciones de WhatsApp en LATAM y 33 leads de formulario en España. Este es el texto de la versión de WhatsApp.
-
-::pizarratexto w=325
-<p><strong>Fue al cielo a preguntarle a Dios por qué sus leads eran una basura</strong></p>
-<p>No hace falta morirte para darte cuenta de que tu funnel no funciona.</p>
-<p>Grabarte y meterle dinero en ads no es una estrategia. Es una apuesta.</p>
-<p>Si tus leads entran y no compran, el problema casi nunca es el anuncio. Es que tu oferta no está diseñada para tráfico frío.</p>
-<p>En Ignia te ayudamos a construir:<br>— Una oferta cold-friendly que cierre sin necesitar mil llamadas<br>— Un sistema de contenido que construya autoridad mientras duermes<br>— Un proceso de venta que convierta a un desconocido en cliente de 2.000-3.000$</p>
-<p>Esto es lo que aplicamos con todos nuestros clientes. Si querés, te lo mostramos.</p>
---
-R 0.97,0.05 | El título es una historia | No explica nada. Da curiosidad y ya dice el dolor: leads que no valen.
-R 0.97,0.22 | Sigue la broma del vídeo | La primera línea enlaza con el sketch. Quien vio el reel sigue leyendo.
-R 0.97,0.36 | Una creencia que se rompe | «No es una estrategia. Es una apuesta.» Le quita la razón a lo que ya hace.
-R 0.97,0.50 | Le cambia el culpable | No es el anuncio, es la oferta. Abre la puerta a lo que vende Ignia.
-R 0.97,0.72 | Tres promesas con cifra | La última pone precio al cliente: filtra a quien vende barato.
-R 0.97,0.94 | Falta el filtro de facturación | No dice cuánto hay que facturar. Y usa «querés»: solo vale para parte de LATAM.
-pie: Título y texto del anuncio «IGNIA / REEL / DIOS BENJI». En el original, cada promesa lleva un emoji delante.
-::fin
-
-Este texto trajo volumen, pero no filtra. Los anuncios de octubre ya abren con «Solo si ya facturas +$5.000».
-
-## Verticales · Ignia: los embudos y sus resultados || Cuatro caminos en orden de fechas, qué funcionó y qué hay que arreglar
-
-{lead} Ignia siguió el mismo recorrido que Tributaless: de WhatsApp al formulario y del formulario a la landing. Consiguió contactos baratos en todos. Ninguno ha pasado de «lead frío» en el CRM.
-
-### Embudo 1 · Anuncio a WhatsApp
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>3 vídeos UGC, 1 estático y el reel «Dios».</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Un chat de WhatsApp. Sin landing.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Conversación iniciada.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Qué pasó después</b><span>LATAM: 144 conversaciones. España: 0. Casi nadie siguió el chat.</span></div></div><figcaption>Embudo 1 · Anuncio a WhatsApp · del 11 de agosto al 14 de septiembre de 2026</figcaption></figure>
-
-En LATAM: 495,80 € y 144 conversaciones, a 3,44 € cada una. En España: 83,44 € y ninguna.
-
-<figure><div class="caja" style="padding:12px 14px"><div style="font-size:9.6pt;font-weight:700;color:var(--marca);margin-bottom:8px">Ignia · WhatsApp en LATAM · hasta dónde llegó cada conversación</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Conversaciones</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:55.0%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">144</div><div style="font-size:8.1pt;color:var(--gris)">a 3,44 € cada una</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">Primera respuesta</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:53.5%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">140</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">2 mensajes o más</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:16.4%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">43</div><div style="font-size:8.1pt;color:var(--gris)">el 30 %</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:128px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">3 mensajes o más</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:4.6%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">12</div><div style="font-size:8.1pt;color:var(--gris)"></div></div></div></div><figcaption>Datos de Meta. No consta cuántas se calificaron.</figcaption></figure>
-
-El problema lo dijo Benja el 26 de agosto: «No contestan los mensajes y no puedo medirlo». En España, con las mismas piezas, no hubo ninguna conversación. El equipo concluyó que los ángulos de LATAM no servían allí.
-
-### Embudo 2 · Anuncio a formulario instantáneo
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>Reel «Dios», estáticos y reels de Benji.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Formulario instantáneo dentro de Meta.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Lead de formulario.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Qué pasó después</b><span>Sin página de gracias. En el CRM, todos fríos o no válidos.</span></div></div><figcaption>Embudo 2 · Anuncio a formulario instantáneo · solo España · del 24 de agosto al 25 de septiembre de 2026</figcaption></figure>
-
-Gasto: 551,04 €. Leads: 73. Coste por lead: 7,55 €. Solo se usó en España. Las preguntas del formulario no constan.
-
-| Anuncio | Formato | Gasto | Leads | Coste por lead |
-|---|---|---|---|---|
-| Reel «Dios» | Vídeo con persona | 248,73 € | 33 | 7,54 € |
-| IMG / KUNFU IGNIA 3 | Imagen | 69,46 € | 15 | 4,63 € |
-| Estático 2 de «lanzar en vez de publicar» | Imagen | 124,16 € | 11 | 11,29 € |
-| Estático 4 de «lanzar en vez de publicar» | Imagen | 28,59 € | 9 | 3,18 € |
-
-### Embudo 3 · Anuncio a landing con página de gracias
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>Reels de Benji y estáticos (España). Estáticos y vídeos UGC (LATAM).</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Landing «entrenamiento» con formulario.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Visita a la página de gracias.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué pasó después</b><span>La página avisa: te escribimos por WhatsApp en menos de 48 horas. Y pide crear cuenta en Kunfupay.</span></div></div><figcaption>Embudo 3 · Anuncio a landing con página de gracias · del 7 al 25 de septiembre de 2026</figcaption></figure>
-
-| Conjunto | Gasto | Visitas a la landing | Llegaron a gracias | Coste | De cada 100 visitas |
-|---|---|---|---|---|---|
-| España | 119,14 € | 544 | 3 | 39,71 € | 0,6 |
-| LATAM | 101,47 € | 1.172 | 9 | 11,27 € | 0,8 |
-| LATAM, segundo test | 48,72 € | 167 | 5 | 9,74 € | 3,0 |
-
-En España hubo 3 resultados: muy poco para concluir. En LATAM, las 14 visitas a gracias vinieron de dos estáticos del ángulo del curso de 97 dólares.
-
-**La página de gracias.** Confirma la solicitud y avisa de que el equipo escribirá por WhatsApp en menos de 48 horas. Mientras tanto, pide crear una cuenta en Kunfupay. No tiene calendario para reservar la llamada.
-
-### Embudo 4 · Anuncio a landing nueva
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>4 reels y 5 estáticos nuevos.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Landing nueva con formulario de 4 pasos.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Filtro</b><span>Calificado: vende productos digitales y factura 5.000 USD al mes o más.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Qué cuenta</b><span>Debería ser el lead de la página de gracias nueva. El conjunto mira otra cosa.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué pasó después</b><span>No consta. En el CRM no aparece ninguno de estos leads.</span></div></div><figcaption>Embudo 4 · Anuncio a landing nueva · solo LATAM · del 21 de octubre de 2026 a hoy. Es el que está activo.</figcaption></figure>
-
-Gasto: 198,88 €. Visitas a la landing: 171. Leads: 10. Coste por lead: 19,89 €. De cada 100 visitas, 5,8 dejaron sus datos: la mejor tasa de las landings de Ignia.
-
-Los 10 leads vienen de tres reels (6) y de tres imágenes (4). Ningún anuncio llega a 5, así que todavía no se puede decir cuál gana.
-
-El plan era: anuncios con IA, landing con vídeo y calendario para reservar. La landing no se ha podido abrir desde fuera: no sabemos si tiene calendario.
-
-### Dos cosas que hay que arreglar en el conjunto activo
-
-<div class="dos"><div class="no"><h4>1. Optimiza a algo que ya no pasa</h4><ul><li>El conjunto sigue buscando visitas a la página de gracias <strong>antigua</strong>.</li><li>Esa página no recibe visitas desde el 9 de octubre. Los leads entran por la <strong>nueva</strong>.</li><li>Resultado: Meta ve 0 conversiones y marca el conjunto como «aprendizaje fallido».</li><li><strong>Arreglo:</strong> cambiar el conjunto a la conversión nueva. Urge: si Meta ve cero, reparte el gasto a ciegas.</li></ul></div><div class="no"><h4>2. El enlace visible es de otra empresa</h4><ul><li>Los anuncios enseñan «www.ignia.com».</li><li>Ese dominio es hoy la web de otra empresa, una de ingeniería de software.</li><li>La web de la agencia es ignia.agency.</li><li><strong>Arreglo:</strong> revisar el enlace visible y el destino de los nueve anuncios.</li></ul></div></div>
-
-### Qué funcionó y qué no
-
-<div class="dos"><div class="si"><h4>Funcionó</h4><ul><li><strong>WhatsApp en LATAM, para abrir conversaciones:</strong> 144 a 3,44 €.</li><li><strong>El estático del curso de 97 dólares:</strong> 49 conversaciones a 1,73 € en WhatsApp. En la landing, 11 visitas a gracias a 7,35 €.</li><li><strong>El reel «Dios»:</strong> la pieza con más resultados en WhatsApp y en formulario.</li><li><strong>La landing nueva:</strong> 5,8 de cada 100 visitas dejan sus datos.</li></ul></div><div class="no"><h4>No funcionó</h4><ul><li><strong>WhatsApp en España:</strong> 83,44 € y ninguna conversación.</li><li><strong>El chat como embudo:</strong> solo 43 de 144 conversaciones pasaron del primer mensaje.</li><li><strong>La landing en España:</strong> 119,14 € y 3 resultados. Muestra pequeña.</li><li><strong>El paso a ventas:</strong> 0 calificados y 0 reuniones en el CRM.</li></ul></div></div>
-
-**Vídeos que se ven mucho y no traen nada.** Dos reels de septiembre retuvieron más de 3 segundos al 87,9 % y al 76,6 % de quien los vio, y no trajeron ningún lead. Con 4,11 € y 6,10 € de gasto, no demuestra nada.
-
-### Qué pasó con los leads en el CRM
-
-Hay 37 leads: 36 en «lead frío o no válido» y 1 en «venta perdida». Ninguno llegó a reunión, a negociación ni a venta.
-
-- De los 37, 35 vienen de los formularios instantáneos. Meta cuenta 73: faltan 38.
-- De las conversaciones de WhatsApp y de los leads de las dos landings no hay rastro en el CRM. Por eso no se puede decir si la landing nueva trae gente mejor.
-
-## Verticales · Lo que enseñan las dos juntas || Cinco lecciones que sostienen las cifras
-
-{lead} Las dos verticales recorrieron el mismo camino y tropezaron en los mismos sitios. Estas cinco lecciones salen de las dos a la vez.
-
-### 1. El lead barato no llegó a ventas
-
-| Embudo | Contactos en Meta | Coste | Qué pasó en el CRM |
-|---|---|---|---|
-| Tributaless · formulario instantáneo | 79 leads | 6,66 € | 36 leads importados o sin campaña: 35 en «SIN VALOR» |
-| Ignia · formulario instantáneo | 73 leads | 7,55 € | 35 leads: 34 fríos o no válidos y 1 venta perdida |
-| Ignia · WhatsApp en LATAM | 144 conversaciones | 3,44 € | Sin rastro. Solo 43 pasaron del primer mensaje |
-| Tributaless · WhatsApp | 0 conversaciones | no hay | Sin rastro |
-
-En Tributaless, la relación entre el formulario y esos 36 leads sale de las fechas. No está confirmada.
-
-> **Por qué pasa:** en el formulario instantáneo, Meta rellena los datos por la persona. Cuesta dos toques. Entra gente que no ha leído nada y que no sabe qué ha pedido.
-
-### 2. El filtro encarece el lead y es lo único que avanzó
-
-En Tributaless, los 10 leads de la landing son los únicos con recorrido: 9 siguen vivos y 2 están en fase de cierre. Cuestan mucho más que los del formulario.
-
-Es una señal, no una prueba: son 10 leads y todavía no hay ninguna venta en el CRM. En Ignia no se puede comprobar, porque los leads de la landing no aparecen en el CRM.
-
-### 3. En landing, casi todo vino de estáticos
-
-| Vertical y embudo | Estático | Vídeo |
-|---|---|---|
-| Tributaless · formulario | 34 leads a 7,59 € | 41 leads a 6,11 € |
-| Tributaless · landing con filtro | 8 leads a 52,47 € | 0 leads con 59,34 € |
-| Ignia · WhatsApp en LATAM | 49 conversaciones a 1,73 € | 95 conversaciones a 4,33 € |
-| Ignia · formulario | 37 leads a 6,28 € | 36 leads a 8,86 € |
-| Ignia · landing de septiembre | 15 de las 17 visitas a gracias | 2 de las 17 |
-
-En formulario la diferencia es pequeña. En landing, casi todo vino de imágenes. Hay un matiz: allí los vídeos casi no recibieron gasto. No sabemos si son peores o si Meta no los probó.
-
-### 4. Meta prueba una o dos piezas, no ocho
-
-En Tributaless, dos imágenes se llevan el 86 % del gasto. En el embudo 3, un solo vídeo se llevó 109,20 € de 131,11 €. Más de la mitad de las piezas quedó con menos de 12 €. Pasa lo mismo en Kunfupay: una pieza que se quiere probar va en su propio conjunto.
-
-### 5. España y LATAM no se comportan igual
-
-Ignia en WhatsApp, con las mismas piezas: 144 conversaciones en LATAM y 0 en España. En landing: 39,71 € por visita a gracias en España, frente a 11,27 € y 9,74 € en LATAM. Lo mismo se vio antes en la campaña de herramientas.
-
-### Qué datos faltan para decidir
-
-<ol class="pasos" style="columns:2;column-gap:9mm"><li><strong>UTM en todos los enlaces</strong> Sin ellas, el CRM no sabe qué anuncio trajo a cada persona. Es el pendiente número uno en las dos verticales.</li><li><strong>Saber dónde están los leads que faltan</strong> Meta cuenta 98 en Tributaless y el CRM tiene 49. En Ignia, ni los de WhatsApp ni los de las landings aparecen.</li><li><strong>Arreglar la conversión de Ignia</strong> Hasta entonces, sus cifras oficiales en Meta son cero.</li><li><strong>Más resultados por anuncio</strong> Solo un anuncio activo pasa de 5 resultados: la imagen del sobre. Del resto no se puede concluir nada todavía.</li><li><strong>Una venta atribuida</strong> No hay ninguna venta registrada en ninguno de los dos embudos del CRM.</li></ol>
-
-## Verticales · La campaña antigua de herramientas || El antecedente del embudo self-service
-
-{lead} Entre junio y agosto de 2026 Kunfupay ya anunció herramientas gratuitas. Es lo más parecido que tenemos al embudo self-service, y dejó dos enseñanzas.
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>Anuncio</b><span>Imagen o reel de una herramienta.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Destino</b><span>Página de la herramienta en kunfupay.com. Sin formulario.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>Qué cuenta</b><span>Cuenta gratuita creada.</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>Qué pasó después</b><span>No consta cuántos usaron la herramienta o cobraron con Kunfupay.</span></div></div><figcaption>Campaña de herramientas · del 22 de junio al 12 de agosto de 2026</figcaption></figure>
-
-Gasto total: 422,96 €. Registros: 199. La campaña está pausada.
-
-Se anunciaron cinco herramientas: ArtistGPT (avatares con IA), Sensei (de la idea al producto), Telegram ROI Manager (qué campaña llena tu canal), Biolinks (página de enlaces) y el bot de acceso a Telegram. Aquí sí se usaron intereses: inteligencia artificial, «Youtuber» y «Content Creator».
-
-<figure><div class="caja" style="padding:12px 14px"><div style="font-size:9.6pt;font-weight:700;color:var(--marca);margin-bottom:8px">Herramientas · coste por registro gratuito</div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:70px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">LATAM</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:7.5%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">1,38 €</div><div style="font-size:8.1pt;color:var(--gris)">182 registros con 251,21 €</div></div></div><div style="display:flex;align-items:center;gap:10px;margin-bottom:7px"><div style="width:70px;font-size:8.9pt;font-weight:600;text-align:right;flex:none">España</div><div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:55.0%;height:17px;background:var(--marca);opacity:.85;border-radius:2px;flex:none"></div><div style="font-size:8.9pt;font-weight:700;white-space:nowrap">10,10 €</div><div style="font-size:8.1pt;color:var(--gris)">17 registros con 171,75 €</div></div></div></div><figcaption>El CPM en España fue casi cinco veces mayor: 6,18 € frente a 1,28 €.</figcaption></figure>
-
-| Herramienta | Dónde | Gasto | Registros | Coste por registro |
-|---|---|---|---|---|
-| ArtistGPT | LATAM | 142,26 € | 108 | 1,32 € |
-| Telegram ROI Manager | LATAM | 102,13 € | 70 | 1,46 € |
-| ArtistGPT | España | 142,63 € | 14 | 10,19 € |
-
-Sensei, Biolinks y el bot de Telegram gastaron menos de 11 € cada uno: no se llegaron a probar.
-
-### Lo que deja para el self-service
-
-- **Un registro gratuito es barato, sobre todo en LATAM.** El mismo anuncio de ArtistGPT costó casi ocho veces más en España.
-- **Un registro no es un cliente.** No consta cuántos de los 199 usaron la herramienta o cobraron con Kunfupay. En el CRM no se pueden separar.
-- **El público era otro.** ArtistGPT y Sensei hablaban a creadores en general, incluso a quien «tiene una idea» y aún no vende. Hoy la regla es hablar solo a quien ya vende.
-- **AutoDM y Skool Radar no tienen anuncios.** Las herramientas del embudo self-service actual no aparecen en la cuenta de Meta.
-
-## Verticales · Lo que falta por confirmar || Lo que no consta y a quién hay que preguntar
-
-{lead} Esto es lo que no hemos podido comprobar. Mientras no se aclare, las conclusiones de este documento son provisionales.
-
-### De las dos verticales
-
-| Qué no consta | Por qué importa |
-|---|---|
-| Los enlaces de destino con sus UTM | Meta no los devuelve. Hay que copiarlos del Administrador de anuncios |
-| Las preguntas de los formularios instantáneos | No sabemos si filtraban algo |
-| Las imágenes y los vídeos | No se han visto. El tipo de pieza sale del nombre |
-| Los guiones de los vídeos | Están en documentos de Google que no se han leído |
-| En qué ubicaciones salieron los vídeos con clics anómalos | Explicaría por qué se veían tanto y no traían leads |
-| Por qué Meta y el CRM no cuadran | Faltan leads en el CRM y no sabemos dónde están |
-
-### De Tributaless
-
-- **La landing con el vídeo y sus páginas de gracias.** No se han podido abrir desde fuera. El equipo la sitúa en «tributaless.com/landing/vsl».
-- **Por qué WhatsApp marcó 0 conversaciones.** O nadie escribió o no se midió.
-- **El cliente cerrado.** El equipo lo da por hecho. En el CRM no hay ninguna venta.
-- **Qué texto enseña la imagen del sobre.** La vista previa devolvió otro.
-- **El texto de los carruseles y del primer vídeo.** Meta no lo devuelve.
-- **Cuáles de los estáticos de octubre se subieron.** Se hicieron diecisiete y hay cuatro en Meta.
-
-### De Ignia
-
-- **La landing nueva y su página de gracias.** No se han podido abrir. No sabemos si llevan calendario.
-- **La regla de calificado.** Benja escribió 5.000 USD al mes. Un resumen del mismo día dice «500 o más». Hay que confirmar la cifra.
-- **Los vídeos UGC de agosto.** No consta si son de persona real o de IA.
-- **Dónde están los leads de WhatsApp y de las landings.** No aparecen en el CRM.
-- **Si «www.ignia.com» es solo el texto visible o también el destino.**
-
-
-### De la campaña de herramientas
-
-No consta cuántos de los 199 registros usaron la herramienta.
-
-## Self-service · Qué es este embudo || Los dos embudos, los pasos y dónde se atasca hoy
-
-{lead} En el embudo self-service la persona entra sola. Llega por una herramienta gratuita, la usa y acaba cobrando con Kunfupay sin hablar con nadie de ventas.
-
-Kunfupay tiene dos embudos. Este documento solo habla del segundo. El primero está en el «Documento maestro de creatividades».
-
-| | Embudo con equipo comercial | Embudo self-service |
-|---|---|---|
-| **Cómo entra la persona** | Deja sus datos y habla con ventas | Entra sola, por una herramienta gratuita |
-| **Qué ofrece el anuncio** | Kunfupay: cobrar mejor | Una herramienta gratis que le resuelve algo de su día a día |
-| **Quién la acompaña** | Un comercial | Nadie. El producto se tiene que explicar solo |
-| **Qué buscamos** | Leads cualificados | Leads cualificados y muy baratos |
-| **El riesgo** | Que el lead salga caro | Que entre mucha gente barata que no tiene negocio |
-
-Benja lo resumió así el 11 de noviembre de 2026: «Aquí buscaríamos leads calificados y muy baratos». Y avisó: «cada detalle, cada herramienta y cada cosa tiene un porqué que puede hacer que se te llene de leads buenos o leads muy malos».
-
-> **Por qué importa:** lo barato no es el objetivo. Rubén lo dijo en julio de 2026: «Un ganador es un anuncio que nos trae gente de valor».
-
-### Los pasos, de arriba abajo
-
-<figure><div style="display:flex;align-items:stretch;gap:5px"><div class="caja" style="flex:1;padding:8px 7px"><b>1</b><span>Anuncio</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>2</b><span>Herramienta gratuita</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>3</b><span>Alta</span><span><strong>Aquí se pierde gente</strong></span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>4</b><span>Uso de la herramienta</span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px;border:2px solid var(--marca);background:var(--suave)"><b>5</b><span>Tienda en Kunfupay</span><span><strong>Aquí se pierde gente</strong></span></div><div style="align-self:center;color:var(--gris)">→</div><div class="caja" style="flex:1;padding:8px 7px"><b>6</b><span>Primera venta</span></div></div>
-<figcaption>Los seis pasos del embudo. Los dos recuadros marcados son los cuellos de botella de hoy, según el reporte del 11-11-2026 y los informes de ventas de octubre.</figcaption></figure>
-
-| Paso | Qué pasa | Qué sabemos hoy |
-|---|---|---|
-| **1 · Anuncio** | Un reel o una imagen en Instagram ofrece la herramienta | A 13-11-2026 no consta ninguna campaña de AutoDM lanzada en Meta |
-| **2 · Herramienta** | La persona llega a la herramienta. La primera es AutoDM | No consta que AutoDM tenga una página de entrada propia. Está propuesta |
-| **3 · Alta** | Se registra | Para usar AutoDM hay que pasar por el alta de una plataforma de pagos: 7 pantallas y unos 12 campos, con código por SMS y datos de facturación |
-| **4 · Uso** | Conecta su Instagram y la usa | 82 instalaciones de AutoDM en cuatro semanas (reporte del 11-11-2026). No sabemos cuántas conectaron Instagram |
-| **5 · Tienda** | Crea su tienda y su primer producto | El 75 % de las altas no empieza la verificación de identidad (informe de ventas, 15 a 31 de octubre de 2026) |
-| **6 · Primera venta** | Cobra con Kunfupay | Cuando la tienda se activa, cuatro de cada diez acaban vendiendo (informe de ventas de octubre) |
-
-> **Por qué hay que saberlo antes de hacer anuncios:** un anuncio puede traer a la persona perfecta y perderla en el alta. Este embudo no se arregla solo con creatividades.
-
-La propuesta del reporte del 11 de noviembre va por ahí: una página propia de AutoDM que diga arriba que es gratis y que hace falta un Instagram profesional, registro con Google, y dejar el alta de pagos para cuando la persona quiera cobrar. No consta que exista todavía.
-
-## Self-service · La parte más alta: las herramientas || De la más sencilla a la más compleja, y el patrón de Instagram
-
-{lead} En este embudo, lo primero que ve la persona no es Kunfupay. Es una herramienta gratuita. Elegir bien la herramienta es elegir a quién atraemos.
-
-La lista la hizo Rubén el 5 de noviembre de 2026 en el grupo de Slack «IDEAS TOP FUNNEL». Clasificó cada herramienta por dificultad técnica: hecha, fácil, media o difícil. Aquí van de la más sencilla a la más compleja.
-
-La columna «¿Es para Instagram?» no es de Rubén ni de Benja. Es **una lectura hecha para este documento**, a partir de lo que hace cada herramienta. Sirve para comprobar el patrón de Benja, que se explica después. Hay que revisarla.
-
-### Las que ya existen
-
-| Herramienta | Qué hace | Estado | ¿Es para Instagram? |
-|---|---|---|---|
-| **AutoDM** | Automatiza los mensajes directos de Instagram. Lleva dentro la tienda de Kunfupay para vender por mensaje | Hecha. Mejoras pedidas el 09-11-2026 | **Sí** |
-| **Kunfu Winner** | Sorteos gratis para redes sociales | Hecha | **En parte.** Sirve para redes en general |
-| **SkoolStats** | Buscador de comunidades de Skool. Una base de datos para quien vende a creadores | Hecha | **No** |
-| **Telesuites** | Traduce y clona canales de Telegram. Publica de Telegram a WhatsApp | Hecha | **No** |
-| **Skool Radar** | Analiza una comunidad de Skool. Da una puntuación y un informe | Hecha, con la marca Ignia. No está en la lista de Rubén | **No** |
-
-### Las fáciles de hacer (todavía son ideas)
-
-| Herramienta | Qué hace | ¿Es para Instagram? |
-|---|---|---|
-| **Mentores IA** | Un clon con IA de un mentor conocido (Hormozi) que opina sobre tu negocio | **No** |
-| **Auditoría de negocio con IA** | Revisa tu negocio con IA. Ya hay código de partida | **No** |
-| **Simulador de lanzamientos** | Simula un lanzamiento con IA y estima el resultado. Ya hay código de partida. Sin dificultad asignada | **No** |
-| **Instagram Scrapper** | Saca los seguidores de las cuentas de tu competencia | **Sí** |
-| **Valorador de reels** | Subes tu reel y te dice qué alcance tendrá | **Sí** |
-| **Generador de reels con IA** | Genera reels con IA | **Sí** |
-
-### Las de dificultad media y las difíciles
-
-Las difíciles son ocho. El plan de noviembre de 2026 a enero de 2027 dice que «las 8 difíciles esperan a que se cumplan los objetivos».
-
-<table><thead><tr><th style="width:23%">Herramienta</th><th>Qué hace</th><th style="width:11%">Dificultad</th><th style="width:18%">¿Es para Instagram?</th></tr></thead><tbody>
-<tr><td><strong>Plantillas de negocio</strong></td><td>Crea tu comunidad en Classroom desde una plantilla</td><td>Media</td><td><strong>No</strong></td></tr>
-<tr><td><strong>Kunfu Sites</strong></td><td>Para montar embudos: página de entrada, formularios y página de venta</td><td>Media</td><td><strong>No</strong></td></tr>
-<tr><td><strong>Sistema de prospección</strong></td><td>Prospección de clientes. No consta más detalle</td><td>Media</td><td>Pendiente</td></tr>
-<tr><td><strong>Setter IA</strong></td><td>No consta descripción. Por el nombre, haría el trabajo de un setter</td><td>Difícil</td><td>Pendiente</td></tr>
-<tr><td><strong>Kunfu CRM Agéntico</strong></td><td>Un CRM con IA</td><td>Difícil</td><td><strong>En parte</strong></td></tr>
-<tr><td><strong>Clone Metricool</strong></td><td>Copia de una herramienta de métricas y programación de redes</td><td>Difícil</td><td><strong>En parte</strong></td></tr>
-<tr><td><strong>Clone Higgsfield</strong></td><td>Copia de una herramienta de vídeo con IA. Ya hay código de partida</td><td>Difícil</td><td><strong>No</strong></td></tr>
-<tr><td><strong>Kunfu Email Marketing</strong></td><td>Envío de correos</td><td>Difícil</td><td><strong>No</strong></td></tr>
-</tbody></table>
-
-Las otras tres difíciles son Kunfu Autopilot, Editor gratis IA y Generador de apps: no consta qué hacen. Setter IA y Kunfu CRM Agéntico serían de Instagram si trabajan dentro de sus mensajes.
-
-### Ideas que llegaron después, sin dificultad asignada
-
-<table><thead><tr><th style="width:23%">Idea</th><th>Qué haría, de quién es y cuándo llegó</th><th style="width:18%">¿Es para Instagram?</th></tr></thead><tbody>
-<tr><td><strong>Loom gratuito</strong></td><td>Grabar pantalla y cámara y mandar el vídeo con un enlace, sin el límite de 5 minutos. Benja, 10-11-2026: hay un prototipo. No vive dentro de Instagram, pero Benja lo cuenta en su patrón</td><td><strong>En parte</strong></td></tr>
-<tr><td><strong>Enlace en la biografía</strong></td><td>Una página de enlaces gratis, tipo Linktree. Rubén, 05-11-2026</td><td><strong>Sí</strong></td></tr>
-<tr><td><strong>Bandeja única de mensajes</strong></td><td>Juntar en una bandeja los mensajes de Instagram, WhatsApp, correo y chat. Rubén, 09-11-2026: solo una captura</td><td><strong>En parte</strong></td></tr>
-<tr><td><strong>Espía de anuncios</strong></td><td>Escribes tu nicho y ves qué infoproductos llevan más tiempo anunciándose. Juanjo, 06-11-2026</td><td><strong>No</strong></td></tr>
-<tr><td><strong>Plantillas para vídeos</strong></td><td>No consta más detalle. Rubén, 11-11-2026</td><td>Pendiente</td></tr>
-</tbody></table>
-
-::salto
-
-### El patrón que detectó Benja
-
-Benja lo dictó así: «Yo detecté que, como patrón, para que una herramienta funcione, es que sea una herramienta que nos ayude en Instagram». Sus ejemplos: un CRM de Instagram, un ManyChat, un Loom, métricas para Instagram y conectores para Instagram.
-
-<figure><div class="dos" style="margin:0"><div class="caja"><b>Herramientas que ayudan en Instagram</b><span>Atraen a quien trabaja en Instagram: vende por mensajes y por llamada, con setters y closers. Es nuestro cliente ideal.</span></div><div class="caja"><b>Herramientas de fuera de Instagram</b><span>Atraen a quien trabaja con su web o con un e-commerce. «Son cosas que no nos interesan demasiado».</span></div></div></figure>
-
-> **Por qué:** Instagram «es la herramienta de trabajo que utiliza nuestro buyer persona» (nuestro cliente ideal). Quien busca una herramienta para Instagram ya nos está diciendo dónde trabaja.
-
-### Qué implica para priorizar
-
-- **AutoDM va primero.** De las cinco herramientas hechas, es la única que es claramente de Instagram. Coincide con lo que ya decidió el equipo.
-- **Las siguientes candidatas** serían las tres fáciles que son de Instagram: Valorador de reels, Generador de reels con IA e Instagram Scrapper. Esta última necesita revisión legal antes: saca datos de cuentas ajenas.
-- **Varias herramientas del patrón no están en la lista** con ese nombre: CRM de Instagram, métricas de Instagram y conectores. Lo más parecido está en el bloque difícil.
-- **SkoolStats, Telesuites y Skool Radar existen, pero no son de Instagram.** No se descartan: se miden aparte, para ver qué público traen. Skool Radar es un buen caso de prueba, porque habla a dueños de comunidades de Skool, que sí venden productos digitales.
-
-### Es una hipótesis: hay que comprobarla
-
-Benja lo vio como patrón. Todavía no hay datos que lo demuestren. La única campaña de herramientas, de octubre de 2026, dejó 7 leads, 0 tiendas y 0 ventas: demasiado poco para concluir nada.
-
-Su objetivo es detectar qué herramientas traen a los mejores leads, repetir lo que funciona, «y saber por qué funcionan las cosas y por qué no». Para eso hace falta saber, de cada herramienta:
-
-1. Cuántas altas trae y cuánto cuesta cada una.
-2. Cuántas de esas personas usan la herramienta de verdad.
-3. Cuántas crean tienda y cuántas hacen su primera venta.
-4. Qué venden (producto digital, producto físico o nada todavía) y cuánto facturan.
-
-Hoy no se puede: en octubre de 2026, 866 de las 1.219 altas llegaron sin el canal de origen apuntado. La parte 7 explica cómo medirlo.
-
-## Self-service · A quién le hablamos y cómo se le filtra || El lenguaje del nicho hace de filtro
-
-{lead} Hablamos a quien vende por Instagram con mensajes y llamadas. Lo filtramos con sus propias palabras, sin decirle a nadie «esto no es para ti».
-
-### A quién
-
-- Rubén, sobre AutoDM (11-11-2026): «Solo creadores de contenido».
-- La regla general de Kunfupay: «usamos siempre infoproductores o coaches, o productos digitales».
-- En este embudo, además, es gente cuya herramienta de trabajo es Instagram. Vende mentorías, cursos o programas. Tiene, o quiere tener, setters y closers.
-
-No consta una ficha del cliente ideal de este embudo: seguidores, facturación mínima, tamaño del equipo. Está pendiente. Como referencia, en las páginas de Kunfupay un lead cuenta como cualificado a partir del rango de 500 a 2.000 € al mes.
-
-### Las palabras del nicho
-
-| Palabra | Qué significa |
-|---|---|
-| **Setter** | La persona que contesta los mensajes y consigue que el cliente reserve una llamada |
-| **Seteo** | El trabajo del setter |
-| **Closer** | La persona que hace la llamada y cierra la venta |
-| **Agendamiento** | Una llamada de venta apuntada en el calendario |
-| **Llenar el calendario** | Tener llamadas de venta reservadas todos los días |
-| **Tasa de cierre** | De cada 100 llamadas, cuántas acaban en venta |
-
-«son palabras del nicho que utilizan ellos, que ya nos están filtrando a todo el público que nosotros queremos».
-
-### Cómo se filtra
-
-El filtro no es una frase que echa a alguien. Es una palabra que solo entiende quien nos interesa.
-
-<div class="dos"><div class="si"><h4>Sí</h4><ul><li>«La estructura de seteo para llenar tu calendario»</li><li>«Si tienes setters, mira esto»</li><li>«Sube tu tasa de cierre»</li><li>Hablar de agendamientos, closers y llamadas</li></ul></div><div class="no"><h4>No</h4><ul><li>«Esto no es para producto físico»</li><li>«Si tienes un e-commerce, no sigas»</li><li>«Para cualquier negocio»</li><li>«Para emprendedores»</li></ul></div></div>
-
-El ejemplo de «te voy a dar la estructura de seteo para poder llenarte tu calendario». A quien vende productos físicos no le interesa. «Sin yo decir "tú vendes productos físicos", los estoy filtrando por el mismo lenguaje».
-
-> **Por qué así:** la palabra del nicho hace dos cosas a la vez. Quien no la entiende, pasa. Quien la usa cada día, se queda. Y no gastamos los primeros segundos hablando de la gente que no queremos.
-
-### Por qué hace falta filtrar tanto aquí
-
-Tres razones:
-
-1. **Lo gratis atrae a todo el mundo.** las herramientas gratuitas traen público muy barato y con un nivel de conciencia muy bajo; «no sabemos si va a tener un negocio». Nivel de conciencia: cuánto sabe ya la persona de su problema y de las soluciones que hay.
-2. **Aquí no hay comercial que filtre después.** El anuncio es el único filtro antes del alta.
-3. **Quien entra sin negocio se queda fuera más tarde.** Del 1 al 25 de octubre de 2026, de 364 leads válidos, 223 (el 61 %) acabaron con la tienda rechazada. Casi siempre por el mismo motivo: negocio nuevo o sin ventas suficientes.
-
-> **Por qué:** cada alta de alguien sin negocio cuesta dinero y enseña a Meta a buscar más gente igual. Ya pasó: las campañas se optimizaban a registro, Meta aprendía de leads malos y hubo que cambiarlo.
-
-## Self-service · Las reglas de estas creatividades || Lo que no se hace, lo que sí y por qué
-
-{lead} Dos reglas mandan. No explicamos la herramienta desde cero. Y la comparamos con una que la persona ya conoce.
-
-<div class="dos"><div class="no"><h4>No se hace</h4><ul><li>Explicar qué es la herramienta desde cero</li><li>Enseñar a usarla paso a paso</li><li>«Si comentas este reel, te llega un mensaje automático de un bot»</li><li>Prometer «más dinero» sin concretar</li><li>Decir «no es para producto físico»</li></ul></div><div class="si"><h4>Sí se hace</h4><ul><li>Compararla con la que ya conocen: «el nuevo ManyChat», «un ManyChat gratis»</li><li>Decir quién la lanza: «lo lanzó Kunfupay, la fintech…»</li><li>Promesas muy altas y afines al nicho</li><li>Vender tiempo o dinero. El dinero, desglosado</li><li>Filtrar con las palabras del nicho</li></ul></div></div>
-
-### 1. No se explica la herramienta desde cero
-
-Las creatividades no enseñan a usar la herramienta ni explican qué es un AutoDM «como si las personas no lo supiesen». Lo que nunca se dice, en palabras de «mira, si me contestaste este reel te va a llegar un mensaje automático por un bot».
-
-> **Por qué:** «está apuntando a un nivel de conciencia súper bajo». Quien necesita esa explicación todavía no usa estas herramientas, y lo más probable es que no tenga un negocio que las necesite.
-
-### 2. Se compara con la herramienta que ya conocen
-
-Las tres formas que dictó Benja:
-
-- «Somos el nuevo ManyChat».
-- «Tenemos un ManyChat gratis».
-- «Hay una herramienta que es idéntica a ManyChat y además es gratis, te permite hacer todo esto, todo esto, todo esto».
-
-> **Por qué:** para Benja es «la forma más rápida de poner en la mente de las personas» qué es AutoDM. Una comparación ahorra toda la explicación. Y filtra: solo la entiende quien ya conoce ManyChat. Rubén pidió lo mismo el 11-11-2026: «Muy importante mencionar ManyChat en estas campañas».
-
-::salto
-
-**Dos cuidados con la comparación:**
-
-- «ManyChat» es la marca de otra empresa. Se escribe como palabra, sin su logo ni su interfaz, y sin hablar mal de ellos. Vale lo mismo para «Loom», «Metricool» o «Linktree». Conviene una revisión legal antes de publicar.
-- «Idéntica» solo se dice si es verdad función por función. El 9 de noviembre de 2026 se pidieron ocho mejoras para que AutoDM permita montar «un flujo completo al estilo ManyChat». Hasta que estén hechas, la frase segura es «un ManyChat gratis».
-
-### 3. Se dice quién la lanza
-
-La frase de «lo lanzó Kunfupay, la fintech…». Lo que va después de «la fintech» está pendiente de confirmar.
-
-> **Por qué:** Benja no dictó el porqué. La lectura es esta: una herramienta gratis sin nadie detrás da desconfianza. Decir quién la lanza da confianza y presenta a Kunfupay.
-
-### 4. Promesas muy altas y afines
-
-«Siempre vamos a utilizar promesas súper altas y que sean afines». Afín quiere decir que habla de lo que esa persona ya quiere conseguir.
-
-<ul style="columns:2;column-gap:8mm"><li>«Vamos a llenar tu calendario».</li><li>«Agenda 10 reuniones nuevas».</li><li>«Aumenta tu tasa de cierre o tu tasa de booking un 27 %».</li><li>«Ahórrate lo que te costaría un closer».</li><li>«No pagues más ManyChat».</li><li>«Este es el diagrama de flujo de ManyChat que me ayudó a agendar 10 reuniones todos los días».</li></ul>
-
-Las cifras de estos ejemplos enseñan la forma de la frase. No son datos. En un anuncio real, una cifra solo entra si alguien de Kunfupay la confirma, va con «hasta» y no es un número redondo. Nunca se garantiza un resultado.
-
-### 5. Se vende tiempo o dinero
-
-La promesa sale de lo que la persona quiere en su día a día: tiempo o dinero.
-
-<figure><div class="tres" style="grid-template-columns:1fr 2fr;margin:0"><div class="caja"><b>Tiempo</b><span>Horas que deja de gastar. Por ejemplo, las que su equipo pasa contestando mensajes a mano.</span></div><div class="caja"><b>Dinero, siempre desglosado</b><span><strong>Más reuniones:</strong> «agenda 10 reuniones nuevas». <strong>Más conversión:</strong> «aumenta tu tasa de cierre un 27 %». <strong>Más ventas.</strong> Y también lo que deja de pagar: «no pagues más ManyChat».</span></div></div></figure>
-
-> **Por qué:** «vamos a aumentar tu dinero» no basta. Depende de lo que ya facture cada uno. Una reunión más al día la entiende cualquiera del nicho.
-
-Las reglas generales del documento maestro siguen valiendo aquí: solo en español, sin mejoras automáticas de Meta, y 2 textos y 2 títulos por anuncio.
-
-## Self-service · Los tipos de creatividad || Cuatro tipos, de arriba abajo del embudo
-
-{lead} Hay cuatro tipos. El primero habla al público más amplio. El último, a quien ya usa una herramienta como la nuestra.
-
-::galeria creatividades/metodos-de-pago/espana/estaticos/ES-E1_1080x1350.png = Tweet ; creatividades/metodos-de-pago/hubs/estaticos/HUB-TAILANDIA-E5_1080x1350.png = Noticia con banda «Actualidad» y círculo rojo ; creatividades/metodos-de-pago/espana/estaticos/ES-E2_1080x1350.png = Comparativa en dos columnas ; creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png = Captura con flechas
-
-Estos son los formatos que ya usamos. Los cuatro anuncios son del otro embudo: están aquí por el formato, no por el mensaje. A ellos se suma el reel con el filtro en los 3 primeros segundos.
-
-### Los cuatro tipos, de arriba abajo del embudo
-
-<table><thead><tr><th style="width:18%">Tipo</th><th style="width:31%">Qué dice y a quién habla</th><th style="width:26%">Formato que mejor encaja</th><th>Ejemplo de titular</th></tr></thead><tbody>
-<tr><td><strong>A · Promesa de resultado</strong></td><td>El resultado que la persona quiere, con sus palabras. Habla a quien sabe que le faltan llamadas y no busca una herramienta. Es el más amplio</td><td>Reel con filtro. En imagen, una cifra grande, si hay cifra confirmada</td><td>«La estrategia de seteo para agendar [dato a confirmar] reuniones más al mes»</td></tr>
-<tr><td><strong>B · Comparación</strong></td><td>Esto es como lo que ya usas, y es gratis. Habla a quien ya conoce o ya paga ManyChat</td><td>Tweet: «sirven mucho para el MOFU» (la parte media del embudo). También reel. La comparativa, solo con datos comprobados</td><td>«Si tienes setters y pagas ManyChat, mira esto: ya existe un ManyChat gratis»</td></tr>
-<tr><td><strong>C · Lanzamiento</strong></td><td>Hay algo nuevo y lo lanza una empresa con nombre. Habla a quien conoce estas herramientas y se fija en lo nuevo</td><td>Noticia: banda «Actualidad», foto real saturada y círculo rojo con Rubén o el logo de Kunfupay</td><td>«Kunfupay lanza un ManyChat gratis para quien vende por Instagram»</td></tr>
-<tr><td><strong>D · Caso de uso</strong></td><td>Así lo uso yo y esto consigo. Un caso real, con permiso, no un tutorial. Habla a quien ya automatiza sus mensajes</td><td>Captura con flechas de la pantalla de AutoDM: «usar flechas siempre funciona»</td><td>«Este es el diagrama de flujo que me ayudó a agendar [dato a confirmar] reuniones todos los días»</td></tr>
-</tbody></table>
-
-> **Por qué cuatro tipos y no uno:** cada uno habla a una persona que sabe una cosa distinta. Probarlos por separado dice a qué altura del embudo está la gente buena.
-
-## Self-service · Los guiones y el guion de prueba || Qué hay que preparar y el primer reel de AutoDM
-
-{lead} El primer guion es un reel de AutoDM con tres inicios distintos y el mismo cuerpo. Sirve para saber qué inicio filtra y retiene mejor.
-
-### Los guiones que hay que preparar
-
-| Guion | Herramienta | Qué prueba |
-|---|---|---|
-| **1. Reel «un ManyChat gratis»**, con 3 inicios. Es el guion de prueba | AutoDM | Qué inicio filtra y retiene: promesa, comparación o tiempo |
-| **2. Tweet y noticia** de lanzamiento | AutoDM | Si la comparación directa funciona también en imagen |
-| **3. Reel de caso de uso:** «el diagrama de flujo que…» | AutoDM | Si un caso real atrae a gente más avanzada. Necesita ese caso |
-| **4. Reel «Comenta AUTODM»** | AutoDM | Si pedir un comentario trae altas más baratas que mandar al enlace. Falta confirmar que AutoDM puede hacerlo |
-| **5. Reel de sorteos:** «Aún pagas por hacer sorteos…» | Kunfu Winner | Si una herramienta que es de Instagram solo en parte trae al mismo público |
-| **6. Reel de control** | SkoolStats | El patrón de si una herramienta de fuera de Instagram trae otro público |
-
-Los guiones de las herramientas que aún no existen se escriben antes de hacerlas. Rubén se lo pidió a Juanjo con su idea: «Pon el anuncio como lo harías aquí, a ver si convencen».
-
-### El guion de prueba: reel de AutoDM
-
-Dura entre 30 y 40 segundos: unas 95 palabras, a 3 por segundo. Ninguna frase pasa de 12 palabras. Se graban tres inicios y un solo cuerpo, y salen tres versiones del mismo vídeo. El inicio es lo único que cambia: así se sabe cuál filtra y retiene.
-
-<table><thead><tr><th style="width:17%">Segundos 0 a 3</th><th>Rótulo fijo en pantalla</th><th>Voz</th></tr></thead><tbody>
-<tr><td><strong>Inicio A · Promesa</strong></td><td>«La estrategia de seteo para llenar tu calendario»</td><td>«Esta es la estrategia de seteo para llenar tu calendario.»</td></tr>
-<tr><td><strong>Inicio B · Comparación</strong></td><td>«Si tienes setters y pagas ManyChat, mira esto»</td><td>«Si tienes setters y pagas ManyChat, mira esto.»</td></tr>
-<tr><td><strong>Inicio C · Tiempo</strong></td><td>«Si tu setter contesta a mano, pierdes llamadas»</td><td>«Si tu setter contesta a mano, estás perdiendo llamadas.»</td></tr>
-</tbody></table>
-
-El rótulo está en pantalla desde el primer fotograma, sin animación. Dice para quién es antes de que la persona pase de largo.
-
-### El cuerpo, igual en las tres versiones
-
-<table><thead><tr><th style="width:10%">Segundos</th><th style="width:13%">Parte</th><th style="width:41%">Voz</th><th>Por qué está</th></tr></thead><tbody>
-<tr><td>3 a 9</td><td><strong>El dolor</strong></td><td>«Cada mensaje sin contestar es una llamada que no agendas.»<br>«Y tu equipo no llega a todos.»</td><td>Usa sus palabras: mensajes, llamadas, agendar. Quien no vende por llamada no se reconoce y se va</td></tr>
-<tr><td>9 a 14</td><td><strong>La comparación</strong></td><td>«Para eso ya conoces ManyChat.»<br>«Pues esto es un ManyChat gratis.»</td><td>Ahorra explicar la herramienta. Solo la entiende quien ya conoce ManyChat</td></tr>
-<tr><td>14 a 22</td><td><strong>Qué hace</strong></td><td>«Contesta los mensajes de Instagram por ti.»<br>«Vende tus productos en el mismo chat.»<br>[Tercera función: a confirmar con producto.]</td><td>Dos o tres cosas, sin tutorial. Solo funciones que producto haya confirmado</td></tr>
-<tr><td>22 a 27</td><td><strong>La promesa</strong></td><td>«Está hecho para llenar tu calendario de llamadas.»<br>«Hasta [dato a confirmar] reuniones más al mes.»</td><td>Vende lo que quiere: llamadas en el calendario. Es dinero, desglosado en reuniones</td></tr>
-<tr><td>27 a 31</td><td><strong>Quién lo lanza</strong></td><td>«Lo ha lanzado Kunfupay, la fintech para infoproductores y coaches.»<br>[Descripción a confirmar.]</td><td>Da confianza y presenta a Kunfupay</td></tr>
-<tr><td>31 a 36</td><td><strong>El cierre</strong></td><td>«Entra en el enlace y conéctalo a tu Instagram.»<br>«Es gratis.»</td><td>Pide un solo paso y repite que es gratis</td></tr>
-</tbody></table>
-
-Cuatro notas para grabarlo:
-
-- La línea de la cifra solo se graba si alguien de Kunfupay confirma el dato. Si no, se quita.
-- Hay un cierre alternativo: «Comenta AUTODM y te mando el enlace». Así el producto se demuestra solo. Antes hay que confirmar que AutoDM ya responde a un comentario con una palabra clave: estaba entre las mejoras pedidas el 09-11-2026.
-- En «Qué hace» se enseña la pantalla de AutoDM, sin retocar. Nunca el logo ni la pantalla de ManyChat.
-- Quién habla a cámara está por decidir. Los anuncios se llaman «REEL / SETEO A / AUTODM», «REEL / SETEO B / AUTODM» y «REEL / SETEO C / AUTODM».
-
-### Las dos piezas estáticas de prueba
-
-| Pieza | Cómo es | Texto |
-|---|---|---|
-| **Tweet** (tipo B). «ESTATICA / TWEET / AUTODM» | Fondo blanco. Foto de perfil, nombre y usuario de Rubén. Sin botones ni contadores | «Si tienes setters y pagas ManyChat cada mes, lee esto. Ya existe un ManyChat gratis. Contesta los mensajes de Instagram por ti y vende tus productos en el mismo chat. Lo ha lanzado Kunfupay. Pruébalo haciendo clic.» |
-| **Noticia** (tipo C). «ESTATICA / NOTICIA / AUTODM» | Banda roja «Actualidad». Foto real de fondo, saturada: por decidir. Círculo rojo con la foto de Rubén o el logo de Kunfupay | «Kunfupay lanza un ManyChat gratis para quien vende por Instagram con setters.» |
-
-### Los 2 textos y los 2 títulos del anuncio
-
-El texto largo filtra y explica todo, de tú a tú. El corto dice lo mismo en tres frases. Los dos títulos no se parecen.
-
-::pizarratexto w=325
-<p>Si vendes por Instagram con setters y closers, esto es para ti.</p>
-<p>Entran mensajes a todas horas. Tu setter contesta los que puede. Los demás se enfrían. Y cada mensaje que se enfría es una llamada que no entra en tu calendario.</p>
-<p>Para eso ya conoces ManyChat. Lo que quizá no sabes es que ya existe un ManyChat gratis.</p>
-<p>Se llama AutoDM. Lo ha lanzado Kunfupay, la fintech para infoproductores y coaches [descripción a confirmar].</p>
-<p>Qué hace:<br>— Contesta los mensajes de Instagram por ti, de forma automática.<br>— Vende tus productos en el mismo chat, con tu tienda de Kunfupay.<br>— [Tercera función: a confirmar con producto.]</p>
-<p>Y es gratis. Sin cuota mensual [a confirmar: sin límites].</p>
-<p>¿Para quién es? Para quien ya vende mentorías, cursos o programas y agenda llamadas desde Instagram. Si tu día a día es seteo, agendamientos y tasa de cierre, esto te va a sonar.</p>
-<p>¿Qué necesitas? Una cuenta profesional de Instagram.</p>
-<p>El objetivo es sencillo: que ningún mensaje se quede sin contestar y que tu calendario se llene de llamadas.</p>
-<p>Entra en el enlace, conéctalo a tu Instagram y pruébalo hoy.</p>
---
-R 0.97,0.03 | El filtro, en la primera línea | Setters y closers: quien no los tiene deja de leer aquí.
-R 0.97,0.14 | El dolor, con sus palabras | Mensajes que se enfrían y llamadas que no entran. Lo vive cada día.
-R 0.97,0.26 | La comparación | «Un ManyChat gratis» lo explica todo en cuatro palabras.
-R 0.97,0.315 | Quién lo lanza | Da confianza y presenta a Kunfupay.
-R 0.97,0.50 | Qué hace, en una lista | Corta y sin tutorial. Solo funciones confirmadas.
-R 0.97,0.70 | Para quién es | Segundo filtro, otra vez con palabras del nicho.
-R 0.97,0.935 | El cierre | Un solo paso. Igual que en el reel.
-pie: Texto 1, el largo. Es unas cinco veces el corto.
-::fin
-
-| | |
-|---|---|
-| **Texto 2, el corto** | «Si tienes setters y pagas ManyChat, mira esto. AutoDM es un ManyChat gratis: contesta los mensajes de Instagram por ti y vende en el mismo chat. Lo ha lanzado Kunfupay. Conéctalo a tu Instagram y pruébalo.» |
-| **Título 1** | «Un ManyChat gratis para tu seteo» |
-| **Título 2** | «Llena tu calendario de llamadas» |
-
-## Self-service · Cómo se va a medir || Del inicio del vídeo a la primera venta
-
-{lead} El anuncio más barato no es el ganador. Gana el inicio y la herramienta que traen a gente que acaba vendiendo.
-
-<figure><div class="tres" style="margin:0"><div class="caja"><b>1 · El inicio</b><span>Hook rate y retención de cada uno de los tres inicios. Se sabe en pocos días.</span></div><div class="caja"><b>2 · El coste</b><span>Cuánto cuesta cada alta. Se sabe en una semana.</span></div><div class="caja"><b>3 · La calidad</b><span>Cuántas altas usan la herramienta, crean tienda y venden. Tarda más, y es lo que decide.</span></div></div></figure>
-
-### Qué se mide
-
-| Medida | Qué es | Para qué sirve |
-|---|---|---|
-| **Hook rate** | De cada 100 personas que ven el anuncio, cuántas se quedan más de 3 segundos | Compara los tres inicios |
-| **Retención** | De las que se quedan, cuántas siguen viendo el vídeo hasta la comparación y hasta el final | Dice si el cuerpo aguanta |
-| **Coste por alta** | Lo gastado, dividido entre las altas conseguidas | Dice si el anuncio es barato. No dice si es bueno |
-| **Activación** | De cada 100 altas, cuántas conectan Instagram, crean tienda y hacen su primera venta | Es la medida de calidad |
-| **Buen lead** | Vende productos digitales y ya factura. El umbral para este embudo está por definir | Separa al curioso del cliente |
-
-> **Por qué las dos primeras no bastan:** un inicio puede retener mucho y traer a gente que no nos sirve. Benja busca «un hook que filtre y al mismo tiempo retenga».
-
-::salto
-
-### Qué apuntar de cada herramienta
-
-Es la ficha que permite comparar herramientas y comprobar el patrón de Instagram.
-
-| Qué se apunta | Para qué | Cómo está hoy |
-|---|---|---|
-| **Altas, con su origen** (qué herramienta y qué anuncio) | Saber qué trae cada una | En octubre de 2026, 866 de 1.219 altas llegaron sin canal |
-| **Cuántas usan la herramienta** | Separar la alta vacía de la que sirve | AutoDM: 82 instalaciones en cuatro semanas. No se sabe cuántas conectaron Instagram |
-| **Cuántas crean tienda** | Ver si pasan de la herramienta a Kunfupay | Se mide en ventas, no por herramienta |
-| **Cuántas hacen su primera venta, y en cuánto tiempo** | Es el final del embudo | Se mide en ventas, no por herramienta |
-| **Qué venden** (digital, físico o nada todavía) | Comprobar el patrón de Benja | No se apunta por herramienta |
-| **Cuánto facturan** (los rangos de las páginas de Kunfupay) | Saber si hay negocio | No se apunta por herramienta |
-| **Coste por alta y coste por tienda activa** | Comparar herramientas con la misma vara | Pendiente |
-
-Dos cosas tienen que estar antes de gastar: el origen relleno en cada alta, y los eventos medidos dentro de la aplicación (registro, tienda y primera venta). El reporte del 11 de noviembre de 2026 ya lo pide: «Nos falta medir dentro de la app».
-
-### Cómo se decide
-
-<ol class="pasos"><li><strong>Cada prueba, en su propio conjunto de anuncios</strong> Un anuncio nuevo metido junto a un ganador recibe 1 o 2 € en una semana y no se llega a probar.</li><li><strong>De una en una, con presupuesto de test y una semana</strong> Es lo que dice el reporte del 11 de noviembre de 2026 para las campañas nuevas.</li><li><strong>El inicio se elige con hook rate y retención</strong> Es una decisión provisional.</li><li><strong>El ganador se confirma con la calidad</strong> Cuando se sepa cuántas altas de cada inicio y de cada herramienta crearon tienda y vendieron.</li></ol>
-
-## Self-service · Lo que falta por definir o confirmar || La lista de pendientes
-
-{lead} Donde falta un dato, el documento lo dice. Esto es lo que hay que cerrar antes de publicar.
-
-### De producto
-
-- Qué hace AutoDM hoy, función por función. De ahí sale la lista de «Qué hace» del guion.
-- Si AutoDM es gratis sin límites de mensajes o de contactos.
-- Si se puede decir «idéntica a ManyChat». Hoy hay ocho mejoras pedidas y sin hacer.
-- Si AutoDM responde a un comentario con una palabra clave, también en anuncios. De eso depende el cierre «Comenta AUTODM».
-- La página propia de AutoDM y el alta sin los pasos de pagos. Son propuestas del 11-11-2026.
-- Qué hacen las herramientas sin descripción, como Setter IA o Kunfu Autopilot.
-
-### De cifras y frases
-
-- Toda cifra de promesa: reuniones, tasa de cierre, ahorro. Hace falta un caso real, con permiso.
-- Lo que va después de «Kunfupay, la fintech…», la foto de fondo de la noticia y quién habla en el reel.
-
-### Legal
-
-- El uso de «ManyChat», «Loom», «Metricool», «Linktree» y «Higgsfield» como palabra, y del nombre de Hormozi en Mentores IA.
-- Instagram Scrapper: las normas de Instagram y la protección de datos.
-
-### De medición
-
-- El origen relleno en todas las altas y los eventos dentro de la aplicación: registro, conexión de Instagram, tienda y primera venta.
-- A qué evento optimiza Meta en este embudo. Optimizar a registro ya enseñó a Meta a buscar leads malos.
-- Qué es un buen lead en self-service: qué vende y desde qué facturación.
-
-### Del equipo
-
-- La ficha del cliente ideal de este embudo, el presupuesto de test y las fechas. El equipo quedó en poner en calendario las campañas nuevas el lunes 16 de noviembre de 2026.
-- Comprobar con datos el patrón de Instagram y revisar la columna «¿Es para Instagram?» de la parte 2.
-- Leer dos fuentes que no se pudieron leer aquí: la transcripción de la reunión del 05-11-2026, en Notion, y el plan original de Rubén. Si dicen otra cosa, mandan ellas.

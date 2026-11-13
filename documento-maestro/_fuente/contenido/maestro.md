@@ -14,7 +14,7 @@ pie-pdf: Documento maestro de creatividades · Kunfupay
 | **Guía 2 · Vídeo y UGC** | Guion, grabación y medición |
 | **Guía 3 · Copys, subida y medición** | Textos, nombres, subida a Meta y lectura |
 | **Inventario** | Todas las creatividades, una por una |
-| **Self-service** y **Verticales** | Documentos aparte |
+| **Self-service, Tributaless e Ignia** | Más adelante |
 
 Cómo se lee: cada anuncio aparece con números y flechas. El número dice **qué se hizo** y el comentario dice **por qué**. Cuando algo se cambió, se enseña el antes y el ahora.
 
@@ -75,13 +75,13 @@ Por qué: un número exacto parece medido y se cree más que uno redondo; y hace
 
 ### El mismo anuncio en varios conjuntos
 
-<div class="ficha"><div><b>68 resultados</b><span>Profitstride · 3 conjuntos</span></div><div><b>45</b><span>Podcast Juanen · 3 conjuntos</span></div><div><b>39 a 4,7 €</b><span>Ignia «Dios Benji» · 3 conjuntos</span></div><div><b>39 a 6,0 €</b><span>Vídeo avatar Tributaless · 2 conjuntos</span></div><div><b>288 a 2,0 €</b><span>Marcas UGC (UGC Accelerator) · 2 conjuntos</span></div></div>
+<div class="ficha"><div><b>68 resultados</b><span>Profitstride · 3 conjuntos</span></div><div><b>45</b><span>Podcast Juanen · 3 conjuntos</span></div><div><b>288 a 2,0 €</b><span>Marcas UGC (UGC Accelerator) · 2 conjuntos</span></div></div>
 
 Un anuncio que da resultados en 2 o 3 conjuntos distintos es el candidato a escalar. Los de Kunfupay que lo cumplen son reels fiscales con una persona hablando.
 
 ### Lo que se repite entre nichos
 
-<div class="tres"><div class="caja"><b>Una persona habla a cámara</b><span>Profitstride y Podcast Juanen (Kunfupay), «Dios Benji» (Ignia), el avatar (Tributaless), las marcas UGC. En todos los negocios, lo que mejor cuesta es una voz humana contando un problema concreto.</span></div><div class="caja"><b>El lenguaje del nicho en la primera frase</b><span>«Si vendes cursos…», «¿Eres autónomo…?», «me faltan agendas…». Filtra antes del clic en todos.</span></div><div class="caja"><b>Una cifra concreta</b><span>27 % en Kunfupay, $97 en Ignia. Una cifra hace real el problema.</span></div></div>
+<div class="tres"><div class="caja"><b>Una persona habla a cámara</b><span>Profitstride y Podcast Juanen (Kunfupay), los reels con persona de Classroom y las marcas UGC. En todos los negocios, lo que mejor cuesta es una voz humana contando un problema concreto.</span></div><div class="caja"><b>El lenguaje del nicho en la primera frase</b><span>«Si vendes cursos…», «¿Eres autónomo…?». Filtra antes del clic en todos.</span></div><div class="caja"><b>Una cifra concreta</b><span>27 % en Kunfupay; 9 € por lead en el reel «3 22» de Classroom. Una cifra hace real el problema.</span></div></div>
 
 <div class="dos"><div class="si"><h4>Se repite y funciona</h4><ul><li>Persona a cámara con el problema dicho en voz alta.</li><li>Pantalla real del producto (página de pago).</li><li>Un solo mensaje por pieza.</li></ul></div><div class="no"><h4>Se repite y no funciona</h4><ul><li>El tweet en Classroom: 1.836 € y 73 € por lead.</li><li>Estáticos que solo explican, sin cara ni prueba.</li><li>Muchos anuncios nuevos a la vez.</li></ul></div></div>
 
@@ -111,7 +111,7 @@ Aviso: los resultados no son del mismo evento en todos los negocios (registro, l
 
 ### Otros negocios y embudos
 
-<div class="dos"><div class="caja"><b>Aumenta tus agendas un X %</b><span><em>Toca: deseo (calendario lleno).</em> Para el embudo self-service: seteo, closers, agendamientos.<br><b style="font-weight:600">Datos:</b> documento de Self-service. Cifras de ejemplo: «dato a confirmar».</span></div><div class="caja"><b>Tener un todo en uno</b><span><em>Toca: comodidad.</em> Una sola herramienta para varias.<br><b style="font-weight:600">Datos:</b> Ojo: la guía de marca prohíbe «todo en uno» y «centraliza tus plataformas». Hay que decidir antes de usarlo.</span></div></div>
+<div class="dos"><div class="caja"><b>Aumenta tus agendas un X %</b><span><em>Toca: deseo (calendario lleno).</em> Para un embudo futuro: seteo, closers, agendamientos.<br><b style="font-weight:600">Datos:</b> sin piezas todavía.</span></div><div class="caja"><b>Tener un todo en uno</b><span><em>Toca: comodidad.</em> Una sola herramienta para varias.<br><b style="font-weight:600">Datos:</b> Ojo: la guía de marca prohíbe «todo en uno» y «centraliza tus plataformas». Hay que decidir antes de usarlo.</span></div></div>
 
 <div class="dos"><div class="caja"><b>Dinero, acompañamiento, metodología (Classroom)</b><span><em>Toca: deseo (crecer con apoyo).</em> «Entramos con nuestro dinero en anuncios».<br><b style="font-weight:600">Datos:</b> Classroom: 168 leads a 45 €. El estático del videojuego, 53 leads a 25,53 €.</span></div><div class="caja"><b>Te responde una persona, no un bot</b><span><em>Toca: confianza (remarketing).</em> Foto del vendedor y «Escríbeme».<br><b style="font-weight:600">Datos:</b> remarketing de vendedores: sin resultados en los conjuntos 3 y 4.</span></div></div>
 
@@ -553,11 +553,11 @@ Aquí el lead busca la solución. El 15 % avanza, el triple que en los hubs. La 
 
 ::fig verticales
 
-Tributaless e Ignia tienen su propio documento («Verticales»), con sus ángulos, sus embudos y sus anuncios destripados. El embudo de herramientas gratuitas está en «Self-service». Aquí va lo que cada vertical aporta al sistema:
+Tributaless, Ignia y el embudo self-service se tratarán aparte más adelante. Aquí va lo que aportan las demás:
 
-<div class="tres"><div class="caja"><b>Tributaless</b><span>Un avatar de IA («Marta») y UGC con IA dan lead a 6 € y 13 €. Probaron WhatsApp, formulario, landing con y sin filtro.</span></div><div class="caja"><b>Ignia</b><span>Reels de «Dios Benji» a 4,7 €; es la vertical con lead más barato después de UGC Accelerator. El lead barato no siempre llegó a ventas.</span></div><div class="caja"><b>UGC Accelerator</b><span>885 € y 364 registros a 2,43 €; y formulario condicional a 1,16 €. Mucho volumen, calidad por demostrar.</span></div></div>
+<div class="dos"><div class="caja"><b>UGC Accelerator</b><span>885 € y 364 registros a 2,43 €; y formulario condicional a 1,16 €. Mucho volumen, calidad por demostrar.</span></div><div class="caja"><b>Google Ads</b><span>Búsqueda con intención: 15 % avanza en Kommo.</span></div></div>
 
-<div class="tres"><div class="caja"><b>Google Ads</b><span>Búsqueda con intención: 15 % avanza en Kommo.</span></div><div class="caja"><b>Partners</b><span>Embudo de socios con valor asociado en Kommo. No tiene creatividad de Meta.</span></div><div class="caja"><b>Puerta fría y redes</b><span>Contacto directo por Instagram de cada vendedor (Jorge, Juan, Rafa, Taiab). Los anuncios de remarketing alimentan estos embudos.</span></div></div>
+<div class="dos"><div class="caja"><b>Partners</b><span>Embudo de socios con valor asociado en Kommo. No tiene creatividad de Meta.</span></div><div class="caja"><b>Puerta fría y redes</b><span>Contacto directo por Instagram de cada vendedor (Jorge, Juan, Rafa, Taiab). Los anuncios de remarketing alimentan estos embudos.</span></div></div>
 
 ### Lo que falta
 

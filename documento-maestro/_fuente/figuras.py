@@ -318,11 +318,9 @@ def platinum():
 def verticales():
     filas = [('Kunfupay (Meta)', 'Métodos de pago, fiscal, cuenta a tu nombre, hubs', 'Meta + Kommo', 'Maestro'),
              ('Classroom Platinum', 'Creadores que ya facturan', '7.575 € · 168 leads · 45 €', 'Maestro'),
-             ('Tributaless', 'Impuestos para creadores', '1.227 € · 94 res. · 13 €', 'Verticales'),
-             ('Ignia', 'Agencia de lanzamiento', '1.550 € · 205 res. · 7,6 €', 'Verticales'),
              ('UGC Accelerator', 'UGC', '940 € · 412 res. · 2,3 €', 'Maestro'),
              ('Google Ads', 'Búsqueda', 'Kommo: 231 leads', 'Maestro'),
-             ('Self-service', 'Herramientas gratuitas', 'Embudo nuevo', 'Self-service')]
+             ]
     h = (f'<div style="display:grid;grid-template-columns:130px 1.1fr 1.1fr 78px;border:1px solid {LINEA};border-radius:5px;overflow:hidden;font-size:8.4pt">'
          + ''.join(f'<div style="background:{MARCA};color:#fff;font-weight:700;padding:6px 8px;font-size:7.8pt">{c}</div>' for c in ('Vertical', 'A quién', 'Meta, 90 días', 'Dónde')))
     for i, r in enumerate(filas):
