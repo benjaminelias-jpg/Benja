@@ -151,6 +151,26 @@ def cambio(resto, lineas):
             f'<div class="notas2">{lista}</div>{cap}</figure>')
 
 
+def tira(resto, lineas):
+    """Vídeo destripado. Líneas: ruta | tiempo | guion (subtítulo) | por qué ; pie: texto."""
+    w = re.search(r'w=(\d+)', resto)
+    w = int(w.group(1)) if w else 92
+    filas, pie = '', ''
+    for ln in lineas:
+        ln = ln.strip()
+        if not ln:
+            continue
+        if ln.lower().startswith('pie:'):
+            pie = ln[4:].strip()
+            continue
+        r, t, g, p = [x.strip() for x in ln.split('|', 3)]
+        filas += (f'<div class="fila"><div class="fr"><img src="{ruta_img(r)}" style="width:{w}px"><span>{enlinea(t)}</span></div>'
+                  f'<div class="gu">{enlinea(g)}</div><div class="po">{enlinea(p)}</div></div>')
+    cap = f'<figcaption>{enlinea(pie)}</figcaption>' if pie else ''
+    return ('<figure class="tira"><div class="cab"><div></div><div>Lo que se dice (subtítulos)</div><div>Qué se hace y por qué</div></div>'
+            + filas + cap + '</figure>')
+
+
 class Doc:
     def __init__(self, texto):
         self.l = texto.split('\n')
@@ -252,6 +272,8 @@ class Doc:
             r = re.sub(r'\s+w=\d+', '', r)
             return (f'<figure><div class="solo"><img src="{ruta_img(r)}" style="width:{w}px">'
                     f'<figcaption>{enlinea(pie.strip())}</figcaption></div></figure>')
+        if cmd == 'tira':
+            return tira(resto, self.hasta_fin())
         if cmd == 'cambio':
             return cambio(resto, self.hasta_fin())
         raise SystemExit('orden desconocida: ' + ln)

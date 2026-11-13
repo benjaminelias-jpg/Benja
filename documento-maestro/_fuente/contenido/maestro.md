@@ -34,9 +34,17 @@ Todas estas piezas corren en público frío. La parte del embudo no dice en qué
 
 Por qué: si Meta recibe dos anuncios con la misma idea, elige uno y el otro no gasta. Creemos que probamos ocho y probamos uno.
 
-### Los 8 anuncios de un conjunto
+### La matriz de lanzamiento
 
-::fig ocho
+Cada vez que lanzamos una campaña usamos la misma matriz: **3 de dolor, 2 de creencia o comparativa, 1 de mecanismo, 1 de prueba y 1 de oferta**.
+
+::fig matriz
+
+Para qué sirve:
+
+<div class="tres"><div class="caja"><b>Cubrir todos los ángulos</b><span>Al lanzar no sabemos cuál va a funcionar. Con ocho piezas que tocan cada momento del embudo, Meta nos dice cuál.</span></div><div class="caja"><b>Tener un MVP rápido</b><span>Con una matriz fija no se empieza de cero: se rellena con lo que ya sabemos de ese público y se lanza en días.</span></div><div class="caja"><b>Sofisticar después</b><span>Con los resultados y la investigación, cada hueco se sustituye por una versión mejor. La matriz no cambia; lo que hay dentro, sí.</span></div></div>
+
+Experimentamos siempre: la matriz es el punto de partida, no la respuesta. Un hueco que no funciona se reemplaza (no se retoca) y un ángulo nuevo entra en un conjunto de prueba aparte.
 
 ## Patrones que se repiten || Lo que tienen en común nuestros 58 anuncios con copy
 
@@ -284,6 +292,10 @@ Un hub es un sitio con gente que habla español y vende por internet. Cada hub t
 
 ::galeria creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png = LATAM: «tus herramientas no pasan la frontera» ; creatividades/metodos-de-pago/hubs/estaticos/HUB-DXB-E3_1080x1350.png = Dubái: España por la mañana, LATAM por la noche ; creatividades/metodos-de-pago/hubs/estaticos/HUB-BALI-E3_1080x1350.png = Bali: tú duermes y tus clientes pagan
 
+En todos los hubs lanzamos lo mismo: **cinco estáticos y un grupo de reels**, con el lugar cambiado. El diseño se recicla y solo cambia el nombre del lugar, las banderas y los métodos de pago que salen:
+
+::imagen documento-maestro/_fuente/img/collage-hubs.png w=620 | Los 25 estáticos de los hubs: en filas LATAM, Bali, Dubái, Miami y Tailandia; en columnas, los cinco formatos (E1 a E5). La estructura es la misma en todos. Esto es lo que lanzamos siempre en un hub nuevo, y a partir de ahí experimentamos.
+
 Por qué LATAM funciona: es barato y hay mucho público que habla español. Los 5 clientes de los hubs en esas dos semanas vinieron todos de LATAM. Reglas: se elige por gente que habla español y tiene negocio; Bali y Tailandia, sin cripto; antes de abrir un hub se confirma por escrito que Kunfupay acepta vendedores de ese país.
 
 ### Optimización fiscal y cuenta a tu nombre
@@ -331,6 +343,48 @@ Cómo se leen juntos: hook alto y retención baja, el inicio promete algo que el
 <div class="tres"><div class="caja"><b>Equipo a cámara</b><span>Rubén, Jorge o Benja explican algo.</span></div><div class="caja"><b>Vendedor</b><span>«Escríbeme y te lo enseño».</span></div><div class="caja"><b>UGC</b><span>Un creador de fuera lo cuenta con sus palabras.</span></div></div>
 
 Quien habla cambia la persona del verbo: el equipo dice «nosotros», un creador de fuera «ellos», el vendedor «yo». La grabación y la edición están en la **Guía 2**.
+
+## Vídeos destripados || Guion, edición y por qué funciona cada parte
+
+{lead} Dos reels de los hubs, fotograma a fotograma. A la izquierda el momento; en el centro lo que se dice (sale de los subtítulos del vídeo); a la derecha, qué se hace y por qué.
+
+### Reel «¿Cómo te pago?» (46 s)
+
+::tira w=92
+documento-maestro/_fuente/img/vid/ctp-01.jpg | 0 s | «A mí me gustaría entrar…» | **Rótulo fijo desde el primer fotograma:** «No más llamadas que suenen así». Dice de qué va y filtra antes de que haya escena. No se anima ni carga: está ahí desde el segundo cero.
+documento-maestro/_fuente/img/vid/ctp-07.jpg | 6 s | «Yo crédito no tengo» | **Escena de la objeción.** Una llamada en la que el cliente quiere comprar y no puede pagar. Es la frase real que el vendedor ya ha oído, y quien vende cursos se reconoce.
+documento-maestro/_fuente/img/vid/ctp-13.jpg | 12 s | «Ni idea qué es crypto» | **La complicación sube.** Cada frase añade un obstáculo (crédito, cripto, no sé si tenés). El plano no cambia: la tensión está en el texto, y por eso se retiene.
+documento-maestro/_fuente/img/vid/ctp-22.jpg | 21 s | «Pesos colombianos» | **Se nombra lo que pasa en el país**, no un método de pago. Es la regla: el país y la situación, no métodos desconocidos.
+documento-maestro/_fuente/img/vid/ctp-28.jpg | 27 s | (sin subtítulo) | **Corte con la interfaz de Reels en blanco y negro, en pausa.** Marca el cambio entre la escena y la solución sin decir «ahora te explico». Parece contenido, no anuncio.
+documento-maestro/_fuente/img/vid/ctp-31.jpg | 30 s | «Kunfupay» | **Cambio de plano y de lugar:** la persona habla a cámara. Cambiar de plano devuelve la atención justo cuando se nombra el producto.
+documento-maestro/_fuente/img/vid/ctp-37.jpg | 36 s | «Local» | **Explica la solución con el cuerpo:** habla de pie, con gesto y una taza en la mano. Una persona real, sin guion visible.
+documento-maestro/_fuente/img/vid/ctp-40.jpg | 39 s | «Euros o dólares» | **Cierra con lo que recibe quien vende.** Mismo patrón que en los estáticos: el cliente paga como quiere y tú recibes euros o dólares.
+documento-maestro/_fuente/img/vid/ctp-43.jpg | 42 s | «Es más fácil» | **Cierre corto y cercano.** Sin voz de anuncio: termina como si fuera una conversación.
+pie: Reel «COMO TE PAGO» de los hubs. Subtítulos de una o dos palabras en pantalla, en blanco y con borde: se leen sin sonido.
+::fin
+
+### Reel «Tres cosas que ya no necesitas» (52 s)
+
+::tira w=92
+documento-maestro/_fuente/img/vid/tc-01.jpg | 0 s | «…de varios países» | **Plano cerrado, fondo oscuro, mirada a cámara.** Estética distinta a la de «¿Cómo te pago?»: cambiar de estética evita que Meta lo cuente como el mismo anuncio y da otro inicio que probar.
+documento-maestro/_fuente/img/vid/tc-07.jpg | 6 s | «Te va a encantar» | **Luz roja en la cara.** Un cambio de iluminación a mitad de frase es un corte visual: devuelve la atención sin cambiar de plano.
+documento-maestro/_fuente/img/vid/tc-10.jpg | 9 s | «En cripto» | **Plano abierto con el portátil.** Cada «cosa» que ya no necesita va con un plano distinto: el ritmo visual acompaña la lista.
+documento-maestro/_fuente/img/vid/tc-19.jpg | 18 s | «Un banco aparte» | **Plano muy cerrado**, la persona más cerca: enfatiza justo lo que más duele (abrir un banco aparte).
+documento-maestro/_fuente/img/vid/tc-22.jpg | 21 s | (pantalla) | **Pantalla real del producto:** el enlace creado con su QR. Es la prueba: ya no es algo que se promete, se ve.
+documento-maestro/_fuente/img/vid/tc-25.jpg | 24 s | (pantalla) | **Página de pago real de México**, con el selector de país y sus métodos. Es el mismo gancho visual de los estáticos: ver lo que ve el cliente.
+documento-maestro/_fuente/img/vid/tc-34.jpg | 33 s | «No lo querés» | **Vuelve a la persona.** Tras la prueba en pantalla, regresa la cara para sostener la confianza.
+documento-maestro/_fuente/img/vid/tc-37.jpg | 36 s | «Ni Stripe» | **Sticker con la palabra Stripe flotando.** Se nombra la herramienta como palabra, sin el logo: la persona reconoce de qué hablamos.
+documento-maestro/_fuente/img/vid/tc-49.jpg | 48 s | «Internacionalmente» | **Cierre con las manos abiertas**, abiertas hacia la cámara. Un gesto de invitación, no de venta.
+pie: Reel «TRES COSAS» de los hubs. Estructura: gancho, tres cosas que ya no necesitas, prueba en pantalla, cierre.
+::fin
+
+### Los patrones que se repiten en los dos vídeos
+
+<div class="tres"><div class="caja"><b>El rótulo o el primer subtítulo filtra</b><span>Dice para quién es desde el segundo cero.</span></div><div class="caja"><b>Cambios visuales cada 3–6 segundos</b><span>Plano, luz, pantalla o lugar. Sostienen la retención sin añadir ideas.</span></div><div class="caja"><b>La prueba en pantalla</b><span>El producto real aparece a mitad del vídeo, no al final.</span></div></div>
+
+<div class="tres"><div class="caja"><b>Subtítulos de una o dos palabras</b><span>En blanco, con borde y centrados. Se leen sin sonido.</span></div><div class="caja"><b>Una persona, no una voz en off</b><span>Cámara, gesto, ropa y fondo normales. Parece contenido.</span></div><div class="caja"><b>El resultado al final</b><span>«Euros o dólares». Es lo que gana quien vende.</span></div></div>
+
+Dos detalles a revisar en estos vídeos: usan voseo («que vos quieras», «ya tenés todo»), y la regla es español de España y sin palabras de un solo país; y la pantalla de México enseña OXXO, que es real en esa página pero conviene no mostrarlo en hubs donde no aplica.
 
 ## Cuándo estático y cuándo vídeo || Dónde solo grabamos, dónde alternamos y por qué
 
@@ -405,6 +459,27 @@ El coste por lead engaña si los leads son malos, por eso se cruza con el CRM (s
 1. **El tweet aún no ha dado resultados baratos.** En Classroom es el anuncio donde más gasta Meta (1.836 €) y cada lead sale a 73 €, el más caro.
 2. **La noticia depende del sitio.** «Noticia Pago Global» dio registros a 12,91 €; en Andorra, la misma idea gastó 383 € para 4 registros.
 3. **Un anuncio gana con un objetivo y pierde con otro.** Profitstride es el mejor por registros; en el conjunto que busca leads de la página gastó 422 € y dio 1.
+
+## Qué cambió en el mensaje || Por qué ahora entran leads mejores
+
+{lead} Hace dos o tres meses el mensaje era más general. Hoy filtra mucho más. Esto es lo que cambió, ordenado de lo más probable a lo menos.
+
+<div class="dos"><div class="no"><h4>Hace 2–3 meses</h4><ul><li>Fiscal general: «Carga fiscal», «Sin riesgo», «Factura»: no nombraban a quién va dirigido.</li><li>Carrusel «Pago global» y noticias sin filtro.</li><li>Se hablaba del producto, no de lo que la persona vende ni de la herramienta que usa.</li><li>Un texto corto y pocos anuncios con filtro.</li></ul></div><div class="si"><h4>Ahora</h4><ul><li>Filtro explícito: «Si vendes cursos desde…».</li><li>Se nombra la herramienta: Stripe, PayPal, Hotmart.</li><li>«Si todavía no vendes, esto no es para ti» en 55 de 58 anuncios.</li><li>Texto largo de unos 1.400 caracteres que explica todo antes del clic.</li><li>Prueba real: páginas de pago de verdad.</li><li>Sin formulario instantáneo: el clic lleva a nuestra página.</li></ul></div></div>
+
+### Lo que sí sabemos con datos
+
+<div class="ficha"><div><b>56 %</b><span>de los leads de los hubs se descartan en ventas</span></div><div><b>74 %</b><span>en el testeo de España</span></div><div><b>44 €</b><span>por lead cualificado en hubs</span></div><div><b>258 €</b><span>en el testeo de España</span></div></div>
+Semana del 3 al 9 de noviembre. Los hubs, que usan el mensaje con filtro, dan leads claramente mejores que el testeo de España.
+
+### Por qué creemos que funciona
+
+1. **El filtro saca a quien no vende.** Un lead barato que no vende nada no sirve. El filtro en la primera línea y el «esto no es para ti» lo evitan antes del clic.
+2. **El texto largo selecciona.** Quien lee 1.400 caracteres sobre cobrar un curso es alguien que vende cursos.
+3. **Se nombra la herramienta que usa hoy.** «Stripe» detecta a quien ya cobra online.
+4. **Sin formulario instantáneo.** Se rellena con un toque y trae gente con menos interés; llevar a nuestra página pide un paso más.
+5. **Prueba real.** Enseñar la página de pago de verdad responde antes de que la persona pregunte.
+
+Esto es una explicación razonable, no una prueba: no tengo la serie de calidad de leads de hace dos o tres meses para compararla. Kommo estaba desconectado al preparar este documento. Cuando se conecte, se puede medir cada cambio contra los leads que de verdad cualificaron.
 
 ## Lo que no funcionó || Para no repetirlo
 

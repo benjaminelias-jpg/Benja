@@ -265,3 +265,26 @@ def crm():
     return barras([('Testeo España', 258, '61 leads · 74 % descartados'), ('Hubs', 44, '63 leads · 56 % descartados'),
                    ('Classroom', 251, '21 leads · 71 % descartados')],
                   'Coste por lead cualificado', ' €', 'Meta cruzado con el CRM, 3 a 9 de noviembre de 2026. Los hubs gastaron el 19 % y dieron 5 de los 9 leads cualificados.')
+
+
+def matriz():
+    """Matriz de lanzamiento: qué cubre cada hueco y qué lanzamos hoy en un hub."""
+    filas = [
+        ('Dolor', '3', 'Un peligro, una pérdida, una escena que ya vivió', 'Reel «Ventas que pierdes» · Reel «¿Cómo te pago?» · Cifra «+30 %»', '1–2'),
+        ('Creencia / comparativa', '2', 'Algo que cree y no es verdad; contra qué se compara', 'Tweet · Comparativa «Hoy, con Stripe / Con Kunfupay»', '2–3'),
+        ('Mecanismo', '1', 'Cómo funciona, con el producto delante', 'Reel «Infografía» · Reel «Tres cosas»', '3'),
+        ('Prueba', '1', 'Cómo se ve por dentro, quién ya lo hace', 'Página de pago con flechas · Noticia', '4'),
+        ('Oferta', '1', 'Qué hacer ahora', 'Hoy no hay pieza propia en los hubs: la llamada va dentro de cada texto', '5'),
+    ]
+    h = (f'<div style="display:grid;grid-template-columns:118px 34px 1.1fr 1.2fr 40px;gap:0;font-size:8.4pt;border:1px solid {LINEA};border-radius:5px;overflow:hidden">'
+         + ''.join(f'<div style="background:{MARCA};color:#fff;font-weight:700;padding:6px 8px;font-size:7.8pt">{c}</div>'
+                   for c in ('Hueco', 'Nº', 'Qué cubre', 'Lo que lanzamos hoy en un hub', 'Nivel')))
+    for i, (a, n, q, l, nv) in enumerate(filas):
+        bg = '#fff' if i % 2 == 0 else SUAVE
+        h += (f'<div style="padding:7px 8px;font-weight:700;color:{MARCA};background:{bg}">{a}</div>'
+              f'<div style="padding:7px 8px;font-weight:700;background:{bg}">{n}</div>'
+              f'<div style="padding:7px 8px;line-height:1.4;background:{bg}">{q}</div>'
+              f'<div style="padding:7px 8px;line-height:1.4;background:{bg}">{l}</div>'
+              f'<div style="padding:7px 8px;background:{bg}">{nv}</div>')
+    h += '</div>'
+    return _fig(h, 'Matriz de lanzamiento: 8 anuncios que cubren todos los ángulos desde el primer día. Después se sofistica con la investigación.')
