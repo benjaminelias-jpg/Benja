@@ -226,16 +226,16 @@ Ojo con las cifras: de dónde salen el 27 % y el 30 % no está documentado. Tamp
 
 {lead} En vez de grabar diez vídeos enteros, se graban tres «cuerpos» y diez «ganchos». Cada anuncio es un gancho pegado a un cuerpo.
 
-<div class="tres"><div class="caja"><b>1. Gancho · 3 a 8 segundos</b><span>Cambia en cada anuncio. Es una situación que el creador vive. Termina en el dolor, nunca en Kunfupay.</span></div><div class="caja"><b>2. Corte</b><span>Un segundo de silencio. El cuerpo entra con su primera línea, el «puente»: «Pero…».</span></div><div class="caja"><b>3. Cuerpo · 25 a 45 segundos</b><span>Se graba una sola vez. Lleva el mecanismo, la prueba, el dinero, la línea de honestidad y el cierre.</span></div></div>
+<div class="tres"><div class="caja"><b>1. Gancho · 3 a 8 segundos</b><span>Cambia en cada anuncio. Es una situación que el creador vive. Acaba en el dolor.</span></div><div class="caja"><b>2. Corte</b><span>Un segundo de silencio. El cuerpo entra con su primera línea, el «puente»: «Pero…».</span></div><div class="caja"><b>3. Cuerpo · 25 a 45 segundos</b><span>Se graba una sola vez. Lleva el mecanismo, la prueba, el dinero, la línea de honestidad y el cierre.</span></div></div>
 
 > **Por qué:** al leer los guiones línea a línea, cerca del 80 % de cada uno era el mismo texto en distinto orden. Lo único que cambiaba de verdad era el inicio. Así se graba una vez lo que se repite y se prueban muchos inicios con poco rodaje.
 
 ### Cuántos hay
 
 - **Métodos de pago:** 3 cuerpos y 10 ganchos. Salen 10 anuncios.
-- **Cuenta nominativa:** 3 cuerpos y 12 ganchos. Salen 12 anuncios «de una sola sesión de grabación».
+- **Cuenta nominativa:** 3 cuerpos y 12 ganchos. Salen 12 anuncios de una sola sesión.
 - **Classroom Platinum:** 3 cuerpos y 4 ganchos. Aquí los 4 ganchos valen para los 3 cuerpos.
-- **Optimización fiscal:** 3 guiones de gancho + cuerpo previstos. Solo el de la LLC está escrito.
+- **Optimización fiscal:** 3 guiones previstos. Solo el de la LLC está escrito.
 
 En métodos de pago y en cuenta nominativa, cada gancho va solo con el cuerpo de su **familia**. El puente tiene que referirse a algo: si el cuerpo dice «todo eso cabe en un solo enlace», el gancho ha tenido que enumerar ese «todo».
 
@@ -324,7 +324,7 @@ En agosto de 2026 se analizaron 100 reels de este creador (62.202 seguidores). E
 
 | Lo que pasa | Qué se hace | ¿Hay que grabar? |
 |---|---|---|
-| Un vídeo gana. | Se encarga su relevo ese mismo día: el mismo cuerpo con un inicio nuevo. En octubre los ganadores llevaban más de 3 semanas sin relevo y cada persona los había visto más de 2,4 veces. | Solo ganchos. |
+| Un vídeo gana. | Se encarga su relevo ese mismo día: el mismo cuerpo con un inicio nuevo. En octubre los ganadores llevaban más de 3 semanas sin relevo. | Solo ganchos. |
 | El hook rate es bajo y la retención es buena. | Se cambia el inicio: rótulo, primera frase o primera imagen. | Solo el gancho. A veces basta con editar el rótulo. |
 | El hook rate es bueno y la retención es baja. | El cuerpo no cumple lo que promete el inicio. | El cuerpo. |
 | Fallan todos los ganchos de un cuerpo. | El que falla es el cuerpo. | El cuerpo. |
@@ -345,17 +345,17 @@ Tres cuidados al reutilizar y al subir:
 
 | Línea | Qué lleva | Qué se graba | Por qué |
 |---|---|---|---|
-| **Optimización fiscal** | Manda el vídeo: 4 reels nuevos a cámara (3-11-2026). Hay un estático de comparativa preparado. | Equipo o fundador a cámara, en el estudio. | Hay que explicar cómo funciona. En octubre ganaban dos reels (11,80 € y 5,52 € por registro) y los 5 estáticos no pasaron de 10 € de gasto en 25 días. |
-| **Métodos de pago y hubs** | Se alterna: 5 estáticos, los genéricos y un personalizado por lugar. | Solo el personalizado de cada hub. | La prueba se ve de un vistazo en una imagen: el estático «Página de pago» trajo 26 de los 27 leads de LATAM, a 1,94 €. El vídeo añade la escena y el lugar. |
+| **Optimización fiscal** | Manda el vídeo: 4 reels nuevos a cámara (3-11-2026). Hay un estático de comparativa preparado. | Equipo o fundador a cámara, en el estudio. | Hay que explicar cómo funciona. En octubre ganaban dos reels (11,80 € y 5,52 € por registro). Los 5 estáticos no pasaron de 10 € de gasto. |
+| **Métodos de pago y hubs** | Se alterna: 5 estáticos, los genéricos y un personalizado por lugar. | Solo el personalizado de cada hub. | La prueba se ve de un vistazo en una imagen: el estático «Página de pago» trajo 26 de los 27 leads de LATAM. El vídeo añade la escena y el lugar. |
 | **Classroom Platinum** | Solo vídeo. | Fundador y equipo a cámara: cuerpos de 65 a 70 segundos y sus ganchos. | El mensaje es largo: un programa con requisitos y cuatro fases. No hay estáticos preparados. El anuncio tipo tweet pasó de 4 leads a 0. |
 | **Cuenta nominativa** | Mitad y mitad: 4 estáticos y 4 vídeos. | Los 4 vídeos. El sistema modular prevé 3 cuerpos y 12 ganchos en una sesión. | Es un conjunto nuevo y sin datos. Cada mensaje va en su formato, y ningún estático repite el mensaje de un vídeo. |
-| **Remarketing de vendedores** | Hoy, solo estáticos con la cara del vendedor. Hay 4 guiones de vídeo escritos y sin grabar. | Cada vendedor, en primera persona, de 30 a 50 segundos. | Quien lo ve ya visitó el perfil de ese vendedor y le reconoce. Con los estáticos cada persona vio el anuncio de 6 a 15 veces y no hubo resultados. |
+| **Remarketing de vendedores** | Hoy, solo estáticos con la cara del vendedor. Hay 4 guiones de vídeo escritos y sin grabar. | Cada vendedor, en primera persona, de 30 a 50 segundos. | Quien lo ve ya visitó el perfil de ese vendedor. Con los estáticos, cada persona vio el anuncio de 6 a 15 veces y no hubo resultados. |
 
-Dos avisos sobre esos datos. Los estáticos de fiscal competían con un reel que se llevaba casi todo el gasto: no llegaron a enseñarse, así que no prueban que un estático fiscal funcione mal. Y los datos de LATAM y de remarketing son de la auditoría del 10-11-2026.
+Ojo: los estáticos de fiscal competían con un reel que se llevaba casi todo el gasto. No llegaron a enseñarse, así que no prueban que un estático fiscal funcione mal. Los datos de LATAM y de remarketing son de la auditoría del 10-11-2026.
 
 ### Dónde va vídeo y dónde va imagen, según el mensaje
 
-Dentro de un conjunto, el formato depende de lo que dice el anuncio. Es el reparto del procedimiento de la cuenta:
+Dentro de un conjunto, el formato depende de lo que dice el anuncio:
 
 | Lo que dice el anuncio | Formato |
 |---|---|
@@ -365,7 +365,7 @@ Dentro de un conjunto, el formato depende de lo que dice el anuncio. Es el repar
 | Una prueba o un caso | UGC, testimonio o captura real |
 | La oferta directa | Imagen limpia |
 
-> **Por qué:** un mensaje va en un solo formato. El mismo texto en imagen y en reel no son dos anuncios: Meta elige uno, el otro no gasta, y parece que se probaron dos cosas cuando se probó una.
+> **Por qué:** un mensaje va en un solo formato. El mismo texto en imagen y en reel no son dos anuncios: Meta elige uno y el otro no gasta.
 
 ## Cómo se habla de impuestos en vídeo || Qué se dice, qué no, y el aviso de los dos vídeos de Rubén
 

@@ -28,9 +28,9 @@ Benja lo resumió así el 11 de noviembre de 2026: «Aquí buscaríamos leads ca
 | Paso | Qué pasa | Qué sabemos hoy |
 |---|---|---|
 | **1 · Anuncio** | Un reel o una imagen en Instagram ofrece la herramienta | A 13-11-2026 no consta ninguna campaña de AutoDM lanzada en Meta |
-| **2 · Herramienta** | La persona llega a la herramienta. La primera es AutoDM | AutoDM todavía no tiene página propia. Es una propuesta |
+| **2 · Herramienta** | La persona llega a la herramienta. La primera es AutoDM | No consta que AutoDM tenga una página de entrada propia. Está propuesta |
 | **3 · Alta** | Se registra | Para usar AutoDM hay que pasar por el alta de una plataforma de pagos: 7 pantallas y unos 12 campos, con código por SMS y datos de facturación |
-| **4 · Uso** | Conecta su Instagram y la usa | 82 instalaciones de AutoDM en cuatro semanas. No sabemos cuántas conectaron Instagram |
+| **4 · Uso** | Conecta su Instagram y la usa | 82 instalaciones de AutoDM en cuatro semanas (reporte del 11-11-2026). No sabemos cuántas conectaron Instagram |
 | **5 · Tienda** | Crea su tienda y su primer producto | El 75 % de las altas no empieza la verificación de identidad (informe de ventas, 15 a 31 de octubre de 2026) |
 | **6 · Primera venta** | Cobra con Kunfupay | Cuando la tienda se activa, cuatro de cada diez acaban vendiendo (informe de ventas de octubre) |
 
@@ -165,7 +165,7 @@ Tres razones:
 
 1. **Lo gratis atrae a todo el mundo.** Benja: las herramientas gratuitas traen público muy barato y con un nivel de conciencia muy bajo; «no sabemos si va a tener un negocio». Nivel de conciencia: cuánto sabe ya la persona de su problema y de las soluciones que hay.
 2. **Aquí no hay comercial que filtre después.** El anuncio es el único filtro antes del alta.
-3. **Quien entra sin negocio se queda fuera más tarde.** En octubre de 2026, de 364 leads válidos, 223 (el 61 %) acabaron con la tienda rechazada. Casi siempre por el mismo motivo: negocio nuevo o sin ventas suficientes.
+3. **Quien entra sin negocio se queda fuera más tarde.** Del 1 al 25 de octubre de 2026, de 364 leads válidos, 223 (el 61 %) acabaron con la tienda rechazada. Casi siempre por el mismo motivo: negocio nuevo o sin ventas suficientes.
 
 > **Por qué:** cada alta de alguien sin negocio cuesta dinero y enseña a Meta a buscar más gente igual. Ya pasó: las campañas se optimizaban a registro, Meta aprendía de leads malos y hubo que cambiarlo.
 
@@ -190,6 +190,8 @@ Las tres formas que dictó Benja:
 - «Hay una herramienta que es idéntica a ManyChat y además es gratis, te permite hacer todo esto, todo esto, todo esto».
 
 > **Por qué:** para Benja es «la forma más rápida de poner en la mente de las personas» qué es AutoDM. Una comparación ahorra toda la explicación. Y filtra: solo la entiende quien ya conoce ManyChat. Rubén pidió lo mismo el 11-11-2026: «Muy importante mencionar ManyChat en estas campañas».
+
+::salto
 
 **Dos cuidados con la comparación:**
 
@@ -218,7 +220,7 @@ La promesa sale de lo que la persona quiere en su día a día: tiempo o dinero.
 
 > **Por qué:** «vamos a aumentar tu dinero» no basta. Depende de lo que ya facture cada uno. Una reunión más al día la entiende cualquiera del nicho.
 
-Y siguen valiendo las reglas del documento maestro: solo en español, sin mejoras automáticas ni formulario de Meta, y 2 textos y 2 títulos por anuncio.
+Las reglas generales del documento maestro siguen valiendo aquí: solo en español, sin mejoras automáticas de Meta, y 2 textos y 2 títulos por anuncio.
 
 ## Los tipos de creatividad || Cuatro tipos, de arriba abajo del embudo
 
@@ -230,7 +232,7 @@ Estos son los formatos que ya usamos. Los cuatro anuncios son del otro embudo: e
 
 ### Los cuatro tipos, de arriba abajo del embudo
 
-<table><thead><tr><th style="width:15%">Tipo</th><th style="width:33%">Qué dice y a quién habla</th><th style="width:27%">Formato que mejor encaja</th><th>Ejemplo de titular</th></tr></thead><tbody>
+<table><thead><tr><th style="width:18%">Tipo</th><th style="width:31%">Qué dice y a quién habla</th><th style="width:26%">Formato que mejor encaja</th><th>Ejemplo de titular</th></tr></thead><tbody>
 <tr><td><strong>A · Promesa de resultado</strong></td><td>El resultado que la persona quiere, con sus palabras. Habla a quien sabe que le faltan llamadas y no busca una herramienta. Es el más amplio</td><td>Reel con filtro. En imagen, una cifra grande, si hay cifra confirmada</td><td>«La estrategia de seteo para agendar [dato a confirmar] reuniones más al mes»</td></tr>
 <tr><td><strong>B · Comparación</strong></td><td>Esto es como lo que ya usas, y es gratis. Habla a quien ya conoce o ya paga ManyChat</td><td>Tweet: «sirven mucho para el MOFU» (la parte media del embudo). También reel. La comparativa, solo con datos comprobados</td><td>«Si tienes setters y pagas ManyChat, mira esto: ya existe un ManyChat gratis»</td></tr>
 <tr><td><strong>C · Lanzamiento</strong></td><td>Hay algo nuevo y lo lanza una empresa con nombre. Habla a quien conoce estas herramientas y se fija en lo nuevo</td><td>Noticia: banda «Actualidad», foto real saturada y círculo rojo con Rubén o el logo de Kunfupay</td><td>«Kunfupay lanza un ManyChat gratis para quien vende por Instagram»</td></tr>
@@ -251,10 +253,10 @@ Estos son los formatos que ya usamos. Los cuatro anuncios son del otro embudo: e
 | **2. Tweet y noticia** de lanzamiento | AutoDM | Si la comparación directa funciona también en imagen |
 | **3. Reel de caso de uso:** «el diagrama de flujo que…» | AutoDM | Si un caso real atrae a gente más avanzada. Necesita ese caso |
 | **4. Reel «Comenta AUTODM»** | AutoDM | Si pedir un comentario trae altas más baratas que mandar al enlace. Falta confirmar que AutoDM puede hacerlo |
-| **5. Reel de sorteos:** «¿Aún pagas por hacer sorteos?» | Kunfu Winner | Si una herramienta que es de Instagram solo en parte trae al mismo público |
+| **5. Reel de sorteos:** «Aún pagas por hacer sorteos…» | Kunfu Winner | Si una herramienta que es de Instagram solo en parte trae al mismo público |
 | **6. Reel de control** | SkoolStats | El patrón de Benja: si una herramienta de fuera de Instagram trae otro público |
 
-Los guiones de las herramientas que aún no existen se escriben antes de hacerlas. Rubén se lo pidió a Juanjo con su idea: «Pon el anuncio como lo harías aquí, a ver si convence».
+Los guiones de las herramientas que aún no existen se escriben antes de hacerlas. Rubén se lo pidió a Juanjo con su idea: «Pon el anuncio como lo harías aquí, a ver si convencen».
 
 ### El guion de prueba: reel de AutoDM
 
@@ -312,10 +314,10 @@ El texto largo filtra y explica todo, de tú a tú. El corto dice lo mismo en tr
 R 0.97,0.03 | El filtro, en la primera línea | Setters y closers: quien no los tiene deja de leer aquí.
 R 0.97,0.14 | El dolor, con sus palabras | Mensajes que se enfrían y llamadas que no entran. Lo vive cada día.
 R 0.97,0.26 | La comparación | «Un ManyChat gratis» lo explica todo en cuatro palabras.
-R 0.97,0.36 | Quién lo lanza | Da confianza y presenta a Kunfupay.
+R 0.97,0.315 | Quién lo lanza | Da confianza y presenta a Kunfupay.
 R 0.97,0.50 | Qué hace, en una lista | Corta y sin tutorial. Solo funciones confirmadas.
 R 0.97,0.70 | Para quién es | Segundo filtro, otra vez con palabras del nicho.
-R 0.97,0.96 | El cierre | Un solo paso. Igual que en el reel.
+R 0.97,0.935 | El cierre | Un solo paso. Igual que en el reel.
 pie: Texto 1, el largo. Es unas cinco veces el corto.
 ::fin
 
@@ -397,5 +399,5 @@ Dos cosas tienen que estar antes de gastar: el origen relleno en cada alta, y lo
 ### Del equipo
 
 - La ficha del cliente ideal de este embudo, el presupuesto de test y las fechas. El equipo quedó en poner en calendario las campañas nuevas el lunes 16 de noviembre de 2026.
-- Comprobar con datos el patrón de Instagram y revisar la columna «¿Es una herramienta para Instagram?» de la parte 2.
+- Comprobar con datos el patrón de Instagram y revisar la columna «¿Es para Instagram?» de la parte 2.
 - Leer dos fuentes que no se pudieron leer aquí: la transcripción de la reunión del 05-11-2026, en Notion, y el plan original de Rubén. Si dicen otra cosa, mandan ellas.

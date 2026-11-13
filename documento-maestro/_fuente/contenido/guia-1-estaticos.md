@@ -18,7 +18,7 @@ pie-pdf: Guía 1 · Anuncios estáticos · Kunfupay
 | **Comparativa** | Pone lado a lado lo de hoy y lo nuestro | Media |
 | **Cifra** | Enseña lo que se puede ganar, con un número enorme | Alta |
 
-El embudo es el camino de una persona: arriba todavía no nos conoce y abajo ya quiere probar. Las cinco piezas salen juntas, en campañas de público frío. La parte del embudo dice a qué persona le habla cada pieza, no en qué campaña va. Está explicado en el Documento maestro, parte «El sistema en una página».
+El embudo es el camino de una persona: arriba todavía no nos conoce y abajo ya quiere probar. Las cinco piezas salen juntas, en campañas de público frío. La parte del embudo dice a qué persona le habla cada una, no en qué campaña va. Lo explica el Documento maestro, parte «El sistema en una página».
 
 Se hicieron primero para los hubs y después para España. Un hub es un lugar con gente que habla español y tiene negocio online: LATAM, Miami, Dubái, Bali y Tailandia.
 
@@ -56,34 +56,29 @@ Cada estático se entrega dos veces: una imagen para el feed y otra vertical par
 
 ### Para qué sirve
 
-- Cuenta el problema con una cifra y deja la salida para el clic. No enseña el producto ni dice cómo se llama.
-- Va en la parte media del embudo. Lo dijo Benja: los tweets «sirven mucho para el MOFU». MOFU es el nombre en inglés de esa parte media.
-- Lo firma una persona del equipo, con su cara. Hoy es Rubén.
-
-> **Por qué:** no lleva diseño, y sin diseño no hay señal de anuncio. Se lee como lo que escribe una persona, no como lo que publica una marca.
+- Cuenta el problema con una cifra y deja la salida para el clic. No enseña el producto.
+- Va en la parte media del embudo. Benja: los tweets «sirven mucho para el MOFU», que es el nombre en inglés de esa parte.
+- Lo firma una persona del equipo, con su cara. Hoy es Rubén. Sin diseño no hay señal de anuncio: se lee como lo que escribe alguien.
 
 ### El anuncio, destripado
 
 ::pizarra creatividades/metodos-de-pago/espana/estaticos/ES-E1_1080x1350.png w=236
-L 0.09,0.205 | Foto, nombre y check azul | Lo firma una persona con cara. Se lee como algo que cuenta alguien, no como publicidad.
+L 0.09,0.205 | Foto, nombre y check azul | Lo firma una persona con cara. No habla la marca.
 L 0.088,0.346 | La primera línea filtra | «Si vendes cursos desde España…». Quien no vende cursos deja de leer aquí.
-L 0.088,0.64 | La salida, sin decir cuál | «Existe una forma…». No nombra el producto. Para saber cuál es hay que hacer clic.
-R 0.86,0.10 | Fondo blanco, sin logo | Ni color de marca, ni marco, ni botones. Nada avisa de que es un anuncio.
-R 0.815,0.405 | La herramienta, por su nombre | «Stripe», escrito. Es lo que la persona usa hoy y se reconoce al momento.
-R 0.89,0.464 | «Hasta un 27 %» | Un porcentaje que no es redondo suena a dato medido. «Hasta» marca un tope, no una promesa.
-R 0.815,0.757 | La llamada, dentro del texto | «Descúbrela haciendo clic.» Va escrita. No hay ningún botón dibujado.
+L 0.088,0.64 | La salida, sin decir cuál | No nombra el producto. Para saber cuál es hay que hacer clic.
+R 0.86,0.10 | Fondo blanco, sin logo | Ni color de marca ni botones. Nada avisa de que es un anuncio.
+R 0.815,0.405 | La herramienta, por su nombre | «Stripe», escrito. Es lo que la persona usa hoy.
+R 0.89,0.464 | «Hasta un 27 %» | Un número que no es redondo suena a dato medido.
+R 0.815,0.757 | La llamada, dentro del texto | «Descúbrela haciendo clic.» Escrita, sin botón dibujado.
 pie: Tweet de España, imagen de feed (1080×1350). En la versión vertical el mismo bloque va centrado en la zona blanca.
 ::fin
 
 ### Receta paso a paso
 
-<ol class="pasos" style="columns:2;column-gap:9mm">
-<li><strong>Elige quién firma</strong> Una persona real del equipo, con su foto y su usuario. No la marca.</li>
-<li><strong>Monta la cabecera</strong> Foto redonda a la izquierda. Al lado, el nombre en negrita y el check azul. Debajo, el usuario en gris.</li>
-<li><strong>Escribe el texto con la plantilla</strong> Son cuatro frases: el filtro con la cifra, el dolor, la salida y la llamada.</li>
-<li><strong>Usa letra corriente, negra y grande</strong> Arial de unos 60 px. Salen 9 o 10 líneas. No se usa la letra de la marca: tiene que parecer la red social.</li>
-<li><strong>Deja el fondo blanco</strong> Sin logo, sin colores de marca, sin marco y sin fecha.</li>
-<li><strong>No dibujes nada de la red social</strong> Ni botones, ni contadores, ni iconos de responder o compartir.</li>
+<ol class="pasos" style="columns:2;column-gap:9mm;break-inside:avoid">
+<li><strong>Elige quién firma y monta la cabecera</strong> Una persona real del equipo. Foto redonda, nombre en negrita, check azul y, debajo, el usuario en gris.</li>
+<li><strong>Escribe el texto con la plantilla</strong> Cuatro frases: el filtro con la cifra, el dolor, la salida y la llamada.</li>
+<li><strong>Letra corriente, fondo blanco y vacío</strong> Arial negra de unos 60 px, en 9 o 10 líneas. Sin logo ni colores de marca. Ni botones, ni contadores, ni iconos.</li>
 <li><strong>Haz la versión vertical</strong> El mismo bloque, centrado entre las franjas de arriba y de abajo.</li>
 </ol>
 
@@ -99,19 +94,12 @@ pie: Tweet de España, imagen de feed (1080×1350). En la versión vertical el m
 | Dubái | con Stripe | tus clientes de España y LATAM | euros o dólares |
 | Bali y Tailandia | con Stripe o PayPal | tus clientes de España y LATAM | euros o dólares |
 
-En España y LATAM se dice «alumnos». En el resto, «clientes».
-
-Fuera de la imagen, el anuncio lleva 2 textos y 2 títulos (Guía 3). El texto largo empieza con la misma frase del tweet. Los títulos de España: «Stripe te hace perder hasta un 27 %» y «Tu alumno de LATAM sí quiere pagarte».
-
 ### Errores que ya cometimos
 
 | Qué pasó | Qué se cambió |
 |---|---|
 | Los tweets de remarketing llevaban dibujada la barra de iconos de la red social. Meta los rechazó | Se rehicieron sin la barra. La foto y el nombre se quedaron. Benja: «libre de botones, pero el perfil de la persona no lo quites» |
-| El tweet de equipo del remarketing todavía lleva esa barra | Pendiente: rehacerlo sin ella antes de volver a usarlo |
-| El tweet de LATAM dice «solo con tarjeta» | Pendiente de decidir qué herramienta se nombra allí (regla 3) |
-
-> **Ojo con los datos:** el tweet no arregla un público cansado. En la auditoría del 10-11-2026, «TWEET CLASSROOM» pasó de 4 leads a 0. Y el remarketing de vendedores, montado con tweets y fotos, dio 0 resultados: cada persona había visto el anuncio entre 6 y 15 veces.
+| «TWEET CLASSROOM» pasó de 4 leads a 0. El remarketing de vendedores, con tweets y fotos, dio 0 resultados: cada persona había visto el anuncio entre 6 y 15 veces | El formato no arregla un público cansado. Son datos de la auditoría del 10-11-2026 |
 
 ### Antes de darlo por bueno
 
@@ -127,31 +115,29 @@ Fuera de la imagen, el anuncio lleva 2 textos y 2 títulos (Guía 3). El texto l
 - En teoría es de la parte baja del embudo: para quien ya nos conoce. En la práctica funciona también con público frío.
 - Benja: «usar flechas siempre funciona».
 
-| Anuncio | Resultado | Coste |
+| Anuncio | Resultado en 7 días (auditoría del 10-11-2026) | Coste |
 |---|---|---|
-| Página de pago · LATAM | 26 de los 27 leads del hub en una semana | 1,94 € por lead |
+| Página de pago · LATAM | 26 de los 27 leads del hub | 1,94 € por lead |
 | Página de pago · España | 4 registros | 37 € por registro (su conjunto, 41 €) |
-
-Datos de la auditoría del 10-11-2026, últimos 7 días.
 
 > **Por qué:** casi ningún anunciante de cobros enseña su producto por dentro. Nosotros sí. Y en una captura lo que vale es la nota: la flecha le dice al ojo dónde mirar.
 
 ### El anuncio, destripado
 
 ::pizarra creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png w=236
-L 0.07,0.082 | El filtro, en cursiva | «Si vendes cursos desde LATAM,». Va arriba del todo, en letra más fina que el titular.
-L 0.07,0.20 | El titular: qué pierdes | «Estás perdiendo ventas», en color. Hoy nombraríamos la herramienta en vez de «tarjeta».
-L 0.132,0.445 | Una nota y una flecha | La nota dice quién paga y cómo. La flecha, dibujada a mano, lleva el ojo hasta el método.
-L 0.07,0.858 | Lo que recibe quien vende | «Y tú recibes euros o dólares.» Cierra la imagen. En España se hizo más grande.
-R 0.912,0.30 | El país, a la vista | El selector con la bandera enseña que cada país ve su propia página de pago.
-R 0.90,0.444 | Captura real, con sus logos | Es la página de pago de verdad. Solo se recorta y se amplía. No se retoca ni se tapa.
-R 0.50,0.621 | El óvalo marca el método | Rodea Bizum, lo que usa ese cliente. Señala el método y el país, nunca un importe.
+L 0.07,0.082 | El filtro, en cursiva | Arriba del todo y en letra más fina que el titular.
+L 0.07,0.20 | El titular: qué pierdes | Hoy nombraríamos la herramienta en vez de «tarjeta».
+L 0.132,0.445 | Una nota y una flecha | La nota dice quién paga y cómo. La flecha lleva el ojo hasta el método.
+L 0.07,0.858 | Lo que recibe quien vende | Cierra la imagen. En España se hizo más grande.
+R 0.912,0.30 | El país, a la vista | La bandera enseña que cada país ve su propia página de pago.
+R 0.90,0.444 | Captura real, con sus logos | Solo se recorta y se amplía. No se retoca ni se tapa.
+R 0.50,0.621 | El óvalo marca el método | Señala el método y el país. Nunca un importe.
 pie: Anuncio «ESTATICA / PAGINA DE PAGO / LATAM», imagen de feed (1080×1350). Es el estático con mejores datos de la cuenta.
 ::fin
 
 ### Receta paso a paso
 
-<ol class="pasos" style="columns:2;column-gap:9mm">
+<ol class="pasos" style="columns:2;column-gap:9mm;break-inside:avoid">
 <li><strong>Elige los dos países</strong> Dos clientes distintos de quien vende. La tabla de abajo dice qué pareja lleva cada lugar.</li>
 <li><strong>Coge las capturas reales</strong> Salen del vídeo «Infografía», que enseña la página de pago de verdad. Solo se recortan y se amplían.</li>
 <li><strong>Escribe el titular</strong> Arriba, el filtro en cursiva. Debajo, lo que se pierde y la herramienta de hoy.</li>
@@ -173,11 +159,10 @@ pie: Anuncio «ESTATICA / PAGINA DE PAGO / LATAM», imagen de feed (1080×1350).
 | Miami | «Estás perdiendo ventas. Ya no cobres a LATAM con Stripe.» | Colombia y México | «…dólares.» |
 | Dubái, Bali y Tailandia | «Estás perdiendo ventas. Ya no cobres a España y LATAM con Stripe.» | México y España | «…euros o dólares.» |
 
-- La captura de México va recortada: solo se ven SPEI y Mercado Pago. En la captura completa el logo de OXXO sale cortado.
-- La imagen de Tailandia es la de Bali con la primera línea cambiada. Las capturas no se tocan.
-- Los títulos del anuncio de LATAM: «Así te paga cada alumno» y «Cobra a todos con un solo enlace». El texto largo empieza por «Mira la imagen».
+- La captura de México va recortada: solo se ven SPEI y Mercado Pago. En la completa, el logo de OXXO sale cortado.
+- Los títulos del anuncio de LATAM: «Así te paga cada alumno» y «Cobra a todos con un solo enlace». Su texto largo empieza por «Mira la imagen».
 
-::galeria creatividades/metodos-de-pago/espana/estaticos/ES-E3_1080x1350.png = España, ya corregida: «solo con Stripe» y el cierre más grande ; creatividades/metodos-de-pago/hubs/estaticos/HUB-MIA-E3_1080x1350.png = Miami: Colombia y México. «Y tú recibes dólares.» ; creatividades/metodos-de-pago/hubs/estaticos/HUB-BALI-E3_1080x1350.png = Bali: México recortada y España
+::galeria creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png = Antes (LATAM): «solo con tarjeta» y el cierre pequeño ; creatividades/metodos-de-pago/espana/estaticos/ES-E3_1080x1350.png = Corregida (España): «solo con Stripe» y el cierre más grande ; creatividades/metodos-de-pago/hubs/estaticos/HUB-MIA-E3_1080x1350.png = Miami: Colombia y México. «Y tú recibes dólares.» ; creatividades/metodos-de-pago/hubs/estaticos/HUB-BALI-E3_1080x1350.png = Bali: México recortada y España. Tailandia usa esta misma
 
 ### Errores que ya cometimos
 
@@ -187,10 +172,10 @@ pie: Anuncio «ESTATICA / PAGINA DE PAGO / LATAM», imagen de feed (1080×1350).
 | «Y tú recibes euros» se veía pequeño | Benja pidió hacerlo más grande y bajarlo un poco. Pasó de 46 a 64 px |
 | El anuncio de Bali se subió solo con la imagen de feed. En Stories y Reels sale esa misma, sin adaptar | Pendiente: añadir la imagen vertical, que ya está hecha |
 
-Tres cosas pendientes de confirmar antes de hacer más piezas de este formato:
+Tres cosas pendientes de confirmar:
 
-- **«Paga con su moneda local».** Falta que producto confirme por escrito que el cliente paga en su moneda.
-- **Bizum rodeado junto a «Ya no cobres… con Stripe».** Un Stripe de España ya acepta Bizum. El día de publicar se comprueba que lo que se señala sigue siendo verdad.
+- **«Paga con su moneda local».** Falta que producto lo confirme por escrito.
+- **Bizum rodeado junto a «Ya no cobres… con Stripe».** Un Stripe de España ya acepta Bizum. El día de publicar se comprueba que lo señalado sigue siendo verdad.
 - **Los logos de dentro de las capturas.** No consta la revisión legal. Si no se autorizan, se cambia el recorte. Nunca se tapan.
 
 ### Antes de darlo por bueno
@@ -207,26 +192,26 @@ Tres cosas pendientes de confirmar antes de hacer más piezas de este formato:
 - Cambia la pieza de «publicidad» a «información».
 - Es la prueba social: dice que otros ya lo hacen.
 
-Benja la define así: se hace «con elementos sobresaturados», mostrando banderas, y «siempre con elementos llamativos como una banda de ACTUALIDAD, un círculo rojo con una imagen dentro».
+Benja: se hace «con elementos sobresaturados», mostrando banderas, y «siempre con elementos llamativos como una banda de ACTUALIDAD, un círculo rojo con una imagen dentro».
 
-> **Por qué:** en el móvil el anuncio compite con todo lo demás. El rojo y una cara se ven antes de leer nada. Y una noticia se mira con menos recelo que un anuncio.
+> **Por qué:** en el móvil el anuncio compite con todo lo demás. El rojo y una cara se ven antes de leer nada.
 
 ### El anuncio, destripado
 
 ::pizarra creatividades/metodos-de-pago/hubs/estaticos/HUB-TAILANDIA-E5_1080x1350.png w=236
-L 0.067,0.18 | Círculo rojo con una cara | El rojo se ve desde lejos y una cara mira a quien pasa. Dentro va una persona, nunca un logo ajeno.
-L 0.067,0.698 | Banda roja «Actualidad» | Es la etiqueta de las noticias. Hace que la pieza se lea como información.
-L 0.067,0.778 | El titular afirma | «…ya aumentan su conversión un 27 %». Aquí no lleva «hasta»: cuenta algo que ya pasa.
+L 0.067,0.18 | Círculo rojo con una cara | El rojo se ve desde lejos. Dentro va una persona, nunca un logo ajeno.
+L 0.067,0.698 | Banda roja «Actualidad» | La etiqueta de las noticias. La pieza se lee como información.
+L 0.067,0.778 | El titular afirma | Aquí la cifra no lleva «hasta»: cuenta algo que ya pasa.
 R 0.936,0.068 | El logo, pequeño y arriba | La marca no manda. Manda la noticia.
-R 0.625,0.13 | Foto real, en alta definición | Un sitio que existe, con la saturación un poco subida. Una foto pixelada delata el montaje.
-R 0.925,0.45 | La bandera del lugar | Quien vive allí la reconoce al instante. Es el filtro, pero en imagen.
-R 0.76,0.925 | Negro detrás del texto | La foto se oscurece hacia abajo para que el texto blanco se lea siempre.
+R 0.625,0.13 | Foto real, en alta definición | Con la saturación un poco subida. Una foto pixelada delata el montaje.
+R 0.925,0.45 | La bandera del lugar | Quien vive allí la reconoce al instante. Es el filtro, en imagen.
+R 0.76,0.925 | Negro detrás del texto | Para que el texto blanco se lea sobre cualquier foto.
 pie: Anuncio «ESTATICA / NOTICIA / TAILANDIA», imagen de feed (1080×1350). Es la versión que Benja pidió rehacer el 12-11-2026.
 ::fin
 
 ### Receta paso a paso
 
-<ol class="pasos" style="columns:2;column-gap:9mm">
+<ol class="pasos" style="columns:2;column-gap:9mm;break-inside:avoid">
 <li><strong>Busca una foto real del lugar</strong> En alta definición y con licencia. Que se vea la bandera del país.</li>
 <li><strong>Sube un poco la saturación</strong> En Tailandia se subió un 18 %. Los colores tienen que saltar.</li>
 <li><strong>Ponla a toda la imagen y oscurece abajo</strong> Un degradado a negro en la mitad inferior. Encima irá el texto.</li>
@@ -252,7 +237,7 @@ Los títulos del anuncio son iguales en todos los lugares: «Un 27 % más de con
 | Miami | Edificios sobre la bahía | Logos de Stripe y PayPal tachados | Rehacer: no se tachan logos |
 | Dubái | Burj Khalifa | Logos de Stripe y PayPal tachados | Rehacer: no se tachan logos |
 
-::galeria creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E5_1080x1350.png = Antes: la foto de Rubén, pixelada ; creatividades/metodos-de-pago/hubs/estaticos/HUB-TAILANDIA-E5_1080x1350.png = Después: foto de estudio, bandera y más saturación ; creatividades/metodos-de-pago/hubs/estaticos/HUB-MIA-E5_1080x1350.png = No repetir: logos de otras marcas tachados
+::galeria creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E5_1080x1350.png = Antes (LATAM): la foto de Rubén, pixelada ; creatividades/metodos-de-pago/hubs/estaticos/HUB-BALI-E5_1080x1350.png = Antes (Bali): lo mismo, y sin bandera ; creatividades/metodos-de-pago/hubs/estaticos/HUB-TAILANDIA-E5_1080x1350.png = Después (Tailandia): foto de estudio, bandera y más saturación ; creatividades/metodos-de-pago/hubs/estaticos/HUB-MIA-E5_1080x1350.png = No repetir (Miami): logos de otras marcas tachados
 
 ### Errores que ya cometimos
 
@@ -267,7 +252,7 @@ Los títulos del anuncio son iguales en todos los lugares: «Un 27 % más de con
 
 Dos cosas pendientes de confirmar:
 
-- **El titular afirma un hecho.** Hoy no tenemos escrito de dónde sale el 27 %. Una noticia tiene que poder demostrarse.
+- **El titular afirma un hecho.** Una noticia tiene que poder demostrarse, y hoy no está escrito de dónde sale el 27 %.
 - **«Creadores en Miami», «en Dubái», «en Bali».** Falta confirmar por escrito que aceptamos vendedores que viven allí.
 
 ### Antes de darlo por bueno
@@ -280,7 +265,7 @@ Dos cosas pendientes de confirmar:
 
 ### Para qué sirve
 
-- Le habla a quien ya sabe que hay solución y la compara con lo que usa hoy. Por eso va en la parte media del embudo.
+- Le habla a quien ya sabe que hay solución y la compara con lo que usa hoy: parte media del embudo.
 - El color hace el trabajo: rojo es hoy, morado es Kunfupay.
 - Datos propios todavía no hay. La auditoría del 10-11-2026 no destaca ninguna comparativa.
 
@@ -289,19 +274,19 @@ Dos cosas pendientes de confirmar:
 ### El anuncio, destripado
 
 ::pizarra creatividades/metodos-de-pago/espana/estaticos/ES-E2_1080x1350.png w=236
-L 0.07,0.156 | El filtro, en cursiva | «Si vendes cursos desde España,». Igual que en el resto de formatos.
-L 0.305,0.398 | Columna roja: lo de hoy | «Hoy, con Stripe». La herramienta va escrita, sin logo.
-L 0.07,0.595 | La fila de la cifra | «Ventas que se caen al pagar: hasta un 27 %». Es la única cifra de toda la tabla.
-L 0.305,0.748 | Celda gris: aquí empatamos | Con Stripe ya recibes euros. No se pinta de rojo lo que hoy ya funciona.
-R 0.91,0.315 | El titular nombra la herramienta | «…cobrando solo con Stripe.» Lo propuso Benja en lugar de «solo con tarjeta».
-R 0.93,0.495 | Columna morada: con Kunfupay | Todas las celdas llevan ✓. La mirada va de rojo a morado, de izquierda a derecha.
-R 0.80,0.856 | La frase de cierre | «Vendes lo mismo. Cobras a más alumnos.» Resume la tabla para quien no la lee entera.
+L 0.07,0.156 | El filtro, en cursiva | Igual que en el resto de formatos.
+L 0.305,0.398 | Columna roja: lo de hoy | La herramienta va escrita, sin logo.
+L 0.07,0.595 | La fila de la cifra | «Hasta un 27 %». Es la única cifra de toda la tabla.
+L 0.305,0.748 | Celda gris: aquí empatamos | No se pinta de rojo lo que hoy ya funciona.
+R 0.91,0.315 | El titular nombra la herramienta | Lo propuso Benja en lugar de «solo con tarjeta».
+R 0.93,0.495 | Columna morada: con Kunfupay | Todo ✓. La mirada va de rojo a morado.
+R 0.80,0.856 | La frase de cierre | Resume la tabla para quien no la lee entera.
 pie: Comparativa de España, imagen de feed (1080×1350). El logo «ku» va abajo a la derecha, como en casi todos.
 ::fin
 
 ### Receta paso a paso
 
-<ol class="pasos" style="columns:2;column-gap:9mm">
+<ol class="pasos" style="columns:2;column-gap:9mm;break-inside:avoid">
 <li><strong>Escribe el titular</strong> El filtro en cursiva. Debajo, lo que se pierde y la herramienta de hoy.</li>
 <li><strong>Elige cuatro filas</strong> Cada una es algo que le importa a quien vende: quién puede pagarle, las ventas que se caen, los enlaces que manda y lo que recibe.</li>
 <li><strong>Monta la columna de hoy</strong> Cabecera roja con «Hoy, con…» y la herramienta. Celdas rosas con ✕.</li>
@@ -325,8 +310,8 @@ pie: Comparativa de España, imagen de feed (1080×1350). El logo «ku» va abaj
 | Bali | «Hoy, con PayPal» | «Tú duermes. Tus clientes pagan.» |
 | Tailandia | «Hoy, solo con tarjeta» | «Mandas un enlace. Cada uno paga con lo suyo.» |
 
-- Bali y Tailandia cambian una fila por la del sueño: «Si te compran mientras duermes: se enfrían hasta que despiertas / pagan solos».
-- Dubái usa otra tabla: una fila por método (tarjeta, Bizum, OXXO, transferencia, PayPal) con «Aparece» o «No aparece».
+- Bali y Tailandia cambian una fila por la del sueño: «Si te compran mientras duermes».
+- Dubái usa otra tabla: una fila por método de pago, con «Aparece» o «No aparece».
 - Los títulos del anuncio de España: «Deja de perder ventas con Stripe» y «Hoy con Stripe vs. con Kunfupay».
 
 ### Errores y avisos
@@ -335,9 +320,9 @@ pie: Comparativa de España, imagen de feed (1080×1350). El logo «ku» va abaj
 |---|---|
 | El titular hablaba de cobrar «solo con tarjeta». Benja propuso «deja de perder ventas cobrando solo con Stripe» | España ya lo lleva. LATAM y Tailandia siguen con «tarjeta»: pendiente |
 | La comparativa de fiscal lleva la palabra «stripe» con la letra de su marca | No se repite. La otra marca se escribe con nuestra letra |
-| No consta que legal haya revisado las comparativas con Stripe y PayPal | Pendiente de confirmar. Cada celda roja tiene que poder demostrarse con una fuente pública y con fecha |
+| No consta que legal haya revisado las comparativas con Stripe y PayPal | Pendiente. Cada celda roja tiene que poder demostrarse con una fuente pública y con fecha |
 
-> **Por qué no se comparan precios:** Kunfupay no publica sus comisiones. Sin ese dato a la vista, comparar precios no se puede sostener.
+> **Por qué no se comparan precios:** Kunfupay no publica sus comisiones. Sin ese dato a la vista, la comparación no se sostiene.
 
 ### Antes de darlo por bueno
 
@@ -350,34 +335,29 @@ pie: Comparativa de España, imagen de feed (1080×1350). El logo «ku» va abaj
 ### Para qué sirve
 
 - Es la pieza del deseo. En Meta se llama así: «ESTATICA / DESEO» y el lugar.
-- Va en la parte alta del embudo: un dato grande que se entiende de un vistazo.
-- Datos propios todavía no hay. La auditoría del 10-11-2026 no destaca esta pieza.
-
-> **Por qué:** el número se ve antes de leer nada. Y es la única pieza que no nombra el problema: enseña directamente el premio.
+- Va en la parte alta del embudo. El número se ve antes de leer nada, y enseña el premio en vez del problema.
+- Datos propios todavía no hay: la auditoría del 10-11-2026 no la destaca.
 
 ### El anuncio, destripado
 
 ::pizarra creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E4_1080x1350.png w=236
-L 0.09,0.278 | La cifra, lo más grande | Ocupa un tercio de la imagen. Es lo único que se ve cuando el anuncio sale en pequeño.
-L 0.07,0.385 | El filtro, justo debajo | «Si vendes cursos desde Latinoamérica,». Quien no vende cursos ya sabe que no es para él.
-L 0.07,0.506 | Titular en condicional | «Podrías facturar hasta un 30 % más». «Podrías» y «hasta»: es un tope, no una promesa.
-L 0.07,0.924 | «Descubre cómo ↓» | Es texto: sin caja ni sombra. La flecha apunta al botón de verdad, el que pone Meta.
+L 0.09,0.278 | La cifra, lo más grande | Es lo único que se ve cuando el anuncio sale en pequeño.
+L 0.07,0.385 | El filtro, justo debajo | Quien no vende cursos ya sabe que no es para él.
+L 0.07,0.506 | Titular en condicional | «Podrías» y «hasta»: es un tope, no una promesa.
+L 0.07,0.924 | «Descubre cómo ↓» | Solo texto. La flecha apunta al botón de verdad, el de Meta.
 R 0.86,0.10 | Fondo liso, un solo color | Sin foto ni dibujo. Nada compite con la cifra.
-R 0.865,0.781 | Una línea para ese lugar | «Que te pague cualquier alumno, esté donde esté.» Es lo único que cambia de un lugar a otro.
-R 0.93,0.922 | El logo, abajo y pequeño | La marca va al final y en una esquina. Primero la cifra, después quién lo dice.
+R 0.865,0.781 | Una línea para ese lugar | Es lo único que cambia de un lugar a otro.
+R 0.93,0.922 | El logo, abajo y pequeño | Primero la cifra. Después, quién lo dice.
 pie: Anuncio «ESTATICA / DESEO / LATAM», imagen de feed (1080×1350). El botón de Meta de este anuncio es «Registrarte».
 ::fin
 
 ### Receta paso a paso
 
-<ol class="pasos" style="columns:2;column-gap:9mm">
-<li><strong>Pon un fondo liso azul oscuro</strong> Sin foto y sin dibujo.</li>
-<li><strong>Escribe la cifra arriba a la izquierda</strong> «+30%», enorme y en lila: 260 px en feed y 300 en vertical. El signo % va a la mitad de tamaño.</li>
-<li><strong>Debajo, el filtro en cursiva</strong> «Si vendes cursos desde…».</li>
-<li><strong>Debajo, el titular en blanco</strong> Cuatro líneas: «podrías facturar / hasta un 30 % más / solo cambiando / cómo cobras.» El «30 %» va en lila.</li>
+<ol class="pasos" style="columns:2;column-gap:9mm;break-inside:avoid">
+<li><strong>Fondo liso azul oscuro y la cifra arriba</strong> «+30%», enorme y en lila: 260 px en feed y 300 en vertical. El signo %, a la mitad de tamaño.</li>
+<li><strong>Debajo, el filtro y el titular</strong> El filtro en cursiva. El titular en blanco, en cuatro líneas, con «30 %» en lila.</li>
 <li><strong>Añade la línea del lugar</strong> Pequeña, con lo que gana quien vende desde allí.</li>
-<li><strong>Cierra con «Descubre cómo ↓»</strong> Abajo a la izquierda. Texto plano: no se dibuja un botón.</li>
-<li><strong>Logo y versión vertical</strong> El logo «ku», abajo a la derecha. En vertical, todo dentro de la zona blanca.</li>
+<li><strong>Cierra con «Descubre cómo ↓» y el logo</strong> Texto plano abajo a la izquierda: no se dibuja un botón. El logo «ku», a la derecha. Después, la versión vertical.</li>
 </ol>
 
 ### El texto que lleva
@@ -393,20 +373,17 @@ pie: Anuncio «ESTATICA / DESEO / LATAM», imagen de feed (1080×1350). El botó
 | Bali | «Mientras duermes, tus clientes te pagan.» |
 | Tailandia | «De madrugada aquí, de día en LATAM: te pagan igual.» |
 
-Los títulos del anuncio de España: «Hasta un 30 % más, sin vender más» y «Cambia cómo cobras, no lo que vendes».
-
 ### Errores y avisos
 
 | Qué pasó | Qué se hace |
 |---|---|
 | Los primeros estáticos de cuenta nominativa llevaban un botón dibujado | Se quitó en la segunda versión. Aquí «Descubre cómo ↓» es solo texto |
-| El 30 % es un número redondo, y la regla 2 pide que no lo sea | Pendiente de decidir si la pieza cambia de cifra |
+| El 30 % es redondo, y la regla 2 pide que no lo sea. Además, no está escrito de dónde sale | Pendiente de decidir si la pieza cambia de cifra |
 | La pieza habla de «facturar más». Otra guía del equipo dice que Meta no admite promesas de ingresos en servicios financieros | No consta ningún rechazo. Pendiente de confirmar si la frase se mantiene |
-| La cifra no lleva fuente | Pendiente: de dónde sale el 30 % (Documento maestro, «Pendiente de confirmar») |
 
 ### Antes de darlo por bueno
 
-<ul style="columns:2;column-gap:9mm"><li style="break-inside:avoid">La cifra es lo primero que se ve.</li><li style="break-inside:avoid">El titular lleva «podrías» y «hasta».</li><li style="break-inside:avoid">En la frase, «30 %» va con espacio. En el número gigante, el signo va pegado y más pequeño.</li><li style="break-inside:avoid">«Descubre cómo ↓» no tiene caja ni sombra.</li><li style="break-inside:avoid">La línea pequeña es la de ese lugar.</li></ul>
+<ul style="columns:2;column-gap:9mm"><li style="break-inside:avoid">La cifra es lo primero que se ve.</li><li style="break-inside:avoid">El titular lleva «podrías» y «hasta».</li><li style="break-inside:avoid">En la frase, «30 %» va con espacio.</li><li style="break-inside:avoid">«Descubre cómo ↓» no tiene caja ni sombra.</li></ul>
 
 ## Otros formatos || Piezas de otros ángulos y piezas antiguas, con lo que pasó con cada una
 
@@ -452,7 +429,7 @@ Los cuatro primeros se sustituyeron por los cinco formatos de esta guía. Del ca
 
 ### Paso a paso
 
-<ol class="pasos" style="columns:2;column-gap:9mm">
+<ol class="pasos" style="columns:2;column-gap:9mm;break-inside:avoid">
 <li><strong>Abre el generador del lugar</strong> Hay uno para España y otro para Tailandia. Para un lugar nuevo se copia uno de los dos.</li>
 <li><strong>Cambia los textos</strong> El lugar, las filas de la comparativa, la línea pequeña de la cifra y el titular de la noticia.</li>
 <li><strong>Deja los recursos en su carpeta</strong> La foto del lugar y la foto de quien firma, en alta resolución. Las capturas de la página de pago.</li>
@@ -461,6 +438,15 @@ Los cuatro primeros se sustituyeron por los cinco formatos de esta guía. Del ca
 <li><strong>Revisa las 10 imágenes</strong> Una a una, con la lista del apartado «Cómo se revisa».</li>
 <li><strong>Súbelas a Meta</strong> La de 1080×1350 para el feed y la de 1080×1920 para Stories y Reels. Con sus 2 textos y sus 2 títulos (Guía 3).</li>
 </ol>
+
+### Cómo se revisa
+
+- **A tamaño real.** Abre cada imagen al 100 % y busca fotos pixeladas, textos cortados y logos deformados.
+- **En pequeño.** Redúcela al tamaño de un sello. El titular se tiene que seguir leyendo.
+- **Todas juntas.** Pon las cinco en fila. Tienen que alternar: blanco, color oscuro y foto.
+- **En el móvil.** Mira la vista previa de Meta en feed y en Stories. Nada importante bajo las franjas.
+
+::galeria creatividades/metodos-de-pago/espana/estaticos/_RESUMEN-ES-feed.png = Las cinco piezas de España en fila: tres sobre blanco, una sobre azul oscuro y una con foto
 
 ### Dónde está cada cosa
 
@@ -478,60 +464,25 @@ Todas las rutas cuelgan de `creatividades/metodos-de-pago/`.
 
 **Pendiente de confirmar:** el generador de los estáticos de LATAM, Miami, Dubái y Bali no está en el repositorio. Solo están sus imágenes.
 
-### Cómo se revisa
-
-- **A tamaño real.** Abre cada imagen al 100 % y busca fotos pixeladas, textos cortados y logos deformados.
-- **En pequeño.** Redúcela al tamaño de un sello. El titular se tiene que seguir leyendo.
-- **Todas juntas.** Pon las cinco en fila. Tienen que alternar: blanco, color oscuro y foto.
-- **En el móvil.** Mira la vista previa de Meta en feed y en Stories. Nada importante bajo las franjas.
-
-::galeria creatividades/metodos-de-pago/espana/estaticos/_RESUMEN-ES-feed.png = Las cinco piezas de España en fila: tres sobre blanco, una sobre azul oscuro y una con foto
-
 ## Lista antes de entregar || Las comprobaciones de todos los formatos y lo que queda pendiente
 
 {lead} Antes de dar un estático por terminado, pásale esta lista. Vale para los cinco formatos.
 
-### La imagen
+### La imagen y sus dos tamaños
 
-- Cuenta una sola cosa y se entiende sin leer el texto del anuncio.
-- La primera línea dice para quién es.
-- Hay como mucho una cifra. Lleva un espacio antes de % y «hasta» delante, salvo en la noticia.
-- La herramienta de hoy va escrita. No hay logos ajenos ni nada tachado.
-- Lo que recibe quien vende se ve grande.
-- No hay botones, contadores ni iconos dibujados.
-- Las fotos son nítidas y las capturas son reales.
-- No hay precios, ni comisiones, ni la palabra «gratis».
-- En Bali y en Tailandia no aparece la cripto.
-- Lo que se afirma es verdad hoy y en ese lugar.
-
-### Los dos tamaños
-
-- Están las dos imágenes: 1080×1350 y 1080×1920.
-- En la vertical no hay nada en los 270 px de arriba ni en los 380 de abajo.
-- El logo «ku» está en su sitio: abajo a la derecha, o arriba a la derecha en la noticia. El tweet no lleva.
-- Reducida al tamaño de un sello, el titular se lee.
+<ul style="columns:2;column-gap:9mm"><li style="break-inside:avoid">Cuenta una sola cosa y se entiende sin leer el texto del anuncio.</li><li style="break-inside:avoid">La primera línea dice para quién es.</li><li style="break-inside:avoid">Hay como mucho una cifra. Lleva un espacio antes de % y «hasta» delante, salvo en la noticia.</li><li style="break-inside:avoid">La herramienta de hoy va escrita. No hay logos ajenos ni nada tachado.</li><li style="break-inside:avoid">Lo que recibe quien vende se ve grande.</li><li style="break-inside:avoid">No hay botones, contadores ni iconos dibujados.</li><li style="break-inside:avoid">Las fotos son nítidas y las capturas son reales.</li><li style="break-inside:avoid">No hay precios, ni comisiones, ni la palabra «gratis».</li><li style="break-inside:avoid">En Bali y en Tailandia no aparece la cripto.</li><li style="break-inside:avoid">Lo que se afirma es verdad hoy y en ese lugar.</li><li style="break-inside:avoid">Están las dos imágenes: 1080×1350 y 1080×1920.</li><li style="break-inside:avoid">En la vertical no hay nada en los 270 px de arriba ni en los 380 de abajo.</li><li style="break-inside:avoid">El logo «ku» está en su sitio: abajo a la derecha, o arriba a la derecha en la noticia. El tweet no lleva.</li><li style="break-inside:avoid">Reducida al tamaño de un sello, el titular se lee.</li></ul>
 
 ### Para subirla
 
-- El nombre va en mayúsculas: «ESTATICA / TIPO / LUGAR».
-- Lleva 2 textos, uno largo y uno corto, y 2 títulos muy distintos.
-- Las mejoras automáticas de Meta están apagadas. No hay formulario.
-- Se publica por partes y se comprueba cada una.
-
-El detalle de la subida está en la Guía 3.
+<ul style="columns:2;column-gap:9mm"><li style="break-inside:avoid">El nombre va en mayúsculas: «ESTATICA / TIPO / LUGAR».</li><li style="break-inside:avoid">Lleva 2 textos, uno largo y uno corto, y 2 títulos muy distintos.</li><li style="break-inside:avoid">Las mejoras automáticas de Meta están apagadas. No hay formulario.</li><li style="break-inside:avoid">Se publica por partes y se comprueba cada una.</li></ul>
 
 ### Lo que queda pendiente
 
 | Qué | Dónde afecta |
 |---|---|
-| De dónde salen el 27 % y el 30 % | Todos los formatos |
-| El 30 % es redondo y la pieza habla de «facturar más» | Cifra |
+| De dónde salen el 27 % y el 30 %. El 30 % es redondo y habla de «facturar más» | Todos. Sobre todo, la cifra |
 | Los verticales dejan 380 px abajo y Reels tapa 670 | Todos |
 | Revisión legal de las comparativas y de los logos de las capturas | Comparativa y página de pago |
-| «Paga con su moneda local», sin confirmar con producto | Página de pago |
-| Qué herramienta se nombra en LATAM y Tailandia en vez de «tarjeta» | Tweet, comparativa y página de pago |
-| Rehacer las noticias con foto pixelada o con logos tachados | Noticia de LATAM, Bali, España, Miami y Dubái |
-| Confirmar que aceptamos vendedores que viven en cada hub | Noticia |
-| Imagen vertical de la página de pago de Bali, sin subir | Página de pago |
-| Rehacer el tweet de equipo del remarketing sin la barra de iconos | Tweet |
-| El generador de los cuatro primeros hubs no está en el repositorio | Fabricación |
+| «Paga con su moneda local» y qué herramienta se nombra en vez de «tarjeta» | Página de pago, tweet y comparativa |
+| Rehacer las noticias antiguas y confirmar que aceptamos vendedores de cada hub | Noticia |
+| Vertical de la página de pago de Bali, tweet de equipo sin iconos y generador de los primeros hubs | Subida y fabricación |
