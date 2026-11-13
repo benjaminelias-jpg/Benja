@@ -27,7 +27,7 @@ Antes de escribir nada, elige qué tipo de vídeo vas a hacer. Así se ven cuatr
 | **Fundador o equipo a cámara** | Alguien de Kunfupay explica algo mirando a cámara, en el estudio. | Explicar cómo funciona algo y dar confianza. Es lo que se usa en fiscal y en Classroom Platinum. |
 | **UGC** | Vídeo con aspecto casero, grabado con el móvil por un creador de fuera del equipo. | Contar una escena del día a día sin que parezca un anuncio. |
 | **Vendedor en primera persona** | Un vendedor del equipo se presenta y pide que le escriban por WhatsApp. | Remarketing: lo ve gente que ya visitó el perfil de ese vendedor. |
-| **Podcast** | Un corte de una conversación grabada. | «REEL PODCAST JUANEN» trajo 25 registros a 7,66 € cada uno, de lo más barato de la cuenta (15-8 a 12-11-2026). |
+| **Podcast** | Un corte de una conversación grabada. | «REEL PODCAST JUANEN» trajo 25 registros a 7,66 € cada uno. La media de Kunfupay es 25,64 € (15-8 a 12-11-2026). |
 
 ### Quién habla: «nosotros», «ellos» o «yo»
 
@@ -102,7 +102,7 @@ Los dos reels son anteriores a la regla del 12-11-2026. Sirven para ver qué fun
 
 ::pizarra creatividades/metodos-de-pago/hubs/videos/portadas/pagos-personalizado-bali.jpg w=190
 L 0.38,0.36 | Un solo protagonista | Una cara y nada más. La guía avisa: una persona hablando a cámara, sin más, rinde poco. Por eso hace falta el texto.
-L 0.04,0.74 | Luz morada, sin logo | La marca está en el color de la luz. Un logo en el primer fotograma avisa de que es un anuncio.
+L 0.05,0.60 | Luz morada, sin logo | La marca está en el color de la luz. Un logo en el primer fotograma avisa de que es un anuncio.
 L 0.16,0.755 | El filtro, en el subtítulo | «Si vendes cursos desde Bali…». Quien no vende cursos deja de mirar. Va escrito porque mucha gente lo ve sin sonido.
 R 0.62,0.13 | Aquí falta el rótulo fijo | El guion pide un rótulo con el filtro desde el segundo 0. Aquí el filtro va solo en el subtítulo, que entra con la voz.
 R 0.86,0.42 | Fondo liso y oscuro | Nada compite con la cara ni con el texto. La regla: tres cosas en pantalla como máximo.
@@ -116,7 +116,7 @@ L 0.33,0.565 | Señala a quien mira | El gesto dice lo mismo que el rótulo: «t
 L 0.10,0.90 | Abajo no hay texto | La interfaz de Reels tapa la parte baja de la pantalla. Por eso el rótulo va arriba.
 R 0.80,0.07 | Blanco sobre negro | El máximo contraste. Detrás del texto no hay nada que estorbe.
 R 0.975,0.172 | La pregunta está a medias | Falta «…y vendes online?». Con la regla del 12-11, el rótulo entero está desde el primer fotograma.
-R 0.93,0.667 | El mismo plató | Fondo negro y luz morada en todos los reels de fiscal. La marca se reconoce sin poner el logo.
+R 0.93,0.667 | El mismo plató | Fondo negro y luz morada en los cuatro reels nuevos de fiscal. La marca se reconoce sin poner el logo.
 pie: Fotograma de portada del reel «BENJA 30 % MOR» de optimización fiscal. Filtro en un rótulo grande.
 ::fin
 
@@ -196,7 +196,7 @@ Ojo: son pocos datos. Los reels de hubs tienen entre 1.000 y 9.000 impresiones, 
 
 ## El guion || La plantilla de ocho pasos, un guion real destripado y sus reglas
 
-{lead} Los guiones nuevos siguen una misma plantilla de ocho pasos. Duran de 30 a 40 segundos y se entienden sin sonido.
+{lead} Los guiones nuevos de los hubs siguen una misma plantilla de ocho pasos. Duran de 30 a 40 segundos y se entienden sin sonido.
 
 Los ocho pasos son: rótulo con el filtro, frase con la cifra, dolor contado a cámara, «PERO…», la prueba en pantalla, lo que recibe quien vende, prueba social y cierre.
 
@@ -275,9 +275,7 @@ En métodos de pago y en cuenta nominativa, cada gancho va solo con el cuerpo de
 
 ### Cómo se nombra
 
-El nombre dice qué gancho y qué cuerpo lleva el anuncio. En los guiones el código es línea, cuerpo y gancho: `CN-C1-1A` es cuenta nominativa, cuerpo 1, gancho 1A. En Meta, los de métodos de pago se llaman «MP-C1 | VÍDEO | UN SOLO ENLACE | VID» y los de Classroom Platinum, «REEL / HOOK 1 / CUERPO 2».
-
-> **Por qué:** así, al mirar los resultados, se ve qué gancho y qué cuerpo trajo cada lead sin abrir el anuncio.
+El nombre dice qué gancho y qué cuerpo lleva el anuncio. Así, al mirar los resultados, se ve qué trajo cada lead sin abrir el anuncio. En los guiones el código es línea, cuerpo y gancho: `CN-C1-1A` es cuenta nominativa, cuerpo 1, gancho 1A. En Meta, los de métodos de pago se llaman «MP-C1 | VÍDEO | UN SOLO ENLACE | VID» y los de Classroom Platinum, «REEL / HOOK 1 / CUERPO 2».
 
 ### Un anuncio modular, destripado
 
@@ -302,11 +300,11 @@ pie: Anuncio modular de cuenta nominativa: gancho 1A + cuerpo 1.
 
 ### Cómo se monta y cómo se lee
 
-- **El corte va en el dolor.** El gancho acaba con un segundo de silencio y el cuerpo entra con su puente. Si el gancho se grabó en la calle o en un selfie, el cambio de plano en el «Pero…» queda natural.
+- **El corte va en el dolor.** El gancho acaba con un segundo de silencio y el cuerpo entra con su puente, el «Pero…». Ahí el cambio de plano queda natural.
 - **Si fallan todos los ganchos de un cuerpo, falla el cuerpo.** Si el cuerpo funciona y sus ganchos no, se graban ganchos nuevos y el cuerpo se queda.
 - **Para comparar cuerpos,** se usa el mismo gancho con cuerpos distintos, cada cuerpo en su conjunto, con el mismo presupuesto y el mismo público. Si van juntos, Meta ve el mismo inicio y puede darle todo el gasto a uno.
 - **El orden:** primero se leen los ganchos. Después, con los ganchos que ganan, los cuerpos. Y el cuerpo se juzga por la calidad de los leads, no solo por lo que cuestan.
-- **Un ejemplo real.** Los tres cuerpos de métodos de pago tienen casi el mismo hook rate (del 22 al 23 %), pero la retención cambia: 37,78 % en «Un solo enlace», 30,29 % en «Todo en un enlace» y 19,18 % en «Ventas que pierdes». Con unas 2.200 a 3.300 impresiones cada uno, es una señal y no una conclusión.
+- **Un ejemplo real.** Los tres cuerpos de métodos de pago tienen casi el mismo hook rate (22 a 23 %), pero distinta retención: 37,78 % «Un solo enlace», 30,29 % «Todo en un enlace» y 19,18 % «Ventas que pierdes». Con unas 2.200 a 3.300 impresiones cada uno, es una señal, no una conclusión.
 
 ## Cómo se graba y cómo se edita || Sesión, tomas aparte, UGC, subtítulos, zona segura y portada
 
@@ -378,7 +376,7 @@ Tres cuidados al reutilizar y al subir:
 | **Optimización fiscal** | Manda el vídeo: 4 reels nuevos a cámara (3-11-2026). Hay un estático de comparativa preparado. | Equipo o fundador a cámara, en el estudio. | Hay que explicar cómo funciona. En la campaña de testeo de España, el vídeo trae registros a 17,04 € y el estático, a 38,65 €. |
 | **Métodos de pago y hubs** | Se alterna: 5 estáticos, los genéricos y un personalizado por lugar. | Solo el personalizado de cada hub. | La prueba se ve de un vistazo en una imagen. En hubs, el estático trae leads a 4,31 € y el vídeo, a 11,76 €. Casi todos vienen de un solo anuncio: «Página de pago» de LATAM (48 leads a 2,02 €). |
 | **Classroom Platinum** | Las piezas nuevas son solo vídeo. | Fundador y equipo a cámara: cuerpos de 65 a 70 segundos y sus ganchos. | El mensaje es largo: un programa con requisitos y cuatro fases. Pero los datos no lo apoyan: en su campaña, el estático trae leads a 42,81 € y el vídeo, a 85,27 €. |
-| **Cuenta nominativa** | El plan es mitad y mitad: 4 estáticos y 4 vídeos. | Los 4 vídeos. El sistema modular prevé 3 cuerpos y 12 ganchos en una sesión. | Es una línea nueva: en Meta aún no hay anuncios suyos con gasto. Cada mensaje va en su formato, y ningún estático repite el mensaje de un vídeo. |
+| **Cuenta nominativa** | El plan es mitad y mitad: 4 estáticos y 4 vídeos. | Los 4 vídeos. El sistema modular prevé 3 cuerpos y 12 ganchos en una sesión. | Es una línea nueva: en Meta aún no hay ningún conjunto con ese nombre y con gasto. Cada mensaje va en su formato, y ningún estático repite el mensaje de un vídeo. |
 | **Remarketing de vendedores** | Estáticos con la cara del vendedor y, desde el 5-11-2026, reels de dos vendedores. | Cada vendedor, en primera persona, de 30 a 50 segundos. | Quien lo ve ya visitó el perfil de ese vendedor. Con los estáticos, cada persona vio el anuncio de 6 a 15 veces y no hubo resultados. Los reels aún no tienen datos. |
 
 Los datos son de Meta, del 15-8 al 12-11-2026; el de remarketing, de la auditoría del 10-11-2026. Ojo: el «lead» de hubs y de Classroom Platinum cuenta cualquier visita a una página de gracias. No dice si el contacto es bueno.
@@ -452,7 +450,7 @@ Lo que se aprende: una frase dicha a cámara no se arregla en edición sin corta
 
 ## Lo que falta por definir || Datos y decisiones que no constan en ningún documento
 
-{lead} Esta guía solo recoge lo que está escrito o lo que ha dicho Benja. Lo que sigue no consta en ningún sitio. Hay que decidirlo o confirmarlo.
+{lead} Esta guía solo recoge lo que está escrito, lo que ha dicho Benja y los datos de Meta. Lo que sigue no consta en ningún sitio. Hay que decidirlo o confirmarlo.
 
 | Qué falta | Por qué importa |
 |---|---|
@@ -465,7 +463,7 @@ Lo que se aprende: una frase dicha a cámara no se arregla en edición sin corta
 | Cuántas palabras tiene el rótulo. | La regla dice 7 como máximo. Los rótulos de los guiones de hubs tienen de 8 a 11. |
 | Qué se hace con el audio de los dos vídeos de Rubén. | Dice frases de impuestos que no se usan. |
 | El guion escrito de los reels ya publicados. | De los 4 de fiscal, los 2 de Classroom Platinum, «Tres cosas» y «Ventas que pierdes» solo se guardan la portada y los textos. |
-| Qué pasó con los guiones de cuenta nominativa. | En Meta no hay ningún anuncio con gasto de esa línea. Sí hay vídeos de los tres cuerpos de métodos de pago y reels de dos vendedores. |
+| Qué pasó con los guiones de cuenta nominativa. | En Meta no hay ningún anuncio ni conjunto con ese nombre y con gasto. Sí hay vídeos de los tres cuerpos de métodos de pago y reels de dos vendedores. |
 | Si Classroom Platinum debe ser solo vídeo. | En 90 días sus estáticos trajeron leads más baratos que sus vídeos. Falta mirar la calidad de esos leads. |
 | Cómo se nombra en Meta un anuncio modular. | La norma actual es `REEL / TIPO / LUGAR`. Los modulares publicados usan otros dos formatos de nombre. |
 | La revisión legal de «la única pasarela de España que funciona como Merchant of Record» y de «los impuestos de esa venta son cosa nuestra». | Los propios guiones las marcan como pendientes. |
