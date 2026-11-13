@@ -369,7 +369,9 @@ Hay más piezas, más antiguas o de otros ángulos: la nota escrita a boli, la o
 
 ### El tweet
 
-Sirve mucho para la parte media del embudo. No parece un anuncio: parece que alguien cuenta algo.
+Sirve para la parte media del embudo. No parece un anuncio: parece que alguien cuenta algo.
+
+En los últimos 90 días todavía no ha dado resultados baratos. Hay que volver a probarlo bien; está explicado en «Lo que ha funcionado».
 
 ::pizarra creatividades/metodos-de-pago/espana/estaticos/ES-E1_1080x1350.png w=236
 L 0.07,0.205 | Foto, nombre y check azul | Es una persona real con cara. Se lee como una publicación, no como publicidad.
@@ -474,6 +476,8 @@ Cómo se leen juntos:
 
 Al final manda otro número: cuánto cuesta un lead que de verdad vende.
 
+Hoy nuestros vídeos van de un 9 % a un 31 % de hook rate. Los datos de cada uno están en «Lo que ha funcionado».
+
 ### Los tipos de vídeo
 
 | Tipo | Qué es | Dónde se usa |
@@ -491,30 +495,34 @@ Cómo se graba, se edita y cuándo toca grabar está en la **Guía 2**.
 
 ## Cuándo estático y cuándo vídeo || Dónde solo grabamos, dónde alternamos y por qué
 
-{lead} No hay un formato mejor en general. Cada ángulo ha respondido a uno distinto.
+{lead} No hay un formato mejor en general. Cada ángulo ha respondido a uno distinto, y los datos lo dicen claro.
+
+### Lo que dicen los datos
+
+Mismo público, misma campaña y mismo evento. Últimos 90 días, hasta el 12 de noviembre de 2026.
+
+| Campaña | Estático | Vídeo | Gana |
+|---|---|---|---|
+| **Testeo España** (fiscal y métodos de pago), por registro | 38,65 € (13 registros) | 17,04 € (119 registros) | Vídeo |
+| **Andorra**, por registro | 91,64 € (12) | 39,87 € (15) | Vídeo |
+| **Hubs**, por lead | 4,31 € (55 leads) | 11,76 € (13 leads) | Estático |
+| **Classroom Platinum**, por lead | 42,81 € (103 leads) | 85,27 € (19 leads) | Estático |
+
+No se pueden comparar las filas entre sí: cada campaña cuenta un resultado distinto. Y que Meta no gaste en un anuncio no prueba que sea malo: puede que compitiera con un ganador dentro de su conjunto.
+
+### Qué usamos en cada ángulo
 
 | Ángulo | Qué usamos | Por qué |
 |---|---|---|
-| **Optimización fiscal** | Sobre todo vídeo | Hay que explicar algo que la gente no conoce. Los vídeos ganaron y Meta no llegó a enseñar los estáticos |
+| **Optimización fiscal** | Sobre todo vídeo | Hay que explicar algo que la gente no conoce. Los tres mejores anuncios son reels y Meta casi no enseñó los estáticos |
 | **Métodos de pago (España)** | Las dos cosas | El estático de la página de pago trae registros; los reels dan clics |
-| **Hubs** | Las dos cosas: 5 estáticos, reels genéricos y un reel propio del lugar | Con 10 € al día por hub no se puede grabar todo. Los estáticos se adaptan en una hora |
-| **Classroom Platinum** | Solo vídeo | Se pide confianza para un programa de seis meses. Hace falta ver a la persona |
-| **Cuenta a tu nombre** | Mitad y mitad | Conjunto nuevo: se prueba todo |
+| **Hubs** | Las dos cosas: 5 estáticos, reels genéricos y un reel propio del lugar | Con 10 € al día por hub no se puede grabar todo. Y el estático gana |
+| **Classroom Platinum** | Las dos cosas, con más peso del estático | El estático trae el lead a la mitad de precio. El vídeo sirve para dar confianza |
 | **Remarketing de vendedores** | Estático con la cara del vendedor | Ya nos conocen. Basta recordar quién les responde |
 
 ### La regla para decidir
 
-<div class="dos"><div class="caja"><b>Estático cuando…</b><span>El mensaje cabe en una frase: un dolor, una cifra, una prueba que se ve. Hay que adaptarlo a muchos lugares. Hay que sacar muchas pruebas rápido y barato.</span></div><div class="caja"><b>Vídeo cuando…</b><span>Hay que explicar cómo funciona algo. Hay que desmontar una creencia. Hace falta confianza: una cara, una voz.</span></div></div>
-
-> **Por qué alternar:** un estático cuesta mucho menos que un vídeo y se hace en una tarde. Sirve para probar muchos mensajes. Cuando un mensaje gana en estático, merece su vídeo.
-
-### Lo que dicen los datos
-
-- En fiscal, los dos mejores anuncios han sido reels: «Podcast Juanen» (5,52 € por registro) y «Profitstride» (11,80 €). Los 5 estáticos fiscales no pasaron de 8 € de gasto: Meta no los enseñó.
-- En métodos de pago, lo único que dio señal al principio fue un estático, la «Noticia Pago Global» (3 registros a 10,42 €). Los carruseles y los reels de entonces no pasaron.
-- En los hubs, el estático de la página de pago se llevó casi todos los leads de LATAM.
-
-> **Cuidado al leer esto:** que Meta no gaste en un anuncio no prueba que sea malo. Puede que compitiera con un ganador dentro del mismo conjunto. Por eso existe la regla 11.
+<div class="dos"><div class="caja"><b>Estático cuando…</b><span>El mensaje cabe en una frase: un dolor, una cifra, una prueba que se ve. Hay que adaptarlo a muchos lugares. Hay que probar muchos mensajes rápido y barato: se hace en una tarde. Cuando un mensaje gana en estático, merece su vídeo.</span></div><div class="caja"><b>Vídeo cuando…</b><span>Hay que explicar cómo funciona algo. Hay que desmontar una creencia. Hace falta confianza: una cara, una voz.</span></div></div>
 
 ## Los copys || Cuántos textos ponemos, cuáles y por qué
 
@@ -569,7 +577,6 @@ La plantilla completa y un texto real destripado están en la **Guía 3**.
 
 - **7 días sin tocar.** Ni añadir, ni pausar, ni editar.
 - **Mismo presupuesto, mismo público, misma página y mismo evento** en los conjuntos que se comparan.
-- **El día 9 se lee el semáforo**, anuncio por anuncio.
 
 > **Por qué no tocar:** cada cambio grande devuelve el conjunto a la fase de aprendizaje de Meta, y ahí el coste siempre sube. En septiembre se añadieron 3 conjuntos y 40 anuncios en 8 días: el coste por lead pasó de 16 € a 45 €.
 
@@ -580,13 +587,11 @@ La plantilla completa y un texto real destripado están en la **Guía 3**.
 | Coste por registro | 12 € o menos | Más de 18 € |
 | Clic en el anuncio | 2,5 % o más | Menos de 1,5 % |
 | Frecuencia (veces que lo ve cada persona) | Menos de 2,5 | Más de 3: cambiar la creatividad |
-| Hook rate (vídeo) | 25–30 % o más | — |
-| Retención (vídeo) | 40 % o más | — |
 | Gasto en un solo anuncio del conjunto | Repartido | 80 % o más en uno |
 
 ### El número que manda
 
-El coste por lead engaña si los leads son malos. Por eso cruzamos Meta con el CRM.
+El coste por lead engaña si los leads son malos. Por eso cruzamos Meta con el CRM. En esta semana, los hubs gastaron el 19 % y dieron 5 de los 9 leads cualificados.
 
 | Campaña (3–9 nov.) | Leads | Descartados | Coste por lead cualificado |
 |---|---|---|---|
@@ -594,9 +599,59 @@ El coste por lead engaña si los leads son malos. Por eso cruzamos Meta con el C
 | Hubs | 63 | 56 % | 44 € |
 | Classroom | 21 | 71 % | 251 € |
 
-Los hubs, con el 19 % del gasto, dieron 5 de los 9 leads cualificados de esa semana.
 
-Para poder cruzar los datos, cada anuncio lleva en su enlace el nombre de la campaña, del conjunto y del anuncio. Está explicado en la Guía 3.
+
+## Lo que ha funcionado || Los anuncios que mejor han ido, con sus cifras
+
+{lead} Estos son los anuncios que mejor resultado han dado en los últimos 90 días. Sirven de modelo para los siguientes.
+
+Datos de Meta del 15 de agosto al 12 de noviembre de 2026. Son 450 anuncios y 20.993 € de gasto en toda la cuenta.
+
+### Los mejores
+
+| Anuncio | Qué es | Gasto | Resultado |
+|---|---|---|---|
+| **Página de pago · LATAM** | Estático con flechas | 97 € | 48 leads a 2,02 € |
+| **Infografía · LATAM** | Reel de pantallas | 22 € | 7 leads a 3,18 € |
+| **Podcast Juanen** | Reel: trozo de una conversación sobre fiscal | 192 € | 25 registros a 7,66 € |
+| **Competencia 2** | Reel de comparativa | 132 € | 16 registros a 8,22 € |
+| **Noticia Pago Global** | Estático de noticia | 65 € | 5 registros a 12,91 € |
+| **Profitstride** | Reel fiscal | 874 € | 66 registros a 13,24 €. El que más volumen ha dado |
+| **Videojuego · Classroom** | Estático | 1.353 € | 53 leads a 25,53 € |
+| **Página de pago · España** | Estático con flechas | 162 € | 6 registros a 27,02 € |
+
+«Registro» y «lead» son resultados distintos: un registro es una cuenta creada; un lead es alguien que llega a la página de gracias. No se comparan entre sí.
+
+### Lo que tienen en común
+
+- **Enseñan algo real.** Una página de pago de verdad, una conversación de verdad, una comparativa con datos.
+- **Una persona hablando de un problema concreto** engancha más que unas pantallas solas.
+- **El mensaje es uno solo.** Ninguno intenta contar todo Kunfupay.
+
+### Los inicios que más enganchan
+
+De cada 100 personas que ven el vídeo, estas siguen a los 3 segundos:
+
+| Vídeo | Hook rate |
+|---|---|
+| «LLC España 2» | 30,7 % |
+| «Un Merchant of Record no es magia» | 28,7 % |
+| «Podcast Juanen» | 25–27 % |
+| «Profitstride» | 24,9 % |
+| «Infografía» (España) | 14,7 % |
+| «Infografía» en Dubái y en Bali | 12,2 % y 9,2 % |
+
+Los cuatro primeros abren con una persona y un tema fiscal muy concreto. Los que menos enganchan abren con pantallas, sin cara.
+
+> **Lo que enseña esto:** nuestro objetivo es un 25–30 %. Solo lo alcanzan los mejores. El inicio es donde más hay que probar.
+
+### Tres avisos que salen de los datos
+
+1. **El tweet todavía no ha dado resultados baratos.** En Kunfupay, 4 tweets gastaron 125 € y no dieron ningún registro. En Classroom, el tweet es el anuncio en el que más gasta Meta (1.836 €), pero cada lead sale a 73 €, el más caro. En los hubs casi no ha recibido gasto (12 €): ahí está sin probar.
+2. **La noticia depende mucho del sitio.** «Noticia Pago Global» dio registros a 12,91 €. En Andorra, la misma idea gastó 383 € para 4 registros. En los hubs lleva 7 leads a 22,65 €.
+3. **Un anuncio puede ganar con un objetivo y perder con otro.** «Profitstride» es el mejor por registros. En el conjunto que busca leads de la página, gastó 422 € y dio 1.
+
+> **Sobre el tweet:** Benja lo considera muy útil para la parte media del embudo, y es un formato que la cuenta ha usado muchas veces. Lo que dicen estos 90 días es que hay que volver a probarlo bien: en un conjunto de prueba, con gasto suficiente, antes de darlo por bueno o por malo.
 
 ## Lo que se hizo y no funcionó || Para no repetirlo
 
@@ -628,6 +683,7 @@ Para poder cruzar los datos, cada anuncio lleva en su enlace el nombre de la cam
 | Tweet del vendedor con botones dibujados | Meta lo rechazó |
 | Remarketing de vendedores, conjuntos 3 y 4 | 38 €, 0 resultados; cada persona vio el anuncio de 6 a 15 veces |
 | Hub de Miami | 100 € en 14 días para 1 lead |
+| 35 anuncios con más de 30 € de gasto cada uno | 0 resultados. Entre todos, 1.816 € en 90 días |
 
 ### Mensajes que se descartaron
 

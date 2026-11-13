@@ -55,8 +55,8 @@ figcaption{font-size:8.7pt;color:var(--gris);margin-top:2.5mm;line-height:1.45}
 .caja{border:1px solid var(--linea);border-radius:5px;padding:9px 11px;background:#fff}
 .caja b{display:block;font-size:9.3pt;color:var(--marca);margin-bottom:2px}
 .caja span{display:block;font-size:8.5pt;line-height:1.42;color:#444}
-.dos{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:4mm 0 6mm}
-.tres{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin:4mm 0 6mm}
+.dos{display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:4mm 0 6mm;break-inside:avoid}
+.tres{display:grid;grid-template-columns:1fr 1fr 1fr;gap:4mm;margin:4mm 0 6mm;break-inside:avoid}
 .si,.no{border-radius:5px;padding:3.5mm 4mm 1mm;break-inside:avoid;border:1px solid var(--linea)}
 .si h4,.no h4{margin:0 0 2mm;font-size:9.6pt;letter-spacing:.06em;text-transform:uppercase}
 .no h4{color:#8a1c1c}.si h4{color:#1f5a35}
