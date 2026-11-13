@@ -131,14 +131,14 @@ Kommo y Daneris no estaban conectados al preparar esta versión. Cuando lo esté
 Es el estático que mejor ha ido. Enseña el producto tal como lo ve el cliente.
 
 ::pizarra creatividades/metodos-de-pago/hubs/estaticos/HUB-LATAM-E3_1080x1350.png w=236
-L 0.07,0.082 | El filtro, en cursiva | «Si vendes cursos desde LATAM». Va arriba, antes que nada.
-L 0.05,0.345 | Una nota por cada cliente | Dice quién paga y cómo: «Tu alumno de Colombia paga con su moneda local».
-L 0.13,0.44 | Flechas dibujadas a mano | Llevan el ojo de la nota al método de pago.
-L 0.07,0.858 | Lo que recibe quien vende | Cierra la imagen, grande.
-R 0.96,0.13 | El dolor, en color | «Estás perdiendo ventas.» Es lo primero que se lee.
-R 0.93,0.298 | El país, a la vista | El selector con la bandera demuestra que cada país ve su página.
-R 0.67,0.36 | El óvalo marca el método | Rodea Nequi y PSE. Señala el método, nunca el importe.
-R 0.93,0.69 | Capturas reales | Los únicos logos son los de la página de pago. No se retocan.
+L 0.07,0.082 | Filtro en cursiva, arriba | «Si vendes cursos desde LATAM» deja fuera a quien no encaja antes de que lea nada: no cuesta un clic que no sirve. Va arriba y en cursiva porque es lo primero que mira el ojo.
+L 0.05,0.345 | Una nota por cliente, con su país | La persona se ve reflejada («tu alumno de Colombia»). Decimos «su moneda local» y no nombramos un banco: así entiende que su cliente paga como en su país, sin tener que conocer cada método.
+L 0.13,0.44 | Las flechas son el gancho | Paran el dedo y llevan la mirada de la frase al producto, sin esfuerzo. Combinadas con círculos funcionan aún más, y en rojo todavía más. Cada flecha sale de una frase y acaba en lo que prueba.
+L 0.07,0.858 | «Y tú recibes euros o dólares» | Hay que cerrar la información. Enseñamos métodos de pago que quien vende no conoce (Nequi, PSE): sin esta línea podría pensar que cobrará en pesos colombianos. Una frase y no queda ninguna duda: el cliente paga en lo suyo y él recibe en euros o dólares.
+R 0.96,0.13 | El dolor, en color | «Estás perdiendo ventas» da el motivo para seguir leyendo. Va en color para que se lea en medio segundo.
+R 0.93,0.298 | Selector de país con bandera | Prueba que cada país ve su página y no una genérica. Evita que se piense «esto es un montaje».
+R 0.67,0.36 | Círculo sobre el método | Segundo gancho visual: encierra lo que el ojo debe mirar. Rodea el método y nunca el importe, para no prometer cantidades.
+R 0.93,0.69 | Capturas reales | Los logos que aparecen son los de la propia página de pago, no un mensaje nuestro. Quien luego entre en la web ve lo mismo: el anuncio y el producto coinciden.
 pie: Anuncio «ESTATICA / PAGINA DE PAGO / LATAM».
 ::fin
 
@@ -153,13 +153,13 @@ Así lo recibe la persona en Instagram (vista previa de Meta, con el texto largo
 Se hace con elementos muy saturados para parar el dedo en frío.
 
 ::pizarra creatividades/metodos-de-pago/hubs/estaticos/HUB-TAILANDIA-E5_1080x1350.png w=236
-L 0.07,0.185 | Círculo rojo con una cara | El rojo se ve de lejos y una cara mira al que pasa. Es el formato de última hora.
-L 0.10,0.45 | La bandera del lugar | Quien vive allí la reconoce al instante: el filtro, en imagen.
-L 0.07,0.70 | Banda roja «Actualidad» | Cambia el anuncio de «publicidad» a «información».
-R 0.93,0.07 | El logo, pequeño y arriba | La marca no manda. Manda la noticia.
-R 0.72,0.25 | Foto real, en alta definición | Con la saturación un poco subida.
-R 0.93,0.875 | El titular, con su cifra | «…ya aumentan su conversión un 27 %». Otros ya lo hacen: es la prueba.
-R 0.93,0.97 | Fondo negro abajo | Para que el texto blanco se lea sobre cualquier foto.
+L 0.07,0.185 | Círculo rojo con una cara | El rojo se ve desde lejos y una cara mira a quien pasa. Es el código de la noticia de última hora: la persona lo asocia a información y no a publicidad.
+L 0.10,0.45 | La bandera del lugar | Quien vive allí la reconoce al instante, así que es el filtro hecho imagen. Si no hay bandera, el anuncio podría ser de cualquier sitio y no habla a nadie.
+L 0.07,0.70 | Banda roja «Actualidad» | Recategoriza el anuncio como información. Es lo que hace que se mire como una noticia y no se salte como publicidad.
+R 0.93,0.07 | Logo pequeño y arriba | La marca no manda: manda la noticia. Un logo grande delata el anuncio y la gente lo salta.
+R 0.72,0.25 | Foto real en alta definición | Con saturación subida para destacar en el feed. Una foto pixelada delata el montaje y resta credibilidad a la noticia entera.
+R 0.93,0.875 | Titular con cifra y con «otros ya lo hacen» | «Ya aumentan su conversión un 27 %»: la cifra hace concreto el beneficio y que otros lo hagan es la prueba. Dice «creadores que venden a España y LATAM» y no «en Tailandia» porque allí no hay clientes: no se afirma lo que no es cierto.
+R 0.93,0.97 | Fondo oscuro bajo el texto | Asegura que el texto blanco se lea sobre cualquier foto, también en pantallas con poco brillo.
 pie: Anuncio «ESTATICA / NOTICIA / TAILANDIA». Dice «Creadores que venden a España y LATAM» y no «Creadores en Tailandia» porque no hay clientes allí.
 ::fin
 
@@ -176,13 +176,13 @@ pie: Cambios de la noticia de Tailandia, 12 de noviembre.
 Para la parte media. No parece un anuncio: parece que alguien cuenta algo.
 
 ::pizarra creatividades/metodos-de-pago/espana/estaticos/ES-E1_1080x1350.png w=236
-L 0.07,0.205 | Foto, nombre y check azul | Persona real con cara. Se lee como una publicación.
-L 0.07,0.345 | La primera línea filtra | «Si vendes cursos desde España y cobras con Stripe».
-L 0.07,0.525 | El dolor, en una frase | «Tus alumnos de LATAM no pueden pagarte.»
-R 0.92,0.11 | Fondo blanco, sin logo | Nada avisa de que es un anuncio.
-R 0.90,0.465 | Un porcentaje no redondo | 27 %, con «hasta» delante.
-R 0.80,0.69 | La salida, sin decir cuál | «Existe una forma…» Para saberla hay que hacer clic.
-R 0.35,0.815 | La llamada, dentro del texto | No hay botón dibujado.
+L 0.07,0.205 | Foto, nombre y check azul | Es una persona real con cara: se lee como una publicación y no como publicidad, y la gente no salta lo que parece contenido.
+L 0.07,0.345 | Primera línea que filtra | «Si vendes cursos desde España y cobras con Stripe» nombra lo que la persona hace y la herramienta que usa hoy. Quien no lo hace deja de leer.
+L 0.07,0.525 | El dolor en una frase | «Tus alumnos de LATAM no pueden pagarte.» Sin adornos: la frase tiene que entenderse en un vistazo.
+R 0.92,0.11 | Fondo blanco, sin logo | Nada avisa de que es un anuncio, y por eso no se salta. La marca aparece cuando la persona ya está leyendo.
+R 0.90,0.465 | Porcentaje no redondo, con «hasta» | 27 % suena a dato medido; un número redondo suena a opinión. Con «hasta» delante no prometemos que siempre pase.
+R 0.80,0.69 | La salida, sin decirla | «Existe una forma…» deja la curiosidad abierta: para saber cuál hay que hacer clic.
+R 0.35,0.815 | La llamada dentro del texto | Sin botón dibujado: Meta rechazó la versión que imitaba botones de una red social, y un botón falso rompe la confianza.
 pie: Anuncio «ESTATICA / TWEET / ESP». Sin botones ni contadores: Meta rechazó la versión que imitaba los de una red social.
 ::fin
 
@@ -200,34 +200,34 @@ El tweet aún no ha dado resultados baratos. Está para volver a probarlo bien, 
 ### Comparativa: cobra igual que con Stripe
 
 ::pizarra creatividades/optimizacion-fiscal/KFP_ES_TOF_CLO_A01-STRIPEOKUNFUPAY_COMPARATIVA_1080x1350_ES_V02.png w=236
-L 0.30,0.10 | El filtro | «Si vendes productos digitales»: quien no vende deja de leer.
-L 0.30,0.20 | La promesa, sin «ahorrar» | «Olvídate de los impuestos de cada venta». Siempre «de cada venta», nunca «tus impuestos».
-L 0.35,0.50 | Lo que pasa hoy | Hacer cada factura y cargar con los impuestos de cada venta: lo que duele.
-L 0.30,0.82 | La razón | «Podemos porque somos…»: el motivo va siempre pegado a la promesa.
-R 0.70,0.29 | Dos columnas, la misma altura | Se compara cobrar «igual que con Stripe». La persona ve qué cambia, no qué pierde.
-R 0.72,0.57 | Una tilde grande | La mitad de Kunfupay es una sola idea: «Sin LLC y sin irte a Andorra».
-R 0.92,0.94 | El logo, abajo | Quien manda es la promesa.
+L 0.30,0.10 | Filtro en la primera línea | «Si vendes productos digitales» deja fuera a quien no encaja antes de gastar un clic.
+L 0.30,0.20 | Promesa sin «ahorrar» | «Olvídate de los impuestos de cada venta»: siempre «de cada venta» y nunca «tus impuestos», porque los suyos por lo que gana no cambian y prometerlo sería falso.
+L 0.35,0.50 | Lo que pasa hoy | Hacer cada factura y cargar con los impuestos de cada venta. Se pone con la X roja sobre papeles para que el dolor se vea sin leer.
+L 0.30,0.82 | La razón, pegada a la promesa | «Podemos porque…» responde a la duda inmediata («¿cómo es posible?») antes de que la persona se la haga. Pendiente de revisión legal.
+R 0.70,0.29 | Dos columnas con la misma estructura | Comparar «igual que con Stripe» deja claro que cobrar no cambia, solo cambia quién carga con lo demás. Misma altura para que el ojo compare fila a fila.
+R 0.72,0.57 | Tilde grande y tres filas | Una sola idea por lado. Termina en «sin LLC y sin irte a Andorra», que es la alternativa que la persona ya ha oído.
+R 0.92,0.94 | Logo abajo | La promesa manda, no la marca.
 pie: Anuncio «STRIPE O KUNFUPAY» del ángulo fiscal. Hay un punto pendiente: el wordmark de Stripe aparece en la columna izquierda y conviene revisarlo.
 ::fin
 
 ### Con una nota: «¿Y si me preguntan de dónde sale este dinero?»
 
 ::pizarra creatividades/cuenta-nominativa/KFP_ES_TOF_ABR_D01-DEDONDESALE_BOLI_1080x1350_ES_V05.png w=236
-L 0.50,0.28 | Una nota a boli | Escrita a mano parece de una persona, no de una agencia. Dice la duda en la voz del cliente.
-L 0.50,0.57 | La promesa, en grande | «De los impuestos de cada venta nos encargamos nosotros.»
-R 0.35,0.70 | El beneficio práctico | «Una cuenta a tu nombre, con IBAN»: lo que recibe, después de la promesa.
-R 0.30,0.79 | El motivo, otra vez | Misma frase de siempre, en pequeño.
+L 0.50,0.28 | Nota a boli con la duda | Escrita a mano parece de una persona y no de una agencia. Pone en voz del cliente el miedo que tiene: «¿y si me preguntan de dónde sale este dinero?».
+L 0.50,0.57 | La respuesta, en grande | «De los impuestos de cada venta nos encargamos nosotros»: la duda de arriba se responde justo debajo, sin que haya que buscar.
+R 0.35,0.70 | El beneficio práctico | La cuenta a tu nombre con IBAN va después del alivio: primero lo que se quita de encima, luego lo que recibe.
+R 0.30,0.79 | El motivo, en pequeño | La misma frase de siempre. Repetirla en todos los anuncios fiscales hace que suene a norma y no a eslogan.
 pie: Anuncio «DE DÓNDE SALE». Abre con la duda de quien teme que le pregunten por su dinero.
 ::fin
 
 ### Noticia: el IBAN
 
 ::pizarra creatividades/cuenta-nominativa/KFP_ES_TOF_PRO_D05-NUEVOIBAN_NOTICIA_1080x1350_ES_V04.png w=236
-L 0.20,0.09 | «Nuevo en Kunfupay» | Una novedad para quien ya conoce el producto.
-L 0.35,0.21 | El beneficio primero | «Tus retiros de Hotmart»: lo que la persona gana, antes que la función.
-L 0.30,0.37 | El IBAN, como motivo | Aparece después del beneficio.
-R 0.75,0.48 | Una llave con la etiqueta «IBAN» | Imagen que se entiende sola: acceso a tu dinero.
-R 0.50,0.77 | El filtro, abajo | «Solo si ya vendes formación online desde España.»
+L 0.20,0.09 | «Nuevo en Kunfupay» | Una novedad atrae a quien ya conoce el producto: es la lógica de la noticia, sin foto.
+L 0.35,0.21 | El beneficio antes que la función | «Tus retiros de Hotmart» dice qué gana la persona. El IBAN no entra en el titular porque nadie compra un IBAN.
+L 0.30,0.37 | El IBAN, como motivo | Aparece después, como la razón de que sea posible.
+R 0.75,0.48 | Llave con etiqueta «IBAN» | Imagen que se entiende sin leer: acceso a tu dinero. Ocupa el centro para parar el dedo.
+R 0.50,0.77 | Filtro abajo | «Solo si ya vendes formación online desde España» deja claro a quién va, sin perder el titular.
 pie: Anuncio «NUEVO IBAN». Cuidado con «sin pasar por tu banco»: se descartó como mensaje porque puede leerse como esconder algo.
 ::fin
 

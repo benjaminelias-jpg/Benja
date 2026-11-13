@@ -104,3 +104,10 @@ pdftoppm -r 60 -png ../pdf/<nombre>.pdf /ruta/de/trabajo/p    # una imagen por p
 ```
 
 Revisa siempre las páginas (con Read sobre los PNG): que ninguna pizarra se corte, que las flechas apunten a lo que dice la nota, que no haya páginas casi vacías ni tablas partidas de mala manera, y que no salga «IMAGENES ROTAS» al construir. Corrige y vuelve a generar.
+
+
+## Regla de las notas de pizarra (13-11)
+- La nota no describe lo que se ve: explica POR QUÉ está ahí y qué duda evita en la cabeza del cliente.
+- No se nombran bancos ni métodos como si fueran el mensaje: se explica «paga con su moneda local».
+- Siempre se cierra la información: si se enseña algo que la persona no conoce, una frase evita malentendidos (ejemplo: «y tú recibes euros o dólares» frente a pensar que cobrará pesos).
+- Las flechas y los círculos (mejor en rojo) son ganchos visuales: llevan la atención. Decirlo.
