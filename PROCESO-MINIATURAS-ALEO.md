@@ -44,7 +44,7 @@ hielo agrietado dejando ver agua, una mano en el pecho con piolet, mínimo ruido
 | Recorte «Seleccionar sujeto» | Higgsfield `remove_background` (o Magnific) |
 | Colocar sobre lienzo blanco | Script local: sujeto recortado en lienzo blanco 16:9 en la posición pedida |
 | ChatGPT «entrenado» | Claude con el prompt maestro de Benja (reglas 1–8, `@imagen N`, NEGATIVE PROMPT, ≤9.000 caracteres) |
-| 8 generaciones | **Nuestra versión: 2 por modelo.** Higgsfield batch: GPT Image 2.5 Sunburst ×2 + Nano Banana 2.1 ×2 (16:9, 2K, high, opaque) |
+| Generación (8 en el original) | **Nuestra versión: 2 por modelo.** Higgsfield batch: GPT Image 2.5 Sunburst ×2 + Nano Banana 2.1 ×2 (16:9, 2K, high, opaque) |
 | Comparativa de modelos | Ronda opcional con GPT Image 2.6, Nano Banana Pro y FLUX 3 con el mismo prompt e imagen (2 por modelo) |
 | Relleno de bordes (Camera Raw) | Higgsfield `outpaint_image` 16:9, o recorte a relleno si el hueco es mínimo |
 | Retoques menores | Nano Banana 2.1 con prompt corto ×2 |
