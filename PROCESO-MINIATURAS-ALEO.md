@@ -44,10 +44,10 @@ hielo agrietado dejando ver agua, una mano en el pecho con piolet, mínimo ruido
 | Recorte «Seleccionar sujeto» | Higgsfield `remove_background` (o Magnific) |
 | Colocar sobre lienzo blanco | Script local: sujeto recortado en lienzo blanco 16:9 en la posición pedida |
 | ChatGPT «entrenado» | Claude con el prompt maestro de Benja (reglas 1–8, `@imagen N`, NEGATIVE PROMPT, ≤9.000 caracteres) |
-| 8 generaciones | Higgsfield batch: GPT Image 2.5 Sunburst ×4 + Nano Banana 2.1 ×4 (16:9, 2K, high, opaque) |
-| Comparativa de modelos | Ronda opcional con GPT Image 2.6, Nano Banana Pro y FLUX 3 con el mismo prompt e imagen |
+| 8 generaciones | **Nuestra versión: 2 por modelo.** Higgsfield batch: GPT Image 2.5 Sunburst ×2 + Nano Banana 2.1 ×2 (16:9, 2K, high, opaque) |
+| Comparativa de modelos | Ronda opcional con GPT Image 2.6, Nano Banana Pro y FLUX 3 con el mismo prompt e imagen (2 por modelo) |
 | Relleno de bordes (Camera Raw) | Higgsfield `outpaint_image` 16:9, o recorte a relleno si el hueco es mínimo |
-| Retoques menores | Nano Banana 2.1 con prompt corto ×4 |
+| Retoques menores | Nano Banana 2.1 con prompt corto ×2 |
 | Máscara para proteger la cara | Script local: fusión con máscara (solo la zona cambiada) sobre la versión buena |
 | Relight flash frontal | Magnific `images_relight` (Higgsfield no expone Relight por API) |
 | Vertical 9:16 | Misma imagen + prompt de conversión en 9:16 |
@@ -60,7 +60,7 @@ hielo agrietado dejando ver agua, una mano en el pecho con piolet, mínimo ruido
 3. Título del vídeo y si llevará texto (y dónde).
 
 ### Entregables por miniatura
-- Hoja comparativa de las 8 generaciones (modelo, fidelidad de cara, realismo, composición, créditos).
+- Hoja comparativa de las generaciones (2 por modelo) (modelo, fidelidad de cara, realismo, composición, créditos).
 - Ganadora retocada en 16:9 a 2048×1152, más versión 4K (3840×2160).
 - Versión vertical 9:16.
 - Variante A/B si se pide.
