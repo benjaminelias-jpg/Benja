@@ -175,16 +175,6 @@ La landing ya pregunta cuánto factura. Esa respuesta puede decidir la puerta:
 
 ::fig router
 
-### La medición común
-
-| Qué | Dónde | Por qué |
-|---|---|---|
-| Origen y campaña en cada alta | Kommo | Saber qué funnel y qué anuncio trae al cliente que vende |
-| Evento de lead cualificado | Meta (página de gracias) | Que Meta aprenda del lead bueno |
-| Evento Contact | Meta (WhatsApp de la landing del vendedor) | Medir el funnel de Instagram |
-| Registro, tienda y primera venta | App | Medir el self-service, donde nadie habla con el cliente |
-| Revisión de los lunes | Kommo y app | Altas → tienda solicitada → KYC → tienda activa → primera venta, con tiempo hasta la primera venta y coste por cliente |
-
 ## Qué hacemos primero || El orden, de lo que más pesa a lo que menos
 
 {lead} El orden importa: arreglar la activación antes de traer más gente.
@@ -194,6 +184,16 @@ La landing ya pregunta cuánto factura. Esa respuesta puede decidir la puerta:
 3. **Decidir qué pasa con quien no factura:** filtrarle en el anuncio o mandarle al self-service.
 4. **Acabar el funnel de Instagram:** landing con calendario, frases de impuestos corregidas y públicos más grandes.
 5. **Preparar el self-service:** onboarding guiado y eventos dentro de la app. Después, la campaña de AutoDM.
+
+### La medición común
+
+| Qué | Dónde | Por qué |
+|---|---|---|
+| Origen y campaña en cada alta | Kommo | Saber qué funnel y qué anuncio trae al cliente que vende |
+| Evento de lead cualificado | Meta (página de gracias) | Que Meta aprenda del lead bueno |
+| Evento Contact | Meta (WhatsApp de la landing del vendedor) | Medir el funnel de Instagram |
+| Registro, tienda y primera venta | App | Medir el self-service, donde nadie habla con el cliente |
+| Revisión de los lunes | Kommo y app | Altas → tienda solicitada → KYC → tienda activa → primera venta, con tiempo hasta la primera venta y coste por cliente |
 
 ### Pendiente de decidir
 
