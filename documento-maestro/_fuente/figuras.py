@@ -327,3 +327,102 @@ def verticales():
         bg = '#fff' if i % 2 == 0 else SUAVE
         h += ''.join(f'<div style="padding:6px 8px;background:{bg};{"font-weight:700;color:" + MARCA if j == 0 else ""}">{c}</div>' for j, c in enumerate(r))
     return _fig(h + '</div>', 'Resultados de Meta: el evento que se cuenta no es el mismo en todas las verticales (registro, lead o formulario).')
+
+
+# ---------- Documento de funnels ----------
+
+def _flujo(pasos, pie):
+    """pasos = [(título, qué pasa, métrica)] en fila con flechas."""
+    h = '<div style="display:flex;gap:4px;align-items:stretch">'
+    for i, (t, q, m) in enumerate(pasos):
+        if i:
+            h += f'<div style="flex:none;align-self:center;color:{MARCA};font-size:13pt">&#8594;</div>'
+        h += (f'<div style="flex:1;min-width:0;border:1px solid {LINEA};border-radius:5px;overflow:hidden;display:flex;flex-direction:column">'
+              f'<div style="background:{MARCA};color:#fff;font-size:7.8pt;font-weight:700;padding:5px 6px;line-height:1.2">{i + 1} · {t}</div>'
+              f'<div style="font-size:7.8pt;color:#333;padding:6px;line-height:1.35;flex:1">{q}</div>'
+              f'<div style="font-size:7.6pt;color:{MARCA};font-weight:700;padding:5px 6px;border-top:1px dashed {LINEA};background:{SUAVE}">{m}</div></div>')
+    return _fig(h + '</div>', pie)
+
+
+def tres_funnels():
+    cols = [('Adquisición directa', 'Hoy, en marcha', 'Anuncios de Meta y Google → landing con filtro de facturación → equipo comercial → tienda aprobada → primera venta.', 'Quien ya vende y factura. Se le habla de un problema concreto: cobrar, impuestos, cuenta.', 'Coste por cliente activo'),
+            ('Instagram', 'En montaje', 'Contenido y puerta fría de cada vendedor → remarketing con su cara → landing del vendedor → WhatsApp o llamada → alta acompañada.', 'Quien ya vio a un vendedor o a la marca en Instagram. Se le habla de tú a tú.', 'Conversaciones que acaban en alta'),
+            ('Self-service', 'Por lanzar', 'Herramienta gratis (AutoDM) → alta sin pagos → creación guiada de producto y tienda → primera venta sin hablar con nadie.', 'Creadores de contenido que viven en Instagram. Barato y con mucho volumen.', 'Registrado → activado')]
+    h = '<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:10px">'
+    for i, (n, e, c, q, m) in enumerate(cols):
+        op = (1, .75, .5)[i]
+        h += (f'<div style="border:1px solid {LINEA};border-radius:6px;overflow:hidden;break-inside:avoid">'
+              f'<div style="background:rgba(38,15,99,{op});color:#fff;padding:8px 10px"><div style="font-size:10.5pt;font-weight:700">{n}</div>'
+              f'<div style="font-size:7.8pt;opacity:.9">{e}</div></div>'
+              f'<div style="padding:8px 10px;font-size:8.4pt;line-height:1.42"><b>Recorrido.</b> {c}<br><br><b>A quién.</b> {q}<br><br>'
+              f'<b style="color:{MARCA}">Número que manda:</b> {m}</div></div>')
+    return _fig(h + '</div>', 'Los tres funnels de Kunfupay. Comparten producto y medición; cambian la puerta de entrada y quién acompaña a la persona.')
+
+
+def flujo_directa():
+    return _flujo([
+        ('Anuncio', 'Meta (frío y hubs) o Google (búsqueda). Un ángulo por conjunto.', 'Coste por lead cualificado'),
+        ('Landing', 'Pregunta cuánto factura. Desde 500–2.000 al mes pasa a cualificado.', 'Visita → lead'),
+        ('Gracias', 'Solo el cualificado llega a la página de gracias: es el evento con el que aprende Meta.', 'Lead cualificado'),
+        ('Kommo', 'Entra en «Campañas Ads». Contacto, videollamada, negociación.', 'Contacto → videollamada'),
+        ('Alta y KYC', 'Crea cuenta, pide tienda y verifica identidad.', 'Tienda solicitada → aprobada'),
+        ('Primera venta', 'La tienda está activa y cobra.', 'Coste por cliente activo'),
+    ], 'Adquisición directa, paso a paso. Debajo de cada paso, el número que se mira en ese punto.')
+
+
+def flujo_instagram():
+    return _flujo([
+        ('Contenido y puerta fría', 'La marca y cada vendedor publican. Los vendedores escriben por Instagram a creadores que ya venden.', 'Conversaciones abiertas'),
+        ('Visita al perfil', 'Quien ve el contenido o recibe el mensaje entra al perfil del vendedor.', 'Visitas al perfil'),
+        ('Remarketing', 'Anuncio con la cara del vendedor solo a quien ya visitó su perfil: «Te respondo yo, no un bot».', 'Clic a la landing'),
+        ('Landing del vendedor', 'Su foto, su WhatsApp y su calendario.', 'Clic en WhatsApp (evento Contact)'),
+        ('Conversación', 'El vendedor cualifica y acompaña el alta.', 'Conversación → alta'),
+        ('Alta acompañada', 'Tienda creada con ayuda y primera venta.', 'Alta → cliente activo'),
+    ], 'Funnel de Instagram. La persona ve siempre la misma cara desde el primer mensaje hasta el alta.')
+
+
+def flujo_selfservice():
+    return _flujo([
+        ('Herramienta gratis', 'AutoDM: «el ManyChat gratis para creadores». Anuncio con «Comenta AUTODM».', 'Coste por registro'),
+        ('Respuesta automática', 'AutoDM responde con el enlace: el producto se demuestra solo.', 'Comentario → clic'),
+        ('Alta sin pagos', 'Landing propia y registro para usar la herramienta, sin pasos de cobro.', 'Clic → registro'),
+        ('Onboarding guiado', 'Crea un producto, no un enlace: la tienda sale sola, como en stan.store.', 'Registro → producto creado'),
+        ('Activación', 'Tienda activa, KYC y primera venta sin hablar con nadie.', 'Registrado → activado'),
+        ('Crecimiento', 'Upsell y downsell en sus funnels, wallet, tarjeta.', 'Ingresos por cuenta activa'),
+    ], 'Funnel self-service. Nadie del equipo interviene: cada paso tiene que explicarse solo.')
+
+
+def kommo_directa():
+    filas = [('Contacto inicial', 163), ('Videollamada agendada', 15), ('Negociación', 19), ('Tomar decisión', 6), ('Cerrado con éxito', 7)]
+    h = f'<div style="font-size:9.6pt;font-weight:700;color:{MARCA};margin-bottom:8px">Embudo «Kunfupay Campañas Ads» en Kommo</div>'
+    for n, v in filas:
+        h += (f'<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><div style="width:140px;text-align:right;font-size:8.8pt;font-weight:600">{n}</div>'
+              f'<div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:{max(v / 163 * 80, 1.5):.1f}%;height:15px;background:{MARCA};opacity:.85;border-radius:2px"></div>'
+              f'<b style="font-size:8.8pt">{v}</b></div></div>')
+    h += f'<div style="font-size:8.2pt;color:{GRIS};margin-top:4px">Además: 53 en lead frío, 18 no cualificados y 13 ventas perdidas.</div>'
+    return _fig(h, 'Leads que entraron en cada etapa del 15 de octubre al 16 de noviembre de 2026. Un lead puede saltarse etapas, por eso negociación supera a videollamada.')
+
+
+def kommo_registro():
+    filas = [('Registros por filtrar', 3321), ('Lead registrado', 958), ('Tienda solicitada', 295), ('Tienda aprobada', 87), ('Cliente activo', 61)]
+    h = f'<div style="font-size:9.6pt;font-weight:700;color:{MARCA};margin-bottom:8px">Embudo «Kunfupay Registro» en Kommo (todas las altas)</div>'
+    for n, v in filas:
+        h += (f'<div style="display:flex;align-items:center;gap:10px;margin-bottom:6px"><div style="width:140px;text-align:right;font-size:8.8pt;font-weight:600">{n}</div>'
+              f'<div style="flex:1;display:flex;align-items:center;gap:8px"><div style="width:{max(v / 3321 * 80, 1.5):.1f}%;height:15px;background:{MARCA};opacity:.85;border-radius:2px"></div>'
+              f'<b style="font-size:8.8pt">{v:,}</b></div></div>'.replace(',', '.'))
+    h += f'<div style="font-size:8.2pt;color:{GRIS};margin-top:4px">Además: 560 tiendas rechazadas, 108 leads basura y 225 ventas perdidas.</div>'
+    return _fig(h, 'Leads que entraron en cada etapa del 15 de octubre al 16 de noviembre de 2026. Incluye altas de todos los canales, no solo de anuncios.')
+
+
+def router():
+    filas = [('Aún no facturo', 'Self-service o Classroom', 'Herramientas gratis, aprender a vender'),
+             ('1 – 500 al mes', 'Self-service', 'Se activa solo; no compensa una llamada'),
+             ('500 – 2.000', 'Adquisición directa', 'Entra en el embudo de cualificados'),
+             ('2.000 – 10.000', 'Adquisición directa o Instagram', 'Llamada con un vendedor'),
+             ('Más de 10.000', 'Instagram (vendedor) y account manager', 'Atención personal desde el primer día')]
+    h = (f'<div style="display:grid;grid-template-columns:130px 1fr 1.3fr;border:1px solid {LINEA};border-radius:5px;overflow:hidden;font-size:8.6pt">'
+         + ''.join(f'<div style="background:{MARCA};color:#fff;font-weight:700;padding:6px 8px;font-size:7.8pt">{c}</div>' for c in ('Factura', 'Va al funnel', 'Por qué')))
+    for i, r in enumerate(filas):
+        bg = '#fff' if i % 2 == 0 else SUAVE
+        h += ''.join(f'<div style="padding:6px 8px;background:{bg};{"font-weight:700;color:" + MARCA if j == 0 else ""}">{c}</div>' for j, c in enumerate(r))
+    return _fig(h + '</div>', 'Propuesta de reparto según lo que factura la persona. Los tramos son los de las landings; a qué funnel va cada tramo está por decidir.')
