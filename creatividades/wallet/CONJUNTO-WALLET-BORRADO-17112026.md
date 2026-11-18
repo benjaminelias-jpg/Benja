@@ -343,3 +343,26 @@ Los ID de creatividad, por si se duplica desde Meta: 1110597875104339 · 1528209
   - «Todo 100 % legal» (reel 8): mismo riesgo que «100 % seguro».
   - «Comisión: entre un 5 y un 10 % por venta» (anuncio 4): la cifra de comisión está pendiente de confirmar (en otros documentos aparece «hasta un 18 %»).
   - «quien te paga ve tu IBAN de Kunfupay, no tu banco personal» (anuncios 3, 5 y 6): puede leerse como esconder algo, como pasaba con «sin pasar por tu banco».
+
+---
+
+## Recreado el 18-11, en borrador
+
+Se recreó tal cual, sin cambiar textos, enlaces, UTM, público, evento ni ubicaciones (por petición expresa: «NO CORRIJAS NADA»). Las frases marcadas arriba siguen igual. Está en borrador: no se ha publicado.
+
+- **Conjunto nuevo:** 120249700326520648, con el mismo nombre.
+- **Anuncios:** los 7 que tenía cuando se borró, con las mismas creatividades.
+
+| Anuncio | ID nuevo | Creatividad |
+|---|---|---|
+| AD_1_WALLET_ESTATICO / 17112026 | 120249700381670648 | 1110597875104339 |
+| AD_2_WALLET_ESTATICO / 17112026 | 120249700454990648 | 1528209362695220 |
+| AD_3_WALLET_ESTATICO / 17112026 | 120249700456840648 | 1493631469526610 |
+| AD_4_WALLET_ESTATICO / 17112026 | 120249700466460648 | 2579174452592413 |
+| AD_2_WALLET_VIDEO / 17112026 | 120249700467330648 | 1135693352510745 |
+| REEL / NO PUEDES VIVIR ASI / WALLET / 17112026 | 120249700471000648 | 1011970258634684 |
+| REEL / GROWTH PARTNER MOR / WALLET / 17112026 | 120249700474140648 | 1611647453975936 |
+
+- **Sin AD_1_WALLET_VIDEO:** ya estaba borrado antes de borrar el conjunto.
+- **Qué impide publicarlo:** Meta pide aceptar sus condiciones de listas de clientes, porque el conjunto usa un público hecho con una lista subida. Se aceptan aquí: https://www.facebook.com/customaudiences/value_based/tos/?act=1087693978270730
+- **Al publicarlo sale activo.** El original estaba pausado cuando se borró, y la campaña tenía 180 €/día.
