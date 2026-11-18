@@ -364,5 +364,6 @@ Se recreó tal cual, sin cambiar textos, enlaces, UTM, público, evento ni ubica
 | REEL / GROWTH PARTNER MOR / WALLET / 17112026 | 120249700474140648 | 1611647453975936 |
 
 - **Sin AD_1_WALLET_VIDEO:** ya estaba borrado antes de borrar el conjunto.
-- **Qué impide publicarlo:** Meta pide aceptar sus condiciones de listas de clientes, porque el conjunto usa un público hecho con una lista subida. Se aceptan aquí: https://www.facebook.com/customaudiences/value_based/tos/?act=1087693978270730
-- **Al publicarlo sale activo.** El original estaba pausado cuando se borró, y la campaña tenía 180 €/día.
+- **Condiciones de listas de clientes:** aceptadas el 18-11.
+- **Estado en el borrador:** el conjunto está marcado como pausado y los 7 anuncios como activos, igual que el original.
+- **Qué impide publicarlo:** al publicar desde este acceso, Meta exige un «anunciante verificado» para España (error 3858634). El original lo creó Juanjo desde su acceso, que crea el conjunto directamente y no lo pidió. Duplicar el original no está disponible en la cuenta. Propuesta: que Juanjo lo cree de nuevo desde su acceso con estos datos, y borrar este borrador.
