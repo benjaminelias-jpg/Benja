@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<meta name="description" content="Gracias: abre tu Kunfupay Wallet.">
+<title>Gracias Kunfupay Wallet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@600;800&family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Una sola pantalla que se lee en 10 segundos: aviso, tres ventajas, botón y cuenta atrás. */
+:root{
+  --bg:#ffffff; --fg:#16141f; --fg-2:#4a4757; --muted:#8a8796; --line:#e9e7ef; --accent:#734bfc;
+  --display:'Plus Jakarta Sans',-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+  --body:'Inter',-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121117;--fg:#f4f3f7;--fg-2:#c9c6d3;--muted:#8f8b9b;--line:#2a2833;--accent:#9b7dff;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121117;--fg:#f4f3f7;--fg-2:#c9c6d3;--muted:#8f8b9b;--line:#2a2833;--accent:#9b7dff;color-scheme:dark}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--body);
+  padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px));
+  display:flex;align-items:center;justify-content:center}
+main{width:100%;max-width:560px;padding-block:24px;display:flex;flex-direction:column;gap:clamp(22px,4vh,36px)}
+.marca{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:-.01em;color:var(--accent)}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(34px,6vw,52px);line-height:1.02;letter-spacing:-.04em;margin:0;text-wrap:balance}
+.sub{font-size:clamp(17px,2.2vw,19px);line-height:1.5;color:var(--fg-2);margin:14px 0 0;text-wrap:pretty}
+.sub b{color:var(--fg);font-weight:600}
+h2{font-family:var(--display);font-weight:600;font-size:18px;margin:0 0 4px}
+ul{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:2px}
+li b{font-family:var(--display);font-weight:600;font-size:16.5px}
+li span{font-size:14.5px;color:var(--fg-2);line-height:1.45}
+.cta{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.boton{display:inline-flex;flex-direction:column;align-items:flex-start;gap:2px;background:var(--accent);color:#fff;text-decoration:none;border-radius:14px;padding:14px 22px;min-width:min(100%,320px)}
+.boton b{font-family:var(--display);font-weight:600;font-size:18px}
+.boton span{font-size:14px;opacity:.85}
+.boton:focus-visible{outline:3px solid var(--fg);outline-offset:3px}
+.cuenta{font-size:14px;color:var(--muted);margin:0;font-variant-numeric:tabular-nums}
+.cuenta b{color:var(--fg);font-weight:600}
+.legal{font-size:12.5px;color:var(--muted);margin:0;line-height:1.5}
+</style>
+</head>
+<body>
+<main>
+  <div class="marca">Kunfupay</div>
+  <div>
+    <h1>Gracias por registrarte.</h1>
+    <p class="sub">Aún no damos soporte a tu negocio, pero ya puedes usar <b>Kunfupay Wallet</b>.</p>
+  </div>
+  <ul>
+    <li><b>Cuenta a tu nombre con IBAN propio</b></li>
+    <li><b>Recibe ahí lo que facturas</b></li>
+    <li><b>Tarjeta para gastarlo</b></li>
+  </ul>
+  <div class="cta">
+    <a class="boton" id="wallet" href="https://business.kunfupay.com/auth/signup"><b>Abrir mi Wallet</b><span>En menos de 2 minutos</span></a>
+    <p class="cuenta" aria-live="polite" id="cuenta">Te llevamos en <b id="seg">10</b> segundos.</p>
+    <p class="legal">Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.</p>
+  </div>
+</main>
+
+<script>
+(function(){
+  var url='https://business.kunfupay.com/auth/signup'+location.search;
+  document.getElementById('wallet').href=url;
+  var n=10, seg=document.getElementById('seg');
+  var t=setInterval(function(){
+    n--; seg.textContent=n;
+    if(n<=0){clearInterval(t); document.getElementById('cuenta').textContent='Abriendo tu Wallet…'; location.href=url;}
+  },1000);
+})();
+</script>
+</body>
+</html>
