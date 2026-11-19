@@ -1,0 +1,108 @@
+<title>Heros A/B Kunfupay</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Documento sobrio: por landing, el hero actual (control) y las variantes nuevas, como se verían en la página. */
+:root{--bg:#fafafa;--card:#fff;--fg:#1c1c1e;--fg-2:#48484d;--muted:#86868b;--line:#e5e5e7;--accent:#734bfc;--ok:#3d6b52;--no:#9a5752;--font:'Inter',-apple-system,"Segoe UI",Helvetica,Arial,sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#141415;--card:#1c1c1e;--fg:#ededef;--fg-2:#c2c2c7;--muted:#8e8e93;--line:#2c2c2e;--accent:#9b7dff;--ok:#7fb394;--no:#cf8d87;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#141415;--card:#1c1c1e;--fg:#ededef;--fg-2:#c2c2c7;--muted:#8e8e93;--line:#2c2c2e;--accent:#9b7dff;--ok:#7fb394;--no:#cf8d87;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--font);font-size:15px;line-height:1.55;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:920px;margin:0 auto;padding-block:40px 80px;display:flex;flex-direction:column;gap:48px}
+h1{font-size:clamp(26px,3.6vw,34px);font-weight:600;letter-spacing:-.02em;margin:0;line-height:1.15}
+.intro{color:var(--fg-2);margin:10px 0 0;max-width:70ch}
+section{display:flex;flex-direction:column;gap:14px;border-top:1px solid var(--fg);padding-top:16px}
+h2{font-size:20px;font-weight:600;margin:0;letter-spacing:-.01em}
+.url{font-size:12.5px;color:var(--muted);margin:2px 0 0}
+.var{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 20px;display:flex;flex-direction:column;gap:8px}
+.lab{font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;display:flex;gap:10px;flex-wrap:wrap}
+.lab .ok{color:var(--ok)}.lab .no{color:var(--no)}
+.h{font-size:clamp(20px,2.6vw,25px);font-weight:600;letter-spacing:-.02em;line-height:1.2;margin:0;text-wrap:balance}
+.s{color:var(--fg-2);margin:0;max-width:68ch}
+.nota{font-size:13px;color:var(--muted);margin:0;max-width:72ch}
+.var.ctrl{background:transparent}
+.var.ctrl .h{color:var(--fg-2)}
+ul.reglas{margin:0;padding-left:18px;color:var(--fg-2);font-size:14px;display:flex;flex-direction:column;gap:6px}
+</style>
+
+<main>
+<header>
+  <h1>Heros nuevos para A/B test</h1>
+  <p class="intro">Por cada landing: el hero que hay hoy (control) y las variantes nuevas. Títulos largos que dicen la oferta concreta y subtítulos que explican cómo. El CTA y las 2 preguntas del formulario se quedan igual. Probar una variante cada vez contra el control.</p>
+</header>
+
+<section>
+  <h2>Métodos de pago</h2>
+  <p class="url">kunfupay.com/landings/pagos-globales-es/v1 · también la usan los hubs (LATAM, Miami, Dubái, Bali, Tailandia)</p>
+  <div class="var ctrl"><div class="lab">Hoy · control</div>
+    <p class="h">Kunfupay conecta tu negocio digital con los métodos de pago de tus clientes</p>
+    <p class="s">Pix, Bizum, OXXO, Mercado Pago, USDT y más de 100 métodos que ya usan tus clientes en Latam o España, desde un mismo sitio. Responde 2 preguntas y te decimos si encajas.</p></div>
+  <div class="var"><div class="lab">Variante B · la tuya, pulida</div>
+    <p class="h">Aumenta hasta un 30 % tus ventas solo con tener los métodos de pago de quien te compra</p>
+    <p class="s">Tu cliente de México paga con OXXO, el de Brasil con PIX y el de España con Bizum. Con un solo enlace de Kunfupay, cada uno paga como paga en su país, en su moneda, y el dinero te llega a ti. Responde 2 preguntas y te decimos si encajas.</p></div>
+  <div class="var"><div class="lab">Variante C · igual que las noticias activas (27 %)</div>
+    <p class="h">Hasta un 27 % de tus ventas se cae en el pago: tu cliente quiere comprarte, pero su tarjeta no pasa o en su país se paga de otra forma</p>
+    <p class="s">Con un solo enlace de Kunfupay le salen los métodos que usa en su país: OXXO, PIX, Bizum, Mercado Pago y más de 100. Mismo producto, mismo precio, más clientes que por fin pueden pagarte. Responde 2 preguntas y te decimos si encajas.</p></div>
+  <p class="nota">Elegid un solo número (27 % o 30 %) para anuncios y landing, y tened a mano de dónde sale. Para los hubs vale la B o la C cambiando una línea: «Si vendes desde Miami a LATAM…», «desde Dubái», «desde Bali».</p>
+</section>
+
+<section>
+  <h2>Optimización fiscal (Merchant of Record)</h2>
+  <p class="url">kunfupay.com/landings/fiscal/v1</p>
+  <div class="var ctrl"><div class="lab">Hoy · control <span class="no">corregir «vende por ti»</span></div>
+    <p class="h">Los beneficios de una LLC. Sin montar la LLC.</p>
+    <p class="s">Kunfupay no es una asesoría: es una plataforma que vende por ti, con la estructura fiscal ya montada. Responde 2 preguntas y te decimos si encajas.</p></div>
+  <div class="var"><div class="lab">Tu versión <span class="no">no publicable</span></div>
+    <p class="h">Ahorra el 48 % de tus ingresos netos ahorrando impuestos con un Merchant of Record</p>
+    <p class="s">Promete ahorrar impuestos (la marca no lo dice y Meta lo vigila en servicios financieros) y el 48 % no sale en las cuentas: la renta la sigue pagando el creador. Abajo, la misma idea con lo que sí es verdad.</p></div>
+  <div class="var"><div class="lab">Variante B · la oferta, dicha como consecuencia</div>
+    <p class="h">Cobra tus cursos y olvídate de los impuestos de cada venta: la factura de cada alumno se la hacemos nosotros</p>
+    <p class="s">Kunfupay es la única pasarela de España que funciona como Merchant of Record. Es decir: somos tus representantes en cada venta. Tú le cobras a tu alumno con Kunfupay, igual que con Stripe. La factura se la hacemos nosotros y los impuestos de esa venta son cosa nuestra. Sin montar una LLC. Tu renta, eso sí, sigue siendo tuya.</p></div>
+  <div class="var"><div class="lab">Variante C · el control, más largo y concreto</div>
+    <p class="h">Los beneficios de una LLC, sin montar la LLC: tú le cobras a tu alumno y la factura y los impuestos de cada venta son cosa nuestra</p>
+    <p class="s">Así funciona un Merchant of Record: una empresa que te representa en cada venta, le hace la factura a tu alumno y se ocupa de los impuestos de esa venta. Kunfupay es la única pasarela de España que funciona así. Tú solo facturas a Kunfupay. Responde 2 preguntas y te decimos si encajas.</p></div>
+  <div class="var"><div class="lab">Variante D · el trabajo que te quitas</div>
+    <p class="h">Mismas ventas, sin hacer una factura por cada alumno ni preocuparte por los impuestos de cada venta</p>
+    <p class="s">Le cobras a tu alumno con Kunfupay, igual que con Stripe. PERO la factura se la hacemos nosotros: somos tus representantes en cada venta, así funciona un Merchant of Record. Sin LLC ni asesor fuera. Tu renta sigue siendo tuya.</p></div>
+</section>
+
+<section>
+  <h2>Andorra</h2>
+  <p class="url">kunfupay.com/landings/andorra/v1 y v3</p>
+  <div class="var ctrl"><div class="lab">Hoy · control <span class="no">quitar «¡Empieza gratis ahora!»</span></div>
+    <p class="h">Stripe no llega a Andorra. Kunfupay sí.</p>
+    <p class="s">Sin abrir una LLC ni montar estructuras fuera. Responde 2 preguntas y te decimos si encajas. ¡Empieza gratis ahora!</p></div>
+  <div class="var"><div class="lab">Variante B · las dos promesas en el título</div>
+    <p class="h">Cobra tus cursos desde Andorra sin Stripe y sin montar una LLC en Estados Unidos: un enlace y tus clientes te pagan con el método de su país</p>
+    <p class="s">Stripe no opera en Andorra, y la salida que te suelen recomendar es una sociedad fuera, con su gestoría y su banco. Con Kunfupay cobras tal como estás: tu cliente paga con tarjeta, Bizum, OXXO o PIX, la factura de cada venta la hacemos nosotros y el dinero te llega a una cuenta a tu nombre, en euros o en dólares.</p></div>
+  <div class="var"><div class="lab">Variante C · igual que la noticia activa</div>
+    <p class="h">Ya puedes cobrar desde Andorra sin montar una LLC: así cobran hoy sus cursos los creadores que viven en el Principado</p>
+    <p class="s">Sin Stripe, sin sociedad fuera y sin perder alumnos de LATAM o de Europa por el método de pago. Un enlace de Kunfupay, tus clientes pagan en su moneda con lo que ya usan, y tú recibes en tu cuenta de Kunfupay, a tu nombre. Responde 2 preguntas y te decimos si encajas.</p></div>
+</section>
+
+<section>
+  <h2>Classroom</h2>
+  <p class="url">classroom.kunfupay.com/landing/v1</p>
+  <div class="var ctrl"><div class="lab">Hoy · control</div>
+    <p class="h">Construye tu sueño sobre ingresos recurrentes.</p>
+    <p class="s">Tu comunidad en Classroom cobra cada mes a alumnos de todo el mundo, y cada miembro nuevo se suma a los que ya pagan.</p></div>
+  <div class="var"><div class="lab">Variante B · métodos de pago, con número</div>
+    <p class="h">Cobra tu comunidad con el método de pago de cada alumno y vende hasta un 30 % más</p>
+    <p class="s">Curso, comunidad y cobros en un solo sitio. Tu alumno paga cada mes con OXXO, PIX, Bizum o Mercado Pago. Sin cuota mensual: pagas solo cuando te paga un alumno.</p></div>
+  <div class="var"><div class="lab">Variante C · el problema primero</div>
+    <p class="h">Si tu comunidad solo cobra con tarjeta, pierdes alumnos de LATAM</p>
+    <p class="s">En Classroom cada alumno paga cada mes como paga en su país. Más de 100 métodos de pago y cero cuota mensual.</p></div>
+</section>
+
+<section>
+  <h2>Reglas que siguen todas</h2>
+  <ul class="reglas">
+    <li>El título dice la oferta concreta (qué ganas y cómo), no una idea abstracta.</li>
+    <li>El subtítulo explica el mecanismo en lenguaje de tú a tú: «tú le cobras con Kunfupay», «la factura se la hacemos nosotros», «los impuestos de esa venta son cosa nuestra».</li>
+    <li>Nunca: «ahorra impuestos», «no pagas impuestos», «vendemos por ti», «gratis».</li>
+    <li>El número del anuncio y el de la landing tienen que ser el mismo.</li>
+    <li>Una variante contra el control cada vez, con el mismo formulario, para saber qué cambió el resultado.</li>
+  </ul>
+</section>
+</main>
