@@ -18,11 +18,10 @@
 /* Artículo de una columna (680px): cabecera de marca, titular, entradilla, imagen de la campaña, cuerpo y caja de 2 preguntas. Serif para leer, Inter para la interfaz. */
 :root{
   --bg:#ffffff; --fg:#1b1b1f; --fg-2:#45454d; --muted:#85858c; --line:#e6e6ea; --soft:#f6f6f8; --accent:#734bfc; --on-accent:#fff; --tag:#c62828;
+  color-scheme:light;
   --serif:'Source Serif 4',Georgia,'Times New Roman',serif;
   --sans:'Inter',-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
 }
-@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#121215;--fg:#ececf0;--fg-2:#c4c4cc;--muted:#8d8d96;--line:#2a2a31;--soft:#1b1b20;--accent:#9b7dff;--on-accent:#fff;--tag:#ef6b6b;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#121215;--fg:#ececf0;--fg-2:#c4c4cc;--muted:#8d8d96;--line:#2a2a31;--soft:#1b1b20;--accent:#9b7dff;--on-accent:#fff;--tag:#ef6b6b;color-scheme:dark}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:19px;line-height:1.65;
   padding-left:max(18px,env(safe-area-inset-left,0px));padding-right:max(18px,env(safe-area-inset-right,0px))}
