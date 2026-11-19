@@ -1,0 +1,153 @@
+<title>Funnel base 12-18 nov</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap">
+<style>
+/* Informe sobrio en una columna. Un solo tono para las barras del funnel; el rojo apagado solo marca pasos donde se pierde la mitad o más. */
+:root{
+  --bg:#fafafa; --card:#ffffff; --fg:#1c1c1e; --fg-2:#48484d; --muted:#86868b; --line:#e5e5e7; --track:#eeeef0;
+  --bar:#3d5a78; --alerta:#9a5752;
+  --font:'Inter',-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#141415; --card:#1c1c1e; --fg:#ededef; --fg-2:#c2c2c7; --muted:#8e8e93; --line:#2c2c2e; --track:#2a2a2d;
+  --bar:#8fa9c6; --alerta:#cf8d87; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#141415; --card:#1c1c1e; --fg:#ededef; --fg-2:#c2c2c7; --muted:#8e8e93; --line:#2c2c2e; --track:#2a2a2d;
+  --bar:#8fa9c6; --alerta:#cf8d87; color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font);font-size:14.5px;line-height:1.55;margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+main{max-width:1040px;margin:0 auto;padding-block:40px 80px;display:flex;flex-direction:column;gap:44px}
+h1{font-weight:600;font-size:clamp(26px,3.6vw,34px);letter-spacing:-.02em;line-height:1.15;margin:0}
+h2{font-weight:600;font-size:20px;letter-spacing:-.01em;margin:0}
+h3{font-weight:600;font-size:15.5px;margin:0}
+h4{font-weight:600;font-size:14px;margin:0;line-height:1.35;overflow-wrap:anywhere}
+section{display:flex;flex-direction:column;gap:14px}
+.intro{color:var(--fg-2);max-width:72ch;margin:10px 0 0}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--fg);border-bottom:1px solid var(--line)}
+.kpi{padding:14px 14px 14px 0;display:flex;flex-direction:column;gap:2px}
+.kpi:not(:nth-child(4n+1)){padding-left:14px;border-left:1px solid var(--line)}
+.kpi:nth-child(n+5){border-top:1px solid var(--line)}
+.kpi b{font-size:26px;font-weight:600;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.kpi span{font-size:13px;color:var(--fg-2)}
+.bloque{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 20px;display:flex;flex-direction:column;gap:12px}
+.fn{display:flex;flex-direction:column;gap:2px}
+.fr{display:grid;grid-template-columns:200px 90px minmax(0,1fr) 250px;gap:14px;align-items:center;padding:7px 0;border-bottom:1px solid var(--line)}
+.fr:last-child{border-bottom:0}
+.fl{font-size:13.5px;color:var(--fg-2)}
+.fr b{font-size:17px;font-weight:600;text-align:right;font-variant-numeric:tabular-nums}
+.ft{height:10px;background:var(--track);border-radius:2px;overflow:hidden;display:block}
+.ft i{display:block;height:100%;background:var(--bar);border-radius:0 4px 4px 0}
+.fp{font-size:12.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.fr.alerta .ft i{background:var(--alerta)}
+.fr.alerta .fp{color:var(--alerta)}
+.nota{font-size:12.5px;color:var(--muted);margin:0;max-width:80ch}
+.tabla{overflow-x:auto;border-top:1px solid var(--fg)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+.tabla.ancha table{min-width:900px}
+th,td{padding:8px 9px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:500}
+th.n,td.n{text-align:right;font-variant-numeric:tabular-nums;white-space:nowrap}
+th:first-child,td:first-child{padding-left:0}
+td small{display:block;color:var(--muted);font-size:11.5px}
+td a{color:var(--fg);text-decoration:none}td a:hover{text-decoration:underline}
+td.vacio{color:var(--muted)}
+.camp{padding-top:14px;border-top:1px solid var(--fg)}
+.set{display:flex;flex-direction:column;gap:10px;background:var(--card);border:1px solid var(--line);border-radius:6px;padding:18px 20px}
+.tot{margin:0;font-size:13px;color:var(--fg-2)}.tot b{color:var(--fg)}
+.ad{display:grid;grid-template-columns:88px minmax(0,1fr);gap:16px;align-items:start;padding-top:12px;border-top:1px solid var(--line)}
+.ad__img img,.ph{width:88px;height:88px;object-fit:cover;border-radius:3px;background:var(--line);display:block}
+.ph{display:grid;place-items:center;font-size:11px;color:var(--muted);text-align:center}
+.ad__body{display:flex;flex-direction:column;gap:6px;min-width:0}
+.sub{margin:0;font-size:12px;color:var(--muted);overflow-wrap:anywhere}
+.mini{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));border:1px solid var(--line);border-radius:4px}
+.mc{padding:6px 8px;display:flex;flex-direction:column;gap:0;min-width:0}
+.mc + .mc{border-left:1px solid var(--line)}
+.mc span{font-size:10px;letter-spacing:.03em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-transform:uppercase;color:var(--muted)}
+.mc b{font-size:15px;font-weight:600;font-variant-numeric:tabular-nums}
+.mc em{font-style:normal;font-size:11.5px;color:var(--muted);font-variant-numeric:tabular-nums}
+.dos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.dos > *{min-width:0}
+.hall{margin:0;padding-left:18px;display:flex;flex-direction:column;gap:6px;color:var(--fg-2);max-width:80ch}
+.hall b{color:var(--fg)}
+@media (max-width:760px){
+  .kpis{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .kpi:not(:nth-child(4n+1)){padding-left:0;border-left:0}
+  .kpi:nth-child(2n){padding-left:14px;border-left:1px solid var(--line)}
+  .kpi:nth-child(n+3){border-top:1px solid var(--line)}
+  .fr{grid-template-columns:minmax(0,1fr) auto;gap:4px 12px}
+  .fr .ft,.fr .fp{grid-column:1 / -1}
+  .mini{grid-template-columns:repeat(4,minmax(0,1fr))}
+  .mc:nth-child(5){border-left:0}
+  .mc:nth-child(n+5){border-top:1px solid var(--line)}
+  .ad{grid-template-columns:64px minmax(0,1fr)}
+  .ad__img img,.ad__img .ph{width:64px;height:64px}
+  .dos{grid-template-columns:1fr}
+}
+</style>
+
+<main>
+  <header>
+    <h1>Funnel base · 12 al 18 de noviembre</h1>
+    <p class="intro">Punto de partida antes de los test. Recorre todo el camino, desde que alguien ve un anuncio hasta que pide su tienda, con lo que se pierde en cada paso. Los datos de Meta son de los 82 anuncios activos. Los de Kommo son los leads de esos días, con su estado a 19 de noviembre. La última sección mide si los leads cogen el teléfono.</p>
+  </header>
+
+  <section>
+    <div class="kpis">{{KPIS}}</div>
+  </section>
+
+  <section>
+    <h2>Lo más importante</h2>
+    <ul class="hall">{{HALLAZGOS}}</ul>
+  </section>
+
+  <section>
+    <h2>El funnel completo</h2>
+    <p class="nota">Cada barra muestra qué parte del paso anterior sigue adelante. En rojo, los pasos donde se pierde la mitad o más.</p>
+    <div class="bloque"><h3>1 · Del anuncio a la landing</h3>{{F_TOP}}</div>
+    <div class="bloque"><h3>2 · Dentro de la landing</h3>{{F_PIX}}</div>
+    <div class="bloque"><h3>3 · De lead a tienda (Kommo, solo anuncios de Meta)</h3>{{F_KM}}</div>
+    <div class="bloque"><h3>4 · Dentro de la plataforma</h3>{{F_PIX2}}</div>
+  </section>
+
+  <section>
+    <h2>Por conjunto de anuncios</h2>
+    <div class="tabla ancha"><table>
+      <thead><tr><th>Conjunto</th><th class="n">Gasto</th><th class="n">Impr.</th><th class="n">CTR</th><th class="n">Clics</th><th class="n">Visitas</th><th class="n">Leads</th><th class="n">Visita → lead</th><th class="n">Cualif.</th><th class="n">Registro</th><th class="n">Tienda</th><th class="n">CPL</th></tr></thead>
+      <tbody>{{TABLA}}</tbody>
+    </table></div>
+    <p class="nota">Además de estos, entraron {{N_HUERF}} leads de Meta con UTM de anuncios que ya no están activos, y {{N_SINUTM}} sin ninguna UTM. Están al final, en «Leads de anuncios apagados».</p>
+  </section>
+
+  {{SECCIONES}}
+
+  <section>
+    <h2>Leads de anuncios apagados</h2>
+    <p class="nota">Leads creados del 12 al 18 de noviembre cuya UTM no coincide con ningún anuncio activo. Suelen venir de anuncios apagados ese mismo día o de enlaces guardados.</p>
+    <div class="tabla"><table><thead><tr><th>Campaña / conjunto / anuncio (UTM)</th><th class="n">Leads</th></tr></thead><tbody>{{HUERF}}</tbody></table></div>
+  </section>
+
+  <section>
+    <h2>¿Contestan el teléfono?</h2>
+    <p class="intro" style="margin:0">De los {{NQ}} leads cualificados de esta semana, {{NLL}} tienen al menos una llamada registrada en Kommo. {{NCON}} descolgaron alguna vez y solo {{NHB}} mantuvieron una conversación de más de 30 segundos (el resto son llamadas de pocos segundos, casi siempre buzón o cuelgue). La primera llamada llega, en mediana, {{MED}} horas después de que entre el lead. En las tareas cerradas por los comerciales, {{TAREAS_NO}} de {{TAREAS_T}} resultados dicen «sin respuesta». Ojo: aquí solo cuentan las llamadas hechas desde la centralita conectada a Kommo; las de WhatsApp no quedan registradas.</p>
+    <div class="dos">
+      <div class="bloque"><h3>Cualificados de esta semana, por etapa hoy</h3>
+        <div class="tabla"><table><thead><tr><th>Etapa</th><th class="n">Leads</th><th class="n">%</th></tr></thead><tbody>{{STQ}}</tbody></table></div></div>
+      <div class="bloque"><h3>Por comercial (cualificados de esta semana)</h3>
+        <div class="tabla"><table><thead><tr><th>Comercial</th><th class="n">Leads</th><th class="n">Llamados</th><th class="n">Hablan +30 s</th><th class="n">Lead frío</th></tr></thead><tbody>{{RESP}}</tbody></table></div>
+        <p class="nota">Hoy a las 17:00 se reasignaron muchos leads a Taiab, así que el comercial que aparece es el de ahora, no necesariamente el que llamó.</p></div>
+    </div>
+    <div class="bloque"><h3>Campañas Ads por semana de entrada</h3>
+      <div class="tabla"><table><thead><tr><th>Entraron</th><th class="n">Leads</th><th class="n">Sin tocar</th><th class="n">Lead frío</th><th class="n">Avanzan</th><th class="n">No cualificado</th><th class="n">Perdidos</th></tr></thead><tbody>{{COH}}</tbody></table></div>
+      <p class="nota">«Sin tocar» es Contacto inicial o Leads Landings. «Avanzan» suma videollamada, negociación, tomar decisión y logrado. Estado a 19 de noviembre.</p></div>
+    <div class="bloque"><h3>Todo el pipeline Campañas Ads hoy ({{SNAPT}} leads)</h3>
+      <div class="tabla"><table><thead><tr><th>Etapa</th><th class="n">Leads</th><th class="n">%</th></tr></thead><tbody>{{SNAP}}</tbody></table></div></div>
+  </section>
+
+  <section>
+    <h2>Números para comparar dentro de una semana</h2>
+    <p class="nota">Cuando cambie la página de gracias y empiecen los test, repetimos esta misma medición con los leads del 19 al 25 de noviembre y rellenamos la última columna.</p>
+    <div class="tabla"><table><thead><tr><th>Métrica</th><th class="n">Base (12–18 nov)</th><th class="n">Siguiente semana</th></tr></thead><tbody>{{BASE}}</tbody></table></div>
+  </section>
+</main>
