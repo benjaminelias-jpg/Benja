@@ -1,109 +1,71 @@
-# Wallet · LATAM · réplica de los 4 estáticos del conjunto WALLET (España)
+# Wallet · LATAM · 4 estáticos nuevos
 
-Mismo diseño que los originales (`WALLET_D-01/02/05/08`). En la imagen solo cambia lo que dependía de España:
+Ángulos pensados para Latinoamérica, no copiados de España. No se habla de IBAN ni de CVU: se habla de lo que pasa al cobrar desde fuera.
 
-- «desde España» → «desde Latinoamérica».
-- «somos la única pasarela de España que funciona como Merchant of Record» → «somos Merchant of Record: el vendedor legal de cada venta».
-- D-01: «con IBAN» → «en dólares o euros».
+**Lo que duele en LATAM al cobrar de fuera** (búsqueda del 24-11-2026):
+- PayPal y las plataformas convierten a moneda local con su propio tipo de cambio. Es una pérdida que no aparece como comisión ([Cronista](https://www.cronista.com/finanzas-mercados/cobrar-desde-el-exterior-las-claves-para-no-perder-hasta-10-de-los-ingresos/), [iProUP](https://www.iproup.com/empleo/69818-como-evitar-perder-ingresos-por-comisiones-al-cobrar-del-exterior)).
+- Varias comisiones por retiro, y el dinero tarda varios días hábiles en llegar al banco ([Global66](https://www.global66.com/cl/calculadora-paypal/)).
+- Hotmart cobra 1,99 USD por retiro manual, convierte con el tipo de cambio de Payoneer y libera el dinero 15 días después de la venta ([ayuda de Hotmart](https://help.hotmart.com/es/article/216440207/-como-retirar-mi-comision-)).
 
 **Confirmar antes de lanzar:**
-- Que una persona residente en LATAM obtiene IBAN en Wallet: D-02, D-05 y D-08 siguen enseñando «IBAN».
-- «sin pasar por tu banco» (D-05) se marcó en España como frase que puede leerse como esconder algo.
-- La comisión del 5 al 10 % del texto de D-08.
+- Que una persona de LATAM puede retirar de Hotmart, y de otras plataformas, a su cuenta de Kunfupay.
+- En qué moneda queda el saldo, porque W4 dice «en dólares, no en pesos».
+- Si de verdad se evita la conversión y la espera (W1 y W3).
 
-UTM: igual que en España, con `utm_term=wallet_latam_aud_hernan_3` y el mismo `utm_content` cambiando `wallet` por `wallet_latam` (por ejemplo `ad_1_wallet_latam_estatico`).
+Si alguna de estas no es cierta, se cambia la frase antes de publicar.
 
----
-
-## 1 · D-01 «¿De dónde sale este dinero?»
-
-**Títulos:** Tus ventas, en una cuenta a tu nombre · Sabes de dónde sale cada dólar · Separado de tu cuenta personal · Tu cuenta propia para tus cursos · Solo si ya vendes cursos desde Latinoamérica
-
-**Texto largo**
-> Si ya vendes cursos desde Latinoamérica, conoces esa pregunta. Llega justo después de un buen mes: «¿Y si me preguntan de dónde sale este dinero?».
->
-> Pasa cuando los cobros de tus cursos entran en la misma cuenta que tus gastos de casa. Todo mezclado, y nada que separe lo que es de tu negocio.
->
-> Con Kunfupay tus ventas llegan a una cuenta a tu nombre, en dólares o euros, aparte de tu cuenta personal. Cada cobro en su sitio. Lo retiras cuando quieras o lo gastas con tu tarjeta.
->
-> Es para quien ya vende cursos, mentorías o comunidades online. Si todavía no vendes, no es para ti.
->
-> Entra y mira si tu negocio encaja.
->
-> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
-
-**Texto corto**
-> Tus ventas, en una cuenta a tu nombre y separadas de la de casa. Así sabes de dónde sale cada dólar. Si ya vendes cursos, entra y mira si tu negocio encaja.
->
-> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
-
-## 2 · D-02 «Para tus cursos, mejor que tu banco»
-
-**Títulos:** Para tus cursos, mejor que tu banco · Tus ventas, aparte de tus gastos · Tu banco para casa, esta para cursos · Una cuenta a tu nombre para tu negocio · Cada venta en su sitio
-
-**Texto largo**
-> Si ya vendes cursos desde Latinoamérica y cobras en tu banco de siempre, tus ventas entran en la misma cuenta que tus gastos de casa. Para saber cuánto vendiste este mes, toca ir línea a línea.
->
-> Con Kunfupay tus ventas caen en una cuenta a tu nombre, en dólares o euros, aparte de tu cuenta personal. Ahí recibes también tus retiros de Hotmart o de cualquier otra plataforma, y lo gastas con tu tarjeta.
->
-> Tu banco de siempre para casa. Tu cuenta de Kunfupay para tus cursos.
->
-> Es para quien ya vende formación online. Si todavía no vendes, no es para ti.
->
-> Entra y mira si tu negocio encaja.
->
-> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
-
-**Texto corto**
-> Tu banco para casa, tu cuenta de Kunfupay para tus cursos. Cada cosa en su sitio. Si ya vendes, entra y mira si tu negocio encaja.
->
-> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
-
-## 3 · D-05 «Tus retiros de Hotmart»
-
-**Títulos:** Tus retiros de Hotmart, a tu cuenta · Tu cuenta para cobrar de Hotmart · Gasta tus ventas con tu tarjeta · Solo si ya vendes cursos desde Latinoamérica
-
-**Texto largo**
-> Si vendes cursos en Hotmart desde Latinoamérica, ya puedes retirar tus ventas directo a una cuenta a tu nombre.
->
-> La pones en Hotmart como cuenta de retiro, el dinero llega a tu cuenta de Kunfupay y lo gastas con tu tarjeta o lo mueves cuando quieras. Lo mismo con cualquier otra plataforma de la que cobres.
->
-> Es para quien ya vende formación online. Si todavía no vendes, no es para ti.
->
-> Entra y mira si tu negocio encaja.
->
-> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
-
-**Texto corto**
-> Retira lo de Hotmart a tu cuenta de Kunfupay y gástalo con tu tarjeta. Si ya vendes cursos, entra y mira si encaja.
->
-> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
-
-## 4 · D-08 «Dos pasos y listo»
-
-**Títulos:** Regístrate, crea tu tienda y listo · Dos pasos y listo · Tu cuenta, desde el primer día · Empieza hoy, si ya vendes
-
-**Texto largo**
-> Si ya vendes cursos, mentorías o comunidades online desde Latinoamérica, empezar es esto:
->
-> 1. Te registras en Kunfupay.
-> 2. Creas tu tienda.
->
-> Y listo. Desde ese momento tienes tu cuenta de Kunfupay a tu nombre para recibir tus ventas y tus retiros de Hotmart o de cualquier otra plataforma, y tarjeta para gastarlo. Aparte de tu cuenta personal.
->
-> Si todavía no vendes, no es para ti.
->
-> Entra y regístrate.
->
-> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
-
-**Texto corto**
-> Te registras, creas tu tienda y listo: tu cuenta a tu nombre para recibir tus ventas. Si ya vendes, entra.
->
-> Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+UTM: `utm_term=wallet_latam_aud_hernan_3`; `utm_content` = `w1_dos_veces`, `w2_hotmart_tarjeta`, `w3_comparativa`, `w4_postit_pesos`.
 
 ---
 
-## Vídeos (no replicados)
+## W1 · «Cada retiro te cobra dos veces»
+**Títulos:** Cada retiro te cobra dos veces · La comisión que no ves · Lo que ganas, entero
+> **Largo:** Si cobras en dólares desde Latinoamérica, cada vez que retiras pagas dos veces. Una es la comisión, la que ves en el resumen. La otra es el tipo de cambio: te pasan el dinero a moneda local al precio que ellos eligen, y esa no aparece en ningún lado.
+>
+> Con Kunfupay lo recibes en una cuenta a tu nombre y lo gastas con tu tarjeta, online, en tiendas o cuando viajas.
+>
+> Entra y abre tu cuenta.
+>
+> Kunfupay no es un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+>
+> **Corto:** Cada retiro te cobra dos veces: la comisión y el tipo de cambio. Con Kunfupay lo recibes y lo gastas con tu tarjeta.
 
-Los 4 vídeos del conjunto («No dejes tu dinero parado en Hotmart» ×2, «No puedes vivir así» y «Growth partner MoR») están grabados en España y no se pueden adaptar editando la imagen. Para LATAM habría que volver a grabarlos o cambiar solo los rótulos si el audio no nombra España.
+## W2 · «Retira tus ventas y gástalas con tu tarjeta»
+**Títulos:** De Hotmart a tu tarjeta · Tus ventas, listas para gastar · Retira y gasta
+> **Largo:** Si vendes en Hotmart desde Latinoamérica, ya sabes cómo va: esperas a que se libere el dinero, lo retiras y todavía tiene que llegar a tu banco.
+>
+> Con Kunfupay retiras tus ventas a una cuenta a tu nombre y las gastas con tu tarjeta, online, en tiendas o cuando viajas. Igual con cualquier otra plataforma que te pague.
+>
+> Entra y abre tu cuenta.
+>
+> Kunfupay no es un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+>
+> **Corto:** Retira tus ventas de Hotmart a tu cuenta Kunfupay y gástalas con tu tarjeta.
+
+## W3 · Comparativa «Retirar como siempre / Con Kunfupay»
+**Títulos:** Lo que ganas, sin perderlo por el camino · Retira sin perder en el cambio · Tu dinero, listo para usar
+> **Largo:** Si te pagan desde fuera de tu país (Hotmart, un cliente o cualquier plataforma), retirar como siempre significa esto: te lo pasan a moneda local a su precio, esperas días hábiles hasta que llega a tu banco y solo entonces puedes usarlo.
+>
+> Con Kunfupay llega a una cuenta a tu nombre, listo para usar con tu tarjeta.
+>
+> Entra y abre tu cuenta.
+>
+> Kunfupay no es un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+>
+> **Corto:** Lo que ganas desde fuera, sin perderlo por el camino. Recíbelo y úsalo con tu tarjeta Kunfupay.
+
+## W4 · Post-it «Lo que gano en dólares no debería llegarme en pesos»
+**Títulos:** Ganas en dólares, no en pesos · Tus dólares, enteros · Cobra de fuera, gasta con tu tarjeta
+> **Largo:** Lo que ganas en dólares no debería llegarte en pesos.
+>
+> Si cobras desde fuera de tu país, con Kunfupay lo recibes en una cuenta a tu nombre y lo gastas con tu tarjeta cuando quieras.
+>
+> Entra y abre tu cuenta.
+>
+> Kunfupay no es un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
+>
+> **Corto:** Lo que ganas en dólares no debería llegarte en pesos. Recíbelo en Kunfupay y gástalo con tu tarjeta.
+
+---
+
+**Vídeos:** los 4 del conjunto de España no sirven tal cual. Si se graban nuevos, los mismos ángulos funcionan como guion: «dos veces», «de Hotmart a tu tarjeta» y «dólares, no pesos».
