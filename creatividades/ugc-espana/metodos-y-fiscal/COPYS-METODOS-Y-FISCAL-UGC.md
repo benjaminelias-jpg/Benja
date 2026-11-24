@@ -1,6 +1,6 @@
 # Conjunto 2 · Métodos de pago y optimización fiscal · creadores de UGC en España
 
-Seis estáticos, en 4:5 y 9:16: tres de optimización fiscal y tres de métodos de pago. Los seis con formato distinto, y ninguno repite los del conjunto de wallet (noticia, tweet y pasos).
+Seis estáticos, en 4:5 y 9:16: tres de optimización fiscal y tres de métodos de pago. Los seis llevan «Si haces UGC» en grande, en una etiqueta morada, para que se distingan de los anuncios de otros públicos. Los seis con formato distinto, y ninguno repite los del conjunto de wallet (noticia, tweet y pasos).
 
 | # | Ángulo | Formato |
 |---|---|---|
@@ -45,7 +45,7 @@ Seis estáticos, en 4:5 y 9:16: tres de optimización fiscal y tres de métodos 
   > Kunfupay es una empresa de tecnología financiera, no un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 
 **F2 · Notificaciones «Cada venta llega con su factura hecha»** (pantalla de bloqueo sobre una foto real de una creadora)
-- Imagen: cuatro avisos de Kunfupay: «Nueva venta · Mentoría de UGC: Factura hecha a tu alumno. Los impuestos de esta venta, cosa nuestra», «Nueva venta · Curso de UGC: Factura hecha a tu alumno. Tú no tocas nada», otra venta del curso y una de plantillas de guiones. Abajo: «Si haces UGC y vendes tu curso, cada venta llega con su factura hecha.»
+- Imagen: tres avisos de Kunfupay: «Nueva venta · Mentoría de UGC: Factura hecha a tu alumno. Los impuestos de esta venta, cosa nuestra», «Nueva venta · Curso de UGC: Factura hecha a tu alumno. Tú no tocas nada» y otra venta del curso. Abajo: «Si haces UGC y vendes tu curso, cada venta llega con su factura hecha.»
 - Títulos: Cada venta, con su factura hecha · Vende tu curso, nosotros facturamos
 - Texto:
   > Si haces UGC y vendes tu curso, tu mentoría o tus plantillas, te suena el móvil: «Nueva venta».

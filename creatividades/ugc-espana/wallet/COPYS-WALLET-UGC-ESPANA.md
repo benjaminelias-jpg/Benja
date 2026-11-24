@@ -1,6 +1,6 @@
 # Conjunto 1 · Wallet · creadores de UGC en España
 
-Cuatro estáticos, en 4:5 y 9:16. El otro conjunto (métodos de pago y optimización fiscal) está en `../metodos-y-fiscal/`.
+Cuatro estáticos, en 4:5 y 9:16. Los cuatro llevan «Si haces UGC» en grande (etiqueta roja en las noticias, morada en el resto), para que se distingan de los anuncios de otros públicos. El otro conjunto (métodos de pago y optimización fiscal) está en `../metodos-y-fiscal/`.
 
 | # | Pieza | Formato |
 |---|---|---|
