@@ -1,4 +1,7 @@
-# Wallet · LATAM · 4 estáticos nuevos
+# Wallet · LATAM · 5 estáticos en formato hubs
+
+Piezas (mismos formatos que los hubs): H1 tweet de Rubén · H2 comparativa · H3 cifra «×2» · H4 noticia con foto real (Magnific) · H5 post-it fotográfico (Higgsfield).
+Copys: H1 y H3 usan los textos de W1 («dos veces»); H2 los de W3; H4 los de W2 (Hotmart → tarjeta); H5 los de W4 (dólares, no pesos).
 
 Ángulos pensados para Latinoamérica, no copiados de España. No se habla de IBAN ni de CVU: se habla de lo que pasa al cobrar desde fuera.
 
