@@ -41,7 +41,7 @@ Sustituye a los 5 estáticos IMG que Meta no entrega (Carga, Sin riesgo, Factura
 >
 > Sin irte a Andorra ni montar una LLC.
 >
-> Podemos porque somos la única pasarela de España que funciona como Merchant of Record. Es decir: somos tus representantes en cada venta. Tu renta, eso sí, sigue siendo tuya.
+> Podemos porque somos la única pasarela de España que funciona como Merchant of Record. Es decir: somos tus representantes en cada venta.
 >
 > Si todavía no vendes, no es para ti.
 >

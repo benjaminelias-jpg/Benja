@@ -74,7 +74,7 @@ El texto principal abre con el beneficio, no con la función. Los cuatro usan el
 >
 > ¿Y el dinero? Llega a tu cuenta de Kunfupay, a tu nombre y con IBAN, para retirarlo cuando quieras. O lo gastas con tu tarjeta, sin pasarlo por tu banco.
 >
-> Podemos porque somos la única pasarela de España que funciona como Merchant of Record. Es decir: tus representantes en cada venta. Tu renta, eso sí, sigue siendo tuya.
+> Podemos porque somos la única pasarela de España que funciona como Merchant of Record. Es decir: tus representantes en cada venta.
 >
 > Si todavía no vendes, no es para ti.
 >
@@ -106,7 +106,7 @@ El texto principal abre con el beneficio, no con la función. Los cuatro usan el
 >
 > Y tus ventas caen en tu cuenta de Kunfupay, a tu nombre y con su propio IBAN. Aparte de tus recibos de casa. Las gastas con tu tarjeta, sin pasarlas por tu banco.
 >
-> Podemos porque somos la única pasarela de España que funciona como Merchant of Record: tus representantes en cada venta. Tu renta, eso sí, sigue siendo tuya.
+> Podemos porque somos la única pasarela de España que funciona como Merchant of Record: tus representantes en cada venta.
 >
 > Si todavía no vendes, no es para ti.
 >

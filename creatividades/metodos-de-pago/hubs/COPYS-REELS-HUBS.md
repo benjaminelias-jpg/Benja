@@ -462,8 +462,6 @@ La factura de cada venta la hacemos nosotros.
 Los impuestos de cada venta ya no los gestionas tú.
 Y a ti te llega en euros o en dólares.
 
-Tu renta, eso sí, sigue siendo tuya.
-
 Menos papeleo. Menos cosas que gestionar. Y tu tiempo, para lo que de verdad te hace crecer: vender.
 
 Esto es para ti si:

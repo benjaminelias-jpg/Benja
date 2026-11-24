@@ -29,8 +29,6 @@ ADEMÁS, cada cliente te paga en su moneda.
 El de México, con OXXO. El de Brasil, con PIX.
 Y si vendes una mentoría cara, tu cliente la paga a plazos con Afterpay.
 
-Tu renta, eso sí, sigue siendo tuya.
-
 Soy Jorge. Escríbeme por WhatsApp, aquí abajo.
 En 15 minutos te enseño si tu negocio encaja.
 
@@ -53,8 +51,6 @@ O sea: somos tus representantes en cada venta.
 
 ADEMÁS, tu cliente puede pagarte la mentoría a plazos con Afterpay.
 Y da igual de dónde sea: paga en su moneda, como paga en su país.
-
-Tu renta, eso sí, sigue siendo tuya.
 
 Soy Rafa. Escríbeme por WhatsApp aquí abajo.
 Te lo enseño con tus números en 15 minutos.
@@ -79,8 +75,6 @@ Sin LLC. Ni asesor fuera.
 ADEMÁS, tu cliente de fuera paga en su moneda, como paga en su país.
 Y si lo que vendes es caro, lo paga a plazos con Afterpay.
 
-Tu renta, eso sí, sigue siendo tuya.
-
 Soy Juan. Escríbeme por WhatsApp aquí abajo.
 En 15 minutos te digo si tu negocio encaja.
 
@@ -100,8 +94,6 @@ Es decir: tus representantes en cada venta.
 
 Tu cliente paga en su moneda.
 Y si es caro, a plazos con Afterpay.
-
-Tu renta, eso sí, sigue siendo tuya.
 
 Soy Taiab. Escríbeme por WhatsApp aquí abajo.
 

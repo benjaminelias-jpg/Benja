@@ -28,8 +28,6 @@ En nuestro nombre. Tú recibes tus ganancias netas.
 
 Para ti, el día a día es igual que con Stripe: le cobras a tu alumno con tu enlace de Kunfupay. Y te olvidas del IVA de cada venta y del estrés de gestionarlo.
 
-Tu renta, eso sí, sigue siendo tuya. Lo que pagas por lo que ganas no cambia.
-
 Para quién es:
 ✓ Ya vendes cursos, mentorías, membresías o comunidades online.
 ✓ Tienes alumnos en más de un país.
@@ -69,8 +67,6 @@ PERO la factura se la hacemos nosotros.
 Y los impuestos de esa venta son cosa nuestra.
 
 Sin LLC. Sin mudarte. Sin asesor fuera.
-
-Tu renta, eso sí, sigue siendo tuya. Lo que pagas por lo que ganas no cambia.
 
 Antes que nada, para quién es:
 ✓ Productos digitales: cursos, mentorías, membresías o comunidades online.
@@ -114,8 +110,6 @@ Podemos porque somos la única pasarela de España que funciona como Merchant of
 
 Te ahorras la LLC, su renovación, su asesor y su papeleo. Y te quedas en tu casa, con tu gente.
 
-Tu renta, eso sí, sigue siendo tuya. Lo que pagas por lo que ganas no cambia.
-
 Ojo: solo sirve si vendes un servicio o producto digital (cursos, mentorías, membresías o comunidades). Si vendes productos físicos o todavía no vendes, no es para ti.
 
 Entra y mira si tu negocio encaja.
@@ -151,8 +145,6 @@ PERO la factura se la hacemos nosotros.
 Y los impuestos de esa venta son cosa nuestra. Tú te olvidas del IVA de cada venta.
 
 Sin LLC. Sin mudarte. Sin asesor fuera.
-
-Tu renta, eso sí, sigue siendo tuya. Lo que pagas por lo que ganas no cambia.
 
 Para quién es:
 ✓ Ya vendes cursos, mentorías, membresías o comunidades online desde España.

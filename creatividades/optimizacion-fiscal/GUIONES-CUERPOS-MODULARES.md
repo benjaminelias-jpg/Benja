@@ -54,8 +54,6 @@ Es decir: somos tus representantes en cada venta.
 Y puedes hacerlo desde hoy.
 Igual de fácil que cobrabas con Stripe.
 
-Tu renta, eso sí, sigue siendo tuya.
-
 Entra y mira si tu negocio encaja.
 ```
 
@@ -68,7 +66,6 @@ Entra y mira si tu negocio encaja.
 - **«Su asesor», «su papeleo»:** el de la LLC. El gestor en España sigue, con los trimestres y la renta.
 - **El papeleo es real:** una LLC de un solo socio extranjero presenta cada año al IRS el formulario 5472 con un 1120 pro forma, aunque no tenga actividad. La multa por no hacerlo es de 25.000 $. A eso se suman la renovación del estado y el agente registrado.
 - **«Desde hoy»:** la landing de fiscal dice «Empieza hoy, cobra hoy» y «Alta en minutos». La cuenta se revisa antes de activarla, y por eso el CTA es «mira si tu negocio encaja».
-- **«Tu renta, eso sí, sigue siendo tuya»:** quien vive en España tributa por todo lo que gana, esté donde esté el dinero (art. 2 de la Ley del IRPF). Con una LLC, también: sus rentas se imputan al socio.
 - **Kunfupay no es una LLC:** la empresa es Kunfu Global, Inc. Y no se inventan nombres de producto que no estén en la web.
 - **Sin comisión:** el guion no habla de cuánto te llega.
 

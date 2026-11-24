@@ -283,5 +283,5 @@ Entra y mira si tu negocio encaja.
 - **«Papeleo anual aunque no factures»:** una LLC de un solo socio extranjero presenta cada año al IRS el formulario 5472 con un 1120 pro forma, aunque no tenga actividad. Fuentes en `creatividades/optimizacion-fiscal/GUIONES-CUERPOS-MODULARES.md`.
 - **«En dólares o en euros»:** la wallet de Kunfupay es multimoneda, en EUR y USD (kunfupay.com/producto/wallet). No se dice «a tu nombre»: «cuenta en EE. UU. a tu nombre» es de lo saturado en LATAM.
 - **No dice que sea el único.** Las billeteras en dólares ya dan cuenta para recibir dólares sin LLC. Lo que enseña el guion es que tu alumno te paga con lo que usa en su país.
-- **No dice que ahorres impuestos.** Dice lo que te ahorras de la LLC, y que tu renta sigue siendo tuya.
+- **No dice que ahorres impuestos.** Dice lo que te ahorras de la LLC.
 - **No promete que Kunfupay se encargue de los impuestos de cada venta.** La web lo dice del Merchant of Record en Europa, y no está confirmado para quien vende desde Latinoamérica. Si el equipo lo confirma, entra la línea «Y los impuestos de cada venta son cosa nuestra.».

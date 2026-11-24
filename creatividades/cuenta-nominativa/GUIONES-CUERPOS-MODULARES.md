@@ -19,7 +19,7 @@ Leídos línea a línea, cerca del 80 % de cada guion es el mismo texto en disti
 | El dinero | Los 9 | «En tu cuenta de Kunfupay, a tu nombre. Con tarjeta. Y con tu IBAN, tus retiros de Hotmart» |
 | Lo que no necesitas | 1, 4, 5, 6, 7, 8 | «Sin irte a Andorra ni montar una LLC» / «Ni LLC, ni asesor fuera» |
 | Comisión | 2, 4, 6, 8 | «Entre un 5 y un 10 %» |
-| Honestidad | 2, 3, 7, 9 | «Tu renta, eso sí, sigue siendo tuya» / «No es ningún vacío legal…» |
+| Honestidad | 2, 3, 7, 9 | «No es ningún vacío legal…» |
 | Filtro | 8 | «Solo productos digitales. Si tienes una peluquería, no es para ti» |
 | Cierre | Los 9 | «Entra y mira si tu negocio encaja» |
 
@@ -86,7 +86,6 @@ En tu cuenta de Kunfupay, a tu nombre.
 O de cualquier otra plataforma.
 
 Sin irte a Andorra ni montar una LLC.
-Tu renta, eso sí, sigue siendo tuya.
 
 Entra y mira si tu negocio encaja.
 ```
@@ -109,7 +108,6 @@ Podemos porque somos la única pasarela de España que funciona como Merchant of
 Es decir: somos tus representantes en cada venta.
 
 A tu nombre y en regla.
-Tu renta, eso sí, sigue siendo tuya.
 
 Entra y mira si tu negocio encaja.
 ```
