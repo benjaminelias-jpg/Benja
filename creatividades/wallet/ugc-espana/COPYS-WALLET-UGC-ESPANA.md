@@ -16,11 +16,11 @@ Cuatro anuncios, en 4:5 y 9:16, para el público de UGC. Mismo estilo que el de 
 
 ---
 
-**UGC1 · Noticia «Upwork»** (creadora grabando con el móvil en trípode)
+**UGC1 · Noticia «Upwork»** (creadora grabando con el móvil en trípode; logo de Upwork en el círculo)
 - Títulos: De Upwork a tu tarjeta · Tus cobros de Upwork, a tu nombre
 - Texto: Si haces UGC desde España y cobras en Upwork, ya puedes retirarlo a una cuenta de Kunfupay a tu nombre, con tu propio IBAN, y gastarlo con tu tarjeta, online o en tiendas. Tu renta, eso sí, sigue siendo tuya. Kunfupay no es un banco. Las cuentas y tarjetas las prestan partners financieros con licencia.
 
-**UGC2 · Noticia «Fiverr»** (creadora preparando un vídeo en su mesa)
+**UGC2 · Noticia «Fiverr»** (creadora preparando un vídeo en su mesa; logo de Fiverr en el círculo)
 - Títulos: De Fiverr a tu tarjeta · Tus retiros de Fiverr, a tu nombre
 - Texto: Si haces UGC en Fiverr desde España, ya puedes recibir tus retiros en una cuenta de Kunfupay a tu nombre y gastarlos con tu tarjeta. Tu renta, eso sí, sigue siendo tuya. Kunfupay no es un banco…
 
