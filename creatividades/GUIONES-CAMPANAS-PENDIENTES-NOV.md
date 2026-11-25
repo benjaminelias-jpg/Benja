@@ -47,25 +47,29 @@ Y ya lo puedes gastar.
 Entra y abre tu cuenta.
 ```
 
-### 2 · Lista de tres, en estudio
-Rótulo: «3 cosas si cobras tus UGC desde fuera»
+### 2 · Escena «¿a qué cuenta te pago?»
+Rótulo: «Si haces UGC para marcas de fuera»
 
 ```text
-Si haces UGC y cobras de marcas de fuera, hay tres cosas que te cambian el mes.
-Y la tercera es la que más vas a usar.
+Si haces UGC para marcas de fuera, este mensaje te llega en cada colaboración.
+«Genial el vídeo. ¿A qué cuenta te pago?»
 
-Una.
-Una cuenta a tu nombre, con tu propio IBAN.
-Ahí recibes lo que cobras en Upwork, en Fiverr o de la marca.
+Y ahí empiezan las dudas.
+¿Le doy mi cuenta de siempre?
+¿Me paga en dólares o en euros?
 
-Dos.
-En euros o en dólares.
-Si la marca te paga en dólares, te llega en dólares.
+PERO ahora le pasas tu cuenta de Kunfupay.
+A tu nombre.
+[Pantalla real: los datos de la cuenta en la app]
+Si la marca es de Europa, tu IBAN.
+Si es de Estados Unidos, tus datos en dólares.
+Y te llega en esa moneda.
 
-Tres.
-Tu tarjeta.
-Lo gastas online o en la tienda, sin pasarlo antes a otra cuenta.
-Y desde el móvil, con Apple Pay o Google Pay.
+Lo gastas con tu tarjeta.
+Sin mezclarlo con la cuenta de casa.
+
+Así que la próxima vez que te pregunten «¿a qué cuenta te pago?»,
+ya lo tienes.
 
 Entra y abre tu cuenta.
 ```
@@ -74,60 +78,54 @@ Entra y abre tu cuenta.
 
 ## MÉTODOS DE PAGO + FISCAL UGC · 2 vídeos
 
-Para quien hace UGC y además vende su curso o su mentoría.
+Para quien hace UGC y le cobra a marcas por su contenido. Antes de grabar, confirmar con el equipo que Kunfupay puede cobrar y hacer la factura a una marca por un vídeo UGC.
 
-### 1 · Fiscal · Historia «la factura»
-Rótulo: «Si haces UGC y vendes tu curso»
+### 1 · Fiscal · Historia «la factura de cada marca»
+Rótulo: «Si haces UGC y le cobras a marcas»
 
 ```text
-Si haces UGC y además vendes tu curso, te sabes este mensaje.
-«Hola, acabo de comprar tu curso. ¿Me mandas la factura?»
+Si haces UGC y le cobras a marcas, te sabes cómo acaba cada colaboración.
 
-Y otra factura más.
-Entre vídeo y vídeo.
-Y caaada trimestre, los impuestos de todas esas ventas.
+Entregas el vídeo.
+Y luego, la factura.
+Una por marca.
+Y caaada trimestre, los impuestos de todas esas colaboraciones.
 
-Pero hay otra forma de cobrar tu curso.
-Le cobras a tu alumno con Kunfupay, igual que con Stripe.
+Pero hay otra forma de cobrar tus UGC.
+Le pasas a la marca tu enlace de Kunfupay y te paga ahí.
 PERO la factura se la hacemos nosotros.
 Y los impuestos de esa venta son cosa nuestra.
 
 Podemos porque somos la única pasarela de España que funciona como Merchant of Record.
 Es decir: somos tus representantes en cada venta.
-Sin irte a Andorra ni montar una LLC.
 
 Y no es ningún vacío legal.
-Es un modelo que existe para quienes vendemos lo que sabemos.
+Es un modelo que existe para quienes vendemos lo que creamos.
 
-Así que la próxima vez que te escriban «¿me mandas la factura?»,
-ya se la hemos hecho.
-Y tú, a grabar.
+Tú entregas el vídeo.
+Del resto, nos ocupamos nosotros.
 
 Entra y mira si tu negocio encaja.
 ```
 
-### 2 · Métodos de pago · Escena del pago que no pasa
-Rótulo: «Si haces UGC y vendes tu curso a Latinoamérica»
+### 2 · Métodos de pago · Escena «la marca que no puede pagarte»
+Rótulo: «Si haces UGC para marcas de Latinoamérica»
 
 ```text
-Si haces UGC y vendes tu curso a Latinoamérica, esto ya te ha pasado.
+Si haces UGC para marcas de Latinoamérica, esto ya te ha pasado.
 
-Tu alumno de México quiere comprarlo.
-Abre tu enlace.
-Solo acepta tarjeta.
-Y la suya no pasa.
-«Luego lo miro.»
-Y ese luego no llega.
+La marca de México quiere tu vídeo.
+Te pregunta cómo pagarte.
+Y lo que tú aceptas, a ellos no les sirve.
+«Lo vemos la semana que viene.»
+Y la colaboración se enfría.
 
-PERO con tu enlace de Kunfupay, sí te paga.
-[Inserto: página de pago real]
-Cada alumno paga como paga en su país.
-El de México, en pesos.
-El de Colombia, por transferencia.
+PERO con tu enlace de Kunfupay, te pagan como pagan en su país.
+[Inserto: página de pago real de México]
+La de México, en pesos.
+La de Colombia, por transferencia.
 Con el mismo enlace.
 Y a ti te llega en euros.
-
-Sin Stripe, sin PayPal y sin otra pasarela.
 
 Entra y mira si tu negocio encaja.
 ```
@@ -577,7 +575,8 @@ Entra en el enlace y haz tu próximo sorteo.
 
 | # | Qué confirmar | Guiones | Si no se confirma |
 |---|---|---|---|
-| 1 | Retiro de prueba desde Upwork y Fiverr al IBAN de Kunfupay | Wallet UGC 1 y 2 | Se dice «de la plataforma donde cobras», sin nombrarlas |
+| 1 | Retiro de prueba desde Upwork y Fiverr al IBAN de Kunfupay | Wallet UGC 1 | Se dice «de la plataforma donde cobras», sin nombrarlas |
+| 1 bis | Que Kunfupay puede cobrar y hacer la factura a una marca por un vídeo UGC | Métodos + fiscal UGC 1 y 2 | No se graban |
 | 2 | Cómo paga cada país: Colombia por transferencia en pesos, México con sus métodos, España con Bizum | Métodos UGC 2, Bali, Tailandia, SaaS 3 | Queda «como paga en su país» |
 | 3 | Que se aceptan vendedores que viven en Indonesia y Tailandia | Bali y Tailandia | Esos conjuntos no salen |
 | 4 | Verificación del anunciante en Tailandia | Tailandia | El conjunto no gasta |
