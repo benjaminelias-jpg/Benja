@@ -108,6 +108,12 @@ Cada regla viene de una corrección de Brayan: respétalas por defecto y no las 
   salidas, no solo las entradas. Nunca sonidos metálicos (cadenas, espada, «Ring Slice»), de motor/retumbe grave
   («Dynamic SFX 1–4», «Projector Sound FX») ni risers; comprueba el espectro de cada SFX antes de usarlo.
 
+- **Montaje en bruto desde tomas sueltas:** quedarse siempre con la ÚLTIMA toma completa de cada frase; quitar
+  muletillas («eeeh», «eeem», «a ver, a ver», palabras dobladas) y fragmentos muertos en los que no se habla y se mira a
+  otro lado (mirar a otro lado MIENTRAS se habla está bien); nada de mirar abajo para leer el guion. Cortes EXACTOS al
+  inicio de la voz (sin hueco antes ni después, sin «pam» ni sílaba comida): onset por envolvente de energía fina, fundidos
+  de 10–15 ms y comprobar clics en cada unión. Ninguna pausa > ~150 ms en la pista de voz.
+
 ## TTS (cuando haya que regrabar o arreglar una palabra)
 - «La voz de Sergio» = ElevenLabs **Sergio Morales** (`voiceId` 558 del catálogo de Magnific), `audio_tts` con `eleven_v3`.
   Texto dicho normal: sin puntos suspensivos ni suspiros; emoción con una sola etiqueta suave.
