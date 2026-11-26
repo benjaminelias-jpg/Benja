@@ -116,6 +116,11 @@ Cada regla viene de una corrección de Brayan: respétalas por defecto y no las 
   decaer la última sílaba (las «n», «s» y vocales finales se alargan) + ~100–150 ms de cola con fundido de 20–30 ms,
   para que no se oiga «automatizació» en vez de «automatización». Ninguna pausa > ~150 ms en la pista de voz.
 
+- **Análisis final OBLIGATORIO antes de entregar:** transcribir el vídeo final palabra a palabra (sin limpiar
+  muletillas) y comprobar que no hay NADA duplicado (frases o palabras repetidas, p. ej. «llega un mensaje» dos veces;
+  quedarse siempre con la segunda/última), ni muletillas, ni huecos; revisar fotogramas a 2 fps de todo el vídeo
+  (solapes, elementos cortados, legibilidad). Si algo falla, corregir y repetir el análisis.
+
 ## TTS (cuando haya que regrabar o arreglar una palabra)
 - «La voz de Sergio» = ElevenLabs **Sergio Morales** (`voiceId` 558 del catálogo de Magnific), `audio_tts` con `eleven_v3`.
   Texto dicho normal: sin puntos suspensivos ni suspiros; emoción con una sola etiqueta suave.
