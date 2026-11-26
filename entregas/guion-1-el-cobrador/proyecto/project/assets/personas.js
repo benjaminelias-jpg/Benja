@@ -1,0 +1,1 @@
+window.PERSONAS={"jobs": {"w": 1100, "h": 1808, "cara": {"cx": 0.5607, "cy": 0.1971, "w": 0.2218, "h": 0.1657}, "cabeza_der": 0.8945, "abajo_continua": false}, "kiyosaki": {"w": 1430, "h": 2046, "cara": {"cx": 0.4338, "cy": 0.1816, "w": 0.2132, "h": 0.2058}, "cabeza_der": 0.6035, "abajo_continua": true}};
