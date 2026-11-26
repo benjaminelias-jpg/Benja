@@ -121,6 +121,10 @@ Cada regla viene de una corrección de Brayan: respétalas por defecto y no las 
   quedarse siempre con la segunda/última), ni muletillas, ni huecos; revisar fotogramas a 2 fps de todo el vídeo
   (solapes, elementos cortados, legibilidad). Si algo falla, corregir y repetir el análisis.
 
+- **Emojis e iconos NUNCA en el centro del encuadre ni encima de la persona** (p. ej. el 📝 al decir «PDF» en medio
+  del plano está mal): siempre a los lados o en la zona de arriba, detrás de la persona si hay recorte, lejos de caras
+  y torso. Los titulares grandes pueden ir centrados en horizontal, pero sin tapar la cara.
+
 ## TTS (cuando haya que regrabar o arreglar una palabra)
 - «La voz de Sergio» = ElevenLabs **Sergio Morales** (`voiceId` 558 del catálogo de Magnific), `audio_tts` con `eleven_v3`.
   Texto dicho normal: sin puntos suspensivos ni suspiros; emoción con una sola etiqueta suave.
