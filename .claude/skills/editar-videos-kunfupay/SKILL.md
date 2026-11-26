@@ -112,7 +112,9 @@ Cada regla viene de una corrección de Brayan: respétalas por defecto y no las 
   muletillas («eeeh», «eeem», «a ver, a ver», palabras dobladas) y fragmentos muertos en los que no se habla y se mira a
   otro lado (mirar a otro lado MIENTRAS se habla está bien); nada de mirar abajo para leer el guion. Cortes EXACTOS al
   inicio de la voz (sin hueco antes ni después, sin «pam» ni sílaba comida): onset por envolvente de energía fina, fundidos
-  de 10–15 ms y comprobar clics en cada unión. Ninguna pausa > ~150 ms en la pista de voz.
+  de 10–15 ms y comprobar clics en cada unión. Al FINAL de cada frase no cortar en seco: dejar
+  decaer la última sílaba (las «n», «s» y vocales finales se alargan) + ~100–150 ms de cola con fundido de 20–30 ms,
+  para que no se oiga «automatizació» en vez de «automatización». Ninguna pausa > ~150 ms en la pista de voz.
 
 ## TTS (cuando haya que regrabar o arreglar una palabra)
 - «La voz de Sergio» = ElevenLabs **Sergio Morales** (`voiceId` 558 del catálogo de Magnific), `audio_tts` con `eleven_v3`.
