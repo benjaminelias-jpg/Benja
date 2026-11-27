@@ -1,0 +1,360 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Funnel AutoDM V1</title>
+<style>
+:root{
+  --bg:#f6f5f2; --card:#ffffff; --ink:#1d1b22; --muted:#6b6875; --line:#c9c6cf;
+  --ig:#7b3fe4; --ig-bg:#f1eafd;
+  --mc:#1f6feb; --mc-bg:#e7f0fe;
+  --app:#16865a; --app-bg:#e3f4ec;
+  --brevo:#c2570c; --brevo-bg:#fcefe3;
+  --meta:#475569; --meta-bg:#eceff3;
+  --kommo:#b4235a; --kommo-bg:#fbe8ef;
+  --end:#8a8794; --end-bg:#efeef1;
+  --chip:#f2f1f4;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#141318; --card:#1e1c24; --ink:#ecebf0; --muted:#a19eab; --line:#45424d;
+    --ig:#b48cff; --ig-bg:#2a2140; --mc:#6aa5ff; --mc-bg:#17263d;
+    --app:#4fd19b; --app-bg:#14302a; --brevo:#f59a52; --brevo-bg:#36251a;
+    --meta:#a9b6c8; --meta-bg:#252a33; --kommo:#f0709f; --kommo-bg:#38202b;
+    --end:#9d9aa7; --end-bg:#26242c; --chip:#2a2830;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#141318; --card:#1e1c24; --ink:#ecebf0; --muted:#a19eab; --line:#45424d;
+  --ig:#b48cff; --ig-bg:#2a2140; --mc:#6aa5ff; --mc-bg:#17263d;
+  --app:#4fd19b; --app-bg:#14302a; --brevo:#f59a52; --brevo-bg:#36251a;
+  --meta:#a9b6c8; --meta-bg:#252a33; --kommo:#f0709f; --kommo-bg:#38202b;
+  --end:#9d9aa7; --end-bg:#26242c; --chip:#2a2830;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Arial,sans-serif}
+header{padding:22px 16px 6px;max-width:1100px;margin:0 auto}
+h1{font-size:22px;margin:0 0 4px}
+.sub{color:var(--muted);font-size:13px}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav .in{max-width:1100px;margin:0 auto;padding:8px 16px;display:flex;gap:6px;overflow-x:auto}
+nav button{border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:999px;padding:7px 13px;font:inherit;font-size:13px;white-space:nowrap;cursor:pointer}
+nav button[aria-selected="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+main{max-width:1100px;margin:0 auto;padding:18px 16px 60px}
+section{display:none}
+section.on{display:block}
+h2{font-size:18px;margin:4px 0 4px}
+.lead{color:var(--muted);margin:0 0 18px;max-width:760px}
+.legend{display:flex;flex-wrap:wrap;gap:8px 14px;font-size:12px;color:var(--muted);margin:0 0 18px}
+.legend span{display:inline-flex;align-items:center;gap:6px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block;border:2px solid}
+
+/* flow */
+.flow{display:flex;flex-direction:column;align-items:center;width:100%}
+.node{width:100%;max-width:440px;background:var(--card);border:1.5px solid var(--line);border-left-width:6px;border-radius:12px;padding:10px 14px;position:relative}
+.node .k{font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;margin-bottom:2px}
+.node .t{font-weight:650}
+.node .d{color:var(--muted);font-size:13px;margin-top:3px}
+.node .q{font-size:14px;margin-top:4px;font-style:italic}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.chip{font-size:12px;background:var(--chip);border:1px solid var(--line);border-radius:999px;padding:2px 9px}
+.hook{position:absolute;top:-10px;right:10px;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;color:#fff}
+.ig{border-color:var(--ig);background:var(--ig-bg)} .ig .k{color:var(--ig)}
+.mc{border-color:var(--mc);background:var(--mc-bg)} .mc .k{color:var(--mc)}
+.app{border-color:var(--app);background:var(--app-bg)} .app .k{color:var(--app)}
+.brevo{border-color:var(--brevo);background:var(--brevo-bg)} .brevo .k{color:var(--brevo)}
+.meta{border-color:var(--meta);background:var(--meta-bg)} .meta .k{color:var(--meta)}
+.kommo{border-color:var(--kommo);background:var(--kommo-bg)} .kommo .k{color:var(--kommo)}
+.end{border-color:var(--end);background:var(--end-bg);border-style:dashed} .end .k{color:var(--end)}
+.h-brevo{background:var(--brevo)} .h-kommo{background:var(--kommo)} .h-meta{background:var(--meta)} .h-sheet{background:var(--app)}
+
+.arrow{display:flex;flex-direction:column;align-items:center;min-height:34px;padding:2px 0}
+.arrow:before{content:"";width:2px;flex:1;min-height:14px;background:var(--line)}
+.arrow:after{content:"";width:0;height:0;border-left:6px solid transparent;border-right:6px solid transparent;border-top:8px solid var(--line)}
+.arrow .lbl{font-size:12px;color:var(--muted);background:var(--bg);padding:1px 8px;border-radius:6px;margin:2px 0;text-align:center}
+.split{display:grid;grid-template-columns:repeat(var(--n,2),minmax(0,1fr));gap:14px;width:100%;max-width:900px;position:relative;padding-top:14px}
+.split:before{content:"";position:absolute;top:0;left:calc(50%/var(--n,2));right:calc(50%/var(--n,2));height:2px;background:var(--line)}
+.split > .flow > .arrow:first-child{min-height:22px}
+.merge{display:grid;grid-template-columns:1fr 1fr;gap:14px;width:100%;max-width:900px;position:relative;padding-bottom:14px}
+.merge > .flow:after{content:"";width:2px;height:14px;background:var(--line)}
+.merge:after{content:"";position:absolute;bottom:0;left:25%;right:25%;height:2px;background:var(--line)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:28px;width:100%}
+.exit{width:100%;max-width:440px;padding-left:34px;margin-top:6px;position:relative}
+.exit:before{content:"";position:absolute;left:14px;top:-6px;width:14px;height:22px;border-left:2px dashed var(--end);border-bottom:2px dashed var(--end);border-bottom-left-radius:6px}
+.exit .x{font-size:12.5px;border:1.5px dashed var(--end);background:var(--end-bg);border-radius:10px;padding:6px 10px;color:var(--muted)}
+.exit .x b{color:var(--ink);font-weight:600}
+.exit.brevo-x .x{border-color:var(--brevo);background:var(--brevo-bg)}
+.exit.brevo-x:before{border-color:var(--brevo)}
+.block{font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);margin:22px 0 8px;text-align:center}
+.note{max-width:760px;margin:18px auto 0;font-size:13px;color:var(--muted);border-left:3px solid var(--line);padding:4px 12px}
+
+/* tables */
+table{width:100%;border-collapse:collapse;background:var(--card);border-radius:12px;overflow:hidden;font-size:13.5px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid var(--line);vertical-align:top}
+th{font-size:12px;text-transform:uppercase;letter-spacing:.03em;color:var(--muted)}
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px}
+.st{font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.ok{background:var(--app-bg);color:var(--app)} .todo{background:var(--brevo-bg);color:var(--brevo)} .opt{background:var(--chip);color:var(--muted)} .prod{background:var(--kommo-bg);color:var(--kommo)}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px;background:var(--chip);padding:1px 5px;border-radius:5px}
+
+/* journey */
+.journey{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 12px;border-top:5px solid var(--line)}
+.step .n{font-size:11px;color:var(--muted);font-weight:700}
+.step .t{font-weight:650;margin:2px 0 6px}
+.step .r{font-size:12.5px;color:var(--muted)}
+.step .r b{color:var(--ink);font-weight:600}
+
+@media (max-width:640px){
+  .split{grid-template-columns:1fr;gap:4px}
+  .split:before{display:none}
+  .node{max-width:100%}
+  .merge,.cols{grid-template-columns:1fr;gap:4px}
+  .merge:after{display:none}
+  .cols{gap:30px}
+}
+</style>
+</head>
+<body>
+<header>
+  <h1>Funnel AutoDM V1</h1>
+  <div class="sub">ManyChat, webhooks, registro en Kunfupay y correos de Brevo · datos de la app a 27-11-2026</div>
+</header>
+<nav><div class="in" role="tablist">
+  <button role="tab" data-t="mapa" aria-selected="true">Mapa general</button>
+  <button role="tab" data-t="f1">Fase 1 · entrega primero</button>
+  <button role="tab" data-t="f2">Fase 2 · cualifica primero</button>
+  <button role="tab" data-t="wh">Webhooks</button>
+  <button role="tab" data-t="ss">Self-service</button>
+  <button role="tab" data-t="cj">Recorrido del cliente</button>
+  <button role="tab" data-t="mail">Correos</button>
+</div></nav>
+
+<main>
+<div class="legend">
+  <span><i style="border-color:var(--ig);background:var(--ig-bg)"></i>Instagram</span>
+  <span><i style="border-color:var(--mc);background:var(--mc-bg)"></i>ManyChat</span>
+  <span><i style="border-color:var(--app);background:var(--app-bg)"></i>App de Kunfupay</span>
+  <span><i style="border-color:var(--brevo);background:var(--brevo-bg)"></i>Brevo</span>
+  <span><i style="border-color:var(--meta);background:var(--meta-bg)"></i>Meta</span>
+  <span><i style="border-color:var(--kommo);background:var(--kommo-bg)"></i>Kommo</span>
+  <span><i style="border-color:var(--end);background:var(--end-bg);border-style:dashed"></i>Fin del flujo</span>
+</div>
+
+<!-- MAPA -->
+<section id="mapa" class="on">
+  <h2>Mapa general</h2>
+  <p class="lead">La V1 sale con registro directo desde el DM. La landing con botón llega en la V2 para los anuncios self-service.</p>
+  <div class="flow">
+    <div class="merge">
+      <div class="flow"><div class="node ig"><div class="k">Captación</div><div class="t">Reels AutoDM</div><div class="d">Orgánico, semana 1</div></div></div>
+      <div class="flow"><div class="node meta"><div class="k">Captación</div><div class="t">Anuncios al perfil</div><div class="d">Tráfico a Instagram</div></div></div>
+    </div>
+    <div class="arrow"></div>
+    <div class="node ig"><div class="k">Instagram</div><div class="t">Perfil</div><div class="d">Bio, fijados, destacadas, historias e iniciadores de conversación</div></div>
+    <div class="arrow"><span class="lbl">comenta o escribe la palabra clave</span></div>
+    <div class="node mc"><div class="k">ManyChat</div><div class="t">DM · Fase 1 o Fase 2 al 50 %</div><div class="d">Entrega el recurso, cualifica y pide el correo</div></div>
+    <div class="exit brevo-x"><div class="x"><b>Deja el correo y no se registra</b> → Brevo, S1 · Pre-registro (W1): 4 correos en 6 días que le traen de vuelta al registro.</div></div>
+    <div class="arrow"><span class="lbl">pulsa «Crear mi cuenta»</span></div>
+    <div class="node app"><div class="k">App</div><div class="t">Registro en Kunfupay</div><div class="d">Con UTMs: palabra clave y fase</div></div>
+    <div class="exit"><div class="x"><b>V2, más adelante:</b> los anuncios self-service llegan aquí directos, por una landing con botón y sin quiz.</div></div>
+    <div class="arrow"></div>
+    <div class="node app"><span class="hook h-meta">W5</span><div class="k">App</div><div class="t">Alta en 5 pasos</div><div class="d">Al guardar el paso 5: QualifiedLead o NotQualifiedLead a Meta</div></div>
+    <div class="arrow"></div>
+    <div class="node app"><div class="k">App</div><div class="t">Activa AutoDM, crea producto y primera venta</div><div class="d">Correos S2 a S6</div></div>
+    <div class="arrow"></div>
+    <div class="node app"><div class="k">App</div><div class="t">Wallet, tarjeta e invitados</div><div class="d">Correo S7</div></div>
+  </div>
+</section>
+
+<!-- FASE 1 -->
+<section id="f1">
+  <h2>Fase 1 · entrega primero, pregunta después</h2>
+  <p class="lead">El primer DM siempre lleva un botón: tras un comentario, Instagram solo deja mandar un mensaje hasta que la persona contesta o pulsa algo.</p>
+  <div class="flow">
+    <div class="node ig"><div class="k">Instagram</div><div class="t">Comentario con la palabra clave</div><div class="d">BOT → guía de 100 abridores · todas las demás → estructura de setting</div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><div class="k">ManyChat</div><div class="t">Respuesta pública</div><div class="d">Rotan 4 versiones: «Te lo acabo de mandar por DM», «Revisa tus mensajes, ya lo tienes»…</div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><div class="k">ManyChat</div><div class="t">Randomizer 50 %</div><div class="d">Esta rama: etiqueta <code>f1</code> + campo <code>palabra_clave</code>. La otra mitad va a Fase 2.</div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><div class="k">DM 1</div><div class="q">«Hola, aquí tienes lo que pediste. Pulsa el botón y te lo paso.»</div><div class="chips"><span class="chip">Envíamelo</span></div></div>
+    <div class="exit"><div class="x"><b>Si no pulsa:</b> fin. No se le puede volver a escribir (regla de Instagram).</div></div>
+    <div class="arrow"><span class="lbl">pulsa</span></div>
+    <div class="node mc"><div class="k">DM 2 · entrega</div><div class="q">«Aquí lo tienes. AutoDM es gratis: creas tu cuenta en Kunfupay y lo activas desde el panel. Y esta es la estructura de setting que usamos para pasar de un comentario a una llamada.»</div><div class="chips"><span class="chip">Crear mi cuenta · utm_term=f1</span><span class="chip">Ver la estructura</span></div></div>
+    <div class="arrow"><span class="lbl">espera 10 minutos</span></div>
+    <div class="node mc"><div class="k">DM 3</div><div class="q">«Una pregunta para mandarte lo siguiente que te sirva: ¿ya vendes algo online?»</div><div class="chips"><span class="chip">Sí, ya vendo</span><span class="chip">Todavía no</span></div></div>
+    <div class="exit"><div class="x"><b>Si contesta «Todavía no»:</b> etiqueta <code>no_vende</code> y fin. Ya tiene el recurso; sin seguimiento.</div></div>
+    <div class="arrow"><span class="lbl">sí, ya vendo</span></div>
+    <div class="node mc"><div class="k">DM 4</div><div class="q">«¿Qué vendes?»</div><div class="chips"><span class="chip">Formación o mentorías</span><span class="chip">Servicios</span><span class="chip">Comunidad o membresía</span><span class="chip">Otra cosa</span></div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><div class="k">DM 5</div><div class="q">«¿Cuánto facturas al mes, más o menos?»</div><div class="chips"><span class="chip">Menos de 2.000 €</span><span class="chip">2.000 a 6.000 €</span><span class="chip">6.000 a 20.000 €</span><span class="chip">Más de 20.000 €</span></div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><span class="hook h-brevo">W1 · W2</span><div class="k">DM 6 · correo</div><div class="q">«Te preparo una guía para montar tu primer flujo en AutoDM. ¿A qué correo te la mando? Te enviaremos la guía y correos de Kunfupay sobre AutoDM; te das de baja cuando quieras.»</div><div class="chips"><span class="chip">escribe su correo</span><span class="chip">Saltar</span></div></div>
+    <div class="arrow"><span class="lbl">20 h después de su última respuesta</span></div>
+    <div class="node mc"><div class="k">DM 7</div><div class="q">«¿Pudiste crear tu cuenta? Si te atascaste en algún paso, dímelo y te ayudo.»</div><div class="chips"><span class="chip">Sí, ya está</span><span class="chip">Tuve un problema</span></div></div>
+    <div class="arrow"><span class="lbl">tuve un problema</span></div>
+    <div class="node end"><div class="k">Persona</div><div class="t">Aviso a alguien del equipo</div><div class="d">Contesta a mano dentro de las 24 horas</div></div>
+  </div>
+</section>
+
+<!-- FASE 2 -->
+<section id="f2">
+  <h2>Fase 2 · cualifica primero, entrega al final</h2>
+  <p class="lead">Mismo comentario, misma respuesta pública y mismo Randomizer. Cambia el orden: primero tres preguntas y el correo, después la entrega con una frase según su respuesta.</p>
+  <div class="flow">
+    <div class="node mc"><div class="k">ManyChat</div><div class="t">Randomizer 50 %</div><div class="d">Esta rama: etiqueta <code>f2</code> + campo <code>palabra_clave</code></div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><div class="k">DM 1</div><div class="q">«Hola, te lo paso ahora. Antes, una pregunta rápida para mandarte la versión que te sirve: ¿ya vendes algo online?»</div><div class="chips"><span class="chip">Sí, ya vendo</span><span class="chip">Todavía no</span></div></div>
+    <div class="exit"><div class="x"><b>Si contesta «Todavía no»:</b> se le entrega sin más preguntas ([Crear mi cuenta] [Ver la estructura]), etiqueta <code>no_vende</code> y fin.</div></div>
+    <div class="exit"><div class="x"><b>Si no pulsa nada:</b> fin. No se le puede volver a escribir (regla de Instagram).</div></div>
+    <div class="arrow"><span class="lbl">sí, ya vendo</span></div>
+    <div class="node mc"><div class="k">DM 2</div><div class="q">«¿Qué vendes?»</div><div class="chips"><span class="chip">Formación o mentorías</span><span class="chip">Servicios</span><span class="chip">Comunidad o membresía</span><span class="chip">Otra cosa</span></div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><div class="k">DM 3</div><div class="q">«¿Cuánto facturas al mes, más o menos?»</div><div class="chips"><span class="chip">Menos de 2.000 €</span><span class="chip">2.000 a 6.000 €</span><span class="chip">6.000 a 20.000 €</span><span class="chip">Más de 20.000 €</span></div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><div class="k">DM 4 · el dolor</div><div class="q">«¿Qué te pasa más con los mensajes de Instagram?»</div><div class="chips"><span class="chip">Comentan y luego no contestan</span><span class="chip">No llego a responder a todos</span><span class="chip">Pago demasiado por automatizar</span><span class="chip">Quiero agendar más llamadas</span></div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><span class="hook h-brevo">W1 · W2</span><div class="k">DM 5 · correo</div><div class="q">«¿A qué correo te mando también la guía para montar tu primer flujo?»</div><div class="chips"><span class="chip">escribe su correo</span><span class="chip">Saltar</span></div></div>
+    <div class="arrow"></div>
+    <div class="node mc"><div class="k">DM 6 · entrega</div><div class="d">Una frase según el dolor, y después: «Crea tu cuenta y activa AutoDM desde el panel.»</div><div class="chips"><span class="chip">Crear mi cuenta · utm_term=f2</span><span class="chip">Ver la estructura</span></div></div>
+    <div class="arrow"><span class="lbl">20 h después</span></div>
+    <div class="node mc"><div class="k">DM 7</div><div class="q">«¿Pudiste crear tu cuenta?»</div><div class="chips"><span class="chip">Sí, ya está</span><span class="chip">Tuve un problema</span></div></div>
+  </div>
+  <div class="note"><b>Si no contesta a una pregunta en 30 minutos:</b> un solo recordatorio, «¿Te lo paso?», con los mismos botones. Si sigue sin contestar, se le entrega a las 22 horas sin más preguntas, con la etiqueta <code>f2_sin_respuesta</code>. Solo es posible porque ya pulsó un botón en el DM 1.</div>
+  <div class="tw" style="margin-top:18px"><table>
+    <tr><th>Respuesta en DM 4</th><th>Frase de la entrega</th></tr>
+    <tr><td>Comentan y luego no contestan</td><td>Eso pasa cuando el primer mensaje entrega y no pregunta. En la estructura tienes el primer mensaje que abre la conversación.</td></tr>
+    <tr><td>No llego a responder a todos</td><td>AutoDM contesta al momento y a cualquier hora. Empieza por el primer flujo de la estructura.</td></tr>
+    <tr><td>Pago demasiado por automatizar</td><td>AutoDM hace lo mismo que tu herramienta de pago, a cero euros.</td></tr>
+    <tr><td>Quiero agendar más llamadas</td><td>Ve directo a la parte de cualificación de la estructura: es la que convierte comentarios en llamadas.</td></tr>
+  </table></div>
+  <div class="note"><b>Cómo se decide:</b> a los 7 días o con 300 comentarios por fase, lo que llegue después. Gana la que traiga más registros con el alta completa por cada 100 comentarios. Si empatan, la que traiga más cualificados.</div>
+</section>
+
+<!-- WEBHOOKS -->
+<section id="wh">
+  <h2>Webhooks y conexiones</h2>
+  <p class="lead">Desde ManyChat no sale ningún evento a Meta: el registro y la cualificación salen de la app.</p>
+  <div class="flow">
+    <div class="block">1 · En el DM</div>
+    <div class="node mc"><div class="k">ManyChat</div><div class="t">DM con respuestas y correo</div></div>
+    <div class="split" style="--n:3">
+      <div class="flow"><div class="arrow"><span class="lbl">W1 · deja el correo</span></div><div class="node brevo"><div class="k">Brevo</div><div class="t">Contacto en la lista «AutoDM · DM Instagram»</div><div class="d">Atributos MC_*. Arranca S1.</div></div></div>
+      <div class="flow"><div class="arrow"><span class="lbl">W2 · factura más de 6.000 €</span></div><div class="node kommo"><div class="k">Kommo · opcional</div><div class="t">Lead en EMBUDO VENTAS</div><div class="d">Con UTMs y nota con sus respuestas. Vía Make.</div></div></div>
+      <div class="flow"><div class="arrow"><span class="lbl">W3 · cada respuesta y clic</span></div><div class="node app"><div class="k">Google Sheets</div><div class="t">Una fila por persona</div><div class="d">Para comparar Fase 1 y Fase 2</div></div></div>
+    </div>
+    <div class="block">2 · Cuando pulsa «Crear mi cuenta» y se registra</div>
+    <div class="node app"><div class="k">App</div><div class="t">Registro · user_created</div><div class="d">Con utm_source, utm_medium, utm_campaign, utm_content y utm_term</div></div>
+    <div class="split" style="--n:3">
+      <div class="flow"><div class="arrow"><span class="lbl">W4 · ya existe</span></div><div class="node meta"><div class="k">Meta y GA4</div><div class="t">Píxel + API de Conversiones</div></div></div>
+      <div class="flow"><div class="arrow"><span class="lbl">W4 · ya existe</span></div><div class="node brevo"><div class="k">Brevo</div><div class="t">Contacto con KUNFU_UTM_*</div><div class="d">Saca a la persona de S1</div></div></div>
+      <div class="flow"><div class="arrow"><span class="lbl">W6 · V2</span></div><div class="node mc"><div class="k">ManyChat</div><div class="t">Etiqueta «registrado»</div><div class="d">No manda el DM 7. Necesita producto.</div></div></div>
+    </div>
+    <div class="block">3 · Cuando guarda el paso 5 del alta</div>
+    <div class="node meta"><span class="hook h-meta">W5</span><div class="k">App (servidor) → Meta</div><div class="t">QualifiedLead / NotQualifiedLead</div><div class="d">Mismo event_id que el píxel. Por construir (KUN-3969).</div></div>
+  </div>
+
+  <div class="tw" style="margin-top:22px"><table>
+    <tr><th>#</th><th>Cuándo salta</th><th>De → a</th><th>Estado</th></tr>
+    <tr><td>W1</td><td>Deja el correo en el DM</td><td>ManyChat → Brevo (<code>POST /v3/contacts</code>)</td><td><span class="st todo">Por montar</span></td></tr>
+    <tr><td>W2</td><td>Vende y factura más de 6.000 € al mes</td><td>ManyChat → Make → Kommo</td><td><span class="st opt">Opcional</span></td></tr>
+    <tr><td>W3</td><td>Cada respuesta y cada clic</td><td>ManyChat → Google Sheets</td><td><span class="st todo">Por montar</span></td></tr>
+    <tr><td>W4</td><td>Crea la cuenta</td><td>App → Meta, GA4 y Brevo</td><td><span class="st ok">Ya existe</span></td></tr>
+    <tr><td>W5</td><td>Guarda el paso 5 del alta</td><td>App → Meta API de Conversiones</td><td><span class="st prod">Producto · KUN-3969</span></td></tr>
+    <tr><td>W6</td><td>Crea la cuenta</td><td>App → ManyChat</td><td><span class="st prod">Producto · V2</span></td></tr>
+  </table></div>
+  <div class="note">Enlace de registro: <code>[URL de registro]?utm_source=instagram&amp;utm_medium=dm&amp;utm_campaign=autodm_v1&amp;utm_content={palabra}&amp;utm_term={f1|f2}</code>. Tiene que ir directo al dominio del registro: si pasa por otro dominio que redirige, la atribución se pierde.</div>
+</section>
+
+<!-- SELF-SERVICE -->
+<section id="ss">
+  <h2>Flujo self-service de la adquisición</h2>
+  <p class="lead">Hoy la landing cualifica con un quiz y el equipo comercial llama. En la V2 la landing solo tiene un botón y la cualificación pasa dentro de la app.</p>
+  <div class="cols">
+    <div class="flow">
+      <div class="node end" style="border-style:solid"><div class="k">Hoy</div><div class="t">Con equipo comercial</div></div>
+      <div class="arrow"></div>
+      <div class="node meta"><div class="k">Meta</div><div class="t">Anuncio</div></div>
+      <div class="arrow"></div>
+      <div class="node ig" style="border-color:var(--line);background:var(--card)"><div class="k" style="color:var(--muted)">Landing</div><div class="t">Landing con quiz</div><div class="d">Cualifica antes de dejar los datos</div></div>
+      <div class="split">
+        <div class="flow"><div class="arrow"><span class="lbl">cualificado</span></div><div class="node kommo"><div class="k">Kommo</div><div class="t">Gracias · el SDR llama</div></div></div>
+        <div class="flow"><div class="arrow"><span class="lbl">no cualificado</span></div><div class="node end"><div class="k">Fin</div><div class="t">Gracias · Wallet</div></div></div>
+      </div>
+    </div>
+    <div class="flow">
+      <div class="node app"><div class="k">V2</div><div class="t">Self-service</div></div>
+      <div class="arrow"></div>
+      <div class="node meta"><div class="k">Meta</div><div class="t">Anuncio</div></div>
+      <div class="arrow"></div>
+      <div class="node ig" style="border-color:var(--line);background:var(--card)"><div class="k" style="color:var(--muted)">Landing</div><div class="t">Landing con botón</div><div class="d">Sin quiz</div></div>
+      <div class="arrow"><span class="lbl">clic</span></div>
+      <div class="node app"><div class="k">App</div><div class="t">Registro</div><div class="d">Correo + contraseña o Google, verificación del correo</div></div>
+      <div class="arrow"></div>
+      <div class="node app"><div class="k">App · alta en 5 pasos</div>
+        <div class="d">1 · Autónomo o empresa</div>
+        <div class="d">2 · Nombre y términos</div>
+        <div class="d">3 · Teléfono verificado <span class="st ok">hecho</span></div>
+        <div class="d">4 · Facturación y cómo nos conociste</div>
+        <div class="d">5 · Qué vas a vender <span class="st prod">por cambiar</span></div>
+      </div>
+      <div class="arrow"><span class="lbl">cualificación automática</span></div>
+      <div class="split">
+        <div class="flow"><div class="arrow"><span class="lbl">digital y factura lo suficiente</span></div><div class="node meta"><div class="k">Meta</div><div class="t">QualifiedLead</div><div class="d">Correos S2 a S5. Kommo si supera el umbral (opcional).</div></div></div>
+        <div class="flow"><div class="arrow"><span class="lbl">no es digital o no llega</span></div><div class="node meta"><div class="k">Meta</div><div class="t">NotQualifiedLead</div><div class="d">Correos S2 y S3, solo producto</div></div></div>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>V1 AutoDM, ahora:</b> reel → comentario → DM de ManyChat → registro directo, sin landing.<br><b>Falta en la app para la V2 (KUN-3969):</b> el paso 5 hoy pregunta «cómo vas a usar Kunfupay» y no «qué vas a vender»; el evento de cualificación no existe; falta fijar el umbral de facturación.</div>
+</section>
+
+<!-- RECORRIDO -->
+<section id="cj">
+  <h2>Recorrido del cliente</h2>
+  <p class="lead">De ver un reel a invitar a otros vendedores. El salto del 6 al 7 es el que hace que AutoDM traiga negocio: AutoDM ya puede mandar tarjetas de producto con compra dentro del DM.</p>
+  <div class="journey">
+    <div class="step" style="border-top-color:var(--ig)"><div class="n">1</div><div class="t">Descubre</div><div class="r">Ve un reel o un anuncio al perfil<br><b>Mide:</b> alcance y retención</div></div>
+    <div class="step" style="border-top-color:var(--ig)"><div class="n">2</div><div class="t">Visita el perfil</div><div class="r">Bio, fijados, destacadas<br><b>Mide:</b> visitas y seguidores</div></div>
+    <div class="step" style="border-top-color:var(--mc)"><div class="n">3</div><div class="t">Pide el recurso</div><div class="r">Comenta o escribe la palabra<br><b>Recibe:</b> DM Fase 1 o 2</div></div>
+    <div class="step" style="border-top-color:var(--app)"><div class="n">4</div><div class="t">Se registra</div><div class="r">Cuenta con UTMs<br><b>Si no:</b> correos S1</div></div>
+    <div class="step" style="border-top-color:var(--app)"><div class="n">5</div><div class="t">Completa el alta</div><div class="r">5 pasos con teléfono<br><b>Recibe:</b> S2 · <b>Mide:</b> QualifiedLead</div></div>
+    <div class="step" style="border-top-color:var(--app)"><div class="n">6</div><div class="t">Activa AutoDM</div><div class="r">Primer flujo activo<br><b>Recibe:</b> S3 · <b>Mide:</b> KUNFU_TOOL_KEYS</div></div>
+    <div class="step" style="border-top-color:var(--app)"><div class="n">7</div><div class="t">Vende en el DM</div><div class="r">Producto, tienda y primera venta<br><b>Recibe:</b> S4 y S5</div></div>
+    <div class="step" style="border-top-color:var(--app)"><div class="n">8</div><div class="t">Usa el dinero</div><div class="r">Wallet, tarjeta y retiros<br><b>Recibe:</b> S7</div></div>
+    <div class="step" style="border-top-color:var(--app)"><div class="n">9</div><div class="t">Invita</div><div class="r">Programa de invitados<br><b>Mide:</b> KUNFU_REFERRAL</div></div>
+  </div>
+</section>
+
+<!-- CORREOS -->
+<section id="mail">
+  <h2>Correos en Brevo</h2>
+  <p class="lead">Hoy no sale ningún correo de bienvenida ni de alta. S1, S3 y S4 se pueden montar ya con lo que la app manda a Brevo; el resto necesita campos nuevos.</p>
+  <div class="tw"><table>
+    <tr><th>Secuencia</th><th>Entra cuando</th><th>Correos</th><th>Sale cuando</th><th>Estado</th></tr>
+    <tr><td><b>S1</b> Pre-registro</td><td>Entra en la lista «AutoDM · DM Instagram» (W1)</td><td>Día 0 recurso + registro · día 1 tu primer flujo en 10 min · día 3 coste de ManyChat al año frente a AutoDM · día 6 último aviso con un caso</td><td>Se registra</td><td><span class="st ok">Se puede ya</span></td></tr>
+    <tr><td><b>S2</b> Bienvenida y alta</td><td>Cuenta nueva de vendedor</td><td>Día 0 bienvenida · día 1 te falta este paso · día 3 el teléfono en un minuto</td><td>Alta completa</td><td><span class="st todo">Solo día 0</span></td></tr>
+    <tr><td><b>S3</b> Activa AutoDM</td><td>Alta completa y sin AutoDM</td><td>Día 0 actívalo en dos clics · día 2 flujo de cualificación para copiar · día 5 el error del cartero</td><td>Instala AutoDM</td><td><span class="st ok">Se puede ya</span></td></tr>
+    <tr><td><b>S4</b> Cobra en el DM</td><td>AutoDM activo y sin tienda</td><td>Día 0 vende con la tarjeta de producto · día 3 crea tu producto</td><td>Tiene tienda</td><td><span class="st ok">Se puede ya</span></td></tr>
+    <tr><td><b>S5</b> Primera venta</td><td>Tienda aprobada</td><td>Día 2 tu primera venta en tres pasos · día 7 qué hacen los que ya venden</td><td>Primera venta</td><td><span class="st prod">Faltan campos</span></td></tr>
+    <tr><td><b>S6</b> Tienda rechazada</td><td>Tienda rechazada (3.644)</td><td>Día 0 el motivo y cómo corregirlo · día 5 vuelve a pedirla</td><td>La vuelve a pedir</td><td><span class="st prod">Faltan campos + riesgo</span></td></tr>
+    <tr><td><b>S7</b> Dinero e invitados</td><td>Primera venta</td><td>Wallet y tarjeta · programa de invitados</td><td>Tiene wallet o tarjeta</td><td><span class="st prod">Faltan campos</span></td></tr>
+  </table></div>
+  <div class="note">Solo 10 de una muestra de 300 vendedores recientes tienen el consentimiento de marketing. S2 a S6 van como correos de servicio, sin ofertas; S7 y las campañas, solo a quien haya dado el consentimiento.</div>
+</section>
+</main>
+
+<script>
+const tabs=[...document.querySelectorAll('nav button')];
+function show(id){
+  tabs.forEach(b=>b.setAttribute('aria-selected',b.dataset.t===id));
+  document.querySelectorAll('section').forEach(s=>s.classList.toggle('on',s.id===id));
+  try{localStorage.setItem('autodm_tab',id)}catch(e){}
+  window.scrollTo({top:0});
+}
+tabs.forEach(b=>b.addEventListener('click',()=>show(b.dataset.t)));
+try{const t=localStorage.getItem('autodm_tab'); if(t&&document.getElementById(t)) show(t);}catch(e){}
+</script>
+</body>
+</html>
