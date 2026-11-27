@@ -1,0 +1,425 @@
+<html><head><meta charset="utf-8"><title>Funnel AutoDM V1 · ManyChat, correos y recorrido del cliente</title></head>
+<body style="font-family:Arial">
+
+<h1>Funnel AutoDM V1: ManyChat, webhooks, correos y recorrido del cliente</h1>
+<p><i>Datos de la app a 27-11-2026 (código y producción, vía Daneris) y de Brevo a la misma fecha.</i></p>
+
+<h2>Resumen</h2>
+<p>La V1 sale con registro directo: la persona comenta la palabra clave, ManyChat le escribe por DM y el botón la lleva al registro de Kunfupay con las UTMs puestas. No hay landing hasta la V2.</p>
+<p>En el DM probamos dos versiones. <b>Fase 1</b> entrega el recurso y después pregunta. <b>Fase 2</b> pregunta primero y entrega al final. Gana la que traiga más <b>registros con el alta completa por cada 100 comentarios</b>, no la que tenga más clics.</p>
+<p>Antes de lanzar hay que resolver cinco cosas:</p>
+<ul>
+<li>Crear los recursos que prometen los reels (la estructura de setting y la guía de 100 abridores). Hoy no existen.</li>
+<li>Arreglar las palabras clave: en cuatro guiones el rótulo y lo que se dice no coinciden, y «DM» promete dos recursos distintos.</li>
+<li>El guion BOT dice que AutoDM rota varias versiones del mensaje. AutoDM no lo hace: hay que cambiar esa frase o pedirlo a producto.</li>
+<li>El evento de lead cualificado (QualifiedLead / NotQualifiedLead) aún no existe en la app. Está propuesto en KUN-3969.</li>
+<li>Hoy no sale ningún correo de bienvenida ni de alta. Todas las secuencias de este documento están por crear en Brevo.</li>
+</ul>
+
+<h2>Tres reglas de Instagram que condicionan todo</h2>
+<ul>
+<li><b>Tras un comentario, ManyChat solo puede mandar un primer mensaje privado.</b> Para seguir escribiendo, la persona tiene que contestar o pulsar un botón. Por eso el primer DM siempre lleva un botón. Si no lo pulsa, no se le puede volver a escribir.</li>
+<li><b>Ventana de 24 horas.</b> Solo se pueden mandar mensajes automáticos durante las 24 horas siguientes a la última vez que la persona escribió o pulsó algo. Cualquier seguimiento más largo va por correo, y por eso pedimos el correo en el DM.</li>
+<li><b>No existe un disparador de «nuevo seguidor».</b> Ni ManyChat ni ninguna herramienta puede escribir sola a quien te empieza a seguir. Lo que se hace es que el perfil invite a escribir (sección 8).</li>
+</ul>
+
+<h2>1. Mapa general</h2>
+<pre style="font-family:'Courier New';font-size:8pt">
+ Reels AutoDM      Anuncios al     Anuncios self-service
+ (orgánico)        perfil          (V2, más adelante)
+     │                │                    │
+     └───────┬────────┘                    ▼
+             ▼                     LANDING CON BOTÓN
+   PERFIL DE INSTAGRAM             (sin quiz)
+   bio, fijados, destacadas,               │
+   historias                               │
+             │ comenta o escribe            │
+             │ la palabra clave             │
+             ▼                             │
+   DM DE MANYCHAT                          │
+   Fase 1 o Fase 2 (al 50 %)               │
+   entrega, cualifica, pide correo         │
+      │                 │                  │
+      │ pulsa «Crear    │ deja el correo   │
+      │ mi cuenta»      │ y no se registra │
+      │                 ▼                  │
+      │         CORREOS S1 · pre-registro  │
+      │         (Brevo)                    │
+      │                 │                  │
+      ▼                 ▼                  ▼
+   REGISTRO EN KUNFUPAY (con UTMs) ◄───────┘
+             │
+             ▼
+   ALTA EN 5 PASOS ──► QualifiedLead / NotQualifiedLead
+             │          (evento a Meta desde la app)
+             ▼
+   ACTIVA AUTODM ──► CREA PRODUCTO ──► PRIMERA VENTA
+             │        (correos S2 a S6)
+             ▼
+   WALLET Y TARJETA ──► INVITA A OTROS (S7)
+</pre>
+
+<h2>2. Palabras clave y recursos</h2>
+<p>Así están hoy los guiones de la semana 1:</p>
+<table border="1" cellpadding="4" style="border-collapse:collapse">
+<tr><th>Guion</th><th>Rótulo</th><th>Lo que se dice al final</th><th>Recurso prometido</th></tr>
+<tr><td>1</td><td>MANY</td><td>MANY</td><td>AutoDM</td></tr>
+<tr><td>2</td><td>BOT</td><td>BOT</td><td>AutoDM + guía 100 abridores</td></tr>
+<tr><td>3</td><td>SISTEMA</td><td>DM</td><td>AutoDM + flujo para calificar leads</td></tr>
+<tr><td>4</td><td>YO</td><td>DM</td><td>AutoDM + estructura de setting</td></tr>
+<tr><td>5</td><td>CLASE</td><td>FUNNEL</td><td>AutoDM + estructura de setting</td></tr>
+<tr><td>6</td><td>LLAMADAS</td><td>AUTODM</td><td>AutoDM + estructura de setting</td></tr>
+<tr><td>7</td><td>MANY</td><td>AUTODM</td><td>AutoDM + estructura de setting</td></tr>
+<tr><td>Cortos A a F</td><td>AUTODM</td><td>AUTODM</td><td>AutoDM</td></tr>
+</table>
+<p><b>Propuesta para no depender de que se corrija cada vídeo:</b></p>
+<ul>
+<li><b>Dos recursos, no tres.</b> El flujo para calificar leads va dentro de la estructura de setting, como su primera parte. Así quedan dos documentos por crear: «Estructura de setting» y «Guía de 100 abridores».</li>
+<li><b>Dos automatizaciones en ManyChat.</b> «BOT» entrega AutoDM + la guía de abridores. Todas las demás palabras (MANY, AUTODM, SISTEMA, DM, YO, CLASE, FUNNEL, LLAMADAS) entregan AutoDM + la estructura de setting. Cada automatización acepta todas sus palabras, en mayúsculas o minúsculas, y también si van dentro de una frase.</li>
+<li><b>Aun así, igualar rótulo y CTA en cada vídeo antes de publicarlo.</b> Si alguien ve «SISTEMA» en pantalla y oye «DM», duda y no comenta.</li>
+<li><b>Guion 2 (BOT):</b> quitar «crea varias versiones del mensaje, rotando» como algo que hace AutoDM, o pedir a producto que lo añada antes de publicar. Hoy AutoDM sí tiene flujos de varios pasos, botones, respuestas rápidas y pedir que te sigan antes de entregar, pero no rota versiones.</li>
+</ul>
+
+<h2>3. Enlace de registro</h2>
+<p>Todos los botones «Crear mi cuenta» llevan a la misma URL de registro, con estas UTMs:</p>
+<pre style="font-family:'Courier New';font-size:8pt">
+[URL de registro de Kunfupay]
+  ?utm_source=instagram
+  &amp;utm_medium=dm
+  &amp;utm_campaign=autodm_v1
+  &amp;utm_content={palabra clave}
+  &amp;utm_term={f1 o f2}
+</pre>
+<ul>
+<li>La app guarda estas UTMs al crear la cuenta (evento user_created) y las manda a Meta, a GA4 y a Brevo (campos KUNFU_UTM_*). No hay que montar nada más.</li>
+<li><b>El enlace tiene que ir directo al dominio del registro.</b> La app guarda la atribución en el navegador; si pasa por una página de otro dominio que redirige, se pierde.</li>
+<li>En la bio se usa la misma URL con utm_content=bio y utm_term=perfil.</li>
+</ul>
+
+<h2>4. ManyChat · Fase 1: entrega primero, pregunta después</h2>
+<pre style="font-family:'Courier New';font-size:8pt">
+COMENTARIO con la palabra clave
+        │
+        ▼
+RESPUESTA PÚBLICA (rotan 4 versiones)
+        │
+        ▼
+RANDOMIZER 50 % ──► Fase 2 (sección 5)
+        │ 50 %
+        ▼  etiqueta f1 + campo palabra_clave
+DM 1 · «Aquí tienes lo que pediste.
+        Pulsa y te lo paso.»
+        [Envíamelo]
+        │ pulsa            │ no pulsa
+        │                  ▼
+        │            No se le puede volver
+        │            a escribir. Fin.
+        ▼
+DM 2 · ENTREGA
+        [Crear mi cuenta]  → registro (utm_term=f1)
+        [Ver la estructura] → recurso
+        │ espera 10 minutos
+        ▼
+DM 3 · «¿Ya vendes algo online?»
+        [Sí, ya vendo]   [Todavía no]
+        │                    │
+        │                    ▼
+        │              etiqueta no_vende. Fin.
+        ▼
+DM 4 · «¿Qué vendes?»
+        [Formación o mentorías] [Servicios]
+        [Comunidad o membresía] [Otra cosa]
+        ▼
+DM 5 · «¿Cuánto facturas al mes?»
+        [Menos de 2.000 €] [2.000 a 6.000 €]
+        [6.000 a 20.000 €] [Más de 20.000 €]
+        ▼
+DM 6 · Pide el correo  ──► WEBHOOK W1 (Brevo)
+        [Saltar]           y W2 si es cualificado alto
+        ▼
+DM 7 · a las 20 h de su última respuesta
+        «¿Pudiste crear tu cuenta?»
+        [Sí, ya está]   [Tuve un problema]
+                              │
+                              ▼
+                     Aviso a una persona del equipo
+</pre>
+
+<h3>Textos de la Fase 1</h3>
+<p><b>Respuesta pública</b> (ManyChat elige una al azar en cada comentario):</p>
+<ul>
+<li>Te lo acabo de mandar por DM.</li>
+<li>Revisa tus mensajes, ya lo tienes.</li>
+<li>Hecho, te escribí por privado.</li>
+<li>Mira tu DM, te lo dejé ahí.</li>
+</ul>
+<p><b>DM 1:</b> Hola, aquí tienes lo que pediste. Pulsa el botón y te lo paso. [Envíamelo]</p>
+<p><b>DM 2:</b> Aquí lo tienes. AutoDM es gratis: creas tu cuenta en Kunfupay y lo activas desde el panel. Y esta es la estructura de setting que usamos para pasar de un comentario a una llamada. [Crear mi cuenta] [Ver la estructura]</p>
+<p><b>DM 3:</b> Una pregunta para mandarte lo siguiente que te sirva: ¿ya vendes algo online?</p>
+<p><b>DM 4:</b> ¿Qué vendes?</p>
+<p><b>DM 5:</b> ¿Cuánto facturas al mes, más o menos?</p>
+<p><b>DM 6:</b> Te preparo una guía para montar tu primer flujo en AutoDM. ¿A qué correo te la mando? Te enviaremos la guía y correos de Kunfupay sobre AutoDM; te das de baja cuando quieras.</p>
+<p><b>DM 7:</b> ¿Pudiste crear tu cuenta? Si te atascaste en algún paso, dímelo y te ayudo.</p>
+
+<h2>5. ManyChat · Fase 2: cualifica primero, entrega al final</h2>
+<pre style="font-family:'Courier New';font-size:8pt">
+RANDOMIZER 50 %
+        │  etiqueta f2 + campo palabra_clave
+        ▼
+DM 1 · «Te lo paso ahora. Antes, una pregunta
+        rápida para mandarte la versión que te
+        sirve: ¿ya vendes algo online?»
+        [Sí, ya vendo]   [Todavía no]
+        │                    │
+        │                    ▼
+        │              DM · entrega sin preguntas
+        │              [Crear mi cuenta] [Ver la estructura]
+        │              etiqueta no_vende. Fin.
+        ▼
+DM 2 · «¿Qué vendes?»          (mismas opciones que F1)
+        ▼
+DM 3 · «¿Cuánto facturas al mes?»  (mismas opciones)
+        ▼
+DM 4 · «¿Qué te pasa más con los mensajes
+        de Instagram?»
+        [Comentan y luego no contestan]
+        [No llego a responder a todos]
+        [Pago demasiado por automatizar]
+        [Quiero agendar más llamadas]
+        ▼
+DM 5 · Pide el correo  ──► WEBHOOK W1 (Brevo)
+        [Saltar]           y W2 si es cualificado alto
+        ▼
+DM 6 · ENTREGA con una frase según su respuesta
+        en DM 4
+        [Crear mi cuenta]  → registro (utm_term=f2)
+        [Ver la estructura] → recurso
+        ▼
+DM 7 · a las 20 h: «¿Pudiste crear tu cuenta?»
+        (igual que en Fase 1)
+
+Si no contesta a una pregunta en 30 minutos:
+un solo recordatorio, «¿Te lo paso?», con los
+mismos botones. Si sigue sin contestar, se le
+entrega a las 22 horas sin más preguntas
+(etiqueta f2_sin_respuesta).
+</pre>
+<p>El recordatorio de 30 minutos solo es posible porque ya pulsó un botón en el DM 1. Si no pulsa nada en el DM 1, en Fase 2 tampoco se le puede volver a escribir.</p>
+
+<h3>Textos de la Fase 2</h3>
+<p><b>DM 1:</b> Hola, te lo paso ahora. Antes, una pregunta rápida para mandarte la versión que te sirve: ¿ya vendes algo online?</p>
+<p><b>DM 4:</b> ¿Qué te pasa más con los mensajes de Instagram?</p>
+<p><b>DM 6, la frase según su respuesta:</b></p>
+<ul>
+<li>Comentan y luego no contestan: «Eso pasa cuando el primer mensaje entrega y no pregunta. En la estructura tienes el primer mensaje que abre la conversación.»</li>
+<li>No llego a responder a todos: «AutoDM contesta al momento y a cualquier hora. Empieza por el primer flujo de la estructura.»</li>
+<li>Pago demasiado por automatizar: «AutoDM hace lo mismo que tu herramienta de pago, a cero euros.»</li>
+<li>Quiero agendar más llamadas: «Ve directo a la parte de cualificación de la estructura: es la que convierte comentarios en llamadas.»</li>
+</ul>
+<p>Después de la frase: «Crea tu cuenta y activa AutoDM desde el panel.» [Crear mi cuenta] [Ver la estructura]</p>
+
+<h2>6. Cómo comparar Fase 1 y Fase 2</h2>
+<p>Las dos corren a la vez en los mismos reels, repartidas al 50 % con el Randomizer de ManyChat. Lanzarlas una detrás de otra mezclaría el efecto de la fase con el de los reels de esa semana.</p>
+<table border="1" cellpadding="4" style="border-collapse:collapse">
+<tr><th>Paso</th><th>Dónde se mide</th></tr>
+<tr><td>Comentarios</td><td>ManyChat (entradas a la automatización)</td></tr>
+<tr><td>Pulsa el botón del DM 1</td><td>ManyChat (clics en el botón)</td></tr>
+<tr><td>Contesta la primera pregunta</td><td>ManyChat (etiquetas)</td></tr>
+<tr><td>Deja el correo</td><td>ManyChat y Brevo (lista nueva)</td></tr>
+<tr><td>Pulsa «Crear mi cuenta»</td><td>ManyChat (clics en el botón)</td></tr>
+<tr><td>Crea la cuenta</td><td>App: utm_term = f1 o f2</td></tr>
+<tr><td>Completa el alta y es cualificado</td><td>App: QualifiedLead (cuando exista, KUN-3969)</td></tr>
+<tr><td>Activa AutoDM</td><td>Brevo: KUNFU_TOOL_KEYS contiene kunfu-dm</td></tr>
+</table>
+<p><b>Cuándo se decide:</b> a los 7 días o cuando cada fase tenga 300 comentarios, lo que llegue después. La métrica que decide es registros con alta completa por cada 100 comentarios. Si empatan, gana la que traiga más cualificados.</p>
+
+<h2>7. Webhooks y conexiones</h2>
+<table border="1" cellpadding="4" style="border-collapse:collapse">
+<tr><th>#</th><th>Cuándo salta</th><th>De → a</th><th>Qué hace</th><th>Estado</th></tr>
+<tr><td>W1</td><td>La persona deja el correo en el DM</td><td>ManyChat → Brevo</td><td>Crea o actualiza el contacto y lo mete en la lista «AutoDM · DM Instagram» con sus respuestas. Esa lista arranca la secuencia S1.</td><td>Por montar</td></tr>
+<tr><td>W2</td><td>Vende y factura más de 6.000 € al mes (umbral por confirmar)</td><td>ManyChat → Kommo</td><td>Crea el lead en EMBUDO VENTAS con utm_source=instagram, utm_medium=dm, utm_campaign=autodm_v1, utm_content=palabra clave, utm_term=fase, y una nota con sus respuestas.</td><td>Opcional, por decidir</td></tr>
+<tr><td>W3</td><td>Cada respuesta y cada clic</td><td>ManyChat → Google Sheets</td><td>Una fila por persona: fase, palabra clave, respuestas y clics. Es la tabla para comparar las fases.</td><td>Por montar (integración propia de ManyChat)</td></tr>
+<tr><td>W4</td><td>Crea la cuenta</td><td>App → Meta (píxel y API de Conversiones), GA4 y Brevo</td><td>Evento user_created con las UTMs. Brevo recibe el contacto con KUNFU_UTM_*.</td><td>Ya existe</td></tr>
+<tr><td>W5</td><td>Guarda el paso 5 del alta</td><td>App (servidor) → Meta API de Conversiones</td><td>QualifiedLead o NotQualifiedLead, con el mismo event_id que el píxel.</td><td>Por construir (KUN-3969)</td></tr>
+<tr><td>W6</td><td>Crea la cuenta</td><td>App → ManyChat</td><td>Si el enlace lleva el id de ManyChat, la app marca «registrado» y ManyChat no manda el DM 7.</td><td>V2, necesita producto</td></tr>
+</table>
+
+<p><b>W1 en ManyChat:</b> acción «Solicitud externa» (External Request).</p>
+<pre style="font-family:'Courier New';font-size:8pt">
+POST https://api.brevo.com/v3/contacts
+Cabeceras:
+  api-key: [clave de API de Brevo]
+  Content-Type: application/json
+Cuerpo:
+{
+  "email": "{{email}}",
+  "updateEnabled": true,
+  "listIds": [ID de la lista AutoDM · DM Instagram],
+  "attributes": {
+    "MC_IG_USUARIO": "{{usuario de Instagram}}",
+    "MC_PALABRA": "{{palabra_clave}}",
+    "MC_FASE": "{{fase}}",
+    "MC_VENDE": "{{vende}}",
+    "MC_NICHO": "{{nicho}}",
+    "MC_FACTURACION": "{{facturacion}}",
+    "MC_DOLOR": "{{dolor}}"
+  }
+}
+</pre>
+<p>Antes de activarlo hay que crear en Brevo la lista y los atributos MC_* (no existen). La clave de Brevo se guarda solo en ManyChat; no se pega en documentos ni en Slack.</p>
+<p><b>W2:</b> Kommo pide OAuth, así que lo más sencillo es ManyChat → Make → Kommo, o la misma integración con la que ya entran los leads de Meta. Hay que comprobar antes si Kommo está conectado a la misma cuenta de Instagram que ManyChat: si las dos herramientas leen los DMs de la misma cuenta, se pueden pisar.</p>
+<p><b>Desde ManyChat no se manda ningún evento a Meta.</b> En esta V1 el tráfico es orgánico o va al perfil, y los eventos que importan (registro y cualificación) ya salen de la app.</p>
+
+<h2>8. Perfil y seguidores nuevos</h2>
+<p>Como nadie puede escribir solo a un seguidor nuevo, el perfil tiene que hacer que el seguidor nuevo escriba primero.</p>
+<h3>Perfil</h3>
+<ul>
+<li><b>Nombre</b> (el campo que sale en las búsquedas de Instagram): incluir «AutoDM» o «ManyChat gratis», por ejemplo «Benja · AutoDM gratis».</li>
+<li><b>Bio en tres líneas:</b> qué es (AutoDM, de Kunfupay), qué consigue (automatiza tus DMs y llena tu agenda, gratis) y qué hacer: «Escríbeme AUTODM por DM».</li>
+<li><b>Enlace de la bio:</b> directo al registro con utm_content=bio. Sin agregadores de enlaces en la V1.</li>
+<li><b>Tres publicaciones fijadas:</b> el reel que mejor retenga de la semana 1, el reel del flujo para calificar (el que explica el «cartero») y una prueba de AutoDM funcionando con datos reales [dato a confirmar].</li>
+<li><b>Destacadas:</b> «Empieza aquí» (qué es AutoDM en tres historias, terminando en «escríbeme AUTODM»), «Setting», «Casos» y «Preguntas».</li>
+</ul>
+<h3>Automatizaciones que sustituyen al «nuevo seguidor»</h3>
+<ul>
+<li><b>Palabra clave por DM:</b> si alguien escribe AUTODM (o cualquiera de las palabras) por privado, entra en el mismo flujo que si comentara.</li>
+<li><b>Iniciadores de conversación</b> (los botones que salen al abrir el chat por primera vez): «Quiero AutoDM gratis», «Quiero la estructura de setting» y «¿Cómo funciona?». Cada uno lleva a su flujo.</li>
+<li><b>Respuesta por defecto:</b> si alguien escribe algo que no coincide con ninguna palabra, recibe un menú con esas mismas tres opciones.</li>
+<li><b>Respuestas a historias:</b> tres historias por semana que terminan en «Responde AUTODM a esta historia». El seguidor nuevo ve las historias antes que los reels, así que es la primera conversación que puede abrir.</li>
+<li><b>Pedir que te siga, después de entregar:</b> en el DM 2 (Fase 1) o el DM 6 (Fase 2), añadir «Sígueme, que la semana que viene subo la segunda parte». No condicionar la entrega a que te siga mientras dura la prueba F1 contra F2: cambiaría el resultado de las dos.</li>
+</ul>
+
+<h2>9. Recorrido del cliente</h2>
+<table border="1" cellpadding="4" style="border-collapse:collapse">
+<tr><th>Etapa</th><th>Qué pasa</th><th>Qué le mandamos</th><th>Cómo lo sabemos</th></tr>
+<tr><td>1. Descubre</td><td>Ve un reel de AutoDM o un anuncio al perfil</td><td>El reel</td><td>Alcance y retención en Instagram</td></tr>
+<tr><td>2. Visita el perfil</td><td>Lee la bio, mira fijados y destacadas</td><td>Perfil optimizado</td><td>Visitas al perfil, seguidores</td></tr>
+<tr><td>3. Pide el recurso</td><td>Comenta o escribe la palabra</td><td>DM Fase 1 o Fase 2</td><td>ManyChat</td></tr>
+<tr><td>4. Se registra</td><td>Crea la cuenta con UTMs</td><td>S1 si no se registra</td><td>user_created</td></tr>
+<tr><td>5. Completa el alta</td><td>Los 5 pasos, incluido el teléfono</td><td>S2</td><td>QualifiedLead / NotQualifiedLead</td></tr>
+<tr><td>6. Activa AutoDM</td><td>Instala AutoDM y crea su primer flujo</td><td>S3</td><td>KUNFU_TOOL_KEYS</td></tr>
+<tr><td>7. Vende en el DM</td><td>Crea producto y tienda y cobra desde AutoDM con la tarjeta de producto</td><td>S4 y S5</td><td>Tienda solicitada, aprobada, primera venta</td></tr>
+<tr><td>8. Usa el dinero</td><td>Wallet, tarjeta y retiros</td><td>S7</td><td>Wallet y tarjeta</td></tr>
+<tr><td>9. Invita</td><td>Invita a otros vendedores</td><td>S7</td><td>KUNFU_REFERRAL</td></tr>
+</table>
+<p>El paso del 6 al 7 es el que convierte AutoDM en negocio para Kunfupay: AutoDM ya puede mandar tarjetas de producto con compra dentro del DM, y eso necesita un producto y una tienda aprobada en Kunfupay.</p>
+
+<h2>10. Flujo self-service de la adquisición actual</h2>
+<pre style="font-family:'Courier New';font-size:8pt">
+HOY (con equipo comercial)
+ Anuncio Meta → Landing con quiz (cualifica)
+                     │                 │
+               cualificado       no cualificado
+                     ▼                 ▼
+          Gracias · SDR llama    Gracias · Wallet
+          (lead en Kommo)
+
+V1 AUTODM (ahora)
+ Reel → Comentario → DM ManyChat → Registro directo
+ (sin landing)
+
+V2 SELF-SERVICE (cuando la landing esté lista)
+ Anuncio Meta → Landing con botón (sin quiz)
+                     │ clic
+                     ▼
+          Registro de Kunfupay
+          correo + contraseña + verificación
+                     ▼
+          Alta en 5 pasos
+          1 autónomo o empresa
+          2 nombre + términos
+          3 teléfono verificado     (ya hecho)
+          4 facturación + cómo nos conociste
+          5 qué vas a vender        (por cambiar)
+                     ▼
+          Cualificación automática
+           │                    │
+   digital y factura      no es digital o
+   lo suficiente          no llega
+           ▼                    ▼
+     QualifiedLead       NotQualifiedLead
+     (a Meta)            (a Meta)
+           │                    │
+           ▼                    ▼
+     Correos S2 a S5     Correos S2 y S3
+     + Kommo si factura  (solo producto)
+     por encima del
+     umbral (opcional)
+</pre>
+<p>Lo que falta en la app para la V2 (según KUN-3969): el paso 5 hoy pregunta «cómo vas a usar Kunfupay» (ocho opciones) y no «qué vas a vender», así que necesita un campo nuevo; el evento QualifiedLead / NotQualifiedLead no existe; y falta decidir el umbral de facturación y qué cuenta como negocio digital. El teléfono con verificación por SMS o WhatsApp ya está hecho.</p>
+
+<h2>11. Correos en Brevo</h2>
+<h3>Lo que hay hoy</h3>
+<ul>
+<li>Todo el correo sale por Brevo. La app manda: verificación del correo, tienda aprobada o rechazada (con el motivo), aviso de venta e invitaciones de transferencia.</li>
+<li>No hay secuencia de bienvenida ni de alta. En Brevo solo hay dos automatizaciones activas, las dos de resumen de compra.</li>
+<li>La app sincroniza los vendedores con Brevo y ya manda estos campos, que sirven para disparar correos: KUNFU_IS_VENDOR, KUNFU_CREATED_AT, KUNFU_EMAIL_VERIFIED, KUNFU_HAS_STORE, KUNFU_STORE_COMPLETE, KUNFU_TOOL_KEYS (herramientas instaladas, como AutoDM), KUNFU_UTM_*, KUNFU_REFERRAL y KUNFU_MARKETING_CONSENT.</li>
+<li><b>Consentimiento:</b> en una muestra de 300 vendedores recientes, solo 10 tienen KUNFU_MARKETING_CONSENT activado. Los correos de alta y de uso del producto (S2 a S6) se pueden escribir como correos de servicio: sin ofertas, solo cómo terminar lo que empezó. Los promocionales (S7 y campañas) solo a quien tenga el consentimiento.</li>
+</ul>
+
+<h3>Datos de la app que justifican cada secuencia</h3>
+<table border="1" cellpadding="4" style="border-collapse:collapse">
+<tr><th>Paso</th><th>Vendedores hoy</th></tr>
+<tr><td>Cuentas de vendedor</td><td>12.007</td></tr>
+<tr><td>Han pedido tienda</td><td>5.262</td></tr>
+<tr><td>KYC aprobado</td><td>2.588</td></tr>
+<tr><td>Alta inicial completa</td><td>2.426</td></tr>
+<tr><td>Tienda aprobada</td><td>1.541 (y 3.644 rechazadas)</td></tr>
+<tr><td>Wallet</td><td>1.198</td></tr>
+<tr><td>Al menos una venta</td><td>864</td></tr>
+<tr><td>Han retirado dinero</td><td>467</td></tr>
+<tr><td>Tarjeta</td><td>235</td></tr>
+</table>
+<p>Cada fila cuenta cuentas distintas y no es una sola cohorte; KYC y wallet incluyen cuentas anteriores al alta nueva. Ahora mismo hay 246 personas paradas en el paso del teléfono.</p>
+
+<h3>Las secuencias</h3>
+<table border="1" cellpadding="4" style="border-collapse:collapse">
+<tr><th>Secuencia</th><th>Entra cuando</th><th>Correos</th><th>Sale cuando</th><th>¿Se puede montar ya?</th></tr>
+<tr><td>S1 · Pre-registro</td><td>Entra en la lista «AutoDM · DM Instagram» (W1)</td><td>Día 0: el recurso + enlace de registro. Día 1: monta tu primer flujo en 10 minutos. Día 3: lo que cuesta ManyChat al año frente a AutoDM. Día 6: último aviso con un caso.</td><td>KUNFU_IS_VENDOR = sí</td><td>Sí, tras crear la lista y los atributos MC_*</td></tr>
+<tr><td>S2 · Bienvenida y alta</td><td>Cuenta nueva de vendedor</td><td>Día 0: bienvenida y los tres pasos de hoy. Día 1: te falta un paso del alta (cuál). Día 3: el teléfono se verifica en un minuto por SMS o WhatsApp.</td><td>Alta completa</td><td>Solo el día 0. El resto necesita KUNFU_ONBOARDING_STEP en Brevo</td></tr>
+<tr><td>S3 · Activa AutoDM</td><td>Alta completa y KUNFU_TOOL_KEYS sin kunfu-dm</td><td>Día 0: activa AutoDM en dos clics. Día 2: el flujo de cualificación listo para copiar. Día 5: el error del cartero.</td><td>KUNFU_TOOL_KEYS contiene kunfu-dm</td><td>Sí (confirmar con producto el nombre exacto de AutoDM en producción)</td></tr>
+<tr><td>S4 · Cobra en el DM</td><td>AutoDM activo y sin tienda</td><td>Día 0: vende desde el DM con la tarjeta de producto. Día 3: crea tu producto y pide la tienda.</td><td>KUNFU_HAS_STORE = sí</td><td>Sí</td></tr>
+<tr><td>S5 · Tienda aprobada a primera venta</td><td>Tienda aprobada</td><td>Día 2: tu primera venta en tres pasos. Día 7, si no hay venta: qué hacen los que ya venden.</td><td>Primera venta</td><td>No: faltan el estado de la tienda y la primera venta en Brevo</td></tr>
+<tr><td>S6 · Tienda rechazada</td><td>Tienda rechazada</td><td>Día 0: el motivo y cómo corregirlo. Día 5: vuelve a pedirla.</td><td>Vuelve a pedir la tienda</td><td>No: falta el estado y el motivo en Brevo. Revisar con riesgo qué motivos se pueden corregir antes de invitar a nadie</td></tr>
+<tr><td>S7 · Usa el dinero e invita</td><td>Primera venta</td><td>Wallet y tarjeta. Después, el programa de invitados.</td><td>Tiene wallet o tarjeta</td><td>No: falta la primera venta, la wallet y la tarjeta en Brevo</td></tr>
+</table>
+<p>S6 es la bolsa más grande (3.644 cuentas), pero no todos los rechazos se pueden corregir: hay que separar los rechazos por documentación de los rechazos por riesgo.</p>
+
+<h3>Campos que hay que pedir a producto para Brevo</h3>
+<table border="1" cellpadding="4" style="border-collapse:collapse">
+<tr><th>Campo nuevo en Brevo</th><th>Sale de (en la app)</th><th>Lo usa</th></tr>
+<tr><td>KUNFU_ONBOARDING_STEP</td><td>initialOnboardingStep</td><td>S2</td></tr>
+<tr><td>KUNFU_BILLING_BAND</td><td>onboardingSurvey.monthlyBilling</td><td>S2, segmentar</td></tr>
+<tr><td>KUNFU_BUSINESS_MODEL</td><td>Paso 5 nuevo (KUN-3969)</td><td>Segmentar</td></tr>
+<tr><td>KUNFU_QUALIFIED</td><td>Resultado de QualifiedLead / NotQualifiedLead</td><td>Separar S4 y S5</td></tr>
+<tr><td>KUNFU_KYC_STATUS</td><td>kycStatus</td><td>S5</td></tr>
+<tr><td>KUNFU_STORE_STATUS y KUNFU_STORE_REJECTION</td><td>appInstallations (store) y rejectionComment</td><td>S5 y S6</td></tr>
+<tr><td>KUNFU_FIRST_SALE_AT y KUNFU_SALES_COUNT</td><td>Ventas completadas</td><td>S5 y S7</td></tr>
+<tr><td>KUNFU_HAS_WALLET y KUNFU_HAS_CARD</td><td>nominativeAccount y tarjeta</td><td>S7</td></tr>
+<tr><td>KUNFU_AUTODM_ACTIVE</td><td>AutoDM con al menos una regla activa</td><td>S3 y S4</td></tr>
+</table>
+
+<h2>12. Qué falta y en qué orden</h2>
+<ol>
+<li>Crear los dos recursos: «Estructura de setting» (con el flujo de cualificación dentro) y «Guía de 100 abridores».</li>
+<li>Igualar rótulo y CTA en los guiones 3 a 7 y quitar del guion BOT que AutoDM rota mensajes.</li>
+<li>Sacar la URL de registro y montar los enlaces con UTMs.</li>
+<li>Montar en ManyChat: las dos automatizaciones por palabra clave, el Randomizer, Fase 1, Fase 2, W3 a Google Sheets y las respuestas públicas.</li>
+<li>Brevo: crear la lista «AutoDM · DM Instagram» y los atributos MC_*, conectar W1 y escribir S1.</li>
+<li>Optimizar el perfil: nombre, bio, enlace, fijados, destacadas e iniciadores de conversación.</li>
+<li>Escribir y activar S2 (día 0), S3 y S4, que ya se pueden disparar con los campos actuales.</li>
+<li>Pedir a producto: KUN-3969 (paso 5 y QualifiedLead), los campos nuevos para Brevo y cerrar KUN-3872. Hoy solo el 5 % de los registros llegan a Meta con correo, y Meta solo cruza entre el 63 y el 67 % de los eventos del navegador con los del servidor (pide un 75 %).</li>
+<li>Con esos campos: S2 completa, S5, S6 y S7.</li>
+<li>V2: landing con botón para los anuncios self-service.</li>
+</ol>
+
+<h2>13. Decisiones pendientes</h2>
+<ul>
+<li><b>Fase 1 y Fase 2:</b> en este documento van a la vez al 50 %. Si prefieres lanzarlas una detrás de otra, hay que publicar los mismos reels en las dos fases para poder compararlas.</li>
+<li><b>Cuenta de Instagram:</b> desde qué cuenta salen los reels, y si Kommo está conectado a esa cuenta.</li>
+<li><b>Cualificados altos del DM:</b> si pasan a Kommo para que les llame el equipo (W2) o si todo el funnel AutoDM es self-service.</li>
+<li><b>Umbral de cualificación:</b> la propuesta es que venda formación, servicios o comunidad y facture desde 2.000 € al mes, que coincide con las bandas que ya pregunta la app.</li>
+<li><b>ManyChat o AutoDM:</b> montarlo en ManyChat es más rápido y tiene Randomizer. Cuando AutoDM tenga la rotación de mensajes, conviene pasar el funnel a AutoDM: vender «ManyChat gratis» desde ManyChat es fácil de señalar en los comentarios.</li>
+</ul>
+
+</body></html>
