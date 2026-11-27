@@ -125,6 +125,10 @@ Cada regla viene de una corrección de Brayan: respétalas por defecto y no las 
   del plano está mal): siempre a los lados o en la zona de arriba, detrás de la persona si hay recorte, lejos de caras
   y torso. Los titulares grandes pueden ir centrados en horizontal, pero sin tapar la cara.
 
+- **Sin LUT por defecto:** dejar el color original de cámara salvo que se pida otro look.
+- **Sonidos de transición suaves y variados:** nada de capas saturadas que suenen a «soplar el micrófono»; ~14–16 dB
+  por debajo de la voz y alternar entre varios whoosh limpios de SONIDOS (nunca el mismo dos veces seguidas).
+
 ## TTS (cuando haya que regrabar o arreglar una palabra)
 - «La voz de Sergio» = ElevenLabs **Sergio Morales** (`voiceId` 558 del catálogo de Magnific), `audio_tts` con `eleven_v3`.
   Texto dicho normal: sin puntos suspensivos ni suspiros; emoción con una sola etiqueta suave.
